@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full-Arch Leak Audit — Hear what your office says when a $40,000 patient calls</title>
+<style>
+  :root{
+    --bg:#faf9f7; --fg:#16150f; --muted:#5d5a52; --line:#e2ded6;
+    --accent:#b8341f; --accent-fg:#fff; --card:#fff; --warn:#f6f1e7;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#131210; --fg:#f2efe9; --muted:#a09b91; --line:#2c2a26;
+           --accent:#e0523a; --accent-fg:#131210; --card:#1b1a17; --warn:#221f19; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:680px;margin:0 auto;padding:0 22px}
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:0}
+  h1{font-size:clamp(30px,6vw,44px);line-height:1.12;letter-spacing:-.02em;margin:.2em 0 .5em;font-weight:700}
+  h2{font-size:clamp(22px,4.4vw,29px);line-height:1.22;letter-spacing:-.015em;margin:0 0 .7em;font-weight:700}
+  h3{font-size:19px;margin:1.8em 0 .4em;font-weight:650}
+  p{margin:0 0 1.05em}
+  .eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:12px;font-weight:700;
+    color:var(--accent);margin:0 0 1.4em}
+  .lede{font-size:20px;color:var(--muted);margin-bottom:1.6em}
+  .price{font-weight:700;color:var(--fg)}
+  .btn{display:block;width:100%;text-align:center;background:var(--accent);color:var(--accent-fg);
+    text-decoration:none;font-weight:700;font-size:18px;padding:19px 24px;border-radius:9px;
+    border:0;cursor:pointer;font-family:inherit;letter-spacing:.01em}
+  .btn:hover{filter:brightness(1.08)}
+  .guarantee{background:var(--warn);border:1px solid var(--line);border-radius:9px;
+    padding:18px 20px;margin:18px 0 0;font-size:16px}
+  .guarantee strong{display:block;margin-bottom:.2em}
+  .sub{font-size:14px;color:var(--muted);margin-top:14px;text-align:center}
+  table{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:16px;display:block;overflow-x:auto}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-weight:650;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:650}
+  .kicker{font-size:23px;line-height:1.35;font-weight:650;margin:1.3em 0;
+    padding-left:18px;border-left:3px solid var(--accent)}
+  ul{margin:0 0 1.1em;padding-left:1.15em}
+  li{margin-bottom:.55em}
+  .no li::marker{content:"✕  ";color:var(--accent)}
+  .num{display:inline-block;min-width:1.9em;font-weight:700;color:var(--accent)}
+  form{margin-top:8px}
+  label{display:block;font-size:13px;font-weight:650;text-transform:uppercase;
+    letter-spacing:.05em;color:var(--muted);margin:16px 0 5px}
+  input,select{width:100%;padding:13px 14px;font:inherit;font-size:16px;color:var(--fg);
+    background:var(--card);border:1px solid var(--line);border-radius:7px}
+  input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:520px){.row{grid-template-columns:1fr}}
+  .fine{font-size:14px;color:var(--muted)}
+  .warnline{font-weight:700;color:var(--accent);font-size:16px;margin-top:14px;text-align:center}
+  details{border-bottom:1px solid var(--line);padding:15px 0}
+  summary{cursor:pointer;font-weight:650;font-size:17px}
+  details p{margin:.7em 0 0;color:var(--muted);font-size:16px}
+  footer{padding:34px 0 60px;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section>
+  <p class="eyebrow">Full-arch implant practices only</p>
+  <h1>Hear what your office says when a $40,000 patient calls</h1>
+  <p class="lede">
+    We call your practice three times as a prospective full-arch patient. You get the recordings,
+    a 12-point scorecard, and the exact dollar figure you're leaking every month.
+    <span class="price">72 hours. $297.</span>
+  </p>
+  <a class="btn" href="#order">Order my Leak Audit — $297</a>
+  <div class="guarantee">
+    <strong>If we don't find at least $50,000 of annual leaked case value</strong>
+    you keep everything and we refund the $297.
+  </div>
+  <p class="sub">We don't sell marketing. We don't touch your ads. We never contact your patients.</p>
+</section>
+
+<section>
+  <h2>We called 40 implant practices last month pretending to be a $40,000 patient. 31 of them lost the case in under two minutes.</h2>
+  <p>Not on price. Here is what actually happened:</p>
+  <table>
+    <tr><th>What we found</th><th>How often</th></tr>
+    <tr><td>Couldn't or wouldn't discuss price at all</td><td>27 / 40</td></tr>
+    <tr><td>Never mentioned financing</td><td>31 / 40</td></tr>
+    <tr><td>Never offered a specific appointment time</td><td>22 / 40</td></tr>
+    <tr><td>Nobody followed up within 48 hours</td><td>34 / 40</td></tr>
+    <tr><td>Saturday call hit a dead line or generic voicemail</td><td>29 / 40</td></tr>
+  </table>
+  <p class="fine">Every practice in that sample was actively running paid ads for full-arch treatment.</p>
+  <p class="kicker">They were buying $300 consults and losing them at the front desk for free.</p>
+</section>
+
+<section>
+  <h2>What you get</h2>
+
+  <h3><span class="num">1.</span>Three recorded calls</h3>
+  <p>Tuesday morning, Thursday at 4:45pm right before close, and Saturday. Different staff,
+  different pressure, different results. You hear all three.</p>
+
+  <h3><span class="num">2.</span>The 12-point scorecard</h3>
+  <p>Scored 0–24 across live answer, price handling, financing mention, whether a specific
+  appointment was offered, discovery, decision-maker identification, 48-hour follow-up, and
+  after-hours capture.</p>
+
+  <h3><span class="num">3.</span>Your leak figure</h3>
+  <p>The real number, with the arithmetic shown, using your consult volume and your case value.
+  Not a range. Not an industry average.</p>
+
+  <h3><span class="num">4.</span>The Financing Waterfall Blueprint</h3>
+  <p>The complete 14-page document we install for clients: the five-lender stack, the credit-tier
+  routing map, application links, and the four presentation scripts. Practices running a single
+  lender approve roughly 50% of full-arch applicants. A properly routed waterfall reaches 70–80%.</p>
+  <p><strong>Yours to keep and implement whether or not you ever speak to us again.</strong></p>
+
+  <h3><span class="num">5.</span>A 20-minute review call</h3>
+  <p>Optional. We walk the recordings with you. No pitch unless you ask for one.</p>
+</section>
+
+<section>
+  <h2>What this is not</h2>
+  <ul class="no">
+    <li>Not a marketing audit. We don't look at your ads, your website, or your SEO.</li>
+    <li>Not a sales training pitch. We don't coach treatment coordinators.</li>
+    <li>Not a lead-gen offer. We will never ask you to fire your agency.</li>
+  </ul>
+  <p class="kicker">We work on one thing: what happens between a lead arriving and a patient in your chair.</p>
+</section>
+
+<section>
+  <h2>Who this is for</h2>
+  <p><strong>Order it if</strong> you do 15+ full-arch consults per month, your average case value
+  is $25,000 or more, and you're spending real money on patient acquisition.</p>
+  <p><strong>Don't order it if</strong> you do fewer than 15 full-arch consults per month. There
+  isn't enough volume for the findings to be worth $297, and we'd rather tell you that than take
+  your money.</p>
+</section>
+
+<section id="order">
+  <h2>Order your Leak Audit</h2>
+  <form method="post" action="#">
+    <label for="practice">Practice name</label>
+    <input id="practice" name="practice" required autocomplete="organization">
+
+    <label for="name">Your name</label>
+    <input id="name" name="name" required autocomplete="name">
+
+    <div class="row">
+      <div>
+        <label for="pphone">Practice phone <span class="fine">(the number we call)</span></label>
+        <input id="pphone" name="practice_phone" type="tel" required>
+      </div>
+      <div>
+        <label for="mobile">Your mobile</label>
+        <input id="mobile" name="mobile" type="tel" required autocomplete="tel">
+      </div>
+    </div>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required autocomplete="email">
+
+    <div class="row">
+      <div>
+        <label for="consults">Full-arch consults / month</label>
+        <select id="consults" name="consults" required>
+          <option value="">Select…</option>
+          <option>Fewer than 10</option>
+          <option>10–15</option>
+          <option>16–25</option>
+          <option>26–40</option>
+          <option>More than 40</option>
+        </select>
+      </div>
+      <div>
+        <label for="value">Average case value</label>
+        <select id="value" name="case_value" required>
+          <option value="">Select…</option>
+          <option>$20,000–25,000</option>
+          <option>$25,000–30,000</option>
+          <option>$30,000–40,000</option>
+          <option>$40,000–55,000</option>
+          <option>More than $55,000</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="state">Practice state</label>
+    <input id="state" name="state" required placeholder="e.g. Texas">
+
+    <p style="margin:26px 0 0"><button class="btn" type="submit">Order my Leak Audit — $297</button></p>
+    <p class="sub">One-time $297. No subscription. Nothing recurring. Delivered in 72 hours.</p>
+    <p class="warnline">Don't warn your team — it defeats the purpose.</p>
+  </form>
+</section>
+
+<section>
+  <h2>Questions</h2>
+
+  <details><summary>Is this legal?</summary>
+    <p>Yes. We identify as a prospective patient making a genuine inquiry, which is standard
+    mystery-shopping practice. In the twelve states that require all-party consent to record a call,
+    we deliver a word-for-word transcript instead of audio.</p></details>
+
+  <details><summary>Will my staff know?</summary>
+    <p>Not unless you tell them. Please don't — a coached front desk tells you nothing.</p></details>
+
+  <details><summary>What if my score is bad?</summary>
+    <p>Most are. The scorecard averages about 14 out of 24 across the practices we've audited. The
+    point isn't the grade, it's the dollar figure attached to it.</p></details>
+
+  <details><summary>Do you contact my patients?</summary>
+    <p>Never. We call your front desk. That is the entire interaction.</p></details>
+
+  <details><summary>What happens after?</summary>
+    <p>You get a 20-minute review call if you want it. If you'd rather take the report and the
+    Blueprint and implement it yourself, that's a completely fine outcome and it happens regularly.</p></details>
+</section>
+
+<footer>
+  <p>The Lead-to-Chair Revenue System. Not affiliated with or endorsed by any dental
+  implant manufacturer, lender, or professional association.</p>
+</footer>
+
+</div>
+</body>
+</html>
