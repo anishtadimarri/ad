@@ -30,7 +30,7 @@ one-time placement fee of ~35% of first-year salary.
 | **§6** | Five business model variants compared; why recruit-and-handoff wins |
 | **§7** | **Role selection — 179 roles scored on a 14-dimension weighted model, with knockout gates.** Methodology, results, what it overturned, and the model's own limits |
 | **§8** | Geography selection |
-| **§9** | The recommended model spec — offer, deposit, protection layer, retention architecture |
+| **§9** | The recommended model spec — offer, deposit, protection layer, retention architecture. **§9.6 retracts the "academy is the moat" claim** and replaces it with assessment + outcome data |
 | **§10** | Unit economics — per-placement P&L, CAC scenarios, 30-day and lifetime LTGP:CAC |
 | **§11** | Acquisition — the honest position on Meta, channel portfolio |
 | **§12** | Operating model — team skills by %, fill rate, headcount, known headaches |

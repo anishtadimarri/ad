@@ -156,9 +156,13 @@ Applied to select *which* skill to place:
 > scarce, and the training itself becomes a retention mechanism — people don't leave the
 > organization that credentialed them.
 
-This single principle explains the entire competitive landscape: Oceans skims and caps at
-30–40 placements/month; Somewhere doesn't skim and does 250/month [V]. Manufacturing quality
-is how you get both.
+This principle explains the competitive landscape: Oceans skims and caps at 30–40
+placements/month; Somewhere doesn't skim and does 250/month [V].
+
+> ⚠️ **This principle was over-claimed and is substantially retracted in [§9.6](#96-the-academy-—-what-it-is-and-why-it-mostly-isnt).**
+> The academy fits a managed-seat model, not the placement-fee model actually recommended. What
+> survives is the *assessment* half — a graded work sample plus outcome-correlation data — not
+> the *training* half. The ranking in §7 does not depend on it either way (§9.6.4).
 
 ---
 
@@ -785,7 +789,7 @@ they'll leave."* Every design decision below exists to make that fear unfounded.
 | **Published 9% annual raise** for placed workers, administered by us | Directly neutralizes the 9.5% India wage-inflation counter-bid [V]. The worker's salary tracks the market *without them having to leave to get it* |
 | **Transparent salary** — client knows exactly what the worker earns | Removes the worker's #1 grievance in the seat-rental model (discovering the agency takes 60%) |
 | **Role selection = async only** | Eliminates the largest attrition driver in the dataset |
-| **Academy + credential** | People don't leave the org that certified them; also the quality mechanism |
+| ~~Academy + credential~~ | Retracted — see §9.6. The retention claim was the weakest part of the academy argument: an unrecognised certificate creates no switching cost |
 | **Visible ladder** (Associate → Senior → Lead, with named criteria) | Kills the "dead-end job" driver |
 | **Peer cohort** across clients | Kills the isolation driver of solo embedded seats |
 | **Client onboarding standards** enforced at intake | The client is often the cause of attrition; refusing bad clients protects the stat |
@@ -804,6 +808,115 @@ Free replacement within 6 months, **provided**:
 
 Without these, a handoff-model guarantee is an unpriced insurance policy on someone else's
 management quality.
+
+---
+
+### 9.6 The academy — what it is, and why it mostly isn't
+
+§3.4 called trainability "the moat." That was over-claimed. This section defines the academy
+concretely and then retracts most of the claim.
+
+#### 9.6.1 What it would actually be
+
+| Component | Detail |
+|---|---|
+| **Graded intake test** | A work sample with a right answer — a deliberately broken ledger to reconcile, a drawing set to take off against a known bill of quantities |
+| **Conversion course** | 2–4 weeks closing the gap between a good local candidate and what the US client needs |
+| **Certificate** | Issued by us |
+| **Warm bench** | Everyone who has passed and is available now |
+
+Four jobs: expands usable supply from the top 1% to roughly the top 30% · underwrites the quality
+guarantee · compresses shortlists to 48 hours · gives the worker a reason to stay.
+
+#### 9.6.2 Why it does not fit the recommended model
+
+**The academy fits managed seats (Model B). The recommended model is placement fees (Model A).**
+
+| Problem | Detail |
+|---|---|
+| **Nobody pays the candidate during training** | They are not our employee. Unpaid four-week training filters to candidates who can afford not to earn for a month — which inverts the supply-expansion purpose entirely |
+| **The certificate has no market value in year one** | AAPC, CFP and Trailhead carry weight *because* they are third-party. A credential from an unknown company is not a credential |
+| **No mechanism captures the return** | Train, place, collect once, gone. If 20% use the training to get a better job in month two, we funded a competitor's hire with no employment relationship to prevent it |
+| **It competes with year-one survival** | §18 already scheduled it for year 2. It was then treated as the moat anyway |
+
+**One point in the academy's favour, against my own earlier reasoning:** the *cost* objection is
+weak. An Indian trainer at ~$900/month running a cohort of 15 is ~$60 per candidate-month [E]; at
+3–5 trained candidates per placement that is $180–300 against $5,759 gross profit (§10.1).
+Affordable. The problem is not cost — it is that you cannot compel attendance and cannot make the
+certificate mean anything.
+
+#### 9.6.3 What survives — assessment, not training
+
+> **The defensible asset is a proprietary graded work sample per role, plus the accumulated
+> dataset of how scores predict client outcomes.** After 100 placements you know that a 78+ on
+> the bookkeeping test correlates with 12-month retention and a sub-65 correlates with a
+> replacement claim. Nobody can copy that without doing 100 placements.
+
+| | Academy (training) | Assessment + outcome data |
+|---|---|---|
+| Cost | Recurring per cohort | One-time design, then free |
+| Requires employment relationship | Yes, effectively | No |
+| Compounds | No | **Yes — every placement adds a data point** |
+| Underwrites the guarantee | Indirectly | **Directly** |
+| Fits Model A | No | Yes |
+
+**Where a training gap genuinely blocks fill rate, the right shape is a narrow conversion course,
+not a school.** Indian bookkeepers know Indian standards, not US GAAP, QuickBooks conventions and
+1099s. That specific delta is ~2 weeks and it is the whole difference between placeable and not.
+Build it when a named gap blocks a named role — never on principle.
+
+#### 9.6.4 Sensitivity — does the ranking depend on the academy?
+
+Reweighted on the principle that without an academy you are a **finder, not a maker**, so
+pre-existing trained supply becomes binding: `T` 7→2, `SL` 6→9, `OP` 7→9.
+
+| Role | Base | No academy | Move |
+|---|---|---|---|
+| Recruiter | 79.0 | **78.6** | — |
+| Bookkeeper | 77.8 | **77.8** | — |
+| Staff accountant | 76.4 | **76.8** | +1 |
+| Marketing ops | 76.8 | 75.4 | −1 |
+| Email / lifecycle | 76.4 | 75.0 | — |
+| **Software engineer** | 72.6 | **74.4** | **+6** |
+| **MEP designer** | 71.6 | **72.0** | **+6** |
+| **Steel detailer** | 70.8 | **71.2** | **+6** |
+| CAD drafter | 72.6 | 73.6 | +3 |
+| **Salesforce admin** | 73.8 | 72.2 | **−5** |
+| **Credentialing specialist** | 72.2 | 71.4 | **−6** |
+| HRIS admin | (#33) | (#49) | **−16** |
+
+**The top six barely move. The ranking never depended on the academy.** Roles with free public
+curricula fall — a free curriculum is only worth something if you are running a school. Roles with
+deep pre-trained offshore pools rise.
+
+**Consequence for §7.6:** Recruiter still ranks #1, but the flywheel argument given for it was
+academy-dependent. Right answer, wrong reason. The durable case for Recruiter is that you can
+grade one better than anyone else can, US firms hire them remotely by default, and supply is
+abundant.
+
+#### 9.6.5 What the business is with no academy at all
+
+It is **Somewhere, exactly** — ~$13.5M revenue, ~$4M EBITDA, 250 placements/month [V/E], and no
+academy anywhere in the model. This is the proven configuration; the academy was an unproven layer
+added on top of it.
+
+You then compete on four things:
+
+| | |
+|---|---|
+| **Speed** | 48-hour shortlist |
+| **CAC** | The founder's actual edge, and the one thing no scaled competitor has (§11.1) |
+| **Recruiter throughput** | Placements per recruiter per month |
+| **Role and geography focus** | One role deeply beats five shallowly |
+
+**The consequence that matters:** with no ability to manufacture supply, fill rate becomes wholly
+market-dependent — so **role choice matters more, not less.** You must pick roles where trained
+supply already exists in volume, which is precisely what the reweighted ranking in §9.6.4
+measures.
+
+The quality promise degrades from *"we made them good"* to *"we screened them harder."* That is
+weaker. It is also what every competitor actually does, and against a résumé-and-interview screen
+a graded work sample is still a real differentiator.
 
 ---
 
@@ -1080,7 +1193,7 @@ sides of the marketplace.** Everything downstream of them is unmodellable until 
 | **Fee** | 25% · 30% · 35% | 35%, matching Somewhere; discount via promo code rather than list price |
 | **Deposit** | $0 · $500 · $1,000 | $500 — enough to filter, small enough not to block |
 | **Guarantee** | 3 · 6 · 12 months | 6-month conditional |
-| **Academy** | Launch with it · add at year 2 | Add once the role is proven; it is the year-2 moat, not the year-1 product |
+| **Academy** | Build one · assessment only · narrow conversion course | **Assessment only** (§9.6.3). A graded work sample per role plus outcome-correlation data. Add a 2-week conversion course only where a named gap blocks a named role. Do not build a school |
 | **First channel** | Meta · cold email · referral | Meta first — not because it is likeliest to work, but because it fails fastest and cheapest |
 
 ---
