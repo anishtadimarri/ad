@@ -1,98 +1,76 @@
-# Lead-to-Chair Revenue System
+# Business Repository
 
-A productized service for US full-arch dental implant practices. We own the funnel from
-lead arrival to a qualified, financing pre-approved patient sitting in the consult chair —
-and the follow-up on everyone who doesn't close.
+## → [`MASTER.md`](MASTER.md)
 
-**We do not touch their marketing. We do not coach their team.**
+Everything lives in one document. Start there.
 
 ---
 
-## The model at a glance
+## What this is
 
-```
-META AD  ──►  LEAK CALCULATOR (free)  ──►  $297 LEAK AUDIT (SLO)  ──►  REVIEW CALL
-                                                                            │
-                                                                            ▼
-                                                    MAIN OFFER: $9,500 + $2,500/mo + $300/consult
-                                                                            │
-                                          ┌─────────────────────────────────┼──────────────────┐
-                                          ▼                                 ▼                  ▼
-                                   ANNUAL PREPAY                    CONSULT VOLUME       DOWNSELLS
-                                   12-for-10                        $6,000/mo            $2,500–3,500
-```
+A working file for an **offshore talent placement business**: recruiting full-time remote
+professionals from India/South Africa/Philippines into US small and mid-market companies, on a
+one-time placement fee of ~35% of first-year salary.
 
-## Why this offer exists
+**Target:** $5M revenue in 3–5 years (~60 placements/month).
+**Status:** pre-launch, nothing validated, no customer met.
 
-A full-arch practice running 25 consults/month leaks money in four places. Three of them
-are automation problems, not people problems:
+---
 
-| Leak | Mechanism | Monthly value at $35k/case |
-|---|---|---|
-| 35% no-show rate | Sequences + pre-frame video | **5 more consults sat → $49,000** |
-| Single-lender financing declines | Multi-lender waterfall routing | **2 cases → $70,000** |
-| Abandoned "think about it" pile | 6-month automated nurture | **1.3 cases → $45,500** |
-| ~~Same-day acceptance rate~~ | ~~Coaching~~ | *Deliberately excluded* |
+## Document map
 
-**~$164,000/month of recovered revenue. ~$98,000 of gross profit. Our fee is 4% of that.**
+| Section | What's in it |
+|---|---|
+| **§0** | Evidence tagging — `[V]` verified, `[E]` estimate, `[C]` company claim, `[?]` assumption |
+| **§1** | The business in one page |
+| **§2** | **Decision history — 60+ ideas killed, and by what evidence.** Includes errors made and corrected |
+| **§3** | The filter framework — hard constraints, market filters, the seven role filters |
+| **§4** | Market structure — size, salaries both sides, attrition by function and country, wage inflation |
+| **§5** | Competitor teardown — Somewhere, Oceans, TOA, Entigrity, Wing, MyOutDesk, ReSource Pro |
+| **§6** | Five business model variants compared; why recruit-and-handoff wins |
+| **§7** | **Role selection — ~130 roles enumerated, filtered, ranked** |
+| **§8** | Geography selection |
+| **§9** | The recommended model spec — offer, deposit, protection layer, retention architecture |
+| **§10** | Unit economics — per-placement P&L, CAC scenarios, 30-day and lifetime LTGP:CAC |
+| **§11** | Acquisition — the honest position on Meta, channel portfolio |
+| **§12** | Operating model — team skills by %, fill rate, headcount, known headaches |
+| **§13** | Path to $5M + P&L |
+| **§14** | Valuation and exit |
+| **§15** | Risk register |
+| **§16** | Legal and compliance |
+| **§17** | **What is actually unvalidated** — ranked, with cost to test |
+| **§18** | Open decisions |
+| **App. A** | Full reference data corpus |
+| **App. B** | Frameworks used |
+| **App. C** | Archived work |
 
-The fourth lever — coaching the treatment coordinator to close better — is deliberately out
-of scope. It requires sales-coaching skill and clinical context, it can't be measured cleanly,
-and it turns out to be the least valuable of the four.
+---
 
-## Headline economics
+## The four numbers to remember
 
 | | |
 |---|---|
-| 30-day collected per client | **$12,750** |
-| Gross margin | 80% |
-| 30-day gross profit | **$10,200** |
-| CAC (after SLO offset) | ~$1,428 |
-| **30-day LTGP:CAC** | **7.1:1** |
-| Clients needed for $20k/mo | **1.6** |
-
-Full model in [`08-FINANCIALS.md`](08-FINANCIALS.md).
+| Gross profit per placement | **$5,759** (82% margin) |
+| 30-day LTGP:CAC, Meta base case | **2.6:1** — clears the 1.5:1 constraint |
+| CAC at which the model breaks | **$3,839** |
+| The number that decides everything | **Fill rate** — below 40% the model stops working |
 
 ---
 
-## Documents
+## The two tests that come before anything else
 
-| File | What's in it |
-|---|---|
-| [`01-ICP-AND-OFFER.md`](01-ICP-AND-OFFER.md) | Who we sell to, disqualifiers, main offer, pricing, guarantee, contract terms |
-| [`02-META-ADS.md`](02-META-ADS.md) | Targeting, 6 ad variants with full copy, creative briefs, budget, test plan |
-| [`03-SLO.md`](03-SLO.md) | The $297 Leak Audit — ghost call script, 12-point scorecard, delivery SOP |
-| [`04-PRODUCTS.md`](04-PRODUCTS.md) | All three modules specced to deliverable detail, with sequence copy |
-| [`05-UPSELL-DOWNSELL.md`](05-UPSELL-DOWNSELL.md) | The full ladder, triggers, and pricing |
-| [`06-LANDING-PAGES.md`](06-LANDING-PAGES.md) | Copy decks for calculator page, SLO page, main sales page |
-| [`07-SALES-CALL.md`](07-SALES-CALL.md) | 30-minute review call script + objection library |
-| [`08-FINANCIALS.md`](08-FINANCIALS.md) | Unit economics, 12-month model, sensitivities |
-| [`landing-pages/slo.html`](landing-pages/slo.html) | Deployable SLO landing page |
+Together: **under $2,000 and about ten days.** They resolve both sides of the marketplace, and
+nothing downstream is modellable until they're done.
+
+1. **Demand** — run the "$20,000/yr remote accountant, placed in two weeks" hook on Meta. ~$1,500.
+   Measures cost per lead against the $100 assumption.
+2. **Supply** — post one role to Indian candidate channels. ~$300. Counts qualified applicants
+   in 72 hours.
 
 ---
 
-## Before you sell anything — three things to verify
+## Archive
 
-These are the assumptions the whole model rests on. All three are cheap to check and none
-have been validated yet.
-
-1. **PMS/CRM integration reality.** Call 3 full-arch practices. Ask: what CRM, what phone
-   system, who has API access. If everything lives inside Dentrix with no external access,
-   delivery gets expensive. Mitigation is to work at the lead/CRM layer only — never touch
-   the practice management system.
-2. **Cost per booked call.** $400 of Meta spend answers this. The model assumes ~$188 per
-   booked call. Above $600 and the economics change materially.
-3. **Call recording consent.** 12 states require all-party consent (CA, FL, PA, IL, MD, MA,
-   MI, MT, NV, NH, OR, WA). Ghost calls in those states deliver a verbatim transcript, not
-   audio. Attorney review before call one.
-
-## Compliance posture
-
-- **HIPAA:** we operate at the lead/CRM layer, not the clinical record. Data lives in the
-  client's systems. We need a BAA and access controls — not our own HIPAA infrastructure.
-- **Offshore access:** the delivery team is India-based. Any seat with access to patient
-  contact data must be named in the BAA and disclosed to the client. Aggregate reporting
-  and build work require no PHI access at all.
-- **Follow-up targets patients who physically attended a consultation** — an established
-  treatment relationship. This is a materially safer TCPA position than reactivating cold
-  web leads.
+[`archive/dental-lead-to-chair/`](archive/dental-lead-to-chair/) — a fully specified productized
+service for US full-arch dental implant practices. Superseded, not disproven; see MASTER.md
+Appendix C.
