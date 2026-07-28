@@ -391,7 +391,10 @@ PLACEMENT FEE (one-time, 35%)          ← the business
 
 ## 7. Role selection — the full analysis
 
-### 7.1 The complete taxonomy considered (~130 roles)
+### 7.1 The complete taxonomy considered (179 roles)
+
+Readable list below; the authoritative enumeration with all 14 scores per role is
+[`scoring/model.py`](scoring/model.py).
 
 **Finance & accounting:** bookkeeper · AP clerk · AR/collections · payroll specialist · staff
 accountant · senior accountant · controller · financial analyst · FP&A · tax preparer · audit
@@ -485,21 +488,148 @@ regulatory affairs · medical writing · AML/KYC analyst · compliance analyst �
 | **Amazon PPC / marketplace ops** | ACoS / TACoS — an objective score | Brands, aggregators, agencies | $55–75k [E] | Highly gradeable, enormous volume, low glamour |
 | **Paid media analyst** | Ad account audit, graded by the founder | Ecom, agencies, SMBs with budget | $65–90k [E] | **The founder is the academy** — see §7.6. Counter: highest escape risk in the list, and Advantage+/PMax are automating the junior execution layer (partly fails filter 6) |
 
-### 7.4 Ranking, on the stated criterion (over-deliver on quality *and* attrition, at volume)
+### 7.4 The weighted model — methodology
 
-| # | Role | Case |
+The seven binary filters (§3.3) were **not holistic** and are superseded. Three failures:
+
+1. **Binary gates ignore magnitude.** "Gradeable ✅" did not distinguish steel detailing
+   (machine-checkable) from bookkeeping (good rubric) from EA (impossible).
+2. **Three decisive dimensions were absent entirely** — seat volume, fee per placement, and
+   prior outsourcing precedent. A role can pass all seven filters and be tiny, cheap, or
+   unprecedented.
+3. **It scored the worker, not the transaction.** Nothing in the seven filters asked whether the
+   *buyer* would actually hire an offshore FTE, or whether the buyer was reachable on a channel
+   we can operate. This single omission is what produced the wrong answer in §7.4-old.
+
+**Replaced by:** 14 weighted dimensions, 0–5 each, weights summing to 100, plus knockout gates
+applied *after* scoring — because a weighted average lets a fatal flaw be compensated by
+strengths elsewhere.
+
+| Dim | Wt | Dimension | Why it carries this weight |
+|---|---|---|---|
+| `R` | **12** | Retention (async + escape risk + counter-bid + seasonality) | The promise being sold |
+| `V` | **11** | Seat volume | Caps the ceiling on everything |
+| `RR` | **11** | **Buyer remote-readiness** | The dimension previously missing. A perfect role with an unwilling buyer is worth nothing |
+| `G` | **9** | Gradeability | Quality you can't test, you can't promise |
+| `D` | **9** | Fee per placement (35% of offshore salary) | Revenue per unit of work |
+| `AI` | **8** | AI durability, 5-year | Demand-side attrition — the role vanishing under you |
+| `OP` | **7** | Outsourcing precedent | Proof the work transfers offshore at all |
+| `T` | **7** | Trainability / academy cost | The moat (§3.4) |
+| `BR` | **6** | Buyer reachability (Meta / cold email) | Determines whether this is a media business |
+| `SL` | **6** | Supply liquidity (fill in ≤14 days) | Feeds fill rate, the #1 killer (§10.4) |
+| `CD` | **5** | Competitive whitespace (inverse density) | |
+| `RP` | **5** | Repeat / expansion per client | |
+| `RF` | **3** | Regulatory freedom (inverse friction) | |
+| `FF` | **1** | Founder fit | Deliberately near-zero so it cannot drive a result |
+
+**Knockout gates:** `R ≤ 1` (churns faster than it can be replaced) · `AI ≤ 1` (gone in five
+years) · `G ≤ 1` (quality unpromiseable).
+
+Model and full data: [`scoring/model.py`](scoring/model.py). Output:
+[`scoring/RANKING.md`](scoring/RANKING.md). Weights are editable and the ranking regenerates.
+
+### 7.5 Results — 179 roles, 130 clean, 49 knocked out
+
+| # | Role | Cluster | Score |
+|---|---|---|---|
+| 1 | **Recruiter** | HR | **79.0** |
+| 2 | **Bookkeeper** | Finance | **77.8** |
+| 3 | **Marketing ops (HubSpot/Marketo)** | Technology | **76.8** |
+| 4 | **Staff accountant** | Finance | **76.4** |
+| 5 | **Email / lifecycle (Klaviyo)** | Marketing | **76.4** |
+| 6 | BI / analytics | Technology | 74.8 |
+| 7 | Amazon PPC | Ecommerce | 74.2 |
+| 8 | Salesforce admin | Technology | 73.8 |
+| 9 | QA automation | Technology | 73.2 |
+| 10 | Senior accountant | Finance | 72.8 |
+| 11 | Amazon / marketplace ops | Ecommerce | 72.8 |
+| 12 | CAD drafter | AEC | 72.6 |
+| 13 | Software engineer | Technology | 72.6 |
+| 14 | Credentialing specialist | Healthcare | 72.2 |
+| 15 | PI case manager | Legal | 71.8 |
+| 16 | Medical coder (CPC) | Healthcare | 71.8 |
+| 17 | Medical biller | Healthcare | 71.6 |
+| 18–19 | Policy checking · Endorsement processing | Insurance | 71.6 |
+| 20 | MEP designer | AEC | 71.6 |
+| 21 | Transaction coordinator | RealEstate | 71.2 |
+| 22 | COI issuance | Insurance | 71.0 |
+| 23 | Steel detailer (Tekla/SDS2) | AEC | 70.8 |
+| 24 | PPC analyst (search) | Marketing | 70.6 |
+| 25 | Construction estimator / takeoff | AEC | 70.6 |
+
+**Cluster means (clean roles only):**
+
+| Cluster | Clean | Mean | Best in cluster |
+|---|---|---|---|
+| Technology | 10 | **69.9** | Marketing ops (76.8) |
+| **Marketing** | 3 | **68.9** | Email/lifecycle (76.4) |
+| AEC | 15 | 67.2 | CAD drafter (72.6) |
+| Ecommerce | 5 | 65.7 | Amazon PPC (74.2) |
+| Insurance | 12 | 65.5 | Policy checking (71.6) |
+| Finance | 17 | 64.8 | Bookkeeper (77.8) |
+| Healthcare | 11 | 64.6 | Credentialing (72.2) |
+| Legal | 12 | 63.2 | PI case manager (71.8) |
+| RealEstate | 8 | 63.0 | Transaction coordinator (71.2) |
+| Regulated | 7 | 62.9 | Pharmacovigilance (68.4) |
+| HR | 7 | 62.9 | **Recruiter (79.0)** |
+| SupplyChain | 8 | 62.4 | Inventory analyst (67.2) |
+| Sales | 6 | 62.2 | RevOps analyst (68.2) |
+| Manufacturing | 7 | 58.3 | Mechanical drafter (64.4) |
+
+### 7.6 What the model overturned
+
+**AEC dropped from #1 to #12/#20/#23/#25.** The reason is `RR` — buyer remote-readiness. Steel
+fabricators, GCs and machine shops are the **least** remote-native buyers in the taxonomy
+(scored 2–3 vs 5 for tech/ecom/agencies), and `BR` is low because there is no self-identifying
+audience to target. AEC remains the best *role* on every worker-side dimension — gradeability 5,
+retention 5, regulatory freedom 5 — and is a mediocre *transaction*. My earlier #1 ranking was
+scoring the worker and ignoring the buyer.
+
+**Marketing has the second-highest cluster mean (68.9)** — the cluster that was omitted
+entirely. Marketing ops at #3, email/lifecycle at #5, Amazon PPC at #7. This validates the
+challenge decisively; see §7.9 for the omission audit.
+
+**Technology has the highest cluster mean (69.9)** despite being largely dismissed on
+counter-bid grounds. The counter-bid only kills SWE, DevOps, data engineering and ML. QA
+automation, Salesforce admin, BI/analytics and marketing ops all clear well.
+
+**Recruiter came out #1 at 79.0**, and not because of founder fit (weight 1, worth at most 1.0
+point). It scores 5 on gradeability (placements made, a live sourcing test), 5 on trainability, 5
+on buyer remote-readiness, 5 on supply liquidity, 4 on volume and reachability. And it carries a
+flywheel nothing else does:
+
+> Your own academy trains your own recruiters. Graduates who miss your internal bar get placed
+> with clients instead of discarded. Your own placement statistics are the sales proof. The
+> quality control, the supply pipeline, and the product are the same asset.
+
+**Honest caveat on that result:** recruiting demand is one of the most hiring-cycle-sensitive
+functions in the economy — recruiters are the first cut in a downturn. `R` is scored 3; a case
+exists for 2, which drops it to ~76.6 and third place. It stays top-3 either way, but the
+cyclicality is under-weighted and should be treated as a real risk, not a footnote.
+
+### 7.7 The 49 knockouts
+
+Notable ones — roles that scored well enough to rank in the top 30 and were still eliminated:
+
+| Role | Score | Gate |
 |---|---|---|
-| **1** | **Steel/rebar detailing + MEP/BIM** | Best gradeability, biggest wage gap, zero shift work, zero seasonality |
-| **2** | **Insurance processing** | Best recurring volume, lowest ramp, proven at 10k-employee scale |
-| **3** | **Paraplanning (RIA)** | Best academy-as-moat, stickiest client, highest-margin buyer |
-| **4** | **Construction estimating** | Best pain — it is a revenue bottleneck, not a cost line |
-| **5** | **Bookkeeping / AP-AR / payroll** | Best-understood buyer, most incumbents, easiest to explain |
+| QA manual | 71.8 | `AI` |
+| Sourcer | 71.2 | `AI` — sourcing is the most automated part of recruiting |
+| AP clerk | 71.0 | `AI` — AP automation is the single most attacked back-office function |
+| **Paid media analyst** | **70.0** | `R` — highest escape risk in the taxonomy. Independently confirms §7.8 |
+| Catalog management | 69.6 | `AI` |
+| IT helpdesk | 68.2 | `R` + `AI` |
+| **Executive assistant** | **68.0** | `G` — quality is personality. Confirms the earlier reasoning |
+| AML / KYC | 67.6 | `R` — fintech poaching |
+| Tax preparer | 67.4 | `R` — seasonality |
+| Video editor | 66.0 | `R` — upward escape |
+| SDR / BDR | 61.6 | `R` + `AI` |
 
-**Why not EA — the role both incumbents lead with?** EA has the best attrition in the dataset
-(<10%) and the highest willingness to pay ($3,000/mo), but it fails filters 2 and 3: quality is
-personality, so it cannot be graded pre-placement and cannot be manufactured by training. That
-is precisely why Oceans must skim the top 1% and why they cap at 30–40 placements/month. EA is a
-great role for a business built on scarcity. It is a bad role for a business built on volume.
+**The gates did real work.** Eleven roles scoring in the top-30 band were eliminated by a single
+fatal dimension. Without the gates, a pure weighted average would have ranked EA at ~#30 and
+recommended a role whose central promise cannot be tested.
+
+### 7.8 The founder-as-academy exception (paid media)
 
 ### 7.5 The wage-gap comparison (why AEC leads)
 
@@ -537,7 +667,7 @@ free; the retention side is the worst on the list. Any version of this must be p
 retention structure stronger than §9.4 provides — e.g. placing into agencies rather than brands
 (where the ladder is visible), or a revenue-share that makes staying more lucrative than leaving.
 
-### 7.7 Omission audit — how marketing was missed
+### 7.9 Omission audit — how marketing was missed
 
 Recorded because the failure mode will recur.
 
@@ -548,8 +678,25 @@ Recorded because the failure mode will recur.
 | **Unstated filter** | "Bought as a service, not a seat" was applied silently. It is legitimate but partial — it kills agency-shaped creative work and does **not** kill operational marketing roles |
 | **Enumerate-then-drop** | Marketing appeared in the §7.1 taxonomy, then vanished — present in neither the kill table nor the survivors table. This is worse than never enumerating, because the list looks complete |
 
-**Guard for future passes:** every branch in §7.1 must terminate in either §7.2 (killed, with a
-reason) or §7.3 (survives). Silent disappearance is a bug.
+**Guard, now enforced structurally:** every role is a row in
+[`scoring/model.py`](scoring/model.py) and every row produces a score and a gate verdict. Silent
+disappearance is no longer possible — a role is either in the data file or it does not exist.
+
+**Clusters that had the same problem and are now adjudicated:** HR/talent (8 roles — none were
+previously killed *or* listed), supply chain (10), e-commerce (8), manufacturing (7).
+
+### 7.10 Known limits of the model
+
+Stated so the numbers are not over-trusted.
+
+| Limit | Consequence |
+|---|---|
+| **The top-25 spread is only 8.4 points** (79.0 → 70.6) | The model reliably separates the top quartile from the bottom quartile. It does **not** reliably rank #1 against #12. Treat the top ~15 as a tied band and choose within it on judgment |
+| **Dimensions correlate** | Gradeability and trainability move together; volume and reachability move together. Clusters strong on a correlated pair get inflated |
+| **Scores are my judgment, not measurements** | Roughly 2,500 cells were assigned from research and reasoning. Several are `[?]`-grade. `RR` in particular is an informed guess for most clusters |
+| **14 dimensions capped at 5 compresses toward the mean** | Range is 50–79 out of a theoretical 0–100. Real differentiation is narrower than the scores imply |
+| **No interaction terms** | High volume × low reachability should probably penalise more than additively. It doesn't |
+| **`FF` is near-decorative at weight 1** | Deliberate — so founder enthusiasm cannot drive the answer. But it also means a genuine unfair advantage is under-credited |
 
 ---
 
@@ -928,7 +1075,7 @@ sides of the marketplace.** Everything downstream of them is unmodellable until 
 
 | Decision | Options | Current lean |
 |---|---|---|
-| **Role** | AEC detailing/estimating · insurance processing · paraplanning · bookkeeping | AEC leads on the stated criterion; bookkeeping leads on speed-to-first-revenue |
+| **Role** | Recruiter · bookkeeper/staff accountant · marketing ops · email/lifecycle · AEC | Top-15 is a statistical tie (§7.10). **Recruiter** has the unique academy flywheel; **bookkeeper/staff accountant** has the deepest volume and clearest buyer; **AEC** has the best worker economics and the worst buyer readiness |
 | **Geography** | India · South Africa · Philippines | India for async/technical; SA if client-facing |
 | **Fee** | 25% · 30% · 35% | 35%, matching Somewhere; discount via promo code rather than list price |
 | **Deposit** | $0 · $500 · $1,000 | $500 — enough to filter, small enough not to block |

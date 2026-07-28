@@ -28,7 +28,7 @@ one-time placement fee of ~35% of first-year salary.
 | **§4** | Market structure — size, salaries both sides, attrition by function and country, wage inflation |
 | **§5** | Competitor teardown — Somewhere, Oceans, TOA, Entigrity, Wing, MyOutDesk, ReSource Pro |
 | **§6** | Five business model variants compared; why recruit-and-handoff wins |
-| **§7** | **Role selection — ~130 roles enumerated, filtered, ranked** |
+| **§7** | **Role selection — 179 roles scored on a 14-dimension weighted model, with knockout gates.** Methodology, results, what it overturned, and the model's own limits |
 | **§8** | Geography selection |
 | **§9** | The recommended model spec — offer, deposit, protection layer, retention architecture |
 | **§10** | Unit economics — per-placement P&L, CAC scenarios, 30-day and lifetime LTGP:CAC |
@@ -66,6 +66,25 @@ nothing downstream is modellable until they're done.
    Measures cost per lead against the $100 assumption.
 2. **Supply** — post one role to Indian candidate channels. ~$300. Counts qualified applicants
    in 72 hours.
+
+---
+
+## Scoring model
+
+| File | What it is |
+|---|---|
+| [`scoring/model.py`](scoring/model.py) | 179 roles × 14 weighted dimensions + knockout gates. Editable weights; re-run to regenerate |
+| [`scoring/RANKING.md`](scoring/RANKING.md) | Generated output — full ranking, top 25, all 49 knockouts, cluster averages |
+
+```
+python3 scoring/model.py > scoring/RANKING.md
+```
+
+**Top 5:** Recruiter (79.0) · Bookkeeper (77.8) · Marketing ops (76.8) · Staff accountant (76.4) ·
+Email/lifecycle (76.4)
+
+**Read §7.10 before trusting the order** — the top-25 spread is 8.4 points, so the model
+separates quartiles reliably and adjacent ranks unreliably.
 
 ---
 
