@@ -460,7 +460,9 @@ regulatory affairs · medical writing · AML/KYC analyst · compliance analyst �
 | **Cyclicality (you cannot retain what you cannot pay in a downturn)** | mortgage processor, escrow/post-closing, **title examiner** *(excellent on every other filter — 100% async, perfectly gradeable, severe US shortage — but rate-cycle exposed)*, solar PV design *(NEM 3.0 + ITC changes gutted residential volume)*, tax prep and audit *(seasonal)* |
 | **Local counter-bid (India/PH domestic market outbids you in year two)** | software engineering, data engineering, ML, DevOps, AML/KYC *(fintech shops poach relentlessly)*, Salesforce **developer** *(admin survives)* |
 | **Ungradeable (you cannot promise quality you cannot test)** | SDR, CSM, account manager, chief of staff, social media manager — anything whose deliverable is a relationship |
+| **Upward escape (retention risk is promotion, not quitting)** | video editor, graphic/brand designer, UI/UX, Webflow/WordPress dev, 3D render. The worker's best alternative is freelancing at 3–5x, and the risk *increases* as your training improves. You would be running a finishing school for freelancers |
 | **Wrong buyer (enterprise, not SMB)** | pharmacovigilance, clinical data management, fund administration, actuarial, equity research support |
+| **Bought as a service, not a seat** | agency-shaped work where SMBs retain a vendor rather than hire an FTE. Applies to *parts* of marketing and design — but not to the operational marketing roles in §7.3 |
 
 ### 7.3 What survives all seven filters
 
@@ -478,6 +480,10 @@ regulatory affairs · medical writing · AML/KYC analyst · compliance analyst �
 | **Fiber / OSP design** | Design package vs standards | ISPs, engineering firms | $70–95k [E] | $42.45B BEAD buildout [V]; genuinely underserved. Counter: lumpy, program-dependent |
 | **QA automation** | Take-home test suite | Software companies | $80–110k [E] | Engineering's 12% attrition without full engineering counter-bid |
 | **Property mgmt / HOA back office** | Reconciliation, work-order SLA | 300k+ PM firms [E] | $45–60k [E] | Deep volume. Counter: commoditizing fast |
+| **Marketing ops (HubSpot/Marketo)** | Platform certifications — objective, portable | Any company with a marketing stack | $70–90k [E] | Certification-gradeable like Salesforce admin. Async, sticky, and *unglamorous* — low escape risk is a feature |
+| **Email / lifecycle (Klaviyo)** | Flow performance is revenue-attributable | Ecom brands, agencies | $60–80k [E] | Quality is a number. Deep demand. Lower escape risk than portfolio-creative roles |
+| **Amazon PPC / marketplace ops** | ACoS / TACoS — an objective score | Brands, aggregators, agencies | $55–75k [E] | Highly gradeable, enormous volume, low glamour |
+| **Paid media analyst** | Ad account audit, graded by the founder | Ecom, agencies, SMBs with budget | $65–90k [E] | **The founder is the academy** — see §7.6. Counter: highest escape risk in the list, and Advantage+/PMax are automating the junior execution layer (partly fails filter 6) |
 
 ### 7.4 Ranking, on the stated criterion (over-deliver on quality *and* attrition, at volume)
 
@@ -504,6 +510,46 @@ great role for a business built on scarcity. It is a bad role for a business bui
 
 The AEC worker has no good local alternative. The bookkeeper does. That difference *is* the
 retention promise, and it is structural rather than cultural.
+
+### 7.6 The founder-as-academy exception (paid media)
+
+§3.4 established that trainability is the moat. But trainability has a cost that was never
+priced: for AEC you must **buy** the curriculum — hire a senior detailer, build QA from nothing.
+For paraplanning you license CFP material. For every role in §7.3 the academy is a year-two
+capital project.
+
+**For paid media it already exists, in the founder's head.** The operator can personally grade a
+candidate's ad-account audit and personally certify the output. No competitor in the category can
+do this — Somewhere can't train media buyers, TOA can't, Oceans can't.
+
+| | |
+|---|---|
+| **Gradeable** | Strongly — a real account audit, scored. More objective than bookkeeping |
+| **Trainable** | Uniquely so. Zero cost to stand up the academy |
+| **Supply** | Deep — every Indian performance agency is a talent pool |
+| **Demand** | Huge and cross-vertical |
+| **Escape risk** | **Highest in the entire taxonomy.** Direct-to-client at 3–5x |
+| **AI exposure** | Real. Advantage+/PMax automate the junior execution layer |
+| **Local counter-bid** | Moderate to high |
+
+**Verdict:** a strong **second role or wedge**, not obviously the base. The quality side is
+free; the retention side is the worst on the list. Any version of this must be paired with a
+retention structure stronger than §9.4 provides — e.g. placing into agencies rather than brands
+(where the ladder is visible), or a revenue-share that makes staying more lucrative than leaving.
+
+### 7.7 Omission audit — how marketing was missed
+
+Recorded because the failure mode will recur.
+
+| Cause | Detail |
+|---|---|
+| **Branch conflation** | "Don't sell marketing services" (a settled decision) leaked into "don't place marketing people" (a different question that was never asked). Primary cause |
+| **Inherited category boundaries** | The role map was derived from the competitor teardown (§5) rather than from the economy. Marketing is under-represented among the incumbents, so it was under-represented in the map |
+| **Unstated filter** | "Bought as a service, not a seat" was applied silently. It is legitimate but partial — it kills agency-shaped creative work and does **not** kill operational marketing roles |
+| **Enumerate-then-drop** | Marketing appeared in the §7.1 taxonomy, then vanished — present in neither the kill table nor the survivors table. This is worse than never enumerating, because the list looks complete |
+
+**Guard for future passes:** every branch in §7.1 must terminate in either §7.2 (killed, with a
+reason) or §7.3 (survives). Silent disappearance is a bug.
 
 ---
 
