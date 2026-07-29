@@ -45,11 +45,12 @@ if the bare word is worth it. It usually isn't.
 
 ---
 
-## 3. Finalist A
+## 3. The non-`Talent` option
 
-> **Two finalists.** This one and **Holdfast Talent** in [§6](#6-the-wordtalentcom-pattern-checked-properly),
-> which was found in a later pass over the `[word]talent.com` pattern. They encode the same
-> strategic idea; §6 has the head-to-head and my lean.
+> **Read [§7](#7-common-words-only--the-x-talent--x-hire-sweep) first.** Operator direction landed
+> after this section was written: everyday vocabulary only, and the name must carry the offer.
+> That killed Holdfast (§6) and produced the current lean, **Long Term Talent**. Steady Roster
+> survives as the strongest non-`Talent` option and the reasoning below still stands.
 
 # Steady Roster · `steadyroster.com`
 
@@ -163,7 +164,64 @@ strategic idea, which is that the seat staying filled is the asset.
 
 ---
 
-## 7. Entity ≠ brand
+## 7. Common words only — the `X Talent` / `X Hire` sweep
+
+**Operator direction: "holdfast" is not a common enough word.** Correct, and it invalidates
+filter 1 for the whole nautical family — Ballast, Keelson, Bulwark, Lodestone, Plumbline all fail
+the same way. A word you have to have *encountered* is not spellable from audio.
+
+Revised filter 1: **everyday vocabulary, and the name should carry the offer.** 428 more domains
+checked across `X talent`, `X hire`, `hire X`, plus `the-` and `get-` prefixes.
+
+### What the sweep proved
+
+**"Hire" almost never works as a suffix.** "Backbone Hire", "Bedrock Hire", "Steady Hire" are all
+ungrammatical — *hire* is a count noun, so it needs an article: **"The** Steady Hire". Every clean
+`[adjective]hire.com` is registered anyway (`steadyhire`, `righthire`, `fairhire`, `clearhire`,
+`vettedhire`, `readyhire`).
+
+**The best idea in the space is gone.** A *right hand* is exactly what an owner calls the person who
+takes work off their plate — dead common, instantly understood, carries the whole offer.
+`righthandtalent.com`, `righthandhire.com` and `yourrighthand.com` are **all registered**.
+
+**Also all taken:** `fulltimetalent`, `vettedtalent`, `readytalent`, `fairtalent`, `steadytalent`,
+`backbonetalent`, `keystonetalent`, `bedrocktalent`, `foundationtalent`, `tenuretalent`,
+`plaintalent`, `dailytalent`, `everydaytalent`.
+
+### The shortlist that survived — all `.com`, all verified free
+
+| | Name | Domain | What it says | The cost |
+|---|---|---|---|---|
+| **1** | **Long Term Talent** | `longtermtalent.com` | **Exactly the promise: they stay.** Not a VA, not a gig, not a contractor who vanishes. Three of the most common words in business English | Mild hyphen ambiguity — some will try `long-term-talent`. Slightly generic |
+| **2** | **All Hands Talent** | `allhandstalent.com` | *All hands on deck.* Warm, memorable, nautical so it sits beside Oceans, and boxes no role in | Says "we give you people", not "they stay". Faint temp-surge connotation. **All Hands AI** exists in dev tools — out of category, but the phrase is now half-claimed |
+| **3** | **Deep Bench Talent** | `deepbenchtalent.com` | *You need a deeper bench.* Common idiom — and it is the **guarantee** in the name: a deep bench is *why* we can replace someone in days | "Bench" is our side of the trade, not the client's. 18 characters |
+| **4** | **Back Office Talent** | `backofficetalent.com` | The most literally descriptive name available | **Fails filter 2** — kills the ads manager, role 5 of 5 |
+| **5** | **The Full-Time Hire** | `thefulltimehire.com` | The sharpest single differentiator against the whole VA / freelancer world | Article plus hyphen. Clunky to say, worse to type |
+
+Also free and worth knowing about: `matchedtalent.com`, `safehandstalent.com`,
+`goodhandstalent.com`, `extrahandstalent.com`, `nofusstalent.com`, `nohassletalent.com`,
+`openseattalent.com`, `fullbenchtalent.com`, `thesteadyhire.com`, `thevettedhire.com`,
+`talentthatstays.com`, `staffthatstays.com`, `hiredtostay.com`.
+
+### Lean
+
+**`longtermtalent.com` — Long Term Talent.**
+
+It is the only candidate that satisfies all three of the stated requirements at once: **common
+words** (all three are top-2000 English), **shows what we are about** (full-time people who stay,
+which is both the buyer's real objection and the largest lever in the model at $430/month per extra
+month of tenure), and **converts cold** because it needs zero interpretation — a D2C owner reads it
+once, at scroll speed, and knows what is being sold.
+
+It is not the most beautiful name in this document. **Ballast Talent was, and it is unusable; Right
+Hand Talent was, and it is taken.** Long Term Talent is the one that does the job.
+
+**If brand feel matters more than literalism, take `allhandstalent.com`** — better sounding, sits
+natively in the category next to Oceans, and never boxes a role in.
+
+---
+
+## 8. Entity ≠ brand
 
 Worth separating, because they have different requirements:
 
