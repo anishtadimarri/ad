@@ -416,6 +416,53 @@ The real division is grammatical, and it is clean:
 `steadyhandstalent.com` — where the modifier asserts *quality*, the idiom is about entrusting
 something that matters, and the professional register is intact. Both are free.
 
+### 9.3 Re-scoring the objections — how much does each one actually cost?
+
+Six objections is a list, not an analysis. Ranked by **what they cost given this specific plan**,
+they collapse to one:
+
+| Signal | Verdict | Why |
+|---|---|---|
+| **1. "Hand" = manual worker** | ⬇️ **I overweighted this.** Withdraw most of it | Etymologically true, psychologically weak. *Farm hand* and *deck hand* are archaic to a 2026 US founder. The compound **"all hands" has drifted entirely to the meeting sense** — the labourer register survives in *hired hands* and *extra hands*, not here. It transfers to `morehandstalent` far more than to `allhandstalent` |
+| **2. Means a meeting** | ⚠️ **Real but cheap** | Unfixable, and permanent in search — "all hands talent" competes with a vast corpus plus All Hands AI. **But the channel is paid Meta, not SEO** ([`MASTER.md`](MASTER.md) §11). We buy the impression; we don't earn it. And the mis-parse lands in the right universe — *whole-company people stuff* — which "Talent" resolves in the same breath |
+| **3. Crisis / surge** | ✅ **Fixable by copy** | One line asserting permanence closes it |
+| **4. Quantity over quality** | ✅ **Fixable by the offer** | The graded work sample and "three candidates, not thirty" do this work already |
+| **5. Pooled / fractional resource** | 🔴 **The only one that touches money** | A buyer who reads "shared back-office team" balks at a $6,000 placement fee. This is a friction tax on every ad — you spend part of three seconds correcting an impression the name created |
+| **6. Generalists** | ✅ **Fixable instantly** | The ad says "bookkeeper" |
+
+### The ad line already neutralises the expensive one
+
+[`MAP.md`](MAP.md)'s creative is: ***"Your bookkeeper costs $75k. Ours is $20k and already knows
+Shopify + A2X."***
+
+**A salary figure is unmistakably one full-time person.** Nobody quotes $20k as the price of a
+pooled service. So signal 5 — the only objection with money attached — is largely paid off by copy
+that was written before the name existed. What remains is a soft, recoverable cost.
+
+**Conclusion: All Hands Talent is a defensible choice.** Not the one I'd pick, and my reason is
+unchanged — Open Book names the positioning where All Hands names a feeling — but the gap is much
+smaller than a six-item list made it look, and **operator conviction in a name you will say ten
+thousand times is a real input, not a tiebreaker.**
+
+### 9.4 Don't decide this by argument — the first campaign can settle it
+
+Test 1 ([`README.md`](README.md)) is already budgeted at ~$1,500. **Running it under two brand names
+costs one extra ad set and one extra landing-page header — effectively nothing.** Same creative,
+same audience, same offer; only the logo and the domain change.
+
+| What it reads | How |
+|---|---|
+| Mis-parse rate | Split CTR and CPL between the two brands |
+| **The qualitative signal that actually matters** | On the calls: *does anyone say "I thought you were software"* or ask whether it's a shared team? Ten calls answers this better than any amount of reasoning |
+
+**Honest limit:** ~38 leads cannot resolve a small CTR difference. It can resolve a large one, and
+the call transcripts resolve the mis-parse question outright — which is the thing in dispute.
+
+**Buy all three now — `allhandstalent.com`, `openbooktalent.com`, `steadyhandstalent.com`, ~$36
+total** (all three verified free on the check date). Then let the first campaign decide. That
+converts a taste argument into the same kind of evidence as everything else in this repo, and it
+costs less than one lead.
+
 ### Pick
 
 **`openbooktalent.com`.** It is the only name found across ~1,550 candidates that carries the
