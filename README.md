@@ -96,6 +96,8 @@ nothing downstream is modellable until they're done.
 | [`scoring/OFFER-MODEL.md`](scoring/OFFER-MODEL.md) | Generated output — market pricing, 13 configurations, funnel optimisation, sensitivities |
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
+| [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/FIRST-PRINCIPLES.md`](scoring/FIRST-PRINCIPLES.md) | Generated output — vertical criteria, skill criteria, interaction criteria, the map, the answer |
 
 ```
 python3 scoring/model.py > scoring/RANKING.md
