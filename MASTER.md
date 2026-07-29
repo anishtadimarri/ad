@@ -741,6 +741,11 @@ in §9.4 rather than ignored.
 
 ## 9. The recommended model specification
 
+> **A fully specified, buildable version of this — one skill, both ICPs, priced and stress-tested
+> against 6-month attrition — is in [`OFFER.md`](OFFER.md).** It selects e-commerce bookkeeping
+> rather than the top-scored Recruiter, on the grounds that **client satisfiability is not in the
+> scoring model and should outrank score for a first business.** See OFFER §1.
+
 ### 9.1 Offer
 
 > **Hire a full-time remote [role]. $20,000/year instead of $95,000.

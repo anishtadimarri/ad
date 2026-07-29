@@ -1,8 +1,11 @@
 # Business Repository
 
-## → [`MASTER.md`](MASTER.md)
+## Two documents
 
-Everything lives in one document. Start there.
+| | |
+|---|---|
+| **[`OFFER.md`](OFFER.md)** | **The buildable thing.** One skill, both ICPs, priced, with the retention architecture and the economics stress-tested against 6-month attrition |
+| **[`MASTER.md`](MASTER.md)** | The analysis behind it — market data, 179-role screen, competitor teardown, decision history, what's unvalidated |
 
 ---
 
