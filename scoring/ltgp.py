@@ -38,9 +38,19 @@ FEE_PCT = 0.30
 # ---------------------------------------------------------------- the offer
 # H5 (EOR made the default, not the upsell — SCALE.md §7) repriced for a $20k
 # job, with the EOR line at the global-platform comparison rather than below it.
+#
+# EOR_MONTHS was 30 in the first pass — the CLIENT SEAT life, on the logic that
+# replacements keep the seat filled and therefore keep the EOR fee running even
+# though the average worker only stays 9 months. Operator direction: assume 9.
+# That is a much harsher assumption than "the worker leaves at 9 months" — it
+# assumes the SEAT dies with the worker and is never refilled. Kept because it
+# is the floor, and a floor that still clears is worth more than a base case
+# that needs an argument. §3 prices the difference.
+EOR_MONTHS = 9.0
+
 BASE = next(c for c in om.CONFIGS if c.name.startswith("H5"))
 OFFER = replace(BASE, name="$20k job, EOR default", salary=SALARY, fee_pct=FEE_PCT,
-                eor_price=499.0, eor_attach=0.75, monthly_tenure=30.0)
+                eor_price=499.0, eor_attach=0.75, monthly_tenure=EOR_MONTHS)
 
 # ---------------------------------------------------------------- the funnel
 FLOW = "B. Calendar booking on the LP"
@@ -81,9 +91,36 @@ def report():
           "[`funnel.py`](funnel.py) — **not** from the offer model, whose internal CAC uses a flat")
     print("$75 CPL and an assumed funnel. Where the two disagree, the funnel one is built from "
           "benchmarked steps and wins.\n")
-    print(f"**Placed salary ${SALARY:,.0f} · fee {FEE_PCT:.0%} = "
-          f"${SALARY*FEE_PCT:,.0f} · EOR ${OFFER.eor_price:.0f}/mo at "
-          f"{OFFER.eor_attach:.0%} attach · {OFFER.monthly_tenure:.0f}-month client seat.**\n")
+    print(f"Placed salary **${SALARY:,.0f}** · fee **{FEE_PCT:.0%}** = "
+          f"**${SALARY*FEE_PCT:,.0f}** · EOR **${OFFER.eor_price:.0f}/mo** at "
+          f"**{OFFER.eor_attach:.0%} attach** · **{EOR_MONTHS:.0f} months of EOR per employee**.\n")
+
+    # ------------------------------------------------------- the EOR line itself
+    fee_gp = OFFER.eor_price - om.EOR_COST
+    fx = om.FX_SPREAD * SALARY / 12
+    per_emp = fee_gp + fx
+    per_client = per_emp * OFFER.eor_attach * e["seats"]
+    print("---\n\n## 0. The EOR line, per month\n")
+    print("| | Per employee / month |\n|---|---|")
+    for a, b in [("EOR price charged to the client", f"${OFFER.eor_price:,.0f}"),
+                 ("Marginal cost — payroll, filings, HR support, insurance admin",
+                  f"(${om.EOR_COST:,.0f})"),
+                 ("**Fee gross profit**", f"**${fee_gp:,.0f}**"),
+                 (f"FX spread at {om.FX_SPREAD:.0%} on ${SALARY/12:,.0f}/mo of salary moved",
+                  f"${fx:,.0f}"),
+                 ("**Total gross profit per employee per month**", f"**${per_emp:,.0f}**"),
+                 (f"× {OFFER.eor_attach:.0%} attach × {e['seats']:.1f} seats",
+                  f"**${per_client:,.0f}/mo per acquired client**")]:
+        print(f"| {a} | {b} |")
+    print(f"\n**${per_emp:,.0f}/month per employee, {fee_gp/OFFER.eor_price:.0%} margin on the fee "
+          f"line.** Over {EOR_MONTHS:.0f} months that is")
+    print(f"**${per_emp*EOR_MONTHS:,.0f} per employee**, or **${per_client*EOR_MONTHS:,.0f} per "
+          f"acquired client** once attach and second seats are counted.")
+    print(f"\nThe cost side is the reason the margin holds: an India-domiciled operator's marginal "
+          f"cost of employing one more person is ~${om.EOR_COST:.0f}/mo, against the "
+          f"${OFFER.eor_price:.0f} the client would pay Deel or Remote for the *same* India "
+          f"employment. **You are not discounting; you are pricing at the global comparison with a "
+          f"local cost base.**\n")
 
     # ---------------------------------------------------------------- GP side
     print("---\n\n## 1. The gross profit per acquired client\n")
@@ -103,13 +140,12 @@ def report():
     ]
     for a, b, c in rows:
         print(f"| {a} | {b} | {c} |")
-    print(f"\n**The placement fee is no longer the business.** ${rec:,.0f} of the "
-          f"${e['gplife']:,.0f} lifetime gross")
-    print(f"profit is the recurring EOR layer — ${OFFER.eor_price:.0f}/mo at "
-          f"{(OFFER.eor_price-om.EOR_COST)/OFFER.eor_price:.0%} margin, plus the "
-          f"{om.FX_SPREAD:.0%} FX spread and")
-    print("equipment margin, running for as long as the client keeps the seat filled. The fee is "
-          "the entry price; the seat is the asset.\n")
+    print(f"\n**At {EOR_MONTHS:.0f} months the placement fee is back to being the business.** "
+          f"${rec:,.0f} of the ${e['gplife']:,.0f}")
+    print(f"lifetime gross profit is recurring — {rec/e['gplife']:.0%}, down from 65% when the EOR "
+          f"line was assumed to run for a 30-month client seat. **The fee is {1-rec/e['gplife']:.0%} "
+          f"of the value again**, which changes what the company is: a placement business with a "
+          f"useful attachment, not an EOR business with a placement front end.\n")
 
     # ---------------------------------------------------------------- CAC side
     print("---\n\n## 2. The CAC, by audience layer\n")
@@ -150,7 +186,6 @@ def report():
     fn.DEPOSIT_COLD = o
     row("Deposit rate 8% not 18%", cac_dep, OFFER)
     row("EOR attach 40% not 75%", cac_b, replace(OFFER, eor_attach=0.40))
-    row("Client seat 12 months not 30", cac_b, replace(OFFER, monthly_tenure=12.0))
     row("Both bad — 8% deposit, 40% attach", cac_dep, replace(OFFER, eor_attach=0.40))
 
     fn.DEPOSIT_COLD = 0.30
@@ -158,13 +193,71 @@ def report():
     fn.DEPOSIT_COLD = o
     row("Deposit 30%, EOR attach 90%", cac_up, replace(OFFER, eor_attach=0.90))
 
-    print("\n**The deposit rate is the one fragile input.** It is the step with no data behind it —")
-    print("18% of held calls paying a $500 refundable deposit on cold traffic is an assumption, not")
-    print("a benchmark. Halve it and the 30-day ratio halves with it. Everything else — EOR attach,")
-    print("seat length, fill rate — moves the lifetime number a lot and the 30-day number barely,")
-    print("because the 30-day number is almost entirely the placement fee.\n")
-    print("Both of the two things that could go wrong at once still clears the 1.5:1 constraint, "
-          "which is the actual test.\n")
+    print("\n**The deposit rate is the one input that can break it.** It is the step with no data")
+    print("behind it — 18% of held calls paying a $500 refundable deposit on cold traffic is an")
+    print("assumption, not a benchmark. Halve it and the 30-day ratio halves with it. EOR attach and")
+    print("EOR months move the lifetime number a lot and the 30-day number **not at all**, because")
+    print("the 30-day number is the placement fee and nothing else.\n")
+    print("Both of the things that could go wrong at once still clears the 1.5:1 constraint, which "
+          "is the actual test.\n")
+
+    # ------------------------------------------------------ the months question
+    print("---\n\n## 4. How many months of EOR — and why this is the biggest lever left\n")
+    print(f"The base case above assumes **{EOR_MONTHS:.0f} months**, which is the average *worker* "
+          f"tenure. That is the")
+    print("**floor**, not the expected value, because it assumes the seat dies with the worker.")
+    print("It should not: a replacement under the 12-month guarantee refills the same seat, and the")
+    print("EOR fee keeps billing across the handover. **Placement is a flow; the EOR book is a "
+          "stock** ([`SCALE.md`](SCALE.md) §2).\n")
+    print("| EOR months | Lifetime GP | Recurring share | **30-day** | **Lifetime** |")
+    print("|---|---|---|---|---|")
+    for t in (6, 9, 12, 18, 24, 30):
+        ee, rr = parts(replace(OFFER, monthly_tenure=float(t)))
+        a, b = ratios(ee["gp30"], ee["gplife"], cac_b)
+        mark = " ← **base**" if t == EOR_MONTHS else ""
+        print(f"| **{t}**{mark} | ${ee['gplife']:,.0f} | {rr/ee['gplife']:.0%} | **{a:.2f}:1** "
+              f"| **{b:.2f}:1** |")
+    e9, r9 = parts(replace(OFFER, monthly_tenure=9.0))
+    e30, r30x = parts(replace(OFFER, monthly_tenure=30.0))
+    print(f"\n**Each extra month of EOR is worth ${per_client:,.0f} of gross profit per acquired "
+          f"client** — about")
+    print(f"{per_client/cac_b:.0%} of a whole CAC, every month, at zero incremental acquisition "
+          f"cost. Going from {EOR_MONTHS:.0f} months")
+    print(f"to 30 adds **${e30['gplife']-e9['gplife']:,.0f}** and takes lifetime from "
+          f"{e9['gplife']/cac_b:.2f}:1 to {e30['gplife']/cac_b:.2f}:1.\n")
+    print("### Seat continuity vs halving CAC\n")
+    print("These are the two big levers left, and on the *ratio* they look about the same size:\n")
+    print("| Lever | Lifetime ratio | Absolute GP per client | What it costs |")
+    print("|---|---|---|---|")
+    print(f"| Base — {EOR_MONTHS:.0f} months, ${cac_b:,.0f} CAC | {e9['gplife']/cac_b:.2f}:1 "
+          f"| ${e9['gplife']:,.0f} | — |")
+    print(f"| **Halve CAC** to ${cac_b/2:,.0f} | **{2*e9['gplife']/cac_b:.2f}:1** "
+          f"| ${e9['gplife']:,.0f} — *unchanged* | A channel breakthrough. Not available on demand |")
+    print(f"| **Seat to 30 months** | {e30['gplife']/cac_b:.2f}:1 "
+          f"| **${e30['gplife']:,.0f}** — **+${e30['gplife']-e9['gplife']:,.0f}** "
+          f"| A contract clause and bench discipline |")
+    print(f"\n**The ratio is the wrong scoreboard for this comparison.** Halving CAC wins on the "
+          f"ratio and adds")
+    print(f"**${cac_b/2:,.0f}** of profit per client. Extending the seat loses on the ratio and adds "
+          f"**${e30['gplife']-e9['gplife']:,.0f}** — about")
+    print(f"{(e30['gplife']-e9['gplife'])/(cac_b/2):.0f}x more actual money. A ratio can be improved "
+          f"by shrinking the denominator, which is why it should")
+    print("never be optimised alone.\n")
+    print("**So build seat continuity, and it is the same mechanism as the guarantee** — the thing")
+    print("that makes a replacement painless is the thing that keeps the EOR fee billing.\n")
+    print("The three things that keep a seat alive across a worker exit, in order of cost:\n")
+    print("| Mechanism | Cost |\n|---|---|")
+    for a, b in [("EOR contract is with the **seat**, not the person — replacement is a novation, "
+                  "not a new contract", "Free. A drafting decision, made once"),
+                 ("A bench candidate already graded for that client's stack, so the gap is days "
+                  "not weeks", "Standing capital in the bench"),
+                 ("Provident fund and gratuity, which the state enforces — gratuity vests at 5 "
+                  "years, so the worker's own incentive lengthens tenure",
+                  "Already inside the ${:.0f} cost".format(om.EOR_COST))]:
+        print(f"| {a} | {b} |")
+    print("\nThe first one is free and is the one that matters. **If the EOR contract names the "
+          "person, every worker exit is a resale. If it names the seat, it is an operational "
+          "event.**\n")
 
 
 if __name__ == "__main__":

@@ -71,11 +71,13 @@ At $20,000 placed salary, 30% fee, 9-month worker stay, recruitment costed at on
 | | |
 |---|---|
 | 30-day gross profit per acquired client | **$4,148** (55% margin) |
-| Lifetime gross profit | **$20,095** — of which **65% is the recurring EOR layer, not the fee** |
+| EOR gross profit | **$477 per employee per month**, assumed over **9 months** |
+| Lifetime gross profit | **$11,074** — of which **37% is the recurring EOR layer** |
 | **Blended CAC** — funnel-derived, spend-weighted | **$976** |
 | **30-day LTGP:CAC** | **4.25:1** |
-| **Lifetime LTGP:CAC** | **20.60:1** |
+| **Lifetime LTGP:CAC** | **11.35:1** |
 | The one fragile input | **Deposit rate.** 18% → 8% takes 30-day to **1.89:1** |
+| The biggest lever left | **EOR months.** 9 → 30 adds **$9,022** per client — 18x what halving CAC adds |
 | The number that decides the launch | **Fill rate** — below 40% it stops working |
 | The number that decides the ceiling | **EOR attach** — it is 56% of revenue at \$20M, so make it the default, not the upsell |
 
@@ -115,7 +117,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/funnel.py`](scoring/funnel.py) | **Step-by-step Meta funnel** — impression → CAC, by audience layer and lead-capture flow, with the break-points |
 | [`scoring/FUNNEL.md`](scoring/FUNNEL.md) | Generated output — the nine steps, form-fill vs calendar booking, what \$5,000 can and cannot measure |
 | [`scoring/ltgp.py`](scoring/ltgp.py) | **Joins the two models** — gross profit from the offer model, CAC from the funnel model, on a \$20k job. Discards the offer model's internal CAC |
-| [`scoring/LTGP.md`](scoring/LTGP.md) | Generated output — **4.25:1 on 30 days, 20.60:1 lifetime** at a \$976 blended CAC, and what moves it |
+| [`scoring/LTGP.md`](scoring/LTGP.md) | Generated output — **4.25:1 on 30 days, 11.35:1 lifetime** at a \$976 blended CAC, the EOR line per month, and the 6–30 month EOR sensitivity |
 | [`scoring/FIRST-PRINCIPLES.md`](scoring/FIRST-PRINCIPLES.md) | Generated output — vertical criteria, skill criteria, interaction criteria, the map, the answer |
 
 ```
