@@ -351,9 +351,9 @@ It is a subtle cost, not a fatal one. But there is a sister idiom without it.
 | | Name | Domain | The idiom | What it says |
 |---|---|---|---|---|
 | **1** | **Open Book Talent** | `openbooktalent.com` | *"We're an open book"* | **Two things at once.** It names the positioning — **salary transparency**, the reason EOR beat a salary markup ([`MASTER.md`](MASTER.md) §9) and the one thing no competitor can copy without dismantling their own spread — and it nods at the beachhead role. In a category where **everyone hides a markup, naming yourself after transparency is the sharpest available claim** |
-| **2** | **Many Hands Talent** | `manyhandstalent.com` | *"Many hands make light work"* | **The direct upgrade on All Hands.** Same warmth, same family, same instant recognition — but it connotes **ongoing capacity** rather than emergency surge. Strictly better on message, at the same price |
-| **3** | **Steady Hands Talent** | `steadyhandstalent.com` | *"A steady hand"* | Says the most of any candidate: the warmth of *hands* plus **continuity**, which is the largest lever in the model. Calm competence, which is what a back office is bought for |
-| **4** | **Safe Hands Talent** | `safehandstalent.com` | *"In safe hands"* | Answers the trust objection head-on, which for an unknown Indian company selling to US owners is *the* objection. Slightly British-leaning |
+| **2** | **Steady Hands Talent** | `steadyhandstalent.com` | *"A steady hand"* | The best of the hands family. The modifier asserts **quality**, the idiom is used of professionals, and it carries **continuity** — the largest lever in the model. See §9.2 for why this beats All Hands and Many Hands, both of which sit in the wrong grammatical family |
+| **3** | **Safe Hands Talent** | `safehandstalent.com` | *"In safe hands"* | Answers the trust objection head-on, which for an unknown Indian company selling to US owners is *the* objection. Slightly British-leaning |
+| **4** | **Many Hands Talent** | `manyhandstalent.com` | *"Many hands make light work"* | Warm and instantly recognised — but **§9.2 downgrades it.** It fixes All Hands' meeting and crisis readings and makes the *quantity* problem worse |
 | **5** | **Above Board Talent** | `aboveboardtalent.com` | *"Above board"* | Same transparency claim as Open Book, in a phrase that is unambiguously about honesty. Less distinctive, no double meaning |
 
 **Collision check:** no company found operating at Many Hands Talent, Open Book Talent, Steady Hands
@@ -383,6 +383,39 @@ Talent or Above Board Talent. Run a USPTO search before purchase regardless.
 | `headstarttalent.com` | **Head Start** is a US federal early-childhood programme. Every US buyer knows it as government, not staffing |
 | `understudytalent.com` · `backstoptalent.com` | Both mean **substitute**. An understudy is who you get when the real one is unavailable — the wrong thing to call the person you are placing |
 
+### 9.1 What "All Hands" wrongly signifies — six things, ranked
+
+I flagged the crisis reading. It is not the worst one.
+
+| # | Wrong signal | Cost |
+|---|---|---|
+| **1** | **"Hand" means *manual worker*.** The word entered English in that sense **in the 1580s** and travelled into sailing from there — *farm hand, ranch hand, deck hand, hired hand*. It is a **blue-collar, interchangeable-bodies register** | **The most expensive one.** We place chartered accountants and paid-media operators — credentialed knowledge workers whose proof is a graded work sample. "Hands" quietly recategorises them as bodies, which **invites the price conversation instead of the quality one** and undercuts the entire wedge |
+| **2** | **To our exact buyer, "all hands" means a *meeting*.** Every result on page one of a plain search is the all-hands meeting. Our ICP is 25–45 D2C founders and agency owners — the demographic for whom "all hands" is the Monday Zoom | **Category confusion at the worst moment.** In a 3-second Reel the name reads as internal-comms or employee-engagement **software**. Reinforced by **All Hands AI**, a funded dev-tools company already holding the phrase in search |
+| **3** | **"All hands on deck" is a crisis order.** Naval: everyone up now, storm or battle. Sources describe it as called "to address a serious problem" | Signals **surge and temporary** to a buyer already suspicious that this category sells temps and VAs. We sell a permanent full-time seat |
+| **4** | **It signals *quantity*, not quality** | The offer is **one right person, graded, who stays.** A volume frame drops us into the fight with the VA farms — Wing, MyOutDesk — which [`MAP.md`](MAP.md) explicitly declined: *"volume business, wrong for a new entrant"* |
+| **5** | **It signals a *pooled* resource** | "All hands" implies you get the whole crew — a shared back-office team. **The opposite of the offer**, which is one dedicated full-time employee on your payroll. This is the single most damaging misread commercially, because a buyer expecting fractional support will balk at a $6,000 placement fee |
+| **6** | **It signals *generalists*** | The wedge is specificity — a bookkeeper who already knows Shopify and A2X. "All hands" says jack-of-all-trades |
+
+### 9.2 Correction: Many Hands does not fix this
+
+**Last answer I recommended `manyhandstalent.com` over `allhandstalent.com`. That was half right.**
+Many Hands fixes signals 2 and 3 — no meeting association, no emergency. It does **not** fix signal
+1, and it makes signals **4 and 5 worse**, because *"many"* states the quantity frame explicitly and
+"many hands" is even more clearly several people rather than one.
+
+The real division is grammatical, and it is clean:
+
+| "Hands" as a **countable noun** | "Hands" as a **metaphor for care** |
+|---|---|
+| all hands · many hands · extra hands · more hands · spare hands · hired hands · deck hands | in **safe** hands · in **capable** hands · in **good** hands · a **steady** hand |
+| **Bodies. Quantity. Manual. Temporary.** | **Expertise. Trust. Judgement.** |
+| Used of labourers | Used of **surgeons, pilots, lawyers** — the register we want |
+| ❌ `allhandstalent` · `manyhandstalent` · `extrahandstalent` · `morehandstalent` · `sparehandstalent` | ✅ `safehandstalent` · `steadyhandstalent` · `capablehandstalent` |
+
+**If you want a hands name, it has to be the second family.** `safehandstalent.com` or
+`steadyhandstalent.com` — where the modifier asserts *quality*, the idiom is about entrusting
+something that matters, and the professional register is intact. Both are free.
+
 ### Pick
 
 **`openbooktalent.com`.** It is the only name found across ~1,550 candidates that carries the
@@ -391,10 +424,10 @@ spread the client cannot see; ours is a transparent fee for a distinct service, 
 structural reason the EOR line works at all. **A name that says "open book" is a claim the
 incumbents cannot make without giving up their margin model.**
 
-**If you want to stay in the hands family — and it is warmer, which matters in a Reel —
-`manyhandstalent.com` over `allhandstalent.com`.** Same idiom family, none of the emergency
-connotation. Buy both plus the `.co`s; they are $12 each and the decision does not have to be
-final today.
+**If you want a hands name, take `safehandstalent.com` or `steadyhandstalent.com`** — the only
+two in the family whose register is professional rather than manual (§9.2). Not All Hands, and not
+Many Hands either. Buy the finalists plus their `.co`s; they are ~$12 each and the decision does
+not have to be final today.
 
 ---
 
