@@ -1,6 +1,7 @@
 # BEACHHEAD — Three Verticals, One Bench
 
-How to multiply the addressable market without multiplying the operation.
+How to multiply the addressable market without multiplying the operation, and **without ever
+having to talk a buyer into remote hiring.**
 Companion to [`OFFER.md`](OFFER.md), [`SCALE.md`](SCALE.md), [`MASTER.md`](MASTER.md).
 Evidence tags per MASTER §0.
 
@@ -10,89 +11,147 @@ Evidence tags per MASTER §0.
 
 | | |
 |---|---|
-| **Verticals** | **E-commerce/DTC · Home services · Marketing agencies** |
+| **Verticals** | **E-commerce/DTC · Marketing agencies · Staffing agencies** |
 | **Shared spine** | **QuickBooks Online / Xero** — close, reconciliation, AR, AP |
 | **Roles** | Ledger & Close · AR & Collections · AP & Invoice Processing · Compliance & Document Ops |
-| **Combined ICP** | **~121,000 US businesses** vs ~21,000 for e-comm alone = **5.8x** |
-| **Extra operational cost** | One extra week of conversion training per vertical. Nothing else |
+| **Combined ICP** | **~61,000 US businesses** vs ~21,000 for e-comm alone = **2.9x** |
+| **Every buyer already employs remote staff** | Non-negotiable. See §1 |
+| **Extra operational cost** | One extra week of conversion training per vertical |
 
 ---
 
-## 1. Why these three and not the higher-scoring trios
+## 1. Two hard gates, not scored dimensions
 
-The composite that ranks purely on quality × market size puts **medical practices** in every top
-trio — 90,000 businesses, strong scores. It is a trap.
+Two things were being scored when they should have been filters. Both cost the analysis a wrong
+answer before this correction.
 
-> **Medical practices run on an EHR plus a clearinghouse, with their own AR ledger. Dental runs
-> on Dentrix. Property management runs on AppFolio/Yardi with trust-accounting rules. Insurance
-> runs on Applied Epic. RIAs run on Orion.**
->
-> Each of those is a *different ledger*, which means a different test, a different bench and a
-> different training track. Adding one is starting a second business, not extending the first.
+### Gate 1 — the buyer must ALREADY be hiring remote
 
-So **shared spine is a hard filter, not a scored dimension.** Filtering to verticals that keep
-their books in QuickBooks or Xero:
+An earlier version of this document recommended **home services** (~70,000 businesses, the biggest
+vertical available) on the strength of its size and an un-offshorable technician shortage to sell
+against. It scored **`RR` = 3.**
 
-| # | Trio | Mean score | Combined ICP | RR | REACH |
-|---|---|---|---|---|---|
-| **1** | **E-comm + Home services + Marketing agency** | 76.5 | **121,000** | 4.3 | **4.3** |
-| 2 | Home services + Marketing agency + Freight | 76.3 | 125,000 | 4.3 | 4.0 |
-| 3 | E-comm + Home services + Freight | **77.1** | 116,000 | 4.3 | 4.3 |
-| 4 | Home services + Marketing agency + Restaurants | 74.9 | 130,000 | 3.7 | 4.0 |
-| 5 | Home services + Marketing agency + SaaS | 76.4 | 115,000 | 4.3 | 4.0 |
+> **`RR` = 3 means the buyer is not yet doing this.** The sale then contains a second, harder sale
+> underneath it: convincing a tradesperson owner that remote hiring works at all. That is
+> missionary selling — long cycles, high scepticism, and a first cohort of clients who need
+> hand-holding you cannot afford to give at launch.
 
-Trios 1 and 3 are effectively tied. **Marketing agencies win the third slot over freight** on
-buyer remote-readiness and whitespace — agencies already hire offshore by default and nobody
-serves them vertically, whereas freight is already heavily served by India/Pakistan dispatch shops.
+**`RR` must be 5: the buyer already employs offshore staff and needs no education.** Home services
+is out, and so is dental, property management, veterinary, restaurants and auto — every vertical
+whose owner would have to be converted first.
+
+### Gate 2 — the vertical must keep its books on the same ledger
+
+Ranking on quality × market size puts **medical practices** in every top trio — 90,000 businesses,
+strong scores. Also a trap.
+
+> Medical runs on an EHR plus a clearinghouse with its own AR. Dental runs on Dentrix. Property
+> management runs on AppFolio/Yardi with trust-accounting rules. Insurance runs on Applied Epic.
+> RIAs run on Orion. **Each is a different ledger — a different test, a different bench, a
+> different training track. Adding one is starting a second business wearing the same job title.**
+
+**The rule: add verticals that share the ledger, never verticals that share only the role.**
+
+### What survives both gates
+
+Six verticals: e-comm/DTC · marketing agencies · staffing agencies · MSP/IT services · SaaS ·
+freight/trucking. All `RR` = 5, all on a QuickBooks/Xero spine.
 
 ---
 
-## 2. The three verticals
+## 2. Friction across all three parties
 
-| | E-commerce / DTC | Home services | Marketing agencies |
+With size deliberately demoted, the remaining question is friction. Scored 1–5 where **5 = lowest
+friction**, across fifteen dimensions in three blocks.
+
+| Vertical | Client | Us | Worker | **Weakest** | Mean | ICP |
+|---|---|---|---|---|---|---|
+| **E-comm/DTC** | 4.83 | 4.60 | 4.60 | **4.60** | **4.68** | 21,000 |
+| **Staffing agency** | 4.83 | 4.60 | 4.60 | **4.60** | **4.68** | 10,000 |
+| **Marketing agency** | 4.67 | 4.40 | 4.60 | **4.40** | 4.56 | 30,000 |
+| MSP / IT services | 4.67 | 4.20 | 4.40 | 4.20 | 4.42 | 15,000 |
+| Freight / trucking | 4.17 | 4.60 | 4.20 | 4.17 | 4.32 | 25,000 |
+| SaaS | 4.33 | 3.60 | 4.60 | 3.60 | 4.18 | 15,000 |
+
+**Client friction:** already remote · owner decides (no committee) · needs no education · easy
+onboarding · no regulatory blocker · **can afford the fee**
+**Our friction:** reachable · supply exists · gradeable · short cycle · simple delivery
+**Worker friction:** supply already doing this work · no night shift · no licence needed · large
+pay uplift · clear career path
+
+**Trios ranked on the weakest party** — a trio is only as good as its worst friction:
+
+| # | Trio | Weakest | Mean | ICP |
+|---|---|---|---|---|
+| **1** | **E-comm + Marketing agency + Staffing agency** | **4.53** | **4.64** | 61,000 |
+| 2 | E-comm + Staffing agency + MSP | 4.47 | 4.59 | 46,000 |
+| 3 | E-comm + Staffing agency + Freight | 4.47 | 4.56 | 56,000 |
+| 4 | E-comm + Marketing agency + Freight | 4.47 | 4.52 | 76,000 |
+
+### Why the two obvious candidates lost
+
+**Freight/trucking — dropped on affordability.** It has the deepest existing offshore supply of
+any vertical (`SUP` = 5; India and Pakistan already run US dispatch at scale) and 25,000 buyers.
+But **92% of carriers run ten trucks or fewer** [V], so a $6,000 placement fee is a hard sell to a
+business that size. Affordability is friction, and freight has the worst of any candidate.
+
+**SaaS — dropped on decision speed and supply.** A SaaS company usually has a controller or CFO,
+so the decision is a committee rather than an owner. Rev-rec and ASC 606 also raise the skill bar,
+thinning supply. Our-side friction of 3.60 is the lowest score in the table.
+
+---
+
+## 3. The three verticals
+
+| | E-commerce / DTC | Marketing agencies | Staffing agencies |
 |---|---|---|---|
-| **ICP in band** | ~21,000 | **~70,000** | ~30,000 |
-| **Who** | $3–30M Shopify/Amazon brands | $1M+ HVAC, plumbing, electrical, roofing | $1M+ agencies, 10–80 staff |
-| **Books** | QBO/Xero | QBO | QBO/Xero |
-| **Connector** | **A2X** — Shopify/Amazon settlements | **ServiceTitan / Jobber** — job costing | **Harvest / Productive** — WIP, retainers |
-| **The pain** | 3-week close, inventory and COGS wrong, per-SKU margin invisible | job-level profitability unknown, AR aging, permit paperwork | project profitability unknown, retainer over-servicing, WIP |
-| **Remote-ready** | ✅ 5 — already has offshore designers | ⚠️ 3 — the least remote-native of the three | ✅ 5 — offshore is the norm |
-| **Reachable** | Storeleads / BuiltWith | licence registries, ad-visible, ServiceTitan ecosystem | Clutch, agency directories, tool footprints |
-| **Un-offshorable shortage to lean on** | — | **~110,000 HVAC techs short, 550,000 plumber shortfall** [V] | — |
+| **ICP in band** | ~21,000 | **~30,000** | ~10,000 |
+| **Who** | $3–30M Shopify/Amazon brands | $1M+ agencies, 10–80 staff | $1M+ staffing and recruiting firms |
+| **Books** | QBO/Xero | QBO/Xero | QBO |
+| **Connector** | **A2X** — settlements | **Harvest / Productive** — WIP, retainers | **Bullhorn** — timesheet → invoice |
+| **The pain** | 3-week close, inventory and COGS wrong, per-SKU margin invisible | project profitability unknown, retainer over-servicing, WIP | timesheet-to-invoice leakage, contractor compliance docs, slow billing |
+| **Already remote?** | ✅ Has offshore designers and VAs | ✅ Often fully distributed | ✅ **Offshore hiring is literally their business** |
+| **Decision** | Owner | Owner | Owner |
+| **Reachable via** | Storeleads, BuiltWith | Clutch, agency directories, tool footprints | ASA membership, Bullhorn ecosystem, LinkedIn |
 
-**Why home services is the volume engine:** 70,000 businesses, the largest of the three, and the
-only one with a genuine capacity crisis you can sell against. You cannot offshore the technician —
-but the back office eating the owner's evenings is entirely offshorable, and that is how they get
-their own time back. **89% of small-business owners hiring reported few or no qualified
-applicants** [V].
+**Staffing agencies are the lowest-client-friction buyer available anywhere**, and it is worth
+being explicit about why: **they require zero education.** They already understand offshore
+labour, placement fees, and why a graded work sample matters — because they sell those things
+themselves. The conversation is *"you know exactly how this works, here's our version,"* which is
+the shortest sales cycle in the whole study.
 
-**Why home services is also the hardest:** `RR` of 3. The owner is a tradesperson, not a
-digitally-native operator. Expect a longer sales cycle and more scepticism. Lead with e-comm and
-agencies, where the buyer already believes; use their case studies to open home services.
+Two bonuses: staffing owners are a **dense referral network** — they talk to each other
+constantly — and you will understand their business better than any competitor, because you are
+running the same one.
+
+The obvious objection is disintermediation: could they just recruit offshore themselves? In
+principle yes. In practice their recruiters are US-market specialists with no Indian sourcing
+capability, which is why many already buy offshore sourcing and back-office support.
+
+**Accept the smaller number.** 61,000 businesses instead of 121,000 — you trade 60,000 businesses
+of theoretical reach for a set of buyers who are already doing the thing you sell.
 
 ---
 
-## 3. The four portable roles
+## 4. The four portable roles
 
 Each is **one core skill plus a small vertical delta.** One work-sample test with three variants;
-one bench that serves all three verticals.
+one bench serving all three verticals.
 
 | Role | Core skill (identical across all three) | Vertical delta |
 |---|---|---|
-| **1. Ledger & Close** | QBO/Xero month-end, reconciliation, accruals, financial pack | The connector + revenue quirks — **~1 week** |
-| **2. AR & Collections** | Invoice, chase, cash application, aging, dispute notes | **Almost none** — the most portable of the four |
-| **3. AP & Invoice Processing** | Bill capture, GL coding, approval routing, vendor recs | **Almost none** |
-| **4. Compliance & Document Ops** | Checklist against a rule set, exception flagging, filing, audit trail | The rule set itself — permits/warranties · W-9s and I-9s · lien waivers |
+| **1. Ledger & Close** | QBO/Xero month-end, reconciliation, accruals, financial pack | The connector — **~1 week** |
+| **2. AR & Collections** | Invoice, chase, cash application, aging, dispute notes | **None** |
+| **3. AP & Invoice Processing** | Bill capture, GL coding, approval routing, vendor recs | **None** |
+| **4. Compliance & Document Ops** | Checklist against a rule set, exception flagging, audit trail | The rule set — sales-tax nexus · contractor W-9s · I-9s and certifications |
 
-**Roles 2 and 3 are fully portable — the same person can serve any of the three verticals with no
-retraining at all.** That matters more than it looks: it means bench utilisation is pooled across
-121,000 businesses rather than stranded in one vertical, so a slow month in e-comm doesn't idle
-the bench.
+**Roles 2 and 3 need no retraining at all**, which pools bench utilisation across all three
+verticals rather than stranding it in one. A slow month in e-comm no longer idles the bench.
 
-**Role 1 carries the vertical delta and the highest fee.** Role 4 is the most AI-durable and the
-least contested.
+**Role 1 carries the delta and the highest fee. Role 4 is the most AI-durable and the least
+contested.**
 
-### Placed salary and fee by role
+### Placed salary and fee
 
 | Role | Placed salary [E] | Fee at 30% | Replaces US at [E] |
 |---|---|---|---|
@@ -104,49 +163,48 @@ least contested.
 
 ---
 
-## 4. What this does to the numbers
+## 5. What this does to the numbers
 
 | | E-comm only | **Three verticals** |
 |---|---|---|
-| ICP | ~21,000 | **~121,000** |
-| Offshore-willing finance hires/yr [E] | ~4,100 | **~23,600** |
-| Share needed for $20M (989 placements) | 24% ❌ | **4.2%** ✅ |
-| Share needed for $5M | 14% ⚠️ | **2.4%** ✅ |
+| ICP | ~21,000 | **~61,000** |
+| Offshore-willing finance hires/yr [E] | ~4,100 | **~11,900** |
+| Share needed for $20M (989 placements) | 24% ❌ | **8.3%** ✅ |
+| Share needed for $5M | 14% ⚠️ | **4.9%** ✅ |
 
-**This is the fix for the ceiling problem in OFFER §2.3.** E-comm accounting alone caps at $3–5M
-because $20M would need a quarter of the entire niche's annual hiring. Across three verticals the
-same $20M needs **4.2%** — a normal competitive share rather than a monopoly.
+**This still fixes the ceiling problem in OFFER §2.3**, just less dramatically than the
+home-services version. $20M needs **8.3%** of annual offshore-willing hiring across the three —
+a demanding but normal competitive share, against 24% for e-comm alone.
 
-**And it barely touches the operation:** the same recruiters, the same test, the same bench, the
-same payroll system. The only additions are two more one-week training modules and two more
-outbound list sources.
+**And note the quality of that 8.3%:** every one of those hires is at a company that already
+employs someone remote. There is no education cost buried in the CAC.
 
 ---
 
-## 5. Sequencing — do not launch all three
+## 6. Sequencing
 
 | Stage | Vertical | Why this order |
 |---|---|---|
-| **1** | **E-commerce/DTC** | Highest score, most remote-ready buyer, best reachability (Storeleads/BuiltWith names every A2X user). Prove fill rate and CAC where the buyer already believes |
-| **2** | **Marketing agencies** | Same QBO spine, same `RR` of 5, largest whitespace. Adds 30,000 businesses for one week of training on WIP and retainer accounting |
-| **3** | **Home services** | The volume prize at 70,000, but `RR` of 3. Enter only with e-comm and agency case studies in hand — a tradesperson owner needs proof, not a pitch |
+| **1** | **E-commerce/DTC** | Best reachability of the three — Storeleads and BuiltWith name every US Shopify Plus merchant running A2X. Prove fill rate and CAC where targeting is easiest |
+| **2** | **Staffing agencies** | Zero education needed, shortest cycle, dense referral network, and you understand the buyer natively. Smallest ICP, so it is a margin and proof play rather than a volume play |
+| **3** | **Marketing agencies** | Largest of the three at 30,000 and the most whitespace, but supply for agency WIP/retainer accounting is thinner — go once the bench has depth |
 
-**Roles within each vertical:** launch with **Ledger & Close** only. Add **AR & Collections** once
-the bench has depth, because it is the easiest second seat to sell into an existing client — and
+**Roles within each vertical:** launch **Ledger & Close** only. Add **AR & Collections** once the
+bench has depth — it is the easiest second seat to sell into an existing client, and
 seats-per-client is what makes CAC efficient.
 
 ---
 
-## 6. What could break this
+## 7. What could break this
 
 | Risk | Severity | Note |
 |---|---|---|
-| **Three verticals dilutes the narrowness that made the offer work** | **High** | Narrowness is the moat (free graded shortlist from a warm bench). Mitigation: the *spine* stays narrow — one ledger, one test. Never add a vertical on a different ledger |
-| Home services buyer resists offshore | Medium | `RR` = 3. Sequence it third, lead with case studies |
-| Three outbound motions instead of one | Medium | Each needs its own list source and creative. Real cost, but the ICP multiple pays for it |
-| Positioning becomes generic | Medium | Run three vertical landing pages and three lists, one delivery engine. Never say "we place accountants" — say "we place e-comm accountants" on one page and "we place HVAC bookkeepers" on another |
+| **Three verticals dilutes the narrowness that made the offer work** | **High** | Narrowness is the moat — the free graded shortlist from a warm bench. Mitigation: the *spine* stays narrow. One ledger, one test. Never add a vertical on a different ledger |
+| Staffing agencies disintermediate us | Medium | Their recruiters are US-market specialists with no Indian sourcing capability. Many already buy offshore support |
+| Three outbound motions instead of one | Medium | Each needs its own list source and creative. Real cost, paid for by the ICP multiple |
+| Positioning becomes generic | Medium | Three vertical landing pages, three lists, one delivery engine. Never *"we place accountants"* — always *"we place e-comm accountants"* on one page and *"we place agency finance"* on another |
+| Combined ICP is only 2.9x, not 5.8x | Low-medium | Deliberate. Bought with the remote-readiness gate |
 | Bench specialisation erodes | Low | Roles 2 and 3 need no delta; only role 1 does |
 
-**The one rule that protects everything:** *add verticals that share the ledger, never verticals
-that share only the role.* Medical, dental, property management, insurance and RIA all fail that
-test — each is a second business wearing the same job title.
+**The discipline in one line:** *never sell to a buyer who has to be convinced that remote works,
+and never add a vertical that keeps its books somewhere else.*
