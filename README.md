@@ -108,6 +108,8 @@ nothing downstream is modellable until they're done.
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 | [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/funnel.py`](scoring/funnel.py) | **Step-by-step Meta funnel** — impression → CAC, by audience layer and lead-capture flow, with the break-points |
+| [`scoring/FUNNEL.md`](scoring/FUNNEL.md) | Generated output — the nine steps, form-fill vs calendar booking, what \$5,000 can and cannot measure |
 | [`scoring/FIRST-PRINCIPLES.md`](scoring/FIRST-PRINCIPLES.md) | Generated output — vertical criteria, skill criteria, interaction criteria, the map, the answer |
 
 ```
