@@ -346,6 +346,93 @@ their intent-flow rank suggested, and PI law firms have the deepest pockets of a
 
 ---
 
+## 5D. Which ROLES can be sold in a Meta ad
+
+A separate question from "which role is a good business." On Meta you have one line and one second.
+
+`LEGIBLE` 22 (does the owner know what this role *is*, instantly) · `OWNER_PAIN` 20 (does the
+**owner** personally feel its absence, not a manager) · `ONE_LINE` 18 · `BIG_NUMBER` 15 (is the
+saving a large round number) · `SHOWABLE` 15 (can you demonstrate it in a 15-second Reel) ·
+`LOW_RISK` 10 (can the owner imagine handing it over without fear)
+
+| # | Ad-facing name | Internal role | Score | `LEG` | `PAIN` | `LINE` | `NUM` | `SHOW` | `RISK` |
+|---|---|---|---|---|---|---|---|---|---|
+| **1** | **"Bookkeeper"** | Bookkeeping / reconciliation | **96.0** | 5 | 5 | 5 | 5 | 5 | 3 |
+| **2** | **"Accountant"** | Ledger & Close | **93.0** | 5 | 5 | 5 | 5 | 4 | 3 |
+| **3** | **"Ads manager"** | Paid Media Operations | **91.0** | 5 | 5 | 5 | 4 | 5 | **2** |
+| 4 | *"Executive assistant"* | EA | *86.0* | 5 | 5 | 5 | 4 | **2** | 4 | ⛔ gradeability |
+| **5** | **"Someone to chase your invoices"** | AR & Collections | **84.6** | 4 | 5 | 5 | 3 | 4 | 4 |
+| 6 | "Email marketer (Klaviyo)" | Email / Lifecycle Ops | 80.0 | 4 | 4 | 4 | 3 | 5 | 4 |
+| 7 | "Inventory & margin analyst" | Inventory & COGS | 79.6 | 3 | 5 | 4 | 4 | 4 | 4 |
+| 8 | *"Customer support rep"* | Customer support | *79.4* | 5 | 4 | 4 | 4 | 3 | 3 | ⛔ async |
+| 9 | "Dashboards analyst" | Reporting & Analytics | 74.0 | 3 | 4 | 3 | 3 | 5 | **5** |
+| 10 | "Someone to pay your bills" | AP & Invoice Processing | 73.0 | 4 | **3** | 4 | 3 | 4 | 4 |
+| 11 | "Payroll person" | Payroll processing | 70.4 | 5 | 3 | 4 | 3 | 3 | **2** |
+| 12 | "Compliance / paperwork person" | Compliance & Doc Ops | **48.0** | **2** | 3 | **2** | **2** | **2** | 4 |
+
+### This contradicts my own skill model, and the contradiction is instructive
+
+| Internal role | Rank on skill model | Rank on Meta-sellability |
+|---|---|---|
+| Bookkeeping / reconciliation | 3rd | **1st** |
+| Ledger & Close | 9th | **2nd** |
+| AR & Collections | 2nd | 5th |
+| Reporting & Analytics | 4th | 9th |
+| **AP & Invoice Processing** | **1st** | **10th** |
+| **Compliance & Document Ops** | 7th | **12th** |
+
+> **The roles that score best analytically have the worst ad legibility.** "AP & Invoice Processing"
+> was my #1 skill. No business owner has ever thought that phrase. "Compliance & Document Ops" is
+> nearly unsellable on Meta — `LEGIBLE` 2, `ONE_LINE` 2, `SHOWABLE` 2.
+>
+> Meanwhile **"bookkeeper" is the most legible finance role in existence** and it only came 3rd
+> analytically.
+
+### The resolution: the ad-facing name and the internal spec do not have to match
+
+**Sell "bookkeeper" or "accountant." Scope the actual seat on the intake call.**
+
+That is not a trick — it is how the buyer already thinks. An e-commerce founder does not think *"I
+need an AR & Collections specialist."* They think *"I need someone to do my books."* You meet them
+at their language, then discover on the call whether what they actually need is reconciliation, AR,
+or a full close.
+
+| Ad says | Intake discovers | You place |
+|---|---|---|
+| "Bookkeeper, $20k not $75k" | *"Actually my books are fine, it's the unpaid invoices"* | AR & Collections |
+| "Bookkeeper, $20k not $75k" | *"I need month-end closed properly"* | Ledger & Close |
+| "Bookkeeper, $20k not $75k" | *"I can't see per-SKU margin"* | Inventory & COGS |
+
+**One ad, one legible promise, three sellable seats behind it.** This also fixes the bench-utilisation
+problem from BEACHHEAD §0.2 — you are not committing the ad to the least-portable role.
+
+### Two roles with a specific Meta problem
+
+**"Ads manager" scores 91 but `LOW_RISK` = 2.** Owners are frightened of handing an ad account to a
+stranger from an ad. It is the third most sellable role and the hardest to close. If you run it,
+lead with a **read-only audit** rather than access.
+
+**"Payroll person" has `LOW_RISK` = 2 for the same reason** — payroll errors are visible, personal
+and legally messy. Legible but scary.
+
+### What this means for creative
+
+The `SHOWABLE` column is the Instagram/Reels column, and it re-orders things again:
+
+| Best Reels material | Why |
+|---|---|
+| **Bookkeeper** (5) | Screen-record a broken reconciliation being fixed |
+| **Ads manager** (5) | Screen-record a messy campaign structure being rebuilt |
+| **Email marketer** (5) | Show a flow build and the revenue attribution |
+| **Dashboards analyst** (5) | The output *is* a visual |
+| Executive assistant (2) | Nothing to show. Talking heads only |
+| Compliance ops (2) | Nothing to show |
+
+**Bookkeeper is the only role scoring 5 on both `LEGIBLE` and `SHOWABLE`** — instantly understood
+*and* filmable. That is the rare combination, and it is why it wins.
+
+---
+
 ## 6. The measurement protocol — replace every estimate above in one afternoon
 
 **Every score in §5 is `[E]`.** None of it needs to stay that way. Public job boards expose result
