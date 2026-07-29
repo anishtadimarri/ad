@@ -1,0 +1,203 @@
+# What Somewhere and Oceans Actually Sell
+
+Their live role pages and job boards are **revealed demand** — the strongest available signal about
+what a market with years of operating history will actually pay for. All figures below are quoted
+from their own sites [V].
+
+---
+
+## 1. Somewhere — scale
+
+| | |
+|---|---|
+| Companies served | **5,000+** |
+| Candidates hired (cumulative) | **11,000+** |
+| Total payroll savings claimed | **$400M** |
+| Candidate pool | **1.5M+** |
+| Countries | **18+** |
+| Time to candidates | **3 days**; most roles filled **7–21 days** |
+| Fee | 25–35% of first-year salary, one-time, refundable deposit credited |
+
+Cumulative 11,000 hires against a current run rate of ~250/month is consistent with a ramp over
+roughly five years.
+
+---
+
+## 2. Somewhere's actual role catalogue — 60+ titles, ten categories
+
+Rates are **monthly**, as published. Annualised in the right column.
+
+### C-suite — the category I never considered
+
+| Role | Monthly | Annualised | Fee at 30% |
+|---|---|---|---|
+| **CEO** | **$3,500–9,500** | $42,000–114,000 | **$12,600–34,200** |
+| COO | $3,000–8,500 | $36,000–102,000 | $10,800–30,600 |
+| CTO | $2,500–9,000 | $30,000–108,000 | $9,000–32,400 |
+| CISO | $2,500–8,500 | $30,000–102,000 | $9,000–30,600 |
+| **CFO** | **$2,500–7,500** | $30,000–90,000 | **$9,000–27,000** |
+| CMO | $2,400–7,500 | $28,800–90,000 | $8,640–27,000 |
+| CPO | $2,400–8,000 | $28,800–96,000 | $8,640–28,800 |
+| CHRO | $2,200–6,500 | $26,400–78,000 | $7,920–23,400 |
+| Head of Finance | $1,150–4,600 | $13,800–55,200 | $4,140–16,560 |
+
+### Finance & accounting
+
+| Role | Monthly | Annualised |
+|---|---|---|
+| **AP/AR Specialist** | **$1,250–6,250** | **$15,000–75,000** |
+| Analyst · Financial Analyst · Accountant · Underwriter · Bookkeeper | not published | — |
+
+### Operations
+
+| Role | Monthly |
+|---|---|
+| Operations Manager · Product Manager | $1,350–6,750 |
+| Vendor Management Specialist | $1,300–6,500 |
+| Construction Admin | $1,350–5,400 |
+| Procurement Specialist | $1,050–5,250 |
+| Inventory Planner | $1,150–4,600 |
+| Operations Assistant | $1,350–4,050 |
+| Quote Coordinator | $1,150–3,450 |
+| Shopify Admin · Property Manager · Project Manager · Data Entry Clerk | not published |
+
+### Everything else
+
+| Category | Roles / rates |
+|---|---|
+| **Sales** | Sales Manager $1,450–7,250 · Leasing Consultant $1,500–7,500 · Lead Qualifier $1,100–5,500 · SDR · AE · Sales Rep |
+| **IT / Data / Eng** | Analytics Specialist $1,300–6,500 · SWE · Data Scientist · Network Eng · Full-stack · Back-end · Front-end · Web dev · Data Analyst · Sysadmin |
+| **Marketing** | Media Planner $1,450–5,800 · Social Media Mgr · SEO · **Paid Ads Manager** · Content Writer · Email Marketer · Digital Marketing · Marketing Mgr/Assistant/Designer · **Amazon Specialist** |
+| **Creative** | Advertising Designer $1,500–7,500 · Photo Editor $1,300–5,200 · Graphic Designer · Video Editor · 3D Renderer |
+| **Support / VA** | Phone Support $1,200–3,600 · Admin Assistant $1,200–3,600 · CS Rep · Live Chat · **EA** · VA · Real Estate VA |
+| **Legal** | Paralegal $1,500–7,500 · Legal Assistant |
+| **Eng/Arch** | Property Improvement Specialist $1,350–6,750 |
+
+---
+
+## 3. Bookkeeper, priced by country — the single most useful table they publish
+
+| Region | Monthly | Annualised |
+|---|---|---|
+| **United States** | **$5,600–8,200** | $67,200–98,400 |
+| Philippines | **$2,700–3,700** | $32,400–44,400 |
+| Latin America | $2,300–3,600 | $27,600–43,200 |
+| South Africa | **$1,700–3,700** | $20,400–44,400 |
+| **India** | **not offered** | — |
+
+Savings quoted: **65% junior · 52% mid · 34% senior**, "up to 75%". Required skills:
+*"QuickBooks, Xero, and U.S. accounting systems"* plus payroll, invoicing, reconciliations.
+Positioning: *"Hire a Top 1% Bookkeeper in 21 days."*
+
+⚠️ **Caveat:** their page rendered identical ranges for junior, mid and senior, which is almost
+certainly a UI artefact rather than three real tiers. Treat the band as one range, not a ladder.
+
+---
+
+## 4. Oceans
+
+| | |
+|---|---|
+| Countries | **Sri Lanka only** |
+| Clients | 600+ |
+| Acceptance rate | 1% |
+| First-match success | 86% |
+| Roles | EA+ · **Finance Assistant** · **Finance Ops Specialist** · **FP&A Analyst** · Marketing Assistant · Marketing Ops Specialist · Legal Ops Associate · Brand Manager · Customer Success |
+| Terms | **3-month trial**, then rolling auto-renewal |
+| Overlap | 4–5 hours real-time + 3–4 hours independent |
+| Pricing | Not published on site (from $3,000/mo per earlier research) |
+
+---
+
+## 5. What this changes
+
+### 5.1 The finding that matters most — neither of them sources India
+
+Somewhere's own list: **LatAm · South Africa · Philippines · Eastern Europe · Egypt · Pakistan ·
+Portugal · Colombia**, 18+ countries. **India is absent.** Oceans is **Sri Lanka only.**
+
+Meanwhile India has **528,000+ active chartered accountants** and a 30-year US GAAP/IRS ecosystem
+[V, MASTER §7.3]. And the cost gap is not marginal:
+
+| | Monthly | Annualised |
+|---|---|---|
+| Somewhere's Philippines bookkeeper | $2,700–3,700 | $32,400–44,400 |
+| Somewhere's South Africa bookkeeper | $1,700–3,700 | $20,400–44,400 |
+| **Indian senior accountant, Ahmedabad** [V] | **$360–540** | **$4,300–6,450** |
+
+Even allowing that Somewhere's published rates are premium-positioned ("top 1%") and may include
+loaded cost rather than pure salary, **the gap is too large to be a rounding difference.** A US
+buyer paying $2,700/month for a Philippine bookkeeper could pay $1,200–1,700/month for an Indian
+chartered accountant and both sides would still be far better off than today.
+
+**The structural gap:**
+
+| | Has India accounting talent | Sells direct to SMBs |
+|---|---|---|
+| TOA Global (4,180 professionals) · Entigrity (3,000+) | ✅ | ❌ — they sell to **CPA firms** |
+| Somewhere · Oceans | ❌ | ✅ |
+| **This business** | ✅ | ✅ |
+
+Nobody occupies the intersection. That is not a small niche — it is the whole thesis, and it is the
+first time in this analysis that a defensible structural position has appeared rather than an
+execution advantage.
+
+**The honest counter:** India may be absent for a reason. Candidate explanations — timezone (no
+US overlap without evening work), accent bias for voice roles, or simply that both founders' talent
+networks happened to be PH/LatAm/SA. The first two are real for **voice and EA** roles, which is
+exactly what Somewhere and Oceans lead with. They are largely irrelevant for **async finance
+work**, which is what this business places. That is a coherent explanation, but it is a hypothesis
+and should be tested in the first ten client conversations.
+
+### 5.2 My salary assumption was too low, and too narrow
+
+I have been modelling **$20,000–34,000** placed salary. Somewhere's published bands span
+**$1,050–9,500/month = $12,600–114,000/year.** The top of the market is 3x my ceiling.
+
+| Fee at 30% | My model | Somewhere's range |
+|---|---|---|
+| Per placement | $6,000–10,200 | **$3,800–34,200** |
+
+**Consequence:** the fee-per-placement lever is far larger than modelled. Somewhere places CEOs at
+$42–114k. Even one senior placement a month materially changes the P&L.
+
+### 5.3 AP/AR is validated as a real product, not an inference
+
+**AP/AR Specialist is one of only two finance roles Somewhere publishes a rate for** —
+$1,250–6,250/month. The first-principles model independently ranked AR & Collections as the #1
+skill and AP & Invoice Processing #2. **A company with 11,000 placements of history publishes rates
+for exactly that role.** That is the strongest external confirmation available.
+
+### 5.4 They already sell to two of my three verticals
+
+Somewhere runs vertical landing pages, including **"Somewhere for Agencies."** Their catalogue also
+contains **Shopify Admin** and **Amazon Specialist** (e-commerce) and **Leasing Consultant**,
+**Property Manager**, **Construction Admin**, **Real Estate VA**.
+
+**Reading:** e-commerce and agencies are validated buyers — but they are contested, not open. The
+uncontested space is not the vertical, it is **the vertical × India × finance** cell.
+
+### 5.5 Roles they publish that my models never considered
+
+| Role | Rate | Why it is interesting |
+|---|---|---|
+| **Fractional C-suite** | $2,200–9,500/mo | Highest fee in the market. Never appeared in any of my 179 or 104 role lists |
+| **Underwriter** | not published | Insurance and lending, high value |
+| **Quote Coordinator** | $1,150–3,450 | Maps to MSP/IT — my #2 vertical — and to home services |
+| **Vendor Management Specialist** | $1,300–6,500 | Maps to MSP procurement |
+| **Inventory Planner** | $1,150–4,600 | Maps to e-comm; adjacent to my COGS analyst |
+| **Construction Admin** | $1,350–5,400 | Permits, submittals — the AEC back office |
+| **Leasing Consultant** | $1,500–7,500 | Property management, and surprisingly well paid |
+
+---
+
+## 6. What I would change
+
+| # | Change | Why |
+|---|---|---|
+| 1 | **India as the sourcing geography is the actual differentiator** — promote it from an operational convenience to the core thesis | Neither leading player offers it; the cost gap is 3–5x; the talent pool is the world's largest for accounting |
+| 2 | **Widen the salary band from $20–34k to $15–75k** | Somewhere's published range is 3x wider. Fee per placement is a bigger lever than modelled |
+| 3 | **Keep AR/AP as the launch skill** | Independently validated — it is one of only two finance roles Somewhere prices publicly |
+| 4 | **Add a senior/fractional tier later** | $9,000–34,200 per placement. Different sale, different buyer, but the fee arithmetic is compelling |
+| 5 | **Stop treating e-comm and agencies as uncontested** | Somewhere has vertical pages for both. The uncontested cell is vertical × India × finance |
+| 6 | **Test the India objection explicitly in the first ten calls** | If clients refuse India for async finance work, the thesis is wrong and it is better to know in week two than year two |
