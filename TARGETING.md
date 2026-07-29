@@ -136,7 +136,93 @@ almost no scrapeable hiring intent.** That is now three independent screens poin
 
 ---
 
-## 5. What this changes
+## 5. Verticals ranked on intent flow
+
+Same lens applied to verticals. **This is a ranking of *flow*, not stock** — a vertical with 300,000
+businesses that hires rarely generates less scrapeable intent than one with 20,000 that hires
+constantly.
+
+`FLOW` 25 · `REMOTE` 20 (do postings actually say remote) · `OFFSHORE` 20 (do they post on
+OnlineJobs.ph / Upwork) · `IDENT` 15 (can you tell the vertical *from the posting*) · `PUBLIC` 12 ·
+`STALE` 8 (share sitting unfilled 60+ days — the frustrated-buyer signal)
+
+| # | Vertical | Score | `FLOW` | `REMOTE` | `OFFSHORE` | `IDENT` | `PUBLIC` | `STALE` |
+|---|---|---|---|---|---|---|---|---|
+| 1 | **E-comm / DTC** | **91.8** | 4 | 5 | 5 | 5 | 5 | 3 |
+| 2 | **Marketing agency** | **88.8** | 4 | 5 | 5 | 4 | 5 | 3 |
+| 3 | **Freight / trucking** | **84.8** | 4 | 4 | 5 | 4 | 5 | 3 |
+| 4 | **Medical practice** | **83.4** | 5 | 3 | 4 | 4 | 5 | 4 |
+| 5 | **Staffing agency** | **80.8** | 4 | 4 | 4 | 4 | 5 | 3 |
+| 6 | Property mgmt | 76.8 | 4 | 3 | 4 | 4 | 5 | 3 |
+| 7 | Dental / DSO | 76.0 | 4 | 2 | 4 | 4 | 5 | **5** |
+| 8 | Insurance agency | 73.6 | 4 | 3 | 3 | 4 | 4 | **5** |
+| 9 | MSP / IT services | 73.4 | 3 | 4 | 4 | 4 | 4 | 3 |
+| 10 | Home services | 67.4 | **5** | **1** | 2 | 4 | 5 | 4 |
+| 11 | PI law firm | 65.4 | 3 | 3 | 3 | 4 | 4 | 3 |
+| 12 | SaaS | 64.8 | 3 | **5** | **2** | 3 | 4 | 2 |
+
+### The `IDENT` dimension is new and it matters more than it looks
+
+A posting that says *"Bookkeeper — QuickBooks"* tells you nothing about the vertical. One that says
+*"Ecommerce Bookkeeper — Shopify, Amazon, A2X"* tells you everything. **Verticals whose postings
+self-identify are targetable; verticals whose postings are generic are not** — you cannot segment
+what you cannot label.
+
+E-comm is the only vertical scoring 5 on `REMOTE`, `OFFSHORE` **and** `IDENT` simultaneously.
+
+### What each result turns on
+
+| Vertical | |
+|---|---|
+| **E-comm / DTC** | Postings literally contain the stack — Shopify, Amazon, A2X. Nothing else is this legible |
+| **Marketing agency** | Hire offshore production constantly on Upwork; postings say *"our clients"* |
+| **Freight / trucking** | Dispatch is already massively offshored — **but that role is gated on retention.** Their back-office flow is thinner than the headline suggests |
+| **Medical practice** | **Highest raw flow of any qualifying vertical** — ~90k practices, high turnover — but postings usually assume on-site |
+| **Staffing agency** | Post more than anyone, because posting *is* their business. Already use Indian sourcers |
+| **Insurance agency** | ⭐ **Highest stale rate.** The 400,000-retirement shortage (PATTERN §3) means postings genuinely sit unfilled. **Warmest buyers, thinnest remote language** |
+| **Home services** | ⚠️ **Highest raw flow of all twelve and the lowest remote language.** They are posting for technicians, not back office. This is the fourth independent screen to reject it |
+| **SaaS** | Postings always say remote — but they do not use offshore boards, and **you cannot identify a SaaS company from a job posting.** `IDENT` 3 is what kills it |
+
+### The tension this exposes
+
+**Volume and readiness are inversely correlated at the extremes.**
+
+| | Highest flow | Highest readiness |
+|---|---|---|
+| Home services | ✅ 5 | ❌ 1 |
+| Medical practice | ✅ 5 | ⚠️ 3 |
+| SaaS | ⚠️ 3 | ✅ 5 |
+| **E-comm / DTC** | **4** | **5** | 
+
+**E-comm wins by not being extreme on either.** That is a less exciting answer than a hidden gem,
+but it is the correct one — and it is now the fourth independent method to select it.
+
+---
+
+## 6. The measurement protocol — replace every estimate above in one afternoon
+
+**Every score in §5 is `[E]`.** None of it needs to stay that way. Public job boards expose result
+counts, so all of it is directly countable:
+
+| What to measure | How |
+|---|---|
+| **Raw remote flow per role** | Indeed → `"remote bookkeeper"` · `"remote accounts receivable"` · `"remote AP specialist"` → read the result count |
+| **Vertical-tagged flow** | Indeed → `"remote bookkeeper"` + `Shopify` / `agency` / `MSP` / `AppFolio` / `Applied Epic` / `Bullhorn` |
+| **Proven offshore intent** | **OnlineJobs.ph employer feed** → same role keywords. Every result is a paying offshore buyer |
+| **Upwork intent** | Upwork job search → role + long-term + country-preference filters |
+| **Competitor client demand** | `apply.workable.com/jobssomewhere` → count open reqs by role. **These are Somewhere clients hiring right now** |
+| **Stale rate** | Same Indeed query filtered to 30+ days old ÷ total = the frustrated-buyer share |
+| **Accounting-specific** | Accountingfly → remote roles, tagged e-comm vs firm vs practice |
+
+**Cost: one afternoon. Output: real `FLOW`, `REMOTE`, `OFFSHORE` and `STALE` numbers per vertical.**
+
+This is the cheapest high-value research left in the plan, and it converts the entire §5 table from
+estimate to fact. Do it before the match-rate test, because it tells you *which* 2,000 companies to
+enrich.
+
+---
+
+## 7. What this changes
 
 | # | Change |
 |---|---|
