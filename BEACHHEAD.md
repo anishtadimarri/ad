@@ -163,7 +163,104 @@ contested.**
 
 ---
 
-## 5. What this does to the numbers
+## 5. The skill spec — what you screen and test for
+
+### 5.1 The shared core (every role, every vertical)
+
+This is the floor. Common in India, cheap to verify, **not** a differentiator.
+
+| Skill | How you test it |
+|---|---|
+| **QuickBooks Online** (or Xero) — navigation, journal entries, class/location tracking | Live task in a sandbox file |
+| Bank and credit-card reconciliation | Reconcile a deliberately broken month |
+| Chart-of-accounts discipline, accrual vs cash | Recode a mis-posted transaction set |
+| Month-end close checklist discipline | Close a period against a checklist; note what they skip |
+| **Written English** — async, no supervision | Written exception memo, unedited |
+| Excel / Sheets — lookups, pivots, basic reconciliation logic | Timed sheet task |
+
+### 5.2 Role 1 — Ledger & Close
+
+**Shared core:** close the month, reconcile everything, accruals/prepaids/deferrals, produce the
+financial pack, write variance commentary.
+
+| Vertical | Delta skills — the part nobody else screens for | Rarity |
+|---|---|---|
+| **E-comm/DTC** | **A2X** or Link My Books · Shopify payout reconciliation · Amazon settlement reports (FBA fees, **reserves**, reimbursements) · **inventory valuation and landed cost** · COGS by SKU · gift cards and deferred revenue · multi-channel | **Rare** |
+| **Marketing agency** | **WIP and unbilled revenue** · retainer vs project revenue recognition · **pass-through media spend — gross vs net reporting** · Harvest / Productive / Float time data · contractor cost allocation · project profitability | **Rare** |
+| **Staffing agency** | **Bullhorn timesheet → invoice** · gross margin per placement · bill rate vs pay rate · accrued contractor payroll · **AR factoring entries** · perm vs contract revenue recognition | **Very rare** |
+
+> **The three delta skills that are genuinely scarce and genuinely valuable:** inventory and landed
+> cost (e-comm), pass-through media plus WIP (agency), and factoring plus multi-state contractor
+> payroll (staffing). These are the reason a two-week conversion course is justified, and the
+> reason a generalist recruiter cannot screen against you — they do not know these words.
+
+### 5.3 Role 2 — AR & Collections
+
+**Shared core:** invoice, chase, apply cash, aging analysis, dunning sequences, short-pay and
+dispute handling, credit memos, DSO tracking.
+
+| Vertical | Delta skills | Note |
+|---|---|---|
+| **E-comm/DTC** | Chargeback handling · marketplace deductions · wholesale/B2B terms (Faire, Shopify B2B) | Low delta |
+| **Marketing agency** | Retainer invoicing · milestone billing · client PO tracking · **media pre-billing** · over-servicing flags | Low delta |
+| **Staffing agency** | **Weekly or biweekly invoicing at volume** · timesheet-approval chasing · **VMS/MSP portals — SAP Fieldglass, Beeline, Coupa** · factoring coordination | **Highest-value AR seat of the three** |
+
+**Why staffing AR is the strongest single seat in this trio:** the billing cycle is **weekly, not
+monthly**, so transaction volume is 4–5x an e-comm brand's, the work is unambiguous, and VMS portal
+invoicing is a genuine specialist pain that firms actively want off their desk. Highest volume,
+clearest need, least competition.
+
+### 5.4 Role 3 — AP & Invoice Processing
+
+**Shared core:** bill capture, GL coding, approval routing, vendor master maintenance, payment
+runs, 1099 prep, vendor statement recs.
+
+| Vertical | Delta skills |
+|---|---|
+| **E-comm/DTC** | 3PL invoices · freight and duty reconciliation · supplier PO vs receipt matching · inventory GRN matching |
+| **Marketing agency** | Contractor and freelancer payments · **platform invoices (Meta, Google) matched to client pass-through** · software subscription sprawl |
+| **Staffing agency** | **Contractor payroll processing** · **multi-state payroll tax** · per-diem and expense · sub-vendor payments |
+
+### 5.5 Role 4 — Compliance & Document Ops
+
+**Shared core:** work a checklist against a rule set, flag exceptions, collect and chase documents,
+maintain an audit trail, track expiries.
+
+| Vertical | The rule set |
+|---|---|
+| **E-comm/DTC** | Sales-tax registrations and nexus tracking · resale certificates · marketplace tax documents · product compliance files |
+| **Marketing agency** | Contractor W-9s and W-8BENs · MSAs and SOWs · insurance certificates · 1099 filing |
+| **Staffing agency** | **I-9 and E-Verify** · state registrations · workers-comp certificates · background-check tracking · **certification and licence expiry** · client-required compliance packets · ACA reporting |
+
+**Most AI-durable role of the four**, because it is liability-bearing — someone has to be
+accountable for an expired certificate, and nobody delegates that to a model.
+
+### 5.6 Hiring bands
+
+| Role | Level | Placed salary [E] | Fee at 30% | Replaces US at [E] |
+|---|---|---|---|---|
+| **Ledger & Close** | Senior (owns the close) | **$28–34k** | $8.4–10.2k | $85–110k loaded |
+| Ledger & Close | Bookkeeper | $20–24k | $6–7.2k | $70–78k loaded |
+| **AR & Collections** | Specialist | $18–22k | $5.4–6.6k | $60–70k loaded |
+| AP & Invoice Processing | Clerk/specialist | $16–20k | $4.8–6k | $55–65k loaded |
+| **Compliance & Document Ops** | Specialist | $18–24k | $5.4–7.2k | $60–72k loaded |
+
+### 5.7 What to recruit against, in order
+
+| Priority | Skill | Why |
+|---|---|---|
+| 1 | **QBO/Xero + reconciliation + written English** | The floor. No delta skill saves a candidate who fails this |
+| 2 | **One vertical delta, deeply** | This is what you sell. Depth in one beats shallowness in three |
+| 3 | Excel reconciliation logic | Predicts everything else |
+| 4 | Second vertical delta | Add after 6 months on the bench — this is how you build portability |
+
+**Do not recruit for all three verticals at once.** Hire for e-comm depth, then cross-train the
+proven performers onto the agency and staffing connectors. A person who has closed twelve e-comm
+months is a safe bet on an agency month; a person hired to know all three knows none of them.
+
+---
+
+## 6. What this does to the numbers
 
 | | E-comm only | **Three verticals** |
 |---|---|---|
@@ -181,7 +278,7 @@ employs someone remote. There is no education cost buried in the CAC.
 
 ---
 
-## 6. Sequencing
+## 7. Sequencing
 
 | Stage | Vertical | Why this order |
 |---|---|---|
@@ -195,7 +292,7 @@ seats-per-client is what makes CAC efficient.
 
 ---
 
-## 7. What could break this
+## 8. What could break this
 
 | Risk | Severity | Note |
 |---|---|---|
