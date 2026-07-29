@@ -51,6 +51,14 @@ P_PAID_REPLACE = 0.45
 PROTECTION_MARGIN = 0.70
 MONTHLY_SEAT_COGS = 150.0      # payroll/remittance admin + AM time, per seat/mo
 
+# EOR economics. India-focused providers (Wisemonk) sell at $99-200/employee/mo
+# while global platforms (Deel/Remote $599, Oyster $699) charge $499-699 for the
+# SAME India employment. An India-domiciled operator has the local cost base and
+# can price against the global comparison. [V pricing / E cost]
+EOR_COST = 55.0                # payroll processing ~$3-6 + compliance filings
+                               # + HR support + insurance admin, per employee/mo
+FX_SPREAD = 0.02               # industry norm is 2-10% over mid-market [V]
+
 
 @dataclass
 class Offer:
@@ -72,6 +80,10 @@ class Offer:
     refund_share: float = REFUND_SHARE_OF_FEE  # share of claims paid in CASH
     bench_shortlist: float = 0.0    # cost per call held to show bench candidates
     managed_convert: float = 0.0    # share of clients converted to a managed seat later
+    eor_attach: float = 0.0         # share taking EOR
+    eor_price: float = 399.0        # per employee per month
+    eor_fx: bool = False            # take the standard FX spread
+    equipment_gp: float = 0.0       # one-time margin on laptop procurement
     # --- funnel
     lead_to_call: float = LEAD_TO_CALL
     call_to_deposit: float = CALL_TO_DEPOSIT
@@ -120,6 +132,12 @@ def econ(o: Offer):
     mrec = (o.monthly_spread - MONTHLY_SEAT_COGS) * max(o.monthly_tenure - 1, 0) * seats
     # later conversion of placement clients onto managed seats — recurring layer
     mrec += (o.managed_convert * (800.0 - MONTHLY_SEAT_COGS) * o.monthly_tenure * seats)
+    # EOR: transparent flat fee for a distinct service, so it does NOT break the
+    # salary-transparency positioning the way a salary markup does
+    eor = o.eor_attach * (o.eor_price - EOR_COST) * o.monthly_tenure * seats
+    if o.eor_fx:
+        eor += o.eor_attach * (FX_SPREAD * o.salary / 12) * o.monthly_tenure * seats
+    mrec += eor + o.equipment_gp * seats
     gplife = gp30 + tail * (1 - PROCESSING) + (xfee + xscreen - xcogs) + prot + mrec
 
     return dict(rev30=rev30, gp30=gp30, gm=gp30 / rev30 if rev30 else 0, cac=cac,
@@ -165,6 +183,16 @@ CONFIGS = [
             charge_screening=True, protection_attach=0.30, multi_hire=0.20,
             claim_rate=0.70, refund_share=0.0, bench_shortlist=90.0,
             managed_convert=0.25,
+            lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
+    replace(SW, name="H4  H2 + EOR at 45% attach (no markup)",
+            charge_screening=True, multi_hire=0.20, claim_rate=0.70,
+            refund_share=0.0, bench_shortlist=90.0,
+            eor_attach=0.45, eor_fx=True, equipment_gp=150.0,
+            lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
+    replace(SW, name="H5  H4 at 70% attach (EOR made default)",
+            charge_screening=True, multi_hire=0.20, claim_rate=0.70,
+            refund_share=0.0, bench_shortlist=90.0,
+            eor_attach=0.70, eor_fx=True, equipment_gp=150.0,
             lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
 ]
 
@@ -330,7 +358,57 @@ print("\n**Doubling the guarantee window to 12 months AND making replacements un
 print("*cheaper* than the 6-month industry standard**, because eliminating cash refunds saves more")
 print("than the extra claims cost. Best guarantee in the market, at negative cost.\n")
 
-REC = next(c for c in CONFIGS if c.name.startswith('H3'))
+print("---\n\n## The EOR line — Somewhere's fifth product\n")
+print("Somewhere sells **five** products, not two: Direct Hire · Talent On-Demand · "
+      "**Somewhere EOR** · Somewhere Equipment · Somewhere Browser. EOR pricing undisclosed.\n")
+print("| Provider | India EOR price / employee / month |")
+print("|---|---|")
+for a, bb in [("Wisemonk (India-focused)", "**$99–200**"), ("Tarmack (India)", "from **$199**"),
+              ("Multiplier (global)", "from **$400**, $250–300 at 50+"),
+              ("Deel (global)", "**$599**, $400–500 at 20+"), ("Remote (global)", "**$599**"),
+              ("Oyster (global)", "**$699**"),
+              ("Market overall", "$199–1,200; most pay **$400–700**; median **~$399**")]:
+    print(f"| {a} | {bb} |")
+print("\n**The arbitrage inside the arbitrage:** global platforms charge $499–699 for the same")
+print("India employment that India-domiciled providers deliver at $99–200. They are amortising")
+print("100+ country entities and enterprise sales. **You have the local cost base and can price")
+print(f"against the global comparison.** Modelled at **${399:.0f}/mo** with **${EOR_COST:.0f}** marginal cost")
+print(f"= **{(399-EOR_COST)/399:.0%} gross margin**, plus the industry-standard {FX_SPREAD:.0%} FX spread.\n")
+print("### Why EOR beats a salary markup as the recurring layer\n")
+print("| | Salary markup (managed seat) | **EOR flat fee** |")
+print("|---|---|---|")
+for a, bb, c in [
+    ("Compatible with salary transparency", "❌ breaks it — the spread is hidden", "✅ separate fee for a distinct service"),
+    ("Client's alternative", "hire direct and cut you out", "**Deel at $599, or illegal**"),
+    ("Worker outcome", "neutral", "✅ **gets PF, ESI, gratuity, benefits**"),
+    ("Retention mechanism", "none", "✅ **PF compounds, gratuity vests at 5 years — enforced by the state**"),
+    ("Gross margin", "~81%", f"**~{(399-EOR_COST)/399:.0%}**"),
+]:
+    print(f"| {a} | {bb} | {c} |")
+print("\nIn the handoff model the client employs the worker as a contractor — which carries")
+print("misclassification risk and leaves the worker with no statutory benefits. EOR fixes both.")
+print("**It is a better retention mechanism than the stay bonus**, because provident fund and")
+print("gratuity are golden handcuffs the government enforces rather than ones we fund.\n")
+print("### Two ways to deliver it — and the first one is right to start\n")
+print("| | White-label a partner | Own entity |")
+print("|---|---|---|")
+for a, bb, c in [
+    ("Wholesale cost", "**$99–199/employee/mo** (Wisemonk, Tarmack) [V]", f"**~${EOR_COST:.0f}/mo** marginal [E]"),
+    ("Resell at $399 → margin", "**50–75%**", f"**~{(399-EOR_COST)/399:.0%}**"),
+    ("Employment liability", "✅ **none — the partner is the employer**", "❌ you are the legal employer"),
+    ("Gratuity / termination exposure", "✅ partner's", "❌ yours, accruing"),
+    ("Payroll float", "✅ partner's problem", "❌ ~$1,833/employee/month if invoiced in arrears"),
+    ("Time to launch", "✅ **days**", "❌ entity, registrations, counsel"),
+    ("Contract Labour Act / secondment risk", "✅ partner's compliance", "❌ needs real Indian employment counsel"),
+]:
+    print(f"| {a} | {bb} | {c} |")
+print("\n**Start white-label.** You give up ~25 points of margin and you avoid becoming an employer")
+print("in a jurisdiction with gratuity accrual and termination law — which is the exact liability the")
+print("handoff model was chosen to escape (MASTER §6.1). Bring it in-house once the line is proven")
+print("and volume justifies counsel. The float is solved either way by the market-standard 1–2 month")
+print("security deposit collected from the **client**, which is negative working capital.\n")
+
+REC = next(c for c in CONFIGS if c.name.startswith('H5'))
 print("---\n\n## Sensitivity — recommended (S6)\n")
 print("### CPL × replacement rate\n")
 print("| | repl 15% | repl 30% | repl 50% | repl 70% |")
