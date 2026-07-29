@@ -14,72 +14,86 @@ Run:  python3 scoring/first_principles.py > scoring/FIRST-PRINCIPLES.md
 # ============================================================ VERTICAL CRITERIA
 # Properties of the BUYER. True regardless of which role you place.
 VDIM = [
-    ("REMOTE", 16, "Already employs remote/offshore staff",
+    ("REMOTE", 15, "Already employs remote/offshore staff",
      "5=offshore is normal here  3=growing  1=would need converting. GATE at <4"),
+    ("META", 15, "Targetable on Meta ads",
+     "Can an ad audience actually be built? 5=strong interest/behaviour signals AND the buyer "
+     "lives on Facebook/IG  3=reachable with broad targeting + a self-qualifying hook  "
+     "1=the buyer is on LinkedIn, not Meta"),
     ("DECIDE", 12, "Single decision-maker", "5=owner decides today  3=owner+1  1=committee"),
-    ("REACH", 12, "Named list exists",
-     "5=public/scrapeable register (BuiltWith, Storeleads, SEC ADV, Clutch)  1=1:1 outbound"),
-    ("AFFORD", 11, "Can write a $6k fee without thinking",
+    ("LIST", 10, "Named list exists for cold outbound",
+     "5=public/scrapeable register (BuiltWith, Storeleads, SEC ADV, Clutch)  1=1:1 research"),
+    ("AFFORD", 9, "Can write a $6k fee without thinking",
      "5=comfortable  3=needs justifying  1=it is a real decision"),
     ("STACK", 11, "One software stack across the vertical",
      "5=same stack every client  3=2-3 systems  1=bespoke"),
-    ("EORNEED", 9, "Needs us to employ the person",
+    ("EORNEED", 7, "Needs us to employ the person",
      "5=no entity, no appetite, no alternative but Deel"),
-    ("COUNT", 9, "Businesses in the hiring band",
+    ("COUNT", 7, "Businesses in the hiring band",
      "5=>100k  4=50-100k  3=20-50k  2=10-20k  1=<10k"),
-    ("SEATS", 8, "Buys more than one seat over time", "5=builds a team  1=one and done"),
-    ("WHITE", 7, "No vertical-specialist incumbent", "5=open  0=dominated"),
-    ("CLEAN", 5, "No licensing/regulatory blocker", "5=none  1=heavy"),
+    ("SEATS", 5, "Buys more than one seat over time", "5=builds a team  1=one and done"),
+    ("WHITE", 4, "No vertical-specialist incumbent", "5=open  0=dominated"),
+    ("CLEAN", 5, "No licensing / regulatory friction",
+     "5=none  3=data-handling only  1=UPL, HIPAA, state licensing. Re-added after being "
+     "dropped in the META revision — it is exactly what bites on legal and medical"),
 ]
-# vertical: REMOTE DECIDE REACH AFFORD STACK EORNEED COUNT SEATS WHITE CLEAN
+# vertical: REMOTE META DECIDE LIST AFFORD STACK EORNEED COUNT SEATS WHITE
+# META is the new dimension. It is NOT the same as LIST — Storeleads gives a named
+# list of Shopify merchants but not a Meta audience, and trucking owners live on
+# Facebook while MSP and SaaS buyers live on LinkedIn.
 VERTICALS = {
- "E-comm / DTC":        (5,5,5,5,5,4,3,3,3,5),
- "Marketing agency":    (5,5,4,4,4,4,3,4,4,5),
- "SaaS":                (5,3,4,5,5,4,2,4,4,5),
- "Staffing agency":     (5,5,4,4,5,4,2,4,4,4),
- "MSP / IT services":   (5,5,4,4,5,4,2,4,4,5),
- "Freight / trucking":  (5,5,4,2,4,4,3,5,2,4),
- "Insurance agency":    (4,4,5,4,5,4,3,4,1,4),
- "PI law firm":         (4,5,4,5,4,4,3,3,4,2),
- "Medical practice":    (4,4,4,3,4,4,5,4,1,2),
- "Property mgmt":       (4,4,4,3,5,4,4,4,3,4),
- "Home services":       (3,5,4,3,5,4,4,3,3,4),
- "Dental / DSO":        (3,5,4,3,5,4,4,4,2,3),
+ "E-comm / DTC":        (5,5,5,5,5,5,4,3,3,3,5),
+ "Marketing agency":    (5,4,5,4,4,4,4,3,4,4,5),
+ "SaaS":                (5,2,3,4,5,5,4,2,4,4,5),
+ "Staffing agency":     (5,2,5,4,4,5,4,2,4,4,4),
+ "MSP / IT services":   (5,2,5,4,4,5,4,2,4,4,5),
+ "Freight / trucking":  (5,4,5,4,2,4,4,3,5,2,4),
+ "Insurance agency":    (4,3,4,5,4,5,4,3,4,1,4),
+ "PI law firm":         (4,4,5,4,5,4,4,3,3,4,2),
+ "Medical practice":    (4,4,4,4,3,4,4,5,4,1,2),
+ "Property mgmt":       (4,3,4,4,3,5,4,4,4,3,4),
+ "Home services":       (3,5,5,4,3,5,4,4,3,3,4),
+ "Dental / DSO":        (3,4,5,4,3,5,4,4,4,2,3),
 }
 
 # =============================================================== SKILL CRITERIA
 # Properties of the WORK. True wherever you place it.
 SDIM = [
-    ("GRADE", 15, "Objectively gradeable before placement",
-     "5=one right answer, machine-checkable  3=rubric  1=judgment/charisma"),
+    ("HAPPY", 24, "Client is more likely happy than not",
+     "Composite, and the heaviest criterion: objective output nobody argues about + visible win "
+     "inside 2 weeks + failure is recoverable + output does not depend on the client's team + "
+     "an SOP already exists to plug into. 5=all five  1=none"),
+    ("ASYNC", 14, "Works fully async",
+     "5=no live overlap needed at all  4=one call a week  3=daily overlap  1=US-hours voice. "
+     "GATE at <4"),
     ("RETAIN", 14, "Retention",
-     "async · no night shift · no freelance escape path · weak local counter-bid · year-round"),
-    ("AIDUR", 13, "AI-durable over 5 years",
+     "no freelance escape path · weak local counter-bid · year-round · visible career ladder"),
+    ("VALUE", 13, "True value created for BOTH sides",
+     "Anchored on Somewhere's PUBLISHED savings %: 5=>70% (accountant 78%, bookkeeper 75%) "
+     "4=55-70% (Head of Finance 69%, CFO 55%) 3=40-55% 2=30-40% (ops/admin floor) 1=<30%"),
+    ("AIDUR", 11, "AI-durable over 5 years",
      "5=judgment/liability-bearing  3=partly exposed  1=being eaten now"),
-    ("VALUE", 12, "True value created for BOTH sides",
-     "US loaded cost minus offshore cost, and offshore pay minus local pay. 5=both large"),
-    ("SUPPLY", 11, "Indian supply already doing this for US clients", "5=thousands  1=must create"),
-    ("TRAIN", 9, "Trainable — small delta from adjacent supply", "5=<1wk  3=2wk  1=months"),
-    ("FEE", 8, "Fee size", "5=$40k+ placed  3=$20-28k  1=<$14k"),
-    ("SOLO", 8, "Output does not depend on the client's team",
-     "5=fully independent  1=needs constant client input"),
-    ("FASTWIN", 6, "Visible win inside 2 weeks", "5=week one  1=a quarter"),
-    ("RECOVER", 4, "Failure is recoverable", "5=fix it next month  1=a client is lost"),
+    ("SUPPLY", 10, "Indian supply already doing this for US clients", "5=thousands  1=must create"),
+    ("TRAIN", 8, "Trainable — small delta from adjacent supply", "5=<1wk  3=2wk  1=months"),
+    ("FEE", 6, "Fee size", "5=$40k+ placed  3=$20-28k  1=<$14k"),
 ]
-# skill: GRADE RETAIN AIDUR VALUE SUPPLY TRAIN FEE SOLO FASTWIN RECOVER
+# skill: HAPPY ASYNC RETAIN VALUE AIDUR SUPPLY TRAIN FEE
+# VALUE anchored on Somewhere's published savings %: accountant 78, bookkeeper up to 75,
+# EA 76, Head of Finance 69, C-suite 53-60, SWE 54, ops/admin/sales floor 30-48.
 SKILLS = {
- "AR & Collections":            (5,4,3,4,4,5,3,4,5,5),
- "AP & Invoice Processing":     (5,4,2,3,5,5,2,5,5,5),
- "Bookkeeping / reconciliation":(5,3,2,4,5,4,2,4,5,5),
- "Ledger & Close (senior)":     (5,3,3,5,4,2,5,4,3,4),
- "Financial reporting pack":    (4,4,3,4,3,4,4,4,4,4),
- "Payroll processing":          (5,5,3,4,3,3,3,4,4,2),
- "Reporting & Analytics (BI)":  (5,4,3,4,3,4,4,4,4,5),
- "Paid Media Operations":       (5,2,3,4,4,5,4,3,4,4),
- "Email / Lifecycle Ops":       (4,4,3,3,3,4,3,3,4,5),
- "Compliance & Document Ops":   (5,4,5,3,3,3,3,4,3,3),
- "CRM / RevOps data hygiene":   (5,3,2,2,4,5,2,4,4,5),
- "Customer support (email)":    (3,2,2,3,5,5,1,3,4,4),
+ "AR & Collections":            (5,4,4,4,3,4,5,3),
+ "AP & Invoice Processing":     (5,5,4,4,2,5,5,2),
+ "Bookkeeping / reconciliation":(5,5,3,5,2,5,4,2),
+ "Ledger & Close (senior)":     (4,4,3,5,3,4,2,5),
+ "Financial reporting pack":    (4,5,4,4,3,3,4,4),
+ "Payroll processing":          (4,5,5,4,3,3,3,3),
+ "Reporting & Analytics (BI)":  (4,5,4,4,3,3,4,4),
+ "Paid Media Operations":       (4,5,2,4,3,4,5,4),
+ "Email / Lifecycle Ops":       (4,5,4,3,3,3,4,3),
+ "Compliance & Document Ops":   (4,5,4,3,5,3,3,3),
+ "CRM / RevOps data hygiene":   (4,5,3,2,2,4,5,2),
+ "Customer support (email)":    (3,3,2,4,2,5,5,1),
+ "Fractional CFO / Head of Fin":(3,4,3,4,4,3,2,5),
 }
 
 # ========================================================= INTERACTION CRITERIA
@@ -140,7 +154,7 @@ def iscore(v, s):
     pain = {0: 5, 1: 4, 2: 4}.get(PAIN[v].index(s), 1) if s in PAIN[v] else 1
     combo = 5 if s in COMBO[v] else 2
     fit = min(5, round((dict(zip(VO, VERTICALS[v]))["STACK"] +
-                        dict(zip(SO, SKILLS[s]))["GRADE"]) / 2))
+                        dict(zip(SO, SKILLS[s]))["HAPPY"]) / 2))
     tot = (40 * pain / 5 + 35 * combo / 5 + 25 * fit / 5)
     return tot, dict(PAIN=pain, COMBO=combo, FIT=fit)
 
@@ -165,7 +179,7 @@ print("---\n\n## 1. Vertical criteria\n")
 print("| Dim | Wt | Criterion | Anchors |\n|---|---|---|---|")
 for k, w, n, a in VDIM:
     print(f"| `{k}` | **{w}** | {n} | {a} |")
-print("\n**Gate: `REMOTE` < 4 is disqualifying** — never sell to a buyer who must first be "
+print("\n**Gates: `REMOTE` < 4 (vertical) and `ASYNC` < 4 (skill) are disqualifying** — never sell to a buyer who must first be "
       "convinced that remote hiring works.\n")
 print("| # | Vertical | Score | " + " | ".join(f"`{k}`" for k in VO) + " | |")
 print("|---|---|---|" + "---|" * (len(VO) + 1))
@@ -196,7 +210,12 @@ print("excellent and a vertical can be excellent while the *pair* is weak — be
 print("not feel that particular pain, or no one offshore has done that exact combination before.\n")
 
 print("---\n\n## 4. THE MAP\n")
-ok = [v for v in VERTICALS if dict(zip(VO, VERTICALS[v]))["REMOTE"] >= 4]
+# TWO vertical gates now: already hires remote, AND targetable on Meta.
+# The second was hidden inside REACH until it was split out.
+ok = [v for v in VERTICALS
+      if dict(zip(VO, VERTICALS[v]))["REMOTE"] >= 4
+      and dict(zip(VO, VERTICALS[v]))["META"] >= 4]
+sok = [s for s in SKILLS if dict(zip(SO, SKILLS[s]))["ASYNC"] >= 4]
 top_v = [v for _, v in vr if v in ok][:6]
 top_s = [s for _, s in sr][:8]
 print("Rows = verticals passing the `REMOTE` gate, best first. Columns = skills, best first.\n")
@@ -232,7 +251,7 @@ print("serve every cell in the grid.\n")
 import itertools
 best_grid = []
 for vt in itertools.combinations(ok, 3):
-    for st in itertools.combinations(SKILLS, 3):
+    for st in itertools.combinations(sok, 3):
         cells = [pair(v, s) for v in vt for s in st]
         best_grid.append((min(cells), sum(cells) / 9, vt, st))
 best_grid.sort(reverse=True)
@@ -260,7 +279,15 @@ print("| Vertical | Lead with | Why |\n|---|---|---|")
 lead = {v: max(((pair(v, s), s) for s in st))for v in vt}
 why = {"AR & Collections": "billing volume is the felt pain and cash is the language owners speak",
        "AP & Invoice Processing": "highest existing offshore supply, zero switch cost, fastest to fill",
-       "Reporting & Analytics (BI)": "highest fee of the three, spans finance and marketing, founder can grade it"}
+       "Reporting & Analytics (BI)": "highest fee of the three, spans finance and marketing, founder can grade it",
+       "Bookkeeping / reconciliation": "78% savings on Somewhere's own data, deepest Indian supply, fully async",
+       "Compliance & Document Ops": "most AI-durable of all — liability-bearing work nobody delegates to a model",
+       "Financial reporting pack": "async, gradeable, mid-fee",
+       "Payroll processing": "best retention of any skill — deadline-driven and sticky",
+       "Paid Media Operations": "the founder can grade this personally in twenty minutes",
+       "Email / Lifecycle Ops": "revenue-attributable output",
+       "CRM / RevOps data hygiene": "zero switch cost",
+       "Ledger & Close (senior)": "highest fee, but least portable"}
 for v in vt:
     sc, s = lead[v]
-    print(f"| **{v}** | {s} ({sc:.1f}) | {why[s]} |")
+    print(f"| **{v}** | {s} ({sc:.1f}) | {why.get(s, '—')} |")
