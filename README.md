@@ -1,9 +1,16 @@
 # Business Repository
 
-## Seven documents
+## Start here
+
+### → [`MAP.md`](MAP.md) — the decision: 2 verticals × 5 roles
+
+---
+
+## Eight documents
 
 | | |
 |---|---|
+| **[`MAP.md`](MAP.md)** | **THE DECISION.** E-comm + marketing agencies × 5 roles. Two ads, one legible promise, five sellable seats. Supersedes the vertical/role picks elsewhere |
 | **[`OFFER.md`](OFFER.md)** | **The buildable thing.** One skill, both ICPs, priced, with the retention architecture and the economics stress-tested against 6-month attrition |
 | **[`MASTER.md`](MASTER.md)** | The analysis behind it — market data, 179-role screen, competitor teardown, decision history, what's unvalidated |
 | **[`BEACHHEAD.md`](BEACHHEAD.md)** | **Three verticals, one bench** — e-comm + marketing agencies + SaaS, ranked on measured **switch cost**. 6 of 10 roles are drop-in. Launch role is AR & Collections, not Ledger & Close |
