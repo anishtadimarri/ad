@@ -71,6 +71,7 @@ class Offer:
     claim_rate: float = REPLACEMENT_RATE   # share of placements claiming
     refund_share: float = REFUND_SHARE_OF_FEE  # share of claims paid in CASH
     bench_shortlist: float = 0.0    # cost per call held to show bench candidates
+    managed_convert: float = 0.0    # share of clients converted to a managed seat later
     # --- funnel
     lead_to_call: float = LEAD_TO_CALL
     call_to_deposit: float = CALL_TO_DEPOSIT
@@ -117,6 +118,8 @@ def econ(o: Offer):
     prot = (o.protection_attach * o.protection_price * o.protection_months
             * PROTECTION_MARGIN)
     mrec = (o.monthly_spread - MONTHLY_SEAT_COGS) * max(o.monthly_tenure - 1, 0) * seats
+    # later conversion of placement clients onto managed seats — recurring layer
+    mrec += (o.managed_convert * (800.0 - MONTHLY_SEAT_COGS) * o.monthly_tenure * seats)
     gplife = gp30 + tail * (1 - PROCESSING) + (xfee + xscreen - xcogs) + prot + mrec
 
     return dict(rev30=rev30, gp30=gp30, gm=gp30 / rev30 if rev30 else 0, cac=cac,
@@ -157,6 +160,11 @@ CONFIGS = [
     replace(SW, name="H2  H1 + free bench shortlist pre-deposit",
             charge_screening=True, protection_attach=0.30, multi_hire=0.20,
             claim_rate=0.70, refund_share=0.0, bench_shortlist=90.0,
+            lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
+    replace(SW, name="H3  H2 + 25% convert to managed seats",
+            charge_screening=True, protection_attach=0.30, multi_hire=0.20,
+            claim_rate=0.70, refund_share=0.0, bench_shortlist=90.0,
+            managed_convert=0.25,
             lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
 ]
 
@@ -322,7 +330,7 @@ print("\n**Doubling the guarantee window to 12 months AND making replacements un
 print("*cheaper* than the 6-month industry standard**, because eliminating cash refunds saves more")
 print("than the extra claims cost. Best guarantee in the market, at negative cost.\n")
 
-REC = next(c for c in CONFIGS if c.name.startswith('H2'))
+REC = next(c for c in CONFIGS if c.name.startswith('H3'))
 print("---\n\n## Sensitivity — recommended (S6)\n")
 print("### CPL × replacement rate\n")
 print("| | repl 15% | repl 30% | repl 50% | repl 70% |")
