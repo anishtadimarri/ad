@@ -181,4 +181,42 @@ as a tied band, as with the role model (MASTER §7.10).
 
 ---
 
+## CONSENSUS RANKING — all verticals including e-comm
+
+Because the base weights are partly circular (see the anchoring test above), the
+defensible single ordering is the **average of both weightings**. A pair that ranks well
+under both is robust; one that only ranks well under the base weights was flattered by
+criteria derived from the e-comm case.
+
+| # | Vertical | Role | Base | Reweighted | Swing |
+|---|---|---|---|---|---|
+| 1 | **E-comm/DTC** ⭐ | Bookkeeper / accountant (A2X, close) | 1 | 3 | +2 |
+| 2 | **Freight/trucking** | Safety & compliance documents | 3 | 2 | -1 |
+| 3 | **Property mgmt** | AP / AR / owner statements | 2 | 6 | +4 |
+| 4 | **SaaS** | Revenue accountant / rev-rec | 4 | 4 | +0 |
+| 5 | **E-comm/DTC** ⭐ | Inventory & COGS analyst | 5 | 7 | +2 |
+| 6 | **Property mgmt** | CAM reconciliation | 7 | 5 | -2 |
+| 7 | **Freight/trucking** | Billing & settlements | 6 | 10 | +4 |
+| 8 | **Staffing agency** | Compliance & onboarding docs | 8 | 8 | +0 |
+| 9 | **Staffing agency** | Back-office payroll & invoicing | 9 | 9 | +0 |
+| 10 | **Marketing agency** | Billing & project accounting | 17 | 1 | -16 🔺 |
+| 11 | **E-comm/DTC** ⭐ | Email / lifecycle (Klaviyo) | 10 | 15 | +5 |
+| 12 | **E-comm/DTC** ⭐ | Amazon PPC / retail media | 11 | 16 | +5 |
+| 13 | **Insurance agency** | Renewal prep & remarketing | 12 | 17 | +5 |
+| 14 | **Home services** | Bookkeeping / job costing | 18 | 11 | -7 🔺 |
+| 15 | **SaaS** | QA automation | 20 | 13 | -7 🔺 |
+| 16 | **MSP / IT services** | Billing & invoice reconciliation | 16 | 18 | +2 |
+| 17 | **E-comm/DTC** ⭐ | Supply chain / 3PL coordinator | 25 | 12 | -13 🔺 |
+| 18 | **Medical practice** | Credentialing specialist | 27 | 14 | -13 🔺 |
+| 19 | **Medical practice** | Denial management / appeals | 24 | 22 | -2 |
+| 20 | **SaaS** | AR / collections | 19 | 29 | +10 🔻 |
+| 21 | **MSP / IT services** | Procurement & quoting | 28 | 20 | -8 🔺 |
+| 22 | **Marketing agency** | Reporting & analytics analyst | 35 | 19 | -16 🔺 |
+
+⭐ e-comm · 🔺 undervalued by the base weights · 🔻 flattered by them
+
+**E-comm pairs occupy consensus ranks 1, 5, 11, 12, 17, 69** — 2 of the top 10.
+
+---
+
 *104 pairs · 83 clean · 21 gated out*

@@ -316,4 +316,25 @@ print("same verticals dominate the band.** Read that as: e-comm's *lead* is part
 print("how the criteria were derived; its *membership in the top tier* is not. Treat the top ~12")
 print("as a tied band, as with the role model (MASTER §7.10).\n")
 
+print("---\n\n## CONSENSUS RANKING — all verticals including e-comm\n")
+print("Because the base weights are partly circular (see the anchoring test above), the")
+print("defensible single ordering is the **average of both weightings**. A pair that ranks well")
+print("under both is robust; one that only ranks well under the base weights was flattered by")
+print("criteria derived from the e-comm case.\n")
+_altr = {(vert, role): i for i, (t, vert, role) in enumerate(_alt, 1)}
+_cons = sorted(((( _br[(vert, role)] + _altr[(vert, role)]) / 2, _br[(vert, role)],
+                 _altr[(vert, role)], vert, role, t)
+                for t, vert, role, v, f in clean), key=lambda x: x[0])
+print("| # | Vertical | Role | Base | Reweighted | Swing |")
+print("|---|---|---|---|---|---|")
+for i, (avg, b, a, vert, role, t) in enumerate(_cons[:22], 1):
+    sw = a - b
+    tag = " 🔻" if sw >= 6 else (" 🔺" if sw <= -6 else "")
+    ec = " ⭐" if vert == "E-comm/DTC" else ""
+    print(f"| {i} | **{vert}**{ec} | {role} | {b} | {a} | {sw:+d}{tag} |")
+print("\n⭐ e-comm · 🔺 undervalued by the base weights · 🔻 flattered by them\n")
+_ecc = [i for i, c in enumerate(_cons, 1) if c[3] == "E-comm/DTC"]
+print(f"**E-comm pairs occupy consensus ranks {', '.join(str(x) for x in _ecc[:6])}** "
+      f"— {len([x for x in _ecc if x <= 10])} of the top 10.\n")
+
 print(f"---\n\n*{len(PAIRS)} pairs · {len(clean)} clean · {len(ko)} gated out*")
