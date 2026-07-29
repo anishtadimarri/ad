@@ -23,7 +23,7 @@ from dataclasses import dataclass, replace
 # ---------------------------------------------------------------- environment
 
 CPL = 75.0
-SALARY = 22_000.0
+SALARY = 20_000.0   # operator direction: mass market sits at 20-25k
 HORIZON = 36
 
 # Funnel — Somewhere's actual shape [E/?]
@@ -41,8 +41,13 @@ SCREENING_PASSTHRU = 175.0     # background $50-200 + assessment $25-150 +
 TOOLING = 50.0
 PROCESSING = 0.029
 
-# Attrition regime [C/?] — pessimistic
-REPLACEMENT_RATE = 0.50
+# Attrition regime. Operator direction: 9-month average worker stay.
+# Share churning inside a guarantee window, exponential assumption:
+#   6-month window  -> 1-e^(-6/9)  = 49%
+#   12-month window -> 1-e^(-12/9) = 74%
+# Real tenure curves are front-loaded, so these understate if anything.
+WORKER_TENURE = 9.0
+REPLACEMENT_RATE = 0.49
 REFUND_SHARE_OF_FEE = 0.15
 
 # Lifetime behaviour [?]
@@ -66,7 +71,7 @@ class Offer:
     salary: float = SALARY
     # --- fee stack (all market-observed structures)
     deposit: float = 500.0          # refundable, credited to final invoice
-    fee_pct: float = 0.35           # single-stage placement fee
+    fee_pct: float = 0.30           # single-stage placement fee
     fee_tail_pct: float = 0.0       # deferred slice at month 12
     volume_pct: float = 0.0         # blended rate on repeat seats (slide)
     charge_screening: bool = False  # pass screening costs through to client
@@ -74,7 +79,7 @@ class Offer:
     protection_price: float = 297.0
     protection_months: float = 12.0
     monthly_spread: float = 0.0     # managed-seat spread per month
-    monthly_tenure: float = 18.0
+    monthly_tenure: float = 12.0   # CLIENT SEAT months, not worker months
     escrow: float = 0.0             # stay-bonus escrow (pass-through, not revenue)
     claim_rate: float = REPLACEMENT_RATE   # share of placements claiming
     refund_share: float = REFUND_SHARE_OF_FEE  # share of claims paid in CASH
@@ -129,7 +134,12 @@ def econ(o: Offer):
              + (xfee + xscreen) * PROCESSING)
     prot = (o.protection_attach * o.protection_price * o.protection_months
             * PROTECTION_MARGIN)
-    mrec = (o.monthly_spread - MONTHLY_SEAT_COGS) * max(o.monthly_tenure - 1, 0) * seats
+    # BUGFIX: this previously charged MONTHLY_SEAT_COGS even when there was no
+    # managed seat, so every EOR-only config carried a phantom cost that GREW with
+    # seat tenure — which made longer client relationships look almost worthless.
+    # EOR has its own EOR_COST, so applying seat COGS on top double-counted anyway.
+    mrec = ((o.monthly_spread - MONTHLY_SEAT_COGS) * max(o.monthly_tenure - 1, 0) * seats
+            if o.monthly_spread else 0.0)
     # later conversion of placement clients onto managed seats — recurring layer
     mrec += (o.managed_convert * (800.0 - MONTHLY_SEAT_COGS) * o.monthly_tenure * seats)
     # EOR: transparent flat fee for a distinct service, so it does NOT break the
@@ -164,6 +174,7 @@ CONFIGS = [
             protection_attach=0.30, multi_hire=0.20, volume_pct=0.27,
             extra_seats=1.10, **OPT),
     replace(SW, name="S7  traditional 22% (F&A norm)", fee_pct=0.22, **OPT),
+    replace(SW, name="S7b at 35% (previous model)", fee_pct=0.35, **OPT),
     replace(SW, name="S8  Hey Foster's 20%", fee_pct=0.20, **OPT),
     replace(SW, name="S9  pure monthly managed", fee_pct=0.0, monthly_spread=800.0,
             **OPT),
@@ -174,14 +185,14 @@ CONFIGS = [
     # --- Hormozi revisions
     replace(SW, name="H1  S5 + 12mo UNLIMITED replace, no refunds",
             charge_screening=True, protection_attach=0.30, multi_hire=0.20,
-            claim_rate=0.70, refund_share=0.0, **OPT),
+            claim_rate=0.74, refund_share=0.0, **OPT),
     replace(SW, name="H2  H1 + free bench shortlist pre-deposit",
             charge_screening=True, protection_attach=0.30, multi_hire=0.20,
-            claim_rate=0.70, refund_share=0.0, bench_shortlist=90.0,
+            claim_rate=0.74, refund_share=0.0, bench_shortlist=90.0,
             lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
     replace(SW, name="H3  H2 + 25% convert to managed seats",
             charge_screening=True, protection_attach=0.30, multi_hire=0.20,
-            claim_rate=0.70, refund_share=0.0, bench_shortlist=90.0,
+            claim_rate=0.74, refund_share=0.0, bench_shortlist=90.0,
             managed_convert=0.25,
             lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
     replace(SW, name="H4  H2 + EOR at 45% attach (no markup)",
