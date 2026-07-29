@@ -2,6 +2,9 @@
 
 **One skill. One supply geography. One demand ICP. Designed to survive 6-month attrition.**
 
+**Headline economics: 4.01:1 at 30 days · 7.51:1 lifetime** — modelled in
+[`scoring/offer_model.py`](scoring/offer_model.py) on a pessimistic 50% replacement rate.
+
 Analysis, market data and the reasoning that selected this sit in [`MASTER.md`](MASTER.md).
 This document is the buildable thing. Evidence tags per §0 of MASTER: **[V]** verified ·
 **[E]** estimate · **[C]** company claim · **[?]** assumption.
@@ -86,77 +89,177 @@ generalist SMB bookkeeper faces a different chart of accounts every engagement.
 
 ## 3. The offer
 
-> ### Your next e-commerce bookkeeper. $22,000 a year, not $85,000.
+Two tiers. **Lead with the accountant** — §4.3 shows placed salary is the single biggest lever on
+LTGP:CAC, and the fee scales with it while COGS does not.
+
+> ### Your next e-commerce accountant. $34,000 a year, not $120,000.
 >
-> Knows Shopify, Amazon and A2X. Three vetted candidates in 48 hours —
-> **interview them free, pay nothing until you hire.**
+> Owns your close, your inventory and COGS, and your real product margin.
+> Knows Shopify, Amazon and A2X. **Three graded candidates in 48 hours — interview them free.**
+
+| Tier | Role | Placed salary | Fee (30% + 5%) | Replaces a US hire at |
+|---|---|---|---|---|
+| **Lead** | E-comm **accountant** — owns the close | **$34,000** | $10,200 + $1,700 | $79,172 base → **$110–135k loaded** [V/E] |
+| Entry | E-comm **bookkeeper** — reconciliation, AP-AR | $22,000 | $6,600 + $1,100 | $55,893 base → **~$75k loaded** [V/E] |
 
 | Term | Spec |
 |---|---|
-| **Placed salary** | **$22,000/year**, paid by the client directly to the worker. Fully transparent — the client sees the exact figure |
-| **Our fee** | **25% at start ($5,500) + 5% at month 12 if still employed ($1,100)** |
-| **Stay Bonus escrow** | **$1,800**, funded by the client at placement, held and disbursed by us |
-| **Shortlist** | 3 graded candidates in 48 hours. Free. No commitment |
+| **Fee** | **30% at start + 5% at month 12** if still employed |
+| **Salary transparency** | Client sees the exact figure the worker receives. No hidden spread |
+| **Stay Bonus escrow** | **$2,500** (~7% of salary), funded by the client, held and disbursed by us |
+| **Engagement deposit** | **$500**, credited in full against the fee |
+| **Shortlist** | 3 graded candidates in 48 hours. Free, no commitment |
 | **Time to start** | 7–21 days [V — matches Somewhere] |
-| **Guarantee** | 6-month conditional free replacement (conditions §5.3) |
-| **Overlap** | 4 hours, IST afternoon/evening → US morning. **Never a night shift** |
+| **Guarantee** | 6-month conditional free replacement (§5.3) |
+| **Overlap** | 4 hours, IST afternoon → US morning. **Never a night shift** |
 | **Employment** | Client employs directly. We are the recruiting intermediary, not the employer |
 
-### 3.1 Why the fee is split 25% + 5% rather than 35% upfront
+### 3.1 The fee structure is a priced choice, not a free win
 
-Three things at once:
+§4.3 prices it: splitting 35% into 30%+5% surrenders $1,700 of certain cash to gain **$680
+expected** (5% × $34k × 40% survival at 12 months). That is a **~$1,020 expected loss per
+placement.**
 
-1. **Retention becomes our revenue, not just our cost.** We are paid more when the placement
-   sticks, and the client can see that alignment on the term sheet.
-2. **It de-risks the client** at exactly the point they're most sceptical of an unknown vendor.
-3. **The 25% must clear the 30-day payback alone** — it does (§4), so the month-12 tail is upside
-   rather than load-bearing. This respects the hard constraint in MASTER §3.1.
+It buys three things — the client sees our incentive aligned to retention on the term sheet, it
+de-risks them at peak scepticism of an unknown vendor, and retention becomes revenue rather than
+only cost. For a founder with no track record that is worth buying.
 
----
-
-## 4. Unit economics, modelled against 6-month attrition
-
-**Assume the pessimistic case is true** — that median offshore tenure really is ~6 months
-[C — Oceans' claim, self-serving, but modelled as if true].
-
-| Line | Amount |
-|---|---|
-| Fee at start (25% of $22,000) | **$5,500** |
-| Month-12 tail (5%, ~40% of placements survive [?]) | +$440 expected |
-| **Revenue booked in 30 days** | **$5,500** |
-| Recruiter labour [E] | ($188) |
-| Sourcing / screening [E] | ($100) |
-| Candidate acquisition (₹400–800/application [V]) | ($200) |
-| Assessment + ATS + tooling [E] | ($50) |
-| Payment processing (2.9%) | ($191) |
-| **Guarantee reserve — 50% replacement rate** [?] | **($1,500)** |
-| **Total COGS** | **($2,229)** |
-| **30-day gross profit** | **$3,271** |
-| **Gross margin** | **59%** |
-
-### 4.1 The ratio
-
-| CAC scenario | 30-day LTGP:CAC | Verdict |
+| Stage | Structure | Why |
 |---|---|---|
-| Referral / organic — $500 [E] | **6.5:1** | |
-| Cold email — $1,200 [E] | **2.7:1** | |
-| **Meta base case — $2,222** [E] | **1.5:1** | **At the floor** |
-| Breakeven at the 1.5:1 constraint | $2,181 | |
+| **First ~20 placements** | **30% + 5%** | No case studies exist. Buy the trust; it costs ~$1,020/placement |
+| **After case studies land** | **35% single-stage** | §4.1 C5 — best 30-day ratio of any configuration at 4.17:1 |
 
-⚠️ **This is the honest consequence of taking 6-month attrition seriously.** The guarantee reserve
-tripled and the fee dropped from 35% to 25% upfront, so the Meta case lands exactly *on* the
-constraint rather than comfortably above it. Three responses, in order of preference:
+The 30% upfront must clear the 30-day payback **on its own**, and it does (§4.1). The month-12
+tail is upside, never load-bearing — this respects the hard constraint in MASTER §3.1.
 
-| Response | Effect |
+### 3.2 What the front end is, and what it is not
+
+**It is not a paid attraction offer.** §4.3 shows a $297 SLO costs −0.64 on the 30-day ratio: the
+back end generates ~$612 of revenue per lead, an SLO recovers ~$24, and it discards 92% of the
+funnel to do it. **The free graded shortlist is the attraction offer** — ~$170 to deliver, and its
+job is throughput, not spend recovery.
+
+## 4. Unit economics
+
+Modelled in [`scoring/offer_model.py`](scoring/offer_model.py); full output in
+[`scoring/OFFER-MODEL.md`](scoring/OFFER-MODEL.md). Ten configurations share one funnel and cost
+engine and differ only in offer terms.
+
+**Assume the pessimistic attrition case is true** — median offshore tenure ~6 months
+[C — Oceans' claim, self-serving, modelled as if true], giving a **50% replacement rate**.
+
+### 4.0 Corrections made to the first version of this model
+
+Recorded because the first run produced 12.6:1, which was wrong.
+
+| Error | Fix |
 |---|---|
-| **Raise placed salary to $26,000** (senior candidate) | Fee → $6,500, GP → $4,062, ratio **1.8:1** |
-| **Add the $500 engagement deposit** (MASTER §9.2) | Improves fill rate *and* pulls cash into the window |
-| **Prove CAC below $1,500 before scaling spend** | Everything above $1,500 CAC is fragile at this fee |
+| Lead → intake call held at **40%** | That is an inbound referral rate. A cold Meta B2B lead is low-intent: **20%** |
+| COGS **flat** at ~$538/placement regardless of salary | A $34k senior search is not a $22k bookkeeper search. Now scales: search labour 3.5% of salary, candidate ads 1.5%, shortlist grading 0.5% per *search* |
+| Guarantee reserve flat at $700 × rate | A refund on a $10,200 fee is not a $700 event. Now includes refund exposure at 15% of claims |
+| No sales labour in CAC | Intake calls are held by a human. $60/call, ~3.4 calls per placement |
 
-If attrition turns out better than 6 months, the reserve falls to ~$500 and the ratio returns to
-**2.4:1** at the same CAC. **The reserve assumption is the single most valuable number to measure.**
+### 4.1 Configurations
 
----
+| Config | Salary | Fee | 30-day GP | GM | CAC | **30-day** | Lifetime GP | **Lifetime** |
+|---|---|---|---|---|---|---|---|---|
+| C1 as originally written | $22k | 25%+5% | $3,045 | 55% | $1,867 | **1.63:1** | $5,908 | 3.16:1 |
+| C2 + $500 deposit | $22k | 25%+5% | $3,087 | 56% | $1,889 | 1.63:1 | $5,984 | 3.17:1 |
+| C3 senior tier | $26k | 25%+5% | $3,607 | 55% | $1,867 | 1.93:1 | $6,998 | 3.75:1 |
+| C4 senior tier | $34k | 25%+5% | $4,733 | 56% | $1,867 | 2.54:1 | $9,179 | 4.92:1 |
+| **C5 single-stage fee** | **$34k** | **35%** | **$7,779** | **65%** | $1,867 | **4.17:1** | $14,002 | 7.50:1 |
+| C6 split fee + deposit | $34k | 30%+5% | $6,321 | 62% | $1,889 | 3.35:1 | $12,039 | 6.37:1 |
+| C7 + protection 30% | $34k | 30%+5% | $6,321 | 62% | $1,889 | 3.35:1 | $12,787 | 6.77:1 |
+| **C8 + 20% two-seat** | **$34k** | **30%+5%** | **$7,586** | **62%** | $1,889 | **4.01:1** | **$14,183** | **7.51:1** |
+| C9 with $297 SLO | $34k | 30%+5% | $6,256 | 61% | $3,066 | 2.04:1 | $11,921 | 3.89:1 |
+| C10 heavy deferral | $34k | 20%+20% | $3,209 | 47% | $1,867 | 1.72:1 | $8,418 | 4.51:1 |
+
+### 4.2 Which lever actually moves the ratio
+
+Each row changes exactly one thing from C1.
+
+| Lever | 30-day | vs C1 | Lifetime | vs C1 |
+|---|---|---|---|---|
+| **Placed salary $22k → $34k** | 2.54:1 | **+0.90** | 4.92:1 | **+1.75** |
+| **Fee 25% → 35% upfront** | 2.69:1 | **+1.06** | 4.84:1 | **+1.67** |
+| 20% take two seats | 1.96:1 | +0.33 | 3.54:1 | +0.37 |
+| Protection attach 30% | 1.63:1 | +0.00 | 3.57:1 | +0.40 |
+| Add $500 deposit | 1.63:1 | −0.01 | 3.17:1 | −0.02 |
+| **Add a $297 SLO** | **0.99:1** | **−0.64** | 1.93:1 | **−1.24** |
+
+### 4.3 Four findings
+
+**Salary tier is the single biggest lever.** The fee scales linearly with salary; COGS scales
+sub-linearly. Same funnel, same CAC, 55% more gross profit. **Place accountants, not bookkeepers.**
+The supply exists — MASTER §4.3 has senior offshore accountants at $24–48k [V].
+
+**An SLO is wrong for this business, and this contradicts the original brief.** The back end pays
+$10,200 at ~6% of leads = **$612 of revenue per lead**. An SLO at 8% take × $297 = **$24 per
+lead**, and it discards 92% of the funnel to collect it. When the back end is this large the front
+end's job is *throughput*, not spend recovery. The free graded shortlist **is** the attraction
+offer: it costs ~$170 and it converts.
+
+**The tenure-split fee is cash-negative, and §3.1 did not price it.** C5 (35% upfront) beats C6
+(30%+5%) on *both* horizons. You surrender $1,700 of certain cash to gain 5% × $34k × 40% survival
+= **$680 expected** — a **~$1,020 expected loss per placement.**
+
+> It remains defensible as a *trust purchase* for a founder with no track record. But it is a
+> purchase, not alignment for free. **Recommendation: run 30%+5% for the first ~20 placements
+> while you have no case studies, then move to 35% single-stage.**
+
+**CPL is ~6x more dangerous than attrition.** Replacement rate 15%→70% moves the ratio 4.73 →
+3.60 (−1.13). CPL $50→$250 moves it 8.55 → 2.02 (−6.53). Much of the design effort in §5 targets
+attrition; the model says media cost is the larger risk.
+
+### 4.4 Sensitivity — C8
+
+**CPL × replacement rate** (⚠️ = below the 1.5:1 constraint)
+
+| | repl 15% | repl 30% | repl 50% | repl 70% |
+|---|---|---|---|---|
+| **CPL $50** | 8.55:1 | 7.99:1 | 7.25:1 | 6.51:1 |
+| **CPL $100** | 4.73:1 | 4.43:1 | **4.01:1** | 3.60:1 |
+| **CPL $150** | 3.27:1 | 3.06:1 | 2.78:1 | 2.49:1 |
+| **CPL $200** | 2.50:1 | 2.34:1 | 2.12:1 | 1.90:1 |
+| **CPL $250** | 2.02:1 | 1.89:1 | 1.72:1 | 1.54:1 |
+
+**Breakeven at 1.5:1 sits near CPL $255** at a 50% replacement rate. Real headroom — but CPL is
+the number to watch weekly.
+
+**Fill rate**
+
+| Fill rate | CAC | 30-day | Lifetime |
+|---|---|---|---|
+| 80% | $1,551 | 4.92:1 | 9.19:1 |
+| **60%** | **$1,889** | **4.01:1** | **7.51:1** |
+| 40% | $2,834 | 2.63:1 | 4.93:1 |
+| 30% | $3,779 | 1.94:1 | 3.64:1 |
+
+**The two unmeasured funnel rates** — lead→intake × intake→search
+
+| | search 30% | search 40% | search 50% | search 60% |
+|---|---|---|---|---|
+| **intake 25%** | 2.93:1 | 3.91:1 | 4.89:1 | 5.87:1 |
+| **intake 20%** *(modelled)* | — | — | **4.01:1** | — |
+| **intake 30%** | 3.43:1 | 4.57:1 | 5.72:1 | 6.86:1 |
+| **intake 40%** | 4.35:1 | 5.80:1 | 7.25:1 | 8.70:1 |
+
+### 4.5 The moral hazard in the lifetime number
+
+Lifetime assumes **45% of clients buy a paid replacement** once the guarantee lapses [?]. So
+roughly **a fifth of lifetime gross profit is funded by the attrition we promise to prevent.**
+
+This is a real conflict, not a rhetorical one. Two mechanisms push against it deliberately: the
+Stay Bonus (§5) and the month-12 tail fee — which is a second, non-economic argument for keeping
+the tail despite §4.3 showing it is cash-negative. **Never build a growth plan that requires
+churn.** If lifetime economics ever depend on replacements, the offer has stopped being
+win-win-win.
+
+### 4.6 On the 62% gross margin vs 28% EBITDA
+
+MASTER §13.1 models 28% EBITDA at $5M revenue. Both are right: LTGP:CAC counts only COGS and
+CAC. Delivery management, leadership, finance, legal, tooling and unbilled recruiter capacity all
+sit below the gross line. A 4:1 gross ratio and a 28% net margin are consistent.
 
 ## 5. The retention architecture
 
@@ -165,7 +268,7 @@ be built into the offer *at signature*. Ranked by actual force:
 
 | # | Mechanism | How it works | Attacks |
 |---|---|---|---|
-| **1** | **Stay Bonus — client-funded, we escrow** | Client escrows $1,800 at placement. Worker receives $600 at month 6, $600 at 12, $600 at 18, disbursed by us. Costs the client ~8% of one year's salary against ~$6,600 to re-hire | Everything. **The only mechanism with direct financial force** |
+| **1** | **Stay Bonus — client-funded, we escrow** | Client escrows $2,500 at placement. Worker receives $800 at month 6, $800 at 12, $900 at 18, disbursed by us. Costs the client ~7% of one year's salary against ~$11,900 to re-hire | Everything. **The only mechanism with direct financial force** |
 | **2** | **Fee split by tenure** (§3.1) | Our 5% tail at month 12 | Our own incentive misalignment |
 | **3** | **Published 9% annual raise**, we administer | Worker's pay tracks the market without them leaving to get it | India BPO wage inflation of **9.5%/yr** [V] |
 | **4** | **Async by design — 4h overlap, never nights** | IST afternoon covers US morning | The largest attrition split in the dataset: Manila 40–60% vs India ITeS 11–18% [V] |
@@ -186,9 +289,9 @@ the plan.
 
 ### 5.2 Why the Stay Bonus is funded by the client, not us
 
-The client is the party who loses from attrition, and their cost of re-hiring (~$6,600 plus
-disruption) is 3.7x the escrow. Funding it ourselves would take $1,800 out of a $3,271 gross
-profit and destroy the model. Framing it as *"you're pre-paying a fraction of what turnover would
+The client is the party who loses from attrition, and their cost of re-hiring (~$11,900 plus
+disruption) is 4.8x the escrow. Funding it ourselves would take $2,500 out of a $7,586 gross
+profit — a third of it. Framing it as *"you're pre-paying a fraction of what turnover would
 cost you"* is both true and easy to sell.
 
 ### 5.3 Guarantee conditions
@@ -207,28 +310,34 @@ Without these, a handoff guarantee is unpriced insurance on someone else's manag
 
 ## 6. The three-way win, in numbers
 
+At the lead tier — accountant placed at $34,000.
+
 | Party | Gets | Gives | Net |
 |---|---|---|---|
-| **Client** | Saves **~$63,000/year** vs a US hire ($85k base → ~$123k loaded [E] vs $22k + $7.3k one-time). A named person rather than a firm. 4-hour overlap. Someone financially incentivised to stay | $5,500 fee + $1,800 escrow + $22,000 salary | **Wins in month one** |
-| **Worker** | **3.1x income** ($7,000 → $22,000 [E]). Works from home. Direct US employer, not a KPO seat. 9% annual raise. $1,800 in tenure bonuses. Named ladder. No night shift | Full-time commitment | **Life-changing** |
-| **Us** | $6,600 total fee, $3,271 GP in 30 days at a pessimistic reserve | Sourcing, grading, guarantee exposure, escrow admin | **1.5–2.4:1** |
+| **Client** | Saves **~$76,000 in year one** ($110–135k loaded [V/E] vs $34k salary + $10.2k fee + $2.5k escrow) and **~$90,000/year thereafter**. A named person, not a firm. 4-hour overlap. Someone financially incentivised to stay | $10,200 fee + $2,500 escrow + $34,000 salary | **Wins in month one** |
+| **Worker** | **2.4–4.7x income** (₹6–12 LPA ≈ $7,200–14,400 [E] → $34,000). Works from home. Direct US employer, not a KPO seat. 9% annual raise. $2,500 in tenure bonuses. Named ladder. No night shift | Full-time commitment | **Life-changing** |
+| **Us** | $11,900 total fee · **$7,586 GP in 30 days** at a pessimistic 50% replacement reserve · **4.01:1 / 7.51:1** | Sourcing, grading, guarantee exposure, escrow admin | **Clears the constraint with headroom** |
 
-**Why this is genuinely win-win-win rather than extraction:** salary is fully transparent, so the
-worker cannot later discover the agency was keeping 60% — the single largest grievance in the
-seat-rental model. The client's saving and the worker's raise come from the *same* arbitrage rather
-than from each other. We take a one-time slice and are paid again only if the placement lasts.
+**Why this is genuinely win-win-win rather than extraction:** the salary is fully transparent, so
+the worker cannot later discover the agency was keeping 60% of the billing — the single largest
+grievance in the seat-rental model. The client's saving and the worker's raise both come from the
+*same* arbitrage rather than from each other. We take a one-time slice and are paid again only if
+the placement lasts.
 
----
+**The one place this could stop being win-win-win** is §4.5: if lifetime economics ever come to
+depend on paid replacements, we would be profiting from the churn we promise to prevent. That is
+why the Stay Bonus is mechanism #1 and why the month-12 tail survives despite being cash-negative.
 
 ## 7. What must be true, and what it costs to find out
 
 | # | Assumption | Modelled | Test | Cost |
 |---|---|---|---|---|
-| 1 | Meta CPL for e-comm operators on this hook | $100 [E] | Run the ad | ~$1,500 |
+| 1 | **Meta CPL** — the dominant risk (§4.3) | $100 [E] | Run the ad | ~$1,500 |
 | 2 | **Guarantee replacement rate** | **50%** [?] | 10 placements aged 6 months | Time only — **the number that decides the model** |
 | 3 | Fill rate | 60% [?] | 3 real intakes | — |
+| 3b | **Lead → intake call held** — v1 of the model got this badly wrong | 20% [?] | First 50 leads | Included in test 1 |
 | 4 | Indian supply with Shopify/A2X knowledge | [?] | Post one role | ~$300 |
-| 5 | Client accepts the $1,800 escrow | [?] | First 5 pitches | Free |
+| 5 | Client accepts the $2,500 escrow | [?] | First 5 pitches | Free |
 | 6 | Client accepts the 5% month-12 tail | [?] | First 5 pitches | Free |
 | 7 | 2-week conversion course closes the A2X gap | [?] | One cohort of 5 | ~$300 |
 
@@ -242,10 +351,10 @@ nothing and can be run in conversation this week.** Test 2 cannot be accelerated
 
 | Weakness | Severity |
 |---|---|
-| **1.5:1 at Meta CAC is the floor, not a cushion** | **High.** Mitigations in §4.1, in order |
-| The $1,800 escrow is a novel ask from an unknown vendor | Medium. It is also the strongest differentiator, so test the objection before removing it |
-| Two-part fee complicates the pitch | Medium. Offset by the alignment story it buys |
+| **CPL is the dominant risk — ~6x more dangerous than attrition** (§4.3) | **High.** Breakeven near CPL $255. Watch it weekly; it is the one number that can kill the model outright |
+| The $2,500 escrow is a novel ask from an unknown vendor | Medium. It is also the strongest differentiator and the only retention mechanism with real force, so test the objection before removing it |
+| Two-part fee complicates the pitch **and costs ~$1,020/placement** (§4.3) | Medium. A deliberate trust purchase for the first ~20 deals, then switch to 35% single-stage |
 | E-commerce is itself cyclical | Medium. Broader SMB is the fallback ICP with the same delivery |
-| Bookkeeping is the most crowded category | Medium. Mitigated by buyer choice (§1.2), not by role choice |
+| Bookkeeping is the most crowded category | Medium. Mitigated by buyer choice (§1.2) and by leading with the accountant tier, not by role choice |
 | We hold client money in escrow | Medium. Needs clean segregation and a written escrow term. Not a trust account — get this drafted properly |
 | AI is compressing bookkeeping | Medium. `AI` scored 2. This is a 5–7 year business in its current form, not a 15-year one |
