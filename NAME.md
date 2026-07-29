@@ -221,7 +221,110 @@ natively in the category next to Oceans, and never boxes a role in.
 
 ---
 
-## 8. Entity ≠ brand
+## 8. Alternative TLDs — and the thing that actually unlocks the good names
+
+### `.talent` does not exist
+
+Checked against IANA's authoritative list (`data.iana.org/TLD/tlds-alpha-by-domain.txt`,
+version 2026072900, 1,439 TLDs). **Neither do `.hire`, `.hiring`, `.staff`, `.staffing`,
+`.people`, `.desk`, `.bench`, `.roster` or `.recruitment`.** The entire vocabulary of this industry
+went unclaimed in the gTLD rounds.
+
+### What does exist, and what each one costs
+
+| TLD | Status | Why not |
+|---|---|---|
+| **`.jobs` · `.careers` · `.career`** | Open (`.jobs` restricted to HR entities) | **Wrong side of the marketplace.** They announce that you serve *job seekers*. Our buyer is the employer, and a `.careers` domain in a Meta ad tells them we're a job board |
+| **`.seat`** | **Exists but closed** | A brand TLD belonging to SEAT, the carmaker. Not registrable |
+| **`.work` · `.biz`** | Open, cheap | **Measurably worse email deliverability** — these TLDs are over-represented in spam corpora and get filtered. Cold email is in the channel plan, so this is an operational cost, not a matter of taste |
+| **`.ai`** | Open, expensive | **Actively misrepresents the product.** We sell humans. An `.ai` domain invites "is this an AI agent or a person?" — the single worst question to have to answer in three seconds |
+| **`.io`** | Open | Reads as dev tools, and there is a live sovereignty question following the UK–Mauritius Chagos agreement. ICANN has retired ccTLDs before when the ISO 3166 code was withdrawn. Probably a long runway if it ever happens — but a real tail risk on an asset you intend to sell |
+| **`.agency` · `.company` · `.team` · `.works` · `.group`** | Open | No collision, no deliverability problem, and no credibility either. They read as the domain you bought because the `.com` was gone — which is exactly what happened |
+| **`.co`** | Open | **The only genuine alternative.** Familiar to US buyers, reads as a company abbreviation. Costs a slice of trust and some typo traffic to the `.com` holder |
+| **`.in`** | Open, cheap | Signals India, which filter 6 rejects for the *buyer-facing* site — but see the two-domain structure below, where it is the right answer rather than a compromise |
+
+### Domain hacks fail filter 1 by construction
+
+`hir.es` · `hi.re` · `hir.ing` · `ben.ch` · `deepben.ch` — all technically buildable, several with open
+registries. **All unusable, for one reason: the dot is inaudible.** Someone hears the name in a Reel,
+types `hires.com`, and lands on somebody else's page. You paid for the impression and delivered the
+click to a stranger.
+
+This is not a judgement about cleverness. It is filter 1 failing categorically, and it kills every
+domain hack at once.
+
+### `.co` is free on every finalist — buy it, don't launch on it
+
+`longtermtalent.co` · `allhandstalent.co` · `deepbenchtalent.co` · `steadyroster.co` — all available
+(whois). Register alongside the `.com` for ~$30 each. Defensive, not primary.
+
+### Two domains, two audiences — this one is correct, not a compromise
+
+| Site | Domain | Audience |
+|---|---|---|
+| **Buyer-facing** | `[name].com` | US employers. Every filter in §1 applies |
+| **Candidate-facing** | `[name].in` | Indian applicants. Different proof, different language, different page |
+
+`.in` **helps** on the candidate side — it says "we are real here" to someone deciding whether to
+send a work sample to a stranger. The two sides of a marketplace do not want the same website, and
+the supply-side test ([`README.md`](README.md) test 2) needs somewhere to point.
+
+---
+
+### The real unlock: several of the best names are parked, not used
+
+"Registered" and "in use" are different things, and the difference is worth thousands of dollars.
+Every rejected `.com` probed for what it actually serves:
+
+| Domain | What is actually there | Verdict |
+|---|---|---|
+| **`fulltimetalent.com`** | **HugeDomains — for sale, $3,895** (or $162/mo × 24) | ⭐ **Buyable** |
+| `keystonetalent.com` | HugeDomains — for sale, **$8,795** | Buyable, overpriced |
+| `steadytalent.com` · `fairtalent.com` · `tenuretalent.com` · `steadyhire.com` | 114-byte placeholder — registered and dormant | Broker offer; slow and uncertain |
+| `righthand.com` | 195-byte placeholder | Dormant, but `righthandtalent.com` is a live firm — see below |
+| `righthandtalent.com` | **Live** — Resona, chief-of-staff recruiters | ❌ Dead |
+| `backbonetalent.com` | **Live** — *"Simplify Hiring, Connect with Top Talent"* | ❌ Dead |
+| `foundationtalent.com` | **Live** — talent management and executive search | ❌ Dead |
+| `readytalent.com` | **Live** — career readiness intelligence | ❌ Dead |
+| `righthire.com` | **Live** — AI structured interviews | ❌ Dead |
+| `clearhire.com` | **Live** — *"Fill Critical Roles With Confidence"* | ❌ Dead |
+
+**Right Hand is now properly dead, not just unavailable.** `righthandtalent.com` is an operating
+recruiting firm, and `righthandco`, `righthandhq`, `righthandteam`, `yourrighthand` and
+`therighthand` are all registered too. A brand whose exact-match `.com` belongs to someone else in
+the same industry leaks traffic forever.
+
+### `fulltimetalent.com` at $3,895 — and why it may be the right answer
+
+**No operating company found at "Full Time Talent."** The domain is parked, not used.
+
+| Against every filter | |
+|---|---|
+| 1. Common words | ✅ "Full-time" and "talent" are as common as English gets |
+| 2. Not boxed into bookkeeping | ✅ |
+| 3. Not boxed into placement | ✅ **Better than most** — a full-time person is exactly what EOR employs, so both products fit |
+| 4. Reads established | ✅ |
+| 5. Meaning in 3 seconds | ✅✅ **It answers the buyer's first question before they ask it.** A cold Meta viewer's opening assumption is that we sell VAs, freelancers and gig workers. "Full-Time" refuses that in the name |
+| 6. No offshore signal | ✅ |
+| 7. Bare `.com` | ✅ |
+
+**$3,895 is one placement's gross profit** ($4,148, §10.5). The trade is: spend one placement on a
+name that pre-empts the category's biggest confusion, or spend nothing on `longtermtalent.com`,
+which clears every filter but says the second-most-important thing instead of the first.
+
+| | `fulltimetalent.com` | `longtermtalent.com` |
+|---|---|---|
+| Cost | **$3,895** | **$0** |
+| Answers | *"Is this a gig worker?"* — asked first | *"Will they stay?"* — asked second |
+| Filters | 7 / 7 | 7 / 7, mild hyphen ambiguity |
+
+**Recommendation: buy `fulltimetalent.com` if $3,895 is affordable before revenue; take
+`longtermtalent.com` if it is not.** Both are correct. Neither is a compromise, and no alternative
+TLD beats either of them.
+
+---
+
+## 9. Entity ≠ brand
 
 Worth separating, because they have different requirements:
 
