@@ -202,7 +202,102 @@ narrows over ten years, the EOR half of the business does not care.
 
 ---
 
-## 10. Summary
+## 10. The media angle — one asset, not a content strategy
+
+Asked whether media adds meaningfully to deal flow *and* enterprise value, without forcing it.
+**It does, for one specific reason — but the obvious version of it destroys value.**
+
+### 10.1 The empirical case is unusually strong
+
+| | |
+|---|---|
+| Somewhere | Grew on Nick Huber's ~400k audience [V] |
+| Oceans | Grew on Austin Rief / Nik Sharma audiences [V] |
+| Referral economics | **$25/lead vs $497 industry average** [V] |
+| Sub-$5M agencies | **60–80% of revenue from referral** [V] |
+
+**Every scaled player in this category was built on a media asset, and neither founder was a media
+buyer — they were audience owners.** Media isn't a bolt-on here; it is the category's proven
+go-to-market. What nobody has done is enter with media as a *deliberate build* rather than a
+pre-existing accident.
+
+### 10.2 The asset: a proprietary compensation and hiring benchmark
+
+Not a podcast. Not thought leadership. Not a founder newsletter. **One report, published
+quarterly, built as a byproduct of placements you are making anyway.**
+
+> **The E-Commerce Operator Comp Report** — what brands at $1M / $5M / $10M / $25M actually pay
+> for every operating role, US versus offshore, with time-to-fill and attrition by role.
+
+Why this specific asset and not another:
+
+| Test | Why it passes |
+|---|---|
+| **The ICP already wants it** | Every founder at $3–30M wonders whether they are paying market. Comp is the most-searched, least-answered question in e-comm ops |
+| **You are uniquely positioned** | You will hold thousands of real salary points at the e-comm × offshore intersection. Nobody else has that data |
+| **It compounds** | Every placement improves the report; a better report drives more placements. A genuine flywheel, not a funnel |
+| **It IS the sales tool** | *"Here's what this role costs in the US versus India"* is literally the pitch. The lead magnet and the offer are the same object |
+| **Near-zero marginal cost** | A byproduct of operations, not a separate function |
+| **It is an enterprise-value asset** | A proprietary dataset plus a distribution list carries its own multiple |
+
+Secondary, in support: a **gated true-cost-of-hire calculator** (continuous inbound, compounds on
+search) and a **narrow benchmarks newsletter** for e-comm finance and ops — not a hiring
+newsletter, which would attract recruiters rather than buyers.
+
+### 10.3 The deal-flow effect
+
+| Media share of deal flow | Blended CAC | 30-day | Lifetime |
+|---|---|---|---|
+| 0% | $587 | 10.14:1 | 35.51:1 |
+| 15% | $511 | 11.64:1 | 40.80:1 |
+| **30%** | **$435** | **13.68:1** | **47.93:1** |
+| 45% | $359 | 16.58:1 | 58.09:1 |
+
+*(At ~$80 marginal cost per media-sourced deal. Base case is $30k placed salary, 75% EOR attach,
+30-month seat.)*
+
+### 10.4 The enterprise-value effect
+
+| | EBITDA | Multiple | Enterprise value |
+|---|---|---|---|
+| No media — single-channel dependency | $6.80M | 8.0x | **$54M** |
+| Media at 30% of deal flow | $6.95M | 9.0x | **$63M** |
+| Media + proprietary comp dataset | $7.03M | 9.5x | **$67M** |
+
+**The value is in the multiple, not the EBITDA.** Two diligence items move it: channel
+concentration risk removed, and a dataset a competitor cannot replicate without doing the
+placements. Roughly **$13M of enterprise value for a report produced as a byproduct.**
+
+### 10.5 The trap — and it is the opposite of what the incumbents did
+
+> **A founder-brand audience is not transferable, and in diligence it is a discount, not a
+> premium.** A buyer asks "what happens when you leave?" Nick Huber's audience is worth a great
+> deal to Somewhere and it belongs to Nick.
+
+So the asset must be **brand-owned, not founder-owned.** *The E-Commerce Comp Report by
+[Company]*, with a named research author who is an employee — not *[Founder]'s newsletter*. That
+is a deliberate design choice with a direct valuation consequence, and it is the reverse of how
+both Somewhere and Oceans built theirs.
+
+### 10.6 The discipline
+
+Media is the most common founder distraction in this category, so bound it:
+
+| Rule | |
+|---|---|
+| **It must be a byproduct** | If you are hiring a content team in year 1, the thread is lost |
+| **One asset, not a strategy** | The report. The calculator and newsletter only exist to distribute it |
+| **Brand-owned bylines** | No founder-personality dependency |
+| **Data before publication** | Needs ~100 placements before the numbers are credible. **This is a year-2 asset.** Year 1 seeds it with market research and the first cohort |
+| **No media hire until stage 3** | One analyst, and only once the dataset justifies one |
+
+**Verdict: worth building, second.** It does not change stage 1 — nothing beats getting ten
+placements done. But the data model should be designed from placement one, because retrofitting
+comp data you failed to capture is the one part of this that cannot be bought later.
+
+---
+
+## 11. Summary
 
 | | Placement only | **Placement + EOR** | Managed service |
 |---|---|---|---|
