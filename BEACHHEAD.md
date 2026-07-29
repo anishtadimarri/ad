@@ -1,7 +1,7 @@
 # BEACHHEAD — Three Verticals, One Bench
 
-How to multiply the addressable market without multiplying the operation, and **without ever
-having to talk a buyer into remote hiring.**
+Ranked on **switch cost**: how many weeks of retraining it takes to move a proven worker from one
+vertical to another. Portability is now measured, not asserted.
 Companion to [`OFFER.md`](OFFER.md), [`SCALE.md`](SCALE.md), [`MASTER.md`](MASTER.md).
 Evidence tags per MASTER §0.
 
@@ -11,13 +11,55 @@ Evidence tags per MASTER §0.
 
 | | |
 |---|---|
-| **Verticals** | **E-commerce/DTC · Marketing agencies · Staffing agencies** |
-| **Shared spine** | **QuickBooks Online / Xero** — close, reconciliation, AR, AP |
-| **Roles — finance spine** | Ledger & Close · AR & Collections · AP & Invoice Processing · Compliance & Document Ops |
-| **Roles — marketing spine** (phase 2, §5A) | Reporting & Analytics · Paid Media Operations · Email / Lifecycle Ops |
-| **Combined ICP** | **~61,000 US businesses** vs ~21,000 for e-comm alone = **2.9x** |
-| **Every buyer already employs remote staff** | Non-negotiable. See §1 |
-| **Extra operational cost** | One extra week of conversion training per vertical |
+| **Verticals** | **E-commerce/DTC · Marketing agencies · SaaS** |
+| **Combined ICP** | ~66,000 US businesses |
+| **Drop-in roles** (≤1 week to switch vertical) | **6 of 10** |
+| **Launch role** | **AR & Collections** — not Ledger & Close. See §0 |
+| **Every buyer already employs remote staff** | Non-negotiable gate. §1 |
+
+---
+
+## 0. Two corrections that change the launch plan
+
+### 0.1 Staffing agencies are out — their work does not switch
+
+Staffing had the joint-lowest *friction* of any vertical (4.68) and I recommended it on that
+basis. But measured on **switch cost** it is the worst of the six survivors:
+
+| Role | Switch cost into staffing |
+|---|---|
+| AR & Collections | **2.0 weeks** — VMS portals (Fieldglass, Beeline), weekly billing cycle |
+| Payroll processing | **3.0 weeks** — multi-state contractor payroll |
+| Ledger & Close | **3.0 weeks** — factoring entries, bill-vs-pay-rate margin |
+
+Adding staffing drops drop-in roles from **6 to 3.** Its low friction is real, and it is bought
+by having genuinely specialised back-office work — which is exactly what breaks a shared bench.
+**Keep it as a later, standalone vertical. Do not put it in the founding trio.**
+
+### 0.2 The launch role was wrong — Ledger & Close is the LEAST portable role in the set
+
+Every earlier version of this plan said *"launch with Ledger & Close only, add AR later."*
+
+> **Ledger & Close carries the highest fee ($9,300) and the highest switch cost (2.5 weeks). It is
+> the one role that does not travel.** AP, bank reconciliation and AR are near-zero switch cost —
+> and they are the cheapest roles in the set.
+
+| | Mean fee | Roles |
+|---|---|---|
+| Drop-in (≤1 wk) | **$6,400** | 6 |
+| Vertical-specific (>1.5 wk) | **$7,800** | 2 |
+
+**Portability and fee size are inversely related.** That is a real trade-off, not a rounding error,
+and it has to be chosen deliberately:
+
+| Strategy | Launch role | Consequence |
+|---|---|---|
+| **Maximise fee** | Ledger & Close | $9,300/placement, but a separate bench per vertical |
+| **Maximise portability** | **AR & Collections** | $6,000/placement — 35% less — but one bench serves all three verticals and utilisation pools |
+
+**Recommendation: launch on AR & Collections.** At launch, bench utilisation matters more than fee
+per placement, because an idle bench is what kills fill rate and fill rate is what kills the model
+(OFFER §4). Add Ledger & Close per-vertical once each vertical has its own flow.
 
 ---
 
@@ -104,63 +146,47 @@ thinning supply. Our-side friction of 3.60 is the lowest score in the table.
 
 ## 3. The three verticals
 
-| | E-commerce / DTC | Marketing agencies | Staffing agencies |
+| | E-commerce / DTC | Marketing agencies | SaaS |
 |---|---|---|---|
-| **ICP in band** | ~21,000 | **~30,000** | ~10,000 |
-| **Who** | $3–30M Shopify/Amazon brands | $1M+ agencies, 10–80 staff | $1M+ staffing and recruiting firms |
-| **Books** | QBO/Xero | QBO/Xero | QBO |
-| **Connector** | **A2X** — settlements | **Harvest / Productive** — WIP, retainers | **Bullhorn** — timesheet → invoice |
-| **The pain** | 3-week close, inventory and COGS wrong, per-SKU margin invisible | project profitability unknown, retainer over-servicing, WIP | timesheet-to-invoice leakage, contractor compliance docs, slow billing |
-| **Already remote?** | ✅ Has offshore designers and VAs | ✅ Often fully distributed | ✅ **Offshore hiring is literally their business** |
-| **Decision** | Owner | Owner | Owner |
-| **Reachable via** | Storeleads, BuiltWith | Clutch, agency directories, tool footprints | ASA membership, Bullhorn ecosystem, LinkedIn |
+| **ICP in band** | ~21,000 | **~30,000** | ~15,000 |
+| **Who** | $3–30M Shopify/Amazon brands | $1M+ agencies, 10–80 staff | $2–50M ARR, 20–150 staff |
+| **Ledger** | QBO/Xero | QBO/Xero | QBO/NetSuite |
+| **Connector** | A2X — settlements | Harvest/Productive — WIP, retainers | Stripe/Chargebee — rev-rec |
+| **Ad stack** | Meta · Google · GA4 · Klaviyo | Meta · Google · GA4 · Looker (for clients) | Google · LinkedIn · GA4 · HubSpot |
+| **Already remote?** | ✅ offshore designers and VAs | ✅ often fully distributed | ✅ remote-native by default |
+| **Decision** | Owner | Owner | ⚠️ Controller or CFO — the one committee in the trio |
+| **Reachable via** | Storeleads, BuiltWith | Clutch, agency directories | BuiltWith, Crunchbase, job-post signals |
 
-**Staffing agencies are the lowest-client-friction buyer available anywhere**, and it is worth
-being explicit about why: **they require zero education.** They already understand offshore
-labour, placement fees, and why a graded work sample matters — because they sell those things
-themselves. The conversation is *"you know exactly how this works, here's our version,"* which is
-the shortest sales cycle in the whole study.
+**All three share both spines** — the same ledger *and* the same ad platforms. That is what makes
+six of ten roles drop-in.
 
-Two bonuses: staffing owners are a **dense referral network** — they talk to each other
-constantly — and you will understand their business better than any competitor, because you are
-running the same one.
-
-The obvious objection is disintermediation: could they just recruit offshore themselves? In
-principle yes. In practice their recruiters are US-market specialists with no Indian sourcing
-capability, which is why many already buy offshore sourcing and back-office support.
-
-**Accept the smaller number.** 61,000 businesses instead of 121,000 — you trade 60,000 businesses
-of theoretical reach for a set of buyers who are already doing the thing you sell.
+**SaaS is the weakest of the three and worth naming why:** the decision usually involves a
+controller or CFO rather than an owner, so the cycle is longer, and rev-rec raises the skill bar.
+It earns its slot on switch cost — its AP, bank rec and AR are near-identical to e-comm's — not on
+sales friction. **Sequence it third.**
 
 ---
 
-## 4. The four portable roles
+## 4. Roles ranked by switch cost
 
-Each is **one core skill plus a small vertical delta.** One work-sample test with three variants;
-one bench serving all three verticals.
+Switch cost = weeks of conversion training to move a **proven** worker into a new vertical.
 
-| Role | Core skill (identical across all three) | Vertical delta |
-|---|---|---|
-| **1. Ledger & Close** | QBO/Xero month-end, reconciliation, accruals, financial pack | The connector — **~1 week** |
-| **2. AR & Collections** | Invoice, chase, cash application, aging, dispute notes | **None** |
-| **3. AP & Invoice Processing** | Bill capture, GL coding, approval routing, vendor recs | **None** |
-| **4. Compliance & Document Ops** | Checklist against a rule set, exception flagging, audit trail | The rule set — sales-tax nexus · contractor W-9s · I-9s and certifications |
-
-**Roles 2 and 3 need no retraining at all**, which pools bench utilisation across all three
-verticals rather than stranding it in one. A slow month in e-comm no longer idles the bench.
-
-**Role 1 carries the delta and the highest fee. Role 4 is the most AI-durable and the least
-contested.**
-
-### Placed salary and fee
-
-| Role | Placed salary [E] | Fee at 30% | Replaces US at [E] |
+| Role | Max switch | Fee at 30% | Verdict |
 |---|---|---|---|
-| Ledger & Close (senior) | **$28–34k** | $8.4–10.2k | $85–110k loaded |
-| Ledger & Close (bookkeeper) | $20–24k | $6–7.2k | $70–78k loaded |
-| AR & Collections | $18–22k | $5.4–6.6k | $60–70k loaded |
-| AP & Invoice Processing | $16–20k | $4.8–6k | $55–65k loaded |
-| Compliance & Document Ops | $18–24k | $5.4–7.2k | $60–72k loaded |
+| **AP & Invoice Processing** | **0.0 wk** | $5,400 | **Drop-in** — bills, coding, approval routing are identical |
+| **AR & Collections** | **0.5 wk** | **$6,000** | **Drop-in · LAUNCH HERE** |
+| **Bank & card reconciliation** | **0.5 wk** | $5,400 | **Drop-in** |
+| **Financial reporting pack** | **1.0 wk** | $7,200 | **Drop-in** |
+| **Payroll processing** | **1.0 wk** | $6,600 | **Drop-in** |
+| **Reporting & Analytics (GA4/Looker)** | **1.0 wk** | **$7,800** | **Drop-in · highest-fee portable role · bridges both spines** |
+| Email / Lifecycle Ops | 1.5 wk | $6,600 | Near-drop-in |
+| Paid Media Operations | 1.5 wk | $7,200 | Near-drop-in — **the founder can grade this personally** (§5A) |
+| Compliance & Document Ops | 2.0 wk | $6,300 | ⚠️ **Vertical-specific.** Sales-tax nexus vs W-9s vs SOC 2 are different bodies of knowledge — earlier drafts wrongly called this portable |
+| Ledger & Close (senior) | 2.5 wk | $9,300 | ⚠️ **Vertical-specific.** Highest fee, least portable |
+
+**Reporting & Analytics is the standout.** Highest fee of any drop-in role, spans the finance and
+marketing spines, gradeable by the founder, and zero escape risk. If one role had to carry the
+business, that is the one — not Ledger & Close.
 
 ---
 

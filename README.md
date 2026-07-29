@@ -6,7 +6,7 @@
 |---|---|
 | **[`OFFER.md`](OFFER.md)** | **The buildable thing.** One skill, both ICPs, priced, with the retention architecture and the economics stress-tested against 6-month attrition |
 | **[`MASTER.md`](MASTER.md)** | The analysis behind it — market data, 179-role screen, competitor teardown, decision history, what's unvalidated |
-| **[`BEACHHEAD.md`](BEACHHEAD.md)** | **Three verticals, one bench** — e-comm + marketing agencies + staffing agencies. Two hard gates: the buyer must already hire remote, and must keep books on the same ledger. ICP 21k → 61k |
+| **[`BEACHHEAD.md`](BEACHHEAD.md)** | **Three verticals, one bench** — e-comm + marketing agencies + SaaS, ranked on measured **switch cost**. 6 of 10 roles are drop-in. Launch role is AR & Collections, not Ledger & Close |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
 ---
@@ -18,9 +18,8 @@ professionals from India/South Africa/Philippines into US small and mid-market c
 one-time placement fee of ~35% of first-year salary.
 
 **Wedge:** e-commerce accounting/bookkeeping placed into US Shopify and Amazon brands, then the
-same four roles into marketing agencies and staffing agencies on a shared QuickBooks spine
-([`BEACHHEAD.md`](BEACHHEAD.md)) — ~61,000 businesses, every one of which already employs
-remote staff.
+same portable roles into marketing agencies and SaaS ([`BEACHHEAD.md`](BEACHHEAD.md)) —
+~66,000 businesses, every one of which already employs remote staff.
 **Long-term:** $20M on two products — placement fee + EOR, ~88 people, 32–36% EBITDA
 ([`SCALE.md`](SCALE.md)). **Status:** pre-launch, nothing validated, no customer met.
 
