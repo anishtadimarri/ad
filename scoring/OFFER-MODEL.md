@@ -9,19 +9,19 @@ with tool licences at a token $50 and the conversion course missing entirely.
 
 | Line | Per placement @ $20,000 salary | Scales with |
 |---|---|---|
-| sourcing & screening labour | $250 | salary (seniority) |
-| candidate acquisition media | $300 | salary (seniority) |
-| recruiting tool licences | $185 | volume per seat, not salary |
-| work-sample grading (per search) | $114 | searches opened, not fills |
-| interview & offer coordination | $120 | barely scales |
-| conversion course (2 weeks) | $150 | fixed per trained candidate |
-| screening pass-throughs | $175 | fixed — billed on at 1.6x |
-| comms / e-sign / storage | $50 | fixed |
-| **Total** | **$1,344** | |
+| sourcing & screening labour | $310 | salary (seniority) |
+| candidate acquisition media | $372 | salary (seniority) |
+| recruiting tool licences | $229 | volume per seat, not salary |
+| work-sample grading (per search) | $141 | searches opened, not fills |
+| interview & offer coordination | $149 | barely scales |
+| conversion course (2 weeks) | $186 | fixed per trained candidate |
+| screening pass-throughs | $217 | fixed — billed on at 1.6x |
+| comms / e-sign / storage | $62 | fixed |
+| **Total** | **$1,667** | |
 
-**A free replacement costs $959**, not the full $1,344 — the bench is
+**A free replacement costs $1,189**, not the full $1,667 — the bench is
 already trained and the tool licences are already paid. At a 74% claim rate that is a
-**$709 reserve per placement.**
+**$880 reserve per placement.**
 
 ### The old aggregate was right by accident; the composition was not
 
@@ -64,24 +64,24 @@ salary lever is stronger than previously shown.**
 
 | Config | Fee | 30-day rev | 30-day GP | GM | CAC | **30-day** | Lifetime GP | **Lifetime** |
 |---|---|---|---|---|---|---|---|---|
-| S1  Somewhere, copied | 30% | $6,000 | $3,555 | 59% | $1,432 | **2.48:1** | $6,398 | **4.47:1** |
-| S2  + screening billed through | 30% | $6,280 | $3,827 | 61% | $1,432 | **2.67:1** | $6,888 | **4.81:1** |
-| S3  + optimised funnel | 30% | $6,000 | $3,572 | 60% | $783 | **4.56:1** | $6,429 | **8.21:1** |
-| S4  S3 + screening + protection | 30% | $6,280 | $3,844 | 61% | $783 | **4.91:1** | $7,667 | **9.79:1** |
-| S5  S4 + 20% two-seat | 30% | $7,536 | $4,612 | 61% | $783 | **5.89:1** | $8,435 | **10.78:1** |
-| S6  S5 + slide to 27%, no volume gained | 30% | $7,536 | $4,612 | 61% | $783 | **5.89:1** | $7,969 | **10.18:1** |
-| S6b S5 + slide to 27% that WORKS | 30% | $7,536 | $4,612 | 61% | $783 | **5.89:1** | $8,948 | **11.43:1** |
-| S7  traditional 22% (F&A norm) | 22% | $4,400 | $2,136 | 49% | $783 | **2.73:1** | $3,844 | **4.91:1** |
-| S7b at 35% (previous model) | 35% | $7,000 | $4,469 | 64% | $783 | **5.71:1** | $8,044 | **10.28:1** |
-| S8  Hey Foster's 20% | 20% | $4,000 | $1,777 | 44% | $783 | **2.27:1** | $3,198 | **4.09:1** |
-| S9  pure monthly managed | 0% +$800/mo | $800 | $-1,187 | -148% | $783 | **-1.52:1** ⚠️ | $4,513 | **5.76:1** |
-| S10 monthly + 1mo placement fee | 8% +$800/mo | $2,466 | $309 | 13% | $783 | **0.39:1** ⚠️ | $7,204 | **9.20:1** |
-| S11 v2 novel structure | 30%+5% | $6,000 | $3,572 | 60% | $783 | **4.56:1** | $6,924 | **8.85:1** |
-| H1  S5 + 12mo UNLIMITED replace, no refunds | 30% | $7,536 | $4,854 | 64% | $783 | **6.20:1** | $8,838 | **11.29:1** |
-| H2  H1 + free bench shortlist pre-deposit | 30% | $7,536 | $4,683 | 62% | $587 | **7.98:1** | $8,668 | **14.76:1** |
-| H3  H2 + 25% convert to managed seats | 30% | $7,536 | $4,683 | 62% | $587 | **7.98:1** | $11,008 | **18.75:1** |
-| H4  H2 + EOR at 45% attach (no markup) | 30% | $7,536 | $4,729 | 63% | $587 | **8.06:1** | $10,621 | **18.09:1** |
-| H5  H4 at 70% attach (EOR made default) | 30% | $7,536 | $4,729 | 63% | $587 | **8.06:1** | $11,979 | **20.40:1** |
+| S1  Somewhere, copied | 30% | $6,000 | $3,134 | 52% | $1,432 | **2.19:1** | $5,641 | **3.94:1** |
+| S2  + screening billed through | 30% | $6,280 | $3,406 | 54% | $1,432 | **2.38:1** | $6,130 | **4.28:1** |
+| S3  + optimised funnel | 30% | $6,000 | $3,136 | 52% | $783 | **4.01:1** | $5,644 | **7.21:1** |
+| S4  S3 + screening + protection | 30% | $6,280 | $3,408 | 54% | $783 | **4.35:1** | $6,882 | **8.79:1** |
+| S5  S4 + 20% two-seat | 30% | $7,536 | $4,089 | 54% | $783 | **5.22:1** | $7,564 | **9.66:1** |
+| S6  S5 + slide to 27%, no volume gained | 30% | $7,536 | $4,089 | 54% | $783 | **5.22:1** | $7,097 | **9.07:1** |
+| S6b S5 + slide to 27% that WORKS | 30% | $7,536 | $4,089 | 54% | $783 | **5.22:1** | $7,945 | **10.15:1** |
+| S7  traditional 22% (F&A norm) | 22% | $4,400 | $1,700 | 39% | $783 | **2.17:1** | $3,059 | **3.91:1** |
+| S7b at 35% (previous model) | 35% | $7,000 | $4,033 | 58% | $783 | **5.15:1** | $7,260 | **9.27:1** |
+| S8  Hey Foster's 20% | 20% | $4,000 | $1,341 | 34% | $783 | **1.71:1** | $2,413 | **3.08:1** |
+| S9  pure monthly managed | 0% +$800/mo | $800 | $-1,623 | -203% | $783 | **-2.07:1** ⚠️ | $3,728 | **4.76:1** |
+| S10 monthly + 1mo placement fee | 8% +$800/mo | $2,466 | $-127 | -5% | $783 | **-0.16:1** ⚠️ | $6,419 | **8.20:1** |
+| S11 v2 novel structure | 30%+5% | $6,000 | $3,136 | 52% | $783 | **4.01:1** | $6,139 | **7.84:1** |
+| H1  S5 + 12mo UNLIMITED replace, no refunds | 30% | $7,536 | $4,262 | 57% | $783 | **5.44:1** | $7,851 | **10.03:1** |
+| H2  H1 + free bench shortlist pre-deposit | 30% | $7,536 | $4,091 | 54% | $587 | **6.97:1** | $7,681 | **13.08:1** |
+| H3  H2 + 25% convert to managed seats | 30% | $7,536 | $4,091 | 54% | $587 | **6.97:1** | $10,021 | **17.07:1** |
+| H4  H2 + EOR at 45% attach (no markup) | 30% | $7,536 | $4,148 | 55% | $587 | **7.07:1** | $9,652 | **16.44:1** |
+| H5  H4 at 70% attach (EOR made default) | 30% | $7,536 | $4,148 | 55% | $587 | **7.07:1** | $11,011 | **18.75:1** |
 
 ---
 
@@ -103,8 +103,8 @@ LEAD ──► CALL HELD ──► $500 DEPOSIT ──► SHORTLIST ──► HI
 
 | | Lead→placement | CAC | 30-day |
 |---|---|---|---|
-| Base | 6.16% | $1,432 | **2.48:1** |
-| Optimised | 11.88% | $783 | **4.56:1** |
+| Base | 6.16% | $1,432 | **2.19:1** |
+| Optimised | 11.88% | $783 | **4.01:1** |
 
 **Funnel work is worth 1.8x on the ratio — more than any pricing
 change in the table above, and it costs nothing but craft.**
@@ -113,9 +113,9 @@ change in the table above, and it costs nothing but craft.**
 
 | Stage | −25% | base | +25% | +50% |
 |---|---|---|---|---|
-| Lead → call | 1.93:1 | 2.48:1 | 2.99:1 | 3.46:1 |
-| Call → deposit | 1.86:1 | 2.48:1 | 3.10:1 | 3.72:1 |
-| Deposit → hire | 1.83:1 | 2.48:1 | 2.97:1 | 2.97:1 |
+| Lead → call | 1.71:1 | 2.19:1 | 2.64:1 | 3.05:1 |
+| Call → deposit | 1.64:1 | 2.19:1 | 2.74:1 | 3.28:1 |
+| Deposit → hire | 1.64:1 | 2.19:1 | 2.60:1 | 2.60:1 |
 
 All three are near-equivalent in leverage, so fix them in cost order: the reminder
 sequence is free, candidate profiles on the call cost one recruiter-hour, bench depth
@@ -128,9 +128,9 @@ only pays if it buys enough extra seats to cover the discount.
 
 | | Repeat seats | Lifetime GP | Lifetime ratio |
 |---|---|---|---|
-| S5  S4 + 20% two-seat | 0.80 | $8,435 | **10.78:1** |
-| S6  S5 + slide to 27%, no volume gained | 0.80 | $7,969 | **10.18:1** |
-| S6b S5 + slide to 27% that WORKS | 1.10 | $8,948 | **11.43:1** |
+| S5  S4 + 20% two-seat | 0.80 | $7,564 | **9.66:1** |
+| S6  S5 + slide to 27%, no volume gained | 0.80 | $7,097 | **9.07:1** |
+| S6b S5 + slide to 27% that WORKS | 1.10 | $7,945 | **10.15:1** |
 
 Discounting 35% → 27% gives up **23%** of the fee on every repeat seat, so the slide
 must lift repeat seats by more than 23% — from 0.80 to **0.98+** — to break even. **Do not publish a slide until repeat
@@ -180,8 +180,8 @@ because labour is a cheaper currency than cash.
 
 | | Claim rate | Refunds | Reserve/placement | 30-day GP | 30-day |
 |---|---|---|---|---|---|
-| 20% two-seat | 49% | cash on 15% of claims | $911 | $4,612 | **5.89:1** |
-| 12mo UNLIMITED replace, no refunds | 74% | **none — labour only** | $709 | $4,854 | **6.20:1** |
+| 20% two-seat | 49% | cash on 15% of claims | $1,024 | $4,089 | **5.22:1** |
+| 12mo UNLIMITED replace, no refunds | 74% | **none — labour only** | $880 | $4,262 | **5.44:1** |
 
 **Doubling the guarantee window to 12 months AND making replacements unlimited is
 *cheaper* than the 6-month industry standard**, because eliminating cash refunds saves more
@@ -250,11 +250,11 @@ security deposit collected from the **client**, which is negative working capita
 
 | | repl 15% | repl 30% | repl 50% | repl 70% |
 |---|---|---|---|---|
-| **CPL $40** | 12.92:1 | 12.92:1 | 12.92:1 | 12.92:1 |
-| **CPL $75** *(B2B benchmark)* | 8.06:1 | 8.06:1 | 8.06:1 | 8.06:1 |
-| **CPL $120** | 5.43:1 | 5.43:1 | 5.43:1 | 5.43:1 |
-| **CPL $175** *(qualified B2B)* | 3.88:1 | 3.88:1 | 3.88:1 | 3.88:1 |
-| **CPL $250** | 2.80:1 | 2.80:1 | 2.80:1 | 2.80:1 |
+| **CPL $40** | 11.33:1 | 11.33:1 | 11.33:1 | 11.33:1 |
+| **CPL $75** *(B2B benchmark)* | 7.07:1 | 7.07:1 | 7.07:1 | 7.07:1 |
+| **CPL $120** | 4.76:1 | 4.76:1 | 4.76:1 | 4.76:1 |
+| **CPL $175** *(qualified B2B)* | 3.40:1 | 3.40:1 | 3.40:1 | 3.40:1 |
+| **CPL $250** | 2.45:1 | 2.45:1 | 2.45:1 | 2.45:1 |
 
 ---
 
@@ -270,8 +270,8 @@ security deposit collected from the **client**, which is negative working capita
 | Guarantee | **12-month unlimited free replacement, no cash refunds** |
 | Attraction offer | **Free graded shortlist from the bench, before any deposit** ($90/call held) |
 | 30-day revenue | $7,536 |
-| 30-day gross profit | **$4,729** (63%) |
+| 30-day gross profit | **$4,148** (55%) |
 | Net CAC | $587 |
-| **30-day LTGP:CAC** | **8.06:1** |
-| Lifetime gross profit | $11,979 |
-| **Lifetime LTGP:CAC** | **20.40:1** |
+| **30-day LTGP:CAC** | **7.07:1** |
+| Lifetime gross profit | $11,011 |
+| **Lifetime LTGP:CAC** | **18.75:1** |

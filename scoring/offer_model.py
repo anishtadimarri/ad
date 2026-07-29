@@ -55,8 +55,29 @@ TOOLING = 50.0             # comms, e-sign, storage
 PROCESSING = 0.029
 
 
+# Cost mode. "one_month_salary" applies the common cost-per-hire heuristic —
+# recruitment costs one month of the placed salary — by scaling the itemised
+# lines to that total, so the composition (what repeats on a replacement) is
+# preserved. At $20k that is $1,667 vs $1,344 bottom-up: ~24% more conservative.
+COST_MODE = "one_month_salary"      # "itemised" | "one_month_salary"
+
+# Lines that do NOT repeat when we honour a free replacement: the bench is
+# already trained and the tool licences are already paid for the period.
+NON_REPEATING = ("recruiting tool licences", "conversion course (2 weeks)",
+                 "comms / e-sign / storage")
+
+
 def recruit_items(salary, searches_per_place):
     """Itemised recruitment cost for ONE placement."""
+    items = _raw_items(salary, searches_per_place)
+    if COST_MODE == "one_month_salary":
+        target = salary / 12.0
+        k = target / sum(items.values())
+        items = {name: v * k for name, v in items.items()}
+    return items
+
+
+def _raw_items(salary, searches_per_place):
     return {
         "sourcing & screening labour": SOURCING_PCT * salary,
         "candidate acquisition media": CANDIDATE_ADS_PCT * salary,
@@ -70,12 +91,9 @@ def recruit_items(salary, searches_per_place):
 
 
 def redo_cost(salary, searches_per_place):
-    """What a REPLACEMENT actually costs: you redo the search, not the training.
-    The bench is already trained and the tool licences are already paid."""
+    """What a REPLACEMENT actually costs: you redo the search, not the training."""
     i = recruit_items(salary, searches_per_place)
-    return (i["sourcing & screening labour"] + i["candidate acquisition media"]
-            + i["work-sample grading (per search)"] + i["interview & offer coordination"]
-            + i["screening pass-throughs"])
+    return sum(v for k, v in i.items() if k not in NON_REPEATING)
 
 # Attrition regime. Operator direction: 9-month average worker stay.
 # Share churning inside a guarantee window, exponential assumption:
