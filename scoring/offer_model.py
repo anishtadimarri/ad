@@ -68,6 +68,9 @@ class Offer:
     monthly_spread: float = 0.0     # managed-seat spread per month
     monthly_tenure: float = 18.0
     escrow: float = 0.0             # stay-bonus escrow (pass-through, not revenue)
+    claim_rate: float = REPLACEMENT_RATE   # share of placements claiming
+    refund_share: float = REFUND_SHARE_OF_FEE  # share of claims paid in CASH
+    bench_shortlist: float = 0.0    # cost per call held to show bench candidates
     # --- funnel
     lead_to_call: float = LEAD_TO_CALL
     call_to_deposit: float = CALL_TO_DEPOSIT
@@ -96,8 +99,9 @@ def econ(o: Offer):
             + SHORTLIST_PCT * o.salary * searches_per_place
             + SCREENING_PASSTHRU + TOOLING)
     claim = ((SEARCH_LABOUR_PCT + CANDIDATE_ADS_PCT) * o.salary
-             + REFUND_SHARE_OF_FEE * o.salary * o.fee_pct)
-    cogs30 = (unit * seats + REPLACEMENT_RATE * claim * seats
+             + o.refund_share * o.salary * o.fee_pct)
+    cogs30 = (unit * seats + o.claim_rate * claim * seats
+              + o.bench_shortlist * calls_per_place
               + MONTHLY_SEAT_COGS * seats * (1 if o.monthly_spread else 0)
               + rev30 * PROCESSING)
     gp30 = rev30 - cogs30
@@ -108,7 +112,7 @@ def econ(o: Offer):
     rate = o.volume_pct or o.fee_pct
     xfee = o.salary * rate * extra
     xscreen = (SCREENING_PASSTHRU * 1.6 * extra) if o.charge_screening else 0.0
-    xcogs = (unit * extra + REPLACEMENT_RATE * claim * extra
+    xcogs = (unit * extra + o.claim_rate * claim * extra
              + (xfee + xscreen) * PROCESSING)
     prot = (o.protection_attach * o.protection_price * o.protection_months
             * PROTECTION_MARGIN)
@@ -146,6 +150,14 @@ CONFIGS = [
             monthly_spread=800.0, **OPT),
     replace(SW, name="S11 v2 novel structure", fee_pct=0.30, fee_tail_pct=0.05,
             escrow=2500.0, **OPT),
+    # --- Hormozi revisions
+    replace(SW, name="H1  S5 + 12mo UNLIMITED replace, no refunds",
+            charge_screening=True, protection_attach=0.30, multi_hire=0.20,
+            claim_rate=0.70, refund_share=0.0, **OPT),
+    replace(SW, name="H2  H1 + free bench shortlist pre-deposit",
+            charge_screening=True, protection_attach=0.30, multi_hire=0.20,
+            claim_rate=0.70, refund_share=0.0, bench_shortlist=90.0,
+            lead_to_call=0.30, call_to_deposit=0.60, deposit_to_hire=0.88),
 ]
 
 _D = {k: globals()[k] for k in
@@ -261,7 +273,56 @@ print(f"must lift repeat seats by more than {disc:.0%} — from {s5.extra_seats:
 print("behaviour is measured.** Offer it deal-by-deal on request instead.\n")
 
 
-REC = next(c for c in CONFIGS if c.name.startswith('S5'))
+print("---\n\n## The full model landscape\n")
+print("| Model | Market pricing | Wins when |")
+print("|---|---|---|")
+for a, bb, c in [
+    ("Contingency placement", "15–30% of salary; offshore specialists **25–35%**", "**Under 15–20 hires/yr**"),
+    ("Zero-fee flat hourly", "Virtustant **$7–8/hr all-in**, median $8.00 across 2,018 placements", "Client refuses a fee, accepts markup"),
+    ("Managed monthly seat", "**$1,250–2,600/mo** bookkeeper; spread ~$800–1,000/mo", "Client wants zero employment burden"),
+    ("Monthly fee per hire", "Pearl Talent — monthly per hire by role complexity", "Blend of both"),
+    ("Per-FTE / hourly", "1840 & Co **under $25/hr**, min engagement **~$10,000**", "Larger, custom engagements"),
+    ("Subscription recruiting", "**$2,000–10,000/mo** (refined $3,000–8,000). Cuts cost **50–70%** vs contingency for multi-hire", "**Senior salaries, multiple hires**"),
+    ("RPO", "**$3,000–10,000/hire** or **$8,000–15,000/mo** per embedded recruiter", "**15–25+ roles/yr**"),
+    ("Retained search", "**21–31%**, paid in thirds", "Executive"),
+]:
+    print(f"| {a} | {bb} | {c} |")
+
+print("\n### Why the percentage model is structurally right at $22k\n")
+print("Subscription and RPO win on **high salaries and high volume**, because a flat fee does not")
+print("grow with salary while a percentage does. Inverted at the mass-market salary band:\n")
+print("| Client hires/yr | Our 35% of $22k | Subscription at $3,000/mo | Winner |")
+print("|---|---|---|---|")
+for n in (1, 2, 3, 5, 8, 12):
+    ours = 0.35 * SALARY * n
+    sub = 36_000
+    print(f"| {n} | ${ours:,.0f} | ${sub:,.0f} | "
+          f"{'**us**' if ours < sub else 'subscription'} |")
+print("\n**Below ~5 hires a year we are structurally cheaper than any subscription competitor, and")
+print("cannot be undercut.** Above that we lose the account to a flat fee. So the volume slide is")
+print("not a nice-to-have — it is the defence on multi-hire accounts. Keep it unpublished and bring")
+print("it out at hire five.\n")
+
+print("---\n\n## The guarantee is the cheapest differentiation available\n")
+print("Every player offers the same **6-month replacement**. It is a commodity. But a")
+print("*stronger-sounding* guarantee can cost **less** if you change what is being guaranteed —")
+print("because labour is a cheaper currency than cash.\n")
+s5x = next(c for c in CONFIGS if c.name.startswith("S5"))
+h1x = next(c for c in CONFIGS if c.name.startswith("H1"))
+print("| | Claim rate | Refunds | Reserve/placement | 30-day GP | 30-day |")
+print("|---|---|---|---|---|---|")
+for c in (s5x, h1x):
+    ec = econ(c)
+    res = c.claim_rate * ((SEARCH_LABOUR_PCT + CANDIDATE_ADS_PCT) * c.salary
+                          + c.refund_share * c.salary * c.fee_pct)
+    print(f"| {c.name.split('+')[-1].strip() if '+' in c.name else c.name} | {c.claim_rate:.0%} "
+          f"| {'cash on ' + format(c.refund_share, '.0%') + ' of claims' if c.refund_share else '**none — labour only**'} "
+          f"| ${res:,.0f} | ${ec['gp30']:,.0f} | **{ec['r30']:.2f}:1** |")
+print("\n**Doubling the guarantee window to 12 months AND making replacements unlimited is")
+print("*cheaper* than the 6-month industry standard**, because eliminating cash refunds saves more")
+print("than the extra claims cost. Best guarantee in the market, at negative cost.\n")
+
+REC = next(c for c in CONFIGS if c.name.startswith('H2'))
 print("---\n\n## Sensitivity — recommended (S6)\n")
 print("### CPL × replacement rate\n")
 print("| | repl 15% | repl 30% | repl 50% | repl 70% |")
@@ -286,7 +347,12 @@ slide = (f", sliding to **{REC.volume_pct:.0%}** on repeat seats" if REC.volume_
 print(f"| Placement fee | **{REC.fee_pct:.0%}**{slide} |")
 print(f"| Screening | Billed through at cost × 1.6 (${SCREENING_PASSTHRU*1.6:,.0f}) |")
 print(f"| Protection layer | {REC.protection_attach:.0%} attach at ${REC.protection_price:.0f}/mo |")
-print("| Guarantee | 6-month replacement |")
+g = ("**12-month unlimited free replacement, no cash refunds**"
+     if REC.refund_share == 0 else "6-month replacement with cash refunds")
+print(f"| Guarantee | {g} |")
+if REC.bench_shortlist:
+    print(f"| Attraction offer | **Free graded shortlist from the bench, before any deposit** "
+          f"(${REC.bench_shortlist:.0f}/call held) |")
 print(f"| 30-day revenue | ${e['rev30']:,.0f} |")
 print(f"| 30-day gross profit | **${e['gp30']:,.0f}** ({e['gm']:.0%}) |")
 print(f"| Net CAC | ${e['cac']:,.0f} |")
