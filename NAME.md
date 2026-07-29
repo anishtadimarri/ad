@@ -463,10 +463,89 @@ total** (all three verified free on the check date). Then let the first campaign
 converts a taste argument into the same kind of evidence as everything else in this repo, and it
 costs less than one lead.
 
-### Pick
+### 9.5 Better than All Hands — same direction, done right
 
-**`openbooktalent.com`.** It is the only name found across ~1,550 candidates that carries the
-*positioning* rather than a generic virtue. Every competitor in this category makes money on a
+Operator direction: **Open Book means nothing; find something better than All Hands.** Both fair.
+"Open book" names a posture, not a business, and the brief is now precise:
+
+> **Keep what All Hands has — a familiar `All ___` phrase, warm, about people, instantly
+> recognised — and drop what it wrongly signifies.**
+
+126 more domains on that exact structure. The answer is not a different direction.
+
+# All Aboard Talent · `allaboardtalent.com`
+
+**It is All Hands with the defects removed, and it keeps every property you liked.**
+
+| | All Hands | **All Aboard** |
+|---|---|---|
+| Familiar `All ___` phrase | ✅ | ✅ **Identical structure and music** |
+| Warm, about people | ✅ | ✅ |
+| Nautical — sits beside Oceans | ✅ | ✅ |
+| **1. "Hand" = manual worker** | ❌ *farm hand, deck hand* | ✅ **Fixed.** "Aboard" has no labour register at all |
+| **2. Means a meeting** | ❌ the all-hands | ✅ **Fixed.** There is no such thing as an "all-aboard meeting" |
+| **3. Crisis / surge** | ❌ storm, battle | ✅ **Fixed and inverted** — *"All aboard!"* is a **welcome and a departure**, not an emergency |
+| **4. Quantity over quality** | ❌ | ⚠️ Partly — still `All`, but the phrase is about *joining*, not headcount |
+| **5. Pooled resource** | 🔴 | ⚠️ Partly. Same `All`. Mitigated by the ad line quoting a salary |
+| **6. Generalists** | ❌ | ✅ Neutral |
+
+**The bonus nobody planned: "aboard" is literally the hiring word.** *Onboarding* is what a company
+does when it hires someone — so the name sits inside the buyer's existing vocabulary for exactly the
+transaction being sold. `onboardtalent.com` is **taken**, which is evidence the semantic space is
+valuable and that we got the better half of it.
+
+**On sound** — the thing you asked about last: *All abOARD* repeats the **/ɔː/** vowel, so there is
+an internal rhyme at the front of the name where it is most audible. `/d/` → `/t/` into "Talent" is
+two stops, but same place of articulation and a clean voicing switch — nothing like the `/ndz/`+`/t/`
+pileup in "Hands Talent." **It is smoother than All Hands and warmer than Open Book.**
+
+**The honest cons:** a conductor's "all aboard!" is a train, so there is a faint travel association;
+and it is slightly jollier than a $6,000 B2B service might want. Five syllables to All Hands' four.
+
+**No company found operating at the name.** USPTO search before purchase.
+
+### The four alternates worth having
+
+| | Name | Domain | Argument |
+|---|---|---|---|
+| **2** | **Teammate Talent** | `teammatetalent.com` | **Kills signal 5 outright** — "teammate" is singular, so nobody reads a pooled service. And it names the positioning better than any other candidate: *not a vendor, not a contractor, not a VA — a teammate.* That is exactly what a $20k full-time seat is |
+| **3** | **Here To Stay Talent** | `heretostaytalent.com` | Says the promise more literally than anything else found — and tenure is the largest lever in the model. 20 characters is the cost |
+| **4** | **All Clear Talent** | `allcleartalent.com` | Same `All ___` music. Double meaning that works: **cleared** (screened, background-checked) and **clear** (the transparency positioning). Faint air-raid-siren adjacency |
+| **5** | **For Keeps Talent** | `forkeepstalent.com` | *"For keeps"* means **permanently** — the single sharpest anti-temp, anti-VA, anti-gig signal in English. Slightly childlike, and "playing for keeps" also means ruthless |
+
+### The rest of the sweep, free and grouped
+
+| | Available (`+talent.com`) |
+|---|---|
+| **`All ___`** | `allaboard` · `allclear` · `allgood` *(also parses literally — "all good talent")* · `allweather` · `allseason` · `allday` · `allhandson` |
+| **Stays / worth keeping** | `keepers` · `forkeeps` · `stayingpower` · `heretostay` · `firstday` · `aboard` |
+| **The person** | `teammate` · `wingman` · `gotoperson` · `righthandman` |
+| **Crew** | `fullcrew` · `goodcrew` · `wholecrew` · `corecrew` · `homecrew` · `crewup` |
+| **Team** | `fullteam` · `wholeteam` · `firstteam` · `coreteam` · `goodteam` · `yourteam` |
+| **Sorted / covered** | `handled` · `covered` · `settled` · `allsorted` · `noworries` |
+| **People** | `realpeople` · `ourpeople` · `greatpeople` · `goodfolks` |
+
+**Taken:** `allintalent`, `allsettalent`, `allstartalent`, `allaroundtalent`, `dayonetalent`,
+`onboardtalent`, `keepertalent`, `gototalent`, `sidekicktalent`, `sortedtalent`,
+`goodpeopletalent`, `bestpeopletalent`, `teamuptalent`, `hometeamtalent`.
+
+### Recommendation
+
+**`allaboardtalent.com`.** You liked All Hands for good reasons — it is warm, familiar, about
+people, and it has the `All ___` rhythm. All Aboard has all four, sounds better, means something
+concrete (joining a team), sits inside the hiring vocabulary, and removes three of the six wrong
+signals outright.
+
+**If the train association bothers you, take `teammatetalent.com`** — it is the only candidate that
+kills the pooled-resource reading by construction, and *"a teammate, not a contractor"* is a
+positioning line you would want to say anyway.
+
+Buy both plus `allhandstalent.com` as the fallback. ~$36, and §9.4's two-brand test still applies.
+
+### Superseded pick — `openbooktalent.com`
+
+> **Superseded by §9.5.** Retained for the reasoning, and it remains free. The case was that it
+> carries the *positioning* rather than a generic virtue. Every competitor in this category makes money on a
 spread the client cannot see; ours is a transparent fee for a distinct service, and that is the
 structural reason the EOR line works at all. **A name that says "open book" is a claim the
 incumbents cannot make without giving up their margin model.**
