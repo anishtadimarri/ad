@@ -1,12 +1,13 @@
 # Business Repository
 
-## Five documents
+## Six documents
 
 | | |
 |---|---|
 | **[`OFFER.md`](OFFER.md)** | **The buildable thing.** One skill, both ICPs, priced, with the retention architecture and the economics stress-tested against 6-month attrition |
 | **[`MASTER.md`](MASTER.md)** | The analysis behind it — market data, 179-role screen, competitor teardown, decision history, what's unvalidated |
 | **[`BEACHHEAD.md`](BEACHHEAD.md)** | **Three verticals, one bench** — e-comm + marketing agencies + SaaS, ranked on measured **switch cost**. 6 of 10 roles are drop-in. Launch role is AR & Collections, not Ledger & Close |
+| **[`PATTERN.md`](PATTERN.md)** | **The supply-side screen** — which occupations the US stopped producing, where the work is digital and somebody already proved it transfers. Insurance is a worse shortage than accounting |
 | **[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md)** | **What Somewhere and Oceans actually sell** — 60+ published roles with rates, bookkeeper priced by country, and the finding that **neither of them sources India** |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
