@@ -258,6 +258,74 @@ vertical fails regardless of its score.**
 **Insurance has the strongest single line in the set**, because the shortage is so acute that the ad
 can simply describe their situation back to them.
 
+### 5C. Facebook and Instagram are not the same audience
+
+§5B collapsed both into one `FB_NATIVE` score. That was wrong, because the platforms have nearly
+opposite age profiles: **Facebook is strongest 45–65 in the US; Instagram is strongest 18–44, peaking
+25–34.** Requiring *both* is a real constraint, and it narrows the field hard.
+
+You are only reachable on both platforms **as much as your weaker one**, so the score below uses the
+minimum, not the average.
+
+| Vertical | Owner age | FB | IG | Visual-native creative | **Both** | Score |
+|---|---|---|---|---|---|---|
+| **Marketing agency** | 28–45 | 5 | **5** | 5 | **5** | **100.0** |
+| **E-comm / DTC** | 25–45 | 5 | **5** | 5 | **5** | **100.0** |
+| *Dental / DSO* | 35–55 | 4 | 3 | 4 | 3 | *69.0* ⛔ |
+| Medical practice | 35–55 | 4 | 3 | 3 | 3 | 66.0 |
+| *Home services* | 35–60 | **5** | 2 | 3 | 2 | *61.0* ⛔ |
+| PI law firm | 35–60 | 4 | 2 | 2 | 2 | 52.0 |
+| Freight / trucking | 35–55 | 4 | 2 | 2 | 2 | 52.0 |
+| SaaS | 28–45 | 2 | 3 | 3 | 2 | 49.0 |
+| Property mgmt | 40–60 | 3 | 2 | 2 | 2 | 46.0 |
+| Staffing agency | 35–55 | 2 | 2 | 2 | 2 | 40.0 |
+| **Insurance agency** | **50–60** | **4** | **1** | 1 | **1** | **38.0** |
+| MSP / IT services | 35–55 | 2 | 1 | 1 | 1 | 26.0 |
+
+**Only two verticals clear a both-platforms requirement: marketing agencies and e-commerce.**
+Everything else is Facebook-only, Instagram-lean, or neither.
+
+### This reverses what I said one section ago about insurance
+
+In §5B I promoted insurance from 8th to 4th on the Facebook demographic — mid-50s owners are
+Facebook-native. **That was right about Facebook and wrong about Meta.**
+
+> A 55-year-old insurance agency owner is **FB 4 / IG 1.** The same demographic that makes them
+> Facebook-reachable makes them Instagram-unreachable. Under a both-platforms requirement insurance
+> drops to **11th of 12.**
+
+The pattern generalises: **the both-platforms requirement selects for buyers aged roughly 25–45.**
+That is e-commerce founders and agency owners, and essentially nothing else in this set.
+
+### Why "both" is the right default anyway — it is a CPM argument, not a reach argument
+
+| | |
+|---|---|
+| **Inventory** | Restricting to FB-only shrinks the auction pool → **higher CPM** |
+| **Reels** | Currently the cheapest impression on the platform, and it is Instagram-native |
+| **Advantage+** | Performs better with placements unrestricted |
+| **Creative velocity** | More placements = more variants tested per dollar |
+| **The cost** | If the buyer genuinely is not on Instagram, unrestricted placements waste spend |
+
+So the requirement is a **good default rather than a hard law.** For e-comm and agencies, run
+unrestricted and take the cheap Reels inventory. For insurance or freight, if you ever test them,
+**restrict to Facebook placements and accept the higher CPM** — do not let Advantage+ spray
+Instagram at a 55-year-old agency principal.
+
+### What Instagram-native creative has to look like
+
+Instagram punishes static banners. A "save 70% on payroll" image will not work in Reels. What does:
+
+| Format | The creative |
+|---|---|
+| **Founder to camera, 15s** | *"Here's what a $20,000-a-year accountant's work actually looks like."* Then show it |
+| **Screen recording** | The graded work-sample test being scored — reconciliation right vs wrong, on screen |
+| **Before / after** | Close timeline: 3 weeks → 4 days. One number, animated |
+| **Carousel** | Three real candidate profiles with test scores, swipeable |
+
+**The graded work sample is unusually good Instagram creative**, which is a genuine and lucky
+alignment — the thing that differentiates the offer is also the thing that films well.
+
 ### How this squares with §5
 
 | | Intent flow (§5) | Meta workability (§5B) |
