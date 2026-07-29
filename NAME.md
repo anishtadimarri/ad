@@ -45,7 +45,11 @@ if the bare word is worth it. It usually isn't.
 
 ---
 
-## 3. The recommendation
+## 3. Finalist A
+
+> **Two finalists.** This one and **Holdfast Talent** in [§6](#6-the-wordtalentcom-pattern-checked-properly),
+> which was found in a later pass over the `[word]talent.com` pattern. They encode the same
+> strategic idea; §6 has the head-to-head and my lean.
 
 # Steady Roster · `steadyroster.com`
 
@@ -97,7 +101,69 @@ All `.com`, all confirmed free on the check date.
 
 ---
 
-## 6. Entity ≠ brand
+## 6. The `[word]talent.com` pattern, checked properly
+
+110 more candidates. **The word "Talent" buys one real thing and costs one real thing.**
+
+| | |
+|---|---|
+| **Buys** | The category is *in the domain*. A cold Meta click on `holdfasttalent.com` tells the buyer what they're clicking before the page loads. `steadyroster.com` does not |
+| **Costs** | It is the most generic word in the category — TalentBridge, TalentSphere, Talent Groups, Talent Corps, Talent Staffing all exist. Legible and zero-differentiation at the same time. **Somewhere, Oceans, Pearl and Wing all avoided it** |
+| **Also costs** | Filter 3. "Talent" names the staffing product, so EOR becomes a sub-brand — *Holdfast EOR*. Workable, and exactly what Somewhere does with *Somewhere EOR*, but the parent brand is then a staffing brand |
+
+### The best of them
+
+# Holdfast Talent · `holdfasttalent.com`
+
+A **holdfast** is the grip that holds something firmly in place — the root structure that anchors
+kelp against the current. It means the same thing as "Steady Roster" (seat continuity, the largest
+lever in the model) in a word that sounds a century old.
+
+| Filter | |
+|---|---|
+| 1. Spellable from audio | ✅ Two common words fused, one spelling each |
+| 4. Reads established | ✅✅ **Beats Steady Roster.** "Holdfast" has gravitas; nothing about it reads as launched-last-month |
+| 5. Meaning in 3 seconds | ✅✅ **Beats Steady Roster.** "Talent" says the category instantly, where "roster" could read as shift-scheduling software |
+| 3. Not boxed into placement | ⚠️ Costs the EOR product a sub-brand |
+| 7. Bare `.com` | ⚠️ Suffixed — but that is the Oceans pattern, so category-native |
+| Collision | ✅ No staffing company found. *Steadfast Staffing* variants exist in the same `-fast` family; *Holdfast Games* is a video game, different class |
+
+### What the pattern killed, and why
+
+| Name | Domain | Killed on |
+|---|---|---|
+| **Ballast Talent** | `ballasttalent.com` *(free)* | **Direct collision.** [Ballast Recruiting](https://ballastrecruiting.com/) — San Francisco, 9 people — exists and describes itself as *"enhancing organizational stability through effective hiring."* Same category, same metaphor, same meaning. It was the best word in the whole search and it is unusable |
+| **Sextant Talent** | `sextanttalent.com` *(free)* | Meta ad moderation and optics. The first three letters decide it |
+| **Mainstay Talent** | bare `.com` **taken** | Best word semantically — a mainstay is both the rope holding the mast and the person you rely on. Also collides with MainStay Investments (New York Life) |
+| **Tradewind Talent** | bare `.com` **taken** | Trade winds drove Indian Ocean commerce — the right story without saying "India". Only `...co` / `...group` free, at 22 characters |
+| **Steady Talent** | bare `.com` **taken** | Only `steadytalentco` / `steadytalentgroup` free |
+| **Even Keel Talent** | `evenkeeltalent.com` *(free)* | EvenKeel Consulting Group already operates in staffing |
+| **Lodestone Talent** | `lodestonetalent.com` *(free)* | Lodestone Management Consultants (acquired by Infosys). Also unspellable from audio |
+| **Longhaul Talent** | `longhaultalent.com` *(free)* | Perfect meaning — tenure — but reads as freight, which is a vertical we explicitly excluded |
+| **Graded Talent** | `gradedtalent.com` *(free)* | Clean, no collision, names the wedge. But it grades *the people*, which is clinical, where the promise should be to the buyer |
+| **Mooring / Anchorage / Bulwark / Keelson / Plumbline / Surefoot / Firmfoot / Northwind / Riverbend** | all free | Obscure, martial, geographic, or already a ski-boot brand |
+
+### So: does anything with "Talent" beat Steady Roster?
+
+**It's close, and the trade is clean:**
+
+| | Steady Roster | Holdfast Talent |
+|---|---|---|
+| Domain | `steadyroster.com` — **bare, 12 chars** | `holdfasttalent.com` — suffixed, 18 chars |
+| Says what it is on the click | ❌ could be software | ✅ **"talent"** |
+| Gravitas | Good | **Better** |
+| Differentiation | **Better** — nobody else uses "roster" | Weaker — "Talent" is the category's most-used word |
+| Second product | ✅ neutral to both | ⚠️ EOR becomes a sub-brand |
+
+**My lean is Holdfast Talent**, on the grounds that the binding constraint is credibility with a
+buyer who has never heard of us, and it wins on both credibility filters (4 and 5). The bare `.com`
+is worth less than instant category legibility when the traffic is cold. **But this is the one
+decision in the whole repo that is legitimately a matter of taste** — both names encode the same
+strategic idea, which is that the seat staying filled is the asset.
+
+---
+
+## 7. Entity ≠ brand
 
 Worth separating, because they have different requirements:
 
