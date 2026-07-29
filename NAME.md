@@ -324,7 +324,81 @@ TLD beats either of them.
 
 ---
 
-## 9. Entity ≠ brand
+## 9. The idiom family — what makes All Hands work, and what else does
+
+Operator direction: **All Hands Talent is the one.** Worth naming *why*, because the mechanism
+generalises and none of the earlier waves had found it.
+
+**All Hands works because it is a familiar idiom, not an adjective plus a noun.** Everything before
+this was `[quality] + [noun]` — Steady Roster, Long Term Talent, Deep Bench. An idiom is different:
+it is **already in the listener's head**, so it needs zero decoding (filter 5) and cannot be
+misspelled (filter 1), while still being distinctive enough to own as a mark. That is the rarest
+combination in naming, and it is why the idiom family beat five earlier sweeps.
+
+124 more domains checked on that pattern.
+
+### First, the flaw in All Hands
+
+**"All hands on deck" is a crisis idiom.** It means *drop everything, emergency, everyone up on
+deck now.* It signals **surge help** — which is precisely the wrong connotation for a company
+selling permanent full-time employees against a category the buyer already suspects of selling
+temps and VAs.
+
+It is a subtle cost, not a fatal one. But there is a sister idiom without it.
+
+### The five worth having
+
+| | Name | Domain | The idiom | What it says |
+|---|---|---|---|---|
+| **1** | **Open Book Talent** | `openbooktalent.com` | *"We're an open book"* | **Two things at once.** It names the positioning — **salary transparency**, the reason EOR beat a salary markup ([`MASTER.md`](MASTER.md) §9) and the one thing no competitor can copy without dismantling their own spread — and it nods at the beachhead role. In a category where **everyone hides a markup, naming yourself after transparency is the sharpest available claim** |
+| **2** | **Many Hands Talent** | `manyhandstalent.com` | *"Many hands make light work"* | **The direct upgrade on All Hands.** Same warmth, same family, same instant recognition — but it connotes **ongoing capacity** rather than emergency surge. Strictly better on message, at the same price |
+| **3** | **Steady Hands Talent** | `steadyhandstalent.com` | *"A steady hand"* | Says the most of any candidate: the warmth of *hands* plus **continuity**, which is the largest lever in the model. Calm competence, which is what a back office is bought for |
+| **4** | **Safe Hands Talent** | `safehandstalent.com` | *"In safe hands"* | Answers the trust objection head-on, which for an unknown Indian company selling to US owners is *the* objection. Slightly British-leaning |
+| **5** | **Above Board Talent** | `aboveboardtalent.com` | *"Above board"* | Same transparency claim as Open Book, in a phrase that is unambiguously about honesty. Less distinctive, no double meaning |
+
+**Collision check:** no company found operating at Many Hands Talent, Open Book Talent, Steady Hands
+Talent or Above Board Talent. Run a USPTO search before purchase regardless.
+
+### The rest of the free list, grouped by what it claims
+
+| Claim | Available |
+|---|---|
+| **Hands / help** | `helpinghandstalent` · `capablehandstalent` · `fullcrewtalent` · `wholecrewtalent` |
+| **Transparency / fairness** | `squaredealtalent` · `fairshaketalent` · `plainenglishtalent` · `nononsensetalent` · `nofusstalent` |
+| **Steadiness / footing** | `solidgroundtalent` · `firmfootingtalent` · `surefootingtalent` · `commongroundtalent` · `allweathertalent` |
+| **Tenure** | `longruntalent` · `secondwindtalent` |
+| **Ready to step in** | `understudytalent` · `backstoptalent` · `secondchairtalent` · `firstteamtalent` |
+| **Well-run operation** (nautical, sits beside Oceans) | `tightshiptalent` · `steadyshiptalent` · `smoothsailingtalent` · `fullsailtalent` |
+| **The buyer's relief** | `offyourplatetalent` · `loadofftalent` · `breathingroomtalent` · `peaceofmindtalent` |
+
+**Taken, so don't go looking:** `longgametalent`, `rightfittalent`, `topshelftalent`,
+`bluechiptalent`, `realdealtalent`, `firststringtalent`, `varsitytalent`, `upfronttalent`,
+`linchpintalent`, `straighttalktalent`, `truenorthtalent`.
+
+### Two to avoid despite being free
+
+| | Why |
+|---|---|
+| `rightarmtalent.com` | *"My right arm"* is the nearest live idiom to the dead Right Hand — but **two operating recruiting firms already use Right Hand** (Right Hand Talent, chief-of-staff search; Right Hand Recruiting, manufacturing/healthcare). Right Arm reads as a knockoff of a competitor |
+| `headstarttalent.com` | **Head Start** is a US federal early-childhood programme. Every US buyer knows it as government, not staffing |
+| `understudytalent.com` · `backstoptalent.com` | Both mean **substitute**. An understudy is who you get when the real one is unavailable — the wrong thing to call the person you are placing |
+
+### Pick
+
+**`openbooktalent.com`.** It is the only name found across ~1,550 candidates that carries the
+*positioning* rather than a generic virtue. Every competitor in this category makes money on a
+spread the client cannot see; ours is a transparent fee for a distinct service, and that is the
+structural reason the EOR line works at all. **A name that says "open book" is a claim the
+incumbents cannot make without giving up their margin model.**
+
+**If you want to stay in the hands family — and it is warmer, which matters in a Reel —
+`manyhandstalent.com` over `allhandstalent.com`.** Same idiom family, none of the emergency
+connotation. Buy both plus the `.co`s; they are $12 each and the decision does not have to be
+final today.
+
+---
+
+## 10. Entity ≠ brand
 
 Worth separating, because they have different requirements:
 

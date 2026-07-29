@@ -17,7 +17,7 @@
 | **[`TARGETING.md`](TARGETING.md)** | **How to reach them mid-search** — job postings as a dated intent signal, scraped into a Meta custom audience. Reverses the Meta-targetability gate |
 | **[`PATTERN.md`](PATTERN.md)** | **The supply-side screen** — which occupations the US stopped producing, where the work is digital and somebody already proved it transfers. Insurance is a worse shortage than accounting |
 | **[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md)** | **What Somewhere and Oceans actually sell** — 60+ published roles with rates, bookkeeper priced by country, and the finding that **neither of them sources India** |
-| **[`NAME.md`](NAME.md)** | **The name.** `fulltimetalent.com` — parked and for sale at **\$3,895**, one placement's gross profit — or `longtermtalent.com` free. ~1,400 domains checked against Verisign RDAP, `.talent` confirmed non-existent against IANA, and every rejected name with the reason |
+| **[`NAME.md`](NAME.md)** | **The name.** Pick: **Open Book Talent** (`openbooktalent.com`) — the only candidate that names the *positioning* (salary transparency) rather than a generic virtue. Or `manyhandstalent.com`, which beats All Hands. ~1,550 domains checked against Verisign RDAP, `.talent` confirmed non-existent against IANA |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
 ---
