@@ -199,6 +199,85 @@ but it is the correct one — and it is now the fourth independent method to sel
 
 ---
 
+## 5B. Top 5 verticals to target on Meta
+
+§5 ranked **intent flow**. This ranks **Meta-workability** — a different question, because a
+vertical can be full of in-market buyers who simply are not on Facebook.
+
+`FB_NATIVE` 25 (does the *owner personally* live on FB/IG, not LinkedIn) · `IDENT` 20 (identifiable
+from a job posting, which feeds the custom-audience seed) · `HEADLINE` 18 (can the pain fit in one
+ad headline with no explanation) · `DECIDE` 15 · `AFFORD` 12 · `INTEREST` 10 (usable Meta
+interest/behaviour signals as fallback)
+
+| # | Vertical | Meta score | `FB_NATIVE` | `IDENT` | `HEADLINE` | `DECIDE` | `AFFORD` | `INTEREST` |
+|---|---|---|---|---|---|---|---|---|
+| **1** | **E-comm / DTC** | **100.0** | 5 | 5 | 5 | 5 | 5 | 5 |
+| **2** | **Marketing agency** | **88.0** | 5 | 4 | 4 | 5 | 4 | 4 |
+| **3** | **PI law firm** | **83.4** | 4 | 4 | 4 | 5 | **5** | 3 |
+| **4** | **Insurance agency** | **81.6** | 4 | 4 | **5** | 4 | 4 | 3 |
+| **5** | **Medical practice** | **81.2** | 4 | 4 | **5** | 4 | 3 | 4 |
+| 6 | Freight / trucking | 78.2 | 4 | 4 | 4 | 5 | **2** | 4 |
+| 7 | Property mgmt | 70.6 | 3 | 4 | 4 | 4 | 3 | 3 |
+| 8 | Staffing agency | 69.0 | **2** | 4 | 4 | 5 | 4 | 2 |
+| 9 | MSP / IT services | 65.4 | **2** | 4 | 3 | 5 | 4 | 2 |
+| 10 | SaaS | 54.2 | **2** | 3 | **2** | 3 | 5 | 2 |
+| — | *Home services* | *89.2* | 5 | 4 | 5 | 5 | 3 | 4 | ⛔ not remote-ready |
+| — | *Dental / DSO* | *84.2* | 4 | 4 | 5 | 5 | 3 | 4 | ⛔ not remote-ready |
+
+**Home services would rank #2 on Meta-workability alone** — the best Facebook buyer in the entire
+set. It stays excluded only on the remote-readiness gate, and that is the single most frustrating
+result in this whole analysis: the easiest buyer to *reach* is the hardest to *convert*.
+
+### The demographic inversion
+
+> **Facebook's strongest US demographic is 45–65. The insurance workforce averages mid-50s, with
+> one in four underwriters over 50** (PATTERN §3). **The aging that creates the shortage also makes
+> those owners more Facebook-reachable, not less.**
+
+I had scored insurance `META` = 3 across three earlier documents. On demographics it is a **4**, and
+that moves it from 8th to 4th here.
+
+The inverse holds too: **SaaS founders are the youngest buyer in the set and the least
+Facebook-reachable.** Young B2B buyer → LinkedIn. Old B2B buyer → Facebook. That is the opposite of
+the intuition that "modern" verticals are easier to reach on modern channels.
+
+### The real Meta test is the headline
+
+Meta gives you one line and one image. **If the value proposition needs a second sentence, the
+vertical fails regardless of its score.**
+
+| Vertical | The one line |
+|---|---|
+| **E-comm / DTC** | *"Your bookkeeper costs $75k. Ours is $20k and already knows Shopify + A2X."* |
+| **Marketing agency** | *"Your margin is people. Move the back office, keep the creatives."* |
+| **PI law firm** | *"Your paralegal is chasing medical records instead of settling cases."* |
+| **Insurance agency** | *"Your CSR retired. Nobody applied. We have three, starting in 21 days."* |
+| **Medical practice** | *"Your front desk loses 3 hours a day to insurance verification."* |
+| SaaS | ⚠️ Needs a second sentence. That is why it scores 2 |
+
+**Insurance has the strongest single line in the set**, because the shortage is so acute that the ad
+can simply describe their situation back to them.
+
+### How this squares with §5
+
+| | Intent flow (§5) | Meta workability (§5B) |
+|---|---|---|
+| **E-comm / DTC** | **1st** | **1st** |
+| **Marketing agency** | **2nd** | **2nd** |
+| Freight / trucking | 3rd | 6th — `AFFORD` = 2 kills it |
+| Medical practice | 4th | 5th |
+| Staffing agency | 5th | **8th** — not on Facebook |
+| Insurance agency | 8th | **4th** — the demographic correction |
+| PI law firm | 11th | **3rd** — rich, owner-led, Facebook-active |
+
+**E-comm and marketing agencies are 1st and 2nd on both.** Everything else moves, which means those
+two are the only verticals selected by *both* the intent lens and the channel lens.
+
+**Launch on those two. Test insurance and PI law third** — both are far better Meta prospects than
+their intent-flow rank suggested, and PI law firms have the deepest pockets of any buyer in the set.
+
+---
+
 ## 6. The measurement protocol — replace every estimate above in one afternoon
 
 **Every score in §5 is `[E]`.** None of it needs to stay that way. Public job boards expose result
