@@ -92,6 +92,8 @@ nothing downstream is modellable until they're done.
 | [`scoring/RANKING.md`](scoring/RANKING.md) | Generated output — full ranking, top 25, all 49 knockouts, cluster averages |
 | [`scoring/offer_model.py`](scoring/offer_model.py) | Offer configurations — fee stack, funnel, recruitment cost, EOR line. Toggle `COST_MODE` between itemised and one-month-of-salary |
 | [`scoring/OFFER-MODEL.md`](scoring/OFFER-MODEL.md) | Generated output — market pricing, 13 configurations, funnel optimisation, sensitivities |
+| [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
+| [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 
 ```
 python3 scoring/model.py > scoring/RANKING.md
