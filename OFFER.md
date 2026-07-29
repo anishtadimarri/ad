@@ -85,6 +85,116 @@ generalist SMB bookkeeper faces a different chart of accounts every engagement.
 | **Why supply is deep** | India = bookkeeping, accounting, legal, technical [V]. India ITeS attrition is **11–18%** [V] — the best in the dataset for async back-office work |
 | **The gap to close** | They know QuickBooks. They mostly **don't** know Shopify/A2X inventory and COGS mechanics. ~2 weeks. This is the *named gap blocking a named role* that MASTER §9.6.3 permits a conversion course for — not a school |
 
+### 2.3 ICP size — and the revenue ceiling this niche imposes
+
+**The hiring trigger is the headcount curve, not revenue itself.** Below ~$3M a brand's G&A is
+1–2 people and a $1,500/mo bookkeeping firm covers it. Above ~$30M they hire a US controller and
+you are selling to a CFO.
+
+| Revenue | Total FTEs [V] | Finance situation |
+|---|---|---|
+| $1M | 3–6 | Founder or spouse in QuickBooks. **Too small** |
+| **$3–5M** | **8–15** | **First dedicated finance hire — the trigger** |
+| $10M | 15–25 | Has finance, wants a second seat |
+| $25M | 30–45 | US controller, offshore staff beneath |
+| $50M+ | 60–80 | In-house team. **Too big** |
+
+*"The curve flexes between $5M and $25M. Revenue per FTE roughly doubles in that band."* [V]
+
+**Sizing:**
+
+| | Count |
+|---|---|
+| Shopify Plus merchants, global | **47,000 live sites / 50,644 merchants** [V] |
+| US share at ~45% | ~21,600 [E] |
+| Amazon sellers at $1M+, global | **100,000+**; 30,000 FBA crossed $1M in 2026 [V] |
+| US share at ~50% | ~50,000 [E] |
+| Union, netting ~35% overlap | ~46,500 [E] |
+| **In the $3–30M band (~45%)** | **~21,000** ← the ICP [E] |
+
+*Context: 75% of US DTC brands do under $1M in online sales [V], which is why the band is narrow.*
+
+**Stock is not demand.** At ~1.5 finance seats per brand turning over every 2.5 years [?]:
+
+| | Per year |
+|---|---|
+| Finance hiring events across the ICP | ~12,600 [E] |
+| Offshore-willing today (30–35% adoption [V]) | **~4,100** |
+| Offshore-willing by 2028 (50%+ [V]) | ~6,300 |
+
+**Share required, at $8,829 blended revenue per placement:**
+
+| Target | Placements/yr | Per month | Share of offshore-willing demand |
+|---|---|---|---|
+| $1M | 113 | 9 | 2.8% |
+| **$3M** | **340** | **28** | **8.3%** ✅ |
+| $5M | 566 | 47 | 13.9% ⚠️ |
+| **$10M** | **1,133** | **94** | **27.7%** ❌ |
+
+> ⚠️ **E-comm accountants alone caps at $3–5M.** $10M would require capturing 28% of every
+> offshore-willing finance hire in the entire US e-commerce mid-market — a monopoly, not a niche.
+> This is the right **wedge** and the wrong **ceiling**. Reaching $10M requires a second role
+> (e-comm ops, Amazon PPC) or a second vertical (agencies, SaaS), added once the first is proven.
+> Do not build the org for a number the niche cannot produce.
+
+### 2.4 Country selection
+
+| Country | For e-comm finance specifically | Verdict |
+|---|---|---|
+| **India** | **528,000+ active Chartered Accountants** · 30-year US GAAP/IRS ecosystem · most mature ISO 27001/SOC 2 infrastructure globally [V]. Cheapest. Worst timezone | **Primary** |
+| **Philippines** | **US GAAP trained into the education system** · near-native American English · QuickBooks/Xero standard · up to 80% savings [V]. Manila attrition 40–60% [V] — recruit Cebu/provincial | **Overlap option** |
+| South Africa | Native English, partial US overlap, attrition 20–30% [V]. Thinner accounting pipeline | Reserve |
+| LatAm | Real-time overlap for month-end close, lower error rates, familiar tax structures [V]. **But 50–60% savings vs Asia's 65–75%** [V] — materially more expensive | Only on demand |
+| **Prague / CEE** | ❌ **Wrong expertise** — Poland/Czech depth is **IFRS and European regulatory**, not US GAAP [V]. Also the most expensive. Somewhere uses Eastern Europe for tech and creative, not US bookkeeping | **Drop** |
+
+**India primary** — 528,000 CAs and a 30-year US GAAP ecosystem is an unmatchable pool, it is the
+cheapest, and it is the operator's home market, which makes sourcing, grading and the EOR line
+(§4) structurally cheaper for us than for any competitor.
+
+**Expect timezone to be the most common objection and expect clients to ask for LatAm.** The
+honest counter is that month-end close is async and the 4-hour IST window covers their morning.
+Having a Philippines option is cheaper than losing the deal.
+
+### 2.5 Why a client picks us over Somewhere or Oceans
+
+| | Somewhere | Oceans | **Us** |
+|---|---|---|---|
+| Focus | 18+ countries, dozens of roles [V] | EA-first, Sri Lanka only [V] | **E-comm finance only** |
+| Price | 25–35% one-time [V] | $3,000/mo managed [V] | 30% one-time |
+| Recruiter knows what A2X is | ❌ | ❌ | ✅ |
+| Candidates who have closed Shopify books | Maybe | Unlikely | **Every one** |
+
+**Their structural weakness: a generalist recruiter cannot screen for domain skill they do not
+have.** Somewhere sends "an accountant"; the client discovers in month two that the person has
+never seen a Shopify payout reconciliation or a landed-cost calculation.
+
+**The move that wins the deal:**
+
+> *"Send us last month's Shopify payout file and your inventory sheet. Three of our candidates
+> will reconcile it. Compare their actual work — not their résumés — then decide."*
+
+Nobody in this market does this. It costs two bench-candidate hours, it is the strongest proof
+mechanism available to a company with no track record, and it is **structurally unavailable to a
+generalist** because their bench is not domain-specific.
+
+### 2.6 Channels for this ICP
+
+Their tech stack is public — Storeleads, BuiltWith and the Shopify app store yield a **named list
+of every US Shopify Plus merchant running A2X and Gusto.** That is a cold-email and LinkedIn list,
+not an ad audience. Meta is not the best channel for this ICP.
+
+| Channel | Why | Expected CAC [E] |
+|---|---|---|
+| **Stack-scraped cold email** | You can name every A2X user in the US. Perfect targeting, near-zero media cost | **$400–800** |
+| Meta | Most paid-social-native buyer alive, but B2B targeting is imprecise. Needs broad targeting plus a self-qualifying hook | $600–1,200 |
+| Newsletter / podcast sponsorship | 2X eCommerce, DTC Newsletter, eCommerceFuel. **How Somewhere and Oceans actually grew** [V] | $500–1,000 |
+| Communities | eCommerceFuel (vetted $1M+ owners), Amazon seller groups, ops Slacks | Low, slow |
+| **Partnerships** | E-comm accounting firms turning away work because they cannot hire · 3PLs · Shopify agencies · A2X · fractional CFO shops | **$200–500** |
+
+**Partnerships are the highest-leverage and slowest line.** An e-comm accounting firm whose
+constraint is hiring is the best referral partner in this market — their bottleneck is your
+product.
+
 ---
 
 ## 3. The offer
@@ -354,6 +464,7 @@ nothing and can be run in conversation this week.** Test 2 cannot be accelerated
 | **CPL is the dominant risk — ~6x more dangerous than attrition** (§4.3) | **High.** Breakeven near CPL $255. Watch it weekly; it is the one number that can kill the model outright |
 | The $2,500 escrow is a novel ask from an unknown vendor | Medium. It is also the strongest differentiator and the only retention mechanism with real force, so test the objection before removing it |
 | Two-part fee complicates the pitch **and costs ~$1,020/placement** (§4.3) | Medium. A deliberate trust purchase for the first ~20 deals, then switch to 35% single-stage |
+| **The niche caps at \$3–5M revenue** (§2.3) | **High for a \$10M ambition.** Right wedge, wrong ceiling — needs a second role or vertical bolted on once proven |
 | E-commerce is itself cyclical | Medium. Broader SMB is the fallback ICP with the same delivery |
 | Bookkeeping is the most crowded category | Medium. Mitigated by buyer choice (§1.2) and by leading with the accountant tier, not by role choice |
 | We hold client money in escrow | Medium. Needs clean segregation and a written escrow term. Not a trust account — get this drafted properly |
