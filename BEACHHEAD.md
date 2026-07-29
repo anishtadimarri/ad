@@ -13,7 +13,8 @@ Evidence tags per MASTER §0.
 |---|---|
 | **Verticals** | **E-commerce/DTC · Marketing agencies · Staffing agencies** |
 | **Shared spine** | **QuickBooks Online / Xero** — close, reconciliation, AR, AP |
-| **Roles** | Ledger & Close · AR & Collections · AP & Invoice Processing · Compliance & Document Ops |
+| **Roles — finance spine** | Ledger & Close · AR & Collections · AP & Invoice Processing · Compliance & Document Ops |
+| **Roles — marketing spine** (phase 2, §5A) | Reporting & Analytics · Paid Media Operations · Email / Lifecycle Ops |
 | **Combined ICP** | **~61,000 US businesses** vs ~21,000 for e-comm alone = **2.9x** |
 | **Every buyer already employs remote staff** | Non-negotiable. See §1 |
 | **Extra operational cost** | One extra week of conversion training per vertical |
@@ -257,6 +258,88 @@ accountable for an expired certificate, and nobody delegates that to a model.
 **Do not recruit for all three verticals at once.** Hire for e-comm depth, then cross-train the
 proven performers onto the agency and staffing connectors. A person who has closed twelve e-comm
 months is a safe bet on an agency month; a person hired to know all three knows none of them.
+
+---
+
+## 5A. The second spine — marketing operations
+
+The four roles in §4 are all finance and compliance. **That is an artefact of how the gate was
+written, not a finding.** Once "shared QuickBooks ledger" became the portability test, only ledger
+roles could survive it. A second spine exists and was excluded by construction.
+
+### 5A.1 The ad-platform stack is equally portable
+
+| Vertical | Marketing stack |
+|---|---|
+| **E-comm/DTC** | Meta Ads Manager · Google Ads · GA4 · Klaviyo · Shopify |
+| **Marketing agency** | Meta · Google Ads · GA4 · Looker Studio — **for clients** |
+| **Staffing agency** | Meta · Google · LinkedIn/Indeed job ads · HubSpot nurture |
+
+**Meta Ads Manager is Meta Ads Manager. GA4 is GA4.** The platform does not change by vertical —
+only the objective does. That is exactly the portability argument made for QuickBooks, and it holds
+just as well here.
+
+### 5A.2 The correction — strategy is not execution
+
+Earlier passes scored **"media buyer" at `RET` = 1** on escape risk (a good one goes direct to
+clients at 3–5x) and let the gate kill the entire marketing function.
+
+> **That risk belongs to the strategy layer only** — the person who owns the client relationship
+> and could leave with it. It does not apply to campaign operations, reporting, or email build and
+> QA, where there is no client relationship to take and no book of business to walk out with.
+>
+> Placing into an **agency** reduces it further: an agency is a media buyer's career ladder, so the
+> seat is a promotion path rather than a dead end.
+
+Splitting the function properly:
+
+| Vertical | Role | Score | Verdict |
+|---|---|---|---|
+| **Marketing agency** | **Reporting & analytics (client dashboards)** | **81.2** | Highest-scoring pair in the entire study |
+| E-comm/DTC | Reporting & analytics (GA4/Looker) | 80.4 | |
+| Marketing agency | Email / marketing automation ops | 80.0 | |
+| Marketing agency | Paid media **operations** (client campaigns) | 79.2 | |
+| E-comm/DTC | Paid media **operations** (build/traffic/QA/pace) | 78.8 | |
+| E-comm/DTC | Email / lifecycle ops (Klaviyo build + QA) | 78.8 | |
+| Staffing agency | Recruiting analytics & pipeline reporting | 77.6 | |
+| Staffing agency | Candidate nurture & CRM ops | 76.8 | |
+| Staffing agency | Recruitment media ops (job ads, nurture) | 76.0 | |
+| Marketing agency | ~~Media BUYER (owns strategy + client)~~ | 73.4 | ⛔ `RET` — gate stands |
+| Marketing agency | ~~Designer / video editor~~ | 64.8 | ⛔ `RET` — gate stands |
+
+*Reference: e-comm Ledger & Close scores 81.6.* **Marketing operations roles are not a
+consolation prize — they score level with the finance roles.**
+
+### 5A.3 The three marketing roles, specified
+
+| Role | Shared core | Vertical delta |
+|---|---|---|
+| **Reporting & Analytics** | GA4, Looker Studio, platform reporting APIs, dashboard build, data QA, anomaly flagging | E-comm: ROAS/MER, cohort and LTV · Agency: client-facing dashboards, multi-account · Staffing: source-of-hire, req pipeline, time-to-fill |
+| **Paid Media Operations** | Campaign build, audience and creative trafficking, naming conventions, budget pacing, QA checklists, platform hygiene. **Never strategy** | E-comm: catalogue/feed, Advantage+ · Agency: multi-client under one BM, approvals · Staffing: job-ad campaigns, geo/role targeting |
+| **Email / Lifecycle Ops** | Template build, segmentation, flow QA, deliverability hygiene, send-and-report | E-comm: Klaviyo flows, abandoned cart · Agency: HubSpot/Marketo automation · Staffing: candidate nurture sequences |
+
+### 5A.4 Why this spine matters more than its score
+
+**It is the only place the founder's own skill converts into an unfair advantage.**
+
+Nothing in the finance spine uses it. But a media buyer can grade a paid-media-ops candidate in
+twenty minutes — read their campaign structure, spot the naming chaos, see whether they understand
+pacing — and **no competitor in this category can do that** (MASTER §7.6, the founder-as-academy
+exception). The assessment is free for us and impossible for them.
+
+### 5A.5 But do not run both spines at once
+
+Two spines means two benches, two tests, two training tracks and two outbound narratives. That is
+precisely the operational intensity being pruned everywhere else in this plan.
+
+| Phase | Spine | Why this order |
+|---|---|---|
+| **1** | **Finance** — Ledger & Close, then AR | The client's pain is quantified and unambiguous, the buyer's alternative is an unfilled vacancy, and the work is binary right/wrong. Easiest to satisfy, easiest to guarantee |
+| **2** | **Marketing ops** — Reporting & Analytics first | Add once finance is proven. Start with reporting, not paid media: it is the highest-scoring role available, the most gradeable, and has no escape risk at all |
+
+**Reporting & Analytics is the right bridge role** — it sits between both spines (it is data work,
+not creative work), it scores 80.4–81.2, it is fully portable across all three verticals, and the
+founder can grade it personally.
 
 ---
 
