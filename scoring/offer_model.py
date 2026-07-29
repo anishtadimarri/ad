@@ -1,272 +1,295 @@
 #!/usr/bin/env python3
 """
-Offer configuration model — optimises 30-day and lifetime LTGP:CAC.
+Offer model v3 — built on researched competitor pricing and realistic CPL.
 
-Every configuration shares the same funnel and cost engine; they differ only in
-offer terms. Run:  python3 scoring/offer_model.py > scoring/OFFER-MODEL.md
+Changes from v2:
+  * Placed salary 22,000 (mass market, per operator direction) not 34,000
+  * CPL 75 not 100. Meta B2B CPL benchmarks 2026: overall FB average $27.66;
+    B2B band $30-80; finance $58.70, legal $72.40; qualified B2B $150-250.
+    A hiring offer to US business owners sits with finance/legal.
+  * Fee structure copied from Somewhere: refundable $500 deposit that gates
+    the SEARCH (not the close), 35% single-stage, 6-month replacement.
+  * Funnel restructured to match Somewhere's actual flow:
+        lead -> call held -> deposit paid (search starts) -> shortlist -> hire
+  * Full market fee stack modelled as toggles
+  * Novel mechanics from v2 (stay-bonus escrow, 30%+5% split) kept only as a
+    comparison config — v2 showed the split costs ~$1,020/placement
+
+Run:  python3 scoring/offer_model.py > scoring/OFFER-MODEL.md
 """
 
-from dataclasses import dataclass, field, replace
+from dataclasses import dataclass, replace
 
-# --------------------------------------------------------------- environment
+# ---------------------------------------------------------------- environment
 
-CPL = 100.0            # Meta cost per lead [E]
-HORIZON = 36           # lifetime window, months
+CPL = 75.0
+SALARY = 22_000.0
+HORIZON = 36
 
-# Funnel, free-shortlist path [E/?]
-# 20% not 40%: a cold Meta B2B lead is low-intent. 40% would be an inbound
-# referral rate, and using it was the error in v1 of this model.
-LEAD_TO_INTAKE = 0.20  # form fill -> intake call HELD
-INTAKE_TO_SEARCH = 0.50  # intake -> they accept terms and we start searching
-FILL_RATE = 0.60       # search accepted -> placement made
-SALES_COST_PER_CALL = 60.0   # human time per intake call held -> belongs in CAC
+# Funnel — Somewhere's actual shape [E/?]
+LEAD_TO_CALL = 0.22      # cold Meta B2B lead -> discovery call HELD
+CALL_TO_DEPOSIT = 0.35   # call -> $500 refundable deposit paid, search opens
+DEPOSIT_TO_HIRE = 0.80   # search -> placement. High: we replace until matched
+SALES_COST_PER_CALL = 60.0
 
-# Delivery cost. Scales with placed salary — a $34k senior search is not the
-# same work as a $22k bookkeeper search. Flat COGS was the second v1 error.
-SEARCH_LABOUR_PCT = 0.035    # recruiter + screening time
-CANDIDATE_ADS_PCT = 0.015    # senior candidates cost more to source
-SHORTLIST_PCT = 0.005        # grading 3 candidates, charged per SEARCH not per fill
+# Delivery cost, scaling with placed salary
+SEARCH_LABOUR_PCT = 0.035
+CANDIDATE_ADS_PCT = 0.015
+SHORTLIST_PCT = 0.005          # per SEARCH opened, not per fill
+SCREENING_PASSTHRU = 175.0     # background $50-200 + assessment $25-150 +
+                               # reference verification $25-75 [V]
 TOOLING = 50.0
 PROCESSING = 0.029
 
-# Attrition regime [C/?] — modelled pessimistically per OFFER.md §4
-REPLACEMENT_RATE = 0.50       # share of placements triggering a free replacement
-REFUND_SHARE_OF_FEE = 0.15    # share of claims that become refunds, not replacements
-P_ALIVE_M12 = 0.40            # still employed at month 12
+# Attrition regime [C/?] — pessimistic
+REPLACEMENT_RATE = 0.50
+REFUND_SHARE_OF_FEE = 0.15
 
 # Lifetime behaviour [?]
-P_EXPAND = 0.35        # client hires a second, separate role within 36 months
-P_PAID_REPLACE = 0.45  # buys a paid replacement after the guarantee window lapses
+P_EXPAND = 0.35
+P_PAID_REPLACE = 0.45
 PROTECTION_MARGIN = 0.70
+MONTHLY_SEAT_COGS = 150.0      # payroll/remittance admin + AM time, per seat/mo
 
 
 @dataclass
 class Offer:
     name: str
-    salary: float = 22_000          # placed annual salary
-    fee_now: float = 0.25           # collected at start
-    fee_m12: float = 0.05           # collected at month 12 if still employed
-    deposit: float = 0.0            # credited against fee; changes funnel
-    slo_price: float = 0.0          # paid front-end product
-    slo_take: float = 0.0           # share of leads buying it
-    slo_to_place: float = 0.0       # SLO buyer -> placement
-    slo_cost: float = 0.0
-    protection_attach: float = 0.0  # share taking $297/mo
+    salary: float = SALARY
+    # --- fee stack (all market-observed structures)
+    deposit: float = 500.0          # refundable, credited to final invoice
+    fee_pct: float = 0.35           # single-stage placement fee
+    fee_tail_pct: float = 0.0       # deferred slice at month 12
+    volume_pct: float = 0.0         # blended rate on repeat seats (slide)
+    charge_screening: bool = False  # pass screening costs through to client
+    protection_attach: float = 0.0  # $297/mo protection layer
     protection_price: float = 297.0
     protection_months: float = 12.0
-    multi_hire: float = 0.0         # share hiring 2 seats on one acquisition
+    monthly_spread: float = 0.0     # managed-seat spread per month
+    monthly_tenure: float = 18.0
+    escrow: float = 0.0             # stay-bonus escrow (pass-through, not revenue)
+    # --- funnel
+    lead_to_call: float = LEAD_TO_CALL
+    call_to_deposit: float = CALL_TO_DEPOSIT
+    deposit_to_hire: float = DEPOSIT_TO_HIRE
+    multi_hire: float = 0.0
+    extra_seats: float = P_EXPAND + P_PAID_REPLACE
     note: str = ""
 
-    # funnel adjustments the deposit causes
-    dep_search_mult: float = 1.0
-    dep_fill_mult: float = 1.0
 
+def econ(o: Offer):
+    place_per_lead = o.lead_to_call * o.call_to_deposit * o.deposit_to_hire
+    searches_per_place = 1.0 / o.deposit_to_hire
+    calls_per_place = o.lead_to_call / place_per_lead
 
-def economics(o: Offer):
-    """Return a dict of per-acquired-client economics."""
-    # ---- funnel -> cost per placement
-    if o.slo_price:
-        # paid front end gates the funnel at the top
-        placements_per_lead = o.slo_take * o.slo_to_place
-        front_rev = o.slo_take * o.slo_price
-        front_cost = o.slo_take * o.slo_cost
-        searches_per_lead = o.slo_take * o.slo_to_place / FILL_RATE
-    else:
-        search_rate = INTAKE_TO_SEARCH * o.dep_search_mult
-        fill = min(FILL_RATE * o.dep_fill_mult, 0.95)
-        searches_per_lead = LEAD_TO_INTAKE * search_rate
-        placements_per_lead = searches_per_lead * fill
-        front_rev = front_cost = 0.0
-
-    # shortlist labour is spent on every search, filled or not
-    searches_per_placement = searches_per_lead / placements_per_lead
-    shortlist_cost = SHORTLIST_PCT * o.salary * searches_per_placement
-    gross_cac = CPL / placements_per_lead
-    if o.slo_price:
-        sales_calls = 0.0   # SLO buyers self-select; no pre-sale call
-    else:
-        sales_calls = LEAD_TO_INTAKE / placements_per_lead
-    net_cac = (gross_cac + sales_calls * SALES_COST_PER_CALL
-               - (front_rev - front_cost) / placements_per_lead)
-
-    # ---- seats per acquired client
-    seats_now = 1 + o.multi_hire
+    cac = CPL / place_per_lead + calls_per_place * SALES_COST_PER_CALL
+    seats = 1 + o.multi_hire
 
     # ---- 30-day revenue
-    fee_upfront = o.salary * o.fee_now * seats_now
-    rev_30 = fee_upfront + o.deposit * 0  # deposit is credited, not additive
+    fee = o.salary * o.fee_pct * seats
+    screening_rev = (SCREENING_PASSTHRU * 1.6 * seats) if o.charge_screening else 0.0
+    monthly_rev = o.monthly_spread * seats            # month 1 only, in window
+    rev30 = fee + screening_rev + monthly_rev
 
     # ---- 30-day COGS
     unit = ((SEARCH_LABOUR_PCT + CANDIDATE_ADS_PCT) * o.salary
-            + shortlist_cost + TOOLING)
-    direct = unit * seats_now
-    # a claim costs a fresh search, and a minority become outright refunds
-    claim_cost = (SEARCH_LABOUR_PCT + CANDIDATE_ADS_PCT) * o.salary \
-        + REFUND_SHARE_OF_FEE * o.salary * o.fee_now
-    reserve = REPLACEMENT_RATE * claim_cost * seats_now
-    cogs_30 = direct + reserve + rev_30 * PROCESSING
-    gp_30 = rev_30 - cogs_30
+            + SHORTLIST_PCT * o.salary * searches_per_place
+            + SCREENING_PASSTHRU + TOOLING)
+    claim = ((SEARCH_LABOUR_PCT + CANDIDATE_ADS_PCT) * o.salary
+             + REFUND_SHARE_OF_FEE * o.salary * o.fee_pct)
+    cogs30 = (unit * seats + REPLACEMENT_RATE * claim * seats
+              + MONTHLY_SEAT_COGS * seats * (1 if o.monthly_spread else 0)
+              + rev30 * PROCESSING)
+    gp30 = rev30 - cogs30
 
     # ---- lifetime
-    tail = o.salary * o.fee_m12 * P_ALIVE_M12 * seats_now
-    extra_seats = P_EXPAND + P_PAID_REPLACE
-    extra_fee = o.salary * o.fee_now * extra_seats
-    extra_cogs = (unit * extra_seats
-                  + REPLACEMENT_RATE * claim_cost * extra_seats
-                  + extra_fee * PROCESSING)
+    tail = o.salary * o.fee_tail_pct * (1 - REPLACEMENT_RATE) * seats
+    extra = o.extra_seats
+    rate = o.volume_pct or o.fee_pct
+    xfee = o.salary * rate * extra
+    xscreen = (SCREENING_PASSTHRU * 1.6 * extra) if o.charge_screening else 0.0
+    xcogs = (unit * extra + REPLACEMENT_RATE * claim * extra
+             + (xfee + xscreen) * PROCESSING)
     prot = (o.protection_attach * o.protection_price * o.protection_months
             * PROTECTION_MARGIN)
-    gp_life = gp_30 + tail * (1 - PROCESSING) + (extra_fee - extra_cogs) + prot
+    mrec = (o.monthly_spread - MONTHLY_SEAT_COGS) * max(o.monthly_tenure - 1, 0) * seats
+    gplife = gp30 + tail * (1 - PROCESSING) + (xfee + xscreen - xcogs) + prot + mrec
 
-    return dict(rev_30=rev_30, gp_30=gp_30, margin_30=gp_30 / rev_30 if rev_30 else 0,
-                cac=net_cac, r30=gp_30 / net_cac, gp_life=gp_life,
-                rlife=gp_life / net_cac, seats=seats_now,
-                life_seats=seats_now + extra_seats)
+    return dict(rev30=rev30, gp30=gp30, gm=gp30 / rev30 if rev30 else 0, cac=cac,
+                r30=gp30 / cac, gplife=gplife, rlife=gplife / cac,
+                ppl=place_per_lead, seats=seats)
 
 
-# ------------------------------------------------------------ configurations
+# --------------------------------------------------------------- configurations
 
-BASE = Offer("C1  OFFER.md as written", note="$22k · 25%+5% · free shortlist")
+SW = Offer("S1  Somewhere, copied", note="$500 deposit · 35% single · 6mo guarantee")
+OPT = dict(lead_to_call=0.30, call_to_deposit=0.45, deposit_to_hire=0.88)
 
 CONFIGS = [
-    BASE,
-    replace(BASE, name="C2  + $500 engagement deposit", deposit=500,
-            dep_search_mult=0.76, dep_fill_mult=1.30,
-            note="fewer searches, better ones"),
-    replace(BASE, name="C3  senior tier $26k", salary=26_000,
-            note="same everything, better candidate"),
-    replace(BASE, name="C4  senior tier $34k", salary=34_000,
-            note="accountant, not bookkeeper"),
-    replace(BASE, name="C5  $34k · 35% single-stage", salary=34_000,
-            fee_now=0.35, fee_m12=0.0, note="all cash now, no alignment"),
-    replace(BASE, name="C6  $34k · 30%+5% · deposit", salary=34_000, fee_now=0.30,
-            deposit=500, dep_search_mult=0.76, dep_fill_mult=1.30),
-    replace(BASE, name="C7  C6 + protection 30%", salary=34_000, fee_now=0.30,
-            deposit=500, dep_search_mult=0.76, dep_fill_mult=1.30,
-            protection_attach=0.30),
-    replace(BASE, name="C8  C7 + 20% two-seat", salary=34_000, fee_now=0.30,
-            deposit=500, dep_search_mult=0.76, dep_fill_mult=1.30,
-            protection_attach=0.30, multi_hire=0.20),
-    replace(BASE, name="C9  $297 SLO front end", salary=34_000, fee_now=0.30,
-            slo_price=297, slo_take=0.08, slo_to_place=0.35, slo_cost=120,
-            note="paid attraction offer"),
-    replace(BASE, name="C10 heavy deferral 20/10/10", salary=34_000, fee_now=0.20,
-            fee_m12=0.20, note="max client de-risking"),
+    SW,
+    replace(SW, name="S2  + screening billed through", charge_screening=True),
+    replace(SW, name="S3  + optimised funnel", **OPT),
+    replace(SW, name="S4  S3 + screening + protection", charge_screening=True,
+            protection_attach=0.30, **OPT),
+    replace(SW, name="S5  S4 + 20% two-seat", charge_screening=True,
+            protection_attach=0.30, multi_hire=0.20, **OPT),
+    replace(SW, name="S6  S5 + slide to 27%, no volume gained", charge_screening=True,
+            protection_attach=0.30, multi_hire=0.20, volume_pct=0.27, **OPT),
+    replace(SW, name="S6b S5 + slide to 27% that WORKS", charge_screening=True,
+            protection_attach=0.30, multi_hire=0.20, volume_pct=0.27,
+            extra_seats=1.10, **OPT),
+    replace(SW, name="S7  traditional 22% (F&A norm)", fee_pct=0.22, **OPT),
+    replace(SW, name="S8  Hey Foster's 20%", fee_pct=0.20, **OPT),
+    replace(SW, name="S9  pure monthly managed", fee_pct=0.0, monthly_spread=800.0,
+            **OPT),
+    replace(SW, name="S10 monthly + 1mo placement fee", fee_pct=0.0833,
+            monthly_spread=800.0, **OPT),
+    replace(SW, name="S11 v2 novel structure", fee_pct=0.30, fee_tail_pct=0.05,
+            escrow=2500.0, **OPT),
 ]
 
-# Capture tunables so sensitivity loops can restore exactly, rather than
-# resetting to hardcoded literals that drift when a constant is edited.
-_DEFAULTS = {k: globals()[k] for k in
-             ("CPL", "REPLACEMENT_RATE", "FILL_RATE", "LEAD_TO_INTAKE", "INTAKE_TO_SEARCH")}
+_D = {k: globals()[k] for k in
+      ("CPL", "REPLACEMENT_RATE", "LEAD_TO_CALL", "CALL_TO_DEPOSIT", "DEPOSIT_TO_HIRE")}
 
 
 def restore(*keys):
-    for k in (keys or _DEFAULTS):
-        globals()[k] = _DEFAULTS[k]
+    for k in (keys or _D):
+        globals()[k] = _D[k]
 
 
-# ------------------------------------------------------------------- output
+# --------------------------------------------------------------------- output
 
-print("# Offer Model — optimising 30-day and lifetime LTGP:CAC\n")
+print("# Offer Model v3 — built on researched competitor pricing\n")
 print(f"Generated by [`scoring/offer_model.py`](offer_model.py). "
-      f"CPL ${CPL:.0f} · lead→intake {LEAD_TO_INTAKE:.0%} · replacement rate {REPLACEMENT_RATE:.0%} · "
-      f"{HORIZON}-month lifetime.\n")
-print("All configurations share one funnel and cost engine; only offer terms differ.\n")
+      f"Placed salary **${SALARY:,.0f}** · CPL **${CPL:.0f}** · "
+      f"replacement rate {REPLACEMENT_RATE:.0%} · {HORIZON}-month lifetime.\n")
 
-print("## Configurations\n")
-print("| Config | Salary | Fee | 30-day rev | 30-day GP | GM | CAC | **30d** | Lifetime GP | **Life** |")
-print("|---|---|---|---|---|---|---|---|---|---|")
-rows = []
+print("## What the market actually charges\n")
+print("| Structure | Market figure | Source |")
+print("|---|---|---|")
+for a, bb, c in [
+    ("Somewhere placement fee", "**25–35%** of first-year salary, sliding down with volume", "somewhere.com"),
+    ("Somewhere deposit", "**Refundable**, credited to final invoice. Gates the **search**", "somewhere.com"),
+    ("Somewhere guarantee", "**6-month** perfect-hire guarantee, free replacement", "somewhere.com"),
+    ("Somewhere speed", "Candidates in **as little as 3 days**; most hire **under 21 days**", "somewhere.com"),
+    ("Somewhere scale", "**250+ placements** in a recent month; **18+ countries**", "somewhere.com"),
+    ("Somewhere 2nd product", "**Talent On-Demand** — monthly fee, 10–20 days, *unlimited* free replacements", "somewhere.com/pricing"),
+    ("Somewhere rate card", "Sample candidate rates **$1,200–$7,000/month**", "somewhere.com/pricing"),
+    ("Hey Foster", "**20%** of salary, *or* subscription **$1,000/mo** (≤6 hires/yr) / **$3,167/mo** (≤30/yr)", "heyfoster.com"),
+    ("Oceans", "**From $3,000/mo** managed · **3-month trial** then rolling · month-long in-person training", "oceanstalent.com"),
+    ("Managed seat spread", "Client pays **$2,000–2,600/mo**, contractor gets **$1,000–1,600/mo**", "morestaffing.co"),
+    ("Managed bookkeeper", "**$1,250–1,700/mo** vs US domestic **$4,200–5,400/mo**", "morenow.co"),
+    ("US perm placement norm", "Entry **11–20%** · mid **20–22%** · senior **21–30%** · **accountants 18–22%**", "secondtalent.com"),
+    ("Flat-fee norm", "Entry **$1,000–3,000** · mid **$3,000–7,500**", "secondtalent.com"),
+    ("Volume discounts", "11–25 placements **1–10% off** · 25+ **10–20%** · exclusive up to **21%**", "secondtalent.com"),
+    ("Screening pass-throughs", "Background **$50–200** · assessments **$25–150** · references **$25–75**", "secondtalent.com"),
+    ("Market add-ons", "Placement fee **on top of** monthly (1 month salary) · equipment · contract minimums **6–12mo** with penalties", "morenow.co"),
+    ("Staffing margins", "Temp gross **14–41%** (avg 21%); net profit **3–8%**", "secondtalent.com"),
+]:
+    print(f"| {a} | {bb} | {c} |")
+
+print("\n---\n\n## Configurations\n")
+print("| Config | Fee | 30-day rev | 30-day GP | GM | CAC | **30-day** | Lifetime GP | **Lifetime** |")
+print("|---|---|---|---|---|---|---|---|---|")
 for o in CONFIGS:
-    e = economics(o)
-    fee = (f"{o.fee_now:.0%}" + (f"+{o.fee_m12:.0%}" if o.fee_m12 else "")
-           + (" SLO" if o.slo_price else ""))
+    e = econ(o)
+    fee = (f"{o.fee_pct:.0%}" + (f"+{o.fee_tail_pct:.0%}" if o.fee_tail_pct else "")
+           + (f" +${o.monthly_spread:.0f}/mo" if o.monthly_spread else ""))
     flag = "" if e["r30"] >= 1.5 else " ⚠️"
-    print(f"| {o.name} | ${o.salary/1000:.0f}k | {fee} | ${e['rev_30']:,.0f} "
-          f"| ${e['gp_30']:,.0f} | {e['margin_30']:.0%} | ${e['cac']:,.0f} "
-          f"| **{e['r30']:.2f}:1**{flag} | ${e['gp_life']:,.0f} | **{e['rlife']:.2f}:1** |")
-    rows.append((o, e))
+    print(f"| {o.name} | {fee} | ${e['rev30']:,.0f} | ${e['gp30']:,.0f} | {e['gm']:.0%} "
+          f"| ${e['cac']:,.0f} | **{e['r30']:.2f}:1**{flag} | ${e['gplife']:,.0f} "
+          f"| **{e['rlife']:.2f}:1** |")
 
-best30 = max(rows, key=lambda r: r[1]["r30"])
-bestlife = max(rows, key=lambda r: r[1]["rlife"])
-print(f"\n**Best 30-day:** {best30[0].name} at {best30[1]['r30']:.2f}:1  ")
-print(f"**Best lifetime:** {bestlife[0].name} at {bestlife[1]['rlife']:.2f}:1")
+print("\n---\n\n## Funnel optimisation\n")
+print("Somewhere's actual flow. The deposit gates the **search**, not the close — which is why")
+print("their fill rate can run high. An unfunded search never opens.\n")
+print("```")
+print("LEAD ──► CALL HELD ──► $500 DEPOSIT ──► SHORTLIST ──► HIRE")
+print("        (biggest leak)  (search opens)    (3 in 48h)")
+print("```\n")
+print("| Stage | Base | Optimised | Lever |")
+print("|---|---|---|---|")
+for s, bv, ov, lever in [
+    ("Lead → call held", "22%", "**30%**",
+     "Booking widget on the thank-you page, same-day slots, SMS + email reminder sequence, "
+     "two qualifying questions on the form to trade volume for intent"),
+    ("Call → deposit paid", "35%", "**45%**",
+     "**Show 2–3 real candidate profiles on the call itself.** Turns *trust me* into *look at "
+     "these three people*. Only possible because we run one role in one country — Somewhere "
+     "cannot do this across 18 countries and dozens of roles"),
+    ("Deposit → hire", "80%", "**88%**",
+     "Standing bench, present 3 never 1, replace until matched, anchor salary in writing at intake"),
+]:
+    print(f"| {s} | {bv} | {ov} | {lever} |")
 
-# ---- lever isolation
-print("\n---\n\n## Which lever actually moves it\n")
-print("Each row changes exactly one thing from C1.\n")
-print("| Lever | 30-day | vs C1 | Lifetime | vs C1 |")
+b, o2 = econ(SW), econ(replace(SW, **OPT))
+print(f"\n| | Lead→placement | CAC | 30-day |\n|---|---|---|---|")
+print(f"| Base | {b['ppl']:.2%} | ${b['cac']:,.0f} | **{b['r30']:.2f}:1** |")
+print(f"| Optimised | {o2['ppl']:.2%} | ${o2['cac']:,.0f} | **{o2['r30']:.2f}:1** |")
+print(f"\n**Funnel work is worth {o2['r30']/b['r30']:.1f}x on the ratio — more than any pricing")
+print("change in the table above, and it costs nothing but craft.**\n")
+
+print("### Which stage to fix first\n")
+print("| Stage | −25% | base | +25% | +50% |")
 print("|---|---|---|---|---|")
-b = economics(BASE)
-levers = [
-    ("Baseline C1", BASE),
-    ("Salary $22k → $34k", replace(BASE, salary=34_000)),
-    ("Fee 25% → 35% upfront", replace(BASE, fee_now=0.35, fee_m12=0.0)),
-    ("Add $500 deposit", replace(BASE, deposit=500, dep_search_mult=0.76,
-                                 dep_fill_mult=1.30)),
-    ("Protection attach 30%", replace(BASE, protection_attach=0.30)),
-    ("20% take two seats", replace(BASE, multi_hire=0.20)),
-    ("Add $297 SLO", replace(BASE, slo_price=297, slo_take=0.08,
-                             slo_to_place=0.35, slo_cost=120)),
-]
-for label, o in levers:
-    e = economics(o)
-    d30 = e["r30"] - b["r30"]
-    dl = e["rlife"] - b["rlife"]
-    print(f"| {label} | **{e['r30']:.2f}:1** | {d30:+.2f} "
-          f"| **{e['rlife']:.2f}:1** | {dl:+.2f} |")
+for key, label in [("lead_to_call", "Lead → call"), ("call_to_deposit", "Call → deposit"),
+                   ("deposit_to_hire", "Deposit → hire")]:
+    cells = []
+    for m in (0.75, 1.0, 1.25, 1.5):
+        e = econ(replace(SW, **{key: min(getattr(SW, key) * m, 0.95)}))
+        cells.append(f"{e['r30']:.2f}:1")
+    print(f"| {label} | " + " | ".join(cells) + " |")
+print("\nAll three are near-equivalent in leverage, so fix them in cost order: the reminder")
+print("sequence is free, candidate profiles on the call cost one recruiter-hour, bench depth")
+print("costs standing capital.\n")
 
-# ---- sensitivity on the two unknowns that matter
-REC = rows[7][0]  # C8
-print("\n---\n\n## Sensitivity on the recommended configuration (C8)\n")
+print("### The volume slide has a breakeven\n")
+s5 = next(c for c in CONFIGS if c.name.startswith("S5"))
+s6 = next(c for c in CONFIGS if c.name.startswith("S6 "))
+s6b = next(c for c in CONFIGS if c.name.startswith("S6b"))
+print("Somewhere slides 35% down to 25% on volume. The slide **costs** margin on repeat seats and")
+print("only pays if it buys enough extra seats to cover the discount.\n")
+print("| | Repeat seats | Lifetime GP | Lifetime ratio |")
+print("|---|---|---|---|")
+for c in (s5, s6, s6b):
+    ec = econ(c)
+    print(f"| {c.name} | {c.extra_seats:.2f} | ${ec['gplife']:,.0f} | **{ec['rlife']:.2f}:1** |")
+disc = (0.35 - 0.27) / 0.35
+print(f"\nDiscounting 35% → 27% gives up **{disc:.0%}** of the fee on every repeat seat, so the slide")
+print(f"must lift repeat seats by more than {disc:.0%} — from {s5.extra_seats:.2f} to "
+      f"**{s5.extra_seats*(1+disc):.2f}+** — to break even. **Do not publish a slide until repeat")
+print("behaviour is measured.** Offer it deal-by-deal on request instead.\n")
+
+
+REC = next(c for c in CONFIGS if c.name.startswith('S5'))
+print("---\n\n## Sensitivity — recommended (S6)\n")
 print("### CPL × replacement rate\n")
-print("| | " + " | ".join(f"repl {r:.0%}" for r in (0.15, 0.30, 0.50, 0.70)) + " |")
-print("|---|" + "---|" * 4)
-for cpl in (50, 100, 150, 200, 250):
+print("| | repl 15% | repl 30% | repl 50% | repl 70% |")
+print("|---|---|---|---|---|")
+for cpl in (40, 75, 120, 175, 250):
     cells = []
     for rr in (0.15, 0.30, 0.50, 0.70):
-        g = globals()
-        g["CPL"], g["REPLACEMENT_RATE"] = float(cpl), rr
-        e = economics(REC)
-        mark = "" if e["r30"] >= 1.5 else "⚠️"
-        cells.append(f"{e['r30']:.2f}:1{mark}")
-    print(f"| **CPL ${cpl}** | " + " | ".join(cells) + " |")
+        globals()["CPL"], globals()["REPLACEMENT_RATE"] = float(cpl), rr
+        e = econ(REC)
+        cells.append(f"{e['r30']:.2f}:1" + ("" if e["r30"] >= 1.5 else "⚠️"))
+    tag = {75: " *(B2B benchmark)*", 175: " *(qualified B2B)*"}.get(cpl, "")
+    print(f"| **CPL ${cpl}**{tag} | " + " | ".join(cells) + " |")
 restore("CPL", "REPLACEMENT_RATE")
 
-print("\n### Fill rate — the constraint\n")
-print("| Fill rate | CAC | 30-day | Lifetime |")
-print("|---|---|---|---|")
-for f in (0.80, 0.70, 0.60, 0.50, 0.40, 0.30):
-    globals()["FILL_RATE"] = f
-    e = economics(REC)
-    mark = "" if e["r30"] >= 1.5 else " ⚠️"
-    print(f"| {f:.0%} | ${e['cac']:,.0f} | **{e['r30']:.2f}:1**{mark} | {e['rlife']:.2f}:1 |")
-restore("FILL_RATE")
-
-print("\n### Lead → intake × intake → search (the two unmeasured rates)\n")
-print("| | " + " | ".join(f"search {s:.0%}" for s in (0.30, 0.40, 0.50, 0.60)) + " |")
-print("|---|" + "---|" * 4)
-for li in (0.25, 0.30, 0.40, 0.50):
-    cells = []
-    for s in (0.30, 0.40, 0.50, 0.60):
-        globals()["LEAD_TO_INTAKE"], globals()["INTAKE_TO_SEARCH"] = li, s
-        e = economics(REC)
-        mark = "" if e["r30"] >= 1.5 else "⚠️"
-        cells.append(f"{e['r30']:.2f}:1{mark}")
-    print(f"| **intake {li:.0%}** | " + " | ".join(cells) + " |")
-restore("LEAD_TO_INTAKE", "INTAKE_TO_SEARCH")
-
-e = economics(REC)
-print(f"\n---\n\n## Recommended: {REC.name}\n")
-print(f"| | |\n|---|---|")
+e = econ(REC)
+print(f"\n---\n\n## Recommended — {REC.name}\n")
+print("| | |\n|---|---|")
 print(f"| Placed salary | **${REC.salary:,.0f}** |")
-print(f"| Fee | **{REC.fee_now:.0%} at start + {REC.fee_m12:.0%} at month 12** |")
-print(f"| Engagement deposit | **${REC.deposit:,.0f}**, credited |")
-print(f"| Protection attach | {REC.protection_attach:.0%} at ${REC.protection_price:.0f}/mo |")
-print(f"| Two-seat share | {REC.multi_hire:.0%} |")
-print(f"| 30-day revenue | ${e['rev_30']:,.0f} |")
-print(f"| 30-day gross profit | **${e['gp_30']:,.0f}** ({e['margin_30']:.0%}) |")
+print(f"| Deposit | **${REC.deposit:,.0f}** refundable, credited — gates the search |")
+slide = (f", sliding to **{REC.volume_pct:.0%}** on repeat seats" if REC.volume_pct
+         else " single-stage, **no published slide** — see breakeven above")
+print(f"| Placement fee | **{REC.fee_pct:.0%}**{slide} |")
+print(f"| Screening | Billed through at cost × 1.6 (${SCREENING_PASSTHRU*1.6:,.0f}) |")
+print(f"| Protection layer | {REC.protection_attach:.0%} attach at ${REC.protection_price:.0f}/mo |")
+print("| Guarantee | 6-month replacement |")
+print(f"| 30-day revenue | ${e['rev30']:,.0f} |")
+print(f"| 30-day gross profit | **${e['gp30']:,.0f}** ({e['gm']:.0%}) |")
 print(f"| Net CAC | ${e['cac']:,.0f} |")
 print(f"| **30-day LTGP:CAC** | **{e['r30']:.2f}:1** |")
-print(f"| Lifetime gross profit | ${e['gp_life']:,.0f} over {e['life_seats']:.2f} seats |")
+print(f"| Lifetime gross profit | ${e['gplife']:,.0f} |")
 print(f"| **Lifetime LTGP:CAC** | **{e['rlife']:.2f}:1** |")
