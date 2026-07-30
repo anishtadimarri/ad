@@ -260,3 +260,100 @@ body memberships are `[V]`. **The cheap way to convert this to fact is the suppl
 [`README.md`](README.md): post one role, count qualified applicants in 72 hours — run it in three
 countries at once for ~$900 instead of one for $300.**
 
+---
+
+## 9. "Clients may be wary of Indian employees"
+
+A real objection, and cheaper to **price** than to argue about.
+
+### 9.1 Where the wariness comes from — and where it doesn't
+
+| | |
+|---|---|
+| **It is *not* about competence** | Every Fortune 500 GCC, all of the Big 4's audit support, and the entire US-CPA-firm offshoring industry (Entigrity and a dozen others) run on Indian accountants at enormous scale. **The sophisticated buyer already buys India** |
+| **It *is* about a 25-year consumer association** | The US retail association with Indian delivery is *scripted phone support* — and, more damagingly, the heavily-publicised scam-call-centre phenomenon. Neither has anything to do with a bookkeeper, and both are what a non-institutional buyer has actually experienced |
+| **Which means it is concentrated in exactly our ICP** | A $3–30M Shopify brand owner has no institutional offshoring experience — only the consumer kind. **The segment with the strongest objection is the segment we sell to.** That is the honest version of the concern, and it is worse than the generic version |
+
+### 9.2 The one piece of hard evidence, and three readings of it
+
+**Somewhere covers 18+ countries. It includes Pakistan, Egypt, Portugal, LatAm, South Africa, the
+Philippines and Eastern Europe — and skips India** [V]. Oceans sources Sri Lanka only [V].
+
+Two sophisticated operators whose entire business is knowing which countries US SMBs will accept
+have both declined the largest, cheapest, deepest pool on earth. **That is revealed preference, which
+this repo trusts more than stated preference.** But it has at least three readings, and honesty requires
+all three:
+
+| Reading | Support | Against |
+|---|---|---|
+| **1. Their buyers object to India** | The user's hypothesis. Consistent with the consumer association above | — |
+| **2. Attrition** — India's domestic market outbids them | My own screen scores India `RETAIN`=2, the worst of any top-10 country. A 20–30% hike triggers a switch [V] | — |
+| **3. Supply-side crowding** — India-to-US staffing is a red ocean | Entigrity, Invedus, Offshore Employee, TechGene and dozens more already fish it | Cuts against our own `WHITE`=5 score for India, which may be too generous |
+
+**Reading 2 kills the timezone explanation outright: Somewhere includes Pakistan, which is UTC+5 —
+thirty minutes from India.** So whatever their reason is, it is not the clock. And they include Egypt
+at **EF EPI 459**, well below India's 484, so it is not the English either.
+
+### 9.3 It only touches one of the five roles
+
+Accent is a **voice** problem, and four of the five roles in [`MAP.md`](MAP.md) never use voice:
+
+| Role | Voice exposure | Where the objection lands |
+|---|---|---|
+| Bookkeeper | None — ledger and reconciliation | ✅ Nowhere |
+| Accountant / close | None — documents and month-end | ✅ Nowhere |
+| AP / invoice processing | None — inbox and coding | ✅ Nowhere |
+| Ads manager | None — dashboards and async reporting | ✅ Nowhere |
+| **AR & Collections** | **High — chasing invoices is phone work** | 🔴 **Here, and only here** |
+
+**So the fix is a routing rule, not a strategy change: put South Africa on AR & Collections and
+India on the other four.** AR is also the role BEACHHEAD names as the agency vertical's entry point,
+which makes this a cheap, targeted use of a second country rather than a second operation.
+
+### 9.4 What it costs if it is real
+
+Modelled as a haircut to the **deposit rate** — the step where a country objection would actually
+surface, and already the most fragile input in the business ([`scoring/LTGP.md`](scoring/LTGP.md) §3).
+
+| If the India objection costs | Deposit rate | CAC | 30-day | Lifetime | Clears 1.5:1? |
+|---|---|---|---|---|---|
+| nothing — base case | 18.0% | $976 | **4.25:1** | 11.35:1 | ✅ |
+| 10% of deposits | 16.2% | $1,084 | **3.83:1** | 10.21:1 | ✅ |
+| 20% of deposits | 14.4% | $1,220 | **3.40:1** | 9.08:1 | ✅ |
+| a third of deposits | 12.0% | $1,463 | **2.84:1** | 7.57:1 | ✅ |
+| **half of all deposits** | 9.0% | $1,951 | **2.13:1** | 5.67:1 | ✅ |
+
+**Even losing half of all deposits to the objection leaves 2.13:1 on 30 days** — still
+clearing the hard constraint. **The objection is a margin question, not an existential one.**
+
+### 9.5 The inversion — the wary client is worth more
+
+This is the part that changes the answer. **Our fee is 30% *of salary*, and a South African
+bookkeeper costs more than an Indian one** (Somewhere's published SA band runs to $3,700/mo [V]).
+So a client who refuses India does not leak — **they self-select into a bigger fee**:
+
+| Client takes | Salary | Fee at 30% | 30-day GP | **30-day** | **Lifetime** |
+|---|---|---|---|---|---|
+| India [V] our band | $20,000 | $6,000 | $4,148 | **4.25:1** | **11.35:1** |
+| **South Africa** [E] | $26,000 | $7,800 | $5,289 | **5.42:1** | **13.38:1** |
+| South Africa, senior [E] | $30,000 | $9,000 | $6,042 | **6.19:1** | **14.72:1** |
+
+**The India-wary buyer is a 5.42:1 client instead of a 4.25:1 client.** The percentage fee
+means country resistance converts into revenue rather than leaking out of the funnel — and recruitment
+cost scales *sub-linearly* with salary (MASTER §10.5), so the higher band is structurally better margin.
+
+**So the objection is not a problem to overcome. It is a segmentation question to answer with a menu.**
+
+### 9.6 What to actually do
+
+| | What to do |
+|---|---|
+| **Don't lead with country** | The ad sells *"a bookkeeper who knows Shopify + A2X for $20k"* ([`MAP.md`](MAP.md)). Country is disclosed on the intake call, not in the headline. **Somewhere doesn't lead with country either** — and advertising India would broadcast the one thing that is simultaneously our supply-side edge and the buyer's stated worry. Free |
+| **Answer it with the work sample, not with reassurance** | The graded work sample on *their own books* ([`OFFER.md`](OFFER.md) §2.5) replaces a stereotype with evidence about one named person. This is the real answer and it is already the plan. Free |
+| **Carry two countries and let them choose** | India for price, South Africa for the wary buyer and for AR & Collections. Per §9.5 the South African seat is the *better* deal for us. Cost: one recruiting pipeline in a country where we have no network — the real expense |
+| **Then measure it** | On the first ten calls, **do not volunteer the country and count how many ask.** That is the cleanest read available, it costs nothing, and it runs inside test 1 |
+
+**The one thing not to do is decide this from the armchair.** The objection is measurable on ten
+calls, and §9.4 says the business survives even the worst case — so it does not need to be
+pre-solved by restructuring supply before a single client has been spoken to.
+

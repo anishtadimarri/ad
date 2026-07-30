@@ -18,7 +18,7 @@
 | **[`PATTERN.md`](PATTERN.md)** | **The supply-side screen** — which occupations the US stopped producing, where the work is digital and somebody already proved it transfers. Insurance is a worse shortage than accounting |
 | **[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md)** | **What Somewhere and Oceans actually sell** — 60+ published roles with rates, bookkeeper priced by country, and the finding that **neither of them sources India** |
 | **[`NAME.md`](NAME.md)** | **The name.** Pick: **All Aboard Talent** (`allaboardtalent.com`) — All Hands with the defects removed: same `All ___` warmth, but it means *joining a team* rather than an emergency, and "aboard" is literally the hiring word. ~1,680 domains checked against Verisign RDAP; `.talent` confirmed non-existent against IANA |
-| **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**, and the timezone premium buys something the async gate already discarded |
+| **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**. **§9 prices the "clients are wary of Indian employees" objection** — it survives even losing half of all deposits, and the wary buyer is a 5.42:1 client rather than 4.25:1 |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
 ---
