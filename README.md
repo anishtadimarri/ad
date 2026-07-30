@@ -6,7 +6,7 @@
 
 ---
 
-## Nine documents
+## Ten documents
 
 | | |
 |---|---|
@@ -18,6 +18,7 @@
 | **[`PATTERN.md`](PATTERN.md)** | **The supply-side screen** — which occupations the US stopped producing, where the work is digital and somebody already proved it transfers. Insurance is a worse shortage than accounting |
 | **[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md)** | **What Somewhere and Oceans actually sell** — 60+ published roles with rates, bookkeeper priced by country, and the finding that **neither of them sources India** |
 | **[`NAME.md`](NAME.md)** | **The name.** Pick: **All Aboard Talent** (`allaboardtalent.com`) — All Hands with the defects removed: same `All ___` warmth, but it means *joining a team* rather than an emergency, and "aboard" is literally the hiring word. ~1,680 domains checked against Verisign RDAP; `.talent` confirmed non-existent against IANA |
+| **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**, and the timezone premium buys something the async gate already discarded |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
 ---
@@ -99,8 +100,10 @@ nothing downstream is modellable until they're done.
    [`TARGETING.md`](TARGETING.md) depends on it.**
 1. **Demand** — run the "still trying to fill that bookkeeper role?" hook at the intent seed.
    ~$1,500. Measures CPL against the $75 assumption.
-2. **Supply** — post one role to Indian candidate channels. ~$300. Counts qualified applicants
-   in 72 hours.
+2. **Supply** — post one role to candidate channels. ~$300 per country. Counts qualified applicants
+   in 72 hours. **Run it in three countries at once — India, South Africa, Kenya — for ~$900**
+   ([`COUNTRIES.md`](COUNTRIES.md) §8). It is the only cheap way to convert that screen's `[E]`
+   judgements into fact.
 
 ---
 
@@ -115,6 +118,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 | [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/countries.py`](scoring/countries.py) | **44 supply countries × 11 dimensions + gates.** EF EPI 2025 English scores, labour-market slack as the retention proxy, timezone deliberately weighted near zero |
 | [`scoring/funnel.py`](scoring/funnel.py) | **Step-by-step Meta funnel** — impression → CAC, by audience layer and lead-capture flow, with the break-points |
 | [`scoring/FUNNEL.md`](scoring/FUNNEL.md) | Generated output — the nine steps, form-fill vs calendar booking, what \$5,000 can and cannot measure |
 | [`scoring/ltgp.py`](scoring/ltgp.py) | **Joins the two models** — gross profit from the offer model, CAC from the funnel model, on a \$20k job. Discards the offer model's internal CAC |
