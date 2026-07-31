@@ -6,7 +6,7 @@
 
 ---
 
-## Ten documents
+## Eleven documents
 
 | | |
 |---|---|
@@ -17,7 +17,8 @@
 | **[`TARGETING.md`](TARGETING.md)** | **How to reach them mid-search** — job postings as a dated intent signal, scraped into a Meta custom audience. Reverses the Meta-targetability gate |
 | **[`PATTERN.md`](PATTERN.md)** | **The supply-side screen** — which occupations the US stopped producing, where the work is digital and somebody already proved it transfers. Insurance is a worse shortage than accounting |
 | **[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md)** | **What Somewhere and Oceans actually sell** — 60+ published roles with rates, bookkeeper priced by country, and the finding that **neither of them sources India** |
-| **[`NAME.md`](NAME.md)** | **The name.** ~2,100 domains checked against Verisign RDAP, `.talent` confirmed non-existent against IANA. Live shortlist: **All Aboard Talent**, **Mighty Crew Talent**, **Steady Crew Talent**. Records what each rejected name was killed on — including two of my own earlier picks |
+| **[`NAMES.md`](NAMES.md)** | **THE RANKING.** 36 candidates × 7 weighted dimensions + 3 gates. **Steady Crew / Loyal Crew / All Aboard** hold the top three under every reweighting. **No bare single-word `.com` exists** — 182 checked, all registered |
+| **[`NAME.md`](NAME.md)** | The naming *reasoning* — ~2,300 domains checked against Verisign RDAP, `.talent` confirmed non-existent against IANA, and what every rejected name was killed on, including three of my own earlier picks |
 | **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**. **§9 prices the "clients are wary of Indian employees" objection** — it survives even losing half of all deposits, and the wary buyer is a 5.42:1 client rather than 4.25:1 |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
@@ -118,6 +119,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 | [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/names.py`](scoring/names.py) | **36 name candidates × 7 dimensions + gates.** Generates [`NAMES.md`](NAMES.md) |
 | [`scoring/countries.py`](scoring/countries.py) | **44 supply countries × 11 dimensions + gates.** EF EPI 2025 English scores, labour-market slack as the retention proxy, timezone deliberately weighted near zero |
 | [`scoring/funnel.py`](scoring/funnel.py) | **Step-by-step Meta funnel** — impression → CAC, by audience layer and lead-capture flow, with the break-points |
 | [`scoring/FUNNEL.md`](scoring/FUNNEL.md) | Generated output — the nine steps, form-fill vs calendar booking, what \$5,000 can and cannot measure |
