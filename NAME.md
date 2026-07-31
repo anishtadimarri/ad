@@ -542,6 +542,79 @@ positioning line you would want to say anyway.
 
 Buy both plus `allhandstalent.com` as the fallback. ~$36, and §9.4's two-brand test still applies.
 
+### 9.6 The punchy-adjective register — "Mighty Talent" and its family
+
+Operator direction: **try other angles like Mighty Talent.** A genuinely different register from the
+idiom family — short, warm, confident, slightly old-fashioned. 440 more domains checked.
+
+#### Finding 1: the single-adjective space is exhausted
+
+**`mightytalent.com` is taken.** So is every good sibling:
+
+| Taken | |
+|---|---|
+| **Character** | `trusty` · `able` · `loyal` · `sturdy` · `steadfast` · `stalwart` · `faithful` · `dependable` · `reliable` · `savvy` · `keen` · `sharp` · `swift` · `handy` · `candid` · `sincere` |
+| **Excellence** | `mighty` · `stellar` · `ace` · `prime` · `peak` · `elite` · `sterling` · `gem` · `star` · `golden` · `choice` · `rare` |
+| **Warm** | `sunny` · `bright` · `fresh` · `crisp` · `neat` · `tidy` · `clean` · `calm` · `kind` · `warm` · `wise` · `bold` · `brave` |
+
+What is left free is what nobody wanted: `hearty` · `earnest` · `tireless` · `dogged` · `staunch` ·
+`willing` · `eager` · `merry` · `jolly` · `scrappy` — and **`modesttalent.com`**, which reads as an
+admission rather than a claim.
+
+**`diligenttalent.com`** is the one salvageable single adjective — exactly the virtue you want in a
+bookkeeper — but **Diligent Corporation** is a well-known governance/compliance software brand,
+adjacent to accounting.
+
+#### Finding 2: excellence claims are the wrong half of this register
+
+| Claims of **excellence** | Claims of **character** |
+|---|---|
+| Mighty · Stellar · Ace · Elite · Prime · Rare | Trusty · Loyal · Steady · Able · Diligent |
+| A claim about quality that **a company with no track record cannot back** — and every competitor makes it | A claim about **reliability**, which is credible from day one |
+| Says nothing our buyer doubts | Answers the **two objections that actually exist**: will they be good, and will they stay |
+
+#### Finding 3 — a correction: the `Hands` construction has a second register problem
+
+`ablehandstalent.com` is free and I nearly recommended it — "in able hands" sits in the right
+grammatical family (§9.2). **It is not usable, and neither is most of that family:**
+
+> **[Able Hands Homecare](https://www.ablehandshc.com/), Assisting Hands Home Care, Helping Hands
+> In Home Care** — the `[adjective] Hands` construction is **owned by US home health and domestic
+> care.** Add Allstate's *"You're in good hands"*, one of the most-run ad slogans in American
+> history, and `goodhandstalent.com` is unusable too.
+
+**This downgrades my earlier §9.2 suggestions.** `safehandstalent.com` and `capablehandstalent.com`
+carry the home-care association. **`steadyhandstalent.com` survives best** — "a steady hand" is
+said of surgeons and pilots, not carers — but the Hands family is weaker than I represented it.
+
+#### Where the room actually is: `[punchy adjective] + Crew`
+
+`Crew` keeps the human warmth of `Hands` with neither the manual-labour register nor the home-care
+one, and it is a **group of working people** — so unlike Mighty Oak it says what we are about.
+
+| | Name | Domain | Why |
+|---|---|---|---|
+| **1** | **Mighty Crew Talent** | `mightycrewtalent.com` | **Keeps your word.** Warm, punchy, people-forward, and "crew" is what we actually supply. The best home for "Mighty" now that the bare version is gone |
+| **2** | **Steady Crew Talent** | `steadycrewtalent.com` | Says the **promise** (they stay) *and* the people. Character register, not excellence |
+| **3** | **Loyal Crew Talent** | `loyalcrewtalent.com` | The most on-message name in this whole register — loyalty **is** the tenure lever |
+| **4** | **First Team Talent** | `firstteamtalent.com` | "First team" = your starters. Confident without being hyperbolic |
+
+Also free: `fullcrewtalent` · `goodcrewtalent` · `wholecrewtalent` · `sharpcrewtalent` ·
+`savvycrewtalent` · `nimblecrewtalent`. Bare `.com`s: `sturdycrew.com` · `stoutcrew.com` ·
+`mightyroster.com` · `sturdyteam.com` · `mightyfolk.com`.
+
+#### The best-sounding option — and why I am not recommending it
+
+**`mightyoaktalent.com`** — *"Mighty oaks from little acorns grow."* Real idiom, growth imagery that
+suits a scaling D2C buyer, warm, distinctive, no collision found in this category, and the `/oʊ/` in
+*Oak* makes it the best-sounding name since Open Book.
+
+**It fails your own filter.** You rejected Open Book because it "doesn't mean anything" — and a tree
+means less. If Mighty Oak appeals anyway, that is a decision to buy a *feeling* over a *description*,
+which is the Somewhere/Oceans route and is a legitimate choice. It just is not the brief you set.
+
+---
+
 ### Superseded pick — `openbooktalent.com`
 
 > **Superseded by §9.5.** Retained for the reasoning, and it remains free. The case was that it
