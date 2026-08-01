@@ -682,6 +682,50 @@ Ten calls separates these three, and test 1 is already funded. **Buy both** —
 
 ---
 
+### 9.8 Variants of "Talent" — and why the `K`-for-`C` respelling is the one hard no
+
+247 more domains across thirteen head nouns. **"Talent" turns out to be hard to beat**, and every
+alternative fails for a nameable reason:
+
+| Head noun | Verdict |
+|---|---|
+| **`Hires`** | ✅ **The one genuine improvement.** More precise than Talent — a *hire* is a permanent employee, which pre-empts the VA/gig misread Talent leaves open — and a syllable shorter. **Cost: it foregrounds placement, so the EOR product (37–65% of lifetime GP) becomes a non-sequitur** |
+| **`Teams`** | ❌ **Microsoft Teams.** One of the most-used business apps on earth, and it is *software* — the exact defect §9.7 diagnosed in both your favourites |
+| **`Staff`** | ❌ "Staffing" is the temp end of the category. We charge 30% for permanent placement; this prices us down |
+| **`Collective`** | ❌ Implies a loose group of freelancers — the **pooled-resource read**, stated outright |
+| **`Squad`** | ❌ Juvenile for a $6,000 service |
+| **`People`** | ~ Warmest option and it covers both products, but none of the free combinations read well |
+| **`Bench` · `Desk`** | ❌ Our-side vocabulary. The client has no bench |
+| **`Partners` · `Group` · `Works`** | ❌ Professional-services cold, and near-zero distinctiveness |
+
+**Best of the variant: `loyalhires.com`** — 5th overall, and *"Loyal Hires"* says the promise and
+the product in two short words. `tuesdayhires.com` and `gumptionhires.com` are also free and clean.
+
+---
+
+#### `kloudteams.com` — four independent failures
+
+Available, and I would not take it. Not on taste — on four separate mechanical grounds:
+
+| # | Failure | |
+|---|---|---|
+| **1** | **`cloudteams.com` is registered** [V] | The decisive one. Someone hears "Kloud Teams" in a Reel, types the `C`, and lands on **a stranger's parked page.** You paid Meta for that impression and handed the click away. **Permanent, unfixable leak** |
+| **2** | **"Cloud" says software** | The exact defect §9.7 found in both All Hands and Tuesday — except here it is explicit rather than an echo, and no creative can outrun it. **We sell humans** |
+| **3** | **"Teams" is Microsoft Teams** | Compounds failure 2 |
+| **4** | **`K`-for-`C` reads as a 2014 startup** | Against a credibility gap that is the binding constraint of the whole business |
+
+**This is the same error as the domain hacks (`hir.es`, `hi.re`) and as `bellweathertalent.com`:
+a name whose spelling cannot be recovered from audio leaks paid traffic forever.** For a business
+whose only channel is paid Meta, that is the most expensive class of naming mistake available — and
+it is the one filter in §1 that has no workaround.
+
+**`allhandsteams.com` is worse still**, and it is worth seeing why: *All Hands* already evokes a
+meeting, and *Teams* **is** the world's most-used meeting app. Together the name describes a
+Microsoft Teams add-on rather than a staffing firm. It scores 59.6 and gates on `CLEAN`=1 — the
+lowest clean score in the study.
+
+---
+
 ### Superseded pick — `openbooktalent.com`
 
 > **Superseded by §9.5.** Retained for the reasoning, and it remains free. The case was that it

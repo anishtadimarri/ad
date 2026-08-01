@@ -28,6 +28,42 @@ GATES = [("CLEAN", 3, "a live collision or a broken register"),
 
 # name, domain, scores, note
 N = [
+ ("Loyal Hires", "loyalhires.com",
+  dict(AUDIO=5, MEANS=5, CLEAN=5, WARM=4, SOUND=4, FIRM=4, FIT=3),
+  "**The best of the `Hires` variant.** \"Hires\" beats \"Talent\" on precision — a "
+  "hire is a permanent employee, which pre-empts the VA/gig misread that Talent "
+  "leaves open — and it is one syllable shorter. Cost: it foregrounds placement, so "
+  "the EOR product becomes a non-sequitur. No collision found"),
+ ("Tuesday Hires", "tuesdayhires.com",
+  dict(AUDIO=5, MEANS=3, CLEAN=3, WARM=4, SOUND=4, FIRM=3, FIT=3),
+  "Your Tuesday, with a sharper head noun — \"Hires\" says permanent employees where "
+  "\"Talent\" says nothing. Still carries the Monday.com adjacency"),
+ ("Gumption Hires", "gumptionhires.com",
+  dict(AUDIO=5, MEANS=4, CLEAN=5, WARM=4, SOUND=4, FIRM=3, FIT=3),
+  "Character claim plus a precise head noun. No collision found"),
+ ("Steady Hires", "steadyhires.com",
+  dict(AUDIO=5, MEANS=5, CLEAN=3, WARM=3, SOUND=4, FIRM=4, FIT=3),
+  "Says the promise and the product in two short words — and **Steady HR Staffing "
+  "already operates in staffing**, which is close on both sound and meaning"),
+ ("All Hands Hires", "allhandshires.com",
+  dict(AUDIO=5, MEANS=3, CLEAN=3, WARM=4, SOUND=2, FIRM=3, FIT=3),
+  "Three consecutive `/h/`-and-`/s/` clusters. Say it twice"),
+ ("Kloud Teams", "kloudteams.com",
+  dict(AUDIO=1, MEANS=1, CLEAN=2, WARM=2, SOUND=3, FIRM=1, FIT=4),
+  "**Four independent failures.** (1) **`cloudteams.com` is registered** — anyone "
+  "who hears it types the `C` and lands on a stranger's parked page, so paid clicks "
+  "leak permanently. (2) \"Cloud\" says *software*, the exact defect diagnosed in "
+  "§9.7. (3) \"Teams\" collides with **Microsoft Teams**. (4) A `K`-for-`C` "
+  "respelling reads as a 2014 startup, against a credibility gap that is the "
+  "binding constraint"),
+ ("All Hands Teams", "allhandsteams.com",
+  dict(AUDIO=5, MEANS=2, CLEAN=1, WARM=4, SOUND=3, FIRM=2, FIT=4),
+  "**The worst combination available.** \"All Hands\" already evokes a meeting and "
+  "\"Teams\" *is* the world's most-used meeting app — together the name describes a "
+  "Microsoft Teams add-on rather than a staffing firm"),
+ ("Tuesday Teams", "tuesdayteams.com",
+  dict(AUDIO=5, MEANS=1, CLEAN=2, WARM=4, SOUND=4, FIRM=2, FIT=4),
+  "Double software collision — Monday.com on the front, Microsoft Teams on the back"),
  ("Gumption Talent", "gumptiontalent.com",
   dict(AUDIO=5, MEANS=4, CLEAN=5, WARM=5, SOUND=4, FIRM=3, FIT=5),
   "**A single generic common word, not a name, with no collision found.** "
