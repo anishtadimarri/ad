@@ -726,6 +726,81 @@ lowest clean score in the study.
 
 ---
 
+### 9.9 One-letter changes, and Monday — measured rather than argued
+
+#### The respelling table: 12 for 12
+
+For every respelled candidate, the domain a listener would **actually type**:
+
+| Candidate | | What they type | |
+|---|---|---|---|
+| `kloudteams.com` | **free** | `cloudteams.com` | **registered** |
+| `kloudcrew.com` | **free** | `cloudcrew.com` | **registered** |
+| `kloudpeople.com` | **free** | `cloudpeople.com` | **registered** |
+| `teemtalent.com` | **free** | `teamtalent.com` | **registered** |
+| `teemhires.com` | **free** | `teamhires.com` | **registered** |
+| `teemcrew.com` | **free** | `teamcrew.com` | **registered** |
+| `hyreteams.com` | **free** | `hireteams.com` | **registered** |
+| `krewhires.com` | **free** | `crewhires.com` | **registered** |
+| `talantteam.com` | **free** | `talentteam.com` | **registered** |
+| `kloudtalent` · `hyretalent` · `krewtalent` · `werktalent` | registered | `cloudtalent` · `hiretalent` · `crewtalent` · `worktalent` | **all registered** |
+
+**Twelve for twelve.** And it is not a coincidence — it is causal:
+
+> **A respelled domain is available *because* the correctly-spelled one is owned.
+> The availability is the warning, not the opportunity.**
+
+#### Where I overstated it, and where it actually bites
+
+I said this "leaks paid traffic." **That was too broad, and worth correcting:**
+
+| Traffic type | Does spelling matter? |
+|---|---|
+| **Paid click straight off the ad** | ❌ **No.** They tap a button. Spelling is irrelevant |
+| **Recall** — saw the Reel, didn't click, searches three days later | ✅ **Yes.** A $6,000 considered purchase is not an impulse tap |
+| **Referral** — *"you should talk to Kloud Teams"* | ✅ **Most of all.** The referrer says it out loud and the listener types the `C` |
+
+So the leak is on **recall and referral**, not on first-click. That narrows the argument — and it lands
+on the two channels that *compound*, which is where a durable brand asset either accrues or doesn't.
+
+#### The constructive version
+
+If an invented name appeals, **invent a word with no correct spelling instead of respelling a real
+one.** *Klarna, Kajabi, Zapier, Vanta* leak to nothing — there is no "proper" version for anyone to
+type. `Kloud` leaks to `cloud` forever.
+
+That said, a coined word conflicts with your own stated preference for common words, and it fails
+filter 4 by reading as new. **It is a different bet, not a better version of this one.**
+
+---
+
+#### Monday — and it is now measurably worse than Tuesday
+
+`mondayhiring.com` and `mondayteams.com` are both **free**. `mondayhires.com`, `mondaypeople.com`
+and `mondaycrew.com` are taken.
+
+**But monday.com is not merely adjacent to hiring — it sells hiring software** [V]:
+
+> An **applicant tracking system**, a **recruitment pipeline template**, a **"Recruitment CRM for
+> Talent Acquisition,"** recruitment-and-onboarding templates, and a full HR template category.
+
+| | Tuesday Talent | Monday Hiring |
+|---|---|---|
+| Relationship to the mark | **Evokes** the pattern | **Uses their exact mark** as the first word |
+| Category overlap | Adjacent — they sell project management | **Direct — they sell recruitment software** |
+| Could it be mistaken for their product? | Unlikely | ✅ ***"monday hiring"* is a plausible monday.com feature name** |
+| Trademark exposure | Low | **Real.** Exact mark, adjacent service class, and monday.com is a $1.47B-revenue company |
+
+**This retroactively strengthens the case for Tuesday.** The thing that made Tuesday tolerable is
+precisely that it is *not* Monday — it borrows the shape of a familiar naming pattern without taking
+the mark. `mondayhiring.com` takes the mark and applies it to the category the mark holder already
+sells into. **That is the one distinction that matters, and it is why one is a risk and the other is
+a lawsuit waiting for a growth curve.**
+
+`mondayteams.com` compounds it further: monday.com on the front, **Microsoft Teams** on the back.
+
+---
+
 ### Superseded pick — `openbooktalent.com`
 
 > **Superseded by §9.5.** Retained for the reasoning, and it remains free. The case was that it

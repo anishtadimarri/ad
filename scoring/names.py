@@ -28,6 +28,24 @@ GATES = [("CLEAN", 3, "a live collision or a broken register"),
 
 # name, domain, scores, note
 N = [
+ ("Monday Hiring", "mondayhiring.com",
+  dict(AUDIO=5, MEANS=4, CLEAN=1, WARM=3, SOUND=4, FIRM=3, FIT=3),
+  "**Uses monday.com's exact mark, in the category monday.com already sells into** — "
+  "an applicant tracking system, a recruitment pipeline template and a \"Recruitment "
+  "CRM for Talent Acquisition\" [V]. *\"monday hiring\"* is a plausible monday.com "
+  "feature name. Tuesday evokes the pattern; Monday takes the mark"),
+ ("Monday Teams", "mondayteams.com",
+  dict(AUDIO=5, MEANS=2, CLEAN=1, WARM=3, SOUND=4, FIRM=2, FIT=4),
+  "monday.com on the front, Microsoft Teams on the back. Two of the largest software "
+  "marks in the SMB world in a four-syllable name"),
+ ("Teem Talent", "teemtalent.com",
+  dict(AUDIO=1, MEANS=2, CLEAN=3, WARM=4, SOUND=4, FIRM=3, FIT=5),
+  "\"Teem\" is a real word — *teeming with talent* — which makes it the cleverest "
+  "respelling found. It is still a **homophone of \"team\", and `teamtalent.com` is "
+  "registered**, so recall and referral traffic goes to someone else"),
+ ("Kloud Crew", "kloudcrew.com",
+  dict(AUDIO=1, MEANS=1, CLEAN=2, WARM=3, SOUND=4, FIRM=1, FIT=5),
+  "`cloudcrew.com` is registered. Same leak, same software signal"),
  ("Loyal Hires", "loyalhires.com",
   dict(AUDIO=5, MEANS=5, CLEAN=5, WARM=4, SOUND=4, FIRM=4, FIT=3),
   "**The best of the `Hires` variant.** \"Hires\" beats \"Talent\" on precision — a "
