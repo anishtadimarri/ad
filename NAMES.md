@@ -103,7 +103,7 @@ kind of name.
 | Ballast Talent | 72.8 | CLEAN=1 | **Ballast Recruiting** (San Francisco) exists and describes itself as "enhancing organizational stability through effective hiring." Same category, same metaphor. The best word in the search, unusable |
 | Kestrel Talent | 71.6 | MEANS=1 | Sharp-eyed hunter, distinctive, uncontested — and not a word most Americans use, so it repeats the Holdfast mistake in a milder form |
 | Copper Talent | 70.0 | CLEAN=2, MEANS=1 | Warm metal, punchy, one spelling — and **downgraded on a collision I initially underrated: Copper CRM markets itself to recruiting and staffing firms**, with recruiting-firm case studies on its own site. Our category already uses it |
-| Tuesday Talent | 69.2 | MEANS=1 | **`mondaytalent.com` is taken**, so this is the days-of-the-week register's survivor. Monday.com is well known to agency owners — our exact ICP — and Tuesday Morning is a US retail chain |
+| Tuesday Talent | 69.2 | MEANS=1 | **Operator shortlist, with All Hands.** `mondaytalent.com` is taken, so this is the days-of-the-week register's survivor. **Monday.com guides to $1.47B of 2026 revenue and its core users are SMBs and agencies — our exact ICP** [V], and Tuesday is the literally adjacent day. See NAME.md §9.7 for the head-to-head |
 | Modest Talent | 62.8 | CLEAN=2, MEANS=1 | Free, single word, and reads as an admission that the talent is mediocre. Included because it is the clearest illustration of why availability is not a recommendation |
 
 ---

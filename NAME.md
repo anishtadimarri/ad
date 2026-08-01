@@ -615,6 +615,73 @@ which is the Somewhere/Oceans route and is a legitimate choice. It just is not t
 
 ---
 
+### 9.7 The final two — All Hands vs Tuesday
+
+Operator shortlist: **All Hands Talent** and **Tuesday Talent**, both liked.
+
+#### The thing neither of us predicted: they share a defect
+
+**Both read as software.**
+
+| | The echo | Size of it |
+|---|---|---|
+| **All Hands** | The **all-hands meeting** — every result on page one of a plain search. Plus **All Hands AI**, a funded dev-tools company | A *generic concept*. Nobody owns it, nobody advertises it |
+| **Tuesday** | **Monday.com** — **$1.47B revenue guidance for 2026**, ~$4B market cap, and its core users are **SMBs and marketing agencies: our exact ICP** [V] | A *specific company* with $1.5B of revenue reinforcing the association every day. Tuesday is the literally adjacent day |
+
+**That is a pattern in the taste, not a coincidence.** Both favourites sit in a register that
+carries a software association — which matters because the buyer's first uncertainty about an
+unknown vendor is *what even is this*.
+
+#### But the creative discounts it, for both
+
+[`MAP.md`](MAP.md)'s primary asset is a **screen-recorded graded work sample — a broken
+reconciliation being fixed, scored on camera.** That shows a *person doing work* in the first
+second. **A name cannot sustain a "this is software" impression against a video of a human doing
+bookkeeping.** So the software echo is real but largely paid for by an asset already in the plan —
+for both names equally, which means it does not decide between them.
+
+#### What is left once you discount it
+
+| | All Hands Talent | Tuesday Talent |
+|---|---|---|
+| Spellable from audio | ✅ 5 | ✅ 5 |
+| **Warmth** | ✅ **5 — the warmest name in the study** | 4 |
+| **Sound** | ❌ 3 — `/ndz/` + `/t/` is a four-consonant stumble; degrades to *"all-hanzalent"* | ✅ **4 — clean `/deɪ/`→`/t/` junction, and `T`–`T` alliteration** |
+| Single generic common word | ❌ two words | ✅ **matches the filter you actually stated** |
+| Not a name | ✅ | ✅ |
+| **Residual defect** | **A pooled/fractional read** — buyer expects a shared back-office team and balks at a $6,000 fee | **A recall hijack** — *"oh, like Monday.com?"* |
+| What that defect attacks | **The price** | **Who you are** |
+
+#### Call: Tuesday, narrowly
+
+**A wrong belief about the offer is more expensive than a wrong belief about the company.** All
+Hands' residual defect lands on the fee — the hardest thing to defend on a cold call. Tuesday's
+lands on identity, and *"no relation, we place people"* closes it in one sentence and is arguably
+memorable rather than costly.
+
+Tuesday also wins on sound, and it is the one that matches the brief you actually set: **a single
+generic common word that is not a name.**
+
+**All Hands' counter is warmth, and it is not a small thing** — it is the warmest name in a 55-name
+study, and warmth is what makes a stranger's Reel watchable. If you weight that above everything
+else, take it; §9.3 already found it survivable.
+
+#### These two are an unusually good pair to A/B
+
+Most name tests only measure which logo people prefer. **These two fail in different directions**, so
+the split actually teaches you something:
+
+| Watch for | Which name it indicts |
+|---|---|
+| *"Is this a shared team / how many hours do we get?"* | **All Hands** — the pooled read |
+| *"Are you related to Monday.com?"* | **Tuesday** — the recall hijack |
+| *"Wait, is this software?"* | **Neither** — that is the creative failing, not the name |
+
+Ten calls separates these three, and test 1 is already funded. **Buy both** —
+`allhandstalent.com` and `tuesdaytalent.com`, ~$24 — and stop deciding by argument.
+
+---
+
 ### Superseded pick — `openbooktalent.com`
 
 > **Superseded by §9.5.** Retained for the reasoning, and it remains free. The case was that it

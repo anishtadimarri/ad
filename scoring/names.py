@@ -89,9 +89,10 @@ N = [
   "use, so it repeats the Holdfast mistake in a milder form"),
  ("Tuesday Talent", "tuesdaytalent.com",
   dict(AUDIO=5, MEANS=1, CLEAN=3, WARM=4, SOUND=4, FIRM=3, FIT=5),
-  "**`mondaytalent.com` is taken**, so this is the days-of-the-week register's "
-  "survivor. Monday.com is well known to agency owners — our exact ICP — and "
-  "Tuesday Morning is a US retail chain"),
+  "**Operator shortlist, with All Hands.** `mondaytalent.com` is taken, so this is "
+  "the days-of-the-week register's survivor. **Monday.com guides to $1.47B of 2026 "
+  "revenue and its core users are SMBs and agencies — our exact ICP** [V], and "
+  "Tuesday is the literally adjacent day. See NAME.md §9.7 for the head-to-head"),
  ("Winthrop Talent", "winthroptalent.com",
   dict(AUDIO=4, MEANS=1, CLEAN=5, WARM=3, SOUND=4, FIRM=5, FIT=5),
   "The most institutional-sounding name in the study. Old New England, and cold"),
