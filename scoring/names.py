@@ -17,12 +17,42 @@ DIM = [
     ("FIT",    8, "Boxes in neither a role (5 of them) nor a product (placement + EOR)"),
 ]
 W = {k: w for k, w, _ in DIM}
+# Operator direction: no surnames, and the name must be generic. Applied as a
+# hard gate rather than a score, because it is a stated preference not a trade-off.
+NAMEY = {"Hadley Talent", "Kingsley Talent", "Everett Talent", "Winthrop Talent",
+         "Ashford Talent", "Laurel Talent", "Rowan Talent", "Brook Talent"}
+
 GATES = [("CLEAN", 3, "a live collision or a broken register"),
          ("AUDIO", 3, "cannot be spelled from audio"),
          ("MEANS", 2, "says nothing, or says the wrong thing")]
 
 # name, domain, scores, note
 N = [
+ ("Gumption Talent", "gumptiontalent.com",
+  dict(AUDIO=5, MEANS=4, CLEAN=5, WARM=5, SOUND=4, FIRM=3, FIT=5),
+  "**A single generic common word, not a name, with no collision found.** "
+  "\"Gumption\" is a classic Americanism for initiative and grit — a *character* "
+  "claim, which is the credible half of that register, and warm in the way All "
+  "Hands is warm. Spelled exactly as it sounds"),
+ ("Linen Talent", "linentalent.com",
+  dict(AUDIO=5, MEANS=1, CLEAN=5, WARM=5, SOUND=5, FIRM=4, FIT=5),
+  "Soft, clean, everyday, entirely arbitrary — the Monday/Tiger register done with "
+  "a warmer word. Says nothing, and does not pretend to"),
+ ("Cotton Talent", "cottontalent.com",
+  dict(AUDIO=5, MEANS=1, CLEAN=4, WARM=5, SOUND=5, FIRM=4, FIT=5),
+  "Same family as Linen. \"Cotton on\" means to understand, which is a faint bonus"),
+ ("Kettle Talent", "kettletalent.com",
+  dict(AUDIO=5, MEANS=1, CLEAN=4, WARM=5, SOUND=4, FIRM=3, FIT=5),
+  "Domestic and warm. Kettle Chips is the only real association"),
+ ("Bread Talent", "breadtalent.com",
+  dict(AUDIO=5, MEANS=2, CLEAN=4, WARM=4, SOUND=4, FIRM=3, FIT=5),
+  "Universal, and \"breadwinner\" gives it a livelihood echo. Also slang for money, "
+  "which sits oddly next to a fee"),
+ ("Yardstick Talent", "yardsticktalent.com",
+  dict(AUDIO=5, MEANS=5, CLEAN=2, WARM=2, SOUND=4, FIRM=4, FIT=5),
+  "A yardstick is the standard you measure against — the best `MEANS` of any single "
+  "word found. **Killed: Yardstick Management is a US management consultancy doing "
+  "\"talent search and acquisitions\"** — a direct collision"),
  ("Rowan Talent", "rowantalent.com",
   dict(AUDIO=5, MEANS=1, CLEAN=5, WARM=5, SOUND=5, FIRM=4, FIT=5),
   "**The hybrid** — a rowan is a tree *and* a surname, so it is a common word that "
@@ -39,9 +69,10 @@ N = [
   dict(AUDIO=5, MEANS=1, CLEAN=4, WARM=4, SOUND=5, FIRM=5, FIT=5),
   "Slightly grand and very credible. Ben Kingsley is the only association"),
  ("Copper Talent", "coppertalent.com",
-  dict(AUDIO=5, MEANS=1, CLEAN=4, WARM=4, SOUND=5, FIRM=4, FIT=5),
-  "**Best single common word in the arbitrary register.** Warm metal, punchy, one "
-  "spelling. Copper CRM exists; \"copper\" is also British slang for police"),
+  dict(AUDIO=5, MEANS=1, CLEAN=2, WARM=4, SOUND=5, FIRM=4, FIT=5),
+  "Warm metal, punchy, one spelling — and **downgraded on a collision I initially "
+  "underrated: Copper CRM markets itself to recruiting and staffing firms**, with "
+  "recruiting-firm case studies on its own site. Our category already uses it"),
  ("Sparrow Talent", "sparrowtalent.com",
   dict(AUDIO=5, MEANS=1, CLEAN=4, WARM=5, SOUND=4, FIRM=3, FIT=5),
   "Warm, humble, common. Small-bird imagery reads modest rather than mighty"),
@@ -227,12 +258,15 @@ def sc(s, w=None):
     return sum(s[k] * w[k] for k in w) / (5 * sum(w.values())) * 100
 
 
-def fails(s, gates=None):
-    return [f"{k}={s[k]}" for k, mn, _ in (gates or GATES) if s[k] < mn]
+def fails(s, gates=None, name=None):
+    f = [f"{k}={s[k]}" for k, mn, _ in (gates or GATES) if s[k] < mn]
+    if name in NAMEY:
+        f.append("reads as a personal name — operator excluded")
+    return f
 
 
-R = [dict(n=n, d=d, s=s, note=t, sc=sc(s), f=fails(s),
-          bsc=sc(s, BRAND_W), bf=fails(s, BRAND_GATES)) for n, d, s, t in N]
+R = [dict(n=n, d=d, s=s, note=t, sc=sc(s), f=fails(s, None, n),
+          bsc=sc(s, BRAND_W), bf=fails(s, BRAND_GATES, n)) for n, d, s, t in N]
 LIVE = sorted([r for r in R if not r["f"]], key=lambda r: -r["sc"])
 DEAD = sorted([r for r in R if r["f"]], key=lambda r: -r["sc"])
 BLIVE = sorted([r for r in R if not r["bf"]], key=lambda r: -r["bsc"])
@@ -315,7 +349,12 @@ def report():
           "otherwise buy.** It is\n> also the only register in this entire study with real "
           "inventory left: **31 of 33 surnames\n> checked were free**, against 3 of 174 strong "
           "concrete nouns.\n")
-    print("| Available | |\n|---|---|")
+    print("> **⚠️ Operator direction: no surnames — the name must be generic.** The SHREK evidence "
+          "stands as\n> an observation about the category; it is overruled by preference, which is a "
+          "legitimate call.\n> **Hadley, Kingsley, Everett, Winthrop, Ashford, Laurel, Rowan and "
+          "Brook are gated out below** —\n> Laurel and Rowan because they read as first names even "
+          "though both are also common nouns.\n")
+    print("| Available anyway, if you ever reverse this | |\n|---|---|")
     print("| **Warm** | `hadley` · `rowan` · `kingsley` · `everett` · `holloway` · `hartwell` |")
     print("| **Institutional** | `winthrop` · `whitfield` · `norwood` · `pemberton` · `chatham` "
           "· `ashcroft` |")
@@ -379,12 +418,13 @@ def report():
 
     print("---\n\n## Verdict\n")
     print("| | |\n|---|---|")
+    print(f"| **Best single generic common word** | **Gumption Talent** — `gumptiontalent.com`. "
+          f"Not a name, no collision found, means initiative and grit, and warm in the way All "
+          f"Hands is warm. **4th on the descriptive ranking and 5th on the brand ranking — the only "
+          f"single word in the top five of both** |")
     print(f"| **If the name should describe** | **{LIVE[0]['n']}** — `{LIVE[0]['d']}` |")
     print(f"| **If the name is just a label** (your Monday / Tiger instinct) | **{BLIVE[0]['n']}** "
-          f"— `{BLIVE[0]['d']}` |")
-    print("| **Best single common word** | **`rowantalent.com`** — a rowan is a tree *and* a "
-          "surname, so it is the only candidate that is simultaneously a common word and an "
-          "institutional-sounding name. `coppertalent.com` is the runner-up |")
+          f"— `{BLIVE[0]['d']}`, with `cottontalent.com` alongside it |")
     print("| **If you want \"Mighty\"** | `mightycrewtalent.com` — the bare `mightytalent.com` "
           "is taken |")
     print("| **If you keep your favourite** | `allhandstalent.com` is **survivable, not clean.** "
