@@ -6,7 +6,7 @@
 
 ---
 
-## Eleven documents
+## Twelve documents
 
 | | |
 |---|---|
@@ -20,6 +20,7 @@
 | **[`NAMES.md`](NAMES.md)** | **THE RANKING.** 67 candidates × 7 dimensions under **two rankings**, plus gates for collisions, surnames and audio-spelling leaks. `Talent` survives 13 head-noun challengers; **`Hires`** is the only improvement. **Every respelling tested leaks: 12 of 12 correctly-spelled targets are registered** |
 | **[`NAME.md`](NAME.md)** | The naming *reasoning* — ~2,300 domains checked against Verisign RDAP, `.talent` confirmed non-existent against IANA, and what every rejected name was killed on, including three of my own earlier picks |
 | **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**. **§9 prices the "clients are wary of Indian employees" objection** — it survives even losing half of all deposits, and the wary buyer is a 5.42:1 client rather than 4.25:1 |
+| **[`SKILLS-INDIA.md`](SKILLS-INDIA.md)** | **Where Indian talent is world-class, not just cheaper** — 15 skills for a D2C buyer. **India leads at production and analysis; it does not lead at judgement about American consumers, or at voice.** So split every marketing seat: place the execution, keep the taste |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
 ---
@@ -119,6 +120,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 | [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/india_skills.py`](scoring/india_skills.py) | **15 skills × 8 dimensions + 3 gates.** Supply-side *quality*, not demand-side sellability. Generates [`SKILLS-INDIA.md`](SKILLS-INDIA.md) |
 | [`scoring/names.py`](scoring/names.py) | **36 name candidates × 7 dimensions + gates.** Generates [`NAMES.md`](NAMES.md) |
 | [`scoring/countries.py`](scoring/countries.py) | **44 supply countries × 11 dimensions + gates.** EF EPI 2025 English scores, labour-market slack as the retention proxy, timezone deliberately weighted near zero |
 | [`scoring/funnel.py`](scoring/funnel.py) | **Step-by-step Meta funnel** — impression → CAC, by audience layer and lead-capture flow, with the break-points |
