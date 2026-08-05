@@ -277,3 +277,73 @@ depending on which side pays.**
 This is [`NAME.md`](NAME.md) filter 6 in its purest form — leading with the method invites the
 price objection. Note also that **they own `skillarbitrage.com` and park it**: even the people who
 chose a domain hack paid to plug the audio-spelling leak (§9.9).
+
+---
+
+## 8. The public financials settle it — do not build the SkillArbitrage competitor
+
+**SkillArbitrage's parent is listed**, which is unusually lucky: we can read the actual financials of
+this exact business model instead of speculating about it.
+
+### Addictive Learning Technology Ltd — NSE: `ADDICTIVE` [V]
+
+Operates **three brands: LawSikho, Skill Arbitrage, and Data is Good.** IPO'd on **NSE SME on
+30 Jan 2024**, ₹60 crore at ₹140/share.
+
+| | |
+|---|---|
+| **Revenue** | **₹75.7 crore ≈ $9.1M** |
+| **Profit** | **−₹0.48 crore — a loss.** FY26: standalone PAT ₹101.66 lakh, **consolidated loss ₹48.27 lakh** |
+| **Market cap** | **₹87.6 crore ≈ $10.5M** |
+| **Revenue multiple** | **1.16x** |
+| **1-year change** | **−63%** · share **₹127.05 against a ₹140 IPO price — below issue** |
+| Return on equity, 3yr | **9.14%** |
+| Promoter holding | 65.1% |
+
+Growth was real early — revenue **+80%** and PAT **+604%** FY22→FY23 — and it has not converted into
+either profit or value.
+
+### What that means for the "build the competitor first" idea
+
+**This is the best-executed version of that path**, run by an operator who bootstrapped LawSikho to
+$5M+ and took it public. **It arrives at $9M of revenue, a loss, and a $10.5M market cap that has
+lost 63% of its value in a year.**
+
+| | India-facing edtech | Placement + EOR ([`SCALE.md`](SCALE.md)) |
+|---|---|---|
+| Revenue at the public comparable | **$9.1M** | — |
+| Profit at that revenue | **A loss** | 32–36% EBITDA planned |
+| **To reach the $20M goal** | **₹167 crore — 2.2x the public comparable, profitably, when the comparable is unprofitable at ₹76 crore** | 88 people |
+| **Enterprise value at $20M** | **$23M** at ADDICTIVE's 1.16x revenue | **$41–68M** at 6–10x on $6.8M EBITDA |
+| Currency earned | **INR on an INR cost base — no arbitrage at all** | **USD on an INR cost base** |
+
+**The last row is the one that should end the discussion.** The entire thesis of this business is
+earning **USD on an Indian cost base.** An India-facing edtech earns **rupees on a rupee cost base** —
+it is a normal Indian company with normal Indian margins, and it throws away the only structural
+advantage identified anywhere in this repo.
+
+### Where the idea is right, and it is not a small point
+
+**The operator's instinct is correct about one thing: his Meta-ads skill transfers far better to
+Indian B2C than to US B2B.** Selling ₹50,000 courses to Indians is home turf; selling $6,000
+placements to US employers is not.
+
+**But that is an argument for using Meta ads on the supply side, not for making course sales the
+revenue model.**
+
+| | |
+|---|---|
+| **What to steal** | A **free** training-and-assessment funnel, run on Meta ads to Indian candidates, feeding the graded directory ([`HUNGRY.md`](HUNGRY.md) §9) |
+| **Why it is worth more than course revenue** | It attacks **fill rate** — the number [`README.md`](README.md) calls the one that decides the launch — and **seat continuity**, worth **+$9,022 per client** |
+| **What his ad skill actually buys** | Candidate acquisition media is **₹400–800 per application** [V] and sits inside the recruitment line. An operator who is genuinely good at Meta should beat that badly, which improves fill rate and time-to-fill directly |
+| **Cost** | Near zero. No curriculum, no instructors, no refunds, no completion rates. **A landing page, an assessment, and a Slack** |
+| **Revenue** | **Zero, deliberately.** The moment it has paying students it becomes an edtech, and the row above shows where that ends |
+
+> **His Meta skill on the India side is a supply-acquisition weapon, not a revenue model.** Point it
+> at filling the bench for free, and keep the revenue on the side that pays in dollars.
+
+### The one-line answer
+
+**No — and the reason is on a stock exchange.** The company that already built it is worth $10.5M,
+loses money, and is down 63%. **Build the demand side, which is the half nobody has taken, and use
+the ad skill to fill the bench rather than to sell courses.**
