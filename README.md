@@ -2,14 +2,16 @@
 
 ## Start here
 
-### → [`MAP.md`](MAP.md) — the decision: 2 verticals × 5 roles
+### → [`LAUNCH.md`](LAUNCH.md) — **what to start with, and in what order**
+### → [`MAP.md`](MAP.md) — the steady-state decision: 2 verticals × 5 roles
 
 ---
 
-## Fourteen documents
+## Fifteen documents
 
 | | |
 |---|---|
+| **[`LAUNCH.md`](LAUNCH.md)** | **START HERE.** The launch ranking — *launchable* is a different question from *best*. Adds the criterion no other screen has: **can the operator personally grade the work, month one, with no team?** That promotes **video editor → agencies** into a coin-flip with the bookkeeper, and puts the best business in the repo (estimating) in year two |
 | **[`MAP.md`](MAP.md)** | **THE DECISION.** E-comm + marketing agencies × 5 roles. Two ads, one legible promise, five sellable seats. Supersedes the vertical/role picks elsewhere |
 | **[`OFFER.md`](OFFER.md)** | **The buildable thing.** One skill, both ICPs, priced, with the retention architecture and the economics stress-tested against 6-month attrition |
 | **[`MASTER.md`](MASTER.md)** | The analysis behind it — market data, 179-role screen, competitor teardown, decision history, what's unvalidated |
@@ -126,6 +128,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 | [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/launch.py`](scoring/launch.py) | **10 seat×buyer pairs × 7 launch-specific criteria + 3 gates.** Synthesises all six earlier screens. Generates [`LAUNCH.md`](LAUNCH.md) |
 | [`scoring/lenses.py`](scoring/lenses.py) | **13 skills × 5 independent lenses.** Not another ranking — a check on what survives several perspectives at once. Generates [`LENSES.md`](LENSES.md) |
 | [`scoring/hungry.py`](scoring/hungry.py) | **14 industry × bottleneck-seat pairs × 8 dimensions + 3 gates.** Buyer *urgency* rather than ad legibility. Generates [`HUNGRY.md`](HUNGRY.md) |
 | [`scoring/india_skills.py`](scoring/india_skills.py) | **15 skills × 8 dimensions + 3 gates.** Supply-side *quality*, not demand-side sellability. Generates [`SKILLS-INDIA.md`](SKILLS-INDIA.md) |
