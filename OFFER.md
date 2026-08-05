@@ -479,3 +479,119 @@ nothing and can be run in conversation this week.** Test 2 cannot be accelerated
 | Bookkeeping is the most crowded category | Medium. Mitigated by buyer choice (§1.2) and by leading with the accountant tier, not by role choice |
 | We hold client money in escrow | Medium. Needs clean segregation and a written escrow term. Not a trust account — get this drafted properly |
 | AI is compressing bookkeeping | Medium. `AI` scored 2. This is a 5–7 year business in its current form, not a 15-year one |
+
+---
+
+## 9. Short-term model update — four changes, two additions, and what not to touch
+
+Six findings have landed since §3 was written. Tested against the model, **four warrant a change to
+the short-term offer and two are free additions.** Everything else stays.
+
+### 9.1 Change one: make the $500 a delivered product, not a refundable deposit
+
+**This is the biggest lever available on the short-term model**, because it attacks the one fragile
+input. [`scoring/LTGP.md`](scoring/LTGP.md) §3 identified the deposit rate as the single assumption
+that can break the business: 18% → 8% takes the 30-day ratio from 4.25:1 to 1.89:1.
+
+| The $500 as | What the buyer is doing | Consequences |
+|---|---|---|
+| **A refundable deposit** *(current)* | **Lending money to a stranger** for a promise | Refund liability on the balance sheet · nothing delivered if the search stalls · the hardest possible ask from a cold Meta lead |
+| **A paid books audit** *(proposed)* | **Buying a deliverable** — their own ledger reviewed and scored, findings written up | No refund liability · **revenue in month one** · they own something even if they never hire · and it *is* the work sample from §2.5, so it costs us nothing new |
+
+**Modelled at the same take-up it is worth +$326 of 30-day GP** — 4.25:1 to 4.59:1, which is
+marginal. **The real gain is conversion**, and it is not marginal:
+
+| Take-up of the $500 | CAC | **30-day** | **Lifetime** |
+|---|---|---|---|
+| 18% — as modelled | $976 | 4.25:1 | 11.35:1 |
+| 24% | $732 | **5.67:1** | 15.13:1 |
+| 30% | $585 | **7.64:1** | 19.47:1 |
+
+**A paid deliverable should convert better than a refundable deposit, because "buy an audit of your
+books" is a smaller decision than "wire me $500 and trust me."** That is a hypothesis, and it is the
+one worth testing first on the ten calls.
+
+### 9.2 Change two: put a free graded bench shortlist on the call
+
+Already modelled as **H2** in [`scoring/OFFER-MODEL.md`](scoring/OFFER-MODEL.md) — showing 2-3 real
+graded candidates on the call itself lifts call → deposit from **45% to 60%** for **$90 per call
+held**. It converts *"trust me"* into *"look at these three people."*
+
+**Only possible because we run one role in one country.** Somewhere cannot do this across 18
+countries and dozens of roles — so it is a structural advantage of being narrow, not a tactic.
+
+**Sequence the two together**, which is the standard attraction-offer structure:
+
+> **Free graded bench shortlist on the call** *(cheap, no client data needed)* **→ $500 paid audit of
+> their books** *(the search-opening commitment)* **→ placement fee.**
+
+### 9.3 Change three: shift budget hard toward the intent seed — for a new reason
+
+[`LENSES.md`](LENSES.md) §1 found the bookkeeper claim is **3.75x against a company that employs a
+bookkeeper and 0.4-1.1x against a bookkeeping firm** [V]. Most $3-30M brands use a firm.
+
+**So the intent seed is no longer a CAC optimisation. It is the only audience the headline is true
+for** — a company that posted a bookkeeper job is by definition in the employ-market. Broad and
+lookalike traffic contains buyers for whom the ad is simply wrong, which is a second and independent
+reason the intent seed converts better at the deposit step.
+
+**Weight it beyond what the CAC table alone justifies.**
+
+### 9.4 Change four: add a second ad angle for the firm-users
+
+The other half of the ICP is not badly served, it is *differently* served. Against a bookkeeping
+firm the winning claim is not price:
+
+| Buyer currently uses | The claim that lands |
+|---|---|
+| **A $75k employee** | *"Your bookkeeper costs $75k. Ours is $20k."* — **3.75x, unchanged** |
+| **A bookkeeping firm at $600-1,800/mo** | *"Your firm gives you a shared junior and a monthly file. This is one person, full-time, who only works on you."* — **dedication, not price** |
+
+**Dedicated-versus-shared is a true claim at the same fee**, and it reaches the half of the ICP the
+current headline talks past.
+
+### 9.5 Addition one: start the graded directory at placement one
+
+[`HUNGRY.md`](HUNGRY.md) §9 found that a standing graded community is **the first concrete mechanism
+for seat continuity** — worth **+$9,022 per client** from 9 to 30 EOR months, which is the largest
+lever in the business. Cheaper sourcing is worth $169; continuity is worth 53x that.
+
+**Cost: a Slack, a roster, and the work-sample score already being produced.** Free to join, graded
+on entry, **no curriculum** — the asset is the directory, not the teaching. Start it with placement
+one, not month twelve.
+
+### 9.6 Addition two: email SkillArbitrage before buying candidate ads
+
+[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md) §7 — **25,000+ learners, 900+ placements** [V]. They
+produce far more trained, NSDC-certified, self-funded candidates than they place.
+
+**Modelled honestly, the cost saving is small:** candidate acquisition media plus sourcing labour is
+**$682 of the $1,667 recruitment line**, so halving it saves **$341/placement — 8.2% of 30-day GP.**
+
+**So do not partner for cost. Partner for fill rate and time-to-fill**, which is the number
+[`README.md`](README.md) calls the one that decides the launch. One email, before $300 of candidate ads.
+
+### 9.7 What not to touch
+
+| Keep | Why |
+|---|---|
+| **30% single-stage fee** | No evidence to move it. A bottleneck seat would justify more ([`HUNGRY.md`](HUNGRY.md) §5) — but bookkeeping is not one, and pricing changes before the funnel is measured are guesses |
+| **12-month unlimited replacement, no cash refunds** | Cheaper than the 6-month industry standard and a better-sounding guarantee (§4). Unchanged |
+| **EOR at $499/mo** | 37-65% of lifetime GP. Make it the default, not the upsell |
+| **India only, at launch** | South Africa is country two for retention ([`COUNTRIES.md`](COUNTRIES.md)), not country one |
+| **One seat plus one A/B** | Five seats with one operator is five half-built funnels ([`LAUNCH.md`](LAUNCH.md) §5) |
+| **No community product, no subscription** | Every ongoing-margin model fails the 30-day constraint except a $5k/mo subscription, which needs a 3x salary markup and a sales cycle ([`HUNGRY.md`](HUNGRY.md) §8) |
+
+### 9.8 The net effect
+
+| | Current | With 9.1 + 9.2 |
+|---|---|---|
+| The $500 | Refundable deposit, refund liability | **Paid audit, delivered, revenue** |
+| Call → deposit | 45% | **60%** (H2, $90/call) |
+| Deposit take-up on held calls | 18% `[?]` | **24-30% if the hypothesis holds** |
+| **30-day LTGP:CAC** | **4.25:1** | **5.67 - 7.64:1** |
+| **Lifetime** | 11.35:1 | **15.13 - 19.47:1** |
+
+**None of this changes the business. It changes the two steps where a stranger decides to trust
+you** — and those are the only steps that were ever fragile. **All of it is testable on the same ten
+calls that were already budgeted.**
