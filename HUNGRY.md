@@ -132,3 +132,98 @@ the whole thesis validated for the price of splitting a budget that is already c
 is `[E]` elsewhere. `NOHIRE` is `[V]` for accounting, insurance and steel detailing (hard shortage
 data exists) and `[E]` otherwise. **Nothing here has been tested on a buyer.**
 
+---
+
+## 7. Video editors — the economics, and the one real objection
+
+Video ranks **3rd on supply quality** ([`SKILLS-INDIA.md`](SKILLS-INDIA.md), 92.4) and **5th here** (89.4).
+It has the strongest world-class evidence in the whole repo and the best sentence anyone in this
+category can say. So the question is whether the *money* works, and there is a reason to doubt it:
+**a good Indian editor costs less than a bookkeeper, and our fee is a percentage of salary.**
+
+| Placed salary | Fee @ 30% | 30-day GP | **30-day** | **Lifetime** |
+|---|---|---|---|---|
+| $20,000 | $6,000 | $4,148 | **4.25:1** | 11.35:1 |
+| $18,000 | $5,400 | $3,764 | **3.86:1** | 10.67:1 |
+| $15,000 ← typical editor | $4,500 | $3,184 | **3.26:1** | 9.63:1 |
+| $12,000 | $3,600 | $2,598 | **2.66:1** | 8.59:1 |
+| $10,000 | $3,000 | $2,204 | **2.26:1** | 7.89:1 |
+
+**The salary problem is real and not fatal.** At $15,000 the ratio is 3.26:1; even at $10,000 it
+is 2.26:1, still clearing the 1.5:1 constraint. **Lower salary costs margin, not viability.**
+
+### What actually decides it: who hires an editor as an *employee*
+
+| Buyer | Buys editing how | Does a placement fee attach? |
+|---|---|---|
+| **Marketing agencies & production cos** | **Full-time staff editors** — production capacity is their deliverable and their margin | ✅ **Yes.** This is the buyer |
+| Creators, podcasts, YouTube channels | **Per video, or a monthly retainer with a freelancer** | ❌ **No.** There is no salary to take 30% of — which is what `AFFORD`=3 in the table above was really pointing at |
+| D2C brands | Usually an agency or a freelancer; a full-time editor starts around $5-10M revenue | ~ Sometimes, and later than the bookkeeper |
+
+**So video editing is an agency seat, not a creator seat** — and agencies are already vertical two in
+[`MAP.md`](MAP.md), so it needs no new outbound motion. The creator market is bigger and hungrier and
+**structurally incompatible with a placement fee.**
+
+### Two things unique to this seat
+
+| | |
+|---|---|
+| **The founder can grade it personally** | An ad editor's work is judged by hold rate and CTR — numbers the operator reads fluently. Of all five roles this is the one where the graded work sample can be scored by the founder rather than outsourced |
+| **It is the fastest-moving AI risk in the set** | `AIDUR`=3 and falling. Generative video is improving faster than ledger automation. **A bookkeeper placed today is safe for a decade; an editor is a 3-5 year asset** |
+
+---
+
+## 8. The talent-collective model — it fails on the operator's own constraint
+
+*(`growths.club` does not resolve; `growth.club` is a Substack community. The category is curated
+talent collectives: **Toptal, MarketerHire, Growth Collective, Right Side Up, A.Team**.)*
+
+**What they actually charge** [V]:
+
+| | Model |
+|---|---|
+| **MarketerHire** | Published subscriptions: **$5,000 / $10,000 / $15,000 per month** |
+| **Toptal** | Undisclosed markup, third-party estimates **up to ~50%**; blended **$60-200+/hour** |
+| **Growth Collective** | Hourly or monthly retainer — **acquired by Toptal in June 2024** |
+| Vetting as positioning | Toptal **top 3%**, MarketerHire **top 5%** of applicants |
+
+Run each revenue shape against the same funnel-derived CAC:
+
+| Revenue model | Month-1 GP | **30-day** | Lifetime GP | **Lifetime** | Clears 1.5:1? |
+|---|---|---|---|---|---|
+| **Placement fee — current model** | $4,148 | **4.25:1** | $11,074 | 11.35:1 | ✅ |
+| Thin take-rate, 20% markup | $310 | **0.32:1** | $2,790 | 2.86:1 | ❌ |
+| Toptal-style 50% markup | $775 | **0.79:1** | $6,975 | 7.15:1 | ❌ |
+| Managed seat, $800/mo spread | $744 | **0.76:1** | $6,696 | 6.86:1 | ❌ |
+| **MarketerHire-style $5,000/mo** | $2,790 | **2.86:1** | $25,110 | 25.74:1 | ✅ |
+
+**Every ongoing-margin model fails the 30-day constraint except the high-ticket subscription.** A
+20% take-rate returns **0.32:1** in month one — you would be spending $976 to buy $310. That
+is not a pricing detail, it is a different company with a different balance sheet.
+
+### And the one version that clears is the one already rejected
+
+| The $5,000/mo subscription requires | Which collides with |
+|---|---|
+| A 3x markup on the salary you pay | **The salary-transparency positioning** — the explicit reason EOR beat a salary markup ([`MASTER.md`](MASTER.md) §9). You cannot publish the salary and charge 3x it |
+| A real sales cycle for a $60k/yr commitment | **"No sales call may determine CAC"** — a hard constraint from the start |
+| Matching, QA and dispute handling on every engagement | *"Operationally very intensive"* — the stated reason the managed-service path was killed ([`SCALE.md`](SCALE.md) §1) |
+
+**Its lifetime economics are genuinely better** — 25.7:1 against 11.3:1, more than double. So this
+is a real fork, not a bad idea. It is just **a different business**: fewer, bigger, higher-touch
+accounts sold by a person, against many, smaller, self-serve placements sold by an ad.
+
+### What to steal from them instead
+
+> **Toptal's "top 3%" and MarketerHire's "top 5%" are positioning claims, not revenue models.**
+
+The curation claim is the valuable half of the collective idea and it is **free** — it attaches to a
+placement fee just as well as to a subscription. We already have the mechanism: the **graded work
+sample on the client's own books** ([`OFFER.md`](OFFER.md) §2.5). That is a *stronger* curation claim
+than a percentage, because it is evidence about one named person rather than a statistic about a
+funnel nobody can audit.
+
+**And note the consolidation signal: Toptal bought Growth Collective in June 2024** [V]. Standalone
+collectives are being absorbed, which is what a category with thin unit economics and high ops cost
+looks like from the outside.
+

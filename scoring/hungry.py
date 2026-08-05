@@ -281,5 +281,136 @@ def report():
     print("data exists) and `[E]` otherwise. **Nothing here has been tested on a buyer.**\n")
 
 
+
+
+def extras():
+    """Two operator questions: video editors as a beachhead, and the collective model."""
+    import io, os, sys
+    from contextlib import redirect_stdout
+    from dataclasses import replace
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    with redirect_stdout(io.StringIO()):
+        import ltgp
+    O = ltgp.OFFER
+    cac, _ = ltgp.blended()
+
+    # ---------------------------------------------------------------- video
+    print("---\n\n## 7. Video editors — the economics, and the one real objection\n")
+    print("Video ranks **3rd on supply quality** ([`SKILLS-INDIA.md`](SKILLS-INDIA.md), 92.4) and "
+          "**5th here** (89.4).")
+    print("It has the strongest world-class evidence in the whole repo and the best sentence "
+          "anyone in this")
+    print("category can say. So the question is whether the *money* works, and there is a reason "
+          "to doubt it:")
+    print("**a good Indian editor costs less than a bookkeeper, and our fee is a percentage of "
+          "salary.**\n")
+    print("| Placed salary | Fee @ 30% | 30-day GP | **30-day** | **Lifetime** |")
+    print("|---|---|---|---|---|")
+    for sal in (20_000, 18_000, 15_000, 12_000, 10_000):
+        e, _ = ltgp.parts(replace(O, salary=float(sal)))
+        mark = " ← typical editor" if sal == 15_000 else ""
+        print(f"| ${sal:,}{mark} | ${sal*0.30:,.0f} | ${e['gp30']:,.0f} "
+              f"| **{e['gp30']/cac:.2f}:1** | {e['gplife']/cac:.2f}:1 |")
+    e15, _ = ltgp.parts(replace(O, salary=15_000.0))
+    e10, _ = ltgp.parts(replace(O, salary=10_000.0))
+    print(f"\n**The salary problem is real and not fatal.** At $15,000 the ratio is "
+          f"{e15['gp30']/cac:.2f}:1; even at $10,000 it")
+    print(f"is {e10['gp30']/cac:.2f}:1, still clearing the 1.5:1 constraint. **Lower salary costs "
+          f"margin, not viability.**\n")
+    print("### What actually decides it: who hires an editor as an *employee*\n")
+    print("| Buyer | Buys editing how | Does a placement fee attach? |\n|---|---|---|")
+    for a, b, c in [
+        ("**Marketing agencies & production cos**", "**Full-time staff editors** — production "
+         "capacity is their deliverable and their margin", "✅ **Yes.** This is the buyer"),
+        ("Creators, podcasts, YouTube channels", "**Per video, or a monthly retainer with a "
+         "freelancer**", "❌ **No.** There is no salary to take 30% of — which is what `AFFORD`=3 "
+         "in the table above was really pointing at"),
+        ("D2C brands", "Usually an agency or a freelancer; a full-time editor starts around "
+         "$5-10M revenue", "~ Sometimes, and later than the bookkeeper"),
+    ]:
+        print(f"| {a} | {b} | {c} |")
+    print("\n**So video editing is an agency seat, not a creator seat** — and agencies are "
+          "already vertical two in")
+    print("[`MAP.md`](MAP.md), so it needs no new outbound motion. The creator market is bigger "
+          "and hungrier and")
+    print("**structurally incompatible with a placement fee.**\n")
+    print("### Two things unique to this seat\n")
+    print("| | |\n|---|---|")
+    print("| **The founder can grade it personally** | An ad editor's work is judged by hold rate "
+          "and CTR — numbers the operator reads fluently. Of all five roles this is the one where "
+          "the graded work sample can be scored by the founder rather than outsourced |")
+    print("| **It is the fastest-moving AI risk in the set** | `AIDUR`=3 and falling. Generative "
+          "video is improving faster than ledger automation. **A bookkeeper placed today is safe "
+          "for a decade; an editor is a 3-5 year asset** |")
+
+    # ---------------------------------------------------------- the collective
+    print("\n---\n\n## 8. The talent-collective model — it fails on the operator's own constraint\n")
+    print("*(`growths.club` does not resolve; `growth.club` is a Substack community. The category "
+          "is curated\ntalent collectives: **Toptal, MarketerHire, Growth Collective, Right Side "
+          "Up, A.Team**.)*\n")
+    print("**What they actually charge** [V]:\n")
+    print("| | Model |\n|---|---|")
+    print("| **MarketerHire** | Published subscriptions: **$5,000 / $10,000 / $15,000 per month** |")
+    print("| **Toptal** | Undisclosed markup, third-party estimates **up to ~50%**; blended "
+          "**$60-200+/hour** |")
+    print("| **Growth Collective** | Hourly or monthly retainer — **acquired by Toptal in June "
+          "2024** |")
+    print("| Vetting as positioning | Toptal **top 3%**, MarketerHire **top 5%** of applicants |")
+    print("\nRun each revenue shape against the same funnel-derived CAC:\n")
+    SAL_MO = 20_000 / 12
+    print(f"| Revenue model | Month-1 GP | **30-day** | Lifetime GP | **Lifetime** | Clears 1.5:1? |")
+    print("|---|---|---|---|---|---|")
+    e, _ = ltgp.parts(O)
+    rows = [("**Placement fee — current model**", e["gp30"], e["gplife"]),
+            ("Thin take-rate, 20% markup", 0.20*SAL_MO*0.93, 0.20*SAL_MO*0.93*9),
+            ("Toptal-style 50% markup", 0.50*SAL_MO*0.93, 0.50*SAL_MO*0.93*9),
+            ("Managed seat, $800/mo spread", 800*0.93, 800*0.93*9),
+            ("**MarketerHire-style $5,000/mo**", 3000*0.93, 3000*0.93*9)]
+    for name, g1, life in rows:
+        ok = "✅" if g1/cac >= 1.5 else "❌"
+        print(f"| {name} | ${g1:,.0f} | **{g1/cac:.2f}:1** | ${life:,.0f} | {life/cac:.2f}:1 | {ok} |")
+    print("\n**Every ongoing-margin model fails the 30-day constraint except the high-ticket "
+          "subscription.** A")
+    print(f"20% take-rate returns **{0.20*SAL_MO*0.93/cac:.2f}:1** in month one — you would be "
+          f"spending ${cac:,.0f} to buy $310. That")
+    print("is not a pricing detail, it is a different company with a different balance sheet.\n")
+    print("### And the one version that clears is the one already rejected\n")
+    print("| The $5,000/mo subscription requires | Which collides with |\n|---|---|")
+    for a, b in [
+        ("A 3x markup on the salary you pay",
+         "**The salary-transparency positioning** — the explicit reason EOR beat a salary markup "
+         "([`MASTER.md`](MASTER.md) §9). You cannot publish the salary and charge 3x it"),
+        ("A real sales cycle for a $60k/yr commitment",
+         "**\"No sales call may determine CAC\"** — a hard constraint from the start"),
+        ("Matching, QA and dispute handling on every engagement",
+         "*\"Operationally very intensive\"* — the stated reason the managed-service path was "
+         "killed ([`SCALE.md`](SCALE.md) §1)"),
+    ]:
+        print(f"| {a} | {b} |")
+    print(f"\n**Its lifetime economics are genuinely better** — {3000*0.93*9/cac:.1f}:1 against "
+          f"{e['gplife']/cac:.1f}:1, more than double. So this")
+    print("is a real fork, not a bad idea. It is just **a different business**: fewer, bigger, "
+          "higher-touch")
+    print("accounts sold by a person, against many, smaller, self-serve placements sold by an ad.\n")
+    print("### What to steal from them instead\n")
+    print("> **Toptal's \"top 3%\" and MarketerHire's \"top 5%\" are positioning claims, not "
+          "revenue models.**\n")
+    print("The curation claim is the valuable half of the collective idea and it is **free** — "
+          "it attaches to a")
+    print("placement fee just as well as to a subscription. We already have the mechanism: the "
+          "**graded work")
+    print("sample on the client's own books** ([`OFFER.md`](OFFER.md) §2.5). That is a *stronger* "
+          "curation claim")
+    print("than a percentage, because it is evidence about one named person rather than a "
+          "statistic about a")
+    print("funnel nobody can audit.\n")
+    print("**And note the consolidation signal: Toptal bought Growth Collective in June 2024** "
+          "[V]. Standalone")
+    print("collectives are being absorbed, which is what a category with thin unit economics and "
+          "high ops cost")
+    print("looks like from the outside.\n")
+
+
 if __name__ == "__main__":
     report()
+    extras()
