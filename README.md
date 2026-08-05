@@ -6,7 +6,7 @@
 
 ---
 
-## Thirteen documents
+## Fourteen documents
 
 | | |
 |---|---|
@@ -22,6 +22,7 @@
 | **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**. **§9 prices the "clients are wary of Indian employees" objection** — it survives even losing half of all deposits, and the wary buyer is a 5.42:1 client rather than 4.25:1 |
 | **[`SKILLS-INDIA.md`](SKILLS-INDIA.md)** | **Where Indian talent is world-class, not just cheaper** — 15 skills for a D2C buyer. **India leads at production and analysis; it does not lead at judgement about American consumers, or at voice.** So split every marketing seat: place the execution, keep the taste |
 | **[`HUNGRY.md`](HUNGRY.md)** | **Bottlenecks, not cost centres** — 14 industry × seat pairs outside D2C. **A cost-centre buyer negotiates price; a bottleneck buyer asks how fast you can start.** Contractors × estimating wins; e-comm × bookkeeping is the control and **gates out**. **§7 video editors** — an agency seat, not a creator seat. **§8 talent collectives** — every ongoing-margin model fails the 30-day constraint except a \$5k/mo subscription. **§9 GrowthX** — it monetises the supply side and gives the job board away; we should invert it. A graded directory is **the first concrete mechanism found for seat continuity**, the biggest lever in the model |
+| **[`LENSES.md`](LENSES.md)** | **Five independent lenses + a convergence test** — vendor invoice vs salary, AI-created roles, regulatory deadlines, SaaS install base, seasonality. **The bookkeeper pitch is 0.4-1.1x against a bookkeeping *firm***, which makes the intent-seed scrape load-bearing rather than a bonus. **Video is a vendor-market seat at 4-13x** |
 | **[`SCALE.md`](SCALE.md)** | **The path to \$20M on two products** — placement + EOR, 88 people, 32–36% EBITDA. Why the managed-service \$100M path was rejected on operational intensity |
 
 ---
@@ -125,6 +126,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/vertical_model.py`](scoring/vertical_model.py) | **104 role × vertical pairs across 25 verticals**, 12 dimensions. The unit that matters — "e-comm bookkeeper" beat "bookkeeper" because of the vertical |
 | [`scoring/VERTICALS.md`](scoring/VERTICALS.md) | Generated output — top 20, the 10 next-best verticals, vertical averages, gated-out list, anchoring test |
 | [`scoring/first_principles.py`](scoring/first_principles.py) | **The clean rebuild.** Verticals and skills scored on *separate* criteria sets, plus an interaction term, then the 3×3 grid optimised on its worst cell |
+| [`scoring/lenses.py`](scoring/lenses.py) | **13 skills × 5 independent lenses.** Not another ranking — a check on what survives several perspectives at once. Generates [`LENSES.md`](LENSES.md) |
 | [`scoring/hungry.py`](scoring/hungry.py) | **14 industry × bottleneck-seat pairs × 8 dimensions + 3 gates.** Buyer *urgency* rather than ad legibility. Generates [`HUNGRY.md`](HUNGRY.md) |
 | [`scoring/india_skills.py`](scoring/india_skills.py) | **15 skills × 8 dimensions + 3 gates.** Supply-side *quality*, not demand-side sellability. Generates [`SKILLS-INDIA.md`](SKILLS-INDIA.md) |
 | [`scoring/names.py`](scoring/names.py) | **36 name candidates × 7 dimensions + gates.** Generates [`NAMES.md`](NAMES.md) |
