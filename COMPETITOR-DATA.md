@@ -201,3 +201,79 @@ uncontested space is not the vertical, it is **the vertical × India × finance*
 | 4 | **Add a senior/fractional tier later** | $9,000–34,200 per placement. Different sale, different buyer, but the fee arithmetic is compelling |
 | 5 | **Stop treating e-comm and agencies as uncontested** | Somewhere has vertical pages for both. The uncontested cell is vertical × India × finance |
 | 6 | **Test the India objection explicitly in the first ten calls** | If clients refuse India for async finance work, the thesis is wrong and it is better to know in week two than year two |
+
+---
+
+## 7. SkillArbitrage — the closest analogue found, and it is built the other way round
+
+`skillarbitra.ge` is a live business, not a domain idea. **It is the nearest thing to this plan
+that anyone has actually built**, and studying it changes one thing and confirms another.
+
+### What it is [V]
+
+| | |
+|---|---|
+| **Positioning** | *"World headquarter for remote work"* — upskilling Indians and other emerging-market professionals into **remote jobs, internships and freelance work with US, UK, Canadian and UAE SMEs** |
+| **Products** | 100+ courses, 6–12 months, 6–10 hrs/week — remote freelancing and profile building, data science/AI, AI analytics, virtual assistant training, UK SQE prep |
+| **Course price** | **₹42,000–63,000** (~$500–750) for 3–6 months, on LawSikho's published pricing |
+| **Scale** | **25,000+ learners** · 4.7 stars from 1,100+ Google reviews |
+| **Credential** | **Skill India + NSDC certified** via Medhavi Skills University |
+| **Job side** | A job board with **30,000+ monthly visitors** · claims **900+ job placements**, 5,400+ freelance projects, 400+ internships |
+| **Who** | **Ramanuj Mukherjee**, who bootstrapped **LawSikho to $5M+ revenue** |
+| **Revenue target** | **₹20 crore per month** (~$2.4M/mo), split ₹10cr India upskilling · ₹5cr international · **₹5cr "SMB businesses outside India"** |
+
+### The pattern this confirms — three for three
+
+| Business | Who pays | The job board is |
+|---|---|---|
+| **GrowthX** | The member, ₹19,999/yr | **A benefit** |
+| **SkillArbitrage** | The learner, ₹42–63k per course | **A benefit** |
+| **Us** | **The employer** | **The product** |
+
+**Every India-based analogue monetises the supply side and gives the employer relationship away.**
+That is not an accident — **supply-side revenue is simply easier to start.** An Indian professional
+will pay ₹50,000 today for a credible shot at a US salary; a US employer will not pay a stranger
+$6,000 until they trust them. So the easy money is on the side that is already motivated.
+
+> **Which is exactly why the demand side is worth more.** They had to build 25,000 learners before
+> reaching for employers, and *"SMB businesses outside India"* is only now a line in the plan.
+> The employer relationship is where the EOR book and the seat continuity live
+> ([`COMPOUND.md`](COMPOUND.md)) — and it is the part nobody has taken.
+
+### They are a supply channel, not a competitor — for now
+
+**900+ placements against 25,000+ learners.** They produce far more trained, certified, motivated
+candidates than they place. **That gap is precisely what our funnel fills.**
+
+| Why their graduates are a good bench | |
+|---|---|
+| **Pre-filtered on motivation** | They paid ₹42–63k of their own money. That is a stronger signal than any CV |
+| **Already trained for the target** | Courses are explicitly built for US/UK SME remote work — not generic upskilling |
+| **Credentialled** | NSDC / Skill India certification, which addresses the verification problem |
+| **Reachable** | A job board with 30,000 monthly visitors is a channel, and their incentive is to place people |
+
+**Worth one email before spending $300 on the supply test** ([`README.md`](README.md) test 2). A
+partnership where they supply and we place is aligned: their metric is placements, ours is fill rate.
+
+### The risk, stated plainly
+
+**If they execute the ₹5cr/month "SMB businesses outside India" line, they become a direct
+competitor with a 25,000-person supply advantage and an NSDC credential we cannot match.** That is
+the most credible competitive threat identified in this repo — more so than Somewhere or Oceans,
+because they are already Indian, already have the supply, and are explicitly aiming at the same
+buyer. **Their weakness is the same as everyone's: they have never had to earn a US employer's
+trust, and that is the whole skill of the demand side.**
+
+### And a naming note
+
+**"Arbitrage" works for them and would fail for us, for one reason: the word changes valence
+depending on which side pays.**
+
+| Heard by | *"Skill Arbitrage"* means |
+|---|---|
+| **An Indian worker** (their customer) | ✅ *"You are underpaid and I can fix that"* — aspirational |
+| **A US employer** (our customer) | ❌ *"We take a spread on the person you are hiring"* |
+
+This is [`NAME.md`](NAME.md) filter 6 in its purest form — leading with the method invites the
+price objection. Note also that **they own `skillarbitrage.com` and park it**: even the people who
+chose a domain hack paid to plug the audio-spelling leak (§9.9).
