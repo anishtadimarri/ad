@@ -227,3 +227,88 @@ funnel nobody can audit.
 collectives are being absorbed, which is what a category with thin unit economics and high ops cost
 looks like from the outside.
 
+---
+
+## 9. GrowthX — the supply-side model, and why to invert it
+
+**What `growthx.club` actually is** [V], from its own pricing page:
+
+| | |
+|---|---|
+| **Price** | **₹19,999/year (~$240)** — a single tier, 12 months |
+| **What you get** | 4-day AI immersion · 50+ video lessons · weekly 90-minute live sessions · **5,000+ member directory** · private Slack with city channels · monthly in-person events across 6 Indian cities · ~$7,000 of software credits |
+| **Career layer** | Interview prep, mock interviews, resume review, offer negotiation, **"exclusive job board"** |
+| ****Who pays**** | **The member.** Individuals buy their own membership |
+| **Employer-side product** | **None.** No placement service, no hiring product, no guarantees |
+
+> **The single most useful observation: GrowthX monetises the SUPPLY side and gives the job board
+> away. Our model monetises the DEMAND side. Those are complements, not competitors** — which means
+> the interesting question is not "should we be GrowthX" but **"what does a supply-side community do
+> for a demand-side business?"**
+
+### 9.1 Charging members is a smaller business than it looks
+
+| Paying members | ARR at $240 |
+|---|---|
+| 500 | $120,000 |
+| 2,000 | $480,000 |
+| 5,000 ← GrowthX's current scale [E] | $1,200,000 |
+| 10,000 | $2,400,000 |
+
+**5,000 members at $240 is ~$1,200,000 of revenue. Our placement business reaches the same gross
+profit with 108 placed clients** — and a placement carries **no content production, no weekly live
+sessions, and no monthly events in six cities.**
+
+Two further problems with charging the supply side here:
+
+| | |
+|---|---|
+| **It is a media business** | 50+ lessons, weekly sessions and events in six cities is exactly the *"operationally very intensive"* shape that killed the managed-service path ([`SCALE.md`](SCALE.md) §1) |
+| **The incentives invert** | If members pay, you optimise for **member count**. If clients pay, you optimise for **placement quality**. Those pull in opposite directions the first time a weak member wants an introduction |
+| **And a legal question worth counsel** | GrowthX sells *education and community* with a job board as a benefit, which is a clean structure. A community whose primary value is *access to US jobs* is closer to charging a job seeker for placement — restricted in several jurisdictions and reputationally loaded in India. **Not a claim about the law, a flag to take to a lawyer before building it** |
+
+### 9.2 The real value of a community is not cheaper sourcing — it is SEAT CONTINUITY
+
+Modelled properly, and the result is not where I expected it:
+
+| Scenario | 30-day GP | **30-day** | Lifetime GP | **Lifetime** |
+|---|---|---|---|---|
+| Baseline — 9 EOR months | $4,148 | **4.25:1** | $11,074 | **11.35:1** |
+| Community cuts sourcing cost **60%** | $4,317 | **4.42:1** | $11,355 | **11.64:1** |
+| **+ seat continuity 9 → 18 months** | $4,317 | **4.42:1** | $15,222 | **15.60:1** |
+| **+ seat continuity 9 → 30 months** | $4,317 | **4.42:1** | $20,377 | **20.89:1** |
+
+**Cutting sourcing cost by 60% is worth $169** — noise. Recruitment is already capped at one
+month of salary, and sourcing is only part of that line.
+
+**Getting the seat from 9 months to 30 is worth $9,022 per client** — 53x more. And a
+graded standing community is **the mechanism** for it:
+
+| Without a community | With one |
+|---|---|
+| Worker resigns at month 9 → the seat empties → **the EOR fee stops** | Worker resigns → a pre-graded replacement who already knows the client's stack starts in days → **the fee never stops billing** |
+| Every exit is a resale requiring a new client decision | Every exit is an operational event |
+| You learn the worker is leaving when the client tells you | **You are in the same Slack as them** |
+
+[`scoring/LTGP.md`](scoring/LTGP.md) §4 already concluded that seat continuity is the largest lever in the
+business and worth more than halving CAC. **This is the first concrete mechanism found for actually
+moving it.**
+
+### 9.3 So build the directory, not the academy
+
+This is also the correction to a claim [`MASTER.md`](MASTER.md) §9.6 already retracted — *"the academy is
+the moat."* It was retracted because an academy is a **cost centre that teaches people who then
+leave.** A directory is different:
+
+| | Academy | **Graded directory** |
+|---|---|---|
+| **What it is** | Curriculum you produce | **A list of people you have already scored** |
+| **Cost shape** | Ongoing content production | One grading pass per member, then near-zero |
+| **What it does for the model** | Improves candidate quality at the margin | **Refills seats in days, which is the +$9,300 lever** |
+| **Enterprise value** | Low — courses date | **Real. A proprietary graded network is an asset an acquirer pays for; a placement pipeline is not** |
+
+**Build the cheapest possible version:** a Slack, a graded roster, and the work-sample score already
+being produced for every candidate ([`OFFER.md`](OFFER.md) §2.5). **Free to join, graded on entry, no
+curriculum.** GrowthX runs 50+ lessons, weekly live sessions and events in six cities because members
+pay for that. **Ours would be free, so it only has to hold names and scores.**
+

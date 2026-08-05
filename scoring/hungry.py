@@ -411,6 +411,133 @@ def extras():
     print("looks like from the outside.\n")
 
 
+
+
+def growthx():
+    """GrowthX is the supply-side model. It is worth studying, and worth inverting."""
+    import io, os, sys
+    from contextlib import redirect_stdout
+    from dataclasses import replace
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    with redirect_stdout(io.StringIO()):
+        import offer_model as om, ltgp
+    O = ltgp.OFFER
+    cac, _ = ltgp.blended()
+    PRICE = 240.0
+
+    print("---\n\n## 9. GrowthX — the supply-side model, and why to invert it\n")
+    print("**What `growthx.club` actually is** [V], from its own pricing page:\n")
+    print("| | |\n|---|---|")
+    for a, b in [
+        ("Price", "**₹19,999/year (~$240)** — a single tier, 12 months"),
+        ("What you get", "4-day AI immersion · 50+ video lessons · weekly 90-minute live sessions · "
+         "**5,000+ member directory** · private Slack with city channels · monthly in-person events "
+         "across 6 Indian cities · ~$7,000 of software credits"),
+        ("Career layer", "Interview prep, mock interviews, resume review, offer negotiation, "
+         "**\"exclusive job board\"**"),
+        ("**Who pays**", "**The member.** Individuals buy their own membership"),
+        ("Employer-side product", "**None.** No placement service, no hiring product, no guarantees"),
+    ]:
+        print(f"| **{a}** | {b} |")
+    print("\n> **The single most useful observation: GrowthX monetises the SUPPLY side and gives "
+          "the job board\n> away. Our model monetises the DEMAND side. Those are complements, not "
+          "competitors** — which means\n> the interesting question is not \"should we be GrowthX\" "
+          "but **\"what does a supply-side community do\n> for a demand-side business?\"**\n")
+
+    print("### 9.1 Charging members is a smaller business than it looks\n")
+    print("| Paying members | ARR at $240 |\n|---|---|")
+    for n in (500, 2000, 5000, 10000):
+        mark = " ← GrowthX's current scale [E]" if n == 5000 else ""
+        print(f"| {n:,}{mark} | ${n*PRICE:,.0f} |")
+    e, _ = ltgp.parts(O)
+    n_eq = 5000*PRICE/e["gplife"]
+    print(f"\n**5,000 members at $240 is ~${5000*PRICE:,.0f} of revenue. Our placement business "
+          f"reaches the same gross")
+    print(f"profit with {n_eq:.0f} placed clients** — and a placement carries **no content "
+          f"production, no weekly live")
+    print("sessions, and no monthly events in six cities.**\n")
+    print("Two further problems with charging the supply side here:\n")
+    print("| | |\n|---|---|")
+    print("| **It is a media business** | 50+ lessons, weekly sessions and events in six cities is "
+          "exactly the *\"operationally very intensive\"* shape that killed the managed-service path "
+          "([`SCALE.md`](SCALE.md) §1) |")
+    print("| **The incentives invert** | If members pay, you optimise for **member count**. If "
+          "clients pay, you optimise for **placement quality**. Those pull in opposite directions "
+          "the first time a weak member wants an introduction |")
+    print("| **And a legal question worth counsel** | GrowthX sells *education and community* with "
+          "a job board as a benefit, which is a clean structure. A community whose primary value is "
+          "*access to US jobs* is closer to charging a job seeker for placement — restricted in "
+          "several jurisdictions and reputationally loaded in India. **Not a claim about the law, a "
+          "flag to take to a lawyer before building it** |")
+
+    print("\n### 9.2 The real value of a community is not cheaper sourcing — it is SEAT CONTINUITY\n")
+    print("Modelled properly, and the result is not where I expected it:\n")
+    print("| Scenario | 30-day GP | **30-day** | Lifetime GP | **Lifetime** |")
+    print("|---|---|---|---|---|")
+
+    def row(lbl, o, mult=1.0):
+        orig = om.SOURCING_PCT, om.CANDIDATE_ADS_PCT, om.GRADING_COST
+        om.SOURCING_PCT *= mult; om.CANDIDATE_ADS_PCT *= mult; om.GRADING_COST *= mult
+        ee, _ = ltgp.parts(o)
+        om.SOURCING_PCT, om.CANDIDATE_ADS_PCT, om.GRADING_COST = orig
+        print(f"| {lbl} | ${ee['gp30']:,.0f} | **{ee['gp30']/cac:.2f}:1** | ${ee['gplife']:,.0f} "
+              f"| **{ee['gplife']/cac:.2f}:1** |")
+        return ee
+
+    b = row("Baseline — 9 EOR months", O)
+    c = row("Community cuts sourcing cost **60%**", O, 0.40)
+    d = row("**+ seat continuity 9 → 18 months**", replace(O, monthly_tenure=18.0), 0.40)
+    f = row("**+ seat continuity 9 → 30 months**", replace(O, monthly_tenure=30.0), 0.40)
+    print(f"\n**Cutting sourcing cost by 60% is worth ${c['gp30']-b['gp30']:,.0f}** — noise. "
+          f"Recruitment is already capped at one")
+    print("month of salary, and sourcing is only part of that line.\n")
+    print(f"**Getting the seat from 9 months to 30 is worth ${f['gplife']-c['gplife']:,.0f} per "
+          f"client** — "
+          f"{(f['gplife']-c['gplife'])/max(c['gp30']-b['gp30'],1):.0f}x more. And a")
+    print("graded standing community is **the mechanism** for it:\n")
+    print("| Without a community | With one |\n|---|---|")
+    for a2, b2 in [
+        ("Worker resigns at month 9 → the seat empties → **the EOR fee stops**",
+         "Worker resigns → a pre-graded replacement who already knows the client's stack starts in "
+         "days → **the fee never stops billing**"),
+        ("Every exit is a resale requiring a new client decision",
+         "Every exit is an operational event"),
+        ("You learn the worker is leaving when the client tells you",
+         "**You are in the same Slack as them**"),
+    ]:
+        print(f"| {a2} | {b2} |")
+    print("\n[`scoring/LTGP.md`](scoring/LTGP.md) §4 already concluded that seat continuity is the "
+          "largest lever in the")
+    print("business and worth more than halving CAC. **This is the first concrete mechanism found "
+          "for actually")
+    print("moving it.**\n")
+
+    print("### 9.3 So build the directory, not the academy\n")
+    print("This is also the correction to a claim [`MASTER.md`](MASTER.md) §9.6 already retracted — "
+          "*\"the academy is")
+    print("the moat.\"* It was retracted because an academy is a **cost centre that teaches people "
+          "who then")
+    print("leave.** A directory is different:\n")
+    print("| | Academy | **Graded directory** |\n|---|---|---|")
+    for a3, b3, c3 in [
+        ("What it is", "Curriculum you produce", "**A list of people you have already scored**"),
+        ("Cost shape", "Ongoing content production", "One grading pass per member, then near-zero"),
+        ("What it does for the model", "Improves candidate quality at the margin",
+         "**Refills seats in days, which is the +$9,300 lever**"),
+        ("Enterprise value", "Low — courses date", "**Real. A proprietary graded network is an "
+         "asset an acquirer pays for; a placement pipeline is not**"),
+    ]:
+        print(f"| **{a3}** | {b3} | {c3} |")
+    print("\n**Build the cheapest possible version:** a Slack, a graded roster, and the work-sample "
+          "score already")
+    print("being produced for every candidate ([`OFFER.md`](OFFER.md) §2.5). **Free to join, graded "
+          "on entry, no")
+    print("curriculum.** GrowthX runs 50+ lessons, weekly live sessions and events in six cities "
+          "because members")
+    print("pay for that. **Ours would be free, so it only has to hold names and scores.**\n")
+
+
 if __name__ == "__main__":
     report()
     extras()
+    growthx()
