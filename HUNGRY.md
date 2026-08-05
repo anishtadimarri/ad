@@ -164,6 +164,38 @@ is 2.26:1, still clearing the 1.5:1 constraint. **Lower salary costs margin, not
 [`MAP.md`](MAP.md), so it needs no new outbound motion. The creator market is bigger and hungrier and
 **structurally incompatible with a placement fee.**
 
+### The number that decides it, and it is not flattering
+
+US Bureau of Labor Statistics [V]:
+
+| | Film & video editors | Accounting (the comparison) |
+|---|---|---|
+| **Projected growth** | **3% 2024-2034** — "about as fast as average" | **340,000 accountants left in five years, a 17% decline** |
+| **Annual openings** | **~6,400/year** — and that is editors **and camera operators combined** | Recruiting difficulty **the highest in the study's 15-year history** |
+| **Median wage** | **$56,480** (May 2024, media & comms equipment workers) | ~$75,000 |
+| **Is it a shortage?** | ❌ **No.** This is a stable occupation | ✅ A structural collapse |
+
+**The arbitrage is real — $56,480 against ~$15,000 is a 73% saving, comparable to bookkeeping's
+published 75-78%. What is missing is the *shortage*.** Nobody is desperate. That is exactly what
+`NOHIRE`=3 was recording, and the BLS data is the hard version of it.
+
+### The strongest counter-argument, and why it does not rescue the case *yet*
+
+**BLS undercounts this badly.** SOC 27-4032 counts people whose *occupation* is editing — mostly
+film, TV and broadcast. It does not capture the thing that actually created the demand: **the creative-
+testing treadmill.** A serious Meta advertiser now needs 20-50 video variants a month, and that work
+is classified as marketing, not editing. It shows up as "content creator", "creative strategist" or
+nothing at all.
+
+So the real market is probably much larger than 6,400 openings. **But I cannot verify that, and this
+repo does not act on unverified market sizing.** Fortunately it is the cheapest possible thing to
+settle:
+
+> **Count the postings.** [`TARGETING.md`](TARGETING.md)'s entire mechanism is scraping job postings as
+> dated intent signals. Run the same scrape for **"remote video editor"** and compare the volume
+> against **"remote bookkeeper"**. One afternoon, no spend, and it answers the only open question:
+> **does anyone actually hire this seat often enough to build a funnel on?**
+
 ### Two things unique to this seat
 
 | | |

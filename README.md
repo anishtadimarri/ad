@@ -103,6 +103,10 @@ nothing downstream is modellable until they're done.
    [`TARGETING.md`](TARGETING.md) depends on it.**
 1. **Demand** — run the "still trying to fill that bookkeeper role?" hook at the intent seed.
    ~$1,500. Measures CPL against the $75 assumption.
+1b. **Posting volume, free** — scrape the same sources for **"remote video editor"** vs **"remote
+   bookkeeper"** vs **"construction estimator"**. One afternoon, no spend. It settles whether the
+   bottleneck seats in [`HUNGRY.md`](HUNGRY.md) are hired often enough to build a funnel on —
+   the only open question on the video-editor case (§7).
 2. **Supply** — post one role to candidate channels. ~$300 per country. Counts qualified applicants
    in 72 hours. **Run it in three countries at once — India, South Africa, Kenya — for ~$900**
    ([`COUNTRIES.md`](COUNTRIES.md) §8). It is the only cheap way to convert that screen's `[E]`

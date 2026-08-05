@@ -334,6 +334,43 @@ def extras():
     print("[`MAP.md`](MAP.md), so it needs no new outbound motion. The creator market is bigger "
           "and hungrier and")
     print("**structurally incompatible with a placement fee.**\n")
+    print("### The number that decides it, and it is not flattering\n")
+    print("US Bureau of Labor Statistics [V]:\n")
+    print("| | Film & video editors | Accounting (the comparison) |\n|---|---|---|")
+    for a2, b2, c2 in [
+        ("Projected growth", "**3% 2024-2034** — \"about as fast as average\"",
+         "**340,000 accountants left in five years, a 17% decline**"),
+        ("Annual openings", "**~6,400/year** — and that is editors **and camera operators "
+         "combined**", "Recruiting difficulty **the highest in the study's 15-year history**"),
+        ("Median wage", "**$56,480** (May 2024, media & comms equipment workers)", "~$75,000"),
+        ("Is it a shortage?", "❌ **No.** This is a stable occupation", "✅ A structural collapse"),
+    ]:
+        print(f"| **{a2}** | {b2} | {c2} |")
+    print("\n**The arbitrage is real — $56,480 against ~$15,000 is a 73% saving, comparable to "
+          "bookkeeping's")
+    print("published 75-78%. What is missing is the *shortage*.** Nobody is desperate. That is "
+          "exactly what")
+    print("`NOHIRE`=3 was recording, and the BLS data is the hard version of it.\n")
+    print("### The strongest counter-argument, and why it does not rescue the case *yet*\n")
+    print("**BLS undercounts this badly.** SOC 27-4032 counts people whose *occupation* is editing "
+          "— mostly")
+    print("film, TV and broadcast. It does not capture the thing that actually created the demand: "
+          "**the creative-")
+    print("testing treadmill.** A serious Meta advertiser now needs 20-50 video variants a month, "
+          "and that work")
+    print("is classified as marketing, not editing. It shows up as \"content creator\", \"creative "
+          "strategist\" or")
+    print("nothing at all.\n")
+    print("So the real market is probably much larger than 6,400 openings. **But I cannot verify "
+          "that, and this")
+    print("repo does not act on unverified market sizing.** Fortunately it is the cheapest possible "
+          "thing to")
+    print("settle:\n")
+    print("> **Count the postings.** [`TARGETING.md`](TARGETING.md)'s entire mechanism is scraping "
+          "job postings as\n> dated intent signals. Run the same scrape for **\"remote video "
+          "editor\"** and compare the volume\n> against **\"remote bookkeeper\"**. One afternoon, "
+          "no spend, and it answers the only open question:\n> **does anyone actually hire this "
+          "seat often enough to build a funnel on?**\n")
     print("### Two things unique to this seat\n")
     print("| | |\n|---|---|")
     print("| **The founder can grade it personally** | An ad editor's work is judged by hold rate "
