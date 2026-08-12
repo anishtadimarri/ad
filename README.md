@@ -2,16 +2,18 @@
 
 ## Start here
 
-### → [`COMPOUND.md`](COMPOUND.md) — **the two-year answer: the finance spine.** Corrects LAUNCH.md
+### → [`MODEL-V2.md`](MODEL-V2.md) — **the current model.** Performance creative, premium positioning, media layer — and the two corrections it forces on my earlier analysis
+### → [`COMPOUND.md`](COMPOUND.md) — the two-year compounding screen (finance spine 95.6; video re-scores 75.6 under V2)
 ### → [`LAUNCH.md`](LAUNCH.md) — month-one launchability (superseded on the pick, sound on the method)
 ### → [`MAP.md`](MAP.md) — the steady-state decision: 2 verticals × 5 roles
 
 ---
 
-## Sixteen documents
+## Seventeen documents
 
 | | |
 |---|---|
+| **[`MODEL-V2.md`](MODEL-V2.md)** | **CURRENT MODEL.** Operator's V2 ingested and compared. Wedge moves to **premium performance video editors**; positioning flips from price to quality, which the repo's own last two screens already argued for. **§2 flags a pricing conflation that breaks the model 8x if read the wrong way.** **§4 corrects two of my errors** — video re-scores 52.0 → 75.6 once "performance" and the ad-account spine are counted |
 | **[`COMPOUND.md`](COMPOUND.md)** | **START HERE.** What can be sold to the same ICPs for **24 months**. **What compounds is the spine, not the skill** — a shared ledger login is a position inside the business; a rendered file is handed over a wall. **Finance spine 95.6; video gates out at 52.0.** Corrects LAUNCH.md's pick |
 | **[`LAUNCH.md`](LAUNCH.md)** | Month-one launchability. Introduces **`FOUNDERGRADE`** — can the operator personally judge the work with no team — which is why estimating and PI records are year-two businesses. **Its *pick* is superseded by [`COMPOUND.md`](COMPOUND.md); its method stands** |
 | **[`MAP.md`](MAP.md)** | **THE DECISION.** E-comm + marketing agencies × 5 roles. Two ads, one legible promise, five sellable seats. Supersedes the vertical/role picks elsewhere |
