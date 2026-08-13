@@ -383,3 +383,42 @@ Gated. Each of these reads as a word that is in neither half of the name.
 **`lindentalent.com` is the one that matters** — `linden` is otherwise the best-scoring first word
 in the study, and `Linden Talent` is free. It contains **dental**. Use `lindenhiring.com` or
 `lindenhires.com` instead, both of which are also free.
+
+---
+
+## 9. Quick check: All Hands, Handpicked, and every TLD option
+
+Requested directly, checked in one pass. `.com`/`.net`/gTLDs are authoritative RDAP; `.co` is the
+calibrated DNS proxy from [`CO.md`](CO.md) §1.
+
+| Rank | Domain | `.com` | `.co` | `.net` | Why here | The cost |
+|---|---|---|---|---|---|---|
+| **1** | **`allhandstalent.com`** | **free** | **free** | **free** | The name you have come back to three times. **`All Hands` is an idiom**, so it is not forced, and `Talent` is the most expansion-safe head noun there is — no role, no seniority, no vertical. **Full defensive set free for the price of lunch.** | *"All hands on deck"* leans **emergency and quantity**, which mildly fights premium selection. And the string contains **stale** if you squint at it |
+| **2** | **`handpicked.team`** | *(hotels)* | taken | — | **The dot is silent — it reads as "handpicked team".** Structurally the least forced name in nine rounds: nothing is welded on, because the TLD *is* the second word. And it is literally the offer — you grade every placement personally | `.team` is a low-trust nTLD for a $6k–$20k sale. `handpicked.com` is Handpicked Hotels — wrong sector, so a mistyped visit is annoyance not competition. Generic word, weak trademark |
+| **3** | **`allhandshiring.com`** | **free** | **free** | **free** | **The only All Hands variant that is completely clean** on every check — no accidental word at all. `H`-alliteration, and `Hiring` states the business cold | Slightly more transactional than `Talent`; 14 characters |
+| **4** | **`lindenhires.com`** | **free** | **free** | **free** | Top of the systematic sweep. **The only nature word with no recruiting firm on it** | Linden, NJ surfaces in searches; means nothing, which you have said is fine |
+| **5** | **`tuesdayhires.com`** | **free** | **free** | **free** | Arbitrary, warm, **outside the contested nature register entirely** | Means nothing; `Hires` is transactional |
+| **6** | **`tuesdaytalent.com`** | **free** | **free** | **free** | Best flow of any Tuesday pairing | **An existing Facebook page uses this exact name** for freelance creatives — on the platform you advertise on |
+| **7** | `handpicked.works` | — | — | — | "handpicked works" — the dot is silent here too | Reads as *work samples* rather than as people |
+| **8** | `allhandsroster.com` | **free** | **free** | **free** | Names the graded directory — the retention asset | 14 characters, and `Roster` implies a fixed list |
+| **9** | `allhandspeople.com` | **free** | **free** | **free** | Clean on every check | **Redundant** — hands *are* people |
+| **10** | `allhandsstaff.com` | **free** | **free** | **free** | Clean, plain | `Staff` reads administrative and lower-ticket |
+
+### Killed in this pass
+
+| Domain | Killed by |
+|---|---|
+| **`allhandscrew.com`** | contains **screw**. `ARTIFACT`, hard gate |
+| **`allhandshires.com`** | contains **shire** |
+| **`handpickedcrew.com`** | adjective + noun — **the exact shape of `Graded Crew`**, which you rejected |
+| `handpickedtalent.com` · `handpickedteam.com` · `handpickedhires.com` · `handpickedpeople.com` | all **taken** on `.com` — which is why `handpicked.team` is the workaround |
+| `allhands.co` · `handpicked.co` · `linden.co` · `tuesday.co` | all **taken** — bare words on `.co` are gone, as [`CO.md`](CO.md) §4 found |
+| every `.careers` option | **`linden.careers` reads as Linden's own job page.** Wrong direction for a firm that staffs *other* companies |
+| `.group` · `.company` · `.agency` · `.studio` | taken for all four bare words |
+
+**Free but weak TLDs**, for completeness: `allhands.house`, `allhands.partners`, `tuesday.house`,
+`tuesday.partners`, `handpicked.house`, `handpicked.partners`, `linden.careers`.
+
+> **The answer is `allhandstalent.com`.** It is the only candidate that is simultaneously an idiom
+> (not forced), maximally expansion-safe (`Talent` locks nothing), clean when spelled aloud, and
+> free across `.com`, `.co` and `.net`. `handpicked.team` is the better *name* and the worse *asset*.
