@@ -639,3 +639,53 @@ touches only recall and referral — the smaller half of the cost, as §2 of `CO
 `manpowergroup.com`, `kellyservices.com` and `insightglobal.com` are 17; the median of sixteen live
 staffing and EOR domains is 14 and the max is 26. The handle at 14 clears every platform cap
 including X's 15. **The name's weakness is that its words are common, not that its string is long.**
+
+---
+
+## 14. `.ai` — available, and the wrong signal
+
+`allhandstalent.ai` is **free** (Identity Digital RDAP). So are `allhandshiring.ai`, `lindenhires.ai`
+and `tuesdayhires.ai`. `allhands.ai` and `handpicked.ai` are taken.
+
+**Cost:** `.ai` is an Anguilla ccTLD with a **mandatory two-year minimum**, roughly **$80–90/year at
+registrar level, so ~$160–180 up front**, renewing in two-year blocks. The registry wholesale rose
+$20 per registration on 5 March. That is **13–15× the price of the `.com` you already own**, which
+raises the bar for what it has to buy you.
+
+### The argument against is not cost, it is the comparator
+
+The reason V2 beat V1 in [`MODEL-V2.md`](MODEL-V2.md) §8 is `TRUECLAIM` — **the arbitrage is true
+against the video vendor invoice**, which is **$5,000–16,500 per month for a studio**, a 4.0–13.2×
+claim and the largest in the study. That comparator is the entire justification for a $6,600
+placement fee.
+
+> **A `.ai` domain moves the comparator.** Read as an AI company, the buyer's mental reference class
+> becomes AI video tools at **$20–100 a month** — not a studio at $5,000–16,500. You would be paying
+> ~$170 to anchor yourself against a price point **50–800× below** the one your fee depends on.
+
+Three smaller versions of the same problem:
+
+| | |
+|---|---|
+| **It advertises your weakest score** | `DURABLE` = 3 was V2's lowest, because **generative video is the fastest-moving substitution risk in the study** ([`MODEL-V2.md`](MODEL-V2.md) gap 12). `.ai` does not hedge that — it invites the exact question you least want asked in a cold ad: *"so are these AI editors, and why do I need a person?"* |
+| **It reads as bait-and-switch** | Click an `.ai` domain, land on a human-placement offer. Best case mild confusion; worst case the buyer feels misled — expensive when you have no Western track record and trust *is* the sale |
+| **Defensive value is near zero** | `.ai` squatting targets AI-sounding names. *All Hands Talent* is not one. Nobody is racing you for it |
+
+**The fair counter**, stated properly: recruiting-adjacent companies do use `.ai` — Metaview, Chorus,
+Otter. But every one of those **sells software**. You sell a person. That difference is precisely
+why the price anchor flips, rather than being an exception to it.
+
+### Verdict
+
+**Skip it.** If you want a third domain at all, `.co` and `.net` are both free for
+`allhandstalent`, cost ~$40/year combined, and carry **no positioning cost** — strictly better uses
+of the same money, and already Tier 2 in [`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md)'s sibling checklist
+at §12 above.
+
+**When it flips:** if the graded directory ever becomes *software* — a scoring or matching product —
+that is a legitimate `.ai` sub-brand. Month twelve at the earliest, and even then it would be a
+**product** name, not the company's.
+
+*Unlike most of this repo, §14 is a judgement rather than a measurement. The availability and the
+pricing are checked; the claim that `.ai` re-anchors the buyer is reasoning from the model's own
+`TRUECLAIM` logic, not something I have data on.*
