@@ -9,7 +9,7 @@
 
 ---
 
-## Seventeen documents
+## Eighteen documents
 
 | | |
 |---|---|
@@ -23,6 +23,7 @@
 | **[`TARGETING.md`](TARGETING.md)** | **How to reach them mid-search** — job postings as a dated intent signal, scraped into a Meta custom audience. Reverses the Meta-targetability gate |
 | **[`PATTERN.md`](PATTERN.md)** | **The supply-side screen** — which occupations the US stopped producing, where the work is digital and somebody already proved it transfers. Insurance is a worse shortage than accounting |
 | **[`COMPETITOR-DATA.md`](COMPETITOR-DATA.md)** | **What Somewhere and Oceans actually sell** — 60+ published roles with rates, bookkeeper priced by country, and the finding that **neither of them sources India**. **§7: SkillArbitrage** — the closest analogue to this plan, built supply-first (25,000 learners paying ₹42-63k). **Three of three India analogues monetise the worker and give the employer relationship away**, which is why the demand side is the untaken half. **§8: the public financials.** SkillArbitrage's parent is **NSE: ADDICTIVE** — ₹75.7cr revenue, **a loss**, ₹87.6cr market cap, **−63% in a year, below its IPO price.** The India-edtech path earns rupees on a rupee cost base and throws away the only structural advantage we have |
+| **[`DOMAINS.md`](DOMAINS.md)** | **Domains for V2.** ~4,400 candidates checked against Verisign RDAP. Two new criteria: **`SAYSPEOPLE`** (the video-studio misread is the expensive one, which kills the whole film-craft register) and **`FALSIFIABLE`** (a claim you can *prove* beats one you assert — "graded" over "elite"). **`.com` is free for every finalist, so the TLD question is moot.** Pick: `gradedcrew.com` |
 | **[`NAMES.md`](NAMES.md)** | **THE RANKING.** 67 candidates × 7 dimensions under **two rankings**, plus gates for collisions, surnames and audio-spelling leaks. `Talent` survives 13 head-noun challengers; **`Hires`** is the only improvement. **Every respelling tested leaks: 12 of 12 correctly-spelled targets are registered** |
 | **[`NAME.md`](NAME.md)** | The naming *reasoning* — ~2,300 domains checked against Verisign RDAP, `.talent` confirmed non-existent against IANA, and what every rejected name was killed on, including three of my own earlier picks |
 | **[`COUNTRIES.md`](COUNTRIES.md)** | **Where to source talent** — 44 countries on 11 weighted dimensions + 4 gates. India wins on depth, **South Africa on retention**; **9 of 12 LatAm countries fail the English gate**. **§9 prices the "clients are wary of Indian employees" objection** — it survives even losing half of all deposits, and the wary buyer is a 5.42:1 client rather than 4.25:1 |
@@ -137,6 +138,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/lenses.py`](scoring/lenses.py) | **13 skills × 5 independent lenses.** Not another ranking — a check on what survives several perspectives at once. Generates [`LENSES.md`](LENSES.md) |
 | [`scoring/hungry.py`](scoring/hungry.py) | **14 industry × bottleneck-seat pairs × 8 dimensions + 3 gates.** Buyer *urgency* rather than ad legibility. Generates [`HUNGRY.md`](HUNGRY.md) |
 | [`scoring/india_skills.py`](scoring/india_skills.py) | **15 skills × 8 dimensions + 3 gates.** Supply-side *quality*, not demand-side sellability. Generates [`SKILLS-INDIA.md`](SKILLS-INDIA.md) |
+| [`scoring/domains.py`](scoring/domains.py) | **18 finalists × 8 criteria + 2 gates**, drawn from ~4,400 RDAP checks. Generates [`DOMAINS.md`](DOMAINS.md) |
 | [`scoring/names.py`](scoring/names.py) | **36 name candidates × 7 dimensions + gates.** Generates [`NAMES.md`](NAMES.md) |
 | [`scoring/countries.py`](scoring/countries.py) | **44 supply countries × 11 dimensions + gates.** EF EPI 2025 English scores, labour-market slack as the retention proxy, timezone deliberately weighted near zero |
 | [`scoring/funnel.py`](scoring/funnel.py) | **Step-by-step Meta funnel** — impression → CAC, by audience layer and lead-capture flow, with the break-points |
