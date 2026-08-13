@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+scoring/.words_alpha.txt
+scoring/.common20k.txt
+scoring/.common10k.txt
