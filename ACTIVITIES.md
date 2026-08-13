@@ -29,28 +29,28 @@ So: a `BLOCKER` flag, and **22 of 106 activities carry it.**
 
 | # | Function | Blocker | Surface | Why nothing moves without it |
 |---|---|---|---|---|
-| 1 | Entity | **Choose the payment rail for client payments** | `Chat` | Stripe, Wise, Payoneer, Razorpay — availability depends on the entity decision above, which is why that one comes first |
-| 2 | Entity | **Decide the entity structure — India Pvt Ltd, US LLC, or both** | `Chat` | **The first unopened question in this whole repo.** You are in India selling to US buyers. It determines how you invoice, how you are taxed, what a client's procurement will accept, and whether Stripe will take you at all. `FIT`=3 — draft the options, **a CA and a US attorney decide** |
-| 3 | Entity | **Payout rail for paying Indian talent** | `Chat` | The other half of the flow, and the half with a monthly deadline |
-| 4 | Entity | ****W-8BEN-E** and the US client tax-form pack** | `Cowork` | **A US company cannot pay a foreign entity without this on file.** It will be requested during onboarding of your very first client, and not having it delays cash |
-| 5 | Entity | **GST registration and **LUT for export of services**** | `Cowork` | Service exports are zero-rated in India **only with the right filing in place**. Getting this wrong is a real cash cost on every invoice |
-| 6 | Entity | **Register the entity and get the identifiers** | `Cowork` | PAN, TAN, incorporation certificate — or the US equivalent |
-| 7 | Entity | **Business bank account that can receive USD** | `Cowork` | Nothing else in the model happens until money can land |
-| 8 | Employment | ****Decide: are you the EOR, or do you partner with one?**** | `Chat` | **The single largest unanswered structural question left.** Being the EOR means payroll, PF, ESI, gratuity and TDS on your books at $477/employee/month margin. Partnering means sharing that margin but no compliance surface. **The model assumes the revenue and has never priced the obligation** |
-| 9 | Employment | **Talent contract — IP assignment, confidentiality, non-solicit** | `Cowork` | **IP assignment is not optional** — you are selling creative output your client will own. Non-solicit is what stops a client hiring your placement directly |
-| 10 | Employment | **Contractor vs employee classification for placed talent** | `Chat` | Misclassification is the standard way this category gets into trouble |
+| 1 | Entity | **Decide the entity structure — India Pvt Ltd, US LLC, or both** | `Chat` | **The first unopened question in this whole repo.** You are in India selling to US buyers. It determines how you invoice, how you are taxed, what a client's procurement will accept, and whether Stripe will take you at all. `FIT`=3 — draft the options, **a CA and a US attorney decide** |
+| 2 | Entity | **Register the entity and get the identifiers** | `Cowork` | PAN, TAN, incorporation certificate — or the US equivalent |
+| 3 | Entity | **Business bank account that can receive USD** | `Cowork` | Nothing else in the model happens until money can land |
+| 4 | Entity | **Choose the payment rail for client payments** | `Chat` | Stripe, Wise, Payoneer, Razorpay — availability depends on the entity decision above, which is why that one comes first |
+| 5 | Entity | **Payout rail for paying Indian talent** | `Chat` | The other half of the flow, and the half with a monthly deadline |
+| 6 | Entity | **W-8BEN-E and the US client tax-form pack** | `Cowork` | **A US company cannot pay a foreign entity without this on file.** It will be requested during onboarding of your very first client, and not having it delays cash |
+| 7 | Entity | **GST registration and LUT for export of services** | `Cowork` | Service exports are zero-rated in India **only with the right filing in place**. Getting this wrong is a real cash cost on every invoice |
+| 8 | Employment | **Decide: are you the EOR, or do you partner with one?** | `Chat` | **The single largest unanswered structural question left.** Being the EOR means payroll, PF, ESI, gratuity and TDS on your books at $477/employee/month margin. Partnering means sharing that margin but no compliance surface. **The model assumes the revenue and has never priced the obligation** |
+| 9 | Employment | **Contractor vs employee classification for placed talent** | `Chat` | Misclassification is the standard way this category gets into trouble |
+| 10 | Employment | **Talent contract — IP assignment, confidentiality, non-solicit** | `Cowork` | **IP assignment is not optional** — you are selling creative output your client will own. Non-solicit is what stops a client hiring your placement directly |
 | 11 | Pricing | **Rate card and the fee definition** | `Code` | `MODEL-V2.md` gap 1: **the one-time-versus-monthly conflation breaks the model 8× if left ambiguous.** Write it down once, unambiguously |
 | 12 | Pricing | **Guarantee terms — 12-month replacement** | `Cowork` | Modelled as **cheaper than the 6-month industry standard** while sounding stronger |
-| 13 | Sales | ****Self-reported attribution on the form**** | `Code` | *"How did you hear about us?"* — **once you run two channels, platform-reported attribution will double-count and you will defund the wrong one.** One field, added before the second channel starts |
-| 14 | Sales | **MSA and per-placement SOW** | `Cowork` | Draft only, lawyer-reviewed. **Nothing gets signed without it** |
+| 13 | Sales | **MSA and per-placement SOW** | `Cowork` | Draft only, lawyer-reviewed. **Nothing gets signed without it** |
+| 14 | Demand | **LinkedIn company page and founder profile** | `Cowork` | **The first thing a Western buyer checks** on an operator with no track record. Free, and it ranks for your brand query |
 | 15 | Website | **Pixel, CAPI and event verification** | `Code` | **Verify with test events before spending.** Every CAC number assumes attribution works |
 | 16 | Measure | **UTM and naming discipline** | `Code` | **Set before the first click or the data is never clean.** Retrofitting is impossible |
-| 17 | Outbound | **Cold-email infrastructure — domains, SPF/DKIM/DMARC, warm-up** | `Code` | **2–4 week lead time — the longest in the business.** Start week one even though it sends week four |
-| 18 | Outbound | **Email verification and suppression** | `Code` | Bounce above ~2–3% damages the sending domain |
-| 19 | Security | ****Client ad-account access protocol**** | `Cowork` | **You will be handed access to clients' Meta ad accounts.** That is the single most sensitive thing in the business. Partner access via Business Manager, never shared logins, 2FA everywhere, and documented revocation on exit |
-| 20 | Risk | ****Meta Business Manager structure and ban resilience**** | `Code` | **The severe one, and it is inside your own expertise.** A new advertiser with a new domain and a new page in a scrutinised category is exactly the profile that gets restricted. Separate BM, verified domain, clean page history, a second ad account ready — build it *before* it is needed, because you cannot build it after |
-| 21 | Demand | **LinkedIn company page and founder profile** | `Cowork` | **The first thing a Western buyer checks** on an operator with no track record. Free, and it ranks for your brand query |
-| 22 | Finance | ****Cash-flow forecast**** | `Code` | **You pay talent monthly and get paid lumpily.** The failure mode that kills placement businesses |
+| 17 | Sales | **Self-reported attribution on the form** | `Code` | *"How did you hear about us?"* — **once you run two channels, platform-reported attribution will double-count and you will defund the wrong one.** One field, added before the second channel starts |
+| 18 | Risk | **Meta Business Manager structure and ban resilience** | `Code` | **The severe one, and it is inside your own expertise.** A new advertiser with a new domain and a new page in a scrutinised category is exactly the profile that gets restricted. Separate BM, verified domain, clean page history, a second ad account ready — build it *before* it is needed, because you cannot build it after |
+| 19 | Security | **Client ad-account access protocol** | `Cowork` | **You will be handed access to clients' Meta ad accounts.** That is the single most sensitive thing in the business. Partner access via Business Manager, never shared logins, 2FA everywhere, and documented revocation on exit |
+| 20 | Outbound | **Cold-email infrastructure — domains, SPF/DKIM/DMARC, warm-up** | `Code` | **2–4 week lead time — the longest in the business.** Start week one even though it sends week four |
+| 21 | Outbound | **Email verification and suppression** | `Code` | Bounce above ~2–3% damages the sending domain |
+| 22 | Finance | **Cash-flow forecast** | `Code` | **You pay talent monthly and get paid lumpily.** The failure mode that kills placement businesses |
 
 **Read the first six rows as a single chain.** Entity → identifiers → bank → payment rail → payout
 rail → W-8BEN-E → GST/LUT. **Every one of them gates the one after it**, and the whole chain gates

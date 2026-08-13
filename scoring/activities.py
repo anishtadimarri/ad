@@ -354,11 +354,28 @@ def main():
     P("**These are not ranked by score.** They are ranked by what unblocks what.\n")
     P("| # | Function | Blocker | Surface | Why nothing moves without it |")
     P("|---|---|---|---|---|")
-    seq = ["Entity", "Employment", "Pricing", "Sales", "Website", "Measure", "Outbound",
-           "Security", "Risk", "Demand", "Finance"]
-    ordered = sorted(blockers, key=lambda x: (seq.index(x[1]) if x[1] in seq else 99, -x[0]))
-    for k, (s, fn_, act, sur, blk, *rest, why) in enumerate(ordered, 1):
-        P(f"| {k} | {fn_} | **{act}** | `{sur}` | {why} |")
+    # explicit dependency sequence -- score order is wrong here by construction
+    DEP = [
+        "Decide the entity structure", "Register the entity", "Business bank account",
+        "Choose the payment rail", "Payout rail", "W-8BEN-E", "GST registration",
+        "Decide: are you the EOR", "Contractor vs employee", "Talent contract",
+        "Rate card and the fee definition", "Guarantee terms", "MSA and per-placement SOW",
+        "LinkedIn company page", "Pixel, CAPI and event", "UTM and naming",
+        "Self-reported attribution", "Meta Business Manager structure",
+        "Client ad-account access", "Cold-email infrastructure", "Email verification",
+        "Cash-flow forecast",
+    ]
+
+    def dep_rank(x):
+        for i, frag in enumerate(DEP):
+            if frag.lower() in x[2].lower():
+                return i
+        return 99
+
+    for k, (sv, fn_, act, sur, blk, *rest, why) in enumerate(
+            sorted(blockers, key=dep_rank), 1):
+        clean = act.replace("**", "")
+        P(f"| {k} | {fn_} | **{clean}** | `{sur}` | {why} |")
     P("")
     P("**Read the first six rows as a single chain.** Entity → identifiers → bank → payment "
       "rail → payout\nrail → W-8BEN-E → GST/LUT. **Every one of them gates the one after it**, "
