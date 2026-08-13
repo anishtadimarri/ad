@@ -186,3 +186,11 @@ found that means **"the person who belongs on your team"** — which is the actu
 **Which makes the recommendation simpler, not harder:** the `.com` is free for every flowing
 two-word option above, so there is no reason to accept a weaker TLD. **Check `.co` yourself at a
 registrar if you want it defensively — I could not confirm it and will not pretend otherwise.**
+
+---
+
+> **Superseded by [`CO.md`](CO.md).** Both §3's `gradedcrew.com` and §6's `veritypeople.com` were
+> rejected as forced. `CO.md` establishes why with **1,160 authoritative `.com` checks**: the
+> plain-English `.com` namespace is exhausted, so the `.com`-first rule in this file *was* the
+> forcing function. It also fixes the method gap above — **`.co` is checkable** via a DNS proxy
+> calibrated at 0 false-availables over 82 trials.

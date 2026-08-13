@@ -1,0 +1,465 @@
+{
+ "com": {
+  "frontoffice": false,
+  "hometeam": false,
+  "homefield": false,
+  "firstchair": false,
+  "secondchair": false,
+  "insidetrack": false,
+  "frontrow": false,
+  "frontrunner": false,
+  "standout": false,
+  "standouts": false,
+  "toppick": false,
+  "firstpick": false,
+  "wildcard": false,
+  "shoein": false,
+  "darkhorse": false,
+  "mainstay": false,
+  "linchpin": false,
+  "backbone": false,
+  "cornerstone": false,
+  "touchstone": false,
+  "keystone": false,
+  "bedrock": false,
+  "workhorse": false,
+  "righthand": false,
+  "standby": false,
+  "ringer": false,
+  "topdrawer": false,
+  "topshelf": false,
+  "firstrate": false,
+  "goldstandard": false,
+  "thegoldstandard": false,
+  "realdeal": false,
+  "therealdeal": false,
+  "goodcompany": false,
+  "goodhands": false,
+  "safepair": false,
+  "cleanhands": false,
+  "steadyhand": false,
+  "freehand": false,
+  "secondnature": false,
+  "naturalfit": false,
+  "rightfit": false,
+  "perfectfit": false,
+  "heavylifting": false,
+  "theheavylifting": false,
+  "legwork": false,
+  "thelegwork": false,
+  "groundwork": false,
+  "spadework": false,
+  "handiwork": false,
+  "breadandbutter": false,
+  "headstart": false,
+  "legup": false,
+  "upperhand": false,
+  "secondwind": false,
+  "cleanslate": false,
+  "groundfloor": false,
+  "fullhouse": false,
+  "fullcircle": false,
+  "evenkeel": false,
+  "fairshake": false,
+  "openarms": false,
+  "warmwelcome": false,
+  "longgame": false,
+  "thelonggame": false
+ },
+ "co": {
+  "frontoffice": false,
+  "hometeam": false,
+  "homefield": false,
+  "firstchair": false,
+  "secondchair": false,
+  "insidetrack": false,
+  "frontrow": false,
+  "frontrunner": false,
+  "standout": false,
+  "standouts": true,
+  "toppick": false,
+  "firstpick": false,
+  "wildcard": false,
+  "shoein": true,
+  "darkhorse": false,
+  "mainstay": false,
+  "linchpin": false,
+  "backbone": false,
+  "cornerstone": false,
+  "touchstone": false,
+  "keystone": false,
+  "bedrock": false,
+  "workhorse": false,
+  "righthand": false,
+  "standby": false,
+  "ringer": false,
+  "topdrawer": true,
+  "topshelf": false,
+  "firstrate": false,
+  "goldstandard": false,
+  "thegoldstandard": false,
+  "realdeal": false,
+  "therealdeal": false,
+  "goodcompany": false,
+  "goodhands": false,
+  "safepair": true,
+  "cleanhands": true,
+  "steadyhand": false,
+  "freehand": false,
+  "secondnature": false,
+  "naturalfit": false,
+  "rightfit": false,
+  "perfectfit": false,
+  "heavylifting": false,
+  "theheavylifting": true,
+  "legwork": false,
+  "thelegwork": true,
+  "groundwork": false,
+  "spadework": true,
+  "handiwork": true,
+  "breadandbutter": false,
+  "headstart": false,
+  "legup": false,
+  "upperhand": false,
+  "secondwind": false,
+  "cleanslate": false,
+  "groundfloor": false,
+  "fullhouse": false,
+  "fullcircle": false,
+  "evenkeel": false,
+  "fairshake": false,
+  "openarms": false,
+  "warmwelcome": false,
+  "longgame": false,
+  "thelonggame": false
+ },
+ "net": {
+  "frontoffice": false,
+  "hometeam": false,
+  "homefield": false,
+  "firstchair": false,
+  "secondchair": false,
+  "insidetrack": false,
+  "frontrow": false,
+  "frontrunner": false,
+  "standout": false,
+  "standouts": true,
+  "toppick": false,
+  "firstpick": false,
+  "wildcard": false,
+  "shoein": true,
+  "darkhorse": false,
+  "mainstay": false,
+  "linchpin": false,
+  "backbone": false,
+  "cornerstone": false,
+  "touchstone": false,
+  "keystone": false,
+  "bedrock": false,
+  "workhorse": false,
+  "righthand": false,
+  "standby": false,
+  "ringer": false,
+  "topdrawer": false,
+  "topshelf": false,
+  "firstrate": false,
+  "goldstandard": false,
+  "thegoldstandard": false,
+  "realdeal": false,
+  "therealdeal": false,
+  "goodcompany": false,
+  "goodhands": false,
+  "safepair": false,
+  "cleanhands": false,
+  "steadyhand": false,
+  "freehand": false,
+  "secondnature": false,
+  "naturalfit": false,
+  "rightfit": false,
+  "perfectfit": false,
+  "heavylifting": false,
+  "theheavylifting": true,
+  "legwork": false,
+  "thelegwork": false,
+  "groundwork": false,
+  "spadework": false,
+  "handiwork": false,
+  "breadandbutter": false,
+  "headstart": false,
+  "legup": false,
+  "upperhand": false,
+  "secondwind": false,
+  "cleanslate": false,
+  "groundfloor": false,
+  "fullhouse": false,
+  "fullcircle": false,
+  "evenkeel": false,
+  "fairshake": false,
+  "openarms": false,
+  "warmwelcome": false,
+  "longgame": false,
+  "thelonggame": false
+ },
+ "occ": {
+  "frontoffice": [
+   "dark",
+   ""
+  ],
+  "hometeam": [
+   "dark",
+   "Error 403 Forbidden"
+  ],
+  "homefield": [
+   "live",
+   "Homefield"
+  ],
+  "firstchair": [
+   "live",
+   "Premier Vacation Homes - First Chair Destinations"
+  ],
+  "secondchair": [
+   "live",
+   "Second Chair\u2122 - Make the Best Litigation Decisions"
+  ],
+  "insidetrack": [
+   "dark",
+   "Site Not Configured | 404 Not Found"
+  ],
+  "frontrow": [
+   "dark",
+   ""
+  ],
+  "frontrunner": [
+   "live",
+   "Home - The Parkes Companies, Inc."
+  ],
+  "standout": [
+   "live",
+   "StandOut \u2013 AI Video Interview Practice & Mock Interview Pl"
+  ],
+  "standouts": [
+   "live",
+   ""
+  ],
+  "toppick": [
+   "live",
+   "TOPPICK - The Definitive Rankings of Everything"
+  ],
+  "firstpick": [
+   "dark",
+   ""
+  ],
+  "wildcard": [
+   "live",
+   "Infinite Video Feed"
+  ],
+  "shoein": [
+   "dark",
+   ""
+  ],
+  "darkhorse": [
+   "live",
+   "Home page :: Dark Horse Comics"
+  ],
+  "mainstay": [
+   "live",
+   "Mainstay | Student Success Coaching | Human Centered, AI E"
+  ],
+  "linchpin": [
+   "live",
+   "Linchpin - A Digital Agency: Web, Ecommerce, WordPress"
+  ],
+  "backbone": [
+   "dark",
+   "Just a moment..."
+  ],
+  "cornerstone": [
+   "live",
+   "Economic Consulting and Expert Testimony | Cornerstone Res"
+  ],
+  "touchstone": [
+   "live",
+   "Touchstone &#8211; Anchor of the AEGIS testing ecosystem"
+  ],
+  "keystone": [
+   "live",
+   "Keystone | Expert Consultants for Business, Legal &amp; Te"
+  ],
+  "bedrock": [
+   "live",
+   "Bedrock"
+  ],
+  "workhorse": [
+   "live",
+   "Workhorse - Manufacturing electric vehicles"
+  ],
+  "righthand": [
+   "dark",
+   ""
+  ],
+  "standby": [
+   "live",
+   "Standby Systems | ...technology that works"
+  ],
+  "ringer": [
+   "dark",
+   ""
+  ],
+  "topdrawer": [
+   "dark",
+   "Just a moment..."
+  ],
+  "topshelf": [
+   "live",
+   ""
+  ],
+  "firstrate": [
+   "live",
+   "First Rate: The Heart &amp; Soul of WealthTech | First Rat"
+  ],
+  "goldstandard": [
+   "live",
+   "Solve daily medication challenges | Drug Information Solut"
+  ],
+  "thegoldstandard": [
+   "live",
+   "Home - The Gold Standard"
+  ],
+  "realdeal": [
+   "live",
+   "RealDeal.com - The Pre-Owned Price Check"
+  ],
+  "therealdeal": [
+   "live",
+   "Real Estate News - The Real Deal"
+  ],
+  "goodcompany": [
+   "live",
+   "Good Company"
+  ],
+  "goodhands": [
+   "live",
+   "Allstate Insurance Company | You&#x27;re In Good Hands."
+  ],
+  "safepair": [
+   "for sale",
+   ""
+  ],
+  "cleanhands": [
+   "dark",
+   ""
+  ],
+  "steadyhand": [
+   "live",
+   "Steadyhand offers low-fee investment funds with clear-cut "
+  ],
+  "freehand": [
+   "live",
+   "Freehand Gallery &#8211; Functional Crafts and Fine Gifts"
+  ],
+  "secondnature": [
+   "live",
+   "Second Nature: The Only Fully-Managed Resident Experience "
+  ],
+  "naturalfit": [
+   "dark",
+   ""
+  ],
+  "rightfit": [
+   "dark",
+   ""
+  ],
+  "perfectfit": [
+   "live",
+   "Upholstery Supplies: Auto, Marine &amp; Furniture | Perfec"
+  ],
+  "heavylifting": [
+   "dark",
+   ""
+  ],
+  "theheavylifting": [
+   "live",
+   ""
+  ],
+  "legwork": [
+   "dark",
+   ""
+  ],
+  "thelegwork": [
+   "for sale",
+   ""
+  ],
+  "groundwork": [
+   "dark",
+   ""
+  ],
+  "spadework": [
+   "dark",
+   ""
+  ],
+  "handiwork": [
+   "dark",
+   "Just a moment..."
+  ],
+  "breadandbutter": [
+   "dark",
+   ""
+  ],
+  "headstart": [
+   "live",
+   "headstart.com"
+  ],
+  "legup": [
+   "dark",
+   ""
+  ],
+  "upperhand": [
+   "live",
+   "Sports Scheduling Software for Sports Training &amp; Sport"
+  ],
+  "secondwind": [
+   "dark",
+   ""
+  ],
+  "cleanslate": [
+   "live",
+   ""
+  ],
+  "groundfloor": [
+   "live",
+   "Invest in Real Estate Without Buying Property | Groundfloo"
+  ],
+  "fullhouse": [
+   "dark",
+   ""
+  ],
+  "fullcircle": [
+   "live",
+   "Organic Produce &amp; Natural Grocery Delivery | Full Circ"
+  ],
+  "evenkeel": [
+   "live",
+   "EvenKeel.com"
+  ],
+  "fairshake": [
+   "live",
+   "Welcome - Consumer Info Network"
+  ],
+  "openarms": [
+   "dark",
+   ""
+  ],
+  "warmwelcome": [
+   "live",
+   "Warm Welcome \u2022 The best way to communicate with your clien"
+  ],
+  "longgame": [
+   "live",
+   "Long Game Health"
+  ],
+  "thelonggame": [
+   "live",
+   ""
+  ]
+ }
+}
