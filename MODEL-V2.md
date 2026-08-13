@@ -168,3 +168,84 @@ better only on durability — which is a month-six problem, not a month-one prob
 fixes a positioning error the repo's own last two screens had already identified, and hands the
 operator a seat he can grade himself. **It costs durability, and the fix for that is keeping the
 finance spine on the calendar rather than abandoning it.**
+
+---
+
+## 8. Rated: V1 vs V2, on the criteria the repo already produced
+
+Not a fresh opinion — **every dimension below is a finding from an earlier screen**, so this is a
+consolidation. `CLEARS30` is a gate because it is the operator's own hard constraint.
+
+| Dimension | Wt | V1 — finance spine | V2 — performance creative | Source |
+|---|---|---|---|---|
+| **CLEARS30** | 18 | **5** — 4.25:1, the best modelled | **4** — 3.86-4.56:1 at the $18-21.6k band, **and only under Reading A** | [`scoring/LTGP.md`](scoring/LTGP.md) |
+| **TRUECLAIM** | 16 | **2** — 0.4-1.1x against a bookkeeping firm, the vendor most $3-30M brands actually use | **5** — **4.0-13.2x against the video vendor invoice, the largest true claim in the study** | [`LENSES.md`](LENSES.md) |
+| **FOUNDERFIT** | 14 | **2** — cannot grade a reconciliation. Fixable with one hired CA, but it is a month-one dependency | **5** — hold rate, retention curve and CTR are the numbers he reads for a living. **His own trade** | [`LAUNCH.md`](LAUNCH.md) |
+| **META** | 13 | **5** — 96.0 Meta-sellability, the most legible role in the 179-role study | **4** — "video editor" is clear, but not 96.0 clear | [`MAP.md`](MAP.md) |
+| **COMPOUND** | 13 | **5** — 95.6. Ledger spine, ladder to controller, every ICP runs QuickBooks | **4** — 75.6. The ad account is a real spine and the creative ladder is real, but both are thinner | [`COMPOUND.md`](COMPOUND.md) |
+| **DURABLE** | 9 | **4** — ledger automation is real and slow | **3** — **the weakest number in V2**, and nothing in V2 currently hedges it | [`SKILLS-INDIA.md`](SKILLS-INDIA.md) |
+| **WHITE** | 7 | **2** — Somewhere, Oceans, Entigrity and a dozen more | **4** — nobody sells Indian performance editors to agencies as a direct hire | [`COMPETITOR-DATA.md`](COMPETITOR-DATA.md) |
+| **OPSLOAD** | 5 | **4** — pure handoff | **3** — handoff plus a weekly newsletter and daily X during launch month | [`SCALE.md`](SCALE.md) |
+| **EV** | 5 | **4** — recurring EOR book, 32-36% EBITDA plan | **4** — talent + demand intelligence and a **transferable** media asset, against SCALE.md's finding that founder-brand audiences are not | [`SCALE.md`](SCALE.md) |
+| **TOTAL** | | **74.0** | **83.2** | |
+
+### The verdict
+
+| | Score | |
+|---|---|---|
+| **V2 — performance creative, Reading A** | **83.2** | ✅ **Winner** |
+| V1 — finance spine | 74.0 | Loses by 9.2 |
+| **V2 — Reading B (monthly markup)** | **72.4** | ❌ **Gated out on `CLEARS30`** |
+
+**V2 wins by 9.2 points, which is real but not overwhelming — and the entire margin comes from
+three dimensions:** `TRUECLAIM` (+3), `FOUNDERFIT` (+3) and `WHITE` (+2). Those are the three things
+that decide whether a stranger with no track record can get a first sale at all.
+
+**V1 wins on `COMPOUND`, `DURABLE` and `META` — all by one point each.** Those decide whether the
+business is still good in year three. **So the honest reading is not "V2 is better" but:**
+
+> **V2 is the better way to start. V1 is the better thing to own.** The plan should be V2 now with
+> V1 declared as the month-six second leg — which is gap 12 below, and the single most important
+> structural addition to V2.
+
+**And note the third row.** Read as a monthly markup, V2 scores 72.4 and gates out. **The pricing
+sentence is not a detail — it is the difference between the best model produced so far and one that
+fails the operator's own constraint.**
+
+---
+
+## 9. The gaps, prioritised
+
+| # | Gap | Severity | Why it matters | Fix |
+|---|---|---|---|---|
+| **1** | **The pricing conflation** | fatal if unresolved | §7 reads as both a one-time fee and a monthly markup. **Reading A gives 4.21:1; Reading B gives 0.51:1 and fails the hard constraint.** 8.2x apart on month-one cash | State it: **one-time, 30-35% of first-year compensation**, plus optional recurring EOR |
+| **2** | **No money step before placement** | high | V2 §10 runs ad → LP → qualification → call → matching → placement. **There is no paid gate.** V1's $500 funded the search, filtered tyre-kickers and produced the fill rate the whole model rests on. Removing it means unfunded searches and no commitment signal | Re-insert it as a **paid ad-account and creative teardown** ([`OFFER.md`](OFFER.md) §9.1) — he can perform it himself, and it *is* the work sample |
+| **3** | **No guarantee specified** | high | V1's 12-month unlimited replacement with no cash refunds was modelled as **cheaper than the 6-month industry standard** while sounding stronger. V2 does not mention a guarantee, which is the cheapest differentiation available | Carry it over verbatim |
+| **4** | **EOR demoted to "optional layer"** | high | It is **37-65% of lifetime gross profit**. Attach at 40% instead of 75% takes lifetime from 11.35:1 to 9.50:1. [`SCALE.md`](SCALE.md) §7 concluded: make it the default, not the upsell | Present it as the default employment path, with direct hire as the alternative |
+| **5** | **No retention mechanism** | high | Seat continuity is worth **+$9,022 per client** (9 → 30 EOR months) — the largest lever in the business. V2 does not mention retention, replacement or the bench | The graded directory from placement one ([`HUNGRY.md`](HUNGRY.md) §9): a Slack, a roster, and the score already being produced |
+| **6** | **"Premium" has no rubric** | high | Premium *is* the positioning, and it is currently an adjective. Without a measurable definition the promise is empty and the graded work sample has nothing to grade against | Define it as one test: **recut an existing ad, measure 3-second and 15-second retention against the original.** Publishable, gradeable by him, and it doubles as the sales asset |
+| **7** | **Creators conflict with the fee model** | medium | [`HUNGRY.md`](HUNGRY.md) §7 — creators buy **per video or on a freelance retainer**, so there is no salary for a 30% fee to attach to. `AFFORD`=3 was pointing at exactly this | Launch on **agencies + e-comm only**. Creators are expansion and need a different fee |
+| **8** | **Five ICPs starves Meta of signal** | medium | V2 says do not operationalise all five, which is right, and then lists five. Meta needs concentration to learn, and each ICP × role needs its own ad, LP and intake script | Two ICPs, one role, two ads. Expand after the first ten placements |
+| **9** | **Philippines is the wrong country two** | medium | V2 names it. [`COUNTRIES.md`](COUNTRIES.md) scored it **61.6 with `WHITE`=1** — the most contested pool in the world — and it is Somewhere's **most expensive** region. **South Africa scored 74.5 and wins on retention**, which is the biggest lever | South Africa as country two, for the retention mechanism |
+| **10** | **"Performance video editor" may not be a searched title** | medium | [`TARGETING.md`](TARGETING.md)'s intent seed depends on scraping job postings. If agencies post "video editor" or "creative editor" and never "performance video editor", the audience build misses them | Free, one afternoon: **count postings across all three phrasings** before writing the ad |
+| **11** | **Media has no time budget** | low | A weekly newsletter plus daily X during a one-month launch is a real cost against the only scarce resource — his attention | **X only at launch.** Newsletter at month three, with the first NUMBER drawn from the first ten placements rather than from research |
+| **12** | **AIDUR is unhedged** | low now, high by month twelve | `DURABLE`=3 is V2's weakest score and carries real weight. Generative video is the fastest-moving substitution risk in the study | Declare the **finance spine as the month-six second leg** — it scores 95.6 on compounding and exists precisely to be the durable half |
+
+### The six that change the numbers
+
+**Gaps 1-6 are not polish.** Each one either breaks the model or removes a lever the repo has already
+quantified:
+
+| Gap | What it costs if unfixed |
+|---|---|
+| **1 — pricing** | **8.2x of month-one cash**, and the hard constraint |
+| **2 — no paid gate** | Unfunded searches, no commitment filter, and the fill rate the model rests on |
+| **3 — no guarantee** | The cheapest differentiation available, given away |
+| **4 — EOR optional** | **37-65% of lifetime gross profit** demoted to an upsell |
+| **5 — no retention** | **+$9,022 per client** — the largest single lever in the business |
+| **6 — "premium" undefined** | The whole positioning, and the work sample has no rubric |
+
+**Fix those six and V2 is straightforwardly the strongest version of this business produced so far.**
+Five of the six are carried over from V1 verbatim — **V2's gaps are mostly things it dropped, not
+things it got wrong.**
+
