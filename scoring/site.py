@@ -370,6 +370,58 @@ def main():
       "roughly a year.** You would be buying the one\nthing that does not work at your "
       "volume.\n")
 
+    A("---\n\n## 8. Framer vs Webflow, head to head\n")
+    A("They score 96.4 and 91.2, which is close enough to be worth separating properly. Most "
+      "comparisons\nof these two are written for agencies. This one is written for **a solo "
+      "media buyer with one month**.\n")
+    A("| | Framer | Webflow | Who wins, and by how much |")
+    A("|---|---|---|---|")
+    A("| **Learning curve** | Canvas-based, close to Figma | **Exposes the CSS box model** — a "
+      "class system you have to actually learn | **Framer, decisively.** This is the whole "
+      "difference. Webflow is a professional tool that makes you competent at CSS before it "
+      "makes you productive |")
+    A("| **Time to a live page** | Template → live in an afternoon | Template → live in a day "
+      "or two, then fighting classes | **Framer.** Measured in days of a one-month launch |")
+    A("| **Price** | Pro **$30/mo**, editor seats $20 | Basic **$15/mo**, Premium $25 (annual) "
+      "| **Webflow**, but less than it looks — Webflow bills **site plan *and* workspace plan**, "
+      "so the gap narrows |")
+    A("| **Page allowance for LP variants** | No explicit static-page cap on Pro | **300 static "
+      "pages** on Basic | **Neither.** Both are far beyond a 6-page site plus variants — this "
+      "is not a real constraint at your scale |")
+    A("| **CMS depth** | 10,000 items, hard cap on Pro | 20,000 items on Premium | **Webflow**, "
+      "and irrelevant until the graded directory exists |")
+    A("| **Freelancer pool** | Smaller, growing | **Much larger and cheaper** | **Webflow.** "
+      "And note the irony — *you are building a company that places Indian talent*, so hiring "
+      "a Webflow freelancer is trivially easy for you specifically |")
+    A("| **Export / lock-in** | No code export | Can export static HTML/CSS | **Webflow.** "
+      "Framer is the more locked-in of the two |")
+    A("| **Extensibility in year two** | Fine | **Better** | **Webflow** |")
+    A("| **Page speed** | Static, CDN | Static, CDN | **Tie** |")
+    A("| **Can it break on you** | No | No | **Tie** — which is the point of §7 |")
+    A("")
+    A("### The trade, stated plainly\n")
+    A("> **Framer buys you launch speed. Webflow buys you optionality later.**\n")
+    A("And that is the whole decision, because **the optionality Webflow buys is optionality on "
+      "a business\nthat does not exist yet.** Framer's advantage lands in week one. Webflow's "
+      "lands in year two — by\nwhich point you have revenue and can pay someone to rebuild it "
+      "in anything you like. **Buy the thing\nthat helps now; the later problem is a better "
+      "problem to have and it is solved with money you will\nhave by then.**\n")
+    A("### When I would tell you to pick Webflow instead\n")
+    A("| | |\n|---|---|")
+    A("| **You already know it** | Then the learning curve — the only real Framer advantage — "
+      "is zero, and every Webflow advantage stands. Pick Webflow |")
+    A("| **You intend to hand the site to a freelancer immediately** | Then you are not paying "
+      "the learning cost either way, and the bigger pool plus code export wins |")
+    A("| **You expect the graded directory to become a large CMS-driven site inside 12 months** "
+      "| Webflow's CMS ceiling is double, and its collection tooling is stronger |")
+    A("")
+    A("**None of those is true today**, on what you have told me: you want to edit it yourself, "
+      "constantly,\nstarting now. That is the Framer case.\n")
+    A("*One caveat I would hold lightly: the handoff worry is overstated in both directions. "
+      "**The edits\nthat matter for landing-page testing are copy edits**, and those are "
+      "trivial in either tool — a\nfreelancer picks up Framer in a day. The freelancer-pool "
+      "gap only bites on deep structural work,\nwhich is a year-two problem.*\n")
+
     A("---\n\n## 6. \"Why not just build it with Claude Code and deploy it cheap?\"\n")
     A("A fair challenge, and it **corrects a score in §2**. The first version of this file gave "
       "the code\noption `EDIT`=1 and `NOCODE`=1 — both of which assumed *the operator* hand-"

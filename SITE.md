@@ -164,6 +164,52 @@ thing that does not work at your volume.
 
 ---
 
+## 8. Framer vs Webflow, head to head
+
+They score 96.4 and 91.2, which is close enough to be worth separating properly. Most comparisons
+of these two are written for agencies. This one is written for **a solo media buyer with one month**.
+
+| | Framer | Webflow | Who wins, and by how much |
+|---|---|---|---|
+| **Learning curve** | Canvas-based, close to Figma | **Exposes the CSS box model** — a class system you have to actually learn | **Framer, decisively.** This is the whole difference. Webflow is a professional tool that makes you competent at CSS before it makes you productive |
+| **Time to a live page** | Template → live in an afternoon | Template → live in a day or two, then fighting classes | **Framer.** Measured in days of a one-month launch |
+| **Price** | Pro **$30/mo**, editor seats $20 | Basic **$15/mo**, Premium $25 (annual) | **Webflow**, but less than it looks — Webflow bills **site plan *and* workspace plan**, so the gap narrows |
+| **Page allowance for LP variants** | No explicit static-page cap on Pro | **300 static pages** on Basic | **Neither.** Both are far beyond a 6-page site plus variants — this is not a real constraint at your scale |
+| **CMS depth** | 10,000 items, hard cap on Pro | 20,000 items on Premium | **Webflow**, and irrelevant until the graded directory exists |
+| **Freelancer pool** | Smaller, growing | **Much larger and cheaper** | **Webflow.** And note the irony — *you are building a company that places Indian talent*, so hiring a Webflow freelancer is trivially easy for you specifically |
+| **Export / lock-in** | No code export | Can export static HTML/CSS | **Webflow.** Framer is the more locked-in of the two |
+| **Extensibility in year two** | Fine | **Better** | **Webflow** |
+| **Page speed** | Static, CDN | Static, CDN | **Tie** |
+| **Can it break on you** | No | No | **Tie** — which is the point of §7 |
+
+### The trade, stated plainly
+
+> **Framer buys you launch speed. Webflow buys you optionality later.**
+
+And that is the whole decision, because **the optionality Webflow buys is optionality on a business
+that does not exist yet.** Framer's advantage lands in week one. Webflow's lands in year two — by
+which point you have revenue and can pay someone to rebuild it in anything you like. **Buy the thing
+that helps now; the later problem is a better problem to have and it is solved with money you will
+have by then.**
+
+### When I would tell you to pick Webflow instead
+
+| | |
+|---|---|
+| **You already know it** | Then the learning curve — the only real Framer advantage — is zero, and every Webflow advantage stands. Pick Webflow |
+| **You intend to hand the site to a freelancer immediately** | Then you are not paying the learning cost either way, and the bigger pool plus code export wins |
+| **You expect the graded directory to become a large CMS-driven site inside 12 months** | Webflow's CMS ceiling is double, and its collection tooling is stronger |
+
+**None of those is true today**, on what you have told me: you want to edit it yourself, constantly,
+starting now. That is the Framer case.
+
+*One caveat I would hold lightly: the handoff worry is overstated in both directions. **The edits
+that matter for landing-page testing are copy edits**, and those are trivial in either tool — a
+freelancer picks up Framer in a day. The freelancer-pool gap only bites on deep structural work,
+which is a year-two problem.*
+
+---
+
 ## 6. "Why not just build it with Claude Code and deploy it cheap?"
 
 A fair challenge, and it **corrects a score in §2**. The first version of this file gave the code
