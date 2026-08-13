@@ -422,3 +422,56 @@ calibrated DNS proxy from [`CO.md`](CO.md) §1.
 > **The answer is `allhandstalent.com`.** It is the only candidate that is simultaneously an idiom
 > (not forced), maximally expansion-safe (`Talent` locks nothing), clean when spelled aloud, and
 > free across `.com`, `.co` and `.net`. `handpicked.team` is the better *name* and the worse *asset*.
+
+---
+
+## 10. One name, one TLD — so is there a better `.co`?
+
+> **"1 good name on 1 tld is good enough… even if we can find something .co that's good"**
+
+Dropping the defensive-set requirement is the right call, and it changes what to look for. Two
+sweeps, run fast:
+
+**Bare single words on `.co`.** 2,600 candidates — every 4-to-7-letter word in the common 20,000,
+minus suffixed forms and function words, ranked by flow. **132 free, 5%.** And the survivors are
+unusable: the list is web-corpus derived, so what is left is slurs, pharma spam, place names, and
+`murder`, `torture`, `cancer`, `cruelty`, `junior`. The only three a business could use are
+`refrain`, `radar` and `advance`, and all three are worse than what is already on the table.
+**There is no good bare single word left on `.co`.**
+
+**Compounds on `.co`.** 180 combinations of 30 clean first words × 6 head nouns: **175 free — 97%.**
+
+> **So `.co` was never the constraint.** It is wide open. The constraint is that **every word that
+> sounds good already has a recruiting firm on it**, and a firm's existence does not care which TLD
+> you buy.
+
+Which the checks confirm one more time. Each of these is free on `.co` and dead anyway:
+
+| `.co` candidate | Free on `.co` | Killed by |
+|---|---|---|
+| `willowtalent.co` | yes | **Willow Staffing Agency LLC**, **Willow Tree Recruiting**, White Willow Staffing. And `willowtalent.com` is live |
+| `aspentalent.co` | yes | **Aspen Careers** — legal staffing, 20+ years, four US offices |
+| `quorumtalent.co` | yes | **Quorum Recruiting** — Denver, financial-systems talent, 8,000-strong network |
+| `mainstaytalent.co` | yes | **Mainstays is Walmart's house brand** for bedding and home decor. Best *meaning* in the whole study — *"the person you rely on most"* — and it reads budget to every US buyer |
+| `raventalent.co` | yes | `raventalent.com` is a live site |
+| `larktalent.co` | yes | Lark Health |
+| `harbortalent.co` | yes | crowded in healthcare and finance, plus the harbor/harbour spelling split |
+
+**The two that survive on `.co`:** `braidtalent.co` (uncrowded, `braidtalent.com` is dark, but *braid*
+means nothing for talent) and `besthands.co` (`besthands.com` is dark, but it reads as derivative of
+Allstate's *"you're in good hands"*).
+
+### And the check `allhandstalent.com` still needed
+
+**There is no recruiting or staffing firm called All Hands.** Searched directly — the nearest
+neighbours are AllStaff, AllSource Talent and The All Star Agency, none of which is the same name.
+That is the one test it had not been put through, and it is the test that killed Heron, Alder,
+Kestrel, Lantern, Trellis, Bison, Hawthorn, Willow, Aspen and Quorum.
+
+> **`allhandstalent.com`.** It is the only candidate that is an idiom rather than a spec, carries
+> **no recruiting firm on the word**, uses the most expansion-safe head noun in the category, spells
+> cleanly when read aloud, and sits on `.com`. Nine rounds and roughly 6,000 domain checks did not
+> produce anything better, and the `.co` sweep above shows the shortfall was never availability.
+>
+> Its two real costs, stated plainly: *"all hands on deck"* leans **emergency and quantity** against
+> a premium selective positioning, and at 18 characters it is not short.
