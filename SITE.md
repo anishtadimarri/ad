@@ -54,14 +54,17 @@ Put the testing effort there — which is also the thing the operator is already
 | Platform | EDIT | NOCODE | SPEED | STACK | CREDIBLE | COST | PORTABLE | Score | Price |
 |---|---|---|---|---|---|---|---|---|---|
 | **Framer** ✅ | 5 | 5 | 5 | 4 | 5 | 4 | 3 | **93.4** | **Pro $30/mo** (CMS + forms). A/B add-on *Convert* is available on Pro, billed **$50 per 500K events**. Editor seats $20/mo |
+| **Static site + Claude Code + Cloudflare Pages** | 4 | 4 | 5 | 5 | 4 | 5 | 5 | **88.8** | **$0 hosting** — Cloudflare Pages' free tier **explicitly permits commercial use**, unlimited bandwidth, unlimited static requests, 500 builds/month |
 | **Webflow** | 4 | 5 | 5 | 4 | 5 | 3 | 4 | **87.8** | **Basic $15/mo, Premium $25/mo** (annual). **Optimize — the A/B product — is $299/mo** |
 | **Carrd** | 5 | 5 | 5 | 2 | 2 | 5 | 2 | **80.2** | **$19/year** |
 | **Squarespace / Wix** | 5 | 5 | 3 | 3 | 3 | 4 | 2 | **78.0** | ~$16–29/mo |
 | **GoHighLevel** | 4 | 5 | 3 | 5 | 2 | 2 | 1 | **73.0** | **~$97/mo** |
 | **WordPress + Elementor** | 4 | 2 | 2 | 5 | 3 | 4 | 5 | **68.2** | ~$10–30/mo hosting + plugin licences |
-| **Next.js or Astro on Vercel** | 1 | 1 | 5 | 5 | 5 | 5 | 5 | **64.8** | $0–20/mo |
+| **Next.js or Astro on Vercel** | 1 | 1 | 5 | 5 | 5 | 5 | 5 | **64.8** | **$20/mo — Vercel's Hobby plan prohibits commercial use**, so Pro is required |
 
 **Framer — 93.4** · **Easiest of the serious options for a non-developer** — consistently rated easier to learn than Webflow, especially coming from Figma. Static output, so pages are fast. `STACK`=4 only because CAPI needs a third-party relay rather than being native
+
+**Static site + Claude Code + Cloudflare Pages — 88.8** · **Added after the first version of this file scored the code option `EDIT`=1 — which assumed the operator hand-editing code.** With an agent doing the editing that is wrong. Put **all copy in one content file** and a headline change is one line in GitHub's web UI, no code and no agent, auto-deploying in about a minute. A new LP variant is a copied block, and variants are **free and unlimited** rather than metered. `NOCODE`=4 and `CREDIBLE`=4 are the honest deductions — see §6
 
 **Webflow — 87.8** · More powerful and more portable, and **not fast to learn**. The $299 Optimize tier is irrelevant at launch volume (§1), so ignore it — but so is most of what makes Webflow worth the learning curve, at this stage
 
@@ -73,10 +76,81 @@ Put the testing effort there — which is also the thing the operator is already
 
 **WordPress + Elementor — 68.2** · Infinitely extensible and **the maintenance is the product**: updates, plugin conflicts, security, and page speed you have to fight for. Exactly the burden the brief rules out
 
-**Next.js or Astro on Vercel — 64.8** · Fastest and most controllable, and **every headline change is a code edit and a deploy**. Correct answer for a team with an engineer. Wrong answer for a solo operator whose scarcest input is attention
+**Next.js or Astro on Vercel — 64.8** · The hand-coded version of the row above, without an agent: **every headline change is a code edit and a deploy you perform yourself.** Right for a team with an engineer, wrong for a solo operator whose scarcest input is attention. Note the licence point — Hobby is not an option for a business
 
-> **Framer wins by 5.6 points over Webflow**, almost entirely on `EDIT`. Given §1, that is
+> **Framer wins by 4.6 points over Static site + Claude Code + Cloudflare Pages**, almost entirely on `EDIT`. Given §1, that is
 > the right thing to optimise: the loop is *change it and look*, run dozens of times, alone.
+
+---
+
+## 6. "Why not just build it with Claude Code and deploy it cheap?"
+
+A fair challenge, and it **corrects a score in §2**. The first version of this file gave the code
+option `EDIT`=1 and `NOCODE`=1 — both of which assumed *the operator* hand-editing code. With an
+agent doing the editing, that assumption is wrong, and the option moves from last place to second.
+
+| | Framer | Static + Claude Code + Cloudflare |
+|---|---|---|
+| **EDIT** | 5 | 4 |
+| **NOCODE** | 5 | 4 |
+| **SPEED** | 5 | 5 |
+| **STACK** | 4 | 5 |
+| **CREDIBLE** | 5 | 4 |
+| **COST** | 4 | 5 |
+| **PORTABLE** | 3 | 5 |
+| **Score** | **93.4** | **88.8** |
+| **Cost** | $30/mo + $20/seat | **$0/mo** |
+
+### What the code path genuinely wins
+
+| | |
+|---|---|
+| **Hosting is actually free** | **Cloudflare Pages' free tier explicitly allows commercial use**, with unlimited bandwidth and unlimited static requests. **Vercel's Hobby plan does not** — it restricts to non-commercial personal use, so Vercel means $20/mo Pro. If you were reaching for Vercel, reach for Cloudflare instead |
+| **Landing-page variants are free and unlimited** | This is the one that matters given the brief. A variant is a copied block in a content file — no page-count tier, no per-seat fee, no per-event billing. On a hosted builder every variant is inventory you are renting |
+| **Fastest possible pages** | Static HTML on an edge network. §2 weights `SPEED` at 16 because the funnel carries an 85% LP-view rate |
+| **You own it** | Files in the git repo you already have. No export, no lock-in, no platform pricing change to absorb |
+| **Free split-testing later** | A Cloudflare Worker can split traffic on a cookie for $0 when volume ever justifies it — versus $299/mo. §1 says that is month twelve, but it costs nothing to have the option |
+
+### What it genuinely costs
+
+| | |
+|---|---|
+| **It can break in a way Framer cannot** | A bad commit at 11pm before a campaign, and the site is down. **This is the real risk and it is the only one I would weigh heavily.** Mitigated by: every change is a git commit, so rollback is one click in GitHub; and Cloudflare keeps the last good deployment live if a build fails |
+| **No visual editing** | You describe a layout change instead of dragging it. For *copy* that is fine — arguably faster. For **layout** Framer is better, and you have a media buyer's eye, which is worth something |
+| **Design quality is not guaranteed by a template** | Framer hands you a credible premium look on day one. A code site looks as good as what gets built — `CREDIBLE`=4 rather than 5. Given you have **no Western track record**, the site carries more trust load than usual |
+| **Structural changes need a session** | Copy edits do not. Anything else does |
+
+### The architecture that makes `EDIT`=4 true rather than aspirational
+
+The whole argument rests on one decision: **all copy lives in a single content file, separate from
+markup.**
+
+```
+  content/site.json     <- every headline, subhead, bullet, CTA, price. YOU edit this
+  content/lp/*.json     <- one file per landing-page variant. Copy a file = new variant
+  src/                  <- layout and components. I edit this, rarely
+```
+
+So changing a headline is: open the file on github.com, click the pencil, type, commit. **No
+terminal, no build knowledge, no agent, no local machine — it works from a phone**, and Cloudflare
+rebuilds in about a minute. A new landing page for a new angle is one copied file. That is the loop
+§1 says you actually need, and it is the loop the brief asked for.
+
+### Verdict
+
+**Framer still scores higher — 93.4 to 88.8 — and the gap is almost entirely `EDIT` and `CREDIBLE`,
+which are both about *layout* rather than copy.** So the honest answer is that this is close, and
+it turns on one question:
+
+> **When something breaks the night before a campaign, can you fix it alone?** On Framer, yes — it
+> cannot break that way. On code, you roll back a commit, which is one click, but you have to know
+> that is the move.
+
+**What I would actually do: build it in code, on Cloudflare Pages, with the content file.** Three
+reasons. It costs **$0/month against ~$50**, which at pre-revenue is real. LP variants are unlimited
+and free, which is the stated requirement. And **porting later is cheap in one direction only** — a
+content file drops into Framer in an afternoon, whereas starting in Framer and moving to code means
+rebuilding. Start where the exit is cheap.
 
 ---
 

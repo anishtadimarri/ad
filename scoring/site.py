@@ -97,12 +97,23 @@ PLATFORM = [
      "Native to the media-buying world and **collapses pages + CRM + booking + payments "
      "into one bill**. But funnel-builder output looks like funnel-builder output, which "
      "fights a premium claim, and it is the most locked-in option here"),
+    ("Static site + Claude Code + Cloudflare Pages",
+     dict(EDIT=4, NOCODE=4, SPEED=5, STACK=5, CREDIBLE=4, COST=5, PORTABLE=5),
+     "**$0 hosting** — Cloudflare Pages' free tier **explicitly permits commercial use**, "
+     "unlimited bandwidth, unlimited static requests, 500 builds/month",
+     "**Added after the first version of this file scored the code option `EDIT`=1 — which "
+     "assumed the operator hand-editing code.** With an agent doing the editing that is "
+     "wrong. Put **all copy in one content file** and a headline change is one line in "
+     "GitHub's web UI, no code and no agent, auto-deploying in about a minute. A new LP "
+     "variant is a copied block, and variants are **free and unlimited** rather than "
+     "metered. `NOCODE`=4 and `CREDIBLE`=4 are the honest deductions — see §6"),
     ("Next.js or Astro on Vercel",
      dict(EDIT=1, NOCODE=1, SPEED=5, STACK=5, CREDIBLE=5, COST=5, PORTABLE=5),
-     "$0–20/mo",
-     "Fastest and most controllable, and **every headline change is a code edit and a "
-     "deploy**. Correct answer for a team with an engineer. Wrong answer for a solo "
-     "operator whose scarcest input is attention"),
+     "**$20/mo — Vercel's Hobby plan prohibits commercial use**, so Pro is required",
+     "The hand-coded version of the row above, without an agent: **every headline change "
+     "is a code edit and a deploy you perform yourself.** Right for a team with an "
+     "engineer, wrong for a solo operator whose scarcest input is attention. Note the "
+     "licence point — Hobby is not an option for a business"),
     ("Squarespace / Wix",
      dict(EDIT=5, NOCODE=5, SPEED=3, STACK=3, CREDIBLE=3, COST=4, PORTABLE=2),
      "~$16–29/mo",
@@ -231,6 +242,79 @@ def main():
     A(f"> **{a[0]} wins by {sc(a[1])-sc(b[1]):.1f} points over {b[0]}**, almost entirely on "
       f"`EDIT`. Given §1, that is\n> the right thing to optimise: the loop is *change it and "
       f"look*, run dozens of times, alone.\n")
+
+    fr = [p for p in PLATFORM if p[0] == "Framer"][0]
+    cc = [p for p in PLATFORM if p[0].startswith("Static site")][0]
+    A("---\n\n## 6. \"Why not just build it with Claude Code and deploy it cheap?\"\n")
+    A("A fair challenge, and it **corrects a score in §2**. The first version of this file gave "
+      "the code\noption `EDIT`=1 and `NOCODE`=1 — both of which assumed *the operator* hand-"
+      "editing code. With an\nagent doing the editing, that assumption is wrong, and the option "
+      "moves from last place to second.\n")
+    A(f"| | Framer | Static + Claude Code + Cloudflare |\n|---|---|---|")
+    for k, _, _ in DIM:
+        A(f"| **{k}** | {fr[1][k]} | {cc[1][k]} |")
+    A(f"| **Score** | **{sc(fr[1]):.1f}** | **{sc(cc[1]):.1f}** |")
+    A(f"| **Cost** | $30/mo + $20/seat | **$0/mo** |")
+    A("")
+    A("### What the code path genuinely wins\n")
+    A("| | |\n|---|---|")
+    A("| **Hosting is actually free** | **Cloudflare Pages' free tier explicitly allows "
+      "commercial use**, with unlimited bandwidth and unlimited static requests. **Vercel's "
+      "Hobby plan does not** — it restricts to non-commercial personal use, so Vercel means "
+      "$20/mo Pro. If you were reaching for Vercel, reach for Cloudflare instead |")
+    A("| **Landing-page variants are free and unlimited** | This is the one that matters given "
+      "the brief. A variant is a copied block in a content file — no page-count tier, no "
+      "per-seat fee, no per-event billing. On a hosted builder every variant is inventory you "
+      "are renting |")
+    A("| **Fastest possible pages** | Static HTML on an edge network. §2 weights `SPEED` at 16 "
+      "because the funnel carries an 85% LP-view rate |")
+    A("| **You own it** | Files in the git repo you already have. No export, no lock-in, no "
+      "platform pricing change to absorb |")
+    A("| **Free split-testing later** | A Cloudflare Worker can split traffic on a cookie for "
+      "$0 when volume ever justifies it — versus $299/mo. §1 says that is month twelve, but it "
+      "costs nothing to have the option |")
+    A("")
+    A("### What it genuinely costs\n")
+    A("| | |\n|---|---|")
+    A("| **It can break in a way Framer cannot** | A bad commit at 11pm before a campaign, and "
+      "the site is down. **This is the real risk and it is the only one I would weigh heavily.** "
+      "Mitigated by: every change is a git commit, so rollback is one click in GitHub; and "
+      "Cloudflare keeps the last good deployment live if a build fails |")
+    A("| **No visual editing** | You describe a layout change instead of dragging it. For *copy* "
+      "that is fine — arguably faster. For **layout** Framer is better, and you have a media "
+      "buyer's eye, which is worth something |")
+    A("| **Design quality is not guaranteed by a template** | Framer hands you a credible "
+      "premium look on day one. A code site looks as good as what gets built — `CREDIBLE`=4 "
+      "rather than 5. Given you have **no Western track record**, the site carries more trust "
+      "load than usual |")
+    A("| **Structural changes need a session** | Copy edits do not. Anything else does |")
+    A("")
+    A("### The architecture that makes `EDIT`=4 true rather than aspirational\n")
+    A("The whole argument rests on one decision: **all copy lives in a single content file, "
+      "separate from\nmarkup.**\n")
+    A("```\n"
+      "  content/site.json     <- every headline, subhead, bullet, CTA, price. YOU edit this\n"
+      "  content/lp/*.json     <- one file per landing-page variant. Copy a file = new variant\n"
+      "  src/                  <- layout and components. I edit this, rarely\n"
+      "```\n")
+    A("So changing a headline is: open the file on github.com, click the pencil, type, commit. "
+      "**No\nterminal, no build knowledge, no agent, no local machine — it works from a "
+      "phone**, and Cloudflare\nrebuilds in about a minute. A new landing page for a new angle "
+      "is one copied file. That is the loop\n§1 says you actually need, and it is the loop the "
+      "brief asked for.\n")
+    A("### Verdict\n")
+    A(f"**Framer still scores higher — {sc(fr[1]):.1f} to {sc(cc[1]):.1f} — and the gap is "
+      f"almost entirely `EDIT` and `CREDIBLE`,\nwhich are both about *layout* rather than "
+      f"copy.** So the honest answer is that this is close, and\nit turns on one question:\n")
+    A("> **When something breaks the night before a campaign, can you fix it alone?** On Framer, "
+      "yes — it\n> cannot break that way. On code, you roll back a commit, which is one click, "
+      "but you have to know\n> that is the move.\n")
+    A("**What I would actually do: build it in code, on Cloudflare Pages, with the content file.** "
+      "Three\nreasons. It costs **$0/month against ~$50**, which at pre-revenue is real. LP "
+      "variants are unlimited\nand free, which is the stated requirement. And **porting later "
+      "is cheap in one direction only** — a\ncontent file drops into Framer in an afternoon, "
+      "whereas starting in Framer and moving to code means\nrebuilding. Start where the exit is "
+      "cheap.\n")
 
     A("---\n\n## 3. The structure\n")
     A("One domain. Paths, not subdomains. Homepage entirely demand.\n")
