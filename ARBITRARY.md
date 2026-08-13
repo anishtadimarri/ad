@@ -523,3 +523,53 @@ rather than buried.
 | `allhandscrew.com` | contains **screw** |
 | `allhandshires.com` | contains **shire** |
 | `lindentalent.com` | contains **dental** |
+
+---
+
+## 12. `allhandstalent.com` bought — what to reserve now
+
+### First: confirm the registration actually landed
+
+At the time of writing, **Verisign RDAP still returns 404 and DNS returns NXDOMAIN** for
+`allhandstalent.com`. `.com` registry propagation is normally seconds, so this is probably a
+registrar-side queue or a pending payment check — but until the registry shows it, the name is not
+yours and is still visible as available to anyone else running the check I have been running all
+session. **Log into the registrar and confirm before doing anything below.**
+
+### Tier 1 — squattable, and it blocks the business (today)
+
+| What | Status | Why it cannot wait |
+|---|---|---|
+| **Facebook Page + username `/allhandstalent`** | **could not verify** — Facebook returns HTTP 400 to non-browser requests | **You cannot run a Meta ad without a Page.** The Page *is* the advertiser identity on every impression. Lose the username and you are `/allhandstalent.official` forever, which reads cheap in the exact ad a $6k–$20k buyer is judging. Check in the app now |
+| **Instagram `@allhandstalent`** | **could not verify** — HTTP 429, rate-limited | IG placements carry a large share of Meta delivery, and the handle is on every one. Same reasoning, same urgency |
+| **LinkedIn company page `/company/allhandstalent`** | **free** (404) | The single biggest trust asset for a Western buyer checking whether an unknown Indian operator is real — and where placement proof accumulates. Free |
+
+### Tier 2 — cheap, with real downside if lost (this week)
+
+| What | Status | Why |
+|---|---|---|
+| **`allhandstalent.co`** and **`.net`** | both **free** | Not brand vanity. A squatter or competitor on `.co` can run a **lookalike** — and a credibility attack is the one thing an operator with no Western track record cannot absorb. ~$40/yr for both |
+| **YouTube `@allhandstalent`** | **free** (404) | Matters more here than for most businesses: the work sample in [`MODEL-V2.md`](MODEL-V2.md) gap 6 is *a recut ad with 3-second and 15-second retention measured against the original*. That is video. This is where the graded proof lives |
+| **X `@allhandstalent`** | **free** (404) | 14 characters, inside the 15-character limit. And X is the launch-month media motion |
+| **Google Workspace on the domain** | — | `name@allhandstalent.com` before the first ad runs. A gmail.com reply-to on a $6k–$20k offer is a conversion leak you never see |
+| **`allhandtalent.com`** — singular *hand* | **free** | The one typo worth $12. Every other misspelling tested (`alhandstalent`, `allhandsstalent`, `allhandstalant`) is implausible |
+
+### Skip
+
+`.team`, `.works`, `.agency`, `.group`, `.company`, `.careers`, `.partners`, `.house`, `.studio` are
+**all free for `allhandstalent`** — and all worthless. Nobody types them. Nine TLDs is ~$150/yr of
+theatre. `.org` is free too; buy it only if a hostile complaints site is a fear you actually hold.
+You said one good name on one TLD was enough and that was the right call — Tier 2 is about
+*impersonation*, not coverage.
+
+`allhandstalents.com`, `allhandtalents.com` and the rest: skip.
+
+### Not a reservation, but the largest remaining exposure
+
+**USPTO Class 35 clearance search, then an intent-to-use filing.** This has been outstanding for
+three rounds. *All Hands* is close to generic, which is exactly why someone else can register it for
+staffing services — and this study turned up **twelve live collisions** on other candidates by web
+search alone. Search first, file second. Budget roughly $250–350 per class plus the search.
+
+**One thing my check cannot tell you:** I verified there is no recruiting firm *called* All Hands,
+but a registered mark can exist without a website that ranks. That gap is what the paid search closes.
