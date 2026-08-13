@@ -573,3 +573,69 @@ search alone. Search first, file second. Budget roughly $250–350 per class plu
 
 **One thing my check cannot tell you:** I verified there is no recruiting firm *called* All Hands,
 but a registered mark can exist without a website that ranks. That gap is what the paid search closes.
+
+---
+
+## 13. Correction: my search method was the weak link, not the names
+
+Asked whether people would have to type the domain, I searched the brand name plainly —
+`all hands talent` — instead of my usual OR-joined query. That surfaced, immediately:
+
+| What | Where | What it is |
+|---|---|---|
+| **All Hands** | [`all-hands.us`](https://www.all-hands.us/) | **A talent platform.** A curated candidate bank connecting talent with hiring partners, with a job board at `jobs.all-hands.us` and a *Companies* page for employers |
+| **All Hands Technologies** | [`allhands-tech.com`](https://www.allhands-tech.com/) | **Recruitment services** — "finding perfect candidates who suit the company's work culture" |
+| **All Hands & Hearts** | `allhandsandhearts.org` | A well-known disaster-relief nonprofit with real link equity for the phrase |
+
+**So §10's claim — "there is no recruiting or staffing firm called All Hands" — was wrong.** The
+query I used there was `"All Hands" recruiting staffing talent agency company OR "Mainstay" brand
+company known for`, and OR-joined multi-term queries systematically under-surface the second and
+third terms. It returned AllStaff, AllSource and All Star and missed two direct hits.
+
+Re-testing the top alternative the same plain way, `linden talent hiring company`, produced
+**[Linden Recruitment](https://uk.linkedin.com/company/lindenrecuitment)** (UK, IT and tech) and
+**[Linden Staub Talent Agency](https://www.linkedin.com/company/lindenstaub)**. So §11's claim that
+Linden was *"the only nature word of eleven with no recruiting firm on it"* was also wrong, and for
+the same reason.
+
+> **Every `no firm found` verdict in rounds six through eleven is unreliable** — Linden, Keel, Wren,
+> Laurel, Mainstay and All Hands all received it from that query style, and two of the three I have
+> now re-tested properly turned out to have live firms.
+
+### Which makes the register finding stronger, not weaker
+
+It was never about nature words. **There are tens of thousands of staffing agencies in the US
+alone**, so a name collision in this industry is the *base rate*, not the exception. "Nobody else
+uses this word" is not an achievable standard, and I spent three rounds implicitly treating it as
+one. The achievable tests are narrower:
+
+| Test | `allhandstalent.com` |
+|---|---|
+| **Does anyone hold the exact phrase?** | **No.** `all-hands.us` is *All Hands*; `allhands-tech.com` is *All Hands Technologies*; the nonprofit is *All Hands & Hearts*. **You own the `.com` of the exact phrase** |
+| **Is there a registered mark in Class 35?** | **Unknown — and now urgent.** Two live users of *All Hands* in talent services materially raises the odds of an existing mark or an opposition |
+| **Is there a domain conflict?** | **No** |
+
+Against those three, **`allhandstalent.com` holds up, and switching is not clearly better** — the
+alternatives are contaminated by the same base rate, and Linden fails the exact-phrase test *worse*,
+because Linden Recruitment uses the bare word.
+
+### The real cost of the name is the search result, not the character count
+
+Yes, people will type it — at recall and referral, which is exactly the cost priced in
+[`CO.md`](CO.md) §2 and which I should not have waved away with *"nobody types it"*. But the cost
+lands as **SEO, not length**: typing *all hands talent* today returns three other organisations and
+not you.
+
+| Fix | Cost | Why it works |
+|---|---|---|
+| **Bid your own brand name on Google Search** — exact match `all hands talent` | a few dollars a month | Nobody else bids on it, so you are the top result for anyone who half-remembers you. This is the standard fix and it is near-free |
+| **LinkedIn company page** | free | Exact-match brand queries rank a LinkedIn page fast, and it is already Tier 1 in §12 |
+| **One consistent string everywhere** — `AllHandsTalent` camel-cased in writing, *All Hands Talent* spoken | free | The phrase accumulates as a single entity instead of three common words |
+
+And the containment argument still holds: **acquisition is 100% paid Meta**, so the search problem
+touches only recall and referral — the smaller half of the cost, as §2 of `CO.md` measured.
+
+**On the original question:** 18 characters is not the problem. `velocityglobal.com` is 18;
+`manpowergroup.com`, `kellyservices.com` and `insightglobal.com` are 17; the median of sixteen live
+staffing and EOR domains is 14 and the max is 26. The handle at 14 clears every platform cap
+including X's 15. **The name's weakness is that its words are common, not that its string is long.**
