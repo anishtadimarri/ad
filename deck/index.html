@@ -1,0 +1,807 @@
+<title>Performance Talent Thesis</title>
+<style>
+  :root{
+    --paper:#F5F7F8; --card:#FFFFFF; --paper2:#E9EEF0; --sunk:#F0F3F5;
+    --ink:#0F151C; --ink2:#48545F; --ink3:#77848D;
+    --rule:#D3DADE; --rule2:#E4E9EC;
+    --accent:#0C5B62; --accent-soft:#E2EEEF;
+    --pos:#1A6B4C; --pos-soft:#E1F0E9;
+    --neg:#93292B; --neg-soft:#F6E5E5;
+    --warn:#7F5C11; --warn-soft:#F5EDDC;
+    --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#0B1015; --card:#131A21; --paper2:#1A232B; --sunk:#101720;
+      --ink:#E7ECF0; --ink2:#A7B4BD; --ink3:#7C8B95;
+      --rule:#26313A; --rule2:#1E272F;
+      --accent:#4FB2BA; --accent-soft:#123037;
+      --pos:#5BBF92; --pos-soft:#12291F;
+      --neg:#DE8A88; --neg-soft:#2B1616;
+      --warn:#D6AC58; --warn-soft:#2A2211;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0B1015; --card:#131A21; --paper2:#1A232B; --sunk:#101720;
+    --ink:#E7ECF0; --ink2:#A7B4BD; --ink3:#7C8B95;
+    --rule:#26313A; --rule2:#1E272F;
+    --accent:#4FB2BA; --accent-soft:#123037;
+    --pos:#5BBF92; --pos-soft:#12291F;
+    --neg:#DE8A88; --neg-soft:#2B1616;
+    --warn:#D6AC58; --warn-soft:#2A2211;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:16px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px}
+
+  /* ---------- plates ---------- */
+  .plate{border-top:1px solid var(--rule); padding:64px 0 68px}
+  .plate:first-of-type{border-top:none}
+  .eyebrow{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:20px;
+    font-size:11.5px; font-weight:650; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--accent);
+  }
+  .eyebrow .n{
+    font-family:var(--mono); font-size:11px; letter-spacing:.05em;
+    color:var(--ink3); font-weight:500;
+    border:1px solid var(--rule); border-radius:3px; padding:1px 6px;
+  }
+  h1{
+    font-size:clamp(34px,5.2vw,58px); line-height:1.04; letter-spacing:-.028em;
+    font-weight:760; margin:0 0 20px; text-wrap:balance;
+  }
+  h2{
+    font-size:clamp(24px,3vw,33px); line-height:1.14; letter-spacing:-.02em;
+    font-weight:700; margin:0 0 8px; text-wrap:balance;
+  }
+  h3{
+    font-size:14px; font-weight:680; letter-spacing:.02em; margin:0 0 10px;
+    color:var(--ink);
+  }
+  .sub{color:var(--ink2); font-size:17px; max-width:66ch; margin:0 0 26px}
+  p{margin:0 0 14px; color:var(--ink2); max-width:68ch}
+  strong{color:var(--ink); font-weight:660}
+  .thesis{
+    font-family:var(--serif); font-size:clamp(19px,2.3vw,25px); line-height:1.42;
+    color:var(--ink); max-width:52ch; margin:0;
+    border-left:2px solid var(--accent); padding-left:20px;
+  }
+  .stack{display:flex; flex-direction:column; gap:26px}
+  .cols{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .cols3{display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+
+  /* ---------- figures ---------- */
+  .figs{display:grid; gap:1px; background:var(--rule2); border:1px solid var(--rule2);
+        border-radius:5px; overflow:hidden; grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  .fig{background:var(--card); padding:18px 18px 16px}
+  .fig .v{
+    font-family:var(--mono); font-variant-numeric:tabular-nums;
+    font-size:clamp(23px,3.1vw,31px); font-weight:600; letter-spacing:-.02em;
+    color:var(--ink); line-height:1.1;
+  }
+  .fig .v.acc{color:var(--accent)}
+  .fig .k{font-size:11.5px; letter-spacing:.08em; text-transform:uppercase;
+          color:var(--ink3); font-weight:620; margin-top:7px}
+  .fig .note{font-size:12.5px; color:var(--ink3); margin-top:5px; line-height:1.4}
+
+  /* ---------- tables ---------- */
+  .tw{overflow-x:auto; border:1px solid var(--rule2); border-radius:5px; background:var(--card)}
+  table{border-collapse:collapse; width:100%; font-size:14px; min-width:520px}
+  caption{
+    caption-side:top; text-align:left; padding:14px 16px 0;
+    font-size:11.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink3); font-weight:640;
+  }
+  th,td{padding:9px 16px; text-align:left; border-bottom:1px solid var(--rule2); vertical-align:top}
+  thead th{
+    font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink3);
+    font-weight:650; background:var(--sunk); border-bottom:1px solid var(--rule); white-space:nowrap;
+  }
+  tbody tr:last-child td{border-bottom:none}
+  td.n,th.n{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums; white-space:nowrap}
+  thead th.n{text-align:right}
+  tr.total td{background:var(--sunk); font-weight:660; color:var(--ink); border-top:1px solid var(--rule)}
+  tr.sub td{color:var(--ink3)}
+  td.lbl{color:var(--ink); font-weight:560}
+  .neg{color:var(--neg)}
+  .posn{color:var(--pos)}
+
+  /* ---------- pills & bars ---------- */
+  .pill{
+    display:inline-flex; align-items:center; gap:5px; white-space:nowrap;
+    font-size:11px; font-weight:660; letter-spacing:.05em; text-transform:uppercase;
+    padding:2px 8px; border-radius:3px;
+  }
+  .pill.p{background:var(--pos-soft); color:var(--pos)}
+  .pill.f{background:var(--neg-soft); color:var(--neg)}
+  .pill.w{background:var(--warn-soft); color:var(--warn)}
+  .pill.a{background:var(--accent-soft); color:var(--accent)}
+  .bar{position:relative; height:6px; background:var(--paper2); border-radius:3px; min-width:88px; margin-top:6px}
+  .bar i{position:absolute; inset:0 auto 0 0; background:var(--accent); border-radius:3px; display:block}
+  .bar u{position:absolute; top:-3px; bottom:-3px; width:1px; background:var(--neg)}
+
+  /* ---------- misc blocks ---------- */
+  .card{background:var(--card); border:1px solid var(--rule2); border-radius:5px; padding:20px 22px}
+  .card h3{margin-bottom:8px}
+  .card p:last-child{margin-bottom:0}
+  .flag{
+    background:var(--warn-soft); border-left:2px solid var(--warn); border-radius:0 4px 4px 0;
+    padding:16px 20px; color:var(--ink2); font-size:15px;
+  }
+  .flag strong{color:var(--ink)}
+  ul{margin:0; padding-left:19px; color:var(--ink2)}
+  li{margin-bottom:6px}
+  li::marker{color:var(--accent)}
+  .steps{display:grid; gap:1px; background:var(--rule2); border:1px solid var(--rule2);
+         border-radius:5px; overflow:hidden}
+  .step{background:var(--card); padding:14px 18px; display:grid;
+        grid-template-columns:26px 1fr auto; gap:14px; align-items:baseline}
+  .step .i{font-family:var(--mono); font-size:12px; color:var(--ink3)}
+  .step .t{font-size:14.5px; color:var(--ink)}
+  .step .t em{font-style:normal; color:var(--ink3); font-size:13px; display:block; margin-top:2px}
+  .step .m{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:14px;
+           color:var(--accent); font-weight:600; white-space:nowrap}
+  .foot{border-top:1px solid var(--rule); padding:30px 0 60px; color:var(--ink3); font-size:13px}
+  .tags{display:flex; flex-wrap:wrap; gap:7px; margin-top:14px}
+  .v{font-variant-numeric:tabular-nums}
+  code{font-family:var(--mono); font-size:.9em; background:var(--sunk); padding:1px 5px;
+       border-radius:3px; color:var(--ink)}
+</style>
+
+<div class="wrap">
+
+<!-- 01 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">01</span><span>The model</span></div>
+  <h1>Premium global talent for internet businesses.</h1>
+  <p class="thesis">Exceptional performance video editors, sourced and graded in India, hired
+  directly into US internet companies — at a one-time fee of 30% of first-year compensation,
+  with employer-of-record underneath.</p>
+
+  <div class="figs" style="margin-top:36px">
+    <div class="fig"><div class="v acc">6.06:1</div><div class="k">30-day LTGP:CAC</div>
+      <div class="note">Against a 1.5:1 hard floor</div></div>
+    <div class="fig"><div class="v">15.49:1</div><div class="k">Lifetime LTGP:CAC</div>
+      <div class="note">9-month seat assumption</div></div>
+    <div class="fig"><div class="v">$4,435</div><div class="k">30-day gross profit</div>
+      <div class="note">Per acquired client, 56% margin</div></div>
+    <div class="fig"><div class="v">$732</div><div class="k">Blended CAC</div>
+      <div class="note">Spend-weighted, funnel-derived</div></div>
+  </div>
+
+  <div class="cols" style="margin-top:26px">
+    <div class="card">
+      <h3>Who buys</h3>
+      <p>Internet businesses with real revenue, an owner who decides, a recurring creative
+      workload, and a decision-maker reachable on Meta. <strong>Marketing agencies and
+      e-commerce brands at launch.</strong></p>
+    </div>
+    <div class="card">
+      <h3>Why they buy</h3>
+      <p>Not cheap labour — <strong>reduced hiring risk plus access to talent they cannot
+      efficiently find themselves.</strong> The person becomes their employee and works inside
+      their existing team.</p>
+    </div>
+    <div class="card">
+      <h3>Why it can be won</h3>
+      <p>India is genuinely world-leading in this craft, and <strong>nobody currently sells an
+      Indian performance editor to a US agency as a direct hire.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">02</span><span>What changed, and why</span></div>
+  <h2>The wedge moved from bookkeeping to performance creative</h2>
+  <p class="sub">Scored across nine dimensions, each one carried over from an earlier screen
+  rather than invented here. The gate is the operator's own hard constraint.</p>
+
+  <div class="tw">
+    <table>
+      <caption>Model comparison · weighted score out of 100</caption>
+      <thead><tr>
+        <th>Dimension</th><th class="n">Weight</th><th class="n">Bookkeeping</th>
+        <th class="n">Performance creative</th><th>What decides it</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="lbl">Clears the 30-day floor</td><td class="n">18</td><td class="n">5</td><td class="n">4</td>
+            <td>4.25:1 vs 6.06:1 — both clear</td></tr>
+        <tr><td class="lbl">Claim is true vs the real comparator</td><td class="n">16</td><td class="n neg">2</td><td class="n posn">5</td>
+            <td><strong>0.4–1.1×</strong> against a bookkeeping firm vs <strong>4–13×</strong> against a video vendor</td></tr>
+        <tr><td class="lbl">Operator can grade the work</td><td class="n">14</td><td class="n neg">2</td><td class="n posn">5</td>
+            <td>Cannot judge a reconciliation. Can read a retention curve</td></tr>
+        <tr><td class="lbl">Ad legibility &amp; Meta reach</td><td class="n">13</td><td class="n posn">5</td><td class="n">4</td>
+            <td>“Bookkeeper” is the most legible role tested</td></tr>
+        <tr><td class="lbl">Compounds over 24 months</td><td class="n">13</td><td class="n posn">5</td><td class="n">4</td>
+            <td>Ledger spine vs ad-account spine</td></tr>
+        <tr><td class="lbl">Survives AI to 2028</td><td class="n">9</td><td class="n">4</td><td class="n warn">3</td>
+            <td>The weakest number in the model</td></tr>
+        <tr><td class="lbl">Competitive whitespace</td><td class="n">7</td><td class="n neg">2</td><td class="n posn">4</td>
+            <td>Bookkeeping has a dozen incumbents</td></tr>
+        <tr><td class="lbl">Operational load</td><td class="n">5</td><td class="n">4</td><td class="n">3</td>
+            <td>Media layer adds cost</td></tr>
+        <tr><td class="lbl">Enterprise value story</td><td class="n">5</td><td class="n">4</td><td class="n">4</td>
+            <td>Both rest on the recurring EOR book</td></tr>
+        <tr class="total"><td>Total</td><td class="n"></td><td class="n">74.0</td><td class="n">83.2</td>
+            <td>Performance creative by 9.2</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:24px">
+    <div class="card">
+      <h3>The entire margin is three dimensions</h3>
+      <p>Truth of the claim, gradeability, and whitespace — <strong>the three things that decide
+      whether a company with no track record makes a first sale at all.</strong></p>
+    </div>
+    <div class="card">
+      <h3>Bookkeeping wins the other three</h3>
+      <p>Compounding, durability and ad legibility — <strong>the three that decide whether the
+      business is still good in year three.</strong> Hence the second leg at month six.</p>
+    </div>
+  </div>
+
+  <div class="flag" style="margin-top:22px">
+    <strong>The reading is not “creative is better.”</strong> It is that performance creative is the
+    better way to start and the finance spine is the better thing to own. The plan runs creative now,
+    with the finance spine declared as the month-six second leg.
+  </div>
+</section>
+
+<!-- 03 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">03</span><span>The wedge</span></div>
+  <h2>India is not cheaper at this. It is better at it.</h2>
+  <p class="sub">This is the only place in the study where the pitch can be quality rather than
+  price — which matters because a price pitch invites both the price objection and the
+  “why India” objection, and a quality pitch answers both.</p>
+
+  <div class="cols" style="margin-bottom:24px">
+    <div class="card">
+      <h3>Verified supply-side claims</h3>
+      <ul>
+        <li><strong>Mumbai is the largest VFX hub on earth</strong> by headcount</li>
+        <li><strong>Six of the ten</strong> fastest-growing VFX and animation hubs globally are Indian</li>
+        <li><strong>70% of Indian VFX studio revenue is export</strong> — Hollywood, Netflix, Amazon</li>
+        <li><strong>DNEG holds eight Academy Awards</strong> for Best Visual Effects since 2011</li>
+        <li>More Indians work on VFX in Hollywood films than in Indian films</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The arbitrage is against an invoice, not a salary</h3>
+      <p>Buyers under $10M do not employ an editor — <strong>they pay a studio monthly.</strong>
+      That is the comparator the ad has to beat.</p>
+      <div class="tw" style="margin-top:14px">
+        <table style="min-width:0">
+          <tbody>
+            <tr><td class="lbl">Ongoing video vendor</td><td class="n">$5,000–16,500<span style="color:var(--ink3)">/mo</span></td></tr>
+            <tr><td class="lbl">Social clips, per asset</td><td class="n">$1,500–5,000</td></tr>
+            <tr><td class="lbl">Our full-time hire</td><td class="n">$1,650<span style="color:var(--ink3)">/mo</span></td></tr>
+            <tr class="total"><td>Arbitrage</td><td class="n" style="color:var(--accent)">4.0–13.2×</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="flag">
+    <strong>Place production, never judgement.</strong> India is world-class at editing to a brief.
+    It is not world-class at deciding what makes a US consumer buy. So we place the editor and the
+    client keeps the hook, the angle and the offer. A seat sold as “own our creative” fails on taste,
+    and the failure gets blamed on the country.
+  </div>
+</section>
+
+<!-- 04 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">04</span><span>The offer</span></div>
+  <h2>Four steps, and the money moves twice</h2>
+  <p class="sub">The fragile step in any cold-traffic placement business is the moment a stranger
+  first pays. This offer attacks it twice — once by giving proof away free, once by making the
+  first payment a delivered product rather than a deposit.</p>
+
+  <div class="steps">
+    <div class="step"><span class="i">01</span>
+      <span class="t">Free graded shortlist on the call
+        <em>Two or three real candidates, already scored. Turns “trust me” into “look at these three people”</em></span>
+      <span class="m">$90/call</span></div>
+    <div class="step"><span class="i">02</span>
+      <span class="t">Paid ad-account &amp; creative teardown
+        <em>Their own ads reviewed and scored, delivered. Opens the search — and it <strong>is</strong> the work sample</em></span>
+      <span class="m">$500</span></div>
+    <div class="step"><span class="i">03</span>
+      <span class="t">Placement — the person becomes their employee
+        <em>Sourcing, screening, assessment, matching. 12-month unlimited replacement, no cash refunds</em></span>
+      <span class="m">30% of comp</span></div>
+    <div class="step"><span class="i">04</span>
+      <span class="t">Employer of record, presented as the default
+        <em>We employ, they manage. Provident fund and gratuity are retention the state enforces</em></span>
+      <span class="m">$499/mo</span></div>
+  </div>
+
+  <div class="cols" style="margin-top:24px">
+    <div class="card">
+      <h3>Why a paid teardown beats a refundable deposit</h3>
+      <p>“Buy an audit of your ad account” is a smaller decision than “wire me $500 and trust me.”
+      It carries <strong>no refund liability</strong>, it is <strong>revenue in month one</strong>,
+      and they own something even if they never hire.</p>
+    </div>
+    <div class="card">
+      <h3>What “premium” means, measurably</h3>
+      <p>One test: <strong>recut an existing ad, then measure 3-second and 15-second retention
+      against the original.</strong> Gradeable by the operator, publishable as proof, and it doubles
+      as the teardown deliverable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">05</span><span>Unit economics</span></div>
+  <h2>Per-placement P&amp;L</h2>
+  <p class="sub">Talent at $1,650/month — $19,800 a year, the midpoint of the premium band.
+  One-time fee at 30%. 1.2 seats per acquired client, since roughly a fifth hire two at once.</p>
+
+  <div class="tw">
+    <table>
+      <caption>Per acquired client · first 30 days</caption>
+      <thead><tr><th>Line</th><th class="n">Amount</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">Placement fee</td><td class="n">$5,940</td><td>30% of $19,800 first-year compensation</td></tr>
+        <tr><td class="lbl">Second seat, partial</td><td class="n">$1,188</td><td>20% of clients hire two at once</td></tr>
+        <tr><td class="lbl">Paid teardown</td><td class="n">$500</td><td>Delivered, not refundable</td></tr>
+        <tr><td class="lbl">Screening billed through</td><td class="n">$336</td><td>Cost × 1.6, market-standard pass-through</td></tr>
+        <tr class="total"><td>30-day revenue</td><td class="n">$7,964</td><td></td></tr>
+        <tr><td class="lbl">Recruitment cost</td><td class="n neg">($1,650)</td><td>One month of salary, itemised below</td></tr>
+        <tr><td class="lbl">Teardown delivery</td><td class="n neg">($150)</td><td>~2 hours of a senior reviewer</td></tr>
+        <tr><td class="lbl">Guarantee reserve</td><td class="n neg">($823)</td><td>70% claim rate × $1,175 to redo a search</td></tr>
+        <tr><td class="lbl">Payment processing</td><td class="n neg">($231)</td><td>2.9%</td></tr>
+        <tr><td class="lbl">Sales time</td><td class="n neg">($675)</td><td>$60 per call held, in CAC below</td></tr>
+        <tr class="total"><td>30-day gross profit</td><td class="n">$4,435</td><td>56% gross margin</td></tr>
+        <tr class="sub"><td>Customer acquisition cost</td><td class="n">$732</td><td>Spend-weighted across three audiences</td></tr>
+        <tr class="total"><td>30-day LTGP:CAC</td><td class="n" style="color:var(--accent)">6.06:1</td><td>Floor is 1.5:1</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:22px">
+    <div class="tw">
+      <table>
+        <caption>Recruitment cost, itemised</caption>
+        <tbody>
+          <tr><td class="lbl">Candidate acquisition media</td><td class="n">$366</td></tr>
+          <tr><td class="lbl">Sourcing &amp; screening labour</td><td class="n">$305</td></tr>
+          <tr><td class="lbl">Recruiting tool licences</td><td class="n">$228</td></tr>
+          <tr><td class="lbl">Screening pass-throughs</td><td class="n">$216</td></tr>
+          <tr><td class="lbl">Conversion training</td><td class="n">$185</td></tr>
+          <tr><td class="lbl">Interview &amp; offer coordination</td><td class="n">$148</td></tr>
+          <tr><td class="lbl">Work-sample grading</td><td class="n">$140</td></tr>
+          <tr><td class="lbl">Comms, e-sign, storage</td><td class="n">$62</td></tr>
+          <tr class="total"><td>Total</td><td class="n">$1,650</td></tr>
+          <tr class="sub"><td>Cost to redo a search under guarantee</td><td class="n">$1,175</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tw">
+      <table>
+        <caption>Lifetime, per acquired client</caption>
+        <tbody>
+          <tr><td class="lbl">30-day gross profit</td><td class="n">$4,435</td></tr>
+          <tr><td class="lbl">Repeat &amp; replacement seats</td><td class="n">$3,032</td></tr>
+          <tr><td class="lbl">EOR margin, 9 months</td><td class="n">$3,866</td></tr>
+          <tr class="total"><td>Lifetime gross profit</td><td class="n">$11,333</td></tr>
+          <tr class="sub"><td>Recurring share</td><td class="n">34%</td></tr>
+          <tr class="total"><td>Lifetime LTGP:CAC</td><td class="n" style="color:var(--accent)">15.49:1</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 06 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">06</span><span>Acquisition</span></div>
+  <h2>The funnel, walked once at $5,000</h2>
+  <p class="sub">1% lookalike audience, calendar booking on the landing page. Steps one to five are
+  benchmarked against verified Meta B2B cost data. Steps six to nine are assumptions until the
+  first campaign runs.</p>
+
+  <div class="steps">
+    <div class="step"><span class="i">01</span><span class="t">Ad spend</span><span class="m">$5,000</span></div>
+    <div class="step"><span class="i">02</span><span class="t">Impressions <em>$16 CPM, US B2B, feed and Reels blended</em></span><span class="m">312,500</span></div>
+    <div class="step"><span class="i">03</span><span class="t">Clicks <em>1.1% CTR on a lookalike · $1.45 CPC</em></span><span class="m">3,438</span></div>
+    <div class="step"><span class="i">04</span><span class="t">Landing page views <em>15% bounce before load</em></span><span class="m">2,922</span></div>
+    <div class="step"><span class="i">05</span><span class="t">Calls booked <em>2% of page views · <strong>$86 CPL</strong>, inside the verified $30–80 B2B band</em></span><span class="m">58</span></div>
+    <div class="step"><span class="i">06</span><span class="t">Calls held <em>65% show rate on a self-booked slot · $192 per held call</em></span><span class="m">38</span></div>
+    <div class="step"><span class="i">07</span><span class="t">Teardowns purchased <em>24% of held calls — the one fragile assumption</em></span><span class="m">10.5</span></div>
+    <div class="step"><span class="i">08</span><span class="t">Placements <em>85% fill rate on a funded search</em></span><span class="m">8.9</span></div>
+    <div class="step"><span class="i">09</span><span class="t">Cost per acquired client</span><span class="m">$817</span></div>
+  </div>
+
+  <div class="tw" style="margin-top:22px">
+    <table>
+      <caption>CAC by audience layer</caption>
+      <thead><tr><th>Audience</th><th class="n">CPL</th><th class="n">CAC</th><th class="n">30-day</th><th class="n">Lifetime</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">Intent seed — posted the role</td><td class="n">$65</td><td class="n">$489</td>
+            <td class="n" style="color:var(--accent)">9.07:1</td><td class="n">23.18:1</td>
+            <td>Highest CPM, thinnest auction, <strong>best CAC</strong></td></tr>
+        <tr><td class="lbl">1% lookalike</td><td class="n">$86</td><td class="n">$817</td>
+            <td class="n">5.43:1</td><td class="n">13.87:1</td><td>The workhorse</td></tr>
+        <tr><td class="lbl">Broad / Advantage+</td><td class="n">$103</td><td class="n">$1,070</td>
+            <td class="n">4.14:1</td><td class="n">10.59:1</td><td>Scale, worst efficiency</td></tr>
+        <tr class="total"><td>Blended · 25 / 45 / 30 by spend</td><td class="n">—</td><td class="n">$732</td>
+            <td class="n">6.06:1</td><td class="n">15.49:1</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="flag" style="margin-top:20px">
+    <strong>The intent seed is not a CAC optimisation — it is a truth condition.</strong> A company
+    that posted the role is in the hiring market. Broad traffic contains buyers who use a studio and
+    have no salary to compare against, so the headline claim is simply wrong for them. Weight budget
+    toward the seed beyond what the CAC table alone justifies.
+  </div>
+</section>
+
+<!-- 07 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">07</span><span>The biggest lever</span></div>
+  <h2>Seat continuity, not cheaper sourcing</h2>
+  <p class="sub">The EOR line earns $477 per employee per month at an 89% margin on the fee. What
+  decides its value is not the price — it is how long the seat stays filled, because a replacement
+  under the guarantee keeps the fee billing while the person changes.</p>
+
+  <div class="cols" style="margin-bottom:22px">
+    <div class="tw">
+      <table>
+        <caption>EOR margin per employee per month</caption>
+        <tbody>
+          <tr><td class="lbl">Charged to client</td><td class="n">$499</td></tr>
+          <tr><td class="lbl">Marginal cost — payroll, filings, HR, insurance admin</td><td class="n neg">($55)</td></tr>
+          <tr><td class="lbl">FX spread, 2% on $1,650 moved</td><td class="n">$33</td></tr>
+          <tr class="total"><td>Gross profit</td><td class="n">$477</td></tr>
+          <tr class="sub"><td>Margin on the fee line</td><td class="n">89%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tw">
+      <table>
+        <caption>Value of a longer seat</caption>
+        <thead><tr><th>Seat life</th><th class="n">Lifetime GP</th><th class="n">Lifetime ratio</th></tr></thead>
+        <tbody>
+          <tr><td class="lbl">9 months — base case</td><td class="n">$11,333</td><td class="n">15.49:1</td></tr>
+          <tr><td class="lbl">18 months</td><td class="n">$15,196</td><td class="n">20.77:1</td></tr>
+          <tr><td class="lbl">30 months</td><td class="n">$20,348</td><td class="n" style="color:var(--accent)">27.81:1</td></tr>
+          <tr class="total"><td>Value of 9 → 30 months</td><td class="n">+$9,015</td><td class="n">+12.3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h3>Cheaper sourcing is worth $169</h3>
+      <p>A standing bench cuts candidate media and grading. <strong>It moves the ratio by
+      0.2.</strong> Recruitment is already capped at one month of salary, so there is little to win.</p>
+    </div>
+    <div class="card">
+      <h3>A longer seat is worth $9,015</h3>
+      <p><strong>53× more.</strong> And the mechanism is the same graded bench — used for continuity
+      rather than for cost. Without one, a resignation empties the seat and the EOR fee stops.</p>
+    </div>
+    <div class="card">
+      <h3>So build the directory, not an academy</h3>
+      <p>A Slack, a graded roster, and the retention score already produced for every candidate.
+      <strong>Free to join, graded on entry, no curriculum.</strong> The asset is the list.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">08</span><span>Sensitivity</span></div>
+  <h2>What moves it, and what breaks it</h2>
+  <p class="sub">Base case in the first row. The bar shows the 30-day ratio against the 1.5:1 floor,
+  marked in red.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Scenario</th><th class="n">CAC</th><th class="n">30-day</th><th style="width:150px">vs floor</th><th class="n">Lifetime</th><th class="n">Clears</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">Base — $1,650/mo, 30% fee, 24% teardown take-up</td><td class="n">$732</td>
+            <td class="n" style="color:var(--accent)">6.06:1</td>
+            <td><span class="bar"><i style="width:76%"></i><u style="left:19%"></u></span></td>
+            <td class="n">15.49:1</td><td class="n"><span class="pill p">pass</span></td></tr>
+        <tr><td class="lbl">Fee at 35% instead of 30%</td><td class="n">$732</td><td class="n">7.64:1</td>
+            <td><span class="bar"><i style="width:95%"></i><u style="left:19%"></u></span></td>
+            <td class="n">18.11:1</td><td class="n"><span class="pill p">pass</span></td></tr>
+        <tr><td class="lbl">Talent at $1,800/mo</td><td class="n">$732</td><td class="n">6.53:1</td>
+            <td><span class="bar"><i style="width:82%"></i><u style="left:19%"></u></span></td>
+            <td class="n">16.30:1</td><td class="n"><span class="pill p">pass</span></td></tr>
+        <tr><td class="lbl">Talent at $1,500/mo</td><td class="n">$732</td><td class="n">5.59:1</td>
+            <td><span class="bar"><i style="width:70%"></i><u style="left:19%"></u></span></td>
+            <td class="n">14.67:1</td><td class="n"><span class="pill p">pass</span></td></tr>
+        <tr><td class="lbl">EOR attach 40% instead of 75%</td><td class="n">$732</td><td class="n">6.06:1</td>
+            <td><span class="bar"><i style="width:76%"></i><u style="left:19%"></u></span></td>
+            <td class="n">13.02:1</td><td class="n"><span class="pill p">pass</span></td></tr>
+        <tr><td class="lbl">CPM $30 instead of $16</td><td class="n">$841</td><td class="n">5.28:1</td>
+            <td><span class="bar"><i style="width:66%"></i><u style="left:19%"></u></span></td>
+            <td class="n">13.48:1</td><td class="n"><span class="pill p">pass</span></td></tr>
+        <tr><td class="lbl"><strong>Teardown take-up 12%, not 24%</strong></td><td class="n">$1,463</td>
+            <td class="n warn">3.03:1</td>
+            <td><span class="bar"><i style="width:38%"></i><u style="left:19%"></u></span></td>
+            <td class="n">7.74:1</td><td class="n"><span class="pill w">thin</span></td></tr>
+        <tr><td class="lbl"><strong>Monthly markup instead of a one-time fee</strong></td><td class="n">$732</td>
+            <td class="n neg">0.51:1</td>
+            <td><span class="bar"><i style="width:6%"></i><u style="left:19%"></u></span></td>
+            <td class="n">6.61:1</td><td class="n"><span class="pill f">fails</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:22px">
+    <div class="card">
+      <h3>Everything survives except two things</h3>
+      <p>Salary, fee, EOR attach and even a doubled CPM all clear comfortably. <strong>Only the
+      take-up rate on the first payment is genuinely fragile</strong> — halve it and the ratio
+      halves with it.</p>
+    </div>
+    <div class="card">
+      <h3>And the pricing sentence must be unambiguous</h3>
+      <p>A 30% markup on $1,650 a month is <strong>$536</strong>. A 30% one-time fee on $19,800 is
+      <strong>$5,940</strong>. The first fails the hard constraint outright; the second is the
+      business. <strong>One-time, on first-year compensation.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 09 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">09</span><span>Scale</span></div>
+  <h2>What it takes to reach $10M and $20M</h2>
+  <p class="sub">Revenue per client is a one-time component plus an EOR annuity that runs for as long
+  as the seat stays filled — so seat life, not placement volume, is what sets the client count.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr>
+        <th>Target revenue</th><th class="n">Seat life</th><th class="n">Revenue / client</th>
+        <th class="n">Clients</th><th class="n">Placements / mo</th><th class="n">EOR book ARR</th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="lbl">$5M</td><td class="n">9 mo</td><td class="n">$16,758</td><td class="n">298</td><td class="n">25</td><td class="n">$1.2M</td></tr>
+        <tr><td class="lbl">$5M</td><td class="n">30 mo</td><td class="n">$26,189</td><td class="n">191</td><td class="n">16</td><td class="n">$2.6M</td></tr>
+        <tr><td class="lbl">$10M</td><td class="n">9 mo</td><td class="n">$16,758</td><td class="n">597</td><td class="n">50</td><td class="n">$2.4M</td></tr>
+        <tr><td class="lbl">$10M</td><td class="n">30 mo</td><td class="n">$26,189</td><td class="n">382</td><td class="n">32</td><td class="n">$5.1M</td></tr>
+        <tr><td class="lbl">$20M</td><td class="n">9 mo</td><td class="n">$16,758</td><td class="n">1,193</td><td class="n">99</td><td class="n">$4.8M</td></tr>
+        <tr class="total"><td>$20M</td><td class="n">30 mo</td><td class="n">$26,189</td><td class="n">764</td><td class="n">64</td><td class="n">$10.3M</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:22px">
+    <div class="card">
+      <h3>Seat life is the scale lever</h3>
+      <p>Going from a 9-month seat to a 30-month seat <strong>cuts the clients needed for $10M by
+      36%</strong> — and more than doubles the EOR annuity underneath.</p>
+    </div>
+    <div class="card">
+      <h3>At $20M the EOR book is half the business</h3>
+      <p><strong>$10.3M of recurring ARR</strong> on a long seat. That is the line an acquirer buys;
+      a placement pipeline is not.</p>
+    </div>
+    <div class="card">
+      <h3>The plan is 32–36% EBITDA at ~88 people</h3>
+      <p>Which at 6–10× puts enterprise value between <strong>$41M and $68M</strong> — against a
+      published India-edtech comparable trading at 1.16× revenue and loss-making.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">10</span><span>Supply</span></div>
+  <h2>India first, South Africa second, and a reason for each</h2>
+
+  <div class="cols">
+    <div class="card">
+      <h3>India — depth and our own edge</h3>
+      <p>The largest pool, the world-leading craft, and the only place where we have a network and a
+      local cost base. <strong>Neither of the two direct comparables sources India at all.</strong></p>
+      <div class="tags">
+        <span class="pill a">world-class craft</span><span class="pill a">deepest pool</span>
+        <span class="pill a">our network</span><span class="pill w">retention risk</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>South Africa — retention</h3>
+      <p>English at 602 on the EF index, <strong>13th globally</strong>. Unemployment 32.7% and
+      roughly half of graduates unemployed or underemployed in their first year — so there is no
+      counter-bid. In India a 20–30% raise moves an early-career hire.</p>
+      <div class="tags">
+        <span class="pill a">retention</span><span class="pill a">FB+IG buyer comfort</span>
+        <span class="pill w">shallower pool</span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Not the Philippines</h3>
+      <p>The most contested offshore pool in the world and the most expensive of the three regions
+      our closest comparable publishes. <strong>South Africa scored 74.5 against the Philippines at
+      61.6.</strong></p>
+    </div>
+  </div>
+
+  <div class="tw" style="margin-top:22px">
+    <table>
+      <caption>Candidate funnel — standardised from the first hire</caption>
+      <thead><tr><th class="n">Stage</th><th>Step</th><th>What it filters for</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td class="lbl">Application from Meta, communities, referrals</td><td>Reach and intent</td></tr>
+        <tr><td class="n">2</td><td class="lbl">Portfolio review</td><td>Craft floor</td></tr>
+        <tr><td class="n">3</td><td class="lbl"><strong>Retention test — recut a real ad, measure 3s and 15s hold</strong></td><td><strong>Performance, not taste</strong></td></tr>
+        <tr><td class="n">4</td><td class="lbl">Written communication sample, async</td><td>Can work without live overlap</td></tr>
+        <tr><td class="n">5</td><td class="lbl">Interview — intent, reliability, tenure motive</td><td>Will they stay</td></tr>
+        <tr><td class="n">6</td><td class="lbl">Graded, scored, added to the directory</td><td>Seat continuity</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 11 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">11</span><span>The second engine</span></div>
+  <h2>A media layer built only from work already being done</h2>
+  <p class="sub">Content that is a byproduct survives. Content that is a second product does not.
+  Every format below is an output of the recruiting business, not an additional job.</p>
+
+  <div class="tw">
+    <table>
+      <caption>Internet Business Brief · recurring formats</caption>
+      <thead><tr><th>Format</th><th>What it is</th><th>Where it comes from</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">The Number</td><td>One calculation — LTGP:CAC, revenue per employee, break-even CAC</td><td>Our own model</td></tr>
+        <tr><td class="lbl">The Signal</td><td>Something observed at volume</td><td>The job-posting scrape</td></tr>
+        <tr><td class="lbl">The Experiment</td><td>Something actually tested</td><td>Candidate assessments, ad tests</td></tr>
+        <tr><td class="lbl">The Benchmark</td><td>A real data point — what a $10M team looks like</td><td>Placement and comp data</td></tr>
+        <tr><td class="lbl">The Bet</td><td>A stated hypothesis, dated</td><td>Judgement, held publicly</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cols" style="margin-top:22px">
+    <div class="card">
+      <h3>Why it is commercial, not vanity</h3>
+      <p>Distribution to exactly the people who buy, trust from visible research, demand intelligence
+      on what founders are struggling with, and <strong>lower CAC over time as organic supplements
+      Meta.</strong></p>
+    </div>
+    <div class="card">
+      <h3>Why it survives an exit</h3>
+      <p>A founder's personal audience does not transfer to an acquirer. <strong>A proprietary
+      dataset on roles, compensation, hiring demand and candidate quality does.</strong></p>
+    </div>
+    <div class="card">
+      <h3>Sequencing</h3>
+      <p><strong>X only at launch.</strong> The weekly brief starts at month three, and the first
+      Number comes from the first ten placements rather than from desk research.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">12</span><span>Roadmap</span></div>
+  <h2>One seat, then the ladder, then the second leg</h2>
+  <p class="sub">Five sellable seats is the right steady state and the wrong month one. With one
+  operator, five seats is five half-built funnels.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th class="n">When</th><th>Sell</th><th>Into</th><th>Why then</th></tr></thead>
+      <tbody>
+        <tr><td class="n">Mo 1–2</td><td class="lbl">Performance video editor</td><td>Agencies + e-commerce</td>
+            <td>Strongest true claim, gradeable by the operator, uncontested, buyer clears both Facebook and Instagram</td></tr>
+        <tr><td class="n">Mo 3–5</td><td class="lbl">Motion designer, static/creative designer</td><td>Existing clients</td>
+            <td>Same bench, same ad account. Seats per client is what makes CAC efficient</td></tr>
+        <tr><td class="n">Mo 6</td><td class="lbl"><strong>Bookkeeper — the second leg</strong></td><td>The same clients</td>
+            <td><strong>The durability hedge.</strong> Scores highest of anything on 24-month compounding, and every client already runs QuickBooks or Xero</td></tr>
+        <tr><td class="n">Mo 6–12</td><td class="lbl">UGC producer, performance creative lead</td><td>Best existing clients</td>
+            <td>The senior end of the creative ladder. Higher fee, same bench promoted</td></tr>
+        <tr><td class="n">Mo 12–18</td><td class="lbl">Creators, coaching, digital media</td><td>New ICPs</td>
+            <td>Needs a per-project fee model, so it waits until the core one is proven</td></tr>
+        <tr><td class="n">Mo 18+</td><td class="lbl">AI workflow operations</td><td>Same ICPs</td>
+            <td>The only seat that grows as AI improves. Not yet searched for by name</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 13 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">13</span><span>Gaps closed</span></div>
+  <h2>Twelve gaps against the previous version</h2>
+  <p class="sub">Five of the six that mattered were things the model had dropped rather than got
+  wrong. All six are now closed in the offer above.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Gap</th><th>Cost if left open</th><th class="n">Status</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl">Fee read as a monthly markup, not a one-time fee</td><td>8.2× of month-one cash, and the hard constraint</td><td class="n"><span class="pill p">closed</span></td></tr>
+        <tr><td class="lbl">No paid step before placement</td><td>Unfunded searches, no commitment filter</td><td class="n"><span class="pill p">closed</span></td></tr>
+        <tr><td class="lbl">No guarantee specified</td><td>The cheapest differentiation available, given away</td><td class="n"><span class="pill p">closed</span></td></tr>
+        <tr><td class="lbl">EOR demoted to an optional upsell</td><td>34–65% of lifetime gross profit</td><td class="n"><span class="pill p">closed</span></td></tr>
+        <tr><td class="lbl">No retention mechanism</td><td>$9,015 per client — the largest lever</td><td class="n"><span class="pill p">closed</span></td></tr>
+        <tr><td class="lbl">“Premium” had no measurable definition</td><td>The entire positioning, unfalsifiable</td><td class="n"><span class="pill p">closed</span></td></tr>
+        <tr><td class="lbl">Creators in the launch ICP</td><td>They buy per video — no salary for a fee to attach to</td><td class="n"><span class="pill p">deferred</span></td></tr>
+        <tr><td class="lbl">Five ICPs at launch</td><td>Starves Meta of learning signal</td><td class="n"><span class="pill p">cut to two</span></td></tr>
+        <tr><td class="lbl">Philippines as country two</td><td>Most contested pool, most expensive region</td><td class="n"><span class="pill p">changed</span></td></tr>
+        <tr><td class="lbl">Job-title phrasing for the scrape</td><td>Audience build misses the buyer entirely</td><td class="n"><span class="pill w">test first</span></td></tr>
+        <tr><td class="lbl">Media had no time budget</td><td>Attention, the only scarce resource at launch</td><td class="n"><span class="pill p">X only</span></td></tr>
+        <tr><td class="lbl">AI durability unhedged</td><td>The weakest number in the model</td><td class="n"><span class="pill p">second leg</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 14 ============================================================= -->
+<section class="plate">
+  <div class="eyebrow"><span class="n">14</span><span>What is not yet known</span></div>
+  <h2>Three tests, under $2,000, before any real spend</h2>
+  <p class="sub">Everything on the previous thirteen plates is a model. None of it has met a buyer.
+  These three convert the top of it into fact.</p>
+
+  <div class="steps">
+    <div class="step"><span class="i">01</span>
+      <span class="t">Count the postings
+        <em>“Video editor” vs “performance video editor” vs “creative editor,” across agency and e-commerce job boards. Settles whether the intent seed can even be built — and whether the seat is hired often enough to fund a funnel</em></span>
+      <span class="m">free · 1 day</span></div>
+    <div class="step"><span class="i">02</span>
+      <span class="t">Match-rate test
+        <em>Enrich 2,000 companies that posted the role, upload as a Meta custom audience, read the matched size. Everything about the intent seed depends on this number</em></span>
+      <span class="m">~$200 · same day</span></div>
+    <div class="step"><span class="i">03</span>
+      <span class="t">Buy ten held calls
+        <em>Measure cost per held call and <strong>teardown take-up</strong> — the one fragile input. Count how many buyers ask where the person is based, and how many ask whether it is a shared team</em></span>
+      <span class="m">~$1,500 · 10 days</span></div>
+  </div>
+
+  <div class="cols" style="margin-top:24px">
+    <div class="card">
+      <h3>The number that decides the launch</h3>
+      <p><strong>Teardown take-up.</strong> 24% gives 6.06:1. At 12% it is 3.03:1 — still above the
+      floor, with nothing to spare. It is the only assumption in the model with no benchmark
+      behind it.</p>
+    </div>
+    <div class="card">
+      <h3>The number that decides the ceiling</h3>
+      <p><strong>Seat life.</strong> 9 to 30 months is worth $9,015 per client and cuts the client
+      count for $10M by more than a third. It is won with a contract clause and bench discipline, not
+      with spend.</p>
+    </div>
+    <div class="card">
+      <h3>The honest status</h3>
+      <p>Pre-launch. No customer met, no placement made, no ad run. The evidence base is verified
+      market data and a costed model — <strong>not traction.</strong></p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <p style="max-width:none">Figures at $1,650/month talent compensation, a 30% one-time fee,
+  a 9-month EOR assumption and a spend-weighted CAC of $732. Salary, vendor pricing, English
+  proficiency, labour-market and competitor figures are from published sources; conversion rates from
+  step six of the funnel onward are modelled assumptions pending the first campaign.</p>
+</footer>
+
+</div>
