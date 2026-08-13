@@ -2,6 +2,7 @@
 
 ## Start here
 
+### → [`MASTERLIST.md`](MASTERLIST.md) — **THE OPERATING DOCUMENT.** One page: the critical path in dependency order, the week-by-week calendar, all 106 activities by function, the 25 workflows. Generated from the underlying screens so it cannot drift
 ### → [`MODEL-V2.md`](MODEL-V2.md) — **the current model.** Performance creative, premium positioning, media layer — and the two corrections it forces on my earlier analysis
 ### → [`COMPOUND.md`](COMPOUND.md) — the two-year compounding screen (finance spine 95.6; video re-scores 75.6 under V2)
 ### → [`LAUNCH.md`](LAUNCH.md) — month-one launchability (superseded on the pick, sound on the method)
@@ -9,10 +10,11 @@
 
 ---
 
-## Eighteen documents
+## 28 documents
 
 | | |
 |---|---|
+| **[`MASTERLIST.md`](MASTERLIST.md)** | **THE OPERATING DOCUMENT — read this one.** Four overlapping lists existed ([`CLAUDE-CODE.md`](CLAUDE-CODE.md) 33 uses, [`SURFACES.md`](SURFACES.md) 62, [`WORKFLOWS.md`](WORKFLOWS.md) 25 systems, [`ACTIVITIES.md`](ACTIVITIES.md) 106) and together they were unusable — **a person running a company alone needs one list, not four views of one.** This **imports** from `activities.py` and `workflows.py` rather than restating them, so it cannot drift. **§1 the critical path** in dependency order — rows 1–7 are the single chain that gates your first paid invoice: entity → identifiers → bank → payment rail → payout rail → **W-8BEN-E** → GST/LUT. **§2 the calendar**, week 0 through month 6, opening with the two long-clock items — the India→US entity chain and cold-email warm-up. **§3** all 106 activities by function with surface and score. **§4** the 25 workflows. **§5** where an agent is the wrong tool. **§6** what supersedes what |
 | **[`MODEL-V2.md`](MODEL-V2.md)** | **CURRENT MODEL.** Operator's V2 ingested and compared. Wedge moves to **premium performance video editors**; positioning flips from price to quality, which the repo's own last two screens already argued for. **§2 flags a pricing conflation that breaks the model 8x if read the wrong way.** **§4 corrects two of my errors** — video re-scores 52.0 → 75.6 once "performance" and the ad-account spine are counted |
 | **[`COMPOUND.md`](COMPOUND.md)** | **START HERE.** What can be sold to the same ICPs for **24 months**. **What compounds is the spine, not the skill** — a shared ledger login is a position inside the business; a rendered file is handed over a wall. **Finance spine 95.6; video gates out at 52.0.** Corrects LAUNCH.md's pick |
 | **[`LAUNCH.md`](LAUNCH.md)** | Month-one launchability. Introduces **`FOUNDERGRADE`** — can the operator personally judge the work with no team — which is why estimating and PI records are year-two businesses. **Its *pick* is superseded by [`COMPOUND.md`](COMPOUND.md); its method stands** |
@@ -154,6 +156,7 @@ nothing downstream is modellable until they're done.
 | [`scoring/plain_sweep.py`](scoring/plain_sweep.py) | **704 generated collocations**, to test whether 60 hand-picked names were enough to call the register exhausted. 128 free — and round four shows *why* |
 | [`scoring/collocation.py`](scoring/collocation.py) | **Measures "forced" instead of asserting it.** Datamuse/Google-Books bigram scores and word frequency replace a hand-written `SAYS` dict of invented numbers. **Only 3.2% of 4,488 modifier+noun pairs are attested English phrases** |
 | [`scoring/finalists.py`](scoring/finalists.py) | The corpus-attested phrases that are **taken on `.com`**, re-checked on `.co`, `.net` and nine semantic gTLDs, with the `.com` occupant fetched to price the leak per name |
+| [`scoring/masterlist.py`](scoring/masterlist.py) | **Imports** `activities.py` and `workflows.py` and emits the single consolidated list. Generates [`MASTERLIST.md`](MASTERLIST.md) |
 | [`scoring/activities.py`](scoring/activities.py) | 106 activities × 18 functions, with a `BLOCKER` flag that leverage-ranking hides. Generates [`ACTIVITIES.md`](ACTIVITIES.md) |
 | [`scoring/workflows.py`](scoring/workflows.py) | 25 workflows by lead time, cold email in 23 steps, and a cold-email CAC model driven by the real `funnel.py` constants. Generates [`WORKFLOWS.md`](WORKFLOWS.md) |
 | [`scoring/surfaces.py`](scoring/surfaces.py) | 62 activities × 12 functions × 3 surfaces, six weighted dimensions. Generates [`SURFACES.md`](SURFACES.md) |
