@@ -113,3 +113,76 @@ budgeted inside the $1,500 demand test.
 
 *Availability checked against Verisign RDAP. Re-verify before purchase; domains move.*
 
+
+---
+
+## 6. Revision: flow, not meaning — the earlier picks were spec labels
+
+Operator feedback: *"Graded Crew sounds very forced. We need more natural and flowing names."*
+
+**Correct, and the diagnosis is specific.** I optimised §3 for meaning and produced labels rather
+than brands. *Graded Crew* fails on prosody in three ways at once:
+
+| Problem | |
+|---|---|
+| **Stress collision** | `GRAD-ed CREW` — two stressed syllables adjacent, with nothing unstressed between them to breathe |
+| **Hard junction** | `/d/` + `/kr/` — a stop into a cluster. The mouth has to stop and restart |
+| **Clinical adjective** | *Graded* is a word from an assessment rubric. It describes a **process we run**, not a company a person wants to work with |
+
+**Every name in §3 shares this shape** — adjective plus noun, both stressed, describing a
+specification. That is why they read as forced.
+
+### What actually flows
+
+The brands this category respects — **Somewhere, Oceans, Pearl, Wing, Deel, Gusto, Ramp, Vanta** —
+share phonetic properties, not semantic ones:
+
+| Property | |
+|---|---|
+| **Liquid and nasal consonants** | `l · r · m · n · w` — they glide. Stops (`k · t · p · d · g`) block |
+| **Open vowels** | `/oʊ/ /eɪ/ /iː/ /aː/` carry; short clipped vowels stall |
+| **Alternating stress** | `DUM-da-DUM-da`, never `DUM-DUM` |
+| **Soft junction** | The last sound of word one should flow into the first of word two |
+| **No spec grammar** | A brand is a *name*, not a *description of the product* |
+
+### Confirmed available, ranked on flow
+
+All `.com`, all verified. Scanned as spoken phrases rather than scored:
+
+| | Name | Domain | Why it flows | Meaning |
+|---|---|---|---|---|
+| **1** | **Verity People** | `veritypeople.com` | `VE-ri-ty PEO-ple` — perfect alternating stress, every consonant a liquid or nasal, no hard junction anywhere | **Truth.** The provable-claim thesis, in a word that sounds like a firm rather than a rubric |
+| **2** | **Kindred Hires** | `kindredhires.com` | `KIN-dred HIRES` — nasal open, `/d/`+`/h/` is the softest possible junction | **Of the same kind** — literally *the person who fits your team*. The warmest meaning available |
+| **3** | **Verity Roster** | `verityroster.com` | Same prosody as #1 with a client-side head noun | Truth + their team |
+| **4** | **Sable Roster** | `sableroster.com` | `SA-ble ROS-ter` — liquid `/l/` into liquid `/r/`, two open vowels. Possibly the smoothest in the set | None. Confidently arbitrary, the Oceans route |
+| **5** | **Willow Hires** | `willowhires.com` | `WIL-low HIRES` — all liquids, nothing to trip on | None, and warm |
+| **6** | **Linden Roster** | `lindenroster.com` | Nasal into liquid, soft throughout | None, warm, low collision |
+| **7** | **Surety Crew** | `suretycrew.com` | `SURE-ty CREW` flows, though `/kr/` is the one hard cluster | **A guarantee** — and we sell a 12-month one |
+| **8** | **Lumina Roster** | `luminaroster.com` | `lu-MI-na ROS-ter` — four liquids and nasals in a row | Light |
+
+Also free and flowing: `sablecrew.com` · `willowroster.com` · `hazelcrew.com` · `hazelroster.com` ·
+`aspenroster.com` · `sonderroster.com` · `amityroster.com` · `lindencrew.com` · `veritycrew.com` ·
+`cadenceroster.com` · `meridianroster.com`.
+
+### The pick, and the reason it beats the §3 winner
+
+> **`veritypeople.com` — Verity People.**
+>
+> It flows like a name rather than a spec, it keeps a real meaning (*truth* — which is the whole
+> premium-with-no-track-record problem), and **"People" is the warmest head noun in the study.**
+> *Graded Crew* said what we do to candidates. *Verity People* says what the company is.
+
+**Runner-up: `kindredhires.com`** if warmth matters more than meaning. *Kindred* is the only word
+found that means **"the person who belongs on your team"** — which is the actual promise.
+
+### On other TLDs — what I could and could not verify
+
+| | |
+|---|---|
+| **Verified** | `.com` and `.net` against Verisign RDAP; `.ai`, `.studio`, `.team` against Identity Digital; `.work` and `.to` against their registries |
+| **Could NOT verify** | **`.co` and `.io` have no entry in IANA's RDAP bootstrap**, and `whois` is unreachable from this environment. **Any `.co`/`.io` claim here would be a guess, so none is made** |
+| **Bare single words** | **Every flowing single word tested is taken on `.com`, `.net` and `.ai`** — verity, kindred, sable, willow, linden, surety, lumina, cadence, amity, hazel, aspen, sonder. A one-word brand would require buying from a holder |
+
+**Which makes the recommendation simpler, not harder:** the `.com` is free for every flowing
+two-word option above, so there is no reason to accept a weaker TLD. **Check `.co` yourself at a
+registrar if you want it defensively — I could not confirm it and will not pretend otherwise.**
