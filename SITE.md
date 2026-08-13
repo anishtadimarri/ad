@@ -83,6 +83,87 @@ Put the testing effort there — which is also the thing the operator is already
 
 ---
 
+## 7. Re-weighted: easy, unbreakable, and 80–90% is enough
+
+The brief tightened, and **it reverses §6's recommendation.** Three changes:
+
+| What you said | What it changes |
+|---|---|
+| *"super easy to build, maintain and update"* | `EDIT` and `NOCODE` stay at the top |
+| *"at least 80–90% good"* | `CREDIBLE` becomes a **gate at 3**, not a maximiser. But note what this does *not* do — see the verdict |
+| *"no issues that might easily break"* | **A new dimension, `FRAGILE`, at weight 22.** Nothing in §2 measured this, and it is the axis the code path loses on |
+
+| Dimension | Wt | What it measures |
+|---|---|---|
+| **EDIT** | 24 | *"super easy to update"* — change a headline alone, in minutes |
+| **FRAGILE** | 22 | **New, and close to a veto.** *"No issues that might easily break."* Can this fail in your hands, at 11pm, before a campaign, in a way you cannot fix alone? |
+| **NOCODE** | 14 | *"easy to maintain"* — no updates, plugins, dependencies or builds to keep alive |
+| **SPEED** | 12 | Page load. The funnel carries an 85% LP-view rate |
+| **STACK** | 12 | Pixel + CAPI, forms, booking, a payment step for the teardown |
+| **CREDIBLE** | 10 | **Gated at 3.** *"80–90% good"* is a floor to clear, not a target to maximise — but a page carrying a five-figure offer cannot look cheap |
+| **COST** | 4 | Monthly |
+| **HANDOFF** | 2 | Can you hand it to a freelancer or VA later without hiring an engineer |
+
+| Platform | EDIT | FRAGILE | NOCODE | SPEED | STACK | CREDIBLE | COST | HANDOFF | Score | Cost |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Framer** ✅ | 5 | 5 | 5 | 5 | 4 | 5 | 4 | 4 | **96.4** | $30/mo |
+| **Webflow** | 4 | 5 | 5 | 5 | 4 | 5 | 3 | 5 | **91.2** | $15–25/mo |
+| **Leadpages** | 5 | 5 | 5 | 4 | 5 | 3 | 1 | 3 | **89.6** | **$99/mo** |
+| **Carrd** ❌ gated | 5 | 5 | 5 | 5 | 2 | 2 | 5 | 3 | ~~86.0~~ | $19/yr |
+| **Squarespace / Wix** | 5 | 5 | 5 | 3 | 3 | 3 | 4 | 4 | **85.2** | $16–29/mo |
+| **Systeme.io** ❌ gated | 4 | 5 | 5 | 3 | 5 | 2 | 5 | 2 | ~~83.2~~ | free–$27/mo |
+| **Static site + Claude Code + Cloudflare** | 4 | 3 | 4 | 5 | 5 | 4 | 5 | 2 | **80.4** | $0/mo |
+| **Notion + Super.so** | 5 | 4 | 5 | 3 | 2 | 3 | 4 | 2 | **77.6** | ~$16/mo |
+| **GoHighLevel** ❌ gated | 4 | 4 | 5 | 3 | 5 | 2 | 2 | 4 | ~~77.2~~ | ~$97/mo |
+| **WordPress + Elementor** | 4 | 1 | 2 | 2 | 5 | 3 | 4 | 5 | **57.2** | $10–30/mo |
+
+**Framer · 96.4** — **Cannot break in the way you are worried about.** No build step, no dependencies, no updates, no plugins. Templates get you to 90% on day one, which is exactly the bar you set. Editing works from a phone
+
+**Webflow · 91.2** — Same unbreakability, biggest freelancer pool, **slower to learn**. Ignore Optimize at $299 — §1
+
+**Leadpages · 89.6** — Purpose-built for landing pages with A/B testing included — **and §1 proved you cannot use A/B testing for a year.** You would be paying $99/mo for the one feature that does not work at your volume
+
+**Carrd · 86.0** — **gated on `CREDIBLE`** — Unbreakable, near-free, and **visibly template-y** — gated on `CREDIBLE`, because a $6k–$20k offer cannot arrive on a page that looks like a link-in-bio
+
+**Squarespace / Wix · 85.2** — Unbreakable and genuinely easy. Slower pages, and weaker at holding many near-identical LP variants — the thing you said you want most
+
+**Systeme.io · 83.2** — **gated on `CREDIBLE`** — Cheap and all-in-one; **templates are generic and there is no A/B testing at all.** Gated on `CREDIBLE`
+
+**Static site + Claude Code + Cloudflare · 80.4** — **`FRAGILE`=3 is the whole story now.** The live site does not go down from a bad build — Cloudflare keeps the last good deploy — and rollback is one click. But a dependency can drift, a build can fail, and **structural changes need me.** Cheapest and most portable, and it is the one option that can leave you stuck
+
+**Notion + Super.so · 77.6** — Editing in Notion is the easiest updating experience of anything here. **Forms, payments and pixel control are all weak**, and it looks like a Notion page
+
+**GoHighLevel · 77.2** — **gated on `CREDIBLE`** — Funnel-builder output reads as funnel-builder output. Gated on `CREDIBLE`, and the most locked-in option here
+
+**WordPress + Elementor · 57.2** — **The single most fragile option on the board** — plugin conflicts, forced updates, security patching, and speed you have to fight for. It is the specific thing you just ruled out
+
+### Verdict — and it reverses §6
+
+**Framer, 96.4.** Second is Webflow at 91.2. **The code path falls to 80.4**, and it
+falls on exactly the axis you just named.
+
+I recommended the code path last turn on **cost and unlimited variants**, having flagged fragility
+as the one real risk. **You have now weighted that risk as near-decisive, so the recommendation
+moves. That is the input changing, not me hedging** — and paying $30/month to delete an entire
+class of failure is obviously correct for someone whose scarcest resource is attention in a
+launch month.
+
+> **The sharper point: lowering the bar to "80–90% good" does not help the code path — it helps the
+> template path.** Templates are precisely how you reach 90% without effort. A lower quality bar
+> would only favour building it yourself if code were the cheaper way to be *good enough*. It is not;
+> it is the cheaper way to be *free*.
+
+**What you give up by choosing Framer:** about $30–50/month, and landing-page variants become
+inventory you rent rather than files you copy. At the volumes in §1 — 2,429 LP views a month — that
+is not a constraint you will feel this year.
+
+**And note the two purpose-built landing-page tools both lose**, which is the counter-intuitive
+result here. Leadpages is $99/month and Systeme.io is free-ish, and both sell **A/B testing as the
+headline feature that §1 proved you cannot use for roughly a year.** You would be buying the one
+thing that does not work at your volume.
+
+---
+
 ## 6. "Why not just build it with Claude Code and deploy it cheap?"
 
 A fair challenge, and it **corrects a score in §2**. The first version of this file gave the code

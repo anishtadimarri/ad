@@ -121,6 +121,75 @@ PLATFORM = [
      "here — many near-identical landing-page variants"),
 ]
 
+# ---------------------------------------------------------------------------
+# Section 7. Re-weighted after the brief tightened to:
+#   "super easy to build, maintain and update"
+#   "at least 80-90% good"          <- a THRESHOLD, not a maximiser
+#   "no issues that might easily break"   <- new, and close to a veto
+# ---------------------------------------------------------------------------
+DIM2 = [
+    ("EDIT",     24, "*\"super easy to update\"* — change a headline alone, in minutes"),
+    ("FRAGILE",  22, "**New, and close to a veto.** *\"No issues that might easily break.\"* "
+                     "Can this fail in your hands, at 11pm, before a campaign, in a way you "
+                     "cannot fix alone?"),
+    ("NOCODE",   14, "*\"easy to maintain\"* — no updates, plugins, dependencies or builds "
+                     "to keep alive"),
+    ("SPEED",    12, "Page load. The funnel carries an 85% LP-view rate"),
+    ("STACK",    12, "Pixel + CAPI, forms, booking, a payment step for the teardown"),
+    ("CREDIBLE", 10, "**Gated at 3.** *\"80–90% good\"* is a floor to clear, not a target to "
+                     "maximise — but a page carrying a five-figure offer cannot look cheap"),
+    ("COST",      4, "Monthly"),
+    ("HANDOFF",   2, "Can you hand it to a freelancer or VA later without hiring an engineer"),
+]
+PLATFORM2 = [
+    ("Framer", dict(EDIT=5, FRAGILE=5, NOCODE=5, SPEED=5, STACK=4, CREDIBLE=5, COST=4,
+                    HANDOFF=4), "$30/mo",
+     "**Cannot break in the way you are worried about.** No build step, no dependencies, "
+     "no updates, no plugins. Templates get you to 90% on day one, which is exactly the "
+     "bar you set. Editing works from a phone"),
+    ("Webflow", dict(EDIT=4, FRAGILE=5, NOCODE=5, SPEED=5, STACK=4, CREDIBLE=5, COST=3,
+                     HANDOFF=5), "$15–25/mo",
+     "Same unbreakability, biggest freelancer pool, **slower to learn**. Ignore Optimize "
+     "at $299 — §1"),
+    ("Static site + Claude Code + Cloudflare", dict(EDIT=4, FRAGILE=3, NOCODE=4, SPEED=5,
+                                                   STACK=5, CREDIBLE=4, COST=5, HANDOFF=2),
+     "$0/mo",
+     "**`FRAGILE`=3 is the whole story now.** The live site does not go down from a bad "
+     "build — Cloudflare keeps the last good deploy — and rollback is one click. But a "
+     "dependency can drift, a build can fail, and **structural changes need me.** Cheapest "
+     "and most portable, and it is the one option that can leave you stuck"),
+    ("Squarespace / Wix", dict(EDIT=5, FRAGILE=5, NOCODE=5, SPEED=3, STACK=3, CREDIBLE=3,
+                               COST=4, HANDOFF=4), "$16–29/mo",
+     "Unbreakable and genuinely easy. Slower pages, and weaker at holding many "
+     "near-identical LP variants — the thing you said you want most"),
+    ("Leadpages", dict(EDIT=5, FRAGILE=5, NOCODE=5, SPEED=4, STACK=5, CREDIBLE=3, COST=1,
+                       HANDOFF=3), "**$99/mo**",
+     "Purpose-built for landing pages with A/B testing included — **and §1 proved you "
+     "cannot use A/B testing for a year.** You would be paying $99/mo for the one feature "
+     "that does not work at your volume"),
+    ("Carrd", dict(EDIT=5, FRAGILE=5, NOCODE=5, SPEED=5, STACK=2, CREDIBLE=2, COST=5,
+                   HANDOFF=3), "$19/yr",
+     "Unbreakable, near-free, and **visibly template-y** — gated on `CREDIBLE`, because a "
+     "$6k–$20k offer cannot arrive on a page that looks like a link-in-bio"),
+    ("Systeme.io", dict(EDIT=4, FRAGILE=5, NOCODE=5, SPEED=3, STACK=5, CREDIBLE=2, COST=5,
+                        HANDOFF=2), "free–$27/mo",
+     "Cheap and all-in-one; **templates are generic and there is no A/B testing at all.** "
+     "Gated on `CREDIBLE`"),
+    ("GoHighLevel", dict(EDIT=4, FRAGILE=4, NOCODE=5, SPEED=3, STACK=5, CREDIBLE=2, COST=2,
+                         HANDOFF=4), "~$97/mo",
+     "Funnel-builder output reads as funnel-builder output. Gated on `CREDIBLE`, and the "
+     "most locked-in option here"),
+    ("Notion + Super.so", dict(EDIT=5, FRAGILE=4, NOCODE=5, SPEED=3, STACK=2, CREDIBLE=3,
+                               COST=4, HANDOFF=2), "~$16/mo",
+     "Editing in Notion is the easiest updating experience of anything here. **Forms, "
+     "payments and pixel control are all weak**, and it looks like a Notion page"),
+    ("WordPress + Elementor", dict(EDIT=4, FRAGILE=1, NOCODE=2, SPEED=2, STACK=5,
+                                   CREDIBLE=3, COST=4, HANDOFF=5), "$10–30/mo",
+     "**The single most fragile option on the board** — plugin conflicts, forced updates, "
+     "security patching, and speed you have to fight for. It is the specific thing you "
+     "just ruled out"),
+]
+
 # structure: (path, who, what, when)
 PAGES = [
     ("/", "buyer", "**The homepage. Demand only.** Hero → the graded proof → how it "
@@ -245,6 +314,62 @@ def main():
 
     fr = [p for p in PLATFORM if p[0] == "Framer"][0]
     cc = [p for p in PLATFORM if p[0].startswith("Static site")][0]
+    W2 = {k: w for k, w, _ in DIM2}
+
+    def sc2(d):
+        return sum(d[k] * W2[k] for k in W2) / (5 * sum(W2.values())) * 100
+
+    A("---\n\n## 7. Re-weighted: easy, unbreakable, and 80–90% is enough\n")
+    A("The brief tightened, and **it reverses §6's recommendation.** Three changes:\n")
+    A("| What you said | What it changes |\n|---|---|")
+    A("| *\"super easy to build, maintain and update\"* | `EDIT` and `NOCODE` stay at the top |")
+    A("| *\"at least 80–90% good\"* | `CREDIBLE` becomes a **gate at 3**, not a maximiser. "
+      "But note what this does *not* do — see the verdict |")
+    A("| *\"no issues that might easily break\"* | **A new dimension, `FRAGILE`, at weight 22.** "
+      "Nothing in §2 measured this, and it is the axis the code path loses on |")
+    A("")
+    A("| Dimension | Wt | What it measures |\n|---|---|---|")
+    for k, w, why in DIM2:
+        A(f"| **{k}** | {w} | {why} |")
+    A("")
+    A("| Platform | " + " | ".join(k for k, _, _ in DIM2) + " | Score | Cost |")
+    A("|---|" + "---|" * (len(DIM2) + 2))
+    ranked2 = sorted(PLATFORM2, key=lambda x: -sc2(x[1]))
+    for name, d, cost, _ in ranked2:
+        gated = d["CREDIBLE"] < 3
+        mark = " ❌ gated" if gated else (" ✅" if name == ranked2[0][0] else "")
+        A(f"| **{name}**{mark} | " + " | ".join(str(d[k]) for k, _, _ in DIM2) +
+          f" | {'~~' if gated else '**'}{sc2(d):.1f}{'~~' if gated else '**'} | {cost} |")
+    A("")
+    for name, d, _, why in ranked2:
+        tag = " — **gated on `CREDIBLE`**" if d["CREDIBLE"] < 3 else ""
+        A(f"**{name} · {sc2(d):.1f}**{tag} — {why}\n")
+
+    ok2 = [x for x in ranked2 if x[1]["CREDIBLE"] >= 3]
+    top, second = ok2[0], ok2[1]
+    code = [x for x in PLATFORM2 if x[0].startswith("Static")][0]
+    A("### Verdict — and it reverses §6\n")
+    A(f"**{top[0]}, {sc2(top[1]):.1f}.** Second is {second[0]} at {sc2(second[1]):.1f}. "
+      f"**The code path falls to {sc2(code[1]):.1f}**, and it\nfalls on exactly the axis you "
+      f"just named.\n")
+    A("I recommended the code path last turn on **cost and unlimited variants**, having flagged "
+      "fragility\nas the one real risk. **You have now weighted that risk as near-decisive, so "
+      "the recommendation\nmoves. That is the input changing, not me hedging** — and paying "
+      "$30/month to delete an entire\nclass of failure is obviously correct for someone whose "
+      "scarcest resource is attention in a\nlaunch month.\n")
+    A("> **The sharper point: lowering the bar to \"80–90% good\" does not help the code path — "
+      "it helps the\n> template path.** Templates are precisely how you reach 90% without "
+      "effort. A lower quality bar\n> would only favour building it yourself if code were the "
+      "cheaper way to be *good enough*. It is not;\n> it is the cheaper way to be *free*.\n")
+    A("**What you give up by choosing Framer:** about $30–50/month, and landing-page variants "
+      "become\ninventory you rent rather than files you copy. At the volumes in §1 — 2,429 LP "
+      "views a month — that\nis not a constraint you will feel this year.\n")
+    A("**And note the two purpose-built landing-page tools both lose**, which is the "
+      "counter-intuitive\nresult here. Leadpages is $99/month and Systeme.io is free-ish, and "
+      "both sell **A/B testing as the\nheadline feature that §1 proved you cannot use for "
+      "roughly a year.** You would be buying the one\nthing that does not work at your "
+      "volume.\n")
+
     A("---\n\n## 6. \"Why not just build it with Claude Code and deploy it cheap?\"\n")
     A("A fair challenge, and it **corrects a score in §2**. The first version of this file gave "
       "the code\noption `EDIT`=1 and `NOCODE`=1 — both of which assumed *the operator* hand-"
