@@ -10,7 +10,7 @@
 
 ---
 
-## 28 documents
+## 29 documents
 
 | | |
 |---|---|
@@ -19,6 +19,7 @@
 | **[`COMPOUND.md`](COMPOUND.md)** | **START HERE.** What can be sold to the same ICPs for **24 months**. **What compounds is the spine, not the skill** — a shared ledger login is a position inside the business; a rendered file is handed over a wall. **Finance spine 95.6; video gates out at 52.0.** Corrects LAUNCH.md's pick |
 | **[`LAUNCH.md`](LAUNCH.md)** | Month-one launchability. Introduces **`FOUNDERGRADE`** — can the operator personally judge the work with no team — which is why estimating and PI records are year-two businesses. **Its *pick* is superseded by [`COMPOUND.md`](COMPOUND.md); its method stands** |
 | **[`MAP.md`](MAP.md)** | **THE DECISION.** E-comm + marketing agencies × 5 roles. Two ads, one legible promise, five sellable seats. Supersedes the vertical/role picks elsewhere |
+| **[`TEARDOWN.md`](TEARDOWN.md)** | **The $500 paid step, specified.** It is the #3 activity in [`MASTERLIST.md`](MASTERLIST.md) and was referenced in four documents without ever being defined. It does four jobs at once: **the money gate** (deposit take-up is the most fragile input in the model), **the work sample** (you claim to grade creative — this is you doing it on their data before they pay a fee), **the qualifier** (you see their spend and cadence before the call), and **the setup for the sale**. §2 splits the automated analysis from the ~30–45 min of judgement that is actually yours. **§4 is the design rule that decides whether it sells: the teardown must conclude in a *volume* problem, because a volume problem is solved by a person and nothing else is** — *"your best ad is 6 weeks old, you ship 3 cuts a month, this account needs 12–16"* beats *"your CPM is high"*, and it is what sets up the $5,000–16,500/mo vendor-invoice comparator |
 | **[`OFFER.md`](OFFER.md)** | **The buildable thing.** One skill, both ICPs, priced, with the retention architecture and the economics stress-tested against 6-month attrition. **§9 is the short-term model update** — turn the $500 refundable deposit into a *paid books audit*, add a free graded bench shortlist to the call, and the 30-day ratio moves from **4.25:1 to 5.67-7.64:1** |
 | **[`MASTER.md`](MASTER.md)** | The analysis behind it — market data, 179-role screen, competitor teardown, decision history, what's unvalidated |
 | **[`BEACHHEAD.md`](BEACHHEAD.md)** | **Three verticals, one bench** — e-comm + marketing agencies + SaaS, ranked on measured **switch cost**. 6 of 10 roles are drop-in. Launch role is AR & Collections, not Ledger & Close |
