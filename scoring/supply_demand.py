@@ -55,6 +55,47 @@ I = "Intent seed (job posters)"
 L = "1% Lookalike"
 B = "Broad / Advantage+"
 
+# --- section 7: the architecture question, scored -------------------------------
+# (key, weight, what it measures)
+ARCH_DIM = [
+    ("SACRISK",  24, "Risk of a B2B ad being reclassified into the **Employment Special Ad "
+                     "Category**, which §2 prices at a 10–29% CAC tax"),
+    ("BRAND",    18, "Does brand equity concentrate on one domain? Weighted high because "
+                     "[`ARBITRARY.md`](ARBITRARY.md) §13 found *all hands talent* currently "
+                     "returns three other organisations on Google — split equity makes that "
+                     "worse"),
+    ("OPSLOAD",  16, "One operator, one month to launch. Low operational intensity has been "
+                     "rejected as a constraint twice"),
+    ("SUPPLY",   14, "Can it actually fill the bench at volume?"),
+    ("TRUST",    12, "Does a candidate see a real company with real clients, or a shell?"),
+    ("BUYERSAFE", 8, "What happens when a *buyer* finds the supply page"),
+    ("PIXEL",     4, "Keeping supply events out of buyer optimisation"),
+    ("EV",        4, "One brand, one asset, at exit"),
+]
+ARCH = [
+    ("A", "Two separate domains",
+     dict(SACRISK=5, BRAND=2, OPSLOAD=2, SUPPLY=5, TRUST=2, BUYERSAFE=5, PIXEL=5, EV=3),
+     "Cleanest possible isolation — a reviewer crawling the ad's domain finds no job content "
+     "at all. But it **splits brand equity, needs a second name** after nine rounds of naming, "
+     "doubles the site/hosting/analytics surface, and a candidate landing on a standalone "
+     "apply-domain sees a shell"),
+    ("B", "One domain, `/talent` path, demand-first homepage",
+     dict(SACRISK=4, BRAND=5, OPSLOAD=5, SUPPLY=5, TRUST=5, BUYERSAFE=4, PIXEL=5, EV=5),
+     "**The proposal, and it wins.** One site to build and maintain, all equity in one place, "
+     "and a candidate sees the real clients. `SACRISK` is 4 not 5 because Meta reviews landing "
+     "pages — mitigated by the three controls below, not by a second domain"),
+    ("C", "One domain, `talent.` subdomain",
+     dict(SACRISK=4, BRAND=4, OPSLOAD=4, SUPPLY=5, TRUST=4, BUYERSAFE=4, PIXEL=5, EV=5),
+     "Same policy exposure as B with **none of the upside**: extra DNS, SSL and deploy target, "
+     "and analytics and SEO tooling treat subdomains as separate sites. A path costs nothing "
+     "and keeps everything unified"),
+    ("D", "No public supply page — referral, LinkedIn and invite only",
+     dict(SACRISK=5, BRAND=5, OPSLOAD=5, SUPPLY=3, TRUST=4, BUYERSAFE=5, PIXEL=5, EV=5),
+     "**No job-opportunity page exists anywhere, so the category risk goes to zero** and there "
+     "is nothing to build. `SUPPLY`=3 is the whole catch: fine for the first ten to twenty "
+     "placements, a real constraint after that"),
+]
+
 # Employment category removes the lookalike leg. Custom audiences survive, so the
 # intent seed is untouched and the 45% has nowhere to go but broad. Broad then
 # degrades too, because interest and behavioural targeting are limited -- modelled
@@ -91,9 +132,10 @@ def main():
     doc = []
     A = doc.append
     A("# Supply and Demand on the Same Page?\n")
-    A(f"> **No — same domain, separate paths.** The reason is not stylistic. It is a "
-      f"**{lo[5]:.0f}–{hi[5]:.0f}% CAC tax**\n> arriving through Meta's ad policy, priced in "
-      f"§2 off the funnel model itself.\n")
+    A("> **One domain. `/talent` as a path, homepage entirely demand. Not a second domain, not a "
+      "subdomain —\n> and at launch, no public supply page at all.** §7 scores the four "
+      "architectures; §1–§3 are why it\n> matters, which is a "
+      f"**{lo[5]:.0f}–{hi[5]:.0f}% CAC tax** priced off the funnel model itself.\n")
 
     A("---\n\n## 1. The expensive reason: Meta's Special Ad Category\n")
     A("Meta classifies advertising for **job opportunities, internships and job boards** as "
@@ -196,6 +238,68 @@ def main():
     A("But that is **supply displayed to buyers, gated behind the deposit** — not an open "
       "application form.\nOne is a proof asset. The other is a job board. Same content, opposite "
       "businesses.\n")
+
+    # ---- section 7 -------------------------------------------------------
+    W = {k: w for k, w, _ in ARCH_DIM}
+
+    def sc(d):
+        return sum(d[k] * W[k] for k in W) / (5 * sum(W.values())) * 100
+
+    A("---\n\n## 7. Separate domain, or one domain with separate pages?\n")
+    A("The question asked directly. Four architectures, scored on what actually differs between "
+      "them.\n")
+    A("| Dimension | Wt | What it measures |\n|---|---|---|")
+    for k, w, why in ARCH_DIM:
+        A(f"| **{k}** | {w} | {why} |")
+    A("")
+    A("| | Architecture | " + " | ".join(k for k, _, _ in ARCH_DIM) + " | Score |")
+    A("|---|---|" + "---|" * (len(ARCH_DIM) + 1))
+    ranked = sorted(ARCH, key=lambda x: -sc(x[2]))
+    for tag, name, d, _ in ARCH:
+        mark = " ✅" if tag == ranked[0][0] else ""
+        A(f"| **{tag}** | {name}{mark} | " + " | ".join(str(d[k]) for k, _, _ in ARCH_DIM) +
+          f" | **{sc(d):.1f}** |")
+    A("")
+    for tag, name, d, why in ranked:
+        A(f"**{tag} — {name} · {sc(d):.1f}** — {why}\n")
+    a, b = [x for x in ARCH if x[0] == "A"][0], [x for x in ARCH if x[0] == "B"][0]
+    A(f"> **B beats A by {sc(b[2])-sc(a[2]):.1f} points**, and the margin is not about policy — it "
+      f"is `BRAND`, `OPSLOAD` and\n> `TRUST`. **A is safer on the one dimension I can fix with "
+      f"three lines of config, and worse on the\n> three I cannot.**\n")
+
+    A("### One argument for a separate domain that used to be true and is not\n")
+    A("Meta's **Aggregated Event Measurement** historically capped you at **eight conversion "
+      "events per\nverified domain**, so sharing a domain with a supply funnel meant supply "
+      "events competing for those\nslots. **Meta removed the 8-event limit and manual event "
+      "prioritisation in June 2025**, and domain\nverification is no longer required for AEM — "
+      "events are aggregated automatically. I checked before\nwriting it down, because it is "
+      "exactly the kind of stale received wisdom that would have argued for\nsplitting the "
+      "domain for no reason.\n")
+
+    A("### The three controls that do the work `SACRISK` is worried about\n")
+    A("| Control | Why |\n|---|---|")
+    A("| **Ads point at `/hire` or `/teardown`, never at `/`** | Page review sees a dedicated "
+      "buyer page with no navigation to job content |")
+    A("| **`/talent` is `noindex, nofollow`, linked once from the footer with `rel=\"nofollow\"`** "
+      "| Reachable by a candidate who is told where to look; not crawled into the same site graph "
+      "as the ad destination |")
+    A("| **No Meta pixel on `/talent`** — or a separate dataset | Supply visitors never enter "
+      "the buyer optimisation pool, the retargeting audience, or any lookalike built from it |")
+    A("")
+    A("### And write the supply page as proof, not as a secret\n")
+    A("The instinct is to hide it. Better: **write it so a buyer finding it strengthens the "
+      "pitch.** A page\nthat states the bar — *what is tested, what the pass rate is, how many "
+      "applicants were rejected last\nmonth* — is evidence for the graded claim rather than "
+      "against it. A page that says *\"join our talent\nnetwork\"* is a job board. **Same "
+      "surface, opposite effect**, and the difference is entirely in the copy.\n")
+
+    A("### What to actually do, in order\n")
+    A("**Build B's structure. Ship D's content.** For launch month there is no public supply page "
+      "at all —\n[`§5`](#5-so-build-it-like-this) already notes supply needs **zero ad spend**, "
+      "and referral plus LinkedIn\noutbound fills the first ten to twenty seats. That takes "
+      "`SACRISK` to zero for free.\n")
+    A("Publish `/talent` when referral stops keeping up with demand — realistically month three "
+      "to six —\nand publish it with the pass rate on it.\n")
     open(OUT, "w").write("\n".join(doc))
     print(f"base CAC ${base:,.0f} -> " +
           ", ".join(f"{lb}: ${c:,.0f} ({d:+.0f}%, {r:.2f}:1)"
