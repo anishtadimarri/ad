@@ -475,3 +475,51 @@ Kestrel, Lantern, Trellis, Bison, Hawthorn, Willow, Aspen and Quorum.
 >
 > Its two real costs, stated plainly: *"all hands on deck"* leans **emergency and quantity** against
 > a premium selective positioning, and at 18 characters it is not short.
+
+---
+
+## 11. Top 20, consolidated
+
+Every row **re-verified free in one pass** — `.com`/`.team`/`.works` by Verisign and Identity Digital
+RDAP, `.co` by the calibrated DNS proxy. Ranked on your four criteria, with the cost of each stated
+rather than buried.
+
+| # | Domain | Reads as | Why it is here | What you accept |
+|---|---|---|---|---|
+| **1** | **`allhandstalent.com`** | All Hands Talent | **An idiom, so not forced**, and **no recruiting firm is called All Hands** — the test that killed ten other candidates. `Talent` locks no role, seniority or vertical | *"All hands on deck"* leans **emergency and quantity** against premium selection. 18 characters |
+| **2** | **`allhandshiring.com`** | All Hands Hiring | Same word, and **the only All Hands variant with no accidental word in it at all.** `H`-alliteration; `Hiring` states the business cold | More transactional than `Talent` |
+| **3** | **`lindenhires.com`** | Linden Hires | **The only nature word of eleven checked with no recruiting firm on it.** Warm, two syllables, one spelling | Linden, NJ surfaces in searches; Linden Lab made Second Life |
+| **4** | **`lindenhiring.com`** | Linden Hiring | As above, with the stronger head noun | Same |
+| **5** | **`tuesdayhires.com`** | Tuesday Hires | Arbitrary and warm, **outside the contested nature register entirely**, and it is the word you keep returning to | Means nothing — which you have said is fine |
+| **6** | **`tuesdayhiring.com`** | Tuesday Hiring | As above | Same |
+| **7** | **`handpicked.team`** | Handpicked Team | **The dot is silent.** Structurally the least forced name in nine rounds — nothing is welded on, because the TLD *is* the second word. And it is literally the offer | `.team` is a low-trust nTLD for a $6k–$20k sale; `handpicked.com` is Handpicked Hotels; generic word, weak trademark |
+| **8** | `keeltalent.com` | Keel Talent | *"On an even keel."* Short, spellable, **no recruiting firm found** | Keel is a London no-code startup that raised $6M in 2024; two stresses collide |
+| **9** | `keelhires.com` | Keel Hires | As above | Same |
+| **10** | `allhandsroster.com` | All Hands Roster | **Names the graded directory** — the retention asset worth +$9,022 per client | `Roster` implies a fixed list; 18 characters |
+| **11** | `tuesdayroster.com` | Tuesday Roster | Same logic, shorter first word | *"The Tuesday roster"* can read as a shift rota |
+| **12** | `lindenroster.com` | Linden Roster | Same, on the cleanest first word | Same |
+| **13** | `wrenhires.com` | Wren Hires | **No recruiting firm found.** Short and warm | **Wren** is a Y Combinator carbon-offset startup with real name recognition, and Wren Kitchens is large in the UK |
+| **14** | `wrenhiring.com` | Wren Hiring | As above | Same |
+| **15** | `tuesdaytalent.com` | Tuesday Talent | **The best-flowing Tuesday pairing** of the fourteen | **An existing Facebook page uses this exact name** for freelance creatives — on the platform you advertise on |
+| **16** | `laureltalent.com` | Laurel Talent | No recruiting firm found; `LAU-rel TAL-ent` flows well | A given name, and *"resting on your laurels"* is the wrong idiom |
+| **17** | `lindenpeople.com` | Linden People | Warmest head noun, on the cleanest word | `People` is **the most crowded head noun in staffing** |
+| **18** | `handpicked.works` | Handpicked Works | The dot is silent here too | Reads as *work samples* rather than as people |
+| **19** | `handpickedhiring.com` | Handpicked Hiring | `.com`, and *handpicked* is the promise | 16 characters, and it edges toward a spec |
+| **20** | `allhandsstaff.com` | All Hands Staff | Clean on every check | `Staff` reads administrative and lower-ticket |
+
+### Free, and deliberately left out
+
+| Domain | Left out because |
+|---|---|
+| `wrentalent.com` | contains **rental** — w`REN-TAL`ent. `ARTIFACT`, hard gate |
+| `birchhiring.com` · `birchhires.com` | **Birch Agency** is a live nationwide education staffing firm |
+| `ridgehiring.com` | **Blue Ridge Executive Search** and **Ridgeline Talent Partners** |
+| `thursdaytalent.com` | **Thursday is a well-known London and New York dating app** aimed at your exact ad audience |
+| `tuesdaydesk.com` | `Desk` implies **one** desk, which fights expansion into all ICPs |
+| `allhandspeople.com` | **redundant** — hands *are* people |
+| `braidtalent.co` | free and uncrowded, but *braid* means nothing for talent |
+| `besthands.co` | reads as derivative of Allstate's *"you're in good hands"* |
+| `tenhands.co` | *ten hands* is five people — it **caps the offer** in the name |
+| `allhandscrew.com` | contains **screw** |
+| `allhandshires.com` | contains **shire** |
+| `lindentalent.com` | contains **dental** |
