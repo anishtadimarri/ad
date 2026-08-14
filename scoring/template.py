@@ -63,14 +63,21 @@ DIM = [
 #  CREDIBLE, NETCOST, note)   -- MOBILEHERO and SPEED deliberately unscored, see section 3
 T = [
  ("Conversion", "~$79 `[?]`", "conversion / lead-gen",
-  4, 5, 5, 5, 3, 4, 5,
+  2, 5, 4, 5, 4, 4, 5,
+  "**Verified live at [conversion.framer.media](https://conversion.framer.media/).** Headline "
+  "*\"Ready to scale your brand with paid ads?\"* — built for a **paid-ads agency**. Ships "
+  "hero, testimonials, a **Results section with client metrics**, services, a comparison "
+  "table, a 3-step process, team. **`COMPLETE50` drops 4→2 on verification: there is no blog "
+  "or CMS and no pricing page.** Case studies would be hand-built static pages, which is "
+  "precisely the thing that bites at client three to five. "
   "**Built for lead generation rather than showcase** — the rarest property here. "
   "**`STABLE`=5 on the strongest evidence available**: one of the longest-running templates "
   "on the marketplace with 100k+ views, which is the only real proxy for *it still works and "
   "is still maintained*"),
  ("Funnelz", "paid `[?]`", "lead-gen agency",
   5, 3, 5, 4, 5, 3, 5,
-  "**Verified live.** By Ramish Aziz. Ships hero+CTA, social proof, **case studies**, "
+  "**Verified live at [funnelz.framer.website](https://funnelz.framer.website/).** By Ramish "
+  "Aziz. Ships hero+CTA, social proof, **case studies**, "
   "services, **3-tier pricing**, team bios, **blog/resources**, booking in the nav — "
   "**`COMPLETE50`=5, the most complete section set on this list.** Two mismatches, both "
   "edits not rebuilds: **3-tier pricing when you have one price**, and **team bios when you "
@@ -79,7 +86,11 @@ T = [
   "funnel-agency register, and **your buyer *is* an agency owner who will recognise it "
   "instantly**"),
  ("Cubicles", "~$59 `[?]`", "corporate / consultancy",
-  4, 4, 4, 3, 3, 5, 5,
+  3, 4, 4, 3, 4, 5, 5,
+  "**Verified live at [cubicles.framer.website](https://cubicles.framer.website/).** Headline "
+  "*\"Tailored Solutions for Every Business Challenge\"*. Ships hero, about, services, "
+  "industries, **case studies and a real blog/CMS** — but **no pricing, no testimonials, no "
+  "booking**, so `COMPLETE50`=3. "
   "**Corporate B2B — the right register**, and the opposite risk to Funnelz. Structured for "
   "services rather than showcase. Weaker repeated CTA, which is a fixable edit"),
  ("Nakula / Fabrica / Lyniq", "$69–129 `[?]`", "premium agency",
