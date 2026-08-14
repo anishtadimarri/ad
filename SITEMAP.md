@@ -64,3 +64,79 @@ that short list.** The other twenty pages can be as slow and as long as you like
 **`/paid` was missing from every earlier version of this.** A form fill and a $500 purchase are
 different events with different values, and if they share a URL you cannot optimise toward the one
 that matters. It costs nothing to split them at launch and cannot be retrofitted cleanly.
+
+---
+
+## The 14 you actually need, and what produces each
+
+Scope confirmed: rows 1–10, plus `/about`, `/contact`, `/talent`, `/404`.
+
+**The finding, before the table: only one of the fourteen is built from blank.**
+
+| # | Page | Source | Effort |
+|---|---|---|---|
+| 1 | **`/`** | **Recruitify homepage** — edit copy | template |
+| 2 | **`/agencies`** | **Built from blank**, reusing the template's components | **the only real build** |
+| 3 | `/ecommerce` | **Duplicate `/agencies`**, swap the ICP language | ~20 min |
+| 4 | `/thanks` | Build — headline, next steps, Cal.com embed | ~15 min |
+| 5 | `/paid` | **Duplicate `/thanks`**, different copy + conversion event | ~5 min |
+| 6 | `/privacy` | **Recruitify `/privacy`** — replace the text | ~10 min |
+| 7 | `/terms` | **Recruitify `/terms`** — replace the text | ~10 min |
+| 8 | `/guarantee` | **Duplicate `/privacy`'s layout** | ~20 min |
+| 9 | `/access` | **Duplicate `/privacy`'s layout** | ~20 min |
+| 10 | `/talent` | **Duplicate `/privacy`'s layout** + form embed | ~20 min |
+| 11 | `/proof` | **Recruitify `/projects`** — adapt to recut + retention | template |
+| 12 | `/about` | **Recruitify `/about`** — edit | template |
+| 13 | `/contact` | **Recruitify `/contact`** — edit | template |
+| 14 | `/404` | **Framer's built-in** | ~5 min |
+
+| Source | Pages |
+|---|---|
+| **Comes with Recruitify** | **5** — `/`, `/proof`, `/about`, `/contact`, `/privacy` + `/terms` |
+| **Duplicate an existing text page and change words** | **4** — `/guarantee`, `/access`, `/talent`, `/paid` |
+| **Duplicate the LP** | **1** — `/ecommerce` |
+| **Framer built-in** | **1** — `/404` |
+| **Genuinely built** | **2** — `/agencies` and `/thanks`, and `/thanks` is fifteen minutes |
+
+> **So the template covers five, duplication covers six, Framer covers one, and you build `/agencies`.**
+> Roughly a day of work after the template is remixed — and **`/agencies` is where the whole day
+> should go**, because it takes 100% of the paid traffic.
+
+---
+
+## Should you buy a second template just for `/agencies`?
+
+I checked, because it is the page that matters and I had never searched single-page landing-page
+templates. Candidates: **[Pace](https://pace.framer.media/)** (verified live), Assemble, Shiftium,
+LanX.
+
+**Pace is the best of them and it still does not earn the money.** Its section order is close —
+hero → *Headaches* (problem) → solution → features → pricing → testimonials → FAQ → repeated CTA.
+But:
+
+| | |
+|---|---|
+| **No metrics or results block** | So the **recut with 3-second and 15-second retention** — block 3, *the business* — is built regardless |
+| **No calculator** | So the **volume calculator** — block 2, and the highest-value custom block on the site — is built regardless |
+| **No comparison table** | So the objection block is built regardless |
+| **SaaS register**, priced at $19/$49 monthly tiers | Full rewrite, and it would sit beside a recruitment-register site |
+| **A second design system to reconcile** | Two templates in one project means two type scales and two colour systems |
+
+> **The three blocks a landing-page template cannot give you are the three that make this page
+> different from every other page on the internet.** What is left — hero, testimonials, FAQ, repeated
+> CTA — you already have in Recruitify's components.
+
+**Build `/agencies` from blank in Recruitify's design system.** One template, one purchase, one type
+scale.
+
+---
+
+## What this settles
+
+The template question absorbed several rounds and the answer is smaller than it looked:
+
+**One template. One page built from scratch. Everything else is duplicate-and-edit.**
+
+That is also why `STABLE` deserved cutting to 8 and why the CMS mattered more than the page count —
+you are not depending on the template for structure, you are depending on it for **a design system
+and five pages of head start.**
