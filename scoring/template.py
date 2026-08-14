@@ -104,6 +104,34 @@ T = [
   "product site, not a services firm"),
 ]
 
+# What allhandstalent.com needs, from SITE.md section 3 + TEARDOWN.md + SUPPLY-DEMAND.md.
+# HAVE / BUILD verified by crawling each demo.
+NEED = [
+ ("`/` homepage, demand-only", "have", "have"),
+ ("`/agencies` — ad destination ICP 1", "**build**", "**build**"),
+ ("`/ecommerce` — ad destination ICP 2", "**build**", "**build**"),
+ ("`/teardown` — the $500 paid gate", "**build**", "**build**"),
+ ("`/thanks`", "**build**", "**build**"),
+ ("`/proof` — recut ads + retention deltas", "adapt `/projects`", "adapt `/blog`"),
+ ("`/pricing`", "**have** — real page", "section only, **build page**"),
+ ("`/guarantee` — 12-month replacement", "**build**", "**build**"),
+ ("`/faq` — objection handling", "**have** — real page", "**build**"),
+ ("`/about`", "**have**", "**build**"),
+ ("`/contact`", "**have**", "**build**"),
+ ("`/privacy` + `/terms`", "**have** — both", "**build both**"),
+ ("`/talent` (month 3–6, noindex)", "**build**", "**build**"),
+ ("— *components* —", "", ""),
+ ("Process / how-it-works", "**have** — *already* Consultation → Screening → Placement",
+  "have — generic 3-step"),
+ ("Testimonials / social proof", "**have**", "**have**"),
+ ("Case studies with metrics", "**have** — `/projects`", "**have** — homepage"),
+ ("**CMS collection** for accumulating proof", "**build**", "**have** — CMS-shaped blog"),
+ ("**Comparison / objection block**", "**build**", "**build**"),
+ ("Booking embed (Cal.com)", "**build**", "**have** — booking in nav"),
+ ("Stripe payment button", "**build**", "**build**"),
+ ("Forms → email + sheet", "**have** — `/contact`", "**build**"),
+]
+
 # The 20-minute test, run on the operator's own phone.
 TEST = [
  ("Open the live preview **on your phone, on mobile data — not wifi**", "SPEED",
@@ -302,6 +330,68 @@ def main():
       "URL rather than on a\nhomepage or a listing. **Run the phone test on Recruitify and "
       "Funnelz and buy the one that passes** —\nthat is the last check, and it is the one only "
       "you can run.\n")
+
+    P("---\n\n## 8. Exactly what you build, in each\n")
+    P("Requirements from [`SITE.md`](SITE.md) §3, [`TEARDOWN.md`](TEARDOWN.md) and "
+      "[`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) §7,\ndiffed against what the crawl proved is "
+      "actually deployed.\n")
+    P("| Needed | **Recruitify** | **Funnelz** |\n|---|---|---|")
+    for need, r, f in NEED:
+        if not r:
+            P(f"| *{need}* | | |")
+        else:
+            P(f"| {need} | {r} | {f} |")
+    nb_r = sum(1 for _, r, f in NEED if r.startswith("**build"))
+    nb_f = sum(1 for _, r, f in NEED if f.startswith("**build"))
+    P("")
+    P(f"> **Recruitify: {nb_r} things to build. Funnelz: {nb_f}.** Recruitify already ships "
+      f"`/pricing`, `/faq`,\n> `/about`, `/contact`, `/privacy` and `/terms` as **real pages**; "
+      f"in Funnelz all six are homepage\n> sections or absent. **That is the gap, and it is "
+      f"not close.**\n")
+    P("**Funnelz wins on exactly two things**, and they are the two that are hardest to add:\n")
+    P("| | |\n|---|---|")
+    P("| **A CMS-shaped blog** | Its posts carry dates, categories, authors and individual "
+      "URLs. Recruitify has no `/blog` at all. **But a Framer CMS collection is an afternoon "
+      "to add** |")
+    P("| **Booking already in the nav** | Recruitify routes to `/contact` instead. A Cal.com "
+      "embed is twenty minutes |")
+    P("")
+    P("**Both need the same three things built from blank**, and they are the three that "
+      "actually earn money:\n`/agencies`, `/ecommerce` and `/teardown`. **No template ships "
+      "those** — which is [§1](#1-first-you-are-buying-a-template-for-the-wrong-page)'s point, "
+      "and it is why the\ntemplate choice matters less than it feels like it does.\n")
+
+    P("---\n\n## 9. Support and usage — what the evidence actually says\n")
+    P("| | **Funnelz** | **Recruitify** |\n|---|---|---|")
+    P("| Creator | **Ramish Aziz** | **Framify** |")
+    P("| Templates published | **18** — [framer.com/@ramish-aziz](https://www.framer.com/"
+      "@ramish-aziz/) | not established |")
+    P("| Other work | Talentify, DesignZap, Influence, Digitalise, Advertise, FinancialGPT and "
+      "more | Distributed on **Craftwork** and **Dribbble** |")
+    P("| Price | paid `[?]` | **appears free** `[?]` |")
+    P("| Ratings / view counts / installs | **not obtainable** — the marketplace is "
+      "JS-rendered and returns only a shell | same |")
+    P("")
+    P("**On the evidence available, Funnelz has the stronger support signal.** Eighteen "
+      "published templates is\na business rather than a side project, and a creator with a "
+      "catalogue has a reason to answer\nsupport email. Framify has real distribution — "
+      "Craftwork and Dribbble are not nothing — but I could\nnot establish volume.\n")
+    P("> **Be clear about how weak this evidence is.** I could not obtain a single rating, "
+      "review, install\n> count or update date for either, because Framer's marketplace "
+      "renders client-side and serves a\n> shell to anything that is not a browser. "
+      "**\"Eighteen templates\" is the only hard number in this\n> section.**\n")
+    P("And per [§3](#3-two-corrections-i-crawled-the-pages-and-stable-was-the-wrong-worry), "
+      "**it matters less than it sounds.** Framer templates have no upstream to\nbreak. The "
+      "only thing support buys you is someone answering a setup question in week one — after "
+      "which\nyou will have edited the thing beyond recognition anyway.\n")
+    P("### So which\n")
+    P(f"**Recruitify, still.** {nb_f - nb_r} fewer things to build, a page structure you cannot "
+      f"add later, and a process\nsection that is already yours. **If it is genuinely free, "
+      f"the case is stronger again** — though free\nmeans no 3-month Pro bundle, so verify "
+      f"both the price and the bundle on the listing.\n")
+    P("**Take Funnelz instead if** you would rather inherit a CMS and a booking flow than "
+      "inherit six pages —\nand if the funnel-agency voice does not bother you, which it "
+      "should not, because you are rewriting\nevery line regardless.\n")
 
     open(OUT, "w").write("\n".join(L))
     print(f"{len(T)} templates scored on {len(SUB)} of {len(DIM)} criteria "
