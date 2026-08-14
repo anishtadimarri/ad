@@ -27,64 +27,80 @@ Run:  python3 scoring/template.py > /dev/null   (writes TEMPLATE.md)
 OUT = "TEMPLATE.md"
 
 DIM = [
- ("MOBILEHERO", 22, "**Promise + CTA above the fold on a 390×844 phone, with no scroll.** "
-                    "Meta traffic is overwhelmingly mobile and arrives mid-scroll. Most "
-                    "templates are designed desktop-first with a tall hero image that pushes "
-                    "the CTA below the fold on a phone — **this is the single most common "
-                    "failure and it is invisible on a laptop**", "`[?]` from listings"),
- ("SPEED",      18, "Page weight and animation load on 4G. [`funnel.py`](scoring/funnel.py) "
-                    "carries an **85% LP-view rate** — that is a speed number, and every "
-                    "point lost is lost at the very top of the funnel. **Framer templates "
-                    "love scroll animation and video backgrounds**", "`[?]` from listings"),
- ("SECTIONS",   16, "Does it ship the sections this offer needs, in this order — hero → "
-                    "proof → how it works → pricing → guarantee → CTA? **Most agency "
-                    "templates are portfolio-shaped** (case-study grid, big imagery), which "
-                    "is a different page", "assessable"),
- ("CTAREPEAT",  12, "CTA in the hero, mid-page, and sticky or footer. **Mobile users do not "
-                    "scroll back up**", "assessable"),
- ("PROOFSLOT",  10, "Somewhere to put a **before/after video comparison with retention "
-                    "numbers** — the `/proof` page is the most important on the site",
-                    "assessable"),
- ("CREDIBLE",   10, "Reads as a firm a $6k–$20k buyer trusts. **Not startup-gradient, not "
-                    "creative-portfolio.** You have no track record, so the site carries "
-                    "more trust load than usual", "assessable"),
- ("VARIANT",     7, "How easily it duplicates into `/agencies` and `/ecommerce` — component-"
-                    "driven with global styles, or hand-built pages", "assessable"),
- ("COST",        5, "One-time. Real, but small against the decision", "verifiable"),
+ ("MOBILEHERO", 20, "**Promise + CTA above the fold on a 390×844 phone, no scroll.** Meta "
+                    "traffic is overwhelmingly mobile and arrives mid-scroll. Most templates "
+                    "are desktop-first with a tall hero that pushes the CTA under the fold on "
+                    "a phone — **the most common failure, and invisible on a laptop**",
+                    "`[?]` needs the phone test"),
+ ("SPEED",      15, "Weight and animation on 4G. [`funnel.py`](scoring/funnel.py) carries an "
+                    "**85% LP-view rate** — a speed number, lost at the very top of the funnel",
+                    "`[?]` needs the phone test"),
+ ("COMPLETE50", 15, "**New.** *\"Everything for the first 50 converts.\"* Does it ship every "
+                    "surface you need before a rebuild — **CMS for accumulating `/proof` "
+                    "entries and case studies**, pricing, testimonials, forms, booking embed, "
+                    "thank-you page, legal pages? **A template you outgrow at client ten costs "
+                    "you a rebuild in the busiest month you will have**", "assessable"),
+ ("STABLE",     13, "**New.** *\"Stability and clean.\"* Maintained, lifetime updates, and "
+                    "**structurally clean — components and global styles rather than "
+                    "hand-placed pages.** Clean structure is also what makes `/agencies` and "
+                    "`/ecommerce` a duplicate-and-edit rather than two of everything forever",
+                    "partly — longevity is the best available proxy"),
+ ("SECTIONS",   12, "Ships the sections this offer needs, in order: hero → proof → how it "
+                    "works → pricing → guarantee → CTA. **Most agency templates are "
+                    "portfolio-shaped**, which is a different page", "assessable"),
+ ("CTAREPEAT",   8, "CTA in hero, mid-page, and sticky or footer. **Mobile users do not scroll "
+                    "back up**", "assessable"),
+ ("PROOFSLOT",   7, "A block that holds **two videos side by side with retention numbers under "
+                    "them** — the recut-vs-original comparison", "assessable"),
+ ("CREDIBLE",    6, "Reads as a firm a $6k–$20k buyer trusts. Not startup-gradient, not "
+                    "creative-portfolio", "assessable"),
+ ("NETCOST",     4, "**Changed.** Cost **net of the bundled 3 months of Framer Pro** that paid "
+                    "templates commonly include — see §2. A free template has no bundle, so it "
+                    "is not the cheapest option", "verifiable on the listing"),
 ]
 
-# (name, price, register, SECTIONS, CTAREPEAT, PROOFSLOT, CREDIBLE, VARIANT, COST, note)
-# MOBILEHERO and SPEED are deliberately NOT scored -- see section 3.
+# (name, price, register, COMPLETE50, STABLE, SECTIONS, CTAREPEAT, PROOFSLOT,
+#  CREDIBLE, NETCOST, note)   -- MOBILEHERO and SPEED deliberately unscored, see section 3
 T = [
  ("Conversion", "~$79 `[?]`", "conversion / lead-gen",
-  5, 5, 3, 4, 4, 3,
-  "**Built for lead generation rather than showcase**, which is the rarest and most "
-  "valuable property in this list. One of the longest-running templates on the Framer "
-  "marketplace. `PROOFSLOT`=3 because a conversion template optimises for form-fills, not "
-  "for a video comparison — you would add that block"),
- ("Nebula", "$49 `[?]`", "lead-gen, dark + gradient",
-  4, 4, 3, 3, 4, 4,
-  "Explicitly lead-gen focused and cheap. **`CREDIBLE`=3 is the concern** — dark gradient "
-  "reads SaaS-startup, and your buyer is a 40-year-old agency owner deciding whether an "
-  "unknown Indian firm is real"),
+  4, 5, 5, 5, 3, 4, 5,
+  "**Built for lead generation rather than showcase** — the rarest property here. "
+  "**`STABLE`=5 on the strongest evidence available**: one of the longest-running templates "
+  "on the marketplace with 100k+ views, which is the only real proxy for *it still works and "
+  "is still maintained*"),
+ ("Funnelz", "paid `[?]`", "lead-gen agency",
+  5, 3, 5, 4, 5, 3, 5,
+  "**Verified live.** By Ramish Aziz. Ships hero+CTA, social proof, **case studies**, "
+  "services, **3-tier pricing**, team bios, **blog/resources**, booking in the nav — "
+  "**`COMPLETE50`=5, the most complete section set on this list.** Two mismatches, both "
+  "edits not rebuilds: **3-tier pricing when you have one price**, and **team bios when you "
+  "are one person** (repurpose as the founder story — useful when you have no track record). "
+  "**`CREDIBLE`=3 is the real risk**: *\"Fuelling growth with every click\"* is "
+  "funnel-agency register, and **your buyer *is* an agency owner who will recognise it "
+  "instantly**"),
  ("Cubicles", "~$59 `[?]`", "corporate / consultancy",
-  4, 3, 3, 5, 3, 4,
-  "**Corporate B2B register — the right register.** Structured for services rather than "
-  "showcase. Weaker on repeated CTA, which is a fixable edit"),
+  4, 4, 4, 3, 3, 5, 5,
+  "**Corporate B2B — the right register**, and the opposite risk to Funnelz. Structured for "
+  "services rather than showcase. Weaker repeated CTA, which is a fixable edit"),
  ("Nakula / Fabrica / Lyniq", "$69–129 `[?]`", "premium agency",
-  4, 3, 4, 5, 3, 2,
-  "The 'looks expensive' tier, aimed at high-ticket B2B. **`CREDIBLE`=5 is real and "
-  "matters here.** But premium agency templates are usually the heaviest — big imagery, "
-  "lots of motion — so `SPEED` is the risk and it is unverified"),
- ("Greenleaf", "**free** `[?]`", "consulting",
-  4, 3, 2, 4, 3, 5,
-  "Free, clean, consulting-shaped, with a services section and a clear contact-to-"
-  "consultation flow. **The cheapest way to test whether a template is even the "
-  "constraint** — and if the answer is no, you have spent nothing"),
- ("Kajo", "**free** `[?]`", "general",
-  3, 3, 2, 3, 3, 5, "Free. Fewer sections, less structure"),
- ("Halo", "$69 `[?]`", "general/startup",
-  3, 3, 3, 3, 3, 3, "No strong reason to choose it over the lead-gen options above"),
+  4, 4, 4, 3, 4, 5, 4,
+  "The 'looks expensive' tier for high-ticket B2B. `CREDIBLE`=5 is real. **But premium "
+  "agency templates are usually the heaviest** — big imagery, heavy motion — so `SPEED` is "
+  "the risk and it is exactly what I cannot check"),
+ ("Nebula", "$49 `[?]`", "lead-gen, dark + gradient",
+  3, 3, 4, 4, 3, 3, 5,
+  "Lead-gen shaped and cheap. **`CREDIBLE`=3**: dark gradient reads SaaS-startup, and your "
+  "buyer is deciding whether an unknown Indian firm is real"),
+ ("Greenleaf", "**free**", "consulting",
+  3, 4, 4, 3, 2, 4, 3,
+  "Clean consulting register, services section, clear contact-to-consultation flow. "
+  "**`NETCOST`=3, not 5 — free templates carry no Pro bundle**, so you pay $30/mo from day "
+  "one and it is not actually the cheapest path (§2). Built for ESG consultants, so expect "
+  "green styling — a skin change, not structural"),
+ ("Kajo", "**free**", "general",
+  2, 3, 3, 3, 2, 3, 3, "Fewer sections, less structure, no bundle"),
+ ("Halo", "$69 `[?]`", "general / startup",
+  3, 3, 3, 3, 3, 3, 4, "No strong reason over the lead-gen options above"),
 ]
 
 # The 20-minute test, run on the operator's own phone.
@@ -112,11 +128,12 @@ TEST = [
 
 def main():
     W = {k: w for k, w, _, _ in DIM}
-    SUB = ["SECTIONS", "CTAREPEAT", "PROOFSLOT", "CREDIBLE", "VARIANT", "COST"]
+    SUB = ["COMPLETE50", "STABLE", "SECTIONS", "CTAREPEAT", "PROOFSLOT",
+           "CREDIBLE", "NETCOST"]
     subw = sum(W[k] for k in SUB)
 
     def sc(row):
-        vals = dict(zip(SUB, row[3:9]))
+        vals = dict(zip(SUB, row[3:10]))
         return sum(vals[k] * W[k] for k in SUB) / (5 * subw) * 100
 
     rows = sorted(T, key=lambda r: -sc(r))
@@ -143,7 +160,29 @@ def main():
     P("> **So the template's job is credibility, not conversion.** That changes what you are "
       "shopping for,\n> and it means a **free** template may be entirely sufficient — see §5.\n")
 
-    P("---\n\n## 2. The criteria, weighted for this funnel\n")
+    P("---\n\n## 2. The 3-months-free bundle reverses \"start with a free one\"\n")
+    P("**Paid Framer templates commonly ship a code for 3 months of Framer Pro.** That is not a "
+      "marketing\nfootnote — it is worth more than most of the templates cost, and it inverts "
+      "the cost comparison\nI gave last time.\n")
+    P("| Path | Template | Framer Pro, months 1–3 | **Total, first 3 months** |")
+    P("|---|---|---|---|")
+    P("| **Free template** (Greenleaf, Kajo) | $0 | **$90** — you pay from day one | **$90** |")
+    P("| **Paid template with the bundle** (~$79) | $79 | **$0** | **$79 + the template** |")
+    P("")
+    P("> **The paid template is cheaper *and* you get the template.** A free template is only "
+      "the cheapest\n> option if you ignore the subscription it does not cover — which is "
+      "exactly what I did last turn.\n")
+    P("Three caveats, and the first one matters:\n")
+    P("| | |\n|---|---|")
+    P("| **The bundle is creator-dependent, not universal** | It is common, not guaranteed. "
+      "**Check the specific listing for the 3-months-Pro code before buying** — the whole "
+      "argument above collapses without it |")
+    P("| It is 3 months of the **annual** Pro plan | Which means it likely presumes annual "
+      "billing afterwards. Read what you are committing to at month four |")
+    P("| Prices here are `[?]` from aggregators | Verify on Framer. Listings churn |")
+    P("")
+
+    P("---\n\n## 3. The criteria, weighted for this funnel\n")
     P("Not generic web-design advice. These weights come from **your** traffic: overwhelmingly "
       "mobile,\ncold, mid-scroll, and metered by an 85% LP-view rate.\n")
     P("| Criterion | Wt | What it means | Can I check it? |")
@@ -155,22 +194,21 @@ def main():
       "and `SPEED`\n> are properties of the live preview on a phone on mobile data. Everything "
       "below is therefore a\n> **shortlist to test**, not a ranking to trust.\n")
 
-    P("---\n\n## 3. The shortlist, scored on what *is* assessable\n")
+    P("---\n\n## 4. The shortlist, scored on what *is* assessable\n")
     P(f"Scored on the {len(SUB)} assessable criteria only — {subw} of 100 points. "
       "**`MOBILEHERO` and `SPEED` are\ndeliberately absent**, which is why the top score here "
       "is not a recommendation.\n")
-    P("| # | Template | Price | Register | Sect | CTA | Proof | Cred | Var | Cost | Score | "
-      "Note |")
-    P("|---|---|---|---|---|---|---|---|---|---|---|---|")
+    P("| # | Template | Price | Register | C50 | Stab | Sect | CTA | Proof | Cred | Net$ | "
+      "Score | Note |")
+    P("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for i, r in enumerate(rows, 1):
-        name, price, reg = r[0], r[1], r[2]
-        P(f"| {i} | **{name}** | {price} | {reg} | {r[3]} | {r[4]} | {r[5]} | {r[6]} | {r[7]} | "
-          f"{r[8]} | **{sc(r):.0f}** | {r[9]} |")
+        P(f"| {i} | **{r[0]}** | {r[1]} | {r[2]} | {r[3]} | {r[4]} | {r[5]} | {r[6]} | {r[7]} | "
+          f"{r[8]} | {r[9]} | **{sc(r):.0f}** | {r[10]} |")
     P("")
     P("*Names and prices are from marketplace aggregators and are marked `[?]` — **verify both "
       "on Framer\nbefore buying**, since listings and pricing churn.*\n")
 
-    P("---\n\n## 4. The 20-minute test that actually decides it\n")
+    P("---\n\n## 5. The 20-minute test that actually decides it\n")
     P("Run this on **three** candidates. It is worth more than any ranking I can give you, "
       "because it\nmeasures the two things that carry 40% of the weight.\n")
     P("| # | Do this | Tests | Why |\n|---|---|---|---|")
@@ -182,28 +220,53 @@ def main():
       "template fails — and **it will look\nperfect on your laptop**, which is how this mistake "
       "gets made.\n")
 
-    P("---\n\n## 5. What I would actually do\n")
+    P("---\n\n## 6. What I would actually do\n")
+    P("**This reverses last turn's answer, and the bundle is why.**\n")
     P("| | |\n|---|---|")
-    P("| **Start with a free one** | **Greenleaf** (consulting register, services section, "
-      "clear contact-to-consultation flow) costs nothing and answers the real question: *is the "
-      "template the constraint, or is the copy?* It is almost always the copy |")
-    P("| **If you pay, pay for the lead-gen register** | **Conversion** is the only one on the "
-      "list built for lead generation rather than showcase, and that is the rarest property "
-      "here. **Cubicles** if you want the corporate-B2B look instead |")
-    P("| **Avoid the premium agency tier for now** | Nakula, Fabrica, Lyniq look expensive and "
-      "are usually the heaviest — big imagery, heavy motion. **You are optimising for a phone "
-      "on 4G, not for a design award** |")
-    P("| **Avoid dark-gradient startup templates** | Nebula is cheap and lead-gen shaped, but "
-      "your buyer is an agency owner deciding whether an unknown Indian firm is real. **Dark "
-      "gradient reads *startup*; you want *firm*** |")
-    P("| **Budget the saving, not the spend** | The gap between free and $79 is one hour of "
-      "your time. **The gap between a template that fails the phone test and one that passes is "
-      "every impression you ever buy** |")
+    P("| **Buy a paid template with the 3-month Pro code** | It is cheaper than free over the "
+      "first quarter (§2), and the two strongest candidates are both paid |")
+    P("| **First choice: Conversion** | The only one built for **lead generation rather than "
+      "showcase**, and `STABLE`=5 on the best evidence available — 100k+ marketplace views over "
+      "years is the only real proxy for *still maintained, still works*. **Stability was one of "
+      "your criteria and this is the one template with actual evidence for it** |")
+    P("| **Close second: Funnelz** | **The most complete section set on the list** — case "
+      "studies, blog, pricing, testimonials, booking. `COMPLETE50`=5, so nothing needs "
+      "rebuilding as proof accumulates. **The risk is register**: your buyer is an agency owner "
+      "who will recognise funnel-agency styling on sight |")
+    P("| **Cubicles if Funnelz feels too *agency*** | Corporate-B2B register, the opposite risk "
+      "profile, and cheaper |")
+    P("| **Still avoid the premium tier** | Nakula, Fabrica, Lyniq look expensive and are "
+      "usually the heaviest. **You are optimising for a phone on 4G** |")
+    P("| **Greenleaf drops to a fallback** | Still fine, still clean — but `NETCOST`=3 because "
+      "there is no bundle, and `PROOFSLOT`=2 because a consulting template has nowhere natural "
+      "for a two-video comparison |")
     P("")
-    P("**And strip whatever you buy.** Templates ship with animation, parallax and section "
-      "counts designed to\ndemo well in a marketplace. Delete aggressively: every animation you "
-      "remove buys back LP-view rate,\nand the 85% in the funnel is an assumption you can move "
-      "in the right direction for free.\n")
+    P("### On \"everything for the first 50 converts\"\n")
+    P("That criterion is doing real work, and it is why **Funnelz jumped past Cubicles.** The "
+      "surfaces you\nwill need before client fifty, in the order they become urgent:\n")
+    P("| By client | You need | Which means the template must ship |\n|---|---|---|")
+    for a, b, c in [
+        ("1", "Two ad destinations, a paid teardown page, booking, thank-you",
+         "Forms, an embed slot, a payment button — **or you build these anyway**"),
+        ("3–5", "**Your first `/proof` entries**", "**A CMS**, not hand-built pages. This is "
+         "the one that bites — three case studies as static pages is fine, thirty is not"),
+        ("10", "Testimonials, a real pricing page, a guarantee page",
+         "Testimonial and pricing components already styled"),
+        ("25", "A second ICP variant, an FAQ answering repeated objections",
+         "Clean components so a duplicate-and-edit is minutes"),
+        ("50", "Case studies with numbers, a talent page, legal pages",
+         "**Blog/CMS depth and enough section variety that you are editing, not rebuilding**"),
+    ]:
+        P(f"| **{a}** | {b} | {c} |")
+    P("")
+    P("> **The rebuild you are avoiding would land in month three or four — your busiest "
+      "month.** That is the\n> real cost of a thin template, and it is much larger than the "
+      "$79.\n")
+    P("**And strip whatever you buy.** Templates ship with animation and section counts designed "
+      "to demo well\nin a marketplace. Delete aggressively — every animation removed buys back "
+      "LP-view rate, and the 85%\nin the funnel is an assumption you can move in the right "
+      "direction for free.\n")
+
     open(OUT, "w").write("\n".join(L))
     print(f"{len(T)} templates scored on {len(SUB)} of {len(DIM)} criteria "
           f"({subw}/100 pts assessable)")

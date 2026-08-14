@@ -19,21 +19,46 @@ The instinct is to find a template that solves the landing page. It does not, an
 
 ---
 
-## 2. The criteria, weighted for this funnel
+## 2. The 3-months-free bundle reverses "start with a free one"
+
+**Paid Framer templates commonly ship a code for 3 months of Framer Pro.** That is not a marketing
+footnote — it is worth more than most of the templates cost, and it inverts the cost comparison
+I gave last time.
+
+| Path | Template | Framer Pro, months 1–3 | **Total, first 3 months** |
+|---|---|---|---|
+| **Free template** (Greenleaf, Kajo) | $0 | **$90** — you pay from day one | **$90** |
+| **Paid template with the bundle** (~$79) | $79 | **$0** | **$79 + the template** |
+
+> **The paid template is cheaper *and* you get the template.** A free template is only the cheapest
+> option if you ignore the subscription it does not cover — which is exactly what I did last turn.
+
+Three caveats, and the first one matters:
+
+| | |
+|---|---|
+| **The bundle is creator-dependent, not universal** | It is common, not guaranteed. **Check the specific listing for the 3-months-Pro code before buying** — the whole argument above collapses without it |
+| It is 3 months of the **annual** Pro plan | Which means it likely presumes annual billing afterwards. Read what you are committing to at month four |
+| Prices here are `[?]` from aggregators | Verify on Framer. Listings churn |
+
+---
+
+## 3. The criteria, weighted for this funnel
 
 Not generic web-design advice. These weights come from **your** traffic: overwhelmingly mobile,
 cold, mid-scroll, and metered by an 85% LP-view rate.
 
 | Criterion | Wt | What it means | Can I check it? |
 |---|---|---|---|
-| **MOBILEHERO** | 22 | **Promise + CTA above the fold on a 390×844 phone, with no scroll.** Meta traffic is overwhelmingly mobile and arrives mid-scroll. Most templates are designed desktop-first with a tall hero image that pushes the CTA below the fold on a phone — **this is the single most common failure and it is invisible on a laptop** | `[?]` from listings |
-| **SPEED** | 18 | Page weight and animation load on 4G. [`funnel.py`](scoring/funnel.py) carries an **85% LP-view rate** — that is a speed number, and every point lost is lost at the very top of the funnel. **Framer templates love scroll animation and video backgrounds** | `[?]` from listings |
-| **SECTIONS** | 16 | Does it ship the sections this offer needs, in this order — hero → proof → how it works → pricing → guarantee → CTA? **Most agency templates are portfolio-shaped** (case-study grid, big imagery), which is a different page | assessable |
-| **CTAREPEAT** | 12 | CTA in the hero, mid-page, and sticky or footer. **Mobile users do not scroll back up** | assessable |
-| **PROOFSLOT** | 10 | Somewhere to put a **before/after video comparison with retention numbers** — the `/proof` page is the most important on the site | assessable |
-| **CREDIBLE** | 10 | Reads as a firm a $6k–$20k buyer trusts. **Not startup-gradient, not creative-portfolio.** You have no track record, so the site carries more trust load than usual | assessable |
-| **VARIANT** | 7 | How easily it duplicates into `/agencies` and `/ecommerce` — component-driven with global styles, or hand-built pages | assessable |
-| **COST** | 5 | One-time. Real, but small against the decision | verifiable |
+| **MOBILEHERO** | 20 | **Promise + CTA above the fold on a 390×844 phone, no scroll.** Meta traffic is overwhelmingly mobile and arrives mid-scroll. Most templates are desktop-first with a tall hero that pushes the CTA under the fold on a phone — **the most common failure, and invisible on a laptop** | `[?]` needs the phone test |
+| **SPEED** | 15 | Weight and animation on 4G. [`funnel.py`](scoring/funnel.py) carries an **85% LP-view rate** — a speed number, lost at the very top of the funnel | `[?]` needs the phone test |
+| **COMPLETE50** | 15 | **New.** *"Everything for the first 50 converts."* Does it ship every surface you need before a rebuild — **CMS for accumulating `/proof` entries and case studies**, pricing, testimonials, forms, booking embed, thank-you page, legal pages? **A template you outgrow at client ten costs you a rebuild in the busiest month you will have** | assessable |
+| **STABLE** | 13 | **New.** *"Stability and clean."* Maintained, lifetime updates, and **structurally clean — components and global styles rather than hand-placed pages.** Clean structure is also what makes `/agencies` and `/ecommerce` a duplicate-and-edit rather than two of everything forever | partly — longevity is the best available proxy |
+| **SECTIONS** | 12 | Ships the sections this offer needs, in order: hero → proof → how it works → pricing → guarantee → CTA. **Most agency templates are portfolio-shaped**, which is a different page | assessable |
+| **CTAREPEAT** | 8 | CTA in hero, mid-page, and sticky or footer. **Mobile users do not scroll back up** | assessable |
+| **PROOFSLOT** | 7 | A block that holds **two videos side by side with retention numbers under them** — the recut-vs-original comparison | assessable |
+| **CREDIBLE** | 6 | Reads as a firm a $6k–$20k buyer trusts. Not startup-gradient, not creative-portfolio | assessable |
+| **NETCOST** | 4 | **Changed.** Cost **net of the bundled 3 months of Framer Pro** that paid templates commonly include — see §2. A free template has no bundle, so it is not the cheapest option | verifiable on the listing |
 
 > **The top two weights — 40 points of 100 — are the two I cannot verify.** `MOBILEHERO` and `SPEED`
 > are properties of the live preview on a phone on mobile data. Everything below is therefore a
@@ -41,27 +66,28 @@ cold, mid-scroll, and metered by an 85% LP-view rate.
 
 ---
 
-## 3. The shortlist, scored on what *is* assessable
+## 4. The shortlist, scored on what *is* assessable
 
-Scored on the 6 assessable criteria only — 60 of 100 points. **`MOBILEHERO` and `SPEED` are
+Scored on the 7 assessable criteria only — 65 of 100 points. **`MOBILEHERO` and `SPEED` are
 deliberately absent**, which is why the top score here is not a recommendation.
 
-| # | Template | Price | Register | Sect | CTA | Proof | Cred | Var | Cost | Score | Note |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Conversion** | ~$79 `[?]` | conversion / lead-gen | 5 | 5 | 3 | 4 | 4 | 3 | **84** | **Built for lead generation rather than showcase**, which is the rarest and most valuable property in this list. One of the longest-running templates on the Framer marketplace. `PROOFSLOT`=3 because a conversion template optimises for form-fills, not for a video comparison — you would add that block |
-| 2 | **Cubicles** | ~$59 `[?]` | corporate / consultancy | 4 | 3 | 3 | 5 | 3 | 4 | **74** | **Corporate B2B register — the right register.** Structured for services rather than showcase. Weaker on repeated CTA, which is a fixable edit |
-| 3 | **Nakula / Fabrica / Lyniq** | $69–129 `[?]` | premium agency | 4 | 3 | 4 | 5 | 3 | 2 | **74** | The 'looks expensive' tier, aimed at high-ticket B2B. **`CREDIBLE`=5 is real and matters here.** But premium agency templates are usually the heaviest — big imagery, lots of motion — so `SPEED` is the risk and it is unverified |
-| 4 | **Nebula** | $49 `[?]` | lead-gen, dark + gradient | 4 | 4 | 3 | 3 | 4 | 4 | **73** | Explicitly lead-gen focused and cheap. **`CREDIBLE`=3 is the concern** — dark gradient reads SaaS-startup, and your buyer is a 40-year-old agency owner deciding whether an unknown Indian firm is real |
-| 5 | **Greenleaf** | **free** `[?]` | consulting | 4 | 3 | 2 | 4 | 3 | 5 | **69** | Free, clean, consulting-shaped, with a services section and a clear contact-to-consultation flow. **The cheapest way to test whether a template is even the constraint** — and if the answer is no, you have spent nothing |
-| 6 | **Kajo** | **free** `[?]` | general | 3 | 3 | 2 | 3 | 3 | 5 | **60** | Free. Fewer sections, less structure |
-| 7 | **Halo** | $69 `[?]` | general/startup | 3 | 3 | 3 | 3 | 3 | 3 | **60** | No strong reason to choose it over the lead-gen options above |
+| # | Template | Price | Register | C50 | Stab | Sect | CTA | Proof | Cred | Net$ | Score | Note |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **Conversion** | ~$79 `[?]` | conversion / lead-gen | 4 | 5 | 5 | 5 | 3 | 4 | 5 | **89** | **Built for lead generation rather than showcase** — the rarest property here. **`STABLE`=5 on the strongest evidence available**: one of the longest-running templates on the marketplace with 100k+ views, which is the only real proxy for *it still works and is still maintained* |
+| 2 | **Funnelz** | paid `[?]` | lead-gen agency | 5 | 3 | 5 | 4 | 5 | 3 | 5 | **86** | **Verified live.** By Ramish Aziz. Ships hero+CTA, social proof, **case studies**, services, **3-tier pricing**, team bios, **blog/resources**, booking in the nav — **`COMPLETE50`=5, the most complete section set on this list.** Two mismatches, both edits not rebuilds: **3-tier pricing when you have one price**, and **team bios when you are one person** (repurpose as the founder story — useful when you have no track record). **`CREDIBLE`=3 is the real risk**: *"Fuelling growth with every click"* is funnel-agency register, and **your buyer *is* an agency owner who will recognise it instantly** |
+| 3 | **Nakula / Fabrica / Lyniq** | $69–129 `[?]` | premium agency | 4 | 4 | 4 | 3 | 4 | 5 | 4 | **79** | The 'looks expensive' tier for high-ticket B2B. `CREDIBLE`=5 is real. **But premium agency templates are usually the heaviest** — big imagery, heavy motion — so `SPEED` is the risk and it is exactly what I cannot check |
+| 4 | **Cubicles** | ~$59 `[?]` | corporate / consultancy | 4 | 4 | 4 | 3 | 3 | 5 | 5 | **78** | **Corporate B2B — the right register**, and the opposite risk to Funnelz. Structured for services rather than showcase. Weaker repeated CTA, which is a fixable edit |
+| 5 | **Nebula** | $49 `[?]` | lead-gen, dark + gradient | 3 | 3 | 4 | 4 | 3 | 3 | 5 | **69** | Lead-gen shaped and cheap. **`CREDIBLE`=3**: dark gradient reads SaaS-startup, and your buyer is deciding whether an unknown Indian firm is real |
+| 6 | **Greenleaf** | **free** | consulting | 3 | 4 | 4 | 3 | 2 | 4 | 3 | **67** | Clean consulting register, services section, clear contact-to-consultation flow. **`NETCOST`=3, not 5 — free templates carry no Pro bundle**, so you pay $30/mo from day one and it is not actually the cheapest path (§2). Built for ESG consultants, so expect green styling — a skin change, not structural |
+| 7 | **Halo** | $69 `[?]` | general / startup | 3 | 3 | 3 | 3 | 3 | 3 | 4 | **61** | No strong reason over the lead-gen options above |
+| 8 | **Kajo** | **free** | general | 2 | 3 | 3 | 3 | 2 | 3 | 3 | **53** | Fewer sections, less structure, no bundle |
 
 *Names and prices are from marketplace aggregators and are marked `[?]` — **verify both on Framer
 before buying**, since listings and pricing churn.*
 
 ---
 
-## 4. The 20-minute test that actually decides it
+## 5. The 20-minute test that actually decides it
 
 Run this on **three** candidates. It is worth more than any ranking I can give you, because it
 measures the two things that carry 40% of the weight.
@@ -83,16 +109,35 @@ perfect on your laptop**, which is how this mistake gets made.
 
 ---
 
-## 5. What I would actually do
+## 6. What I would actually do
+
+**This reverses last turn's answer, and the bundle is why.**
 
 | | |
 |---|---|
-| **Start with a free one** | **Greenleaf** (consulting register, services section, clear contact-to-consultation flow) costs nothing and answers the real question: *is the template the constraint, or is the copy?* It is almost always the copy |
-| **If you pay, pay for the lead-gen register** | **Conversion** is the only one on the list built for lead generation rather than showcase, and that is the rarest property here. **Cubicles** if you want the corporate-B2B look instead |
-| **Avoid the premium agency tier for now** | Nakula, Fabrica, Lyniq look expensive and are usually the heaviest — big imagery, heavy motion. **You are optimising for a phone on 4G, not for a design award** |
-| **Avoid dark-gradient startup templates** | Nebula is cheap and lead-gen shaped, but your buyer is an agency owner deciding whether an unknown Indian firm is real. **Dark gradient reads *startup*; you want *firm*** |
-| **Budget the saving, not the spend** | The gap between free and $79 is one hour of your time. **The gap between a template that fails the phone test and one that passes is every impression you ever buy** |
+| **Buy a paid template with the 3-month Pro code** | It is cheaper than free over the first quarter (§2), and the two strongest candidates are both paid |
+| **First choice: Conversion** | The only one built for **lead generation rather than showcase**, and `STABLE`=5 on the best evidence available — 100k+ marketplace views over years is the only real proxy for *still maintained, still works*. **Stability was one of your criteria and this is the one template with actual evidence for it** |
+| **Close second: Funnelz** | **The most complete section set on the list** — case studies, blog, pricing, testimonials, booking. `COMPLETE50`=5, so nothing needs rebuilding as proof accumulates. **The risk is register**: your buyer is an agency owner who will recognise funnel-agency styling on sight |
+| **Cubicles if Funnelz feels too *agency*** | Corporate-B2B register, the opposite risk profile, and cheaper |
+| **Still avoid the premium tier** | Nakula, Fabrica, Lyniq look expensive and are usually the heaviest. **You are optimising for a phone on 4G** |
+| **Greenleaf drops to a fallback** | Still fine, still clean — but `NETCOST`=3 because there is no bundle, and `PROOFSLOT`=2 because a consulting template has nowhere natural for a two-video comparison |
 
-**And strip whatever you buy.** Templates ship with animation, parallax and section counts designed to
-demo well in a marketplace. Delete aggressively: every animation you remove buys back LP-view rate,
-and the 85% in the funnel is an assumption you can move in the right direction for free.
+### On "everything for the first 50 converts"
+
+That criterion is doing real work, and it is why **Funnelz jumped past Cubicles.** The surfaces you
+will need before client fifty, in the order they become urgent:
+
+| By client | You need | Which means the template must ship |
+|---|---|---|
+| **1** | Two ad destinations, a paid teardown page, booking, thank-you | Forms, an embed slot, a payment button — **or you build these anyway** |
+| **3–5** | **Your first `/proof` entries** | **A CMS**, not hand-built pages. This is the one that bites — three case studies as static pages is fine, thirty is not |
+| **10** | Testimonials, a real pricing page, a guarantee page | Testimonial and pricing components already styled |
+| **25** | A second ICP variant, an FAQ answering repeated objections | Clean components so a duplicate-and-edit is minutes |
+| **50** | Case studies with numbers, a talent page, legal pages | **Blog/CMS depth and enough section variety that you are editing, not rebuilding** |
+
+> **The rebuild you are avoiding would land in month three or four — your busiest month.** That is the
+> real cost of a thin template, and it is much larger than the $79.
+
+**And strip whatever you buy.** Templates ship with animation and section counts designed to demo well
+in a marketplace. Delete aggressively — every animation removed buys back LP-view rate, and the 85%
+in the funnel is an assumption you can move in the right direction for free.
