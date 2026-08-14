@@ -2,6 +2,7 @@
 
 ## Start here
 
+### → [`MINIMUM.md`](MINIMUM.md) — **the bare minimum to launch.** Four pages, seven landing-page blocks, and what you are deliberately not building
 ### → [`MASTERLIST.md`](MASTERLIST.md) — **THE OPERATING DOCUMENT.** One page: the critical path in dependency order, the week-by-week calendar, all 106 activities by function, the 25 workflows. Generated from the underlying screens so it cannot drift
 ### → [`MODEL-V2.md`](MODEL-V2.md) — **the current model.** Performance creative, premium positioning, media layer — and the two corrections it forces on my earlier analysis
 ### → [`COMPOUND.md`](COMPOUND.md) — the two-year compounding screen (finance spine 95.6; video re-scores 75.6 under V2)
@@ -10,10 +11,11 @@
 
 ---
 
-## 31 documents
+## 32 documents
 
 | | |
 |---|---|
+| **[`MINIMUM.md`](MINIMUM.md)** | **What has to exist before the first dollar, and nothing more.** The rule that halves the list: **a page exists to own a URL, not to hold content** — you need a separate page only for an ad destination, a legal document, a conversion trigger or an external link; everything else is a block. **Four pages: `/agencies`, `/thanks`, `/privacy`, and a thin `/`.** No `/teardown` — **Stripe hosts the checkout** with its success URL set to `/thanks`. **Launch with one ICP, not two**, because two halves Meta's signal. **§2 is the landing page in seven blocks**, including the volume calculator and the objection block. §4 is the non-page launch blockers. §5 is what you are deliberately not building. **§6 is the honest test: if you cannot fill block 3 — one recut ad with the retention delta — none of the rest matters, because that block is the business** |
 | **[`MASTERLIST.md`](MASTERLIST.md)** | **THE OPERATING DOCUMENT — read this one.** Four overlapping lists existed ([`CLAUDE-CODE.md`](CLAUDE-CODE.md) 33 uses, [`SURFACES.md`](SURFACES.md) 62, [`WORKFLOWS.md`](WORKFLOWS.md) 25 systems, [`ACTIVITIES.md`](ACTIVITIES.md) 106) and together they were unusable — **a person running a company alone needs one list, not four views of one.** This **imports** from `activities.py` and `workflows.py` rather than restating them, so it cannot drift. **§1 the critical path** in dependency order — rows 1–7 are the single chain that gates your first paid invoice: entity → identifiers → bank → payment rail → payout rail → **W-8BEN-E** → GST/LUT. **§2 the calendar**, week 0 through month 6, opening with the two long-clock items — the India→US entity chain and cold-email warm-up. **§3** all 106 activities by function with surface and score. **§4** the 25 workflows. **§5** where an agent is the wrong tool. **§6** what supersedes what |
 | **[`MODEL-V2.md`](MODEL-V2.md)** | **CURRENT MODEL.** Operator's V2 ingested and compared. Wedge moves to **premium performance video editors**; positioning flips from price to quality, which the repo's own last two screens already argued for. **§2 flags a pricing conflation that breaks the model 8x if read the wrong way.** **§4 corrects two of my errors** — video re-scores 52.0 → 75.6 once "performance" and the ad-account spine are counted |
 | **[`COMPOUND.md`](COMPOUND.md)** | **START HERE.** What can be sold to the same ICPs for **24 months**. **What compounds is the spine, not the skill** — a shared ledger login is a position inside the business; a rendered file is handed over a wall. **Finance spine 95.6; video gates out at 52.0.** Corrects LAUNCH.md's pick |
