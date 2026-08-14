@@ -140,3 +140,97 @@ The template question absorbed several rounds and the answer is smaller than it 
 That is also why `STABLE` deserved cutting to 8 and why the CMS mattered more than the page count —
 you are not depending on the template for structure, you are depending on it for **a design system
 and five pages of head start.**
+
+---
+
+## Seven templates against the 14-page requirement
+
+All page counts below are **crawled**, with a control path returning 404 on every site. The metric
+is not "how many pages does it ship" — it is **how many of your fourteen you end up building from
+blank**, because eight of the fourteen are duplicate-and-edit *from a page you already have*.
+
+**Which makes one thing decisive that nobody would guess: whether it ships a legal page.** `/privacy`
+is the donor layout for `/terms`, `/guarantee`, `/access` and `/talent`. A template without one costs
+you five pages, not one.
+
+| | Template | Covers of 14 | **Real builds** | Verified |
+|---|---|---|---|---|
+| **1** | **Recruitify** | **6** — `/`, `/about`, `/contact`, `/privacy`, `/terms`, `/projects`→`/proof` | **2** | 8 URLs live |
+| **2** | Conversion | 4 — `/`, `/about`, `/contact`, `/blog`→`/proof` | **4** | 4 URLs live |
+| **3** | Cubicles | 4 — same as above | **4** | 4 URLs live |
+| **4** | Funnelz | 2 — `/`, `/blog`→`/proof` | **5** | 2 URLs live |
+| **5** | Recruitment Hub | 2 — `/`, `/contact` | **5** | 1 sub-page |
+| **6** | Recruitment (Shah) | 1 — `/` | **6** | **single page** |
+| **7** | Pace | 1 — `/` | **6** | **single page** |
+| — | HRPro | — | — | **`hrpro.framer.website` does not resolve. Unverifiable** |
+
+---
+
+### 1. Recruitify — 2 real builds
+
+**Pros** · Ships **both legal pages**, so `/guarantee`, `/access` and `/talent` are duplicates rather
+than builds · Only template with a real `/projects` to become `/proof` · Its process section is
+*already* Consultation → Screening → Placement · Employer-facing recruitment register, so almost no
+restyling · Bonus `/faq` and `/pricing` you do not even need yet.
+**Cons** · **No `/blog`, so no CMS** — the trigger at ~10 recuts is an afternoon you will owe later ·
+Creator (Framify) has no establishable track record · Price and bundle both unconfirmed.
+
+### 2. Conversion — 4 real builds
+
+**Pros** · **The best conversion architecture found** — Results metrics block, comparison table,
+3-step process · Longest-running template on the marketplace, the only real longevity signal.
+**Cons** · **No legal pages**, so five text pages start from blank · Its `/blog` ships **broken
+placeholder links including a literal `404`** · **Reads as an ads agency, not a talent firm** — a
+register problem your buyer will notice because they *are* an ads agency.
+
+### 3. Cubicles — 4 real builds
+
+**Pros** · Corporate-consultancy register, the most institutionally credible of the set · Real
+blog/CMS · Cheapest paid option.
+**Cons** · `CONVERT`=2 — **a brochure, not a funnel.** Weak repeated CTA, no pricing, no objection
+block · No legal pages · Generic consulting copy.
+
+### 4. Funnelz — 5 real builds
+
+**Pros** · **The only CMS-shaped blog** — dated, categorised, authored, individual URLs · Booking
+already in the nav · Most complete *homepage* section set: case studies, pricing tiers, testimonials,
+team · Creator **Ramish Aziz has 18 published templates**, the strongest support signal available.
+**Cons** · **Two URLs total.** Its pricing, team and case studies are homepage sections, so they
+donate nothing to your page count · **No legal page**, so five text pages start from blank ·
+Funnel-agency voice — cosmetic, but it is a full rewrite.
+
+### 5. Recruitment Hub — 5 real builds
+
+**Pros** · **Free** · Good persuasion order — why-us comparison, 3-step process, pricing, FAQ · Right
+employer-facing register.
+**Cons** · **One sub-page.** Everything else was a homepage anchor · No CMS, no case studies, no legal
+pages · Free means **no 3-month Pro bundle**, so it is not the cheapest path.
+
+### 6. Recruitment (Shah) — 6 real builds
+
+**Pros** · Free · Recruitment register.
+**Cons** · **Crawled: a single page.** Donates a homepage and nothing else.
+
+### 7. Pace — 6 real builds
+
+**Pros** · Purpose-built landing page, conversion-ordered, repeated CTA, problem-framing section.
+**Cons** · **Single page, crawl-confirmed** · **No metrics block, no calculator, no comparison
+table** — the three blocks that make `/agencies` different are absent · SaaS register at $19/$49
+tiers · A second design system to reconcile.
+
+---
+
+## The verdict, and what actually separated them
+
+**Recruitify, on two real builds against four to six for everything else.** The gap is not taste and
+it is not design quality — it is that **it ships `/privacy` and `/terms`, and those two pages are the
+donor layout for four more.**
+
+> **Nobody would have picked a template on whether it has a privacy page.** It fell out of listing
+> the fourteen pages and asking what produces each — which is the only reason it is visible at all.
+
+Its one real cost is the missing CMS, and that is a known, dated, affordable debt: **an afternoon at
+around ten recuts**, not a rebuild. Funnelz wins that dimension and loses four others.
+
+**Still run the phone test before paying** — it is the one check I cannot run, and `MOBILEHERO` is
+the only criterion that can override everything above.
