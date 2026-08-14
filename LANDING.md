@@ -225,3 +225,141 @@ And remember [`SITE.md`](SITE.md) §1: **you cannot A/B test this.** At 2.0% con
 > Every other letter here is a way of getting someone to look at it, and none of them can compensate
 > for its absence. **If you cannot fill G, you do not have a landing-page problem — you have a
 > business that has not started yet.**
+
+---
+
+# The same page, 20 combinations
+
+**Correction to everything above.** I wrote `/agencies` as a bespoke page with performance video and
+agencies baked into the blocks — the split-screen recut, retention percentages, cuts-per-month. **That
+does not survive twenty ICP × role combinations.** Bookkeeping for creator businesses has no recut and
+no retention curve.
+
+So the page has to be **one structure with a small set of variables**, and the whole design question
+becomes: *which blocks are invariant, and what is the smallest variable set that still carries
+specificity?*
+
+---
+
+## 1. What is invariant — and it is most of the page
+
+| Block | Why it does not change |
+|---|---|
+| **The seven-block order** | Hero → self-diagnosis → proof → mechanism → price → objections → CTA. This is a persuasion sequence, not a content choice |
+| **The mechanism** | Paid teardown → graded shortlist of three → you hire → 12-month replacement. **Identical for every role** |
+| **The guarantee** | 12 months, unlimited replacement, no cash refunds |
+| **The pricing model** | One-time, 30–35% of first-year compensation, teardown credited. The *percentage* is invariant; the dollar figure follows salary |
+| **EOR as the default** | $477/employee/month, every role |
+| **Your face and name** | *"I grade every one personally"* is the same claim regardless of what is being graded |
+| **Who it is not for** | Only the threshold number changes |
+| **The three objections** | *Why India · why not a freelancer · why not AI* — same three, every combination |
+| **Form, micro-copy, mobile mechanics, speed, tracking** | Entirely structural |
+
+> **Roughly 80% of the page is invariant.** That is the finding — the specificity that makes a cold
+> page convert is concentrated in a handful of nouns and one number, not spread through the copy.
+
+---
+
+## 2. The variable set — eight fields
+
+| # | Variable | `ecom × performance video` | `agency × performance video` | `creator × bookkeeping` |
+|---|---|---|---|---|
+| 1 | **Role noun** | performance video editor | performance video editor | bookkeeper |
+| 2 | **ICP noun** | e-commerce brand | agency | creator business |
+| 3 | **Volume unit** | cuts per month | cuts per month | transactions per month |
+| 4 | **Pain trigger** | *"your best ad is six weeks old"* | *"you are turning down retainers"* | *"your books close three weeks late"* |
+| 5 | **Vendor comparator** | studio, $4–16k/mo | studio or freelancer | bookkeeping firm, $500–2k/mo |
+| 6 | **Proof artefact** | recut, 3s/15s retention | recut, 3s/15s retention | reconciled month, days-to-close |
+| 7 | **The grading test** | recut an existing ad | recut an existing ad | reconcile a messy month |
+| 8 | **Not-for threshold** | fewer than 8 cuts/month | fewer than 8 cuts/month | fewer than 200 txns/month |
+
+**Eight fields. Fifteen to twenty minutes per combination**, once the structure exists.
+
+---
+
+## 3. Build it as a CMS collection, not twenty pages
+
+This is the part that changes an earlier decision.
+
+| Option | At 20 combinations |
+|---|---|
+| **Duplicate and edit ×20** | ~7 hours, and **every structural change becomes twenty edits.** Change the guarantee wording once and you have twenty places to miss one |
+| **One CMS collection, one template page** | `/hire/[slug]` · each combination is an **item with eight fields** · **change the design once and all twenty update** |
+
+> **So the CMS is not a Tier C debt any more — it is Tier A infrastructure, needed at launch.**
+> I had it as *"an afternoon at around ten recuts"*. Twenty parameterised landing pages moves it to
+> the critical path, and it strengthens the case for a template that already demonstrates a
+> collection-driven page.
+
+**URL shape:** `/hire/ecom-video-editor`, `/hire/agency-video-editor`, `/hire/creator-bookkeeper`.
+
+**All of them `noindex`.** Twenty near-identical pages is doorway-page territory for Google, and they
+are ad destinations rather than organic surfaces. [`SITEMAP.md`](SITEMAP.md) already noindexes LP
+variants — this is the same rule at larger scale. Organic lives on `/`, `/proof` and the blog.
+
+---
+
+## 4. The two blocks that need generalising
+
+Everything else survives as written. These two were role-specific and now need a shape that holds
+any role.
+
+### The proof block
+
+**Was:** side-by-side recut with retention percentages.
+**Generalised to:** **artefact before → artefact after → one measured metric → the delta.**
+
+| Role | Before | After | Metric |
+|---|---|---|---|
+| Performance video | original ad | recut | 3-second retention |
+| Bookkeeping | the month as received | reconciled | days to close |
+| Design | the brief | the output | — *needs a metric or this role is not ready* |
+
+> **If a role has no measurable delta, it is not launchable.** That is a genuinely useful filter, and
+> it falls out of the parameterisation — it says *stick to roles whose output can be measured*, which
+> is the same `FALSIFIABLE` criterion [`DOMAINS.md`](DOMAINS.md) introduced for the name.
+
+### The calculator
+
+**Was:** cuts per month × studio rate vs in-house.
+**Generalised to:** **volume × current vendor unit cost, against one full-time cost.**
+
+```
+  [volume]  ×  [vendor rate per unit]   =  what you spend now
+                     vs
+  one full-time [role]  =  one-time fee + $[salary]/mo
+```
+
+Three inputs and two labels change per combination. **The arithmetic never does.**
+
+---
+
+## 5. Does a parameterised page convert as well as a bespoke one?
+
+Honestly: **slightly worse than a perfect bespoke page, and much better than twenty pages you never
+finish.** And the gap is smaller than it appears, because of where specificity actually lives:
+
+| What carries the specificity | Where it comes from |
+|---|---|
+| **The ad** | Fully bespoke per combination — creative, copy, audience. **This is where most message match is won** |
+| **The H1** | Variables 1, 2 and 4 — *"Three cuts a month isn't a creative problem"* vs *"Books closing three weeks late isn't a diligence problem"* |
+| **The calculator's output** | Their own numbers, in their own units |
+| **The proof artefact** | Role-specific by construction |
+
+**Four of the eight variables appear above the fold.** A visitor arriving from the ecom-video ad reads
+their role, their ICP, their pain and their unit before scrolling — which is all message match
+requires. **The invariant 80% is the part nobody reads closely anyway.**
+
+---
+
+## 6. What this changes upstream
+
+| Document | Change |
+|---|---|
+| [`MINIMUM.md`](MINIMUM.md) §1 | `/agencies` becomes **`/hire/[slug]`, one CMS template page.** Still one build |
+| [`SITEMAP.md`](SITEMAP.md) | Rows 2, 10 and 23 — `/agencies`, `/ecommerce`, `/designers` — **collapse into one collection.** The sitemap gets *smaller* as the business gets wider |
+| [`SITE.md`](SITE.md) / [`TEMPLATE.md`](TEMPLATE.md) | **CMS moves from Tier C to Tier A.** A template demonstrating a collection page is now worth more than one with two extra static pages |
+| [`MODEL-V2.md`](MODEL-V2.md) gap 8 | Still holds — **build twenty pages, launch two.** Meta needs concentration; the collection just means the twenty-first costs fifteen minutes rather than a day |
+
+**And one thing gets better:** a new role or ICP is now **an eight-field CMS entry**, not a project.
+That is the difference between a business that can test ten wedges and one that can test one.
