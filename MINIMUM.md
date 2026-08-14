@@ -1,5 +1,13 @@
 # The Bare Minimum
 
+> ⚠️ **Superseded on the funnel, August 2026.** The **$500 teardown has been removed** by operator
+> direction — every ICP × role now gets the same page and the conversion is a **booked call**.
+> The Stripe Payment Link is **no longer launch infrastructure**. What is needed instead is a
+> **qualifying gate in front of a calendar embed**.
+> See [`scoring/CALLFUNNEL.md`](scoring/CALLFUNNEL.md), which ranks twelve booked-call funnels
+> and specifies the ad, landing page and homepage that replace this. **The reasoning below is kept
+> because the trade it identifies is still real** — it was just priced differently.
+
 > Everything else in this repo describes what the site becomes. This is what has to exist **before
 > the first dollar of spend**, and nothing more.
 

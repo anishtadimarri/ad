@@ -1,5 +1,13 @@
 # The Teardown Generator
 
+> ⚠️ **Superseded on the funnel, August 2026.** The **$500 teardown has been removed** by operator
+> direction — every ICP × role now gets the same page and the conversion is a **booked call**.
+> The **generator survives and matters more**: it now produces the free public teardown of a
+> brand the buyer knows, which is what replaces the paid work sample.
+> See [`scoring/CALLFUNNEL.md`](scoring/CALLFUNNEL.md), which ranks twelve booked-call funnels
+> and specifies the ad, landing page and homepage that replace this. **The reasoning below is kept
+> because the trade it identifies is still real** — it was just priced differently.
+
 > *"What's the teardown generator?"*
 
 It appears as the **#3 activity** in [`MASTERLIST.md`](MASTERLIST.md) and is referenced in four
