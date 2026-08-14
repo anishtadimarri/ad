@@ -39,7 +39,20 @@ forecasting it.
 | **The revenue lever** | **Volume of qualified conversations.** The price does the disqualifying before it costs you an hour |
 | **Where it breaks** | **Price shock**, and a published number is hard to walk back |
 
-### 3. Book a call — the page explains, the calendar converts
+### 3. Profiles on the page → book a call
+
+| Step | |
+|---|---|
+| **Ad** | "Six graded video editors. Here are their scores." |
+| **Page** | 3-6 real profiles with the test they passed · role picker · calendar |
+| **Conversion event** | **Booked call** |
+| **What you owe, the instant they convert** | **Nothing.** The profiles already exist. Showing them to the 51st visitor costs exactly what it cost to show the 1st |
+| Then | 30-minute call → signed → search → placed → fee |
+| Build | 3.5 days · 4 systems |
+| **The revenue lever** | **Same as the shortlist — it forces the bench to exist** — but as a one-time cost paid before launch, not a per-lead cost paid forever |
+| **Where it breaks** | **Placement empties it.** Your best proof leaves the page when it works |
+
+### 4. Book a call — the page explains, the calendar converts
 
 | Step | |
 |---|---|
@@ -67,6 +80,7 @@ delivery, and the entity and payment chain in [`ACTIVITIES.md`](../ACTIVITIES.md
 |---|---|---|---|
 | **Three graded candidates in 7 days** | 70 h 🔴 | 175 h 🔴 | 350 h 🔴 |
 | **Instant quote — three taps to a real number** | 6 h | 15 h | 30 h |
+| **Profiles on the page → book a call** | 6 h | 15 h | 30 h |
 | **Book a call — the page explains, the calendar converts** | 6 h | 15 h | 30 h |
 
 🔴 over the 60-hour budget · ⚠️ over 70% of it. Assumes a gate passing **40%** through to the obligation.
@@ -77,6 +91,7 @@ delivery, and the entity and payment chain in [`ACTIVITIES.md`](../ACTIVITIES.md
 |---|---|---|---|
 | **Three graded candidates in 7 days** | 18 h | 45 h ⚠️ | 90 h 🔴 |
 | **Instant quote — three taps to a real number** | 6 h | 15 h | 30 h |
+| **Profiles on the page → book a call** | 6 h | 15 h | 30 h |
 | **Book a call — the page explains, the calendar converts** | 6 h | 15 h | 30 h |
 
 **The shortlist funnel is the only one whose ops load depends on volume at all**, and it
@@ -174,7 +189,7 @@ The other two are flat throughout. **Whether you survive month 2–3 is the enti
 | **Builds no capability** | At month 6 you know your CAC and still have not tested fill rate |
 | **Lower desire than the shortlist** | A number is not a person |
 
-### Book a call — the page explains, the calendar converts
+### Profiles on the page → book a call
 
 | ✅ | |
 |---|---|
@@ -206,14 +221,15 @@ The other two are flat throughout. **Whether you survive month 2–3 is the enti
 
 | Funnel | `REVENUE 6M` | `OPS` | `SURVIVES M2–3` | `DESIRE` | `SPEED TO LIVE` | `REVERSIBLE` | **Score** |
 |---|---|---|---|---|---|---|---|
-| **Quote to acquire · shortlist promised on the call** | 8 | 8 | 9 | 7 | 5 | 8 | **78** |
+| **Profiles on the page → book a call** | 8 | 9 | 9 | 9 | 4 | 6 | **81** |
+| Quote to acquire · shortlist promised on the call | 8 | 8 | 9 | 7 | 5 | 8 | **78** |
 | Book a call — the page explains, the calendar converts | 4 | 10 | 10 | 4 | 10 | 9 | **76** |
 | Instant quote — three taps to a real number | 6 | 9 | 9 | 7 | 5 | 4 | **73** |
 | Three graded candidates in 7 days | 9 | 3 | 4 | 8 | 6 | 4 | **58** |
 
-**Quote to acquire, shortlist promised on the call** takes it at **78**.
+**Quote to acquire, shortlist promised on the call** takes it at **81**.
 
-But read the spread before reading the winner: the top three are **78, 76, 73** — **4 points across three options**, on weights I chose. **That is not a
+But read the spread before reading the winner: the top three are **81, 78, 76** — **6 points across three options**, on weights I chose. **That is not a
 verdict, it is a tie.** What actually separates them is *which risk you would rather carry*:
 
 | Funnel | The risk you are taking |

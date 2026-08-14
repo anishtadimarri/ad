@@ -85,6 +85,18 @@ F = [
                          "disqualifying before it costs you an hour",
            breaks_at="**Price shock**, and a published number is hard to walk back"),
 
+    Funnel("profiles", "Profiles on the page → book a call",
+           ad='"Six graded video editors. Here are their scores."',
+           page="3-6 real profiles with the test they passed · role picker · calendar",
+           event="Booked call",
+           owes="**Nothing.** The profiles already exist. Showing them to the 51st visitor "
+                "costs exactly what it cost to show the 1st",
+           per_conv=0.0, per_conv_repeat=0.0, per_call=CALL_HRS,
+           build_days=3.5, systems=4,
+           revenue_lever="**Same as the shortlist — it forces the bench to exist** — but as a "
+                         "one-time cost paid before launch, not a per-lead cost paid forever",
+           breaks_at="**Placement empties it.** Your best proof leaves the page when it works"),
+
     Funnel("call", "Book a call — the page explains, the calendar converts",
            ad='"Hiring a video editor? 30 minutes, and I will tell you what it takes."',
            page="What it is · price · guarantee · gate · calendar",
@@ -311,6 +323,11 @@ S = {
                          "SPEED TO LIVE": 5, "REVERSIBLE": 4}),
     "call":      dict(**{"REVENUE 6M": 4, "OPS": 10, "SURVIVES M2–3": 10, "DESIRE": 4,
                          "SPEED TO LIVE": 10, "REVERSIBLE": 9}),
+    # The bench as a FIXED cost, not a variable one. Every earlier file scored
+    # "needs 2 graded people per role" as though it were the same kind of cost as
+    # the shortlist's 8-hours-per-conversion. It is not remotely the same kind.
+    "profiles":  dict(**{"REVENUE 6M": 8, "OPS": 9, "SURVIVES M2–3": 9, "DESIRE": 9,
+                         "SPEED TO LIVE": 4, "REVERSIBLE": 6}),
     # The hybrid belongs IN the table, not in prose after it. Quote acquires;
     # the shortlist is promised on the call, to people who already showed up.
     "hybrid":    dict(**{"REVENUE 6M": 8, "OPS": 8, "SURVIVES M2–3": 9, "DESIRE": 7,
