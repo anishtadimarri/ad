@@ -391,3 +391,78 @@ than the number of rounds spent reaching it.
 
 **Whichever you pick, the phone test decides it** — `MOBILEHERO` and 4G speed outrank everything
 above and are the two things I cannot check from here.
+
+---
+
+## Who is actually better at the landing page?
+
+I said *"both donate about four of seven blocks, so it is a wash."* **That was lazy.** Compared
+block by block against the seven in [`MINIMUM.md`](MINIMUM.md) §2, using what was verified on each
+homepage:
+
+| # | Block needed | **Recruitify** | **Funnelz** |
+|---|---|---|---|
+| 1 | Hero + a number + one CTA | hero + CTA, **no number** | hero + CTA, **no number** |
+| 2 | **Volume calculator** | ✗ | ✗ |
+| 3 | **Proof with metrics** | **stats block — active applicants, global reach, satisfaction.** A numbers treatment | case studies, **narrative** |
+| 4 | **How it works, 3 steps** | **explicit 3-step: Consultation → Screening → Placement** | mission + services, **no process block** |
+| 5 | Price + guarantee | pricing is a *page*, not a block | **3-tier pricing on the homepage** |
+| 6 | **Objection block** | **FAQ on the homepage** | ✗ |
+| 7 | Repeat CTA | ✓ | ✓ |
+| | **Blocks donated** | **5 of 7** | **3 of 7** |
+
+> **Recruitify's homepage is the better landing-page donor, not Funnelz's.** It brings the metrics
+> block, the three-step process and the FAQ. Funnelz brings pricing tiers.
+
+**The distinction worth holding:** Funnelz is better at *looking like a landing page* — it is
+lead-gen shaped and its ordering is built to sell. **Recruitify has more of the specific blocks this
+particular landing page needs.** You are not copying a generic LP; you are building a defined
+seven-block page, and matching blocks beat general vibe.
+
+---
+
+## Can you buy Funnelz and harvest parts for `/about`, `/contact`?
+
+**No — and the premise is inverted.**
+
+> **Funnelz does not have `/about` or `/contact`.** Crawled: it has **two URLs**, home and `/blog`.
+> Recruitify already ships both pages. **There is nothing to harvest, and nothing that needs
+> harvesting.**
+
+On mixing templates generally:
+
+| | |
+|---|---|
+| **Technically possible** | You can copy layers between Framer projects if you own both |
+| **But two design systems** | Different type scale, colour tokens, spacing, button styles. A pasted section arrives with its own styling and **restyling it to match is usually as much work as building the block** |
+| **~$150 instead of ~$79** | For parts you would restyle anyway |
+
+### And the CMS point deserves correcting
+
+I have been treating *"has a CMS"* as a **template** feature. It is not — **it is a Framer platform
+feature.** [`SITE.md`](SITE.md) §2 recorded it: **Framer Pro at $30/mo includes CMS and forms.**
+
+> **You can create a CMS collection in any Framer project, on the plan you are buying anyway.**
+> Funnelz does not give you a capability you would otherwise lack. It gives you **one pre-built
+> collection — an afternoon saved, once.**
+
+Which shrinks Funnelz's last real edge considerably. Its remaining genuine advantages are the
+creator's 18-template track record and booking already sitting in the nav — and the second is a
+Cal.com embed you were adding regardless.
+
+---
+
+## So, settled
+
+| | Recruitify | Funnelz |
+|---|---|---|
+| **LP blocks donated** | **5 of 7** | 3 of 7 |
+| Pages built from blank | **2** | 5 |
+| Legal donor layout | **yes, verified** | no |
+| `/about`, `/contact` | **ship** | **do not exist** |
+| CMS | **build it — a Framer feature, one afternoon** | pre-built |
+| Creator track record | not established | **18 templates** |
+
+**Recruitify wins the landing page too**, which was the last argument for Funnelz. The three blocks
+that actually differentiate `/agencies` — calculator, retention metrics, comparison table — are
+absent from both and get built either way.
