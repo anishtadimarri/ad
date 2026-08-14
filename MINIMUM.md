@@ -98,3 +98,93 @@ These are not pages, and **launch is blocked without them**:
 If you cannot fill block 3 — **one recut ad, with the retention delta measured against the
 original** — then no amount of the rest of this matters. **That block is the business.** The other
 six exist to get someone to look at it.
+
+---
+
+## 7. Can the homepage and the landing page be the same?
+
+**Same design system — yes, and you should. Same page — no.**
+
+Reuse the components: hero, proof block, CTA block, footer, type and colour. That is ~70% of the
+landing page's parts, and rebuilding them twice is wasted work.
+
+But they are **two different jobs**, and merging them costs you something specific:
+
+| | **`/agencies`** | **`/`** |
+|---|---|---|
+| Audience | One. Cold agency owners from an ad | **Unknown** — a buyer, a candidate, a referral, a supplier, someone checking you are real |
+| Job | **One action** | **Routing and legitimacy** |
+| Length | Long. Seven blocks | **Short.** Four |
+| Tone | Direct response | Institutional |
+
+### The reason that actually decides it
+
+> **Measurement.** If `/` is also the ad destination, your landing-page conversion rate is
+> contaminated by direct and referral visitors, who behave nothing like cold paid traffic. **You
+> would never be able to tell whether the page or the audience was moving.** And you cannot make a
+> variant of `/` — but `/agencies-v2` is a duplicate and an edit.
+
+Two smaller reasons: message match per ICP is the largest lever on a cold page, and a dedicated ad
+destination is what keeps Meta's page review looking at a buyer page.
+
+**So: one component library, two pages.** The homepage stays four blocks — what you do, the proof
+block, who it is for with a link to `/agencies`, and the footer.
+
+---
+
+## 8. Do you need a page for talent?
+
+**Not on the site. Not at launch.** But *not nothing* either — and the answer is better than the one
+in [`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) §7.
+
+Candidates **will** check you out. You will be sourcing them on LinkedIn and portfolio sites, and an
+editor deciding whether to spend two hours on your take-home will look at your website first. If
+there is no sign that you hire, you look less real **to the supply side** — and supply is what you
+cannot sell without.
+
+The cheap fix is not a footer link. It is:
+
+> **Put the application form on a separate URL entirely** — Tally, Typeform, whatever — and paste it
+> into your outreach messages. **It never appears on `allhandstalent.com` at all.**
+
+| | |
+|---|---|
+| **Zero job content on the domain** | Which removes the Employment Special Ad Category risk completely, rather than mitigating it with `noindex` |
+| **Candidates you contact still get something professional** | They reached you through outreach, so they do not need to find it |
+| **No SEO surface** | Which you do not want yet anyway — [`REFERENCE.md`](REFERENCE.md) §4: supply pages are an SEO asset and a paid-ads liability |
+| **One less page** | |
+
+Move it onto `/talent` at **month 3–6**, when organic traffic starts to matter and you actively
+*want* the SEO surface. Until then it is a form link in a DM.
+
+---
+
+## 9. What makes an unknown operator look legitimate
+
+The question behind the question, and the answer is mostly not pages.
+
+> **The highest-trust element on the site is not a page. It is a named human with a face, and a real
+> registered address in the footer.** Anonymous sites read as risky, and you are asking a stranger to
+> wire $500 to someone they have never heard of, in a country they have opinions about.
+
+Ranked by trust bought per minute spent:
+
+| | What | Why it works |
+|---|---|---|
+| **1** | **Footer: entity name, registered address, email, LinkedIn** | **Ten minutes, and the single biggest lift.** A real address is the cheapest legitimacy signal that exists. It is also why the entity chain in [`ACTIVITIES.md`](ACTIVITIES.md) Tier 0 is worth doing early |
+| **2** | **You, visible on `/`** — photo, name, one paragraph | Free. **For a solo operator with no track record, being personally visible *is* the credential.** Somewhere shows eight named candidates; you show the person who grades them |
+| **3** | **`/guarantee` as a real page** | Your cheapest differentiation, and **a bullet point reads as marketing while a page reads as a commitment**. Terms in full: 12 months, unlimited replacement, no cash refunds |
+| **4** | **A page on how you handle their ad-account access** | **Differentiating, and nobody expects it.** You are asking for access to their Meta ad account — the scariest thing in the transaction. Partner access via Business Manager, never shared logins, 2FA, documented revocation. **Somewhere uses SOC2 and ISO badges here; you cannot, so answer the actual fear instead** |
+| **5** | **`/terms` and a refund policy for the $500** | Once money moves. States what they get if the search stalls |
+| **6** | Client logos, testimonials, case studies | **Real ones only.** You have none yet, and a fabricated one is fatal to a positioning built on *falsifiable* |
+
+### What not to fake
+
+No stock team photos, no invented client logos, no *"trusted by 500+ companies"*, no fake reviews.
+**The entire positioning is that your claims can be checked** — [`MODEL-V2.md`](MODEL-V2.md) §8's
+`TRUECLAIM` is the reason this model beat the previous one. One fabricated proof point and the
+graded work sample stops meaning anything.
+
+**The honest version is stronger anyway:** *"I am one person. I personally grade every editor before
+you meet them. Here is the test, here is a recut I did, and here are the numbers. If the placement
+does not work, I replace them for twelve months."*
