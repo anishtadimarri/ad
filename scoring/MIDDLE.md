@@ -1,229 +1,197 @@
-# The Middle Slot — Calculator vs Quote vs Bench
+# What Actually Ports Across ICP × Role
 
-> `LP → ??? → self-serve calendar`. The two ends are settled on verified evidence.
-> **This is about the question mark**, over day 1 to day 90.
-
----
-
-## 1. Why those three and not the other seven
-
-Of the **31** funnels in [`ALLFUNNELS.md`](ALLFUNNELS.md) with this exact shape, here is the top of the list —
-**ranks 1 through 7 are three offers and nothing else:**
-
-| Overall rank | Offer | Qualification | Build days | Min/lead | Fields | `PERSUADE` | Score |
-|---|---|---|---|---|---|---|---|
-| 1 | **Use a calculator** | Passive fields on the form | 3.5 | 0 | 6 | 8.8 | **81.2** |
-| 2 | **Get a price / instant quote** | Active gate that can reject | 3 | 0 | 6 | 8.8 | **79.1** |
-| 3 | **Get a price / instant quote** | Passive fields on the form | 2.5 | 0 | 5 | 8.8 | **78.3** |
-| 4 | **Use a calculator** | Active gate that can reject | 4 | 0 | 7 | 8.8 | **78.2** |
-| 5 | **See the graded bench** | Passive fields on the form | 3 | 0 | 4 | 10.0 | **78.1** |
-| 6 | **See the graded bench** | Active gate that can reject | 3.5 | 0 | 5 | 10.0 | **77.0** |
-| 7 | **Use a calculator** | No qualification | 3.25 | 0 | 3 | 8.8 | **77.0** |
-| 8 ← | **Book a call** | Passive fields on the form | 1.75 | 0 | 4 | 5.0 | **75.9** |
-| 9 | **Book a call** | Active gate that can reject | 2.25 | 0 | 5 | 5.0 | **74.9** |
-
-**The break comes at rank 8**, where *book a call* appears at 75.9. The reason is one
-column: `PERSUADE` drops from 8.8–10.0 to **5.0**, because *book a call* and *contact us*
-give the visitor nothing before asking for their time.
-
-### The four that were beaten, and by what
-
-| Offer | `PERSUADE` | Why it loses |
-|---|---|---|
-| **Watch a video first** | 8.8 | Same persuasive power as a calculator, but **4.5–5 build days** and *a video per role* — so a second cell means a second shoot |
-| **Free document** — scorecard, salary guide | 7.5 | Needs an asset we do not have, persuades less, and captures fewer fields. Strictly dominated |
-| **Paid micro-trial** | 10.0 | Highest persuasion in the study and **100 minutes of your time per lead**. Ranks 28th on that alone |
-| **Free custom work on their asset** | 10.0 | **90 min/lead, forever.** Ranks **60th and 83rd**. The most persuasive thing you could do and the least survivable |
-
-> The pattern: **the two things that persuade most are the two that cost your time per lead.**
-> Everything in the top 7 is self-serve at zero marginal minutes. That is the filter.
-
-**And the three finalists sit inside 3.1 points of each other.** The weights are my judgement,
-so that gap is noise. **The model has done what it can. The rest is §2.**
+> The middle slot of `LP → ??? → self-serve calendar`, decided on the dimension the
+> enumeration was missing: **does it work unchanged across every cell we need to test?**
 
 ---
 
-## 2. The only thing that actually separates them: time
+## 1. The volume calculator was wrong, and for a worse reason than "it's video-only"
 
-| | **Calculator** | **Instant quote** | **Graded bench** |
+It asks: *"what does your studio invoice **per ad**?"*
+
+**No vendor in the study bills per unit.** From [`COMPETITORS.md`](COMPETITORS.md), fetched:
+
+| Vendor | Billing |
+|---|---|
+| **Vidpros** — video | **$1,000/mo** part-time · **$4,000/mo** full-time |
+| **Vidchops** — video | **Monthly subscription**, credits per month |
+| Hireframe | **$2,500/mo** |
+| GrowthAssistant | **$3,500/mo** |
+| Athena · Oceans | Monthly |
+| Design subscriptions, agency retainers, BPOs | Monthly |
+
+> **Both video vendors bill monthly.** So the per-unit number the calculator asks for does
+> not exist in the buyer's head even in the vertical it was designed for. They would have to
+> divide a retainer by an output count to answer, and most cannot.
+
+**And the structural error underneath it:** [`ALLFUNNELS.md`](ALLFUNNELS.md) ranked **137** funnels
+with **no portability dimension at all.** I optimised for build simplicity and discovery
+signal, and never scored the thing that was actually required.
+
+`PORTABLE` is now a component property, taken as the **weakest link** across a funnel's
+parts — because one non-porting component breaks the whole funnel — and weighted at **22**,
+the heaviest. What that one change does:
+
+| Offer | Ports | Best rank **before** | Best rank **now** |
 |---|---|---|---|
-| What the visitor does | Enters *their* volume and *their* vendor invoice | Answers 3 questions, sees *our* price | Looks at real people with test scores |
-| What it proves | **Their problem is real** — in their own numbers | **We are not hiding anything** | **We can actually judge talent** |
-| What it does NOT prove | That *we* can do anything | That the work is any good | That the price works for them |
-| **Can it exist on day 1?** | **Yes** — needs nothing from us but arithmetic | **Yes** — our fee is 30–35% of comp, and salary bands are published ([`COMPETITOR-DATA.md`](../COMPETITOR-DATA.md) §2) | **No.** Needs 2+ graded people *per role* first |
-| Build days | 3.5 | **2.5** — the cheapest | 3.0 *plus 2 weeks of sourcing and grading* |
-| Fields captured | **6** — the most | 5 | 4 — the fewest |
-| Improves over 90 days? | **No.** Same arithmetic on day 90 | **No.** Same price | **Yes** — 2 people becomes 15 |
-| Precedent among the 10 fetched | 3 of 8 ship a calculator or comparison table | 3 of 8 publish a real price | **4 of 8 show named candidates** — the most-precedented single element |
+| Volume calculator — units × vendor unit cost | **3** | **1st** | **32th** |
+| Get a price / instant quote | **8** | 3rd | **8th** |
+| See the graded bench | **5** | 5th | **25th** |
+| Book a call | **10** | 8th | **9th** |
+| Free document — scorecard, salary data, guide | **4** | 15th | **44th** |
+| Watch a video first | **2** | 24th | **77th** |
+| Paid micro-trial, $100–250 | **2** | 28th | **79th** |
+| Free custom work on their asset | **2** | 60th | **120th** |
+
+**The four options that need an asset rebuilt per role — video, free document, paid trial,
+free custom work — were already losing. Portability just makes the reason explicit.**
 
 ---
 
-## 3. Day 1 · Day 30 · Day 90
+## 2. What ports, ranked
 
-The column that matters, because an asset that is strong on day 1 and weak on day 90 is a
-different decision from one that is the reverse.
+| Offer | Ports | Best rank | Build days | Fields | `PERSUADE` | Score |
+|---|---|---|---|---|---|---|
+| **Monthly-spend comparison — what you pay now vs full-time** ✅ | **10** | 1 | 2.75 | 6 | 8.8 | 87.1 |
+| **See the test — the graded rubric for that role, and a scored sample** ✅ | **9** | 3 | 3.5 | 6 | 10.0 | 84.2 |
+| **"Three graded candidates in 7 days" — the shortlist promise** ✅ | **10** | 4 | 2.75 | 6 | 7.5 | 84.2 |
+| **Get a price / instant quote** | **8** | 8 | 3 | 6 | 8.8 | 81.1 |
+| **Book a call** | **10** | 9 | 2.25 | 5 | 5.0 | 80.9 |
+| **Generic "contact us"** | **10** | 13 | 1.6 | 4 | 5.0 | 79.6 |
+| **See the graded bench** | **5** | 25 | 3.5 | 5 | 10.0 | 73.1 |
+| **Volume calculator — units × vendor unit cost** | **3** | 32 | 3.5 | 6 | 8.8 | 70.6 |
+| **Join a newsletter / community** | **6** | 41 | 3.5 | 4 | 6.2 | 68.7 |
+| **Free document — scorecard, salary data, guide** | **4** | 44 | 3.5 | 5 | 7.5 | 67.2 |
+| **Watch a video first** | **2** | 77 | 5 | 4 | 8.8 | 60.2 |
+| **Paid micro-trial, $100–250** | **2** | 79 | 3 | 5 | 10.0 | 59.4 |
+| **Free custom work on their asset** | **2** | 120 | 2 | 4 | 10.0 | 45.4 |
 
-### Calculator
-
-| | State | Note |
-|---|---|---|
-| **Day 1** | **Fully working** | It only needs *their* inputs. Nothing about us has to exist yet — which is exactly why it survives a launch with no track record |
-| **Day 30** | Unchanged, but **you now know the shape of the market** | Every completion recorded their volume and their vendor spend. That is the demand map you do not currently have |
-| **Day 90** | Unchanged | **No decay and no compounding.** It works exactly as well and no better. The value it generated is in the data you collected, not in the asset |
-
-### Instant quote
-
-| | State | Note |
-|---|---|---|
-| **Day 1** | **Fully working** | 30–35% of a published salary band is arithmetic. Somewhere publishes bands for 60+ titles |
-| **Day 30** | Unchanged | Removes the price objection from every call, from the first one |
-| **Day 90** | Unchanged — **but now harder to change** | **A published price is a commitment.** If close rate is low and price is the reason, you are revising a number strangers have already seen |
-
-### Graded bench
-
-| | State | Note |
-|---|---|---|
-| **Day 1** | **Does not exist** | 2 weeks of sourcing and grading *per role* before the first ad. This is the whole cost |
-| **Day 30** | 4–6 people, and **it is now the strongest thing on the page** | It answers the objection the other two cannot: *can this person judge talent?* |
-| **Day 90** | **It starts eating itself** | See §4 — this is the part nobody says out loud |
+**Three role-agnostic offers take the top four places**, and two of them did not exist in
+the previous enumeration because I had not thought to look for them.
 
 ---
 
-## 4. The problem with the bench that only shows up around day 90
+## 3. The three that survive
 
-> **A bench that works is a bench that empties.**
+| | **A. Monthly-spend comparison** | **B. See the test** | **C. Shortlist promise** |
+|---|---|---|---|
+| The question it asks | *"What do you spend on this function per month?"* | *"Here is the test every one of these takes before you meet them"* | *"Three graded candidates in 7 days"* |
+| Why it ports | **Every function has a monthly spend**, and it is the unit every vendor actually bills in | **Every role has a test.** The rubric changes; the mechanism does not | **Nothing in it is role-specific at all** |
+| What it needs on day 1 | A salary band per role — a lookup, published for 60+ titles | **A written rubric per role** — which you must write anyway to grade anyone | Nothing |
+| Build days | **2.75** | 3.0 | **2.25** — the cheapest |
+| Fields captured | **6** | 5 | 5 |
+| What it proves | Their spend is bigger than they thought | **We know how to judge this work** | Nothing yet — it is a promise |
+| Precedent | Somewhere and Athyna both ship salary tools | **Nobody. Zero of ten** | Genius' *"See Pre-vetted Candidates"* |
 
-Every placement removes your best proof from the page. The editor with the **41% → 68%**
-retention delta is the reason someone booked — and the moment you place them, they are
-someone's employee and their profile comes down.
+### A. Monthly-spend comparison
+
+| ✅ | |
+|---|---|
+| **Ports perfectly — 10** | Video, media buying, ops, design, books, support. Every one has a monthly spend, and the buyer knows it without doing arithmetic |
+| **One input** | *"What do you spend on this per month?"* — against three for the volume calculator, two of which they could not answer |
+| **The volume argument survives, in new units** | [`TEARDOWN.md`](../TEARDOWN.md) §4 said the only conclusion that sells is a *volume* problem, because volume is solved by a person. **"You are spending $4,000/month on this through a vendor" is the same argument in dollars instead of cuts** — and dollars port |
+| **Precedented** | Somewhere's role→region tool and Athyna's LATAM salary tool are both this shape, across 60+ titles each — which is the portability proof |
+
+| ❌ | |
+|---|---|
+| **It is the salary-arbitrage frame, and that was rejected on purpose** | [`MODEL-V2.md`](../MODEL-V2.md) §8 moved this business from price to quality, and [`REFERENCE.md`](../REFERENCE.md) §3 said explicitly *do not* build Somewhere's salary calculator. **This walks that back** |
+| **It is a head-on collision with the category leader's axis** | *"80% less"* appears verbatim in **2 of 8** competitor headlines. Entering on their axis with no track record is the losing side of that fight |
+| **It proves nothing about us** | Anyone can publish a cost comparison. It does not answer *can this person judge talent* |
+
+### B. See the test
+
+| ✅ | |
+|---|---|
+| **It is the only differentiated thing on the list** | **Zero of ten competitors shows a test or a score.** They show photos, titles and prices. This is [`MODEL-V2.md`](../MODEL-V2.md) §8's `TRUECLAIM` position made concrete |
+| **Needs a rubric, not a bench** | The graded-bench option ranked 5th and now ranks 25th partly because it needs two hired, tested people per role before launch. **A rubric is a document you write in an afternoon** — and you must write it anyway |
+| **It enforces the role filter automatically** | A role you cannot write a credible rubric for is a role you cannot grade. [`LAUNCH.md`](../LAUNCH.md)'s `FOUNDERGRADE`, applied by construction rather than by discipline |
+| **It survives the bench paradox** | A placed candidate leaves the bench; **the test does not go anywhere.** The proof is in the method, not in the person |
+| **Ports at 9** | The rubric differs per role; the page structure, the scoring format and the persuasion mechanism are identical |
+
+| ❌ | |
+|---|---|
+| **Zero precedent, and that cuts both ways** | Ten operating companies all found other ways to prove quality. Either they are missing something or it does not work — and I cannot tell you which from here |
+| **It is about us, not about them** | A rubric interests someone already considering. It may not stop a scroller the way *"you are spending $4,000/month on this"* does |
+| **A rubric can be copied** | It is the one asset a competitor can lift in an afternoon. The defence is that they cannot copy *doing the grading*, but the page itself is not defensible |
+
+### C. Shortlist promise
+
+| ✅ | |
+|---|---|
+| **Cheapest to build — 2.25 days** | It is a sentence and a form |
+| **Ports at 10** | Nothing in it is role-specific |
+| **Precedented** | Genius leads with *"See Pre-vetted Candidates"* and it is their CTA |
+
+| ❌ | |
+|---|---|
+| **It is a promise, not a proof** | From a named operator with a track record it is credible. **From an unknown, an unbacked promise is the weakest thing on this page** |
+| **It carries a delivery cost the model does not see** | The page needs no human, so it scores `perlead = 0`. **But if sixty people request a shortlist you owe sixty shortlists.** The obligation is real and arrives later — which in practice forces it back to *"book a call and then I'll shortlist"*, which is what Genius does |
+| **7 days is a promise you have not tested** | Somewhere quotes 3 days to candidates and 7–21 to filled. You have never run it once |
+
+---
+
+## 4. The answer: A then B, on one page
+
+**A gives the reason to care. B gives the reason to trust.** They compose, they both port,
+and the composition fixes A's worst problem.
+
+```
+  1.  Which seat is open?                     [ 6 buttons ]
+
+  2.  What do you spend on it per month?      [ $4,000    ]
+      Includes agency, freelancer, subscription, or your own time
+           |
+           v
+      You spend            $48,000/yr
+      Full-time, all-in    $19,800/yr
+      Our fee, one-time     $5,940
+      ----------------------------------
+      Year one difference  $22,260
+
+  3.  "But can you judge a good one?"          <- THE OBJECTION
+
+      Here is the test every performance editor takes before you
+      meet them, and a real scored submission:
+        - recut one of the client's live ads, 48h
+        - scored on 3-sec retention, 15-sec retention, brief adherence
+        - sample: 41% -> 68% on 3-sec.  Score 8.1/10
+
+  4.  [ See available times ]                  <- self-serve calendar
+```
+
+### Why the order matters
 
 | | |
 |---|---|
-| **Why the competitors do not have this problem** | Scale. Somewhere claims a **1.2M+ candidate pool**; Athyna publishes **40+** profiles. Placing ten people does not dent that. **At 6 people it is catastrophic** |
-| **What it costs** | Continuous sourcing and grading, forever, at your personal hourly rate — and grading is the one task you cannot delegate, because *you doing the grading* is the entire claim |
-| **When it bites** | Exactly when things are going well. **Success is what breaks it**, which is the worst possible failure mode to design in |
-| **The mitigation** | Show the **test and the score**, not only the person. A retired profile can stay up as *"placed — here is what they scored"*, which keeps the proof and loses only the availability. **No competitor does this, because none of them shows scores at all** |
+| **Cost first, then quality, never the reverse** | The cost line is what stops the scroll — it is about them. The test is what closes the objection the cost line creates, which is *"cheap offshore labour, and how would you know if they were any good?"* |
+| **This is how the price frame gets neutralised** | Stating a cost gap and then immediately proving the grading is **not** competing on price — it is using price to earn attention and quality to earn the call. [`MODEL-V2.md`](../MODEL-V2.md) §8's objection was to *leading and ending* on price. **Ending on the test is the whole difference** |
+| **Both blocks port** | Six seats change six labels, one salary band and one rubric. **No block is rebuilt, ever** — which is the requirement |
+| **And it stays testable across, not down** | One page serves every ICP × role. The ICP lives in the ad, the role lives in button 1, and the conversion event is identical in all of them — so the cells are comparable |
+
+### What each cell costs to add
+
+| To add a role | Work |
+|---|---|
+| One button | Five minutes |
+| One salary band | A lookup — Somewhere publishes bands for 60+ titles |
+| **One rubric** | **An afternoon, and it is the only real cost.** A role you cannot write one for is a role you should not launch — which is the filter doing its job |
+| One scored sample | One graded candidate for that role. **This is the gating item**, and it is one person, not the two-per-role a bench needs |
+
+**One graded person per role instead of two, and a rubric instead of a bench.** That is
+roughly half the day-1 asset cost of the bench option, for most of the trust.
 
 ---
 
-## 5. Pros and cons, straight
+## 5. What I got wrong, in order
 
-### Calculator
-
-| ✅ | |
-|---|---|
-| **Works on day 1 with nothing from us** | No asset, no track record, no bench |
-| **Captures the most data — 6 fields** | Volume, vendor spend, role, size. This is the discovery instrument, and discovery is the day-1 job |
-| **It argues *their* problem, not our price** | The buyer reaches the volume conclusion themselves, which is stronger than us asserting it |
-| **Zero minutes per lead** | Fully self-serve, so the timezone cannot touch it |
-| **Precedented** | Somewhere and Athyna both ship salary tools; GrowthAssistant ships a cost-comparison table |
-
-| ❌ | |
-|---|---|
-| **Proves nothing about us** | Anyone can build a calculator. It does not answer *can you judge talent* — which is the objection that actually stops the sale |
-| **The most build days of the three — 3.5** | And the only one that is genuinely custom code, so it is the one most likely to break silently |
-| **Garbage in** | If they do not know their own vendor spend, the output is meaningless and the page has wasted its one moment |
-| **No compounding** | Identical on day 90 |
-
-### Instant quote
-
-| ✅ | |
-|---|---|
-| **Cheapest to build — 2.5 days** | The simplest of the three, and simplicity is the stated constraint |
-| **Works on day 1** | 30–35% of a published salary band. Pure arithmetic |
-| **Removes the price objection before the call** | For an unknown operator this is the largest silent killer — people assume the worst and never ask |
-| **Publishing signals confidence** | 3 of 8 competitors publish. **Vidchops hides theirs behind an "Unlock Pricing" button**, which tells you what hiding reads as |
-| **+15–30% CTR on the ad** | *"Get a Free Quote"* over *"Contact Us"*, measured [V] |
-
-| ❌ | |
-|---|---|
-| **It anchors the conversation on cost** | [`MODEL-V2.md`](../MODEL-V2.md) §8 deliberately moved this business from price to quality. A quote-first page walks it back toward the axis where Somewhere and Genius already say *"80% less"* |
-| **A number from a stranger lands cold** | $6,600 from an unknown India-based operator, before any proof, is a very different message from $6,600 after a work sample |
-| **Fewer fields — 5** | Less discovery than the calculator |
-| **Hard to walk back** | A published price seen by strangers is a commitment, and month-3 is exactly when you will want to test a different one |
-
-### Graded bench
-
-| ✅ | |
-|---|---|
-| **Highest persuasion in the study — 10.0** | Tied only with the two options that cost 90–100 minutes per lead |
-| **It answers the real objection** | *Can this one person actually judge talent?* Nothing else on the page does |
-| **The most-precedented single element** | **4 of 8 live competitors** put named candidates on the demand page |
-| **It compounds** | 2 people become 15. The only one of the three that is worth more on day 90 than day 1 |
-| **It is the business** | [`MINIMUM.md`](../MINIMUM.md) §6 — if you cannot produce one graded work sample with a measured delta, there is no business. **This work is not optional, only its timing is** |
-
-| ❌ | |
-|---|---|
-| **Cannot launch day 1** | 2 weeks of sourcing and grading per role. **The single biggest reason not to start here** |
-| **Fewest fields — 4** | Weakest discovery instrument of the three, and discovery is the day-1 job |
-| **§4 — success empties it** | The failure mode arrives exactly when it is working |
-| **Employment-classification exposure** | Candidate profiles on the ad path is the clearest route to Meta reading this as an employment ad. **10–29% CAC tax** if it lands ([`SUPPLY-DEMAND.md`](../SUPPLY-DEMAND.md)) |
-| **Ongoing burden** | The only one of the three with recurring work attached |
-
----
-
-## 6. The answer, and it is a sequence rather than a pick
-
-The three are not competing for one slot. **Two of them are the same object, and the third
-is a different phase.**
-
-### Calculator and quote are one block, not two
-
-> A calculator that ends in a price **is** a quote.
-
-They are enumerated separately because they are separately choosable. On a page they
-compose into one flow:
-
-```
-  How many ads a month do you ship?          ->  their volume
-  What does your studio/freelancer invoice?  ->  their spend
-  What would you ship if capacity were free? ->  their ceiling
-       |
-       v
-  Your cost per ad today          $1,333      <- the calculator
-  At 16/mo your vendor bills      $21,333
-  One full-time, all-in           $1,650
-  Our fee, one-time, 30%          $5,940      <- the quote
-  ------------------------------------------
-  The gap, year one               $228,056
-```
-
-**Marginal cost of adding the quote to the calculator: roughly zero.** The fee is one more
-line of arithmetic on a page that is already doing arithmetic. You get **6 fields**, both
-persuasion mechanisms, and one system.
-
-And it resolves the quote's worst con: **the price arrives *after* their own number**, not
-before it. $5,940 read directly after *$228,056 of gap* is a different sentence from $5,940
-read cold.
-
-### The bench is phase two, and its date is set by sourcing, not by the page
-
-| Phase | Middle slot | Why |
+| Pass | Claim | Why it was wrong |
 |---|---|---|
-| **Day 1–30** | **Calculator + quote as one block** | It is the only option that exists on day 1, and it is the strongest discovery instrument. Month one's job is finding out which ICP × role converts — not closing |
-| **Day 30–60** | **Add the bench above it** | By then you have graded people because you have been sourcing for the first placements anyway. The bench becomes the hero block; the calculator stays as the conversion event underneath |
-| **Day 60–90** | **Bench leads, calculator converts, quote stays published** | The bench answers *can you judge talent*; the calculator answers *is my problem big enough*. They are different objections and the page has room for both |
+| 1–3 | Ranked funnels on modelled CAC | Ninety invented conversion parameters compounded into three-significant-figure answers |
+| 4 | Enumerated 137 funnels with no portability dimension | Optimised for build simplicity and discovery signal. **Never scored the requirement** |
+| 5 | Recommended a volume calculator | It asks for a per-unit vendor price that **no vendor in my own competitor file charges** |
 
-> **Nothing gets rebuilt.** The calculator block never moves and never changes. The bench
-> is added above it when it exists. That is one build, then one addition — which is the
-> whole point of choosing the day-1 option that needs nothing from us.
-
-### What would make me wrong
-
-| If this turns out to be true | Then |
-|---|---|
-| **Buyers do not know their vendor spend** | The calculator produces nothing and the block is dead weight. **Check this on the first five calls** — ask what they currently pay per ad. If they cannot answer, drop the calculator and run the quote alone, which needs no input from them |
-| **The volume argument does not land for agencies** | The whole calculator premise fails for that ICP. It will show up as agencies completing the calculator and not booking — visible by day 21 |
-| **Sourcing takes longer than two weeks** | The bench slips to day 60–90. Nothing else changes, because nothing was built on it |
-| **Meta reads the bench as an employment ad** | **10–29% on CAC.** Mitigation is to keep the bench as a *supplier catalogue for buyers* — no *apply*, no *join*, no availability language aimed at candidates |
-
----
-
-## 7. One thing to be clear about
-
-The 3.1-point spread between these three is **inside the noise of my own weighting.** I am
-not claiming the calculator beats the bench on the model — it does not, meaningfully.
-
-> **The sequencing argument is what decides it, and it rests on one hard fact: the bench
-> cannot exist on day 1 and the calculator can.** Everything else here is a tie-break.
+**What survives all five passes:** the landing page over on-platform (~17% vs ~2% appointment
+rate), the self-serve calendar over any chase (32% vs 12% close, against a 10-hour gap), one
+page and one ad set, and *a role with no measurable delta is not a role to launch.* Those
+four have never moved, because each rests on a verified fact rather than on a model.
 

@@ -103,6 +103,7 @@ class Comp:
     asset: str = ""
     policy: int = 0            # employment-classification risk, 0-3
     persuade: int = 0          # does this part give the visitor anything BEFORE the ask?
+    portable: int = 10         # works UNCHANGED across every ICP x role cell, 0-10
     note: str = ""
 
 
@@ -122,24 +123,40 @@ DEST = [
 OFFER = [
     Comp("call", "Book a call", days=0.25, fields=1,
          note="What most of the category does. Says nothing before asking"),
-    Comp("bench", "See the graded bench", days=1.5, fields=1, persuade=4, asset="2 graded people per role",
-         policy=2, note="**4 of 8 competitors lead with people** [V]"),
-    Comp("quote", "Get a price / instant quote", days=1.0, fields=2, persuade=3,
-         note="Our fee is a % of salary, so a quote is arithmetic not a range"),
+    Comp("bench", "See the graded bench", days=1.5, fields=1, persuade=4, portable=5,
+         asset="2 graded people per role", policy=2,
+         note="**4 of 8 competitors lead with people** [V]. The frame ports; the people do not"),
+    Comp("quote", "Get a price / instant quote", days=1.0, fields=2, persuade=3, portable=8,
+         note="Our fee is a % of salary; a salary band per role is a lookup, so it ports"),
     Comp("doc", "Free document — scorecard, salary data, guide", days=1.5, fields=1, persuade=2,
-         asset="the document", note="Cheap to make, weak intent"),
+         portable=4, asset="the document", note="A different document per role. Weak intent"),
     Comp("work", "Free custom work on their asset", days=0.5, perlead=90, fields=1, persuade=4,
-         chase=True, note="**No competitor does this.** 90 min/lead, forever"),
+         portable=2, chase=True,
+         note="**No competitor does this.** 90 min/lead, and you must personally have every skill"),
     Comp("trial", "Paid micro-trial, $100–250", days=1.0, perlead=100, fields=3, persuade=4,
-         note="Vidpros' $100 trial is the only paid entry offer found [V]"),
-    Comp("vsl", "Watch a video first", days=3.0, fields=0, persuade=3, asset="a video per role",
-         note="Canonical high-ticket shape. Reshoot per cell"),
-    Comp("calc", "Use a calculator", days=2.0, fields=3, persuade=3,
-         note="Custom code. Captures their real volume and spend"),
+         portable=2, note="Vidpros' $100 trial is the only paid entry offer found [V]"),
+    Comp("vsl", "Watch a video first", days=3.0, fields=0, persuade=3, portable=2,
+         asset="a video per role", note="Canonical high-ticket shape. **Reshoot per cell**"),
+    Comp("calc", "Volume calculator — units × vendor unit cost", days=2.0, fields=3,
+         persuade=3, portable=3,
+         note="**Asks for a per-unit vendor price that does not exist.** Every vendor in "
+              "`competitors.py` bills MONTHLY — Vidpros $1,000/$4,000/mo, Vidchops monthly "
+              "credits, Hireframe $2,500/mo, GrowthAssistant $3,500/mo"),
+    Comp("spend", "Monthly-spend comparison — what you pay now vs full-time", days=1.25,
+         fields=3, persuade=3, portable=10,
+         note="**One input every buyer knows**, in the unit every vendor actually bills in. "
+              "Somewhere and Athyna both ship this shape"),
+    Comp("rubric", "See the test — the graded rubric for that role, and a scored sample",
+         days=1.5, fields=2, persuade=4, portable=9,
+         note="**No competitor shows a test or a score.** Needs the rubric written, not people "
+              "hired — and a role you cannot write a rubric for is a role you cannot grade"),
+    Comp("promise", "\"Three graded candidates in 7 days\" — the shortlist promise",
+         days=0.75, fields=2, persuade=2, portable=10,
+         note="Genius' *\"See Pre-vetted Candidates\"* without needing the bench to exist yet"),
     Comp("contact", "Generic \"contact us\"", days=0.1, fields=1,
          note="**−15–30% CTR vs a named offer** [V]"),
     Comp("list", "Join a newsletter / community", days=2.0, perlead=2, fields=1, persuade=1,
-         asset="ongoing content", note="Learns in month three, not week two"),
+         portable=6, asset="ongoing content", note="Learns in month three, not week two"),
 ]
 
 QUAL = [
@@ -171,7 +188,8 @@ BYKEY = {c.key: c for grp in (DEST, OFFER, QUAL, BOOK) for c in grp}
 # ---------------------------------------------------------------------------
 def coherent(d, o, q, b):
     # on-platform destinations cannot show a bench, a quote tool, a calculator or a video
-    if d.key in ("form", "dm") and o.key in ("bench", "quote", "calc", "vsl", "trial"):
+    if d.key in ("form", "dm") and o.key in ("bench", "quote", "calc", "vsl", "trial",
+                                             "spend", "rubric"):
         return False
     # a bare calendar link is the offer; it cannot carry a different one
     if d.key == "cal" and o.key != "call":
@@ -241,13 +259,14 @@ def name(f):
 # SCORING. Every term is derived from component properties above. There is no
 # per-funnel constant anywhere in this section.
 # ---------------------------------------------------------------------------
-W = [("EASE",     24, "Systems to wire × days to build. Operator direction: first six months"),
-     ("HANDS",    18, "Minutes of human work per lead, forever. The solo constraint"),
-     ("SIGNAL",   16, "Qualification fields captured — how fast we learn which ICP × role works"),
-     ("PERSUADE", 16, "Does it give the visitor anything before asking? Structural, not a rate"),
-     ("TZ",       14, "Immune to the 32%→12% speed-to-lead penalty? [V]"),
-     ("PROVEN",    7, "Do the fetched competitors run this shape, and does a benchmark exist?"),
-     ("READY",     5, "Can it launch with assets that exist today?")]
+W = [("PORTABLE", 22, "Works UNCHANGED across every ICP × role. We must test across, not down"),
+     ("EASE",     20, "Systems to wire × days to build. Operator direction: first six months"),
+     ("HANDS",    15, "Minutes of human work per lead, forever. The solo constraint"),
+     ("SIGNAL",   13, "Qualification fields captured — how fast we learn which ICP × role works"),
+     ("PERSUADE", 13, "Does it give the visitor anything before asking? Structural, not a rate"),
+     ("TZ",       12, "Immune to the 32%→12% speed-to-lead penalty? [V]"),
+     ("PROVEN",    3, "Do the fetched competitors run this shape, and does a benchmark exist?"),
+     ("READY",     2, "Can it launch with assets that exist today?")]
 
 
 def score(f):
@@ -259,18 +278,20 @@ def score(f):
     # PROVEN: precedent among the ten fetched, plus whether a published benchmark
     # covers this shape's decisive step
     prec = {"bench": 4, "call": 6, "quote": 1, "doc": 1, "vsl": 1,
-            "calc": 3, "contact": 3, "trial": 1, "work": 0, "list": 2}[o.key]
+            "calc": 3, "contact": 3, "trial": 1, "work": 0, "list": 2,
+            "spend": 3, "rubric": 0, "promise": 2}[o.key]
     bench_exists = (d.key == "form") or (q.key == "review") or (o.key == "trial")
     proven = min(10.0, prec * 1.4 + (3.0 if bench_exists else 0.0)
                  - (4.0 if q.key == "gate" else 0.0))
     ready = 10.0 - 3.5 * len(f.assets)
     persuade = min(10.0, sum(c.persuade for c in f.parts) / 8.0 * 10.0)
+    portable = min(c.portable for c in f.parts)      # the weakest link decides
     # The one hard evidence-based override: on-platform destinations for a
     # considered purchase, priced at the measured 2% vs 17% appointment gap.
     if d.key in ("form", "dm"):
         proven = min(proven, 3.0)
-    return dict(EASE=ease, HANDS=hands, SIGNAL=signal, PERSUADE=persuade, TZ=tz,
-                PROVEN=max(0.0, proven), READY=max(0.0, ready))
+    return dict(PORTABLE=float(portable), EASE=ease, HANDS=hands, SIGNAL=signal,
+                PERSUADE=persuade, TZ=tz, PROVEN=max(0.0, proven), READY=max(0.0, ready))
 
 
 for f in ALL:
@@ -332,14 +353,15 @@ print(f"({tot - len(ALL)} are incoherent — an Instant Form cannot show a bench
 print("a no-call close only works behind money, and so on. The rules are in the source.)\n")
 
 print("### The components, and the only properties that are scored\n")
-print("| Component | Systems | Build days | Human min/lead | Fields | Gives first | Chase? | Needs |")
-print("|---|---|---|---|---|---|---|---|")
+print("| Component | Systems | Build days | Human min/lead | Fields | Gives first | **Ports?** | Chase? | Needs |")
+print("|---|---|---|---|---|---|---|---|---|")
 for lbl, grp in [("DESTINATION", DEST), ("OFFER", OFFER), ("QUALIFICATION", QUAL),
                  ("BOOKING", BOOK)]:
-    print(f"| **{lbl}** | | | | | | | |")
+    print(f"| **{lbl}** | | | | | | | | |")
     for c in grp:
         print(f"| {c.label} | {c.sys} | {c.days:g} | {c.perlead:g} | {c.fields} "
-              f"| {c.persuade or '—'} | {'**yes**' if c.chase else '—'} | {c.asset or '—'} |")
+              f"| {c.persuade or '—'} | **{c.portable}** "
+              f"| {'**yes**' if c.chase else '—'} | {c.asset or '—'} |")
 print("\n**A funnel's score is composed from its parts.** There is no per-funnel constant in this")
 print("file, which is precisely what was wrong with the last three.\n")
 
@@ -355,9 +377,9 @@ print("months must be simple. `TZ` at 14 is the speed-to-lead penalty, which is 
 print("where the operator lives**, not a parameter.\n")
 
 print("---\n\n## 4. The ranking — all " + str(len(ALL)) + "\n")
-print("| # | Funnel | Sys | Days | Min/lead | Fields | `EASE` | `HANDS` | `SIGNAL` | `TZ` "
-      "| `PROVEN` | `READY` | **Score** |")
-print("|---|---|---|---|---|---|---|---|---|---|---|---|---|")
+print("| # | Funnel | Sys | Days | Min/lead | Fields | "
+      + " | ".join(f"`{k}`" for k, _, _ in W) + " | **Score** |")
+print("|---|---|---|---|---|---|" + "---|" * (len(W) + 1))
 for i, f in enumerate(ALL, 1):
     s = f.sc
     mk = " ✅" if i <= 3 else ""
