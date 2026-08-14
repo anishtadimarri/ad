@@ -27,88 +27,87 @@ Run:  python3 scoring/template.py > /dev/null   (writes TEMPLATE.md)
 OUT = "TEMPLATE.md"
 
 DIM = [
- ("SHAPE",      30, "**Is it already an employer-facing services firm?** The single biggest "
-                    "edit-distance term. A candidate-facing job board or an HR SaaS product is "
-                    "not a restyle — it is a different website, and a job-board shape also "
-                    "risks Meta's **Employment Special Ad Category** ([`SUPPLY-DEMAND.md`]"
-                    "(SUPPLY-DEMAND.md) §1, a 10–29% CAC tax)", "verified by demo"),
- ("HAVE",       22, "**Sections that ship and you keep.** Every one is copy-swap instead of "
-                    "build-from-blank", "verified by demo"),
- ("BUILD",      18, "**Sections you must build because they are missing.** Pricing, guarantee, "
-                    "booking, and above all **a CMS** — three static case studies is fine, "
-                    "thirty is a rebuild", "verified by demo"),
- ("RECOPY",     15, "**How far the register is from yours.** Funnel-agency, ESG-consultant or "
-                    "HR-SaaS copy means rewriting every line and restyling; recruitment copy "
-                    "means swapping nouns", "verified by demo"),
- ("STRIP",       8, "Sections you must delete. Cheap, but not free", "verified by demo"),
- ("MOBILEHERO",  4, "Promise + CTA above the fold on a phone. **Still the thing that decides "
-                    "conversion — but you asked to optimise edit work, so it is weighted as "
-                    "the tiebreak it now is.** Run the phone test regardless",
-                    "`[?]` needs the phone test"),
- ("NETCOST",     3, "Cost net of the bundled 3 months of Framer Pro (§2)", "listing"),
+ ("COMPLETE",   30, "**Is the tooling already there?** Every section and page you need, "
+                    "shipped: **CMS/blog**, pricing, case studies, testimonials, FAQ, forms, "
+                    "booking, team, legal. **What is missing is what you build from blank** — "
+                    "and that is real work, unlike editing copy", "verified by demo"),
+ ("CONVERT",    25, "**Funnel-optimised for Meta traffic.** Single-goal pages, CTA in hero and "
+                    "repeated down the page, social proof early, a comparison or objection "
+                    "block, booking or form at the end. **Cold paid traffic needs persuasion "
+                    "architecture, not a brochure**", "verified by demo"),
+ ("STABLE",     20, "Maintained, clean component structure, longevity. **Marketplace age and "
+                    "volume is the only real evidence available** for *still works, still "
+                    "supported*", "partly — longevity as proxy"),
+ ("SHAPE",      15, "Employer-facing **services** structure. Not a candidate job board, not a "
+                    "SaaS product page. **This is structural, not cosmetic** — and a job-board "
+                    "shape also risks Meta's Employment Special Ad Category "
+                    "([`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) §1, a 10–29% CAC tax)",
+                    "verified by demo"),
+ ("NETCOST",     5, "Cost net of the bundled 3 months of Framer Pro (§2)", "listing"),
+ ("RECOPY",      5, "**Dropped from 15 to 5.** *\"We can edit whatever as long as the tooling "
+                    "is there.\"* Register distance is a copy-and-colour job, not a build job "
+                    "— **and weighting it at 15 is what put Recruitify top last time**",
+                    "verified by demo"),
 ]
 
-# (name, price, register, SHAPE, HAVE, BUILD, RECOPY, STRIP, MOBILEHERO, NETCOST, note)
-# All demo-verified rows say so. 5 = least work.
+# (name, price, register, COMPLETE, CONVERT, STABLE, SHAPE, NETCOST, RECOPY, missing, note)
 T = [
- ("Recruitify", "paid `[?]`", "recruitment agency — **employer-facing**",
-  5, 4, 3, 5, 4, 3, 4,
-  "**[Demo verified.](https://recruitify.framer.website/)** *\"Connecting Top Talent with "
-  "Leading Companies.\"* **Its process section is literally Consultation → Screening → "
-  "Placement**, which is your process. Ships services (Talent Sourcing, Executive Search, "
-  "Contract Staffing), stats, testimonials, **case studies**, **FAQ**, pricing link, 8–10 "
-  "pages. **Lowest edit distance of anything found.** Missing: blog/CMS, team"),
- ("Recruitment Hub", "**free**", "recruitment consulting — **employer-facing**",
-  5, 4, 2, 5, 5, 3, 3,
-  "**[Demo verified.](https://recruitment-hub.framer.website/)** *\"We help you hire the "
-  "right people, faster.\"* Ships hero, **why-us comparison**, 3-step process, benefits, "
-  "services, **pricing (2 plans)**, about, **FAQ**, contact. Free Remix. **Almost nothing to "
-  "strip.** Missing: **CMS and case studies** — `BUILD`=2, the main cost"),
  ("Funnelz", "paid `[?]`", "lead-gen agency",
-  3, 5, 4, 2, 3, 3, 4,
-  "**[Demo verified.](https://funnelz.framer.website/)** By Ramish Aziz. **The most complete "
-  "section set of anything found** — case studies, **blog/CMS**, 3-tier pricing, "
-  "testimonials, team, booking in nav. But `RECOPY`=2: *\"Fuelling growth with every "
-  "click\"* is funnel-agency register and **your buyer is an agency owner who will clock it "
-  "instantly.** Every line gets rewritten"),
- ("Cubicles", "~$59 `[?]`", "corporate consulting",
-  4, 4, 3, 3, 4, 3, 4,
-  "**[Demo verified.](https://cubicles.framer.website/)** *\"Tailored Solutions for Every "
-  "Business Challenge.\"* Ships **case studies and a real blog/CMS**, services, industries, "
-  "about. Missing pricing, testimonials, booking. Generic-consulting copy is a medium rewrite"),
+  5, 5, 3, 4, 4, 2, "team-bio page only",
+  "**[Demo verified.](https://funnelz.framer.website/)** By Ramish Aziz. **The only template "
+  "found with the full tooling set**: hero+CTA, social proof, **case studies**, services, "
+  "**3-tier pricing**, team, **blog/CMS**, **booking in the nav**. Built as a lead-gen site, "
+  "so the persuasion order is already right. `RECOPY`=2 — funnel-agency voice — **which no "
+  "longer costs it anything**"),
  ("Conversion", "~$79 `[?]`", "paid-ads agency",
-  3, 3, 2, 3, 3, 3, 4,
+  2, 5, 5, 4, 4, 3, "**blog/CMS, pricing page**",
   "**[Demo verified.](https://conversion.framer.media/)** *\"Ready to scale your brand with "
-  "paid ads?\"* Strongest longevity signal on the marketplace, a **Results metrics block** "
-  "and a **comparison table**. But **no CMS and no pricing** (`BUILD`=2), and `SHAPE`=3 "
-  "because **it makes you look like an ads agency rather than a talent firm**"),
+  "paid ads?\"* **The best conversion architecture of anything found** — a Results metrics "
+  "block, a **comparison table**, a 3-step process, testimonials high on the page. And "
+  "`STABLE`=5 on the only hard evidence available: **one of the longest-running, most-viewed "
+  "templates on the marketplace.** Its problem is `COMPLETE`=2 — **no CMS and no pricing "
+  "page**"),
+ ("Recruitify", "paid `[?]`", "recruitment agency",
+  4, 4, 3, 5, 4, 5, "blog/CMS, team",
+  "**[Demo verified.](https://recruitify.framer.website/)** *\"Connecting Top Talent with "
+  "Leading Companies.\"* Process is already Consultation → Screening → Placement; ships "
+  "services, stats, testimonials, case studies, FAQ, pricing, 8–10 pages. **Last round's pick "
+  "— and it won mostly on `RECOPY`, which you have just told me not to weight.** Still strong, "
+  "but the missing CMS matters more now"),
+ ("Cubicles", "~$59 `[?]`", "corporate consulting",
+  3, 2, 4, 4, 4, 3, "pricing, testimonials, booking",
+  "**[Demo verified.](https://cubicles.framer.website/)** Has **case studies and a real "
+  "blog/CMS**, plus industries and about. But `CONVERT`=2: weak repeated CTA, no pricing, no "
+  "objection block. **A brochure, not a funnel**"),
+ ("Recruitment Hub", "**free**", "recruitment consulting",
+  3, 4, 3, 5, 3, 5, "**CMS, case studies**",
+  "**[Demo verified.](https://recruitment-hub.framer.website/)** *\"We help you hire the "
+  "right people, faster.\"* Good persuasion structure — **why-us comparison**, 3-step "
+  "process, benefits, **pricing (2 plans)**, FAQ. Free. But **no CMS and no case studies**, "
+  "which is the tooling gap that bites"),
  ("HRPro", "paid `[?]`", "HR / recruiting agency",
-  4, 3, 3, 4, 3, 3, 4,
-  "**Not demo-verified — listing only.** Positioned for HR and recruiting agencies, so the "
-  "register is likely close. **Open the demo before considering it**"),
- ("Recruitment (Shah)", "**free**", "recruitment / HR consulting",
-  4, 3, 3, 4, 4, 3, 3,
-  "**Not demo-verified — listing only.** Free, positioned for recruitment agencies and "
-  "talent-acquisition firms"),
+  3, 3, 3, 4, 4, 4, "unverified",
+  "**Not demo-verified — listing only.** Open the demo before considering it"),
+ ("Recruitment (Shah)", "**free**", "recruitment / HR",
+  3, 3, 3, 4, 3, 4, "unverified", "**Not demo-verified — listing only.** Free"),
+ ("Nakula / Fabrica / Lyniq", "$69–129 `[?]`", "premium agency",
+  4, 3, 4, 3, 4, 3, "unverified",
+  "**Not demo-verified.** The 'looks expensive' tier — and usually the heaviest, which fights "
+  "`CONVERT` on a phone"),
  ("Greenleaf", "**free**", "ESG consulting",
-  4, 3, 2, 2, 3, 3, 2,
-  "**[Demo verified earlier.](https://greenleaf.framer.website/)** Clean, but built for "
-  "**sustainability consultants** — `RECOPY`=2 means restyling the green palette and "
-  "rewriting everything. No CMS-backed proof slot, no bundle"),
- ("Talentify", "**free**", "❌ **candidate-facing job board**",
-  1, 2, 2, 2, 1, 3, 3,
-  "**[Demo verified — and it disqualifies itself.](https://talentify.framer.website/)** "
-  "*\"Your gateway to remote tech careers.\"* Featured roles, application flow, recruiter "
-  "profiles. **This is the supply side.** [`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) requires a "
-  "demand-only homepage, and **a job-board shape is exactly what triggers the Employment "
-  "Special Ad Category** — a 10–29% CAC tax. The most on-topic name on the list and the "
-  "worst fit"),
+  2, 3, 4, 4, 2, 2, "CMS proof slot, pricing, booking",
+  "**[Demo verified.](https://greenleaf.framer.website/)** Clean and free, but thin on tooling "
+  "and no bundle"),
+ ("Talentify", "**free**", "❌ **candidate job board**",
+  2, 2, 3, 1, 3, 2, "everything employer-facing",
+  "**[Demo verified — disqualified.](https://talentify.framer.website/)** *\"Your gateway to "
+  "remote tech careers.\"* Featured roles, application flow. **This is the supply side, and a "
+  "job-board shape is what risks Meta's Employment Special Ad Category** — a 10–29% CAC tax"),
  ("TalentBridge", "paid `[?]`", "❌ **HR SaaS product**",
-  1, 2, 1, 1, 2, 3, 3,
-  "**[Demo verified.](https://talentbridge.framer.website/)** *\"Simplify HR Management\"* "
-  "— an **all-in-one HR platform** with integrations, *Request Demo* and *Find your Plan*. "
-  "**That is a software product site, not a services firm.** Single page, no CMS. Wrong "
-  "shape end to end"),
+  2, 3, 3, 1, 3, 1, "everything services-shaped",
+  "**[Demo verified.](https://talentbridge.framer.website/)** An all-in-one HR platform with "
+  "integrations and *Request Demo*. **A product site, not a services firm.** Single page, no "
+  "CMS"),
 ]
 
 # The 20-minute test, run on the operator's own phone.
@@ -136,11 +135,11 @@ TEST = [
 
 def main():
     W = {k: w for k, w, _, _ in DIM}
-    SUB = ["SHAPE", "HAVE", "BUILD", "RECOPY", "STRIP", "NETCOST"]
+    SUB = ["COMPLETE", "CONVERT", "STABLE", "SHAPE", "NETCOST", "RECOPY"]
     subw = sum(W[k] for k in SUB)
 
     def sc(row):
-        vals = dict(zip(SUB, list(row[3:8]) + [row[9]]))
+        vals = dict(zip(SUB, row[3:9]))
         return sum(vals[k] * W[k] for k in SUB) / (5 * subw) * 100
 
     rows = sorted(T, key=lambda r: -sc(r))
@@ -219,12 +218,12 @@ def main():
     P(f"Scored on the {len(SUB)} assessable criteria only — {subw} of 100 points. "
       "**`MOBILEHERO` and `SPEED` are\ndeliberately absent**, which is why the top score here "
       "is not a recommendation.\n")
-    P("| # | Template | Price | Register / shape | Shape | Have | Build | Recopy | Strip | "
-      "Net$ | **Score** | Note |")
-    P("|---|---|---|---|---|---|---|---|---|---|---|---|")
+    P("| # | Template | Price | Complete | Convert | Stable | Shape | **Score** | "
+      "**You must build** | Note |")
+    P("|---|---|---|---|---|---|---|---|---|---|")
     for i, r in enumerate(rows, 1):
-        P(f"| {i} | **{r[0]}** | {r[1]} | {r[2]} | {r[3]} | {r[4]} | {r[5]} | {r[6]} | {r[7]} | "
-          f"{r[9]} | **{sc(r):.0f}** | {r[10]} |")
+        P(f"| {i} | **{r[0]}** | {r[1]} | {r[3]} | {r[4]} | {r[5]} | {r[6]} | **{sc(r):.0f}** | "
+          f"{r[9]} | {r[10]} |")
     P("")
     P("*Names and prices are from marketplace aggregators and are marked `[?]` — **verify both "
       "on Framer\nbefore buying**, since listings and pricing churn.*\n")
@@ -242,32 +241,43 @@ def main():
       "gets made.\n")
 
     P("---\n\n## 7. What I would actually do\n")
-    P("**Recruitify.** It is the only template found whose *process section is already your "
-      "process* —\nConsultation → Screening → Placement. Services, case studies, FAQ, "
-      "testimonials and pricing all ship.\nYou are swapping nouns, not rebuilding. **Its one "
-      "real gap is a blog/CMS**, so plan `/proof` as CMS-\nbacked from day one or accept "
-      "hand-built entries until client ten.\n")
-    P("**Recruitment Hub is the free fallback** and it is close — *\"We help you hire the right "
-      "people,\nfaster\"*, a why-us comparison block, a 3-step process and pricing already "
-      "there. It costs nothing, so\n**open both demos on your phone and let the phone test "
-      "break the tie.**\n")
-    P("### Two templates to actively avoid, despite the names\n")
+    P("**Funnelz.** It is **the only template found with the full tooling set** — CMS, pricing, "
+      "case studies,\ntestimonials, team, booking in the nav — and it was built as a lead-gen "
+      "site, so the persuasion\norder is already right for cold paid traffic. Its one weakness "
+      "was the funnel-agency voice, and\n**that is a copy job, which you have said is free.**\n")
     P("| | |\n|---|---|")
-    P("| **Talentify** | The most on-topic name on the list — *tech recruitment, remote talent* "
-      "— and **the worst fit**. It is a **candidate-facing job board**: featured roles, "
-      "application flow, recruiter profiles. [`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) requires a "
-      "demand-only homepage, and **a job-board shape is precisely what gets a B2B ad "
-      "reclassified into Meta's Employment Special Ad Category** — priced at a 10–29% CAC tax |")
-    P("| **TalentBridge** | Reads as *HR agency* on the listing; the demo is an **all-in-one HR "
-      "SaaS platform** with integrations and *Request Demo*. **A product site, not a services "
-      "firm** |")
+    P("| **Why not Recruitify** | It was last round's pick and it won largely on `RECOPY`=5. "
+      "**With that weight cut from 15 to 5, its missing CMS is no longer offset.** Still second, "
+      "still good, and the better choice if you would rather start from recruitment language "
+      "than rewrite funnel language |")
+    P("| **Why not Conversion** | **The best conversion architecture of anything found** and the "
+      "only one with real stability evidence — but `COMPLETE`=2. **No CMS and no pricing page** "
+      "is the largest build cost on the list, and it is exactly the tooling you said must "
+      "already be there |")
+    P("| **Steal from Conversion anyway** | Its **comparison table** and **Results metrics "
+      "block** are the two strongest conversion devices found. Rebuild both inside whatever you "
+      "pick — the comparison block is where the **$5,000–16,500/mo vendor-invoice** argument "
+      "lives |")
     P("")
-    P("> **That is the finding worth keeping: on this list, name proximity is anti-correlated "
-      "with fit.**\n> The two templates with *talent* in the name are the two you must not "
-      "use, and the winner is the one\n> whose process diagram happens to match yours.\n")
-    P("**And strip whatever you buy.** Every animation removed buys back LP-view rate, and the "
-      "85% in\n[`funnel.py`](scoring/funnel.py) is an assumption you can move in the right "
-      "direction for free.\n")
+    P("### What changed, and why\n")
+    P("| Round | Weighting | Winner |\n|---|---|---|")
+    P("| Round 1 | Mobile + speed + sections | Conversion |")
+    P("| Round 2 | **Edit distance, `RECOPY` at 15** | **Recruitify** |")
+    P("| **Round 3** | **`COMPLETE` 30 · `CONVERT` 25 · `STABLE` 20, `RECOPY` cut to 5** | "
+      "**Funnelz** |")
+    P("")
+    P("**Recruitify topped round two because I weighted register distance at 15**, reading "
+      "*\"least work\"* as\n*least editing*. You have corrected that: editing is free, tooling "
+      "is not. **That single weight change\nis the whole difference** — it is worth knowing "
+      "which criterion is carrying a recommendation.\n")
+    P("### Still disqualified regardless of weighting\n")
+    P("**Talentify** and **TalentBridge** — the two templates with *talent* in the name. One is "
+      "a\n**candidate-facing job board** (the supply side, and the shape that risks Meta's "
+      "Employment Special Ad\nCategory at a **10–29% CAC tax**), the other is an **HR SaaS "
+      "product page**. Neither is a copy problem.\n")
+    P("**Then run the phone test** (§6) on Funnelz and Recruitify before paying, and **confirm "
+      "the 3-months-Pro\ncode is on the listing** — it is creator-dependent and it is what "
+      "makes paid cheaper than free.\n")
 
     open(OUT, "w").write("\n".join(L))
     print(f"{len(T)} templates scored on {len(SUB)} of {len(DIM)} criteria "
