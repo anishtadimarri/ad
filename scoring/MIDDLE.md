@@ -24,24 +24,24 @@ It asks: *"what does your studio invoice **per ad**?"*
 > not exist in the buyer's head even in the vertical it was designed for. They would have to
 > divide a retainer by an output count to answer, and most cannot.
 
-**And the structural error underneath it:** [`ALLFUNNELS.md`](ALLFUNNELS.md) ranked **137** funnels
+**And the structural error underneath it:** [`ALLFUNNELS.md`](ALLFUNNELS.md) ranked **149** funnels
 with **no portability dimension at all.** I optimised for build simplicity and discovery
 signal, and never scored the thing that was actually required.
 
 `PORTABLE` is now a component property, taken as the **weakest link** across a funnel's
-parts — because one non-porting component breaks the whole funnel — and weighted at **20**,
+parts — because one non-porting component breaks the whole funnel — and weighted at **18**,
 the heaviest. What that one change does:
 
 | Offer | Ports | Best rank **before** | Best rank **now** |
 |---|---|---|---|
-| Volume calculator — units × vendor unit cost | **3** | **1st** | **27th** |
-| Get a price / instant quote | **8** | 3rd | **11th** |
-| See the graded bench | **5** | 5th | **16th** |
-| Book a call | **10** | 8th | **21th** |
-| Free document — scorecard, salary data, guide | **4** | 15th | **30th** |
-| Watch a video first | **2** | 24th | **55th** |
-| Paid micro-trial, $100–250 | **2** | 28th | **44th** |
-| Free custom work on their asset | **2** | 60th | **80th** |
+| Volume calculator — units × vendor unit cost | **3** | **1st** | **41th** |
+| Get a price / instant quote | **8** | 3rd | **12th** |
+| See the graded bench | **5** | 5th | **36th** |
+| Book a call | **10** | 8th | **9th** |
+| Free document — scorecard, salary data, guide | **4** | 15th | **13th** |
+| Watch a video first | **2** | 24th | **68th** |
+| Paid micro-trial, $100–250 | **2** | 28th | **63th** |
+| Free custom work on their asset | **2** | 60th | **78th** |
 
 **The four options that need an asset rebuilt per role — video, free document, paid trial,
 free custom work — were already losing. Portability just makes the reason explicit.**
@@ -52,19 +52,20 @@ free custom work — were already losing. Portability just makes the reason expl
 
 | Offer | Ports | Best rank | Build days | Fields | `PERSUADE` | Score |
 |---|---|---|---|---|---|---|
-| **See the test — the graded rubric for that role, and a scored sample** ✅ | **9** | 1 | 3.5 | 6 | 10.0 | 85.7 |
-| **"Three graded candidates in 7 days" — the shortlist promise** | **10** | 5 | 2.75 | 6 | 7.5 | 75.5 |
-| **Monthly-spend comparison — what you pay now vs full-time** | **10** | 7 | 2.75 | 6 | 8.8 | 73.9 |
-| **Get a price / instant quote** | **8** | 11 | 3 | 6 | 8.8 | 72.4 |
-| **See the graded bench** | **5** | 16 | 3.5 | 5 | 10.0 | 70.7 |
-| **Book a call** | **10** | 21 | 2.25 | 5 | 5.0 | 67.7 |
-| **Generic "contact us"** | **10** | 23 | 1.6 | 4 | 5.0 | 66.8 |
-| **Volume calculator — units × vendor unit cost** | **3** | 27 | 3.5 | 6 | 8.8 | 64.4 |
-| **Join a newsletter / community** | **6** | 28 | 3.5 | 4 | 6.2 | 64.4 |
-| **Free document — scorecard, salary data, guide** | **4** | 30 | 3.5 | 5 | 7.5 | 64.3 |
-| **Paid micro-trial, $100–250** | **2** | 44 | 3 | 5 | 10.0 | 60.5 |
-| **Watch a video first** | **2** | 55 | 5 | 4 | 8.8 | 58.2 |
-| **Free custom work on their asset** | **2** | 80 | 1.25 | 7 | 5.0 | 51.6 |
+| ****The hiring scorecard** — download the test, score candidates yourself** ✅ | **8** | 1 | 3 | 6 | 10.0 | 87.4 |
+| **Book a call** | **10** | 9 | 2.25 | 5 | 5.0 | 73.7 |
+| **Get a price / instant quote** | **8** | 12 | 3 | 6 | 8.8 | 73.1 |
+| **Free document — scorecard, salary data, guide** | **4** | 13 | 3.5 | 5 | 7.5 | 72.9 |
+| **Monthly-spend comparison — what you pay now vs full-time** | **10** | 18 | 2.75 | 6 | 8.8 | 72.4 |
+| **See the test — the rubric as an on-page block** | **9** | 23 | 3.5 | 6 | 10.0 | 71.1 |
+| **"Three graded candidates in 7 days" — the shortlist promise** | **10** | 26 | 2.75 | 6 | 7.5 | 69.9 |
+| **Join a newsletter / community** | **6** | 30 | 3.5 | 4 | 6.2 | 65.1 |
+| **Generic "contact us"** | **10** | 32 | 1.6 | 4 | 5.0 | 64.7 |
+| **See the graded bench** | **5** | 36 | 3.5 | 5 | 10.0 | 63.7 |
+| **Volume calculator — units × vendor unit cost** | **3** | 41 | 3.5 | 6 | 8.8 | 62.6 |
+| **Paid micro-trial, $100–250** | **2** | 63 | 3 | 5 | 10.0 | 59.2 |
+| **Watch a video first** | **2** | 68 | 5 | 4 | 8.8 | 58.4 |
+| **Free custom work on their asset** | **2** | 78 | 2 | 4 | 10.0 | 56.2 |
 
 **Three role-agnostic offers take the top four places**, and two of them did not exist in
 the previous enumeration because I had not thought to look for them.
@@ -187,7 +188,7 @@ roughly half the day-1 asset cost of the bench option, for most of the trust.
 | Pass | Claim | Why it was wrong |
 |---|---|---|
 | 1–3 | Ranked funnels on modelled CAC | Ninety invented conversion parameters compounded into three-significant-figure answers |
-| 4 | Enumerated 137 funnels with no portability dimension | Optimised for build simplicity and discovery signal. **Never scored the requirement** |
+| 4 | Enumerated 149 funnels with no portability dimension | Optimised for build simplicity and discovery signal. **Never scored the requirement** |
 | 5 | Recommended a volume calculator | It asks for a per-unit vendor price that **no vendor in my own competitor file charges** |
 
 **What survives all five passes:** the landing page over on-platform (~17% vs ~2% appointment

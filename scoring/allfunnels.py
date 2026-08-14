@@ -71,7 +71,15 @@ FACTS = [
     ("Meta CPL all industries 2025: $41.60, +21% YoY",
      "get-ryze.ai", "A floor to sanity-check any CPL claim against"),
     ("4 of 8 live competitors show named candidates on the demand page; 0 of 10 gate the calendar",
-     "fetched Aug 2026", "Precedent counts, from `competitors.py`"),
+     "fetched Aug 2026", "Precedent counts, from `competitors.py` — **but none verified as Meta advertisers**"),
+    ("**Value-first lead magnets: 40–60% lower CPL than a direct sales offer** on B2B Meta",
+     "involvedigital.com", "**The single strongest mechanism finding in the study**"),
+    ("Proven service-business magnets: audits · guides · templates · free tool access · consultations",
+     "involvedigital.com", "Names the formats that actually run on Meta"),
+    ("Qualification questions raise CPL 30–60%, and lift quality proportionally",
+     "adlibrary.com", "So a gate is roughly a wash on cost per qualified lead"),
+    ("Quizzes and short video are TOF; case studies and webinars are MOF; consultations are BOF",
+     "stackmatix.com", "Places each mechanism in the funnel it is proven at"),
 ]
 
 NO_DATA = [
@@ -148,7 +156,12 @@ OFFER = [
          fields=3, persuade=3, portable=10, news=1,
          note="**Computes a number they already know.** *\"80% less\"* is verbatim in 2 of "
               "8 competitor headlines — the category's saturated message, not an insight"),
-    Comp("rubric", "See the test — the graded rubric for that role, and a scored sample",
+    Comp("scorecard", "**The hiring scorecard** — download the test, score candidates yourself",
+         days=1.5, fields=3, persuade=4, portable=8, news=9,
+         note="**The rubric, wrapped in the market's proven format.** Lead magnets run "
+              "**40–60% lower CPL** than direct offers on B2B Meta [V], and guides/templates "
+              "are a named proven magnet. Same content as a page block; a format that runs"),
+    Comp("rubric", "See the test — the rubric as an on-page block",
          days=1.5, fields=2, persuade=4, portable=9, news=9,
          note="**No competitor shows a test or a score.** Needs the rubric written, not people "
               "hired — and a role you cannot write a rubric for is a role you cannot grade"),
@@ -192,6 +205,8 @@ def coherent(d, o, q, b):
     # on-platform destinations cannot show a bench, a quote tool, a calculator or a video
     if d.key in ("form", "dm") and o.key in ("bench", "quote", "calc", "vsl", "trial",
                                              "spend", "rubric"):
+        return False
+    if d.key == "dm" and o.key == "scorecard":
         return False
     # a bare calendar link is the offer; it cannot carry a different one
     if d.key == "cal" and o.key != "call":
@@ -261,15 +276,14 @@ def name(f):
 # SCORING. Every term is derived from component properties above. There is no
 # per-funnel constant anywhere in this section.
 # ---------------------------------------------------------------------------
-W = [("PORTABLE", 20, "Works UNCHANGED across every ICP × role. We must test across, not down"),
-     ("NEWS",     18, "Does it tell the buyer something they did NOT already know?"),
+W = [("PROVEN",   22, "Is this a documented, running Meta lead-gen format? Not novel, not clever"),
+     ("PORTABLE", 18, "Works UNCHANGED across every ICP × role. We must test across, not down"),
      ("EASE",     16, "Systems to wire × days to build. Operator direction: first six months"),
+     ("NEWS",     12, "Does it tell the buyer something they did NOT already know?"),
      ("HANDS",    12, "Minutes of human work per lead, forever. The solo constraint"),
-     ("TZ",       12, "Immune to the 32%→12% speed-to-lead penalty? [V]"),
-     ("SIGNAL",   10, "Qualification fields captured — how fast we learn which ICP × role works"),
-     ("PERSUADE",  9, "Does it give the visitor anything before asking? Structural, not a rate"),
-     ("PROVEN",    2, "Do the fetched competitors run this shape, and does a benchmark exist?"),
-     ("READY",     1, "Can it launch with assets that exist today?")]
+     ("TZ",       10, "Immune to the 32%→12% speed-to-lead penalty? [V]"),
+     ("SIGNAL",    6, "Qualification fields captured — how fast we learn which ICP × role works"),
+     ("PERSUADE",  4, "Does it give the visitor anything before asking? Structural, not a rate")]
 
 
 def score(f):
@@ -280,12 +294,30 @@ def score(f):
     tz = 2.0 if f.chase else 10.0
     # PROVEN: precedent among the ten fetched, plus whether a published benchmark
     # covers this shape's decisive step
-    prec = {"bench": 4, "call": 6, "quote": 1, "doc": 1, "vsl": 1,
-            "calc": 3, "contact": 3, "trial": 1, "work": 0, "list": 2,
-            "spend": 3, "rubric": 0, "promise": 2}[o.key]
-    bench_exists = (d.key == "form") or (q.key == "review") or (o.key == "trial")
-    proven = min(10.0, prec * 1.4 + (3.0 if bench_exists else 0.0)
-                 - (4.0 if q.key == "gate" else 0.0))
+    # Re-based August 2026. The previous version counted precedent among ten
+    # CATEGORY competitors — none of whom could be verified as Meta advertisers,
+    # because Ad Library returned 403. This scores precedent in the reference
+    # class that actually matters: documented Meta lead-gen formats for
+    # high-ticket B2B services.
+    proven = {
+        "scorecard": 10,   # guide/template lead magnet — 40-60% lower CPL [V]
+        "doc":       10,   # same format
+        "work":       9,   # "personalized audit" is a named proven magnet [V]
+        "call":       8,   # "expert consultation" is a named proven magnet [V]
+        "quote":      7,   # "Get a Free Quote" +15-30% CTR vs "Contact Us" [V]
+        "trial":      7,   # "free trial" named as a BOF high-intent offer [V]
+        "list":       6,   # nurture is MOF-proven, but slow
+        "vsl":        6,   # short video training is named TOF [V]
+        "calc":       6,   # "free tool access" is a named proven magnet [V]
+        "spend":      6,   # same format
+        "contact":    4,   # runs everywhere, and underperforms named CTAs [V]
+        "bench":      4,   # 4 of 8 competitors — but no Meta evidence
+        "promise":    4,   # same
+        "rubric":     2,   # a novel on-page block. No precedent in either class
+    }[o.key]
+    if d.key == "form":
+        proven = min(proven, 5.0)      # proven for volume, ~2% appointment rate [V]
+    proven = float(proven)
     ready = 10.0 - 3.5 * len(f.assets)
     persuade = min(10.0, sum(c.persuade for c in f.parts) / 8.0 * 10.0)
     portable = min(c.portable for c in f.parts)      # the weakest link decides
@@ -294,9 +326,8 @@ def score(f):
     # considered purchase, priced at the measured 2% vs 17% appointment gap.
     if d.key in ("form", "dm"):
         proven = min(proven, 3.0)
-    return dict(PORTABLE=float(portable), NEWS=float(news), EASE=ease, HANDS=hands,
-                SIGNAL=signal,
-                PERSUADE=persuade, TZ=tz, PROVEN=max(0.0, proven), READY=max(0.0, ready))
+    return dict(PROVEN=max(0.0, proven), PORTABLE=float(portable), EASE=ease,
+                NEWS=float(news), HANDS=hands, TZ=tz, SIGNAL=signal, PERSUADE=persuade)
 
 
 for f in ALL:
@@ -414,8 +445,8 @@ for a, b in [
      "**0 of 10 competitors gate** [V], and a gate is an extra system for an unknown operator to "
      "add friction with. Scored down, not gated out"),
     ("**Anything needing an asset we lack is pushed down, not excluded**",
-     f"`READY` is only {dict((k,w) for k,w,_ in W)['READY']} points. A bench is two weeks of real "
-     "work — that is a *schedule* problem, "
+     "`READY` is no longer weighted at all. A bench is two weeks of real work — that is a "
+     "*schedule* problem, "
      "not a disqualification, and the business needs it regardless")]:
     print(f"| {a} | {b} |")
 
