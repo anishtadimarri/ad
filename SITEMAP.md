@@ -318,3 +318,76 @@ at all.** The remaining differences between Recruitify, Funnelz and Conversion s
 
 **Buy Recruitify, run the phone test on it first, and if the hero fails, fall back to Recruitment Hub
 — free, same shape, and you build four more pages.**
+
+---
+
+## Recruitify vs Funnelz, head to head
+
+Both crawled, both read across multiple pages. They are close, and **they excel at different things
+— which turns out to be the whole answer.**
+
+### Where Recruitify excels
+
+| | | Evidence |
+|---|---|---|
+| **1** | **Page structure — 8 URLs against 2** | Crawled: `/`, `/about`, `/services`, `/pricing`, `/faq`, `/projects`, `/contact`, `/privacy`, `/terms` |
+| **2** | **The donor layout** | **Verified by opening it.** `/privacy` is a **styled 6-section policy page with headings and shared nav and footer** — not a wall of text. It is genuinely reusable for `/terms`, `/guarantee`, `/access` and `/talent`. **This one page is worth four** |
+| **3** | **Shape and register** | Employer-facing recruitment. Its process section is **already Consultation → Screening → Placement** |
+| **4** | **Proof structure** | `/projects` is an index with **individual detail pages** at `/projects/[slug]` — the shape `/proof` needs |
+| **5** | **Legal pages ship** | Which Meta's ad review looks for, and which nothing else on the shortlist has |
+| **6** | **Two bonus pages** | `/pricing` and `/faq` — not in your fourteen, but they are rows 11 and 12 and arrive free |
+
+### Where Funnelz excels
+
+| | | Evidence |
+|---|---|---|
+| **1** | **The only CMS** | Blog posts carry **dates, categories, authors and individual URLs**. Recruitify has no `/blog` at all |
+| **2** | **Booking already in the nav** | Recruitify routes to `/contact` instead |
+| **3** | **Creator track record** | **Ramish Aziz has 18 published templates.** The strongest support signal obtainable — Framify's volume could not be established |
+| **4** | **Homepage density** | Its homepage is a **long lead-gen page**: hero+CTA, social proof, case studies, services, 3-tier pricing, team. Built to sell, not to inform |
+
+---
+
+### The frame that decides it
+
+> **They donate to different things.** Recruitify donates **the site** — seven pages, a legal donor,
+> a proof skeleton. Funnelz donates **a landing page and a CMS.**
+
+That looks like it should favour Funnelz, because `/agencies` is the one page taking 100% of paid
+traffic and the only one I said you would build from blank. **It does not, and here is why:**
+
+**Funnelz's homepage donates four of your seven landing-page blocks — hero, social proof, services,
+pricing. So does Recruitify's** (hero, stats, process, testimonials, case studies, FAQ). **Neither
+donates the three that matter**: the metrics/results treatment, the volume calculator, the comparison
+block. Those are exactly what makes `/agencies` different from every other page on the internet, and
+**they get built either way.**
+
+So the landing-page advantage Funnelz appears to have is **mostly illusory** — while Recruitify's
+thirteen-page advantage is real and verified.
+
+| | Recruitify | Funnelz |
+|---|---|---|
+| Pages you build from blank | **2** | **5** |
+| Blocks of `/agencies` donated | ~4 of 7 | ~4 of 7 |
+| The 3 blocks that matter | build | build |
+| Legal donor layout | **yes, verified** | no |
+| CMS | no — **an afternoon at ~10 recuts** | **yes** |
+
+---
+
+### Take Recruitify, and steal from the others
+
+**Recruitify** for the site. Then, deliberately:
+
+| Steal | From | For |
+|---|---|---|
+| **The Results metrics block** | Conversion | Block 3 — the recut with retention deltas. Recruitify's `/projects` has the *structure* but its items are narrative, not numeric |
+| **The comparison table** | Conversion | Block 6 — where the **$5,000–16,500/mo vendor-invoice** argument lives |
+| **A CMS collection** | Framer itself | `/proof/[slug]` at ~10 recuts. One afternoon, not a rebuild |
+
+**Choose Funnelz instead only if** you would rather inherit a CMS today and build five pages, than
+inherit seven pages and add a CMS in month three. **That is the entire trade**, and it is smaller
+than the number of rounds spent reaching it.
+
+**Whichever you pick, the phone test decides it** — `MOBILEHERO` and 4G speed outrank everything
+above and are the two things I cannot check from here.
