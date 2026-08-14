@@ -1,5 +1,14 @@
 # Eighteen Funnels, Reranked for a Solo Operator's First Six Months
 
+> ⚠️ **Ranking superseded, August 2026.** Eighteen funnels ranked on modelled CAC.
+>
+> The ranking in this file composed **five invented conversion parameters per funnel** and printed
+> a CAC to three significant figures. Those parameters had no source, and they decided the order —
+> which is why three consecutive passes produced three different winners. ****§1–§3 — the published operator benchmarks and the speed-to-lead finding — are real, cited, and carried forward.** Only §4 onward is affected.**
+>
+> See [`scoring/ALLFUNNELS.md`](scoring/ALLFUNNELS.md), which enumerates the full 105-funnel space
+> and ranks it **without inventing a single conversion rate**.
+
 > Two reference classes. [`COMPETITORS.md`](COMPETITORS.md) studied the **category** —
 > funded, SEO-led, staffed. This studies the one we actually belong to: **solo and small
 > operators buying cold Meta traffic for high-ticket B2B services**, which has published

@@ -1,5 +1,14 @@
 # What Ten Competitors Actually Run — and the Funnel That Follows
 
+> ⚠️ **Ranking superseded, August 2026.** Ten funnels ranked on modelled CAC.
+>
+> The ranking in this file composed **five invented conversion parameters per funnel** and printed
+> a CAC to three significant figures. Those parameters had no source, and they decided the order —
+> which is why three consecutive passes produced three different winners. ****§1–§3, the fetched competitor data, are real and are still the best record of what the category runs.** Only §4 onward is affected.**
+>
+> See [`scoring/ALLFUNNELS.md`](scoring/ALLFUNNELS.md), which enumerates the full 105-funnel space
+> and ranks it **without inventing a single conversion rate**.
+
 > All ten fetched and read in **August 2026**. Where something could not be verified it
 > says so. **Meta Ad Library returned HTTP 403 on two attempts**, so this study makes
 > **no claim about any competitor's Meta activity** — see §3.

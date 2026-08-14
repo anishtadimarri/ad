@@ -1,5 +1,14 @@
 # Twelve Booked-Call Funnels, Ranked
 
+> ⚠️ **Ranking superseded, August 2026.** Twelve funnels ranked on modelled CAC.
+>
+> The ranking in this file composed **five invented conversion parameters per funnel** and printed
+> a CAC to three significant figures. Those parameters had no source, and they decided the order —
+> which is why three consecutive passes produced three different winners. **The §1 finding about what the teardown was doing, and the learning-phase arithmetic, still stand.**
+>
+> See [`scoring/ALLFUNNELS.md`](scoring/ALLFUNNELS.md), which enumerates the full 105-funnel space
+> and ranks it **without inventing a single conversion rate**.
+
 > Operator direction: **no $500 teardown.** Same page for every ICP x role, and the
 > conversion is a booked call. Day 1 tests **2-3 roles x 2-3 ICPs**.
 
