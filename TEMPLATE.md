@@ -43,22 +43,37 @@ Three caveats, and the first one matters:
 
 ---
 
-## 3. The criteria, weighted for this funnel
+## 3. Re-weighted: edit work is now the whole metric
+
+> *"We need a framework to edit and do least work. We don't care about other things."*
+
+That collapses the scoring into one question — **how far is this template from the site you need?**
+Edit distance decomposes into five terms, and `SHAPE` dominates because a wrong-shaped template is not
+a restyle, it is a different website.
+
+**On "consider hundreds":** I did not enumerate hundreds, and I would not trust it if I had. **Three
+times in this project a listing has been wrong** — `conversion.framer.website` turned out to be a
+generic Framer starter page, Framer serves a soft-200 for slugs that do not exist, and aggregator
+articles repeat each other. What changed the answer was **opening six demos and reading what is
+actually on them.** Verification beat enumeration, and the biggest finding came from a search I had
+not run at all — recruitment templates.
+
+---
+
+## 4. The criteria
 
 Not generic web-design advice. These weights come from **your** traffic: overwhelmingly mobile,
 cold, mid-scroll, and metered by an 85% LP-view rate.
 
 | Criterion | Wt | What it means | Can I check it? |
 |---|---|---|---|
-| **MOBILEHERO** | 20 | **Promise + CTA above the fold on a 390×844 phone, no scroll.** Meta traffic is overwhelmingly mobile and arrives mid-scroll. Most templates are desktop-first with a tall hero that pushes the CTA under the fold on a phone — **the most common failure, and invisible on a laptop** | `[?]` needs the phone test |
-| **SPEED** | 15 | Weight and animation on 4G. [`funnel.py`](scoring/funnel.py) carries an **85% LP-view rate** — a speed number, lost at the very top of the funnel | `[?]` needs the phone test |
-| **COMPLETE50** | 15 | **New.** *"Everything for the first 50 converts."* Does it ship every surface you need before a rebuild — **CMS for accumulating `/proof` entries and case studies**, pricing, testimonials, forms, booking embed, thank-you page, legal pages? **A template you outgrow at client ten costs you a rebuild in the busiest month you will have** | assessable |
-| **STABLE** | 13 | **New.** *"Stability and clean."* Maintained, lifetime updates, and **structurally clean — components and global styles rather than hand-placed pages.** Clean structure is also what makes `/agencies` and `/ecommerce` a duplicate-and-edit rather than two of everything forever | partly — longevity is the best available proxy |
-| **SECTIONS** | 12 | Ships the sections this offer needs, in order: hero → proof → how it works → pricing → guarantee → CTA. **Most agency templates are portfolio-shaped**, which is a different page | assessable |
-| **CTAREPEAT** | 8 | CTA in hero, mid-page, and sticky or footer. **Mobile users do not scroll back up** | assessable |
-| **PROOFSLOT** | 7 | A block that holds **two videos side by side with retention numbers under them** — the recut-vs-original comparison | assessable |
-| **CREDIBLE** | 6 | Reads as a firm a $6k–$20k buyer trusts. Not startup-gradient, not creative-portfolio | assessable |
-| **NETCOST** | 4 | **Changed.** Cost **net of the bundled 3 months of Framer Pro** that paid templates commonly include — see §2. A free template has no bundle, so it is not the cheapest option | verifiable on the listing |
+| **SHAPE** | 30 | **Is it already an employer-facing services firm?** The single biggest edit-distance term. A candidate-facing job board or an HR SaaS product is not a restyle — it is a different website, and a job-board shape also risks Meta's **Employment Special Ad Category** ([`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) §1, a 10–29% CAC tax) | verified by demo |
+| **HAVE** | 22 | **Sections that ship and you keep.** Every one is copy-swap instead of build-from-blank | verified by demo |
+| **BUILD** | 18 | **Sections you must build because they are missing.** Pricing, guarantee, booking, and above all **a CMS** — three static case studies is fine, thirty is a rebuild | verified by demo |
+| **RECOPY** | 15 | **How far the register is from yours.** Funnel-agency, ESG-consultant or HR-SaaS copy means rewriting every line and restyling; recruitment copy means swapping nouns | verified by demo |
+| **STRIP** | 8 | Sections you must delete. Cheap, but not free | verified by demo |
+| **MOBILEHERO** | 4 | Promise + CTA above the fold on a phone. **Still the thing that decides conversion — but you asked to optimise edit work, so it is weighted as the tiebreak it now is.** Run the phone test regardless | `[?]` needs the phone test |
+| **NETCOST** | 3 | Cost net of the bundled 3 months of Framer Pro (§2) | listing |
 
 > **The top two weights — 40 points of 100 — are the two I cannot verify.** `MOBILEHERO` and `SPEED`
 > are properties of the live preview on a phone on mobile data. Everything below is therefore a
@@ -66,28 +81,30 @@ cold, mid-scroll, and metered by an 85% LP-view rate.
 
 ---
 
-## 4. The shortlist, scored on what *is* assessable
+## 5. The top 10, ranked on edit work
 
-Scored on the 7 assessable criteria only — 65 of 100 points. **`MOBILEHERO` and `SPEED` are
+Scored on the 6 assessable criteria only — 96 of 100 points. **`MOBILEHERO` and `SPEED` are
 deliberately absent**, which is why the top score here is not a recommendation.
 
-| # | Template | Price | Register | C50 | Stab | Sect | CTA | Proof | Cred | Net$ | Score | Note |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Funnelz** | paid `[?]` | lead-gen agency | 5 | 3 | 5 | 4 | 5 | 3 | 5 | **86** | **Verified live at [funnelz.framer.website](https://funnelz.framer.website/).** By Ramish Aziz. Ships hero+CTA, social proof, **case studies**, services, **3-tier pricing**, team bios, **blog/resources**, booking in the nav — **`COMPLETE50`=5, the most complete section set on this list.** Two mismatches, both edits not rebuilds: **3-tier pricing when you have one price**, and **team bios when you are one person** (repurpose as the founder story — useful when you have no track record). **`CREDIBLE`=3 is the real risk**: *"Fuelling growth with every click"* is funnel-agency register, and **your buyer *is* an agency owner who will recognise it instantly** |
-| 2 | **Nakula / Fabrica / Lyniq** | $69–129 `[?]` | premium agency | 4 | 4 | 4 | 3 | 4 | 5 | 4 | **79** | The 'looks expensive' tier for high-ticket B2B. `CREDIBLE`=5 is real. **But premium agency templates are usually the heaviest** — big imagery, heavy motion — so `SPEED` is the risk and it is exactly what I cannot check |
-| 3 | **Conversion** | ~$79 `[?]` | conversion / lead-gen | 2 | 5 | 4 | 5 | 4 | 4 | 5 | **78** | **Verified live at [conversion.framer.media](https://conversion.framer.media/).** Headline *"Ready to scale your brand with paid ads?"* — built for a **paid-ads agency**. Ships hero, testimonials, a **Results section with client metrics**, services, a comparison table, a 3-step process, team. **`COMPLETE50` drops 4→2 on verification: there is no blog or CMS and no pricing page.** Case studies would be hand-built static pages, which is precisely the thing that bites at client three to five. **Built for lead generation rather than showcase** — the rarest property here. **`STABLE`=5 on the strongest evidence available**: one of the longest-running templates on the marketplace with 100k+ views, which is the only real proxy for *it still works and is still maintained* |
-| 4 | **Cubicles** | ~$59 `[?]` | corporate / consultancy | 3 | 4 | 4 | 3 | 4 | 5 | 5 | **76** | **Verified live at [cubicles.framer.website](https://cubicles.framer.website/).** Headline *"Tailored Solutions for Every Business Challenge"*. Ships hero, about, services, industries, **case studies and a real blog/CMS** — but **no pricing, no testimonials, no booking**, so `COMPLETE50`=3. **Corporate B2B — the right register**, and the opposite risk to Funnelz. Structured for services rather than showcase. Weaker repeated CTA, which is a fixable edit |
-| 5 | **Nebula** | $49 `[?]` | lead-gen, dark + gradient | 3 | 3 | 4 | 4 | 3 | 3 | 5 | **69** | Lead-gen shaped and cheap. **`CREDIBLE`=3**: dark gradient reads SaaS-startup, and your buyer is deciding whether an unknown Indian firm is real |
-| 6 | **Greenleaf** | **free** | consulting | 3 | 4 | 4 | 3 | 2 | 4 | 3 | **67** | Clean consulting register, services section, clear contact-to-consultation flow. **`NETCOST`=3, not 5 — free templates carry no Pro bundle**, so you pay $30/mo from day one and it is not actually the cheapest path (§2). Built for ESG consultants, so expect green styling — a skin change, not structural |
-| 7 | **Halo** | $69 `[?]` | general / startup | 3 | 3 | 3 | 3 | 3 | 3 | 4 | **61** | No strong reason over the lead-gen options above |
-| 8 | **Kajo** | **free** | general | 2 | 3 | 3 | 3 | 2 | 3 | 3 | **53** | Fewer sections, less structure, no bundle |
+| # | Template | Price | Register / shape | Shape | Have | Build | Recopy | Strip | Net$ | **Score** | Note |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | **Recruitify** | paid `[?]` | recruitment agency — **employer-facing** | 5 | 4 | 3 | 5 | 4 | 4 | **86** | **[Demo verified.](https://recruitify.framer.website/)** *"Connecting Top Talent with Leading Companies."* **Its process section is literally Consultation → Screening → Placement**, which is your process. Ships services (Talent Sourcing, Executive Search, Contract Staffing), stats, testimonials, **case studies**, **FAQ**, pricing link, 8–10 pages. **Lowest edit distance of anything found.** Missing: blog/CMS, team |
+| 2 | **Recruitment Hub** | **free** | recruitment consulting — **employer-facing** | 5 | 4 | 2 | 5 | 5 | 3 | **83** | **[Demo verified.](https://recruitment-hub.framer.website/)** *"We help you hire the right people, faster."* Ships hero, **why-us comparison**, 3-step process, benefits, services, **pricing (2 plans)**, about, **FAQ**, contact. Free Remix. **Almost nothing to strip.** Missing: **CMS and case studies** — `BUILD`=2, the main cost |
+| 3 | **Cubicles** | ~$59 `[?]` | corporate consulting | 4 | 4 | 3 | 3 | 4 | 4 | **73** | **[Demo verified.](https://cubicles.framer.website/)** *"Tailored Solutions for Every Business Challenge."* Ships **case studies and a real blog/CMS**, services, industries, about. Missing pricing, testimonials, booking. Generic-consulting copy is a medium rewrite |
+| 4 | **Recruitment (Shah)** | **free** | recruitment / HR consulting | 4 | 3 | 3 | 4 | 4 | 3 | **71** | **Not demo-verified — listing only.** Free, positioned for recruitment agencies and talent-acquisition firms |
+| 5 | **Funnelz** | paid `[?]` | lead-gen agency | 3 | 5 | 4 | 2 | 3 | 4 | **70** | **[Demo verified.](https://funnelz.framer.website/)** By Ramish Aziz. **The most complete section set of anything found** — case studies, **blog/CMS**, 3-tier pricing, testimonials, team, booking in nav. But `RECOPY`=2: *"Fuelling growth with every click"* is funnel-agency register and **your buyer is an agency owner who will clock it instantly.** Every line gets rewritten |
+| 6 | **HRPro** | paid `[?]` | HR / recruiting agency | 4 | 3 | 3 | 4 | 3 | 4 | **70** | **Not demo-verified — listing only.** Positioned for HR and recruiting agencies, so the register is likely close. **Open the demo before considering it** |
+| 7 | **Greenleaf** | **free** | ESG consulting | 4 | 3 | 2 | 2 | 3 | 2 | **59** | **[Demo verified earlier.](https://greenleaf.framer.website/)** Clean, but built for **sustainability consultants** — `RECOPY`=2 means restyling the green palette and rewriting everything. No CMS-backed proof slot, no bundle |
+| 8 | **Conversion** | ~$79 `[?]` | paid-ads agency | 3 | 3 | 2 | 3 | 3 | 4 | **57** | **[Demo verified.](https://conversion.framer.media/)** *"Ready to scale your brand with paid ads?"* Strongest longevity signal on the marketplace, a **Results metrics block** and a **comparison table**. But **no CMS and no pricing** (`BUILD`=2), and `SHAPE`=3 because **it makes you look like an ads agency rather than a talent firm** |
+| 9 | **Talentify** | **free** | ❌ **candidate-facing job board** | 1 | 2 | 2 | 2 | 1 | 3 | **33** | **[Demo verified — and it disqualifies itself.](https://talentify.framer.website/)** *"Your gateway to remote tech careers."* Featured roles, application flow, recruiter profiles. **This is the supply side.** [`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) requires a demand-only homepage, and **a job-board shape is exactly what triggers the Employment Special Ad Category** — a 10–29% CAC tax. The most on-topic name on the list and the worst fit |
+| 10 | **TalentBridge** | paid `[?]` | ❌ **HR SaaS product** | 1 | 2 | 1 | 1 | 2 | 3 | **28** | **[Demo verified.](https://talentbridge.framer.website/)** *"Simplify HR Management"* — an **all-in-one HR platform** with integrations, *Request Demo* and *Find your Plan*. **That is a software product site, not a services firm.** Single page, no CMS. Wrong shape end to end |
 
 *Names and prices are from marketplace aggregators and are marked `[?]` — **verify both on Framer
 before buying**, since listings and pricing churn.*
 
 ---
 
-## 5. The 20-minute test that actually decides it
+## 6. The phone test — still run it
 
 Run this on **three** candidates. It is worth more than any ranking I can give you, because it
 measures the two things that carry 40% of the weight.
@@ -109,35 +126,27 @@ perfect on your laptop**, which is how this mistake gets made.
 
 ---
 
-## 6. What I would actually do
+## 7. What I would actually do
 
-**This reverses last turn's answer, and the bundle is why.**
+**Recruitify.** It is the only template found whose *process section is already your process* —
+Consultation → Screening → Placement. Services, case studies, FAQ, testimonials and pricing all ship.
+You are swapping nouns, not rebuilding. **Its one real gap is a blog/CMS**, so plan `/proof` as CMS-
+backed from day one or accept hand-built entries until client ten.
+
+**Recruitment Hub is the free fallback** and it is close — *"We help you hire the right people,
+faster"*, a why-us comparison block, a 3-step process and pricing already there. It costs nothing, so
+**open both demos on your phone and let the phone test break the tie.**
+
+### Two templates to actively avoid, despite the names
 
 | | |
 |---|---|
-| **Buy a paid template with the 3-month Pro code** | It is cheaper than free over the first quarter (§2), and the two strongest candidates are both paid |
-| **First choice: Conversion** | The only one built for **lead generation rather than showcase**, and `STABLE`=5 on the best evidence available — 100k+ marketplace views over years is the only real proxy for *still maintained, still works*. **Stability was one of your criteria and this is the one template with actual evidence for it** |
-| **Close second: Funnelz** | **The most complete section set on the list** — case studies, blog, pricing, testimonials, booking. `COMPLETE50`=5, so nothing needs rebuilding as proof accumulates. **The risk is register**: your buyer is an agency owner who will recognise funnel-agency styling on sight |
-| **Cubicles if Funnelz feels too *agency*** | Corporate-B2B register, the opposite risk profile, and cheaper |
-| **Still avoid the premium tier** | Nakula, Fabrica, Lyniq look expensive and are usually the heaviest. **You are optimising for a phone on 4G** |
-| **Greenleaf drops to a fallback** | Still fine, still clean — but `NETCOST`=3 because there is no bundle, and `PROOFSLOT`=2 because a consulting template has nowhere natural for a two-video comparison |
+| **Talentify** | The most on-topic name on the list — *tech recruitment, remote talent* — and **the worst fit**. It is a **candidate-facing job board**: featured roles, application flow, recruiter profiles. [`SUPPLY-DEMAND.md`](SUPPLY-DEMAND.md) requires a demand-only homepage, and **a job-board shape is precisely what gets a B2B ad reclassified into Meta's Employment Special Ad Category** — priced at a 10–29% CAC tax |
+| **TalentBridge** | Reads as *HR agency* on the listing; the demo is an **all-in-one HR SaaS platform** with integrations and *Request Demo*. **A product site, not a services firm** |
 
-### On "everything for the first 50 converts"
+> **That is the finding worth keeping: on this list, name proximity is anti-correlated with fit.**
+> The two templates with *talent* in the name are the two you must not use, and the winner is the one
+> whose process diagram happens to match yours.
 
-That criterion is doing real work, and it is why **Funnelz jumped past Cubicles.** The surfaces you
-will need before client fifty, in the order they become urgent:
-
-| By client | You need | Which means the template must ship |
-|---|---|---|
-| **1** | Two ad destinations, a paid teardown page, booking, thank-you | Forms, an embed slot, a payment button — **or you build these anyway** |
-| **3–5** | **Your first `/proof` entries** | **A CMS**, not hand-built pages. This is the one that bites — three case studies as static pages is fine, thirty is not |
-| **10** | Testimonials, a real pricing page, a guarantee page | Testimonial and pricing components already styled |
-| **25** | A second ICP variant, an FAQ answering repeated objections | Clean components so a duplicate-and-edit is minutes |
-| **50** | Case studies with numbers, a talent page, legal pages | **Blog/CMS depth and enough section variety that you are editing, not rebuilding** |
-
-> **The rebuild you are avoiding would land in month three or four — your busiest month.** That is the
-> real cost of a thin template, and it is much larger than the $79.
-
-**And strip whatever you buy.** Templates ship with animation and section counts designed to demo well
-in a marketplace. Delete aggressively — every animation removed buys back LP-view rate, and the 85%
-in the funnel is an assumption you can move in the right direction for free.
+**And strip whatever you buy.** Every animation removed buys back LP-view rate, and the 85% in
+[`funnel.py`](scoring/funnel.py) is an assumption you can move in the right direction for free.
