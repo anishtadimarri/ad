@@ -234,3 +234,87 @@ around ten recuts**, not a rebuild. Funnelz wins that dimension and loses four o
 
 **Still run the phone test before paying** — it is the one check I cannot run, and `MOBILEHERO` is
 the only criterion that can override everything above.
+
+---
+
+## Requirements, in priority order
+
+Everything this repo has accumulated about the site, ranked by **what it costs you if it is wrong**
+rather than by how much it was discussed.
+
+### Tier A — binary. Get one wrong and the others stop mattering
+
+| | Requirement | Cost of getting it wrong |
+|---|---|---|
+| **1** | **Employer-facing shape.** Not a candidate job board | **A 10–29% CAC tax, permanently** — Meta's Employment Special Ad Category deletes lookalikes, which is 45% of modelled spend |
+| **2** | **Promise + CTA above the fold on a 390×844 phone** | **Everything else on the page is irrelevant** if nobody sees the ask. And it looks perfect on your laptop |
+| **3** | **Page speed on 4G** | The funnel carries an **85% LP-view rate**. Lost at the very top, before a word is read |
+
+**Only #1 is checkable from here.** #2 and #3 require your phone on mobile data — which is why the
+20-minute test outranks every score in this repo.
+
+### Tier B — expensive to add, cheap to inherit
+
+| | Requirement | Why it sits here |
+|---|---|---|
+| **4** | **A legal page that can act as a donor layout** | Gates ad approval *and* **donates four more pages** — `/terms`, `/guarantee`, `/access`, `/talent` |
+| **5** | **A proof structure that can hold numbers** | Block 3 *is* the business. Index + detail pages, with room for a retention delta |
+| **6** | **Repeated CTA and an objection block** | Cold traffic needs persuasion architecture. Mobile users do not scroll back up |
+| **7** | **Clean components and one type scale** | Determines the edit cost of everything else, forever |
+
+### Tier C — deferred, dated, or noise
+
+| | Requirement | Why it is not urgent |
+|---|---|---|
+| **8** | **CMS** | A **dated debt** — an afternoon, at around ten recuts. Not a rebuild |
+| **9** | `/pricing`, `/faq` as pages | **Not in the fourteen.** Blocks until someone asks for a link |
+| **10** | Register, cost, bundle, creator support | **Below the noise floor.** Copy is free, $79 is one hour of your time, and Framer has no upstream to break |
+
+---
+
+## The seven, re-read against that order
+
+`/projects` opened and read, because the recommendation depended on two things I had only assumed.
+
+| | Tier A shape | Tier B legal donor | Tier B proof structure | Tier B conversion |
+|---|---|---|---|---|
+| **Recruitify** | **5** — employer recruitment | **5 — the only one** (`/privacy` + `/terms`) | **4** — `/projects` with **individual detail pages** | 4 |
+| Recruitment Hub | **5** | 0 | 0 | 4 |
+| Funnelz | 4 | 0 | 4 — case studies + CMS blog | **5** |
+| Cubicles | 4 | 0 | 3 | 2 |
+| Recruitment (Shah) | 4 | 0 | 0 | 3 |
+| Conversion | 3 — **reads as an ads agency** | 0 | 3 — **metrics block, no detail pages** | **5** |
+| Pace | 2 — SaaS product | 0 | 0 | 4 |
+
+### What reading `/projects` actually changed
+
+**Confirmed:** four items, each linking to **its own detail page** at `/projects/[slug]`. That is
+index-plus-detail — exactly the shape `/proof` needs, and the reason it can absorb recut write-ups.
+
+**Corrected:** the items carry **narrative testimonials, not numbers.** *"Perfect match", "game-
+changer"* — qualitative. So **the metrics treatment gets built either way**, and my earlier
+"adapt `/projects` → `/proof`" was half right: you inherit the structure, not the numbers.
+
+> **And that splits the two best templates neatly: Recruitify gives you the `/proof` skeleton;
+> Conversion gives you the metrics *design*.** Neither gives both. Build the numbers treatment inside
+> Recruitify's grid, modelled on Conversion's Results block.
+
+---
+
+## Closing the template question
+
+**Recruitify.** It is first on Tier A's only checkable item, **alone on the single most valuable Tier
+B item**, and its one loss is Tier C.
+
+| | |
+|---|---|
+| **Wins Tier A** | Employer-facing recruitment shape, which is the one binary requirement I can verify |
+| **Wins Tier B outright** | **The only template of seven that ships a legal page** — and that page is the donor for four more. Plus an index-and-detail proof structure |
+| **Loses Tier C** | No CMS. **A known, dated, one-afternoon debt at ~10 recuts** |
+
+**Further template research has hit diminishing returns.** Seven demos crawled, six read, and the two
+requirements that outrank everything left — mobile hero and 4G speed — **cannot be checked from here
+at all.** The remaining differences between Recruitify, Funnelz and Conversion sit in Tier C.
+
+**Buy Recruitify, run the phone test on it first, and if the hero fails, fall back to Recruitment Hub
+— free, same shape, and you build four more pages.**
