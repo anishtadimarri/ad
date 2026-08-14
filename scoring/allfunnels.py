@@ -72,8 +72,8 @@ FACTS = [
      "get-ryze.ai", "A floor to sanity-check any CPL claim against"),
     ("4 of 8 live competitors show named candidates on the demand page; 0 of 10 gate the calendar",
      "fetched Aug 2026", "Precedent counts, from `competitors.py` — **but none verified as Meta advertisers**"),
-    ("**Value-first lead magnets: 40–60% lower CPL than a direct sales offer** on B2B Meta",
-     "involvedigital.com", "**The single strongest mechanism finding in the study**"),
+    ("Value-first lead magnets: 40–60% lower **CPL** than a direct sales offer on B2B Meta",
+     "involvedigital.com", "⚠️ **CPL, not cost per customer.** The same shape as Instant Forms, which win CPL and lose appointments 2% to 17%. **Discounted accordingly**"),
     ("Proven service-business magnets: audits · guides · templates · free tool access · consultations",
      "involvedigital.com", "Names the formats that actually run on Meta"),
     ("Qualification questions raise CPL 30–60%, and lift quality proportionally",
@@ -113,6 +113,8 @@ class Comp:
     persuade: int = 0          # does this part give the visitor anything BEFORE the ask?
     portable: int = 10         # works UNCHANGED across every ICP x role cell, 0-10
     news: int = 0              # tells the buyer something they DID NOT ALREADY KNOW, 0-10
+    desire: int = 0            # would a COLD scroller, not shopping, actually want this? 0-10
+    diy: bool = False          # does it teach them to do it WITHOUT us?
     note: str = ""
 
 
@@ -130,48 +132,50 @@ DEST = [
 ]
 
 OFFER = [
-    Comp("call", "Book a call", days=0.25, fields=1,
+    Comp("call", "Book a call", days=0.25, fields=1, desire=4,
          note="What most of the category does. Says nothing before asking"),
     Comp("bench", "See the graded bench", days=1.5, fields=1, persuade=4, portable=5, news=6,
+         desire=9,
          asset="2 graded people per role", policy=2,
          note="**4 of 8 competitors lead with people** [V]. The frame ports; the people do not"),
     Comp("quote", "Get a price / instant quote", days=1.0, fields=2, persuade=3, portable=8,
-         news=3,
+         news=3, desire=7,
          note="Our fee is a % of salary; a salary band per role is a lookup, so it ports"),
     Comp("doc", "Free document — scorecard, salary data, guide", days=1.5, fields=1, persuade=2,
-         portable=4, news=5, asset="the document", note="A different document per role. Weak intent"),
+         portable=4, news=5, desire=2, diy=True, asset="the document", note="A different document per role. Weak intent"),
     Comp("work", "Free custom work on their asset", days=0.5, perlead=90, fields=1, persuade=4,
-         portable=2, news=9, chase=True,
+         portable=2, news=9, desire=9, chase=True,
          note="**No competitor does this.** 90 min/lead, and you must personally have every skill"),
     Comp("trial", "Paid micro-trial, $100–250", days=1.0, perlead=100, fields=3, persuade=4,
-         portable=2, news=7, note="Vidpros' $100 trial is the only paid entry offer found [V]"),
+         portable=2, news=7, desire=6, note="Vidpros' $100 trial is the only paid entry offer found [V]"),
     Comp("vsl", "Watch a video first", days=3.0, fields=0, persuade=3, portable=2, news=5,
+         desire=3,
          asset="a video per role", note="Canonical high-ticket shape. **Reshoot per cell**"),
     Comp("calc", "Volume calculator — units × vendor unit cost", days=2.0, fields=3,
-         persuade=3, portable=3, news=4,
+         persuade=3, portable=3, news=4, desire=3,
          note="**Asks for a per-unit vendor price that does not exist.** Every vendor in "
               "`competitors.py` bills MONTHLY — Vidpros $1,000/$4,000/mo, Vidchops monthly "
               "credits, Hireframe $2,500/mo, GrowthAssistant $3,500/mo"),
     Comp("spend", "Monthly-spend comparison — what you pay now vs full-time", days=1.25,
-         fields=3, persuade=3, portable=10, news=1,
+         fields=3, persuade=3, portable=10, news=1, desire=3,
          note="**Computes a number they already know.** *\"80% less\"* is verbatim in 2 of "
               "8 competitor headlines — the category's saturated message, not an insight"),
     Comp("scorecard", "**The hiring scorecard** — download the test, score candidates yourself",
-         days=1.5, fields=3, persuade=4, portable=8, news=9,
+         days=1.5, fields=3, persuade=4, portable=8, news=9, desire=2, diy=True,
          note="**The rubric, wrapped in the market's proven format.** Lead magnets run "
               "**40–60% lower CPL** than direct offers on B2B Meta [V], and guides/templates "
               "are a named proven magnet. Same content as a page block; a format that runs"),
     Comp("rubric", "See the test — the rubric as an on-page block",
-         days=1.5, fields=2, persuade=4, portable=9, news=9,
+         days=1.5, fields=2, persuade=4, portable=9, news=9, desire=2, diy=True,
          note="**No competitor shows a test or a score.** Needs the rubric written, not people "
               "hired — and a role you cannot write a rubric for is a role you cannot grade"),
     Comp("promise", "\"Three graded candidates in 7 days\" — the shortlist promise",
-         days=0.75, fields=2, persuade=2, portable=10, news=3,
+         days=0.75, fields=2, persuade=2, portable=10, news=3, desire=8,
          note="Genius' *\"See Pre-vetted Candidates\"* without needing the bench to exist yet"),
-    Comp("contact", "Generic \"contact us\"", days=0.1, fields=1,
+    Comp("contact", "Generic \"contact us\"", days=0.1, fields=1, desire=2,
          note="**−15–30% CTR vs a named offer** [V]"),
     Comp("list", "Join a newsletter / community", days=2.0, perlead=2, fields=1, persuade=1,
-         portable=6, news=4, asset="ongoing content", note="Learns in month three, not week two"),
+         portable=6, news=4, desire=1, asset="ongoing content", note="Learns in month three, not week two"),
 ]
 
 QUAL = [
@@ -276,14 +280,14 @@ def name(f):
 # SCORING. Every term is derived from component properties above. There is no
 # per-funnel constant anywhere in this section.
 # ---------------------------------------------------------------------------
-W = [("PROVEN",   22, "Is this a documented, running Meta lead-gen format? Not novel, not clever"),
-     ("PORTABLE", 18, "Works UNCHANGED across every ICP × role. We must test across, not down"),
-     ("EASE",     16, "Systems to wire × days to build. Operator direction: first six months"),
-     ("NEWS",     12, "Does it tell the buyer something they did NOT already know?"),
-     ("HANDS",    12, "Minutes of human work per lead, forever. The solo constraint"),
-     ("TZ",       10, "Immune to the 32%→12% speed-to-lead penalty? [V]"),
-     ("SIGNAL",    6, "Qualification fields captured — how fast we learn which ICP × role works"),
-     ("PERSUADE",  4, "Does it give the visitor anything before asking? Structural, not a rate")]
+W = [("DESIRE",   22, "Would a COLD scroller — not shopping, mid-feed — actually want this?"),
+     ("PROVEN",   18, "Is this a documented, running Meta lead-gen format? Not novel, not clever"),
+     ("PORTABLE", 16, "Works UNCHANGED across every ICP × role. We must test across, not down"),
+     ("EASE",     14, "Systems to wire × days to build. Operator direction: first six months"),
+     ("HANDS",    10, "Minutes of human work per lead, forever. The solo constraint"),
+     ("TZ",        9, "Immune to the 32%→12% speed-to-lead penalty? [V]"),
+     ("NEWS",      6, "Tells them something they did not know — secondary to whether they want it"),
+     ("SIGNAL",    5, "Qualification fields captured — how fast we learn which ICP × role works")]
 
 
 def score(f):
@@ -300,8 +304,8 @@ def score(f):
     # class that actually matters: documented Meta lead-gen formats for
     # high-ticket B2B services.
     proven = {
-        "scorecard": 10,   # guide/template lead magnet — 40-60% lower CPL [V]
-        "doc":       10,   # same format
+        "scorecard":  7,   # guide/template magnet. Proven on CPL, and CPL is not the metric
+        "doc":        7,   # same format, same discount
         "work":       9,   # "personalized audit" is a named proven magnet [V]
         "call":       8,   # "expert consultation" is a named proven magnet [V]
         "quote":      7,   # "Get a Free Quote" +15-30% CTR vs "Contact Us" [V]
@@ -322,12 +326,17 @@ def score(f):
     persuade = min(10.0, sum(c.persuade for c in f.parts) / 8.0 * 10.0)
     portable = min(c.portable for c in f.parts)      # the weakest link decides
     news = max(c.news for c in f.parts)              # the best part carries it
+    desire = max(c.desire for c in f.parts)
+    # A magnet whose content is "here is how to do this yourself" attracts
+    # people who intend to do it themselves. That is not a neutral trait.
+    if any(c.diy for c in f.parts):
+        desire = max(0, desire - 1)
     # The one hard evidence-based override: on-platform destinations for a
     # considered purchase, priced at the measured 2% vs 17% appointment gap.
     if d.key in ("form", "dm"):
         proven = min(proven, 3.0)
-    return dict(PROVEN=max(0.0, proven), PORTABLE=float(portable), EASE=ease,
-                NEWS=float(news), HANDS=hands, TZ=tz, SIGNAL=signal, PERSUADE=persuade)
+    return dict(DESIRE=float(desire), PROVEN=max(0.0, proven), PORTABLE=float(portable),
+                EASE=ease, HANDS=hands, TZ=tz, NEWS=float(news), SIGNAL=signal)
 
 
 for f in ALL:

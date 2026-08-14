@@ -48,7 +48,7 @@ Everything below that enters the ranking, and its source:
 | ~50 optimisation events per ad set per 7 days to exit learning; CPA 20–50% higher inside | `Meta, multiple` | Caps how many cells $5k can test |
 | Meta CPL all industries 2025: $41.60, +21% YoY | `get-ryze.ai` | A floor to sanity-check any CPL claim against |
 | 4 of 8 live competitors show named candidates on the demand page; 0 of 10 gate the calendar | `fetched Aug 2026` | Precedent counts, from `competitors.py` — **but none verified as Meta advertisers** |
-| **Value-first lead magnets: 40–60% lower CPL than a direct sales offer** on B2B Meta | `involvedigital.com` | **The single strongest mechanism finding in the study** |
+| Value-first lead magnets: 40–60% lower **CPL** than a direct sales offer on B2B Meta | `involvedigital.com` | ⚠️ **CPL, not cost per customer.** The same shape as Instant Forms, which win CPL and lose appointments 2% to 17%. **Discounted accordingly** |
 | Proven service-business magnets: audits · guides · templates · free tool access · consultations | `involvedigital.com` | Names the formats that actually run on Meta |
 | Qualification questions raise CPL 30–60%, and lift quality proportionally | `adlibrary.com` | So a gate is roughly a wash on cost per qualified lead |
 | Quizzes and short video are TOF; case studies and webinars are MOF; consultations are BOF | `stackmatix.com` | Places each mechanism in the funnel it is proven at |
@@ -131,14 +131,14 @@ file, which is precisely what was wrong with the last three.
 
 | Dimension | Weight | Derived from |
 |---|---|---|
-| `PROVEN` | 22 | Is this a documented, running Meta lead-gen format? Not novel, not clever |
-| `PORTABLE` | 18 | Works UNCHANGED across every ICP × role. We must test across, not down |
-| `EASE` | 16 | Systems to wire × days to build. Operator direction: first six months |
-| `NEWS` | 12 | Does it tell the buyer something they did NOT already know? |
-| `HANDS` | 12 | Minutes of human work per lead, forever. The solo constraint |
-| `TZ` | 10 | Immune to the 32%→12% speed-to-lead penalty? [V] |
-| `SIGNAL` | 6 | Qualification fields captured — how fast we learn which ICP × role works |
-| `PERSUADE` | 4 | Does it give the visitor anything before asking? Structural, not a rate |
+| `DESIRE` | 22 | Would a COLD scroller — not shopping, mid-feed — actually want this? |
+| `PROVEN` | 18 | Is this a documented, running Meta lead-gen format? Not novel, not clever |
+| `PORTABLE` | 16 | Works UNCHANGED across every ICP × role. We must test across, not down |
+| `EASE` | 14 | Systems to wire × days to build. Operator direction: first six months |
+| `HANDS` | 10 | Minutes of human work per lead, forever. The solo constraint |
+| `TZ` | 9 | Immune to the 32%→12% speed-to-lead penalty? [V] |
+| `NEWS` | 6 | Tells them something they did not know — secondary to whether they want it |
+| `SIGNAL` | 5 | Qualification fields captured — how fast we learn which ICP × role works |
 
 `EASE` and `HANDS` together carry **52%**, on the operator direction that the first six
 months must be simple. `TZ` at 14 is the speed-to-lead penalty, which is a **fact about
@@ -148,217 +148,217 @@ where the operator lives**, not a parameter.
 
 ## 4. The ranking — all 149
 
-| # | Funnel | Sys | Days | Min/lead | Fields | `PROVEN` | `PORTABLE` | `EASE` | `NEWS` | `HANDS` | `TZ` | `SIGNAL` | `PERSUADE` | **Score** |
+| # | Funnel | Sys | Days | Min/lead | Fields | `DESIRE` | `PROVEN` | `PORTABLE` | `EASE` | `HANDS` | `TZ` | `NEWS` | `SIGNAL` | **Score** |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → self-serve calendar embed ✅ | 4 | 3 | 0 | 6 | 10.0 | 8.0 | 5.3 | 9.0 | 10.0 | 10.0 | 9.6 | 10.0 | **87.4** |
-| 2 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + active gate that can reject → self-serve calendar embed ✅ | 4 | 3.5 | 0 | 7 | 10.0 | 8.0 | 5.0 | 9.0 | 10.0 | 10.0 | 10.0 | 10.0 | **87.1** |
-| 3 | Landing page → **the hiring scorecard** — download the test, score candidates yourself → self-serve calendar embed ✅ | 3 | 2.75 | 0 | 3 | 10.0 | 8.0 | 6.8 | 9.0 | 10.0 | 10.0 | 4.8 | 10.0 | **86.9** |
-| 4 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 8 | 10.0 | 8.0 | 6.4 | 9.0 | 7.3 | 2.0 | 10.0 | 10.0 | **78.3** |
-| 5 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + manual application review → we follow up and book it | 3 | 3.25 | 14 | 8 | 10.0 | 8.0 | 6.4 | 9.0 | 5.0 | 2.0 | 10.0 | 10.0 | **75.5** |
-| 6 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 6 | 10.0 | 8.0 | 5.3 | 9.0 | 6.4 | 2.0 | 9.6 | 10.0 | **75.2** |
-| 7 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 7 | 10.0 | 8.0 | 5.0 | 9.0 | 6.4 | 2.0 | 10.0 | 10.0 | **74.8** |
-| 8 | Landing page → **the hiring scorecard** — download the test, score candidates yourself → we follow up and book it | 3 | 2.75 | 8 | 3 | 10.0 | 8.0 | 6.8 | 9.0 | 6.4 | 2.0 | 4.8 | 10.0 | **74.6** |
-| 9 | Landing page → book a call + active gate that can reject → self-serve calendar embed | 4 | 2.25 | 0 | 5 | 8.0 | 10.0 | 5.8 | 0.0 | 10.0 | 10.0 | 8.0 | 5.0 | **73.7** |
-| 10 | Landing page → book a call + passive fields on the form → self-serve calendar embed | 4 | 1.75 | 0 | 4 | 8.0 | 10.0 | 6.2 | 0.0 | 10.0 | 10.0 | 6.4 | 5.0 | **73.3** |
-| 11 | Straight to a calendar link, no page → book a call + passive fields on the form → self-serve calendar embed | 4 | 0.85 | 0 | 5 | 8.0 | 10.0 | 6.8 | 0.0 | 10.0 | 10.0 | 8.0 | 0.0 | **73.3** |
-| 12 | Landing page → get a price / instant quote + active gate that can reject → self-serve calendar embed | 4 | 3 | 0 | 6 | 7.0 | 8.0 | 5.3 | 3.0 | 10.0 | 10.0 | 9.6 | 8.8 | **73.1** |
-| 13 | Landing page → free document — scorecard, salary data, guide + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 5 | 10.0 | 4.0 | 5.0 | 5.0 | 10.0 | 10.0 | 8.0 | 7.5 | **72.9** |
-| 14 | Landing page → book a call → self-serve calendar embed | 3 | 1.5 | 0 | 1 | 8.0 | 10.0 | 7.6 | 0.0 | 10.0 | 10.0 | 1.6 | 5.0 | **72.8** |
-| 15 | Straight to a calendar link, no page → book a call → self-serve calendar embed | 3 | 0.6 | 0 | 2 | 8.0 | 10.0 | 8.3 | 0.0 | 10.0 | 10.0 | 3.2 | 0.0 | **72.8** |
-| 16 | Landing page → get a price / instant quote + passive fields on the form → self-serve calendar embed | 4 | 2.5 | 0 | 5 | 7.0 | 8.0 | 5.7 | 3.0 | 10.0 | 10.0 | 8.0 | 8.8 | **72.7** |
-| 17 | Landing page → free document — scorecard, salary data, guide + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 4 | 10.0 | 4.0 | 5.3 | 5.0 | 10.0 | 10.0 | 6.4 | 7.5 | **72.5** |
-| 18 | Landing page → monthly-spend comparison — what you pay now vs full-time + passive fields on the form → self-serve calendar embed | 4 | 2.75 | 0 | 6 | 6.0 | 10.0 | 5.5 | 1.0 | 10.0 | 10.0 | 9.6 | 8.8 | **72.4** |
-| 19 | Landing page → get a price / instant quote → self-serve calendar embed | 3 | 2.25 | 0 | 2 | 7.0 | 8.0 | 7.1 | 3.0 | 10.0 | 10.0 | 3.2 | 8.8 | **72.2** |
-| 20 | Landing page → monthly-spend comparison — what you pay now vs full-time + active gate that can reject → self-serve calendar embed | 4 | 3.25 | 0 | 7 | 6.0 | 10.0 | 5.1 | 1.0 | 10.0 | 10.0 | 10.0 | 8.8 | **72.1** |
-| 21 | Landing page → free document — scorecard, salary data, guide → self-serve calendar embed | 3 | 2.75 | 0 | 1 | 10.0 | 4.0 | 6.8 | 5.0 | 10.0 | 10.0 | 1.6 | 7.5 | **72.0** |
-| 22 | Landing page → monthly-spend comparison — what you pay now vs full-time → self-serve calendar embed | 3 | 2.5 | 0 | 3 | 6.0 | 10.0 | 6.9 | 1.0 | 10.0 | 10.0 | 4.8 | 8.8 | **71.9** |
-| 23 | Landing page → see the test — the rubric as an on-page block + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 6 | 2.0 | 9.0 | 5.0 | 9.0 | 10.0 | 10.0 | 9.6 | 10.0 | **71.1** |
-| 24 | Landing page → see the test — the rubric as an on-page block + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 5 | 2.0 | 9.0 | 5.3 | 9.0 | 10.0 | 10.0 | 8.0 | 10.0 | **70.7** |
-| 25 | Landing page → see the test — the rubric as an on-page block → self-serve calendar embed | 3 | 2.75 | 0 | 2 | 2.0 | 9.0 | 6.8 | 9.0 | 10.0 | 10.0 | 3.2 | 10.0 | **70.2** |
-| 26 | Landing page → "three graded candidates in 7 days" — the shortlist promise + active gate that can reject → self-serve calendar embed | 4 | 2.75 | 0 | 6 | 4.0 | 10.0 | 5.5 | 3.0 | 10.0 | 10.0 | 9.6 | 7.5 | **69.9** |
-| 27 | Landing page → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed | 4 | 2.25 | 0 | 5 | 4.0 | 10.0 | 5.8 | 3.0 | 10.0 | 10.0 | 8.0 | 7.5 | **69.5** |
-| 28 | Landing page → "three graded candidates in 7 days" — the shortlist promise → self-serve calendar embed | 3 | 2 | 0 | 2 | 4.0 | 10.0 | 7.3 | 3.0 | 10.0 | 10.0 | 3.2 | 7.5 | **69.0** |
-| 29 | Landing page → book a call + manual application review → self-serve calendar embed | 3 | 2 | 6 | 6 | 8.0 | 10.0 | 7.3 | 0.0 | 7.3 | 2.0 | 9.6 | 5.0 | **65.8** |
-| 30 | Landing page → join a newsletter / community + passive fields on the form → self-serve calendar embed | 4 | 3.5 | 2 | 4 | 6.0 | 6.0 | 5.0 | 4.0 | 10.0 | 10.0 | 6.4 | 6.2 | **65.1** |
-| 31 | Landing page → free document — scorecard, salary data, guide + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 6 | 10.0 | 4.0 | 6.4 | 5.0 | 7.3 | 2.0 | 9.6 | 7.5 | **65.0** |
-| 32 | Landing page → generic "contact us" + passive fields on the form → self-serve calendar embed | 4 | 1.6 | 0 | 4 | 4.0 | 10.0 | 6.3 | 0.0 | 10.0 | 10.0 | 6.4 | 5.0 | **64.7** |
-| 33 | Landing page → join a newsletter / community → self-serve calendar embed | 3 | 3.25 | 2 | 1 | 6.0 | 6.0 | 6.4 | 4.0 | 10.0 | 10.0 | 1.6 | 6.2 | **64.5** |
-| 34 | Landing page → get a price / instant quote + manual application review → self-serve calendar embed | 3 | 2.75 | 6 | 7 | 7.0 | 8.0 | 6.8 | 3.0 | 7.3 | 2.0 | 10.0 | 8.8 | **64.5** |
-| 35 | Landing page → generic "contact us" → self-serve calendar embed | 3 | 1.35 | 0 | 1 | 4.0 | 10.0 | 7.8 | 0.0 | 10.0 | 10.0 | 1.6 | 5.0 | **64.2** |
-| 36 | Landing page → see the graded bench + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 5 | 4.0 | 5.0 | 5.0 | 6.0 | 10.0 | 10.0 | 8.0 | 10.0 | **63.7** |
-| 37 | Landing page → see the graded bench + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 4 | 4.0 | 5.0 | 5.3 | 6.0 | 10.0 | 10.0 | 6.4 | 10.0 | **63.3** |
-| 38 | Landing page → monthly-spend comparison — what you pay now vs full-time + manual application review → self-serve calendar embed | 3 | 3 | 6 | 8 | 6.0 | 10.0 | 6.6 | 1.0 | 7.3 | 2.0 | 10.0 | 8.8 | **63.2** |
-| 39 | Landing page → book a call + manual application review → we follow up and book it | 3 | 2 | 14 | 6 | 8.0 | 10.0 | 7.3 | 0.0 | 5.0 | 2.0 | 9.6 | 5.0 | **63.0** |
-| 40 | Landing page → see the graded bench → self-serve calendar embed | 3 | 2.75 | 0 | 1 | 4.0 | 5.0 | 6.8 | 6.0 | 10.0 | 10.0 | 1.6 | 10.0 | **62.8** |
-| 41 | Landing page → volume calculator — units × vendor unit cost + passive fields on the form → self-serve calendar embed | 4 | 3.5 | 0 | 6 | 6.0 | 3.0 | 5.0 | 4.0 | 10.0 | 10.0 | 9.6 | 8.8 | **62.6** |
-| 42 | Landing page → see the test — the rubric as an on-page block + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 7 | 2.0 | 9.0 | 6.4 | 9.0 | 7.3 | 2.0 | 10.0 | 10.0 | **62.5** |
-| 43 | Landing page → volume calculator — units × vendor unit cost + active gate that can reject → self-serve calendar embed | 4 | 4 | 0 | 7 | 6.0 | 3.0 | 4.6 | 4.0 | 10.0 | 10.0 | 10.0 | 8.8 | **62.3** |
-| 44 | Landing page → free document — scorecard, salary data, guide + manual application review → we follow up and book it | 3 | 3.25 | 14 | 6 | 10.0 | 4.0 | 6.4 | 5.0 | 5.0 | 2.0 | 9.6 | 7.5 | **62.2** |
-| 45 | Landing page → volume calculator — units × vendor unit cost → self-serve calendar embed | 3 | 3.25 | 0 | 3 | 6.0 | 3.0 | 6.4 | 4.0 | 10.0 | 10.0 | 4.8 | 8.8 | **62.1** |
-| 46 | Landing page → get a price / instant quote + manual application review → we follow up and book it | 3 | 2.75 | 14 | 7 | 7.0 | 8.0 | 6.8 | 3.0 | 5.0 | 2.0 | 10.0 | 8.8 | **61.7** |
-| 47 | Landing page → book a call + active gate that can reject → we follow up and book it | 4 | 2.25 | 8 | 5 | 8.0 | 10.0 | 5.8 | 0.0 | 6.4 | 2.0 | 8.0 | 5.0 | **61.4** |
-| 48 | Landing page → "three graded candidates in 7 days" — the shortlist promise + manual application review → self-serve calendar embed | 3 | 2.5 | 6 | 7 | 4.0 | 10.0 | 6.9 | 3.0 | 7.3 | 2.0 | 10.0 | 7.5 | **61.3** |
-| 49 | Landing page → book a call + passive fields on the form → we follow up and book it | 4 | 1.75 | 8 | 4 | 8.0 | 10.0 | 6.2 | 0.0 | 6.4 | 2.0 | 6.4 | 5.0 | **61.0** |
-| 50 | Landing page → get a price / instant quote + active gate that can reject → we follow up and book it | 4 | 3 | 8 | 6 | 7.0 | 8.0 | 5.3 | 3.0 | 6.4 | 2.0 | 9.6 | 8.8 | **60.9** |
-| 51 | Landing page → free document — scorecard, salary data, guide + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 5 | 10.0 | 4.0 | 5.0 | 5.0 | 6.4 | 2.0 | 8.0 | 7.5 | **60.6** |
-| 52 | Landing page → book a call → we follow up and book it | 3 | 1.5 | 8 | 1 | 8.0 | 10.0 | 7.6 | 0.0 | 6.4 | 2.0 | 1.6 | 5.0 | **60.5** |
-| 53 | Landing page → monthly-spend comparison — what you pay now vs full-time + manual application review → we follow up and book it | 3 | 3 | 14 | 8 | 6.0 | 10.0 | 6.6 | 1.0 | 5.0 | 2.0 | 10.0 | 8.8 | **60.5** |
-| 54 | Landing page → get a price / instant quote + passive fields on the form → we follow up and book it | 4 | 2.5 | 8 | 5 | 7.0 | 8.0 | 5.7 | 3.0 | 6.4 | 2.0 | 8.0 | 8.8 | **60.5** |
-| 55 | Landing page → free document — scorecard, salary data, guide + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 4 | 10.0 | 4.0 | 5.3 | 5.0 | 6.4 | 2.0 | 6.4 | 7.5 | **60.2** |
-| 56 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself → self-serve calendar embed | 3 | 2 | 10 | 6 | 3.0 | 8.0 | 7.3 | 9.0 | 5.8 | 2.0 | 9.6 | 5.0 | **60.2** |
-| 57 | Landing page → monthly-spend comparison — what you pay now vs full-time + passive fields on the form → we follow up and book it | 4 | 2.75 | 8 | 6 | 6.0 | 10.0 | 5.5 | 1.0 | 6.4 | 2.0 | 9.6 | 8.8 | **60.1** |
-| 58 | Landing page → get a price / instant quote → we follow up and book it | 3 | 2.25 | 8 | 2 | 7.0 | 8.0 | 7.1 | 3.0 | 6.4 | 2.0 | 3.2 | 8.8 | **59.9** |
-| 59 | Landing page → monthly-spend comparison — what you pay now vs full-time + active gate that can reject → we follow up and book it | 4 | 3.25 | 8 | 7 | 6.0 | 10.0 | 5.1 | 1.0 | 6.4 | 2.0 | 10.0 | 8.8 | **59.8** |
-| 60 | Landing page → free document — scorecard, salary data, guide → we follow up and book it | 3 | 2.75 | 8 | 1 | 10.0 | 4.0 | 6.8 | 5.0 | 6.4 | 2.0 | 1.6 | 7.5 | **59.7** |
-| 61 | Landing page → see the test — the rubric as an on-page block + manual application review → we follow up and book it | 3 | 3.25 | 14 | 7 | 2.0 | 9.0 | 6.4 | 9.0 | 5.0 | 2.0 | 10.0 | 10.0 | **59.7** |
-| 62 | Landing page → monthly-spend comparison — what you pay now vs full-time → we follow up and book it | 3 | 2.5 | 8 | 3 | 6.0 | 10.0 | 6.9 | 1.0 | 6.4 | 2.0 | 4.8 | 8.8 | **59.6** |
-| 63 | Landing page → paid micro-trial, $100–250 + payment → no call — self-serve purchase | 3 | 3 | 100 | 5 | 7.0 | 2.0 | 6.6 | 7.0 | 2.1 | 10.0 | 8.0 | 10.0 | **59.2** |
-| 64 | Landing page → see the test — the rubric as an on-page block + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 6 | 2.0 | 9.0 | 5.0 | 9.0 | 6.4 | 2.0 | 9.6 | 10.0 | **58.8** |
-| 65 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself → we follow up and book it | 3 | 2 | 18 | 6 | 3.0 | 8.0 | 7.3 | 9.0 | 4.5 | 2.0 | 9.6 | 5.0 | **58.6** |
-| 66 | Landing page → "three graded candidates in 7 days" — the shortlist promise + manual application review → we follow up and book it | 3 | 2.5 | 14 | 7 | 4.0 | 10.0 | 6.9 | 3.0 | 5.0 | 2.0 | 10.0 | 7.5 | **58.5** |
-| 67 | Landing page → see the test — the rubric as an on-page block + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 5 | 2.0 | 9.0 | 5.3 | 9.0 | 6.4 | 2.0 | 8.0 | 10.0 | **58.4** |
-| 68 | Landing page → watch a video first + active gate that can reject → self-serve calendar embed | 4 | 5 | 0 | 4 | 6.0 | 2.0 | 3.9 | 5.0 | 10.0 | 10.0 | 6.4 | 8.8 | **58.4** |
-| 69 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → self-serve calendar embed | 4 | 2.25 | 10 | 9 | 3.0 | 8.0 | 5.8 | 9.0 | 5.8 | 2.0 | 10.0 | 5.0 | **58.1** |
-| 70 | Landing page → watch a video first + passive fields on the form → self-serve calendar embed | 4 | 4.5 | 0 | 3 | 6.0 | 2.0 | 4.2 | 5.0 | 10.0 | 10.0 | 4.8 | 8.8 | **58.0** |
-| 71 | Landing page → see the test — the rubric as an on-page block → we follow up and book it | 3 | 2.75 | 8 | 2 | 2.0 | 9.0 | 6.8 | 9.0 | 6.4 | 2.0 | 3.2 | 10.0 | **57.9** |
-| 72 | Landing page → "three graded candidates in 7 days" — the shortlist promise + active gate that can reject → we follow up and book it | 4 | 2.75 | 8 | 6 | 4.0 | 10.0 | 5.5 | 3.0 | 6.4 | 2.0 | 9.6 | 7.5 | **57.6** |
-| 73 | Landing page → watch a video first → self-serve calendar embed | 3 | 4.25 | 0 | 0 | 6.0 | 2.0 | 5.7 | 5.0 | 10.0 | 10.0 | 0.0 | 8.8 | **57.5** |
-| 74 | Landing page → paid micro-trial, $100–250 + payment → self-serve calendar embed | 4 | 2.75 | 100 | 5 | 7.0 | 2.0 | 5.5 | 7.0 | 2.1 | 10.0 | 8.0 | 10.0 | **57.4** |
-| 75 | Landing page → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → we follow up and book it | 4 | 2.25 | 8 | 5 | 4.0 | 10.0 | 5.8 | 3.0 | 6.4 | 2.0 | 8.0 | 7.5 | **57.2** |
-| 76 | Landing page → "three graded candidates in 7 days" — the shortlist promise → we follow up and book it | 3 | 2 | 8 | 2 | 4.0 | 10.0 | 7.3 | 3.0 | 6.4 | 2.0 | 3.2 | 7.5 | **56.7** |
-| 77 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → we follow up and book it | 4 | 2.25 | 18 | 9 | 3.0 | 8.0 | 5.8 | 9.0 | 4.5 | 2.0 | 10.0 | 5.0 | **56.5** |
-| 78 | Landing page → free custom work on their asset + passive fields on the form → self-serve calendar embed | 4 | 2 | 90 | 4 | 9.0 | 2.0 | 6.0 | 9.0 | 2.2 | 2.0 | 6.4 | 10.0 | **56.2** |
-| 79 | Landing page → free custom work on their asset + passive fields on the form → we follow up and book it | 4 | 2 | 98 | 4 | 9.0 | 2.0 | 6.0 | 9.0 | 2.1 | 2.0 | 6.4 | 10.0 | **56.1** |
-| 80 | Landing page → see the graded bench + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 6 | 4.0 | 5.0 | 6.4 | 6.0 | 7.3 | 2.0 | 9.6 | 10.0 | **55.8** |
-| 81 | Landing page → free custom work on their asset → self-serve calendar embed | 3 | 1.75 | 90 | 1 | 9.0 | 2.0 | 7.5 | 9.0 | 2.2 | 2.0 | 1.6 | 10.0 | **55.7** |
-| 82 | Landing page → free custom work on their asset → we follow up and book it | 3 | 1.75 | 98 | 1 | 9.0 | 2.0 | 7.5 | 9.0 | 2.1 | 2.0 | 1.6 | 10.0 | **55.6** |
-| 83 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise → self-serve calendar embed | 3 | 1.25 | 10 | 5 | 3.0 | 10.0 | 7.8 | 3.0 | 5.8 | 2.0 | 8.0 | 2.5 | **55.5** |
-| 84 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed | 4 | 1.5 | 10 | 8 | 3.0 | 10.0 | 6.4 | 3.0 | 5.8 | 2.0 | 10.0 | 2.5 | **54.3** |
-| 85 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise → we follow up and book it | 3 | 1.25 | 18 | 5 | 3.0 | 10.0 | 7.8 | 3.0 | 4.5 | 2.0 | 8.0 | 2.5 | **53.9** |
-| 86 | Landing page → volume calculator — units × vendor unit cost + manual application review → self-serve calendar embed | 3 | 3.75 | 6 | 8 | 6.0 | 3.0 | 6.1 | 4.0 | 7.3 | 2.0 | 10.0 | 8.8 | **53.4** |
-| 87 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise → self-serve calendar embed | 3 | 1.5 | 14 | 4 | 3.0 | 10.0 | 7.6 | 3.0 | 5.0 | 2.0 | 6.4 | 2.5 | **53.3** |
-| 88 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed | 4 | 1.75 | 14 | 7 | 3.0 | 10.0 | 6.2 | 3.0 | 5.0 | 2.0 | 10.0 | 2.5 | **53.1** |
-| 89 | Landing page → see the graded bench + manual application review → we follow up and book it | 3 | 3.25 | 14 | 6 | 4.0 | 5.0 | 6.4 | 6.0 | 5.0 | 2.0 | 9.6 | 10.0 | **53.0** |
-| 90 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → we follow up and book it | 4 | 1.5 | 18 | 8 | 3.0 | 10.0 | 6.4 | 3.0 | 4.5 | 2.0 | 10.0 | 2.5 | **52.7** |
-| 91 | Landing page → generic "contact us" + passive fields on the form → we follow up and book it | 4 | 1.6 | 8 | 4 | 4.0 | 10.0 | 6.3 | 0.0 | 6.4 | 2.0 | 6.4 | 5.0 | **52.4** |
-| 92 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise → we follow up and book it | 3 | 1.5 | 22 | 4 | 3.0 | 10.0 | 7.6 | 3.0 | 4.1 | 2.0 | 6.4 | 2.5 | **52.2** |
-| 93 | Landing page → join a newsletter / community + passive fields on the form → we follow up and book it | 4 | 3.5 | 10 | 4 | 6.0 | 6.0 | 5.0 | 4.0 | 5.8 | 2.0 | 6.4 | 6.2 | **52.0** |
-| 94 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → we follow up and book it | 4 | 1.75 | 22 | 7 | 3.0 | 10.0 | 6.2 | 3.0 | 4.1 | 2.0 | 10.0 | 2.5 | **52.0** |
-| 95 | Landing page → generic "contact us" → we follow up and book it | 3 | 1.35 | 8 | 1 | 4.0 | 10.0 | 7.8 | 0.0 | 6.4 | 2.0 | 1.6 | 5.0 | **51.9** |
-| 96 | Landing page → join a newsletter / community → we follow up and book it | 3 | 3.25 | 10 | 1 | 6.0 | 6.0 | 6.4 | 4.0 | 5.8 | 2.0 | 1.6 | 6.2 | **51.5** |
-| 97 | Landing page → see the graded bench + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 5 | 4.0 | 5.0 | 5.0 | 6.0 | 6.4 | 2.0 | 8.0 | 10.0 | **51.4** |
-| 98 | Landing page → see the graded bench + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 4 | 4.0 | 5.0 | 5.3 | 6.0 | 6.4 | 2.0 | 6.4 | 10.0 | **51.0** |
-| 99 | Meta Instant Form (on-platform) → generic "contact us" → self-serve calendar embed | 3 | 0.6 | 10 | 4 | 3.0 | 10.0 | 8.3 | 0.0 | 5.8 | 2.0 | 6.4 | 0.0 | **50.7** |
-| 100 | Landing page → volume calculator — units × vendor unit cost + manual application review → we follow up and book it | 3 | 3.75 | 14 | 8 | 6.0 | 3.0 | 6.1 | 4.0 | 5.0 | 2.0 | 10.0 | 8.8 | **50.6** |
-| 101 | Landing page → see the graded bench → we follow up and book it | 3 | 2.75 | 8 | 1 | 4.0 | 5.0 | 6.8 | 6.0 | 6.4 | 2.0 | 1.6 | 10.0 | **50.5** |
-| 102 | Meta Instant Form (on-platform) → book a call → self-serve calendar embed | 3 | 0.75 | 10 | 4 | 3.0 | 10.0 | 8.2 | 0.0 | 5.8 | 2.0 | 6.4 | 0.0 | **50.5** |
-| 103 | Landing page → watch a video first + manual application review → self-serve calendar embed | 3 | 4.75 | 6 | 5 | 6.0 | 2.0 | 5.4 | 5.0 | 7.3 | 2.0 | 8.0 | 8.8 | **50.5** |
-| 104 | Meta Instant Form (on-platform) → generic "contact us" + passive fields on the form → self-serve calendar embed | 4 | 0.85 | 10 | 7 | 3.0 | 10.0 | 6.8 | 0.0 | 5.8 | 2.0 | 10.0 | 0.0 | **50.5** |
-| 105 | Meta Instant Form (on-platform) → book a call + passive fields on the form → self-serve calendar embed | 4 | 1 | 10 | 7 | 3.0 | 10.0 | 6.7 | 0.0 | 5.8 | 2.0 | 10.0 | 0.0 | **50.3** |
-| 106 | Landing page → volume calculator — units × vendor unit cost + passive fields on the form → we follow up and book it | 4 | 3.5 | 8 | 6 | 6.0 | 3.0 | 5.0 | 4.0 | 6.4 | 2.0 | 9.6 | 8.8 | **50.3** |
-| 107 | Landing page → volume calculator — units × vendor unit cost + active gate that can reject → we follow up and book it | 4 | 4 | 8 | 7 | 6.0 | 3.0 | 4.6 | 4.0 | 6.4 | 2.0 | 10.0 | 8.8 | **50.0** |
-| 108 | Landing page → volume calculator — units × vendor unit cost → we follow up and book it | 3 | 3.25 | 8 | 3 | 6.0 | 3.0 | 6.4 | 4.0 | 6.4 | 2.0 | 4.8 | 8.8 | **49.8** |
-| 109 | Landing page → paid micro-trial, $100–250 + payment → we follow up and book it | 4 | 2.75 | 108 | 5 | 7.0 | 2.0 | 5.5 | 7.0 | 2.0 | 2.0 | 8.0 | 10.0 | **49.4** |
-| 110 | Meta Instant Form (on-platform) → generic "contact us" → we follow up and book it | 3 | 0.6 | 18 | 4 | 3.0 | 10.0 | 8.3 | 0.0 | 4.5 | 2.0 | 6.4 | 0.0 | **49.0** |
-| 111 | Click-to-Messenger / WhatsApp → generic "contact us" + passive fields on the form → self-serve calendar embed | 4 | 1.1 | 14 | 6 | 3.0 | 10.0 | 6.6 | 0.0 | 5.0 | 2.0 | 9.6 | 0.0 | **49.0** |
-| 112 | Meta Instant Form (on-platform) → book a call → we follow up and book it | 3 | 0.75 | 18 | 4 | 3.0 | 10.0 | 8.2 | 0.0 | 4.5 | 2.0 | 6.4 | 0.0 | **48.9** |
-| 113 | Meta Instant Form (on-platform) → generic "contact us" + passive fields on the form → we follow up and book it | 4 | 0.85 | 18 | 7 | 3.0 | 10.0 | 6.8 | 0.0 | 4.5 | 2.0 | 10.0 | 0.0 | **48.8** |
-| 114 | Click-to-Messenger / WhatsApp → book a call + passive fields on the form → self-serve calendar embed | 4 | 1.25 | 14 | 6 | 3.0 | 10.0 | 6.5 | 0.0 | 5.0 | 2.0 | 9.6 | 0.0 | **48.8** |
-| 115 | Meta Instant Form (on-platform) → book a call + passive fields on the form → we follow up and book it | 4 | 1 | 18 | 7 | 3.0 | 10.0 | 6.7 | 0.0 | 4.5 | 2.0 | 10.0 | 0.0 | **48.7** |
-| 116 | Click-to-Messenger / WhatsApp → generic "contact us" → self-serve calendar embed | 3 | 0.85 | 14 | 3 | 3.0 | 10.0 | 8.1 | 0.0 | 5.0 | 2.0 | 4.8 | 0.0 | **48.4** |
-| 117 | Click-to-Messenger / WhatsApp → book a call → self-serve calendar embed | 3 | 1 | 14 | 3 | 3.0 | 10.0 | 8.0 | 0.0 | 5.0 | 2.0 | 4.8 | 0.0 | **48.3** |
-| 118 | Click-to-Messenger / WhatsApp → generic "contact us" + passive fields on the form → we follow up and book it | 4 | 1.1 | 22 | 6 | 3.0 | 10.0 | 6.6 | 0.0 | 4.1 | 2.0 | 9.6 | 0.0 | **47.9** |
-| 119 | Landing page → watch a video first + manual application review → we follow up and book it | 3 | 4.75 | 14 | 5 | 6.0 | 2.0 | 5.4 | 5.0 | 5.0 | 2.0 | 8.0 | 8.8 | **47.7** |
-| 120 | Click-to-Messenger / WhatsApp → book a call + passive fields on the form → we follow up and book it | 4 | 1.25 | 22 | 6 | 3.0 | 10.0 | 6.5 | 0.0 | 4.1 | 2.0 | 9.6 | 0.0 | **47.7** |
-| 121 | Click-to-Messenger / WhatsApp → generic "contact us" → we follow up and book it | 3 | 0.85 | 22 | 3 | 3.0 | 10.0 | 8.1 | 0.0 | 4.1 | 2.0 | 4.8 | 0.0 | **47.3** |
-| 122 | Click-to-Messenger / WhatsApp → book a call → we follow up and book it | 3 | 1 | 22 | 3 | 3.0 | 10.0 | 8.0 | 0.0 | 4.1 | 2.0 | 4.8 | 0.0 | **47.2** |
-| 123 | Landing page → watch a video first + active gate that can reject → we follow up and book it | 4 | 5 | 8 | 4 | 6.0 | 2.0 | 3.9 | 5.0 | 6.4 | 2.0 | 6.4 | 8.8 | **46.1** |
-| 124 | Meta Instant Form (on-platform) → join a newsletter / community → self-serve calendar embed | 3 | 2.5 | 12 | 4 | 3.0 | 6.0 | 6.9 | 4.0 | 5.4 | 2.0 | 6.4 | 1.2 | **46.1** |
-| 125 | Meta Instant Form (on-platform) → join a newsletter / community + passive fields on the form → self-serve calendar embed | 4 | 2.75 | 12 | 7 | 3.0 | 6.0 | 5.5 | 4.0 | 5.4 | 2.0 | 10.0 | 1.2 | **45.9** |
-| 126 | Landing page → watch a video first + passive fields on the form → we follow up and book it | 4 | 4.5 | 8 | 3 | 6.0 | 2.0 | 4.2 | 5.0 | 6.4 | 2.0 | 4.8 | 8.8 | **45.7** |
-| 127 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide → self-serve calendar embed | 3 | 2 | 10 | 4 | 3.0 | 4.0 | 7.3 | 5.0 | 5.8 | 2.0 | 6.4 | 2.5 | **45.3** |
-| 128 | Landing page → watch a video first → we follow up and book it | 3 | 4.25 | 8 | 0 | 6.0 | 2.0 | 5.7 | 5.0 | 6.4 | 2.0 | 0.0 | 8.8 | **45.2** |
-| 129 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide + passive fields on the form → self-serve calendar embed | 4 | 2.25 | 10 | 7 | 3.0 | 4.0 | 5.8 | 5.0 | 5.8 | 2.0 | 10.0 | 2.5 | **45.1** |
-| 130 | Meta Instant Form (on-platform) → join a newsletter / community → we follow up and book it | 3 | 2.5 | 20 | 4 | 3.0 | 6.0 | 6.9 | 4.0 | 4.3 | 2.0 | 6.4 | 1.2 | **44.8** |
-| 131 | Click-to-Messenger / WhatsApp → join a newsletter / community + passive fields on the form → self-serve calendar embed | 4 | 3 | 16 | 6 | 3.0 | 6.0 | 5.3 | 4.0 | 4.7 | 2.0 | 9.6 | 1.2 | **44.6** |
-| 132 | Meta Instant Form (on-platform) → join a newsletter / community + passive fields on the form → we follow up and book it | 4 | 2.75 | 20 | 7 | 3.0 | 6.0 | 5.5 | 4.0 | 4.3 | 2.0 | 10.0 | 1.2 | **44.6** |
-| 133 | Meta Instant Form (on-platform) → free custom work on their asset → self-serve calendar embed | 3 | 1 | 100 | 4 | 3.0 | 2.0 | 8.0 | 9.0 | 2.1 | 2.0 | 6.4 | 5.0 | **44.1** |
-| 134 | Click-to-Messenger / WhatsApp → join a newsletter / community → self-serve calendar embed | 3 | 2.75 | 16 | 3 | 3.0 | 6.0 | 6.8 | 4.0 | 4.7 | 2.0 | 4.8 | 1.2 | **44.1** |
-| 135 | Meta Instant Form (on-platform) → free custom work on their asset → we follow up and book it | 3 | 1 | 108 | 4 | 3.0 | 2.0 | 8.0 | 9.0 | 2.0 | 2.0 | 6.4 | 5.0 | **44.0** |
-| 136 | Meta Instant Form (on-platform) → free custom work on their asset + passive fields on the form → self-serve calendar embed | 4 | 1.25 | 100 | 7 | 3.0 | 2.0 | 6.5 | 9.0 | 2.1 | 2.0 | 10.0 | 5.0 | **43.9** |
-| 137 | Meta Instant Form (on-platform) → free custom work on their asset + passive fields on the form → we follow up and book it | 4 | 1.25 | 108 | 7 | 3.0 | 2.0 | 6.5 | 9.0 | 2.0 | 2.0 | 10.0 | 5.0 | **43.8** |
-| 138 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide → we follow up and book it | 3 | 2 | 18 | 4 | 3.0 | 4.0 | 7.3 | 5.0 | 4.5 | 2.0 | 6.4 | 2.5 | **43.7** |
-| 139 | Click-to-Messenger / WhatsApp → join a newsletter / community + passive fields on the form → we follow up and book it | 4 | 3 | 24 | 6 | 3.0 | 6.0 | 5.3 | 4.0 | 3.9 | 2.0 | 9.6 | 1.2 | **43.6** |
-| 140 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide + passive fields on the form → self-serve calendar embed | 4 | 2.5 | 14 | 6 | 3.0 | 4.0 | 5.7 | 5.0 | 5.0 | 2.0 | 9.6 | 2.5 | **43.6** |
-| 141 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide + passive fields on the form → we follow up and book it | 4 | 2.25 | 18 | 7 | 3.0 | 4.0 | 5.8 | 5.0 | 4.5 | 2.0 | 10.0 | 2.5 | **43.5** |
-| 142 | Click-to-Messenger / WhatsApp → free custom work on their asset + passive fields on the form → self-serve calendar embed | 4 | 1.5 | 104 | 6 | 3.0 | 2.0 | 6.4 | 9.0 | 2.0 | 2.0 | 9.6 | 5.0 | **43.4** |
-| 143 | Click-to-Messenger / WhatsApp → free custom work on their asset + passive fields on the form → we follow up and book it | 4 | 1.5 | 112 | 6 | 3.0 | 2.0 | 6.4 | 9.0 | 2.0 | 2.0 | 9.6 | 5.0 | **43.3** |
-| 144 | Click-to-Messenger / WhatsApp → join a newsletter / community → we follow up and book it | 3 | 2.75 | 24 | 3 | 3.0 | 6.0 | 6.8 | 4.0 | 3.9 | 2.0 | 4.8 | 1.2 | **43.1** |
-| 145 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide → self-serve calendar embed | 3 | 2.25 | 14 | 3 | 3.0 | 4.0 | 7.1 | 5.0 | 5.0 | 2.0 | 4.8 | 2.5 | **43.1** |
-| 146 | Click-to-Messenger / WhatsApp → free custom work on their asset → self-serve calendar embed | 3 | 1.25 | 104 | 3 | 3.0 | 2.0 | 7.8 | 9.0 | 2.0 | 2.0 | 4.8 | 5.0 | **42.8** |
-| 147 | Click-to-Messenger / WhatsApp → free custom work on their asset → we follow up and book it | 3 | 1.25 | 112 | 3 | 3.0 | 2.0 | 7.8 | 9.0 | 2.0 | 2.0 | 4.8 | 5.0 | **42.8** |
-| 148 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide + passive fields on the form → we follow up and book it | 4 | 2.5 | 22 | 6 | 3.0 | 4.0 | 5.7 | 5.0 | 4.1 | 2.0 | 9.6 | 2.5 | **42.5** |
-| 149 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide → we follow up and book it | 3 | 2.25 | 22 | 3 | 3.0 | 4.0 | 7.1 | 5.0 | 4.1 | 2.0 | 4.8 | 2.5 | **42.0** |
+| 1 | Landing page → "three graded candidates in 7 days" — the shortlist promise + active gate that can reject → self-serve calendar embed ✅ | 4 | 2.75 | 0 | 6 | 8.0 | 4.0 | 10.0 | 5.5 | 10.0 | 10.0 | 3.0 | 9.6 | **74.1** |
+| 2 | Landing page → get a price / instant quote + active gate that can reject → self-serve calendar embed ✅ | 4 | 3 | 0 | 6 | 7.0 | 7.0 | 8.0 | 5.3 | 10.0 | 10.0 | 3.0 | 9.6 | **73.8** |
+| 3 | Landing page → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed ✅ | 4 | 2.25 | 0 | 5 | 8.0 | 4.0 | 10.0 | 5.8 | 10.0 | 10.0 | 3.0 | 8.0 | **73.8** |
+| 4 | Landing page → get a price / instant quote + passive fields on the form → self-serve calendar embed | 4 | 2.5 | 0 | 5 | 7.0 | 7.0 | 8.0 | 5.7 | 10.0 | 10.0 | 3.0 | 8.0 | **73.5** |
+| 5 | Landing page → "three graded candidates in 7 days" — the shortlist promise → self-serve calendar embed | 3 | 2 | 0 | 2 | 8.0 | 4.0 | 10.0 | 7.3 | 10.0 | 10.0 | 3.0 | 3.2 | **73.4** |
+| 6 | Landing page → get a price / instant quote → self-serve calendar embed | 3 | 2.25 | 0 | 2 | 7.0 | 7.0 | 8.0 | 7.1 | 10.0 | 10.0 | 3.0 | 3.2 | **73.2** |
+| 7 | Straight to a calendar link, no page → book a call + passive fields on the form → self-serve calendar embed | 4 | 0.85 | 0 | 5 | 4.0 | 8.0 | 10.0 | 6.8 | 10.0 | 10.0 | 0.0 | 8.0 | **71.7** |
+| 8 | Straight to a calendar link, no page → book a call → self-serve calendar embed | 3 | 0.6 | 0 | 2 | 4.0 | 8.0 | 10.0 | 8.3 | 10.0 | 10.0 | 0.0 | 3.2 | **71.4** |
+| 9 | Landing page → book a call + active gate that can reject → self-serve calendar embed | 4 | 2.25 | 0 | 5 | 4.0 | 8.0 | 10.0 | 5.8 | 10.0 | 10.0 | 0.0 | 8.0 | **70.4** |
+| 10 | Landing page → book a call + passive fields on the form → self-serve calendar embed | 4 | 1.75 | 0 | 4 | 4.0 | 8.0 | 10.0 | 6.2 | 10.0 | 10.0 | 0.0 | 6.4 | **70.0** |
+| 11 | Landing page → book a call → self-serve calendar embed | 3 | 1.5 | 0 | 1 | 4.0 | 8.0 | 10.0 | 7.6 | 10.0 | 10.0 | 0.0 | 1.6 | **69.7** |
+| 12 | Landing page → see the graded bench + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 5 | 9.0 | 4.0 | 5.0 | 5.0 | 10.0 | 10.0 | 6.0 | 8.0 | **68.5** |
+| 13 | Landing page → see the graded bench + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 4 | 9.0 | 4.0 | 5.0 | 5.3 | 10.0 | 10.0 | 6.0 | 6.4 | **68.2** |
+| 14 | Landing page → see the graded bench → self-serve calendar embed | 3 | 2.75 | 0 | 1 | 9.0 | 4.0 | 5.0 | 6.8 | 10.0 | 10.0 | 6.0 | 1.6 | **67.9** |
+| 15 | Landing page → "three graded candidates in 7 days" — the shortlist promise + manual application review → self-serve calendar embed | 3 | 2.5 | 6 | 7 | 8.0 | 4.0 | 10.0 | 6.9 | 7.3 | 2.0 | 3.0 | 10.0 | **66.5** |
+| 16 | Landing page → get a price / instant quote + manual application review → self-serve calendar embed | 3 | 2.75 | 6 | 7 | 7.0 | 7.0 | 8.0 | 6.8 | 7.3 | 2.0 | 3.0 | 10.0 | **66.2** |
+| 17 | Landing page → monthly-spend comparison — what you pay now vs full-time + passive fields on the form → self-serve calendar embed | 4 | 2.75 | 0 | 6 | 3.0 | 6.0 | 10.0 | 5.5 | 10.0 | 10.0 | 1.0 | 9.6 | **65.5** |
+| 18 | Landing page → monthly-spend comparison — what you pay now vs full-time + active gate that can reject → self-serve calendar embed | 4 | 3.25 | 0 | 7 | 3.0 | 6.0 | 10.0 | 5.1 | 10.0 | 10.0 | 1.0 | 10.0 | **65.2** |
+| 19 | Landing page → monthly-spend comparison — what you pay now vs full-time → self-serve calendar embed | 3 | 2.5 | 0 | 3 | 3.0 | 6.0 | 10.0 | 6.9 | 10.0 | 10.0 | 1.0 | 4.8 | **65.1** |
+| 20 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 6 | 1.0 | 7.0 | 8.0 | 5.3 | 10.0 | 10.0 | 9.0 | 9.6 | **64.2** |
+| 21 | Landing page → "three graded candidates in 7 days" — the shortlist promise + manual application review → we follow up and book it | 3 | 2.5 | 14 | 7 | 8.0 | 4.0 | 10.0 | 6.9 | 5.0 | 2.0 | 3.0 | 10.0 | **64.1** |
+| 22 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 7 | 1.0 | 7.0 | 8.0 | 5.0 | 10.0 | 10.0 | 9.0 | 10.0 | **63.9** |
+| 23 | Landing page → **the hiring scorecard** — download the test, score candidates yourself → self-serve calendar embed | 3 | 2.75 | 0 | 3 | 1.0 | 7.0 | 8.0 | 6.8 | 10.0 | 10.0 | 9.0 | 4.8 | **63.9** |
+| 24 | Landing page → get a price / instant quote + manual application review → we follow up and book it | 3 | 2.75 | 14 | 7 | 7.0 | 7.0 | 8.0 | 6.8 | 5.0 | 2.0 | 3.0 | 10.0 | **63.9** |
+| 25 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise → self-serve calendar embed | 3 | 1.25 | 10 | 5 | 8.0 | 3.0 | 10.0 | 7.8 | 5.8 | 2.0 | 3.0 | 8.0 | **63.4** |
+| 26 | Landing page → book a call + manual application review → self-serve calendar embed | 3 | 2 | 6 | 6 | 4.0 | 8.0 | 10.0 | 7.3 | 7.3 | 2.0 | 0.0 | 9.6 | **63.3** |
+| 27 | Landing page → "three graded candidates in 7 days" — the shortlist promise + active gate that can reject → we follow up and book it | 4 | 2.75 | 8 | 6 | 8.0 | 4.0 | 10.0 | 5.5 | 6.4 | 2.0 | 3.0 | 9.6 | **63.3** |
+| 28 | Landing page → get a price / instant quote + active gate that can reject → we follow up and book it | 4 | 3 | 8 | 6 | 7.0 | 7.0 | 8.0 | 5.3 | 6.4 | 2.0 | 3.0 | 9.6 | **63.1** |
+| 29 | Landing page → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → we follow up and book it | 4 | 2.25 | 8 | 5 | 8.0 | 4.0 | 10.0 | 5.8 | 6.4 | 2.0 | 3.0 | 8.0 | **63.0** |
+| 30 | Landing page → get a price / instant quote + passive fields on the form → we follow up and book it | 4 | 2.5 | 8 | 5 | 7.0 | 7.0 | 8.0 | 5.7 | 6.4 | 2.0 | 3.0 | 8.0 | **62.7** |
+| 31 | Landing page → "three graded candidates in 7 days" — the shortlist promise → we follow up and book it | 3 | 2 | 8 | 2 | 8.0 | 4.0 | 10.0 | 7.3 | 6.4 | 2.0 | 3.0 | 3.2 | **62.7** |
+| 32 | Landing page → get a price / instant quote → we follow up and book it | 3 | 2.25 | 8 | 2 | 7.0 | 7.0 | 8.0 | 7.1 | 6.4 | 2.0 | 3.0 | 3.2 | **62.4** |
+| 33 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed | 4 | 1.5 | 10 | 8 | 8.0 | 3.0 | 10.0 | 6.4 | 5.8 | 2.0 | 3.0 | 10.0 | **62.3** |
+| 34 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise → we follow up and book it | 3 | 1.25 | 18 | 5 | 8.0 | 3.0 | 10.0 | 7.8 | 4.5 | 2.0 | 3.0 | 8.0 | **62.0** |
+| 35 | Landing page → see the graded bench + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 6 | 9.0 | 4.0 | 5.0 | 6.4 | 7.3 | 2.0 | 6.0 | 9.6 | **61.5** |
+| 36 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise → self-serve calendar embed | 3 | 1.5 | 14 | 4 | 8.0 | 3.0 | 10.0 | 7.6 | 5.0 | 2.0 | 3.0 | 6.4 | **61.5** |
+| 37 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed | 4 | 1.75 | 14 | 7 | 8.0 | 3.0 | 10.0 | 6.2 | 5.0 | 2.0 | 3.0 | 10.0 | **61.2** |
+| 38 | Landing page → book a call + manual application review → we follow up and book it | 3 | 2 | 14 | 6 | 4.0 | 8.0 | 10.0 | 7.3 | 5.0 | 2.0 | 0.0 | 9.6 | **61.0** |
+| 39 | Meta Instant Form (on-platform) → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → we follow up and book it | 4 | 1.5 | 18 | 8 | 8.0 | 3.0 | 10.0 | 6.4 | 4.5 | 2.0 | 3.0 | 10.0 | **61.0** |
+| 40 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise → we follow up and book it | 3 | 1.5 | 22 | 4 | 8.0 | 3.0 | 10.0 | 7.6 | 4.1 | 2.0 | 3.0 | 6.4 | **60.6** |
+| 41 | Click-to-Messenger / WhatsApp → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → we follow up and book it | 4 | 1.75 | 22 | 7 | 8.0 | 3.0 | 10.0 | 6.2 | 4.1 | 2.0 | 3.0 | 10.0 | **60.3** |
+| 42 | Landing page → free custom work on their asset + passive fields on the form → self-serve calendar embed | 4 | 2 | 90 | 4 | 9.0 | 9.0 | 2.0 | 6.0 | 2.2 | 2.0 | 9.0 | 6.4 | **60.2** |
+| 43 | Landing page → free custom work on their asset + passive fields on the form → we follow up and book it | 4 | 2 | 98 | 4 | 9.0 | 9.0 | 2.0 | 6.0 | 2.1 | 2.0 | 9.0 | 6.4 | **60.1** |
+| 44 | Landing page → free custom work on their asset → self-serve calendar embed | 3 | 1.75 | 90 | 1 | 9.0 | 9.0 | 2.0 | 7.5 | 2.2 | 2.0 | 9.0 | 1.6 | **59.8** |
+| 45 | Landing page → free custom work on their asset → we follow up and book it | 3 | 1.75 | 98 | 1 | 9.0 | 9.0 | 2.0 | 7.5 | 2.1 | 2.0 | 9.0 | 1.6 | **59.7** |
+| 46 | Landing page → book a call + active gate that can reject → we follow up and book it | 4 | 2.25 | 8 | 5 | 4.0 | 8.0 | 10.0 | 5.8 | 6.4 | 2.0 | 0.0 | 8.0 | **59.6** |
+| 47 | Landing page → book a call + passive fields on the form → we follow up and book it | 4 | 1.75 | 8 | 4 | 4.0 | 8.0 | 10.0 | 6.2 | 6.4 | 2.0 | 0.0 | 6.4 | **59.3** |
+| 48 | Landing page → see the graded bench + manual application review → we follow up and book it | 3 | 3.25 | 14 | 6 | 9.0 | 4.0 | 5.0 | 6.4 | 5.0 | 2.0 | 6.0 | 9.6 | **59.2** |
+| 49 | Landing page → book a call → we follow up and book it | 3 | 1.5 | 8 | 1 | 4.0 | 8.0 | 10.0 | 7.6 | 6.4 | 2.0 | 0.0 | 1.6 | **58.9** |
+| 50 | Landing page → generic "contact us" + passive fields on the form → self-serve calendar embed | 4 | 1.6 | 0 | 4 | 2.0 | 4.0 | 10.0 | 6.3 | 10.0 | 10.0 | 0.0 | 6.4 | **58.6** |
+| 51 | Landing page → generic "contact us" → self-serve calendar embed | 3 | 1.35 | 0 | 1 | 2.0 | 4.0 | 10.0 | 7.8 | 10.0 | 10.0 | 0.0 | 1.6 | **58.3** |
+| 52 | Landing page → see the graded bench + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 5 | 9.0 | 4.0 | 5.0 | 5.0 | 6.4 | 2.0 | 6.0 | 8.0 | **57.8** |
+| 53 | Landing page → paid micro-trial, $100–250 + payment → no call — self-serve purchase | 3 | 3 | 100 | 5 | 6.0 | 7.0 | 2.0 | 6.6 | 2.1 | 10.0 | 7.0 | 8.0 | **57.5** |
+| 54 | Landing page → see the graded bench + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 4 | 9.0 | 4.0 | 5.0 | 5.3 | 6.4 | 2.0 | 6.0 | 6.4 | **57.5** |
+| 55 | Landing page → monthly-spend comparison — what you pay now vs full-time + manual application review → self-serve calendar embed | 3 | 3 | 6 | 8 | 3.0 | 6.0 | 10.0 | 6.6 | 7.3 | 2.0 | 1.0 | 10.0 | **57.4** |
+| 56 | Landing page → see the graded bench → we follow up and book it | 3 | 2.75 | 8 | 1 | 9.0 | 4.0 | 5.0 | 6.8 | 6.4 | 2.0 | 6.0 | 1.6 | **57.1** |
+| 57 | Landing page → see the test — the rubric as an on-page block + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 6 | 1.0 | 2.0 | 9.0 | 5.0 | 10.0 | 10.0 | 9.0 | 9.6 | **56.3** |
+| 58 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 8 | 1.0 | 7.0 | 8.0 | 6.4 | 7.3 | 2.0 | 9.0 | 10.0 | **56.1** |
+| 59 | Landing page → see the test — the rubric as an on-page block + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 5 | 1.0 | 2.0 | 9.0 | 5.3 | 10.0 | 10.0 | 9.0 | 8.0 | **56.0** |
+| 60 | Landing page → paid micro-trial, $100–250 + payment → self-serve calendar embed | 4 | 2.75 | 100 | 5 | 6.0 | 7.0 | 2.0 | 5.5 | 2.1 | 10.0 | 7.0 | 8.0 | **55.9** |
+| 61 | Landing page → see the test — the rubric as an on-page block → self-serve calendar embed | 3 | 2.75 | 0 | 2 | 1.0 | 2.0 | 9.0 | 6.8 | 10.0 | 10.0 | 9.0 | 3.2 | **55.7** |
+| 62 | Landing page → volume calculator — units × vendor unit cost + passive fields on the form → self-serve calendar embed | 4 | 3.5 | 0 | 6 | 3.0 | 6.0 | 3.0 | 5.0 | 10.0 | 10.0 | 4.0 | 9.6 | **55.3** |
+| 63 | Landing page → volume calculator — units × vendor unit cost + active gate that can reject → self-serve calendar embed | 4 | 4 | 0 | 7 | 3.0 | 6.0 | 3.0 | 4.6 | 10.0 | 10.0 | 4.0 | 10.0 | **55.0** |
+| 64 | Landing page → monthly-spend comparison — what you pay now vs full-time + manual application review → we follow up and book it | 3 | 3 | 14 | 8 | 3.0 | 6.0 | 10.0 | 6.6 | 5.0 | 2.0 | 1.0 | 10.0 | **55.0** |
+| 65 | Landing page → volume calculator — units × vendor unit cost → self-serve calendar embed | 3 | 3.25 | 0 | 3 | 3.0 | 6.0 | 3.0 | 6.4 | 10.0 | 10.0 | 4.0 | 4.8 | **55.0** |
+| 66 | Landing page → monthly-spend comparison — what you pay now vs full-time + passive fields on the form → we follow up and book it | 4 | 2.75 | 8 | 6 | 3.0 | 6.0 | 10.0 | 5.5 | 6.4 | 2.0 | 1.0 | 9.6 | **54.7** |
+| 67 | Landing page → monthly-spend comparison — what you pay now vs full-time + active gate that can reject → we follow up and book it | 4 | 3.25 | 8 | 7 | 3.0 | 6.0 | 10.0 | 5.1 | 6.4 | 2.0 | 1.0 | 10.0 | **54.4** |
+| 68 | Landing page → monthly-spend comparison — what you pay now vs full-time → we follow up and book it | 3 | 2.5 | 8 | 3 | 3.0 | 6.0 | 10.0 | 6.9 | 6.4 | 2.0 | 1.0 | 4.8 | **54.4** |
+| 69 | Landing page → free document — scorecard, salary data, guide + active gate that can reject → self-serve calendar embed | 4 | 3.5 | 0 | 5 | 1.0 | 7.0 | 4.0 | 5.0 | 10.0 | 10.0 | 5.0 | 8.0 | **54.1** |
+| 70 | Landing page → join a newsletter / community + passive fields on the form → self-serve calendar embed | 4 | 3.5 | 2 | 4 | 1.0 | 6.0 | 6.0 | 5.0 | 10.0 | 10.0 | 4.0 | 6.4 | **54.1** |
+| 71 | Landing page → free document — scorecard, salary data, guide + passive fields on the form → self-serve calendar embed | 4 | 3 | 0 | 4 | 1.0 | 7.0 | 4.0 | 5.3 | 10.0 | 10.0 | 5.0 | 6.4 | **53.8** |
+| 72 | Landing page → join a newsletter / community → self-serve calendar embed | 3 | 3.25 | 2 | 1 | 1.0 | 6.0 | 6.0 | 6.4 | 10.0 | 10.0 | 4.0 | 1.6 | **53.8** |
+| 73 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + manual application review → we follow up and book it | 3 | 3.25 | 14 | 8 | 1.0 | 7.0 | 8.0 | 6.4 | 5.0 | 2.0 | 9.0 | 10.0 | **53.8** |
+| 74 | Landing page → free document — scorecard, salary data, guide → self-serve calendar embed | 3 | 2.75 | 0 | 1 | 1.0 | 7.0 | 4.0 | 6.8 | 10.0 | 10.0 | 5.0 | 1.6 | **53.5** |
+| 75 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 6 | 1.0 | 7.0 | 8.0 | 5.3 | 6.4 | 2.0 | 9.0 | 9.6 | **53.5** |
+| 76 | Landing page → **the hiring scorecard** — download the test, score candidates yourself + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 7 | 1.0 | 7.0 | 8.0 | 5.0 | 6.4 | 2.0 | 9.0 | 10.0 | **53.2** |
+| 77 | Landing page → **the hiring scorecard** — download the test, score candidates yourself → we follow up and book it | 3 | 2.75 | 8 | 3 | 1.0 | 7.0 | 8.0 | 6.8 | 6.4 | 2.0 | 9.0 | 4.8 | **53.1** |
+| 78 | Meta Instant Form (on-platform) → book a call → self-serve calendar embed | 3 | 0.75 | 10 | 4 | 4.0 | 3.0 | 10.0 | 8.2 | 5.8 | 2.0 | 0.0 | 6.4 | **52.5** |
+| 79 | Meta Instant Form (on-platform) → book a call + passive fields on the form → self-serve calendar embed | 4 | 1 | 10 | 7 | 4.0 | 3.0 | 10.0 | 6.7 | 5.8 | 2.0 | 0.0 | 10.0 | **52.2** |
+| 80 | Meta Instant Form (on-platform) → free custom work on their asset → self-serve calendar embed | 3 | 1 | 100 | 4 | 9.0 | 3.0 | 2.0 | 8.0 | 2.1 | 2.0 | 9.0 | 6.4 | **52.1** |
+| 81 | Meta Instant Form (on-platform) → free custom work on their asset → we follow up and book it | 3 | 1 | 108 | 4 | 9.0 | 3.0 | 2.0 | 8.0 | 2.0 | 2.0 | 9.0 | 6.4 | **52.0** |
+| 82 | Meta Instant Form (on-platform) → free custom work on their asset + passive fields on the form → self-serve calendar embed | 4 | 1.25 | 100 | 7 | 9.0 | 3.0 | 2.0 | 6.5 | 2.1 | 2.0 | 9.0 | 10.0 | **51.8** |
+| 83 | Meta Instant Form (on-platform) → free custom work on their asset + passive fields on the form → we follow up and book it | 4 | 1.25 | 108 | 7 | 9.0 | 3.0 | 2.0 | 6.5 | 2.0 | 2.0 | 9.0 | 10.0 | **51.7** |
+| 84 | Click-to-Messenger / WhatsApp → free custom work on their asset + passive fields on the form → self-serve calendar embed | 4 | 1.5 | 104 | 6 | 9.0 | 3.0 | 2.0 | 6.4 | 2.0 | 2.0 | 9.0 | 9.6 | **51.3** |
+| 85 | Landing page → watch a video first + active gate that can reject → self-serve calendar embed | 4 | 5 | 0 | 4 | 3.0 | 6.0 | 2.0 | 3.9 | 10.0 | 10.0 | 5.0 | 6.4 | **51.3** |
+| 86 | Click-to-Messenger / WhatsApp → free custom work on their asset + passive fields on the form → we follow up and book it | 4 | 1.5 | 112 | 6 | 9.0 | 3.0 | 2.0 | 6.4 | 2.0 | 2.0 | 9.0 | 9.6 | **51.3** |
+| 87 | Meta Instant Form (on-platform) → book a call → we follow up and book it | 3 | 0.75 | 18 | 4 | 4.0 | 3.0 | 10.0 | 8.2 | 4.5 | 2.0 | 0.0 | 6.4 | **51.1** |
+| 88 | Click-to-Messenger / WhatsApp → free custom work on their asset → self-serve calendar embed | 3 | 1.25 | 104 | 3 | 9.0 | 3.0 | 2.0 | 7.8 | 2.0 | 2.0 | 9.0 | 4.8 | **51.0** |
+| 89 | Landing page → watch a video first + passive fields on the form → self-serve calendar embed | 4 | 4.5 | 0 | 3 | 3.0 | 6.0 | 2.0 | 4.2 | 10.0 | 10.0 | 5.0 | 4.8 | **51.0** |
+| 90 | Click-to-Messenger / WhatsApp → book a call + passive fields on the form → self-serve calendar embed | 4 | 1.25 | 14 | 6 | 4.0 | 3.0 | 10.0 | 6.5 | 5.0 | 2.0 | 0.0 | 9.6 | **50.9** |
+| 91 | Click-to-Messenger / WhatsApp → free custom work on their asset → we follow up and book it | 3 | 1.25 | 112 | 3 | 9.0 | 3.0 | 2.0 | 7.8 | 2.0 | 2.0 | 9.0 | 4.8 | **50.9** |
+| 92 | Meta Instant Form (on-platform) → book a call + passive fields on the form → we follow up and book it | 4 | 1 | 18 | 7 | 4.0 | 3.0 | 10.0 | 6.7 | 4.5 | 2.0 | 0.0 | 10.0 | **50.8** |
+| 93 | Landing page → watch a video first → self-serve calendar embed | 3 | 4.25 | 0 | 0 | 3.0 | 6.0 | 2.0 | 5.7 | 10.0 | 10.0 | 5.0 | 0.0 | **50.6** |
+| 94 | Click-to-Messenger / WhatsApp → book a call → self-serve calendar embed | 3 | 1 | 14 | 3 | 4.0 | 3.0 | 10.0 | 8.0 | 5.0 | 2.0 | 0.0 | 4.8 | **50.6** |
+| 95 | Click-to-Messenger / WhatsApp → book a call + passive fields on the form → we follow up and book it | 4 | 1.25 | 22 | 6 | 4.0 | 3.0 | 10.0 | 6.5 | 4.1 | 2.0 | 0.0 | 9.6 | **50.0** |
+| 96 | Click-to-Messenger / WhatsApp → book a call → we follow up and book it | 3 | 1 | 22 | 3 | 4.0 | 3.0 | 10.0 | 8.0 | 4.1 | 2.0 | 0.0 | 4.8 | **49.7** |
+| 97 | Landing page → see the test — the rubric as an on-page block + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 7 | 1.0 | 2.0 | 9.0 | 6.4 | 7.3 | 2.0 | 9.0 | 10.0 | **48.7** |
+| 98 | Landing page → paid micro-trial, $100–250 + payment → we follow up and book it | 4 | 2.75 | 108 | 5 | 6.0 | 7.0 | 2.0 | 5.5 | 2.0 | 2.0 | 7.0 | 8.0 | **48.7** |
+| 99 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself → self-serve calendar embed | 3 | 2 | 10 | 6 | 1.0 | 3.0 | 8.0 | 7.3 | 5.8 | 2.0 | 9.0 | 9.6 | **48.4** |
+| 100 | Meta Instant Form (on-platform) → generic "contact us" → self-serve calendar embed | 3 | 0.6 | 10 | 4 | 2.0 | 3.0 | 10.0 | 8.3 | 5.8 | 2.0 | 0.0 | 6.4 | **48.2** |
+| 101 | Meta Instant Form (on-platform) → generic "contact us" + passive fields on the form → self-serve calendar embed | 4 | 0.85 | 10 | 7 | 2.0 | 3.0 | 10.0 | 6.8 | 5.8 | 2.0 | 0.0 | 10.0 | **47.9** |
+| 102 | Landing page → generic "contact us" + passive fields on the form → we follow up and book it | 4 | 1.6 | 8 | 4 | 2.0 | 4.0 | 10.0 | 6.3 | 6.4 | 2.0 | 0.0 | 6.4 | **47.8** |
+| 103 | Landing page → generic "contact us" → we follow up and book it | 3 | 1.35 | 8 | 1 | 2.0 | 4.0 | 10.0 | 7.8 | 6.4 | 2.0 | 0.0 | 1.6 | **47.5** |
+| 104 | Landing page → volume calculator — units × vendor unit cost + manual application review → self-serve calendar embed | 3 | 3.75 | 6 | 8 | 3.0 | 6.0 | 3.0 | 6.1 | 7.3 | 2.0 | 4.0 | 10.0 | **47.2** |
+| 105 | Landing page → free document — scorecard, salary data, guide + manual application review → self-serve calendar embed | 3 | 3.25 | 6 | 6 | 1.0 | 7.0 | 4.0 | 6.4 | 7.3 | 2.0 | 5.0 | 9.6 | **47.1** |
+| 106 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself → we follow up and book it | 3 | 2 | 18 | 6 | 1.0 | 3.0 | 8.0 | 7.3 | 4.5 | 2.0 | 9.0 | 9.6 | **47.1** |
+| 107 | Meta Instant Form (on-platform) → generic "contact us" → we follow up and book it | 3 | 0.6 | 18 | 4 | 2.0 | 3.0 | 10.0 | 8.3 | 4.5 | 2.0 | 0.0 | 6.4 | **46.9** |
+| 108 | Click-to-Messenger / WhatsApp → generic "contact us" + passive fields on the form → self-serve calendar embed | 4 | 1.1 | 14 | 6 | 2.0 | 3.0 | 10.0 | 6.6 | 5.0 | 2.0 | 0.0 | 9.6 | **46.7** |
+| 109 | Meta Instant Form (on-platform) → generic "contact us" + passive fields on the form → we follow up and book it | 4 | 0.85 | 18 | 7 | 2.0 | 3.0 | 10.0 | 6.8 | 4.5 | 2.0 | 0.0 | 10.0 | **46.6** |
+| 110 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → self-serve calendar embed | 4 | 2.25 | 10 | 9 | 1.0 | 3.0 | 8.0 | 5.8 | 5.8 | 2.0 | 9.0 | 10.0 | **46.6** |
+| 111 | Landing page → see the test — the rubric as an on-page block + manual application review → we follow up and book it | 3 | 3.25 | 14 | 7 | 1.0 | 2.0 | 9.0 | 6.4 | 5.0 | 2.0 | 9.0 | 10.0 | **46.4** |
+| 112 | Click-to-Messenger / WhatsApp → generic "contact us" → self-serve calendar embed | 3 | 0.85 | 14 | 3 | 2.0 | 3.0 | 10.0 | 8.1 | 5.0 | 2.0 | 0.0 | 4.8 | **46.3** |
+| 113 | Click-to-Messenger / WhatsApp → generic "contact us" + passive fields on the form → we follow up and book it | 4 | 1.1 | 22 | 6 | 2.0 | 3.0 | 10.0 | 6.6 | 4.1 | 2.0 | 0.0 | 9.6 | **45.8** |
+| 114 | Landing page → see the test — the rubric as an on-page block + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 6 | 1.0 | 2.0 | 9.0 | 5.0 | 6.4 | 2.0 | 9.0 | 9.6 | **45.6** |
+| 115 | Click-to-Messenger / WhatsApp → generic "contact us" → we follow up and book it | 3 | 0.85 | 22 | 3 | 2.0 | 3.0 | 10.0 | 8.1 | 4.1 | 2.0 | 0.0 | 4.8 | **45.4** |
+| 116 | Landing page → see the test — the rubric as an on-page block + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 5 | 1.0 | 2.0 | 9.0 | 5.3 | 6.4 | 2.0 | 9.0 | 8.0 | **45.3** |
+| 117 | Meta Instant Form (on-platform) → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → we follow up and book it | 4 | 2.25 | 18 | 9 | 1.0 | 3.0 | 8.0 | 5.8 | 4.5 | 2.0 | 9.0 | 10.0 | **45.2** |
+| 118 | Landing page → see the test — the rubric as an on-page block → we follow up and book it | 3 | 2.75 | 8 | 2 | 1.0 | 2.0 | 9.0 | 6.8 | 6.4 | 2.0 | 9.0 | 3.2 | **44.9** |
+| 119 | Landing page → volume calculator — units × vendor unit cost + manual application review → we follow up and book it | 3 | 3.75 | 14 | 8 | 3.0 | 6.0 | 3.0 | 6.1 | 5.0 | 2.0 | 4.0 | 10.0 | **44.9** |
+| 120 | Landing page → free document — scorecard, salary data, guide + manual application review → we follow up and book it | 3 | 3.25 | 14 | 6 | 1.0 | 7.0 | 4.0 | 6.4 | 5.0 | 2.0 | 5.0 | 9.6 | **44.8** |
+| 121 | Landing page → volume calculator — units × vendor unit cost + passive fields on the form → we follow up and book it | 4 | 3.5 | 8 | 6 | 3.0 | 6.0 | 3.0 | 5.0 | 6.4 | 2.0 | 4.0 | 9.6 | **44.6** |
+| 122 | Landing page → volume calculator — units × vendor unit cost + active gate that can reject → we follow up and book it | 4 | 4 | 8 | 7 | 3.0 | 6.0 | 3.0 | 4.6 | 6.4 | 2.0 | 4.0 | 10.0 | **44.3** |
+| 123 | Landing page → watch a video first + manual application review → self-serve calendar embed | 3 | 4.75 | 6 | 5 | 3.0 | 6.0 | 2.0 | 5.4 | 7.3 | 2.0 | 5.0 | 8.0 | **44.2** |
+| 124 | Landing page → volume calculator — units × vendor unit cost → we follow up and book it | 3 | 3.25 | 8 | 3 | 3.0 | 6.0 | 3.0 | 6.4 | 6.4 | 2.0 | 4.0 | 4.8 | **44.2** |
+| 125 | Landing page → free document — scorecard, salary data, guide + active gate that can reject → we follow up and book it | 4 | 3.5 | 8 | 5 | 1.0 | 7.0 | 4.0 | 5.0 | 6.4 | 2.0 | 5.0 | 8.0 | **43.4** |
+| 126 | Landing page → free document — scorecard, salary data, guide + passive fields on the form → we follow up and book it | 4 | 3 | 8 | 4 | 1.0 | 7.0 | 4.0 | 5.3 | 6.4 | 2.0 | 5.0 | 6.4 | **43.1** |
+| 127 | Landing page → join a newsletter / community + passive fields on the form → we follow up and book it | 4 | 3.5 | 10 | 4 | 1.0 | 6.0 | 6.0 | 5.0 | 5.8 | 2.0 | 4.0 | 6.4 | **42.7** |
+| 128 | Landing page → free document — scorecard, salary data, guide → we follow up and book it | 3 | 2.75 | 8 | 1 | 1.0 | 7.0 | 4.0 | 6.8 | 6.4 | 2.0 | 5.0 | 1.6 | **42.7** |
+| 129 | Landing page → join a newsletter / community → we follow up and book it | 3 | 3.25 | 10 | 1 | 1.0 | 6.0 | 6.0 | 6.4 | 5.8 | 2.0 | 4.0 | 1.6 | **42.4** |
+| 130 | Landing page → watch a video first + manual application review → we follow up and book it | 3 | 4.75 | 14 | 5 | 3.0 | 6.0 | 2.0 | 5.4 | 5.0 | 2.0 | 5.0 | 8.0 | **41.9** |
+| 131 | Landing page → watch a video first + active gate that can reject → we follow up and book it | 4 | 5 | 8 | 4 | 3.0 | 6.0 | 2.0 | 3.9 | 6.4 | 2.0 | 5.0 | 6.4 | **40.5** |
+| 132 | Landing page → watch a video first + passive fields on the form → we follow up and book it | 4 | 4.5 | 8 | 3 | 3.0 | 6.0 | 2.0 | 4.2 | 6.4 | 2.0 | 5.0 | 4.8 | **40.2** |
+| 133 | Landing page → watch a video first → we follow up and book it | 3 | 4.25 | 8 | 0 | 3.0 | 6.0 | 2.0 | 5.7 | 6.4 | 2.0 | 5.0 | 0.0 | **39.8** |
+| 134 | Meta Instant Form (on-platform) → join a newsletter / community → self-serve calendar embed | 3 | 2.5 | 12 | 4 | 1.0 | 3.0 | 6.0 | 6.9 | 5.4 | 2.0 | 4.0 | 6.4 | **39.7** |
+| 135 | Meta Instant Form (on-platform) → join a newsletter / community + passive fields on the form → self-serve calendar embed | 4 | 2.75 | 12 | 7 | 1.0 | 3.0 | 6.0 | 5.5 | 5.4 | 2.0 | 4.0 | 10.0 | **39.4** |
+| 136 | Meta Instant Form (on-platform) → join a newsletter / community → we follow up and book it | 3 | 2.5 | 20 | 4 | 1.0 | 3.0 | 6.0 | 6.9 | 4.3 | 2.0 | 4.0 | 6.4 | **38.6** |
+| 137 | Click-to-Messenger / WhatsApp → join a newsletter / community + passive fields on the form → self-serve calendar embed | 4 | 3 | 16 | 6 | 1.0 | 3.0 | 6.0 | 5.3 | 4.7 | 2.0 | 4.0 | 9.6 | **38.3** |
+| 138 | Meta Instant Form (on-platform) → join a newsletter / community + passive fields on the form → we follow up and book it | 4 | 2.75 | 20 | 7 | 1.0 | 3.0 | 6.0 | 5.5 | 4.3 | 2.0 | 4.0 | 10.0 | **38.3** |
+| 139 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide → self-serve calendar embed | 3 | 2 | 10 | 4 | 1.0 | 3.0 | 4.0 | 7.3 | 5.8 | 2.0 | 5.0 | 6.4 | **38.0** |
+| 140 | Click-to-Messenger / WhatsApp → join a newsletter / community → self-serve calendar embed | 3 | 2.75 | 16 | 3 | 1.0 | 3.0 | 6.0 | 6.8 | 4.7 | 2.0 | 4.0 | 4.8 | **38.0** |
+| 141 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide + passive fields on the form → self-serve calendar embed | 4 | 2.25 | 10 | 7 | 1.0 | 3.0 | 4.0 | 5.8 | 5.8 | 2.0 | 5.0 | 10.0 | **37.8** |
+| 142 | Click-to-Messenger / WhatsApp → join a newsletter / community + passive fields on the form → we follow up and book it | 4 | 3 | 24 | 6 | 1.0 | 3.0 | 6.0 | 5.3 | 3.9 | 2.0 | 4.0 | 9.6 | **37.5** |
+| 143 | Click-to-Messenger / WhatsApp → join a newsletter / community → we follow up and book it | 3 | 2.75 | 24 | 3 | 1.0 | 3.0 | 6.0 | 6.8 | 3.9 | 2.0 | 4.0 | 4.8 | **37.2** |
+| 144 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide → we follow up and book it | 3 | 2 | 18 | 4 | 1.0 | 3.0 | 4.0 | 7.3 | 4.5 | 2.0 | 5.0 | 6.4 | **36.7** |
+| 145 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide + passive fields on the form → self-serve calendar embed | 4 | 2.5 | 14 | 6 | 1.0 | 3.0 | 4.0 | 5.7 | 5.0 | 2.0 | 5.0 | 9.6 | **36.5** |
+| 146 | Meta Instant Form (on-platform) → free document — scorecard, salary data, guide + passive fields on the form → we follow up and book it | 4 | 2.25 | 18 | 7 | 1.0 | 3.0 | 4.0 | 5.8 | 4.5 | 2.0 | 5.0 | 10.0 | **36.4** |
+| 147 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide → self-serve calendar embed | 3 | 2.25 | 14 | 3 | 1.0 | 3.0 | 4.0 | 7.1 | 5.0 | 2.0 | 5.0 | 4.8 | **36.2** |
+| 148 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide + passive fields on the form → we follow up and book it | 4 | 2.5 | 22 | 6 | 1.0 | 3.0 | 4.0 | 5.7 | 4.1 | 2.0 | 5.0 | 9.6 | **35.6** |
+| 149 | Click-to-Messenger / WhatsApp → free document — scorecard, salary data, guide → we follow up and book it | 3 | 2.25 | 22 | 3 | 1.0 | 3.0 | 4.0 | 7.1 | 4.1 | 2.0 | 5.0 | 4.8 | **35.3** |
 
 ---
 
 ## 5. Reading the ranking
 
 **38 of 149 funnels are immune to the timezone penalty**, and they take
-**10 of the top 15 places.** That is the single strongest pattern, and it is
+**14 of the top 15 places.** That is the single strongest pattern, and it is
 driven by a verified fact rather than a modelled one.
 
 | What the ranking says | Why |
 |---|---|
 | **Landing page beats on-platform, everywhere** | The measured appointment gap is **~2% vs ~17%** [V]. Two independent sources. This is the one place where evidence, not judgement, does the work |
 | **Self-serve booking beats chasing, everywhere** | **32% vs 12% close** by response time [V], and we are 9.5–10.5 hours from the buyer. Nothing else in the study is this decisive |
-| **Fewer systems wins** | `EASE` is 16% of the weight because that is the operator direction. Every extra tool is a thing that breaks silently at 2am in a timezone where nobody is awake to notice |
+| **Fewer systems wins** | `EASE` is 14% of the weight because that is the operator direction. Every extra tool is a thing that breaks silently at 2am in a timezone where nobody is awake to notice |
 | **Active gates rank badly** | **0 of 10 competitors gate** [V], and a gate is an extra system for an unknown operator to add friction with. Scored down, not gated out |
 | **Anything needing an asset we lack is pushed down, not excluded** | `READY` is no longer weighted at all. A bench is two weeks of real work — that is a *schedule* problem, not a disqualification, and the business needs it regardless |
 
 ### The top three, and what separates them
 
 
-**1. Landing page → **the hiring scorecard** — download the test, score candidates yourself + passive fields on the form → self-serve calendar embed** — 87.4
+**1. Landing page → "three graded candidates in 7 days" — the shortlist promise + active gate that can reject → self-serve calendar embed** — 74.1
 
 | | |
 |---|---|
-| Systems | **4** — ad account, page, passive fields on the form, self-serve calendar embed |
+| Systems | **4** — ad account, page, active gate that can reject, self-serve calendar embed |
+| Build | **2.75 days** |
+| Human work per lead | **0 min** |
+| Fields captured | **6** |
+| Needs | **nothing we do not have** |
+| Landing page | **~17% appointment rate** [V]. The default for a considered purchase |
+| "Three graded candidates in 7 days" — the shortlist promise | Genius' *"See Pre-vetted Candidates"* without needing the bench to exist yet |
+| Active gate that can reject | **0 of 10 competitors do this** [V] |
+| Self-serve calendar embed | **+30–40% booking** vs asking for availability [V]. Immune to the timezone |
+
+**2. Landing page → get a price / instant quote + active gate that can reject → self-serve calendar embed** — 73.8
+
+| | |
+|---|---|
+| Systems | **4** — ad account, page, active gate that can reject, self-serve calendar embed |
 | Build | **3 days** |
 | Human work per lead | **0 min** |
 | Fields captured | **6** |
 | Needs | **nothing we do not have** |
 | Landing page | **~17% appointment rate** [V]. The default for a considered purchase |
-| **The hiring scorecard** — download the test, score candidates yourself | **The rubric, wrapped in the market's proven format.** Lead magnets run **40–60% lower CPL** than direct offers on B2B Meta [V], and guides/templates are a named proven magnet. Same content as a page block; a format that runs |
-| Passive fields on the form | Captures without rejecting |
-| Self-serve calendar embed | **+30–40% booking** vs asking for availability [V]. Immune to the timezone |
-
-**2. Landing page → **the hiring scorecard** — download the test, score candidates yourself + active gate that can reject → self-serve calendar embed** — 87.1
-
-| | |
-|---|---|
-| Systems | **4** — ad account, page, active gate that can reject, self-serve calendar embed |
-| Build | **3.5 days** |
-| Human work per lead | **0 min** |
-| Fields captured | **7** |
-| Needs | **nothing we do not have** |
-| Landing page | **~17% appointment rate** [V]. The default for a considered purchase |
-| **The hiring scorecard** — download the test, score candidates yourself | **The rubric, wrapped in the market's proven format.** Lead magnets run **40–60% lower CPL** than direct offers on B2B Meta [V], and guides/templates are a named proven magnet. Same content as a page block; a format that runs |
+| Get a price / instant quote | Our fee is a % of salary; a salary band per role is a lookup, so it ports |
 | Active gate that can reject | **0 of 10 competitors do this** [V] |
 | Self-serve calendar embed | **+30–40% booking** vs asking for availability [V]. Immune to the timezone |
 
-**3. Landing page → **the hiring scorecard** — download the test, score candidates yourself → self-serve calendar embed** — 86.9
+**3. Landing page → "three graded candidates in 7 days" — the shortlist promise + passive fields on the form → self-serve calendar embed** — 73.8
 
 | | |
 |---|---|
-| Systems | **3** — ad account, page, self-serve calendar embed |
-| Build | **2.75 days** |
+| Systems | **4** — ad account, page, passive fields on the form, self-serve calendar embed |
+| Build | **2.25 days** |
 | Human work per lead | **0 min** |
-| Fields captured | **3** |
+| Fields captured | **5** |
 | Needs | **nothing we do not have** |
 | Landing page | **~17% appointment rate** [V]. The default for a considered purchase |
-| **The hiring scorecard** — download the test, score candidates yourself | **The rubric, wrapped in the market's proven format.** Lead magnets run **40–60% lower CPL** than direct offers on B2B Meta [V], and guides/templates are a named proven magnet. Same content as a page block; a format that runs |
-| No qualification | What 10 of 10 competitors do [V] |
+| "Three graded candidates in 7 days" — the shortlist promise | Genius' *"See Pre-vetted Candidates"* without needing the bench to exist yet |
+| Passive fields on the form | Captures without rejecting |
 | Self-serve calendar embed | **+30–40% booking** vs asking for availability [V]. Immune to the timezone |
 
 ---
