@@ -466,3 +466,86 @@ Cal.com embed you were adding regardless.
 **Recruitify wins the landing page too**, which was the last argument for Funnelz. The three blocks
 that actually differentiate `/agencies` — calculator, retention metrics, comparison table — are
 absent from both and get built either way.
+
+---
+
+## Widening the search: 40 demos crawled, and Recruitify is beaten
+
+Not "hundreds" — but **40 live demos crawled with a clean 404 control on every one**, which is worth
+more than hundreds of listings, because listings have now been wrong four times (`conversion.framer.
+website` was a Framer starter page; Averra's advertised *"ten pages, four CMS collections"* crawled
+as **three pages**).
+
+### The finding that made triage possible
+
+> **Only 6 of 40 demos ship a legal page.** Template authors do not write privacy policies. That is
+> *why* Recruitify looked unbeatable — and it is also the filter that cut 40 candidates to 6 in one
+> pass.
+
+The six: `influence`, `lanx`, `lyniq`, `method`, `recruitify`, `talentify` (disqualified — job board).
+
+### Head to head, crawled
+
+| | Pages | Legal | Blog/CMS | `/projects` | Extras |
+|---|---|---|---|---|---|
+| **Recruitify** | **8** | ✓ `/privacy` + `/terms` | **✗** | ✓ | `/faq`, `/pricing` |
+| **Lyniq** | **7** | ✓ `/privacy` + `/terms` | **✓** | ✓ | — |
+| Influence | 6 | ✓ `/terms` | ✓ | — | `/careers` |
+| Vinency | 6 | ✗ | ✓ | — | `/faq`, `/pricing` |
+| Method | 5 | ✓ `/terms` | ✓ | `/work` | — |
+| Lanx | 3 | ✓ | ✗ | — | — |
+
+**Lyniq is Recruitify minus `/faq` and `/pricing`, plus `/blog`.** Neither of those two is in your
+fourteen. **The blog is the gap I have flagged in every round.**
+
+### And its homepage is the best landing-page donor found
+
+Read in full. **6 of your 7 blocks**, against Recruitify's 5:
+
+| Block | Lyniq | Recruitify |
+|---|---|---|
+| Hero + CTA | ✓ | ✓ |
+| **Volume calculator** | ✗ | ✗ |
+| **Metrics block** | ✓ stats — launched, reached, satisfaction, years | ✓ stats |
+| **Step process** | ✓ four-step | ✓ three-step |
+| **Price block on the page** | **✓ three tiers, on the homepage** | ✗ — pricing is a *page* |
+| **FAQ / objections** | ✓ five questions | ✓ |
+| Repeat CTA | ✓ | ✓ |
+| | **6 of 7** | **5 of 7** |
+
+Plus **testimonials carrying metrics**, and — checked because I had dismissed the premium tier as
+heavy — **"moderate visual density, text-heavy rather than dominated by imagery or video."** That
+dismissal was wrong too.
+
+### Where Recruitify still wins
+
+**Register.** Lyniq is a **design studio** — *"we create digital designs that help brands move faster
+and convert better"*, with $999/$2,499/$4,999-a-month plans and a Discovery → Design → Development →
+Launch process. Recruitify is a recruitment agency whose process is **already Consultation →
+Screening → Placement**.
+
+**But register is weighted 6 — Tier C — on your own instruction that copy is free and tooling is
+what matters.** Applying my own weighting honestly, it does not carry the decision.
+
+---
+
+## Revised answer: Lyniq
+
+| | |
+|---|---|
+| **Tier A — shape** | Both pass. Employer-facing B2B services. Recruitify is marginally closer; neither is a job board or a product page |
+| **Tier B — legal donor** | **Tie.** Both ship `/privacy` and `/terms` |
+| **Tier B — proof structure** | **Tie.** Both ship `/projects` |
+| **Tier B — conversion architecture** | **Lyniq, 6 of 7 blocks against 5** — and the difference is **price on the page**, which a landing page needs and a pricing page does not provide |
+| **Tier C — CMS** | **Lyniq.** Removes the one debt I have flagged every round |
+| **Tier C — register** | **Recruitify** — a full copy rewrite either way, weighted 6 |
+
+**Lyniq wins on Tier B and Tier C, ties on Tier A, and loses only the criterion you told me not to
+weight.**
+
+**Take Lyniq. Recruitify is the fallback** — and if the phone test kills Lyniq's hero, Recruitify is
+still a good answer with one afternoon of CMS work owed.
+
+*And the honest note: **I had Lyniq in the "premium agency, probably heaviest" bucket for four rounds
+and never opened it.** It was dismissed on a guess about page weight that turned out to be wrong.
+Widening the net was the right instruction.*
