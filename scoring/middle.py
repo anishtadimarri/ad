@@ -72,13 +72,13 @@ print("free custom work — were already losing. Portability just makes the reas
 
 # ------------------------------------------------------------ 2. what survives
 print("---\n\n## 2. What ports, ranked\n")
-print("| Offer | Ports | Best rank | Build days | Fields | `PERSUADE` | Score |")
+print("| Offer | Ports | Best rank | Build days | Fields | `DESIRE` | Score |")
 print("|---|---|---|---|---|---|---|")
 for k, f in sorted(BEST.items(), key=lambda x: RANK[id(x[1])]):
     o = f.parts[1]
     mk = " ✅" if RANK[id(f)] <= 4 else ""
     print(f"| **{o.label}**{mk} | **{o.portable}** | {RANK[id(f)]} | {f.days:g} | {f.fields} "
-          f"| {f.sc['PERSUADE']:.1f} | {f.total:.1f} |")
+          f"| {f.sc['DESIRE']:.0f} | {f.total:.1f} |")
 print("\n**Three role-agnostic offers take the top four places**, and two of them did not exist in")
 print("the previous enumeration because I had not thought to look for them.\n")
 
