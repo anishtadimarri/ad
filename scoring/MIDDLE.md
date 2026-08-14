@@ -29,19 +29,19 @@ with **no portability dimension at all.** I optimised for build simplicity and d
 signal, and never scored the thing that was actually required.
 
 `PORTABLE` is now a component property, taken as the **weakest link** across a funnel's
-parts — because one non-porting component breaks the whole funnel — and weighted at **22**,
+parts — because one non-porting component breaks the whole funnel — and weighted at **20**,
 the heaviest. What that one change does:
 
 | Offer | Ports | Best rank **before** | Best rank **now** |
 |---|---|---|---|
-| Volume calculator — units × vendor unit cost | **3** | **1st** | **32th** |
-| Get a price / instant quote | **8** | 3rd | **8th** |
-| See the graded bench | **5** | 5th | **25th** |
-| Book a call | **10** | 8th | **9th** |
-| Free document — scorecard, salary data, guide | **4** | 15th | **44th** |
-| Watch a video first | **2** | 24th | **77th** |
-| Paid micro-trial, $100–250 | **2** | 28th | **79th** |
-| Free custom work on their asset | **2** | 60th | **120th** |
+| Volume calculator — units × vendor unit cost | **3** | **1st** | **27th** |
+| Get a price / instant quote | **8** | 3rd | **11th** |
+| See the graded bench | **5** | 5th | **16th** |
+| Book a call | **10** | 8th | **21th** |
+| Free document — scorecard, salary data, guide | **4** | 15th | **30th** |
+| Watch a video first | **2** | 24th | **55th** |
+| Paid micro-trial, $100–250 | **2** | 28th | **44th** |
+| Free custom work on their asset | **2** | 60th | **80th** |
 
 **The four options that need an asset rebuilt per role — video, free document, paid trial,
 free custom work — were already losing. Portability just makes the reason explicit.**
@@ -52,19 +52,19 @@ free custom work — were already losing. Portability just makes the reason expl
 
 | Offer | Ports | Best rank | Build days | Fields | `PERSUADE` | Score |
 |---|---|---|---|---|---|---|
-| **Monthly-spend comparison — what you pay now vs full-time** ✅ | **10** | 1 | 2.75 | 6 | 8.8 | 87.1 |
-| **See the test — the graded rubric for that role, and a scored sample** ✅ | **9** | 3 | 3.5 | 6 | 10.0 | 84.2 |
-| **"Three graded candidates in 7 days" — the shortlist promise** ✅ | **10** | 4 | 2.75 | 6 | 7.5 | 84.2 |
-| **Get a price / instant quote** | **8** | 8 | 3 | 6 | 8.8 | 81.1 |
-| **Book a call** | **10** | 9 | 2.25 | 5 | 5.0 | 80.9 |
-| **Generic "contact us"** | **10** | 13 | 1.6 | 4 | 5.0 | 79.6 |
-| **See the graded bench** | **5** | 25 | 3.5 | 5 | 10.0 | 73.1 |
-| **Volume calculator — units × vendor unit cost** | **3** | 32 | 3.5 | 6 | 8.8 | 70.6 |
-| **Join a newsletter / community** | **6** | 41 | 3.5 | 4 | 6.2 | 68.7 |
-| **Free document — scorecard, salary data, guide** | **4** | 44 | 3.5 | 5 | 7.5 | 67.2 |
-| **Watch a video first** | **2** | 77 | 5 | 4 | 8.8 | 60.2 |
-| **Paid micro-trial, $100–250** | **2** | 79 | 3 | 5 | 10.0 | 59.4 |
-| **Free custom work on their asset** | **2** | 120 | 2 | 4 | 10.0 | 45.4 |
+| **See the test — the graded rubric for that role, and a scored sample** ✅ | **9** | 1 | 3.5 | 6 | 10.0 | 85.7 |
+| **"Three graded candidates in 7 days" — the shortlist promise** | **10** | 5 | 2.75 | 6 | 7.5 | 75.5 |
+| **Monthly-spend comparison — what you pay now vs full-time** | **10** | 7 | 2.75 | 6 | 8.8 | 73.9 |
+| **Get a price / instant quote** | **8** | 11 | 3 | 6 | 8.8 | 72.4 |
+| **See the graded bench** | **5** | 16 | 3.5 | 5 | 10.0 | 70.7 |
+| **Book a call** | **10** | 21 | 2.25 | 5 | 5.0 | 67.7 |
+| **Generic "contact us"** | **10** | 23 | 1.6 | 4 | 5.0 | 66.8 |
+| **Volume calculator — units × vendor unit cost** | **3** | 27 | 3.5 | 6 | 8.8 | 64.4 |
+| **Join a newsletter / community** | **6** | 28 | 3.5 | 4 | 6.2 | 64.4 |
+| **Free document — scorecard, salary data, guide** | **4** | 30 | 3.5 | 5 | 7.5 | 64.3 |
+| **Paid micro-trial, $100–250** | **2** | 44 | 3 | 5 | 10.0 | 60.5 |
+| **Watch a video first** | **2** | 55 | 5 | 4 | 8.8 | 58.2 |
+| **Free custom work on their asset** | **2** | 80 | 1.25 | 7 | 5.0 | 51.6 |
 
 **Three role-agnostic offers take the top four places**, and two of them did not exist in
 the previous enumeration because I had not thought to look for them.
