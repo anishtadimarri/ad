@@ -19,10 +19,16 @@ buyers off cold Meta ads.
   6. The business will change. The positioning has already changed eight times.
   7. It has to be buyable today.
 
-Six criteria fall out of those seven moments, and nothing else does. Note what
-did NOT survive the derivation: "register" — whether a name sounds evocative
-like Somewhere or commodity like Skillforce — was my aesthetic preference, not
-a job the name has to do. Where it matters, it matters through LEGIT.
+Seven criteria fall out of those seven moments, and nothing else does. Two notes
+on what changed in the derivation:
+
+  DROPPED  "register" — evocative like Somewhere vs commodity like Skillforce.
+           That was my aesthetic preference, not a job the name has to do.
+  ADDED    PLAIN. Moment 1 assumed the buyer knows the word, and for crucible,
+           signet and touchstone that assumption is false. It is MEASURED from
+           corpus frequency rather than judged, because I had been guessing.
+           APT is demoted to 8 as a direct consequence: chasing precise meaning
+           is what produced a shortlist of words nobody uses.
 
 TLD evidence [V]: .com is typed ~6x more than .co when people guess, and scores
 44% memorability against .co's 33%. But no published study isolates the
@@ -35,14 +41,17 @@ Run:  python3 scoring/names_neutral.py > scoring/NAMES-NEUTRAL.md
 from dataclasses import dataclass
 
 DIM = [
-    ("LEGIT",    26, "Moment 2. **Does it sound like an incorporated business a finance person "
+    ("LEGIT",    22, "Moment 2. **Does it sound like an incorporated business a finance person "
                      "would wire $6,000 to** — or like a side project? Absorbs the TLD signal"),
-    ("CLEAR",    24, "Moments 3 and 5. No operating company or trademark in the hiring trade "
+    ("CLEAR",    22, "Moments 3 and 5. No operating company or trademark in the hiring trade "
                      "class, and a search finds *us*"),
-    ("SURVIVES", 18, "Moment 6. Method-neutral and role-neutral — the business will move"),
-    ("SPOKEN",   16, "Moments 1 and 4. Say it, spell it, hear it. No accidental word inside it"),
-    ("APT",      10, "Does it say something true about the business? Useful, not load-bearing"),
-    ("BUYABLE",   6, "Moment 7. Can it be registered today"),
+    ("PLAIN",    18, "**Moment 1½ — does the buyer know the word at all?** Measured from corpus "
+                     "frequency, not judged. Compounds scored on their parts"),
+    ("SURVIVES", 14, "Moment 6. Method-neutral and role-neutral — the business will move"),
+    ("SPOKEN",   12, "Moments 1 and 4. Say it, spell it, hear it. No accidental word inside it"),
+    ("APT",       8, "Does it say something true about the business? **Demoted** — chasing this "
+                     "is what produced the obscure shortlist"),
+    ("BUYABLE",   4, "Moment 7. Can it be registered today"),
 ]
 
 
@@ -52,6 +61,7 @@ class N:
     tlds: str
     legit: int
     clear: int
+    plain: int
     survives: int
     spoken: int
     apt: int
@@ -60,90 +70,112 @@ class N:
 
 
 NAMES = [
-    N("Crucible Talent", "`.com` + `.co`", 8, 9, 9, 8, 10, 10,
+    N("Crucible Talent", "`.com` + `.co`", 8, 9, 3, 9, 8, 10, 10,
       "A crucible tests and refines under heat, and in plain English **is** a severe test. "
       "Latinate weight, so it reads incorporated rather than clever. Atlassian's Crucible is a "
       "code-review tool and Sony's is a game — neither in the trade class"),
 
-    N("Signet Talent", "`.com` + `.co`", 8, 9, 9, 6, 9, 10,
+    N("Signet Talent", "`.com` + `.co`", 8, 9, 2, 9, 6, 9, 10,
       "A signet is a seal of authenticity. **Signet Jewelers is NYSE-listed**, which is why the "
       "word carries corporate weight rather than boutique. Loses on `SPOKEN` — heard as *cygnet*"),
 
-    N("Ballast Talent", "`.com` + `.co`", 8, 8, 10, 7, 8, 10,
+    N("Ballast Talent", "`.com` + `.co`", 8, 8, 3, 10, 7, 8, 10,
       "Ballast keeps a ship steady in weather. The word already lives in the finance register — "
       "Ballast Point, Ballast Rock Capital — so it reads like a firm"),
 
-    N("Almanac Talent", "`.com` + `.co`", 7, 9, 10, 7, 7, 10,
+    N("Almanac Talent", "`.com` + `.co`", 7, 9, 3, 10, 7, 7, 10,
       "A book of tables and records. **No collision found anywhere.** Slightly boutique, and "
       "people hesitate spelling it"),
 
-    N("Assay Talent", "`.com` + `.co`", 7, 9, 8, 4, 10, 10,
+    N("Assay Talent", "`.com` + `.co`", 7, 9, 6, 8, 4, 10, 10,
       "An assay is a test of purity — the most precise word in the study for what this does. "
       "**Wrecked on `SPOKEN`:** heard as *essay*, and essay mills are a known scam category. "
       "You would spell it every time you said it"),
 
-    N("Laurel Talent", "`.com` + `.co`", 6, 8, 9, 8, 8, 10,
+    N("Laurel Talent", "`.com` + `.co`", 6, 8, 4, 9, 8, 8, 10,
       "Laurels are the award for excellence. Reads like a boutique showbiz talent agency, and "
       "*resting on one's laurels* is the wrong association"),
 
-    N("All Hands Talent", "`.com`", 6, 8, 10, 7, 7, 10,
+    N("All Hands Talent", "`.com`", 6, 8, 9, 10, 7, 7, 10,
       "**Scored with no credit for being owned.** Method-neutral and expands everywhere, but "
       "*all hands* is a casual idiom — it reads friendly-agency rather than incorporated, which "
       "is the wrong direction for moment 2"),
 
-    N("Merit Roster", "`.com`", 5, 6, 8, 9, 8, 10,
+    N("Merit Roster", "`.com`", 5, 6, 8, 8, 9, 8, 10,
       "Says the right thing. *Roster* reads sporting and casual, and *merit* is used by half the "
       "category"),
 
-    N("Keystone Talent", "`.co`", 6, 5, 9, 9, 8, 8,
+    N("Keystone Talent", "`.co`", 6, 5, 2, 9, 9, 8, 8,
       "The stone that holds the arch. Real corporate weight — and **Keystone is one of the most "
       "used brand words in North America**, so the search result is not ours"),
 
-    N("Tuesday Talent", "`.com` + `.co`", 4, 6, 10, 9, 3, 10,
+    N("Tuesday Talent", "`.com` + `.co`", 4, 6, 6, 10, 9, 3, 10,
       "The shape asked for. But it **means nothing**, it reads as a creative collective or a "
       "hiring event, and *Talent Tuesday* is exactly that — Mercy, State of Indiana, Job Service "
       "North Dakota all run one"),
 
-    N("Top Drawer", "`.co`", 4, 7, 10, 9, 9, 8,
+    N("Top Drawer", "`.co`", 4, 7, 9, 10, 9, 9, 8,
       "*Top drawer* means first-class and needs no second word. But it reads **consumer boutique**, "
       "and on `.co` it reads side project. Great name for the wrong kind of company"),
 
-    N("Sure Hands", "`.co`", 3, 6, 10, 9, 9, 8,
+    N("Sure Hands", "`.co`", 3, 6, 9, 10, 9, 9, 8,
       "*Safe hands* is the feeling being sold. Unfortunately it reads like a home-care or "
       "handyman service, and SureHands is a patient-lift manufacturer"),
 
-    N("Handiwork", "`.co`", 3, 7, 9, 8, 9, 8,
+    N("Handiwork", "`.co`", 3, 7, 6, 9, 8, 9, 8,
       "Work done by hand, with skill. Reads like an artisan marketplace"),
 
-    N("Handpicked", "`.team`", 3, 6, 7, 9, 10, 5,
+    N("Handpicked", "`.team`", 3, 6, 9, 7, 9, 10, 5,
       "The most on-the-nose word found, and it needs no head noun. **`.team` reads as a side "
       "project** to exactly the buyer we need to reassure"),
 
-    N("Which Skill", "`.com`", 4, 9, 8, 9, 6, 10,
+    N("Which Skill", "`.com`", 4, 9, 9, 8, 9, 6, 10,
       "Supply-side vocabulary — workers have skills, employers have seats. Also reads like a "
       "comparison site or a quiz. Right name for the India candidate funnel, wrong for the buyer"),
 
+
+    # ---- the plain register, added after the operator objected that the winners
+    #      were words people would not know. EVERY plain word is taken on .com —
+    #      11 of 11 — which is what being common costs you.
+    N("Standard Talent", "`.co`", 8, 8, 10, 10, 9, 8, 8,
+      "**The word is everyday — 95 per million, the most common in the study** — and it still "
+      "carries institutional weight: Standard Chartered, Standard & Poor\'s. *We set the standard* "
+      "is also true of the business. No collision found. Only `.co` is free, because "
+      "`standardtalent.com` is gone like every other plain word"),
+
+    N("Proof Talent", "`.co`", 7, 8, 9, 8, 9, 9, 8,
+      "**Proof is 27 per million — nineteen times more common than *crucible*** — and it means "
+      "exactly what the page does: we publish the proof. Slightly method-flavoured, which is the "
+      "only thing holding it back. No collision found"),
+
+    N("Merit Talent", "`.co`", 7, 7, 8, 9, 9, 8, 8,
+      "Common, clean, says the right thing. *Merit* is used widely enough in the category that "
+      "the search result will be muddy"),
+
+    N("Harbor Talent", "`.co`", 7, 7, 8, 10, 9, 6, 8,
+      "Plain, warm, method-neutral. Says less about the business than the three above"),
+
     # ---- dead on collision. Left visible so they stay dead.
-    N("Touchstone Talent", "`.co`", 8, 0, 9, 8, 10, 8,
+    N("Touchstone Talent", "`.co`", 8, 0, 2, 9, 8, 10, 8,
       "❌ **The perfect word — the stone used to test the purity of gold — and it is taken three "
       "times over in our own trade class.** Touchstone Talent Group, Touchstone Recruitment, "
       "TouchStone Personnel"),
 
-    N("Kindred Talent", "`.co`", 7, 0, 9, 9, 8, 8,
+    N("Kindred Talent", "`.co`", 7, 0, 4, 9, 9, 8, 8,
       "❌ **KindredTalent already places creative, marketing and digital talent** — 25 years, our "
       "exact ICP"),
 
-    N("Vanguard Talent", "`.co`", 9, 2, 9, 9, 9, 8,
+    N("Vanguard Talent", "`.co`", 9, 2, 5, 9, 9, 9, 8,
       "❌ Would have scored highest of all on `LEGIT`. Vanguard manages roughly $9 trillion"),
 
-    N("Polestar Talent", "`.co`", 8, 3, 9, 8, 9, 8,
+    N("Polestar Talent", "`.co`", 8, 3, 3, 9, 8, 9, 8,
       "❌ Volvo's electric brand, advertised into the same feeds we would be buying"),
 
-    N("Forge Talent", "`.co`", 6, 7, 9, 2, 8, 8,
+    N("Forge Talent", "`.co`", 6, 7, 7, 9, 2, 8, 8,
       "❌ **Contains the word *forget*.** Precisely what `arbitrary.py`'s ARTIFACT gate exists to "
       "catch, and the worst possible accidental word for a talent firm"),
 
-    N("Skill Force", "taken", 5, 0, 6, 9, 7, 0,
+    N("Skill Force", "taken", 5, 0, 8, 6, 9, 7, 0,
       "❌ Three operating recruitment firms — US construction staffing since 2003, Australia, "
       "Sweden"),
 ]
