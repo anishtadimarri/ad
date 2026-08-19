@@ -145,10 +145,10 @@ NAMES = [
       "it reaches nobody. Maximum `PLAIN`, near-zero `DISTINCT`. **This is what over-correcting "
       "away from obscurity looks like**"),
 
-    N("Proof Talent", "`.co`", 10, 5, 7, 8, 9, 8, 9,
-      "**Proof is 27 per million — nineteen times more common than *crucible*** — and it means "
-      "exactly what the page does: we publish the proof. Slightly method-flavoured, which is the "
-      "only thing holding it back. No collision found"),
+    N("Proof Talent", "`.co`", 10, 3, 7, 8, 9, 8, 9,
+      "❗ **Same class as *Standard*.** An abstract quality noun — and the whole class is bleached, "
+      "because every competitor already claims quality. *Proof* is also heavily used as a brand "
+      "(Proofpoint among others), so the search is muddy. Common, clean, and forgettable"),
 
     N("Merit Talent", "`.co`", 8, 3, 7, 7, 9, 9, 8,
       "Common, clean, says the right thing. *Merit* is used widely enough in the category that "
@@ -247,6 +247,19 @@ for a, b, c in [
      "descriptive compounds", "Understandable and utterly generic. Category wallpaper"),
 ]:
     print(f"| {a} | {b} | {c} |")
+print("### The class rule that follows\n")
+print("Pushed again: *\"even proof is like standard?\"* — yes, and it is a **class**, not two names:\n")
+print("> **Abstract quality nouns are bleached, because every competitor already claims quality.**")
+print("> *Standard · Proof · Merit · Caliber · Premier · Elite · Select · Prime.* They are the")
+print("> *\"top 1%\"* claim in noun form — and the category is saturated with exactly that:")
+print("> Premier Talent Partners, Talent Edge, *elite global talent*, *pre-vetted*, *top 1%*.\n")
+print("A name that only claims quality **says nothing a competitor is not also saying**, and it is")
+print("unfindable because the words are common. Every member of the class is capped at `DISTINCT`")
+print("2–4 **by rule**, not by my opinion of each one.\n")
+print("What escapes the rule is a name **making no quality claim at all** — a concrete object")
+print("(*lighthouse*, *harbor*, *compass*) or an ordinary word in an unexpected role (*Tuesday*,")
+print("*All Hands*). Which is precisely what Somewhere and Oceans do.\n")
+
 print("\n> **The pattern is an ordinary word in an unexpected role.** Not a rare word, and not a")
 print("> category word. That is a *third* axis, and it is what `DISTINCT` measures.\n")
 print("**`Standard Talent` fails it twice.** Read as plain English it means *average talent* — the")

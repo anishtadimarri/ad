@@ -59,6 +59,23 @@ Look at what the strongest names in this category actually are:
 | **Genius** | an ordinary noun | Same shape, more bravado |
 | Athyna | invented | Understandable to nobody. The weakest brand of the four |
 | GrowthAssistant · Hireframe · Skillforce | descriptive compounds | Understandable and utterly generic. Category wallpaper |
+### The class rule that follows
+
+Pushed again: *"even proof is like standard?"* — yes, and it is a **class**, not two names:
+
+> **Abstract quality nouns are bleached, because every competitor already claims quality.**
+> *Standard · Proof · Merit · Caliber · Premier · Elite · Select · Prime.* They are the
+> *"top 1%"* claim in noun form — and the category is saturated with exactly that:
+> Premier Talent Partners, Talent Edge, *elite global talent*, *pre-vetted*, *top 1%*.
+
+A name that only claims quality **says nothing a competitor is not also saying**, and it is
+unfindable because the words are common. Every member of the class is capped at `DISTINCT`
+2–4 **by rule**, not by my opinion of each one.
+
+What escapes the rule is a name **making no quality claim at all** — a concrete object
+(*lighthouse*, *harbor*, *compass*) or an ordinary word in an unexpected role (*Tuesday*,
+*All Hands*). Which is precisely what Somewhere and Oceans do.
+
 
 > **The pattern is an ordinary word in an unexpected role.** Not a rare word, and not a
 > category word. That is a *third* axis, and it is what `DISTINCT` measures.
@@ -74,12 +91,12 @@ expected, which is exactly why it lodges.
 
 | # | Name | Free on | `PLAIN` | `DISTINCT` | `LEGIT` | `CLEAR` | `SPOKEN` | `SURVIVES` | `APT` | **Score** |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | **Proof Talent** 🥇 | `.co` | 10 | 5 | 7 | 8 | 9 | 8 | 9 | **78** |
-| 2 | **Lighthouse Talent** | `.co` | 9 | 7 | 7 | 7 | 7 | 10 | 8 | **77** |
-| 3 | **Tuesday Talent** | `.com` + `.co` | 10 | 9 | 5 | 6 | 9 | 10 | 3 | **77** |
-| 4 | **Crucible Talent** | `.com` + `.co` | 4 | 8 | 8 | 9 | 8 | 9 | 10 | **75** |
-| 5 | **Standard Talent** | `.co` | 10 | 2 | 8 | 8 | 9 | 10 | 8 | **75** |
-| 6 | **All Hands Talent** | `.com` | 9 | 6 | 6 | 8 | 7 | 10 | 7 | **74** |
+| 1 | **Lighthouse Talent** 🥇 | `.co` | 9 | 7 | 7 | 7 | 7 | 10 | 8 | **77** |
+| 2 | **Tuesday Talent** | `.com` + `.co` | 10 | 9 | 5 | 6 | 9 | 10 | 3 | **77** |
+| 3 | **Crucible Talent** | `.com` + `.co` | 4 | 8 | 8 | 9 | 8 | 9 | 10 | **75** |
+| 4 | **Standard Talent** | `.co` | 10 | 2 | 8 | 8 | 9 | 10 | 8 | **75** |
+| 5 | **All Hands Talent** | `.com` | 9 | 6 | 6 | 8 | 7 | 10 | 7 | **74** |
+| 6 | **Proof Talent** | `.co` | 10 | 3 | 7 | 8 | 9 | 8 | 9 | **74** |
 | 7 | **Top Drawer** | `.co` | 8 | 8 | 4 | 7 | 9 | 10 | 9 | **74** |
 | 8 | **Harbor Talent** | `.co` | 9 | 5 | 7 | 7 | 9 | 10 | 6 | **74** |
 | 9 | **Almanac Talent** | `.com` + `.co` | 5 | 8 | 7 | 9 | 7 | 10 | 7 | **73** |
@@ -108,25 +125,25 @@ expected, which is exactly why it lodges.
 
 ## 3. The top five, in full
 
-### 1. **Proof Talent** — 78  ·  `.co`
-
-**Proof is 27 per million — nineteen times more common than *crucible*** — and it means exactly what the page does: we publish the proof. Slightly method-flavoured, which is the only thing holding it back. No collision found
-
-### 2. **Lighthouse Talent** — 77  ·  `.co`
+### 1. **Lighthouse Talent** — 77  ·  `.co`
 
 Promoted by the same correction as Tuesday — the corpus scores *lighthouse* at 1.73 per million, but every English speaker can picture one. A fixed point others steer by, which is a fair thing for a placement firm to claim
 
-### 3. **Tuesday Talent** — 77  ·  `.com` + `.co`
+### 2. **Tuesday Talent** — 77  ·  `.com` + `.co`
 
 The shape asked for. But it **means nothing**, it reads as a creative collective or a hiring event, and *Talent Tuesday* is exactly that — Mercy, State of Indiana, Job Service North Dakota all run one. **`PLAIN` corrected 6 → 10:** the corpus scores *tuesday* at 6.18 per million because nobody writes the day of the week in books, not because anyone fails to know it. **Free on both TLDs**
 
-### 4. **Crucible Talent** — 75  ·  `.com` + `.co`
+### 3. **Crucible Talent** — 75  ·  `.com` + `.co`
 
 A crucible tests and refines under heat, and in plain English **is** a severe test. Latinate weight, so it reads incorporated rather than clever. Atlassian's Crucible is a code-review tool and Sony's is a game — neither in the trade class
 
-### 5. **Standard Talent** — 75  ·  `.co`
+### 4. **Standard Talent** — 75  ·  `.co`
 
 ❗ **Read it as English: *standard talent* means average talent.** The most common word in the study is also the most bleached — it is wallpaper, it does not lodge, and a search for it reaches nobody. Maximum `PLAIN`, near-zero `DISTINCT`. **This is what over-correcting away from obscurity looks like**
+
+### 5. **All Hands Talent** — 74  ·  `.com`
+
+**Scored with no credit for being owned.** An ordinary phrase in an unexpected role — the same shape as Somewhere and Oceans — which is why it holds up. *All hands* still reads friendly-agency rather than incorporated
 
 ---
 
@@ -145,18 +162,18 @@ It reordered the middle of the table, and the reason is worth stating.
 
 ## 5. Against what is already owned
 
-| | **Proof Talent** | All Hands Talent |
+| | **Lighthouse Talent** | All Hands Talent |
 |---|---|---|
-| `PLAIN` | 10 | 9 |
-| `DISTINCT` | 5 | 6 |
+| `PLAIN` | 9 | 9 |
+| `DISTINCT` | 7 | 6 |
 | `LEGIT` | 7 | 6 |
-| `CLEAR` | 8 | 8 |
-| `SPOKEN` | 9 | 7 |
-| `SURVIVES` | 8 | 10 |
-| `APT` | 9 | 7 |
-| | **78** | **74** |
+| `CLEAR` | 7 | 8 |
+| `SPOKEN` | 7 | 7 |
+| `SURVIVES` | 10 | 10 |
+| `APT` | 8 | 7 |
+| | **77** | **74** |
 
-The gap is **4 points**, and it is concentrated in `APT` and `LEGIT`. *All Hands*
+The gap is **3 points**, and it is concentrated in `APT` and `LEGIT`. *All Hands*
 is a casual idiom that reads friendly-agency; *Crucible* has Latinate weight and says something
 true. On the criterion that matters most for a stranger sending money abroad, it is a **two-point**
 **difference on a 26-weight dimension** — the largest single swing in the table.
