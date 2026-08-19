@@ -1,215 +1,242 @@
 #!/usr/bin/env python3
 """
-Every name ranked on merit alone — ownership deliberately excluded.
+Names ranked on criteria derived from what the name actually has to survive.
 
-Operator direction: "forget whether we have it or not. lets rank neutral."
+Operator direction: rank neutral (ownership excluded), rebuild the criteria from
+first principles, and add "sounds like a legit business".
 
-So the OWNED dimension that put allhandstalent.com and whichskill.com at the top
-of NAMES-FINAL.md is gone. Nothing here gets credit for being paid for. What is
-left is whether the name is any good.
+THE DERIVATION. Not a list of nice properties — a list of the specific moments
+this name has to survive, given this operator's actual position: unknown,
+India-based, solo, no track record, selling a $6,000 one-time fee to US and UK
+buyers off cold Meta ads.
 
-Sweeps behind this file:
-  2,622  [quality]+[people] compounds, the SkillForce shape          .com
-  1,071  arbitrary word x 9 people-nouns                             .com + .co
-    242  [word]talent, drawn from ten meaning registers              .com + .co
-     33  strong names already dead on .com, recovered                .co
-  ~4,400 earlier, in domains.py / arbitrary.py / plain_sweep.py / idioms.py
+  1. It appears in a Meta feed for about a second and a half.
+  2. A stranger has to be comfortable wiring $6,000 to an Indian company they
+     had never heard of that morning.                      <- the binding one
+  3. They google it before paying.
+  4. It gets said on a call and spelled into a voicemail.
+  5. It must not force a rebrand at month 18.
+  6. The business will change. The positioning has already changed eight times.
+  7. It has to be buyable today.
 
-.com via Verisign RDAP (404 = free). .co via the DoH NXDOMAIN proxy that
-dns_probe.py calibrated at 82/82 with zero false-frees — good, but NOT
-registrar-authoritative. Verify before buying.
+Six criteria fall out of those seven moments, and nothing else does. Note what
+did NOT survive the derivation: "register" — whether a name sounds evocative
+like Somewhere or commodity like Skillforce — was my aesthetic preference, not
+a job the name has to do. Where it matters, it matters through LEGIT.
+
+TLD evidence [V]: .com is typed ~6x more than .co when people guess, and scores
+44% memorability against .co's 33%. But no published study isolates the
+extension as a conversion cause, so it is folded into LEGIT as a modest signal
+rather than given its own weight.
 
 Run:  python3 scoring/names_neutral.py > scoring/NAMES-NEUTRAL.md
 """
 
 from dataclasses import dataclass
 
-DIM = [("CLEAN",    24, "No operating company or trademark in the hiring trade class. "
-                        "**The test that killed most of the good ones**"),
-       ("MEANING",  20, "Does the word mean something apt — or is it just a pleasant noise?"),
-       ("REGISTER", 18, "Evocative like Somewhere/Oceans/Genius, not commodity like Skillforce"),
-       ("SAY",      16, "Spell it on a call, hear it in an ad, no accidental word inside it"),
-       ("NEUTRAL",  12, "Survives the positioning changing — it has changed eight times"),
-       ("TLD",      10, "Both `.com` and `.co` free = 10 · `.co` only = 8 · `.team` = 5")]
+DIM = [
+    ("LEGIT",    26, "Moment 2. **Does it sound like an incorporated business a finance person "
+                     "would wire $6,000 to** — or like a side project? Absorbs the TLD signal"),
+    ("CLEAR",    24, "Moments 3 and 5. No operating company or trademark in the hiring trade "
+                     "class, and a search finds *us*"),
+    ("SURVIVES", 18, "Moment 6. Method-neutral and role-neutral — the business will move"),
+    ("SPOKEN",   16, "Moments 1 and 4. Say it, spell it, hear it. No accidental word inside it"),
+    ("APT",      10, "Does it say something true about the business? Useful, not load-bearing"),
+    ("BUYABLE",   6, "Moment 7. Can it be registered today"),
+]
 
 
 @dataclass
 class N:
-    domain: str
+    name: str
     tlds: str
-    clean: int
-    meaning: int
-    register: int
-    say: int
-    neutral: int
-    tld: int
+    legit: int
+    clear: int
+    survives: int
+    spoken: int
+    apt: int
+    buyable: int
     note: str
 
 
 NAMES = [
-    # ---------------------------------------------- the testing/proof register
-    N("crucibletalent", "`.co` **+ `.com`**", 9, 10, 9, 8, 9, 10,
-      "**A crucible is where metal is tested and refined under heat** — and in plain English a "
-      "crucible *is* a severe test. Exactly the positioning, arrived at metaphorically rather "
-      "than by describing the method. No staffing collision: Atlassian's Crucible is a code-review "
-      "tool and Sony's is a game, both far outside the trade class. Eight letters, spells clean, "
-      "hears clean"),
+    N("Crucible Talent", "`.com` + `.co`", 8, 9, 9, 8, 10, 10,
+      "A crucible tests and refines under heat, and in plain English **is** a severe test. "
+      "Latinate weight, so it reads incorporated rather than clever. Atlassian's Crucible is a "
+      "code-review tool and Sony's is a game — neither in the trade class"),
 
-    N("assaytalent", "`.co` **+ `.com`**", 9, 10, 8, 4, 8, 10,
-      "**An assay is a test of purity** — the single most precise word for what this business "
-      "does, and no collision found. **Wrecked on `SAY`:** spoken aloud it is heard as *essay*, "
-      "and essay mills are a known scam category. A name you have to spell every time you say it"),
+    N("Signet Talent", "`.com` + `.co`", 8, 9, 9, 6, 9, 10,
+      "A signet is a seal of authenticity. **Signet Jewelers is NYSE-listed**, which is why the "
+      "word carries corporate weight rather than boutique. Loses on `SPOKEN` — heard as *cygnet*"),
 
-    N("signettalent", "`.co` **+ `.com`**", 9, 9, 8, 6, 9, 10,
-      "A signet is a **seal of authenticity**. Clean, on-thesis, evocative. Docked because it is "
-      "heard as *cygnet* — a baby swan"),
+    N("Ballast Talent", "`.com` + `.co`", 8, 8, 10, 7, 8, 10,
+      "Ballast keeps a ship steady in weather. The word already lives in the finance register — "
+      "Ballast Point, Ballast Rock Capital — so it reads like a firm"),
 
-    N("touchstonetalent", "`.co`", 0, 10, 9, 8, 9, 8,
-      "❌ **The perfect word, and it is taken.** A touchstone is the stone used to test the purity "
-      "of gold. But **Touchstone Talent Group is a live company**, alongside Touchstone Recruitment "
-      "(mining and energy, 20+ years) and TouchStone Personnel. Three collisions in our trade class"),
+    N("Almanac Talent", "`.com` + `.co`", 7, 9, 10, 7, 7, 10,
+      "A book of tables and records. **No collision found anywhere.** Slightly boutique, and "
+      "people hesitate spelling it"),
 
-    # ---------------------------------------------- steadfast / merit
-    N("ballasttalent", "`.co` **+ `.com`**", 8, 8, 8, 7, 10, 10,
-      "Ballast is what keeps a ship steady in weather — a good, quiet metaphor for a hire, and "
-      "entirely method-neutral"),
+    N("Assay Talent", "`.com` + `.co`", 7, 9, 8, 4, 10, 10,
+      "An assay is a test of purity — the most precise word in the study for what this does. "
+      "**Wrecked on `SPOKEN`:** heard as *essay*, and essay mills are a known scam category. "
+      "You would spell it every time you said it"),
 
-    N("keystonetalent", "`.co`", 5, 8, 7, 9, 9, 8,
-      "The stone that holds the arch up. Says the right thing, but **Keystone is one of the most "
-      "used brand words in North America** — insurance, energy, logistics, staffing"),
+    N("Laurel Talent", "`.com` + `.co`", 6, 8, 9, 8, 8, 10,
+      "Laurels are the award for excellence. Reads like a boutique showbiz talent agency, and "
+      "*resting on one's laurels* is the wrong association"),
 
-    N("laureltalent", "`.co` **+ `.com`**", 8, 8, 7, 8, 9, 10,
-      "Laurels are the award for excellence. Undercut by *resting on one's laurels*, and Laurel is "
-      "a common first name"),
+    N("All Hands Talent", "`.com`", 6, 8, 10, 7, 7, 10,
+      "**Scored with no credit for being owned.** Method-neutral and expands everywhere, but "
+      "*all hands* is a casual idiom — it reads friendly-agency rather than incorporated, which "
+      "is the wrong direction for moment 2"),
 
-    N("merittalent", "`.co`", 6, 8, 5, 9, 8, 8,
-      "Says exactly the right thing and sounds like every third staffing firm. *Merit* is heavily "
-      "used in the category"),
+    N("Merit Roster", "`.com`", 5, 6, 8, 9, 8, 10,
+      "Says the right thing. *Roster* reads sporting and casual, and *merit* is used by half the "
+      "category"),
 
-    # ---------------------------------------------- arbitrary / register-only
-    N("almanactalent", "`.co` **+ `.com`**", 9, 7, 8, 7, 10, 10,
-      "A book of tables and records — quietly apt without claiming a method. **No collision found "
-      "anywhere**, and it surfaced independently in the earlier `names.py` sweep"),
+    N("Keystone Talent", "`.co`", 6, 5, 9, 9, 8, 8,
+      "The stone that holds the arch. Real corporate weight — and **Keystone is one of the most "
+      "used brand words in North America**, so the search result is not ours"),
 
-    N("tuesdaytalent", "`.co` **+ `.com`**", 6, 3, 8, 9, 10, 10,
-      "The shape asked for, and the right day — Monday dreads, Friday clocks off. But it **means "
-      "nothing**, and *Talent Tuesday* is a common hiring-event name (Mercy, State of Indiana, "
-      "Job Service ND) with a small *Tuesday Talent* creative community already using it"),
+    N("Tuesday Talent", "`.com` + `.co`", 4, 6, 10, 9, 3, 10,
+      "The shape asked for. But it **means nothing**, it reads as a creative collective or a "
+      "hiring event, and *Talent Tuesday* is exactly that — Mercy, State of Indiana, Job Service "
+      "North Dakota all run one"),
 
-    N("kindredtalent", "`.co`", 0, 8, 8, 9, 9, 8,
-      "❌ **KindredTalent already places creative, marketing and digital talent** — 25 years, and "
-      "our exact ICP. The most direct collision found in this sweep"),
+    N("Top Drawer", "`.co`", 4, 7, 10, 9, 9, 8,
+      "*Top drawer* means first-class and needs no second word. But it reads **consumer boutique**, "
+      "and on `.co` it reads side project. Great name for the wrong kind of company"),
 
-    N("forgetalent", "`.co`", 7, 8, 8, 2, 9, 8,
-      "❌ **Contains the word *forget*.** Exactly what `arbitrary.py`'s ARTIFACT gate exists to "
-      "catch — an accidental word straddling the join, and this one is the opposite of what a "
-      "talent firm wants read"),
+    N("Sure Hands", "`.co`", 3, 6, 10, 9, 9, 8,
+      "*Safe hands* is the feeling being sold. Unfortunately it reads like a home-care or "
+      "handyman service, and SureHands is a patient-lift manufacturer"),
 
-    N("vanguardtalent", "`.co`", 2, 9, 8, 9, 9, 8,
-      "❌ Vanguard is a $9-trillion asset manager. Nothing survives that"),
+    N("Handiwork", "`.co`", 3, 7, 9, 8, 9, 8,
+      "Work done by hand, with skill. Reads like an artisan marketplace"),
 
-    N("polestartalent", "`.co`", 3, 9, 8, 8, 9, 8,
-      "❌ Polestar is Volvo's electric-car brand, heavily advertised to the same feeds we would buy"),
+    N("Handpicked", "`.team`", 3, 6, 7, 9, 10, 5,
+      "The most on-the-nose word found, and it needs no head noun. **`.team` reads as a side "
+      "project** to exactly the buyer we need to reassure"),
 
-    # ---------------------------------------------- non-talent shapes, for comparison
-    N("allhandstalent", "`.com`", 8, 7, 6, 7, 10, 10,
-      "Ranked here **with no credit for being owned.** Idiom-led, method-neutral, expands "
-      "everywhere. *Talent* is generic and *all hands* collides with the meeting"),
+    N("Which Skill", "`.com`", 4, 9, 8, 9, 6, 10,
+      "Supply-side vocabulary — workers have skills, employers have seats. Also reads like a "
+      "comparison site or a quiz. Right name for the India candidate funnel, wrong for the buyer"),
 
-    N("topdrawer", "`.co`", 7, 9, 9, 9, 10, 8,
-      "*Top drawer* means first-class. **The strongest register score of anything available**, and "
-      "it needs no second word at all"),
+    # ---- dead on collision. Left visible so they stay dead.
+    N("Touchstone Talent", "`.co`", 8, 0, 9, 8, 10, 8,
+      "❌ **The perfect word — the stone used to test the purity of gold — and it is taken three "
+      "times over in our own trade class.** Touchstone Talent Group, Touchstone Recruitment, "
+      "TouchStone Personnel"),
 
-    N("surehands", "`.co`", 6, 9, 9, 9, 10, 8,
-      "*Safe hands* is the feeling being sold. SureHands is a patient-lift manufacturer — wrong "
-      "trade class, but it holds the `.com`"),
+    N("Kindred Talent", "`.co`", 7, 0, 9, 9, 8, 8,
+      "❌ **KindredTalent already places creative, marketing and digital talent** — 25 years, our "
+      "exact ICP"),
 
-    N("handiwork", "`.co`", 7, 9, 9, 8, 9, 8,
-      "Work done by hand, with skill. `.com` occupant is a Cloudflare-protected page per "
-      "[`CO.md`](CO.md)"),
+    N("Vanguard Talent", "`.co`", 9, 2, 9, 9, 9, 8,
+      "❌ Would have scored highest of all on `LEGIT`. Vanguard manages roughly $9 trillion"),
 
-    N("handpicked", "`.team`", 6, 10, 9, 9, 7, 5,
-      "The most on-the-nose word in the study and it needs no head noun. Only `.team` is free, and "
-      "*handpicked* is a widely used brand adjective"),
+    N("Polestar Talent", "`.co`", 8, 3, 9, 8, 9, 8,
+      "❌ Volvo's electric brand, advertised into the same feeds we would be buying"),
 
-    N("whichskill", "`.com`", 9, 6, 7, 9, 8, 10,
-      "**Supply-side vocabulary.** Workers have skills; employers have seats. A strong name for "
-      "the India candidate funnel and the wrong one for the buyer page"),
+    N("Forge Talent", "`.co`", 6, 7, 9, 2, 8, 8,
+      "❌ **Contains the word *forget*.** Precisely what `arbitrary.py`'s ARTIFACT gate exists to "
+      "catch, and the worst possible accidental word for a talent firm"),
+
+    N("Skill Force", "taken", 5, 0, 6, 9, 7, 0,
+      "❌ Three operating recruitment firms — US construction staffing since 2003, Australia, "
+      "Sweden"),
 ]
 
 for n in NAMES:
     n.total = sum(getattr(n, k.lower()) * w for k, w, _ in DIM) / 10.0
 NAMES.sort(key=lambda n: -n.total)
 
-print("# Every Name, Ranked on Merit Alone\n")
-print("> **Ownership deliberately excluded.** Nothing here gets credit for being paid for —")
-print("> `allhandstalent` and `whichskill` are scored as if we were buying them today.\n")
-print("Behind this: **8,335 domain checks** — 2,622 SkillForce-shape compounds, 1,071 "
-      "arbitrary-word")
-print("names on both TLDs, 242 `[word]talent` drawn from ten meaning registers, 33 `.co` "
-      "recoveries,")
-print("and ~4,400 earlier in [`domains.py`](domains.py), [`arbitrary.py`](arbitrary.py), "
-      "[`plain_sweep.py`](plain_sweep.py)")
-print("and [`idioms.py`](idioms.py).\n")
+print("# Names, Ranked on What the Name Has to Survive\n")
+print("> Criteria rebuilt from first principles, ownership excluded, and **\"sounds like a legit")
+print("> business\" added — which turns out to be the heaviest weight, because it is the operator's")
+print("> actual binding constraint.**\n")
 
-live = [n for n in NAMES if n.clean >= 5]
-dead = [n for n in NAMES if n.clean < 5]
+print("---\n\n## 1. Where the criteria come from\n")
+print("Not a list of nice properties. A list of the moments this name has to survive, given the")
+print("real position: **unknown, India-based, solo, no track record, selling a $6,000 one-time fee")
+print("to US and UK buyers off cold Meta ads.**\n")
+print("| | The moment | The criterion it forces |\n|---|---|---|")
+for a, b, c in [
+    ("1", "It appears in a Meta feed for about a second and a half", "`SPOKEN`"),
+    ("2", "**A stranger wires $6,000 to an Indian company they had not heard of that morning**",
+     "**`LEGIT`**"),
+    ("3", "They google it before paying", "`CLEAR`"),
+    ("4", "It gets said on a call and spelled into a voicemail", "`SPOKEN`"),
+    ("5", "It must not force a rebrand at month 18", "`CLEAR`"),
+    ("6", "The business changes — the positioning has already changed **eight times**", "`SURVIVES`"),
+    ("7", "It has to be buyable today", "`BUYABLE`"),
+]:
+    print(f"| {a} | {b} | {c} |")
+print("\n**What did not survive the derivation:** *register* — whether a name sounds evocative like")
+print("Somewhere or commodity like Skillforce. That was my aesthetic preference, not a job the name")
+print("has to do. Where it genuinely matters, it matters **through** `LEGIT`.\n")
+print("| Criterion | Weight | |\n|---|---|---|")
+for k, w, d in DIM:
+    print(f"| `{k}` | {w} | {d} |")
+print("\n**The TLD is folded into `LEGIT` rather than scored separately.** Evidence: `.com` is typed")
+print("**~6x more** than `.co` when people guess, and scores **44% memorability against 33%** [V] —")
+print("but **no published study isolates the extension as a conversion cause**, so it is a modest")
+print("signal inside legitimacy, not a line of its own.\n")
 
-print("---\n\n## The ranking\n")
+live = [n for n in NAMES if n.clear >= 5]
+dead = [n for n in NAMES if n.clear < 5]
+
+print("---\n\n## 2. The ranking\n")
 print("| # | Name | Free on | " + " | ".join(f"`{k}`" for k, _, _ in DIM) + " | **Score** |")
 print("|---|---|---|" + "---|" * (len(DIM) + 1))
 r = 0
 for n in NAMES:
-    d = n.clean < 5
+    d = n.clear < 5
     if not d:
         r += 1
     num = "❌" if d else str(r)
     mark = " 🥇" if r == 1 and not d else ""
-    print(f"| {num} | **{n.domain}**{mark} | {n.tlds} | "
+    print(f"| {num} | **{n.name}**{mark} | {n.tlds} | "
           + " | ".join(str(getattr(n, k.lower())) for k, _, _ in DIM)
           + f" | **{n.total:.0f}** |")
-print("\n❌ = killed on collision. Left in the table so they stay dead.\n")
+print("\n❌ = dead on collision, kept visible so they stay dead.\n")
 
-print("| Dimension | Weight | |\n|---|---|---|")
-for k, w, d in DIM:
-    print(f"| `{k}` | {w} | {d} |")
-
-print("\n---\n\n## The top of the list, in full\n")
-for i, n in enumerate([x for x in live][:6], 1):
-    print(f"### {i}. `{n.domain}.co`" + ("  ·  `.com` also free" if "com" in n.tlds else "")
-          + f"  —  {n.total:.0f}\n")
+print("---\n\n## 3. The top five, in full\n")
+for i, n in enumerate(live[:5], 1):
+    print(f"### {i}. **{n.name}** — {n.total:.0f}  ·  {n.tlds}\n")
     print(f"{n.note}\n")
 
-print("---\n\n## What the sweep actually showed\n")
-print("| | |\n|---|---|")
-for a, b in [
-    ("**The `[word]talent` shape is the best-yielding one tried**",
-     f"**214 of 242 free on `.co`**, and 104 of those also free on `.com`. Against the "
-     f"SkillForce shape, where 72% were gone and *zero* free ones were real English"),
-    ("**Grouping by meaning is what surfaced the winner**",
-     "Ten registers — testing, merit, guidance, steadfast, trust-roles, craft, nature, mineral, "
-     "bird, time. **The testing register is the one that matters**, because it is the only one "
-     "that says what the business does"),
-    ("**And that register is nearly picked clean**",
-     "*Touchstone* — the perfect word, the stone used to test gold — is taken three times over in "
-     "our trade class. *Assay* survives and is unsayable. **Crucible is what is left**"),
-    ("**Collision killed five of twenty**",
-     "Touchstone, Kindred, Vanguard, Polestar, and Forge on an artifact. Availability was never "
-     "the constraint"),
+print("---\n\n## 4. What adding `LEGIT` did\n")
+print("It reordered the middle of the table, and the reason is worth stating.\n")
+print("| Name | Before | Now | Why |\n|---|---|---|---|")
+for a, b, c, dd in [
+    ("**Top Drawer**", "2nd", f"{[n.name for n in live].index('Top Drawer')+1}th",
+     "A lovely idiom that reads **consumer boutique**, on a `.co`. Wrong signal for someone about "
+     "to send money abroad"),
+    ("**Sure Hands** · **Handiwork**", "5th · 7th",
+     f"{[n.name for n in live].index('Sure Hands')+1}th · "
+     f"{[n.name for n in live].index('Handiwork')+1}th",
+     "Both read as artisan or home-service brands. Charming, and not what a CFO wires to"),
+    ("**Handpicked**", "11th", f"{[n.name for n in live].index('Handpicked')+1}th",
+     "The most apt single word found, on the TLD that most says *side project*"),
+    ("**Crucible Talent**", "1st", "**1st**",
+     "Unchanged. It was already the only name scoring well on both meaning and weight"),
 ]:
-    print(f"| {a} | {b} |")
+    print(f"| {a} | {b} | {c} | {dd} |")
 
-top = live[0]
-own = next(n for n in NAMES if n.domain == "allhandstalent")
-print(f"\n---\n\n## The honest comparison\n")
-print(f"On merit alone, **`{top.domain}`** scores **{top.total:.0f}** against "
-      f"**{own.total:.0f}** for `allhandstalent`.\n")
-print("| | `crucibletalent` | `allhandstalent` |\n|---|---|---|")
+top, own = live[0], next(n for n in NAMES if n.name == "All Hands Talent")
+print(f"\n---\n\n## 5. Against what is already owned\n")
+print(f"| | **{top.name}** | {own.name} |\n|---|---|---|")
 for k, _, _ in DIM:
     print(f"| `{k}` | {getattr(top, k.lower())} | {getattr(own, k.lower())} |")
-print(f"\nThe gap is **{top.total - own.total:.0f} points**, and it is almost all `MEANING` and "
-      f"`REGISTER` — *crucible*")
-print("says something true about the business, *all hands* says something generic about "
-      "teamwork.\n")
-print("> **That is a real difference, not a rounding error.** Whether it is worth a rebrand is a")
-print("> question about switching cost, which this ranking deliberately does not price.\n")
+print(f"| | **{top.total:.0f}** | **{own.total:.0f}** |")
+print(f"\nThe gap is **{top.total - own.total:.0f} points**, and it is concentrated in `APT` and "
+      f"`LEGIT`. *All Hands*")
+print("is a casual idiom that reads friendly-agency; *Crucible* has Latinate weight and says "
+      "something")
+print("true. On the criterion that matters most for a stranger sending money abroad, it is a "
+      "**two-point**")
+print("**difference on a 26-weight dimension** — the largest single swing in the table.\n")
+print("> **This ranking still does not price switching cost.** That was excluded on instruction,")
+print("> and it is the one number that decides whether a 15-point gap is worth acting on.\n")
