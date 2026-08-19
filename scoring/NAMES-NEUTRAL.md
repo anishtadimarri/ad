@@ -48,29 +48,31 @@ signal inside legitimacy, not a line of its own.
 | # | Name | Free on | `LEGIT` | `CLEAR` | `PLAIN` | `SURVIVES` | `SPOKEN` | `APT` | `BUYABLE` | **Score** |
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | **Standard Talent** 🥇 | `.co` | 8 | 8 | 10 | 10 | 9 | 8 | 8 | **88** |
-| 2 | **Proof Talent** | `.co` | 7 | 8 | 9 | 8 | 9 | 9 | 8 | **82** |
-| 3 | **All Hands Talent** | `.com` | 6 | 8 | 9 | 10 | 7 | 7 | 10 | **79** |
-| 4 | **Merit Talent** | `.co` | 7 | 7 | 8 | 9 | 9 | 8 | 8 | **78** |
-| 5 | **Harbor Talent** | `.co` | 7 | 7 | 8 | 10 | 9 | 6 | 8 | **78** |
-| 6 | **Crucible Talent** | `.com` + `.co` | 8 | 9 | 3 | 9 | 8 | 10 | 10 | **77** |
-| 7 | **Top Drawer** | `.co` | 4 | 7 | 9 | 10 | 9 | 9 | 8 | **76** |
-| 8 | **Which Skill** | `.com` | 4 | 9 | 9 | 8 | 9 | 6 | 10 | **76** |
-| 9 | **Assay Talent** | `.com` + `.co` | 7 | 9 | 6 | 8 | 4 | 10 | 10 | **74** |
-| 10 | **Ballast Talent** | `.com` + `.co` | 8 | 8 | 3 | 10 | 7 | 8 | 10 | **73** |
-| 11 | **Almanac Talent** | `.com` + `.co` | 7 | 9 | 3 | 10 | 7 | 7 | 10 | **73** |
-| 12 | **Signet Talent** | `.com` + `.co` | 8 | 9 | 2 | 9 | 6 | 9 | 10 | **72** |
-| 13 | **Sure Hands** | `.co` | 3 | 6 | 9 | 10 | 9 | 9 | 8 | **71** |
-| 14 | **Merit Roster** | `.com` | 5 | 6 | 8 | 8 | 9 | 8 | 10 | **71** |
-| 15 | **Laurel Talent** | `.com` + `.co` | 6 | 8 | 4 | 9 | 8 | 8 | 10 | **71** |
-| ❌ | **Vanguard Talent** | `.co` | 9 | 2 | 5 | 9 | 9 | 9 | 8 | **67** |
-| 16 | **Handpicked** | `.team` | 3 | 6 | 9 | 7 | 9 | 10 | 5 | **67** |
-| 17 | **Forge Talent** | `.co` | 6 | 7 | 7 | 9 | 2 | 8 | 8 | **66** |
-| 18 | **Handiwork** | `.co` | 3 | 7 | 6 | 9 | 8 | 9 | 8 | **65** |
-| 19 | **Tuesday Talent** | `.com` + `.co` | 4 | 6 | 6 | 10 | 9 | 3 | 10 | **64** |
-| ❌ | **Polestar Talent** | `.co` | 8 | 3 | 3 | 9 | 8 | 9 | 8 | **62** |
-| 20 | **Keystone Talent** | `.co` | 6 | 5 | 2 | 9 | 9 | 8 | 8 | **61** |
-| ❌ | **Kindred Talent** | `.co` | 7 | 0 | 4 | 9 | 9 | 8 | 8 | **56** |
-| ❌ | **Touchstone Talent** | `.co` | 8 | 0 | 2 | 9 | 8 | 10 | 8 | **55** |
+| 2 | **Proof Talent** | `.co` | 7 | 8 | 10 | 8 | 9 | 9 | 8 | **83** |
+| 3 | **Harbor Talent** | `.co` | 7 | 7 | 9 | 10 | 9 | 6 | 8 | **80** |
+| 4 | **Compass Talent** | `.co` | 7 | 6 | 9 | 10 | 9 | 8 | 8 | **79** |
+| 5 | **All Hands Talent** | `.com` | 6 | 8 | 9 | 10 | 7 | 7 | 10 | **79** |
+| 6 | **Lighthouse Talent** | `.co` | 7 | 7 | 9 | 10 | 7 | 8 | 8 | **79** |
+| 7 | **Crucible Talent** | `.com` + `.co` | 8 | 9 | 4 | 9 | 8 | 10 | 10 | **79** |
+| 8 | **Merit Talent** | `.co` | 7 | 7 | 8 | 9 | 9 | 8 | 8 | **78** |
+| 9 | **Almanac Talent** | `.com` + `.co` | 7 | 9 | 5 | 10 | 7 | 7 | 10 | **76** |
+| 10 | **Which Skill** | `.com` | 4 | 9 | 9 | 8 | 9 | 6 | 10 | **76** |
+| 11 | **Ballast Talent** | `.com` + `.co` | 8 | 8 | 4 | 10 | 7 | 8 | 10 | **75** |
+| 12 | **Top Drawer** | `.co` | 4 | 7 | 8 | 10 | 9 | 9 | 8 | **74** |
+| 13 | **Tuesday Talent** | `.com` + `.co` | 5 | 6 | 10 | 10 | 9 | 3 | 10 | **73** |
+| 14 | **Laurel Talent** | `.com` + `.co` | 6 | 8 | 5 | 9 | 8 | 8 | 10 | **72** |
+| 15 | **Signet Talent** | `.com` + `.co` | 8 | 9 | 2 | 9 | 6 | 9 | 10 | **72** |
+| 16 | **Sure Hands** | `.co` | 3 | 6 | 9 | 10 | 9 | 9 | 8 | **71** |
+| 17 | **Merit Roster** | `.com` | 5 | 6 | 8 | 8 | 9 | 8 | 10 | **71** |
+| ❌ | **Vanguard Talent** | `.co` | 9 | 2 | 7 | 9 | 9 | 9 | 8 | **71** |
+| 18 | **Assay Talent** | `.com` + `.co` | 7 | 9 | 4 | 8 | 4 | 10 | 10 | **70** |
+| 19 | **Handpicked** | `.team` | 3 | 6 | 10 | 7 | 9 | 10 | 5 | **68** |
+| 20 | **Forge Talent** | `.co` | 6 | 7 | 8 | 9 | 2 | 8 | 8 | **68** |
+| 21 | **Handiwork** | `.co` | 3 | 7 | 7 | 9 | 8 | 9 | 8 | **67** |
+| 22 | **Keystone Talent** | `.co` | 6 | 5 | 5 | 9 | 9 | 8 | 8 | **66** |
+| ❌ | **Polestar Talent** | `.co` | 8 | 3 | 4 | 9 | 8 | 9 | 8 | **64** |
+| ❌ | **Kindred Talent** | `.co` | 7 | 0 | 5 | 9 | 9 | 8 | 8 | **57** |
+| ❌ | **Touchstone Talent** | `.co` | 8 | 0 | 3 | 9 | 8 | 10 | 8 | **56** |
 | ❌ | **Skill Force** | taken | 5 | 0 | 8 | 6 | 9 | 7 | 0 | **50** |
 
 ❌ = dead on collision, kept visible so they stay dead.
@@ -83,21 +85,21 @@ signal inside legitimacy, not a line of its own.
 
 **The word is everyday — 95 per million, the most common in the study** — and it still carries institutional weight: Standard Chartered, Standard & Poor's. *We set the standard* is also true of the business. No collision found. Only `.co` is free, because `standardtalent.com` is gone like every other plain word
 
-### 2. **Proof Talent** — 82  ·  `.co`
+### 2. **Proof Talent** — 83  ·  `.co`
 
 **Proof is 27 per million — nineteen times more common than *crucible*** — and it means exactly what the page does: we publish the proof. Slightly method-flavoured, which is the only thing holding it back. No collision found
 
-### 3. **All Hands Talent** — 79  ·  `.com`
-
-**Scored with no credit for being owned.** Method-neutral and expands everywhere, but *all hands* is a casual idiom — it reads friendly-agency rather than incorporated, which is the wrong direction for moment 2
-
-### 4. **Merit Talent** — 78  ·  `.co`
-
-Common, clean, says the right thing. *Merit* is used widely enough in the category that the search result will be muddy
-
-### 5. **Harbor Talent** — 78  ·  `.co`
+### 3. **Harbor Talent** — 80  ·  `.co`
 
 Plain, warm, method-neutral. Says less about the business than the three above
+
+### 4. **Compass Talent** — 79  ·  `.co`
+
+Same correction, same logic, shorter and easier to say. *Compass* is used widely enough as a brand word that the search result will be contested
+
+### 5. **All Hands Talent** — 79  ·  `.com`
+
+**Scored with no credit for being owned.** Method-neutral and expands everywhere, but *all hands* is a casual idiom — it reads friendly-agency rather than incorporated, which is the wrong direction for moment 2
 
 ---
 
@@ -107,9 +109,9 @@ It reordered the middle of the table, and the reason is worth stating.
 
 | Name | Before | Now | Why |
 |---|---|---|---|
-| **Top Drawer** | 2nd | 7th | A lovely idiom that reads **consumer boutique**, on a `.co`. Wrong signal for someone about to send money abroad |
-| **Sure Hands** · **Handiwork** | 5th · 7th | 13th · 18th | Both read as artisan or home-service brands. Charming, and not what a CFO wires to |
-| **Handpicked** | 11th | 16th | The most apt single word found, on the TLD that most says *side project* |
+| **Top Drawer** | 2nd | 12th | A lovely idiom that reads **consumer boutique**, on a `.co`. Wrong signal for someone about to send money abroad |
+| **Sure Hands** · **Handiwork** | 5th · 7th | 16th · 21th | Both read as artisan or home-service brands. Charming, and not what a CFO wires to |
+| **Handpicked** | 11th | 19th | The most apt single word found, on the TLD that most says *side project* |
 | **Crucible Talent** | 1st | **1st** | Unchanged. It was already the only name scoring well on both meaning and weight |
 
 ---
