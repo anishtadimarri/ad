@@ -29,7 +29,7 @@ DIM = [("OWNED",    20, "Do we already own it? Switching costs real weeks, not d
        ("NEUTRAL",  14, "Survives the positioning changing — it has changed eight times"),
        ("EXPAND",   12, "Works across every ICP x role, and for supply as well as demand"),
        ("SAY",      10, "Spell it on a call, hear it in an ad, type it without a hyphen"),
-       ("TLD",       8, ".com > .co > .team")]
+       ("TLD",       8, "`.com` 10 · `.co` 8 (stands alone, but a type-in leak to the `.com` owner) · `.team` 5")]
 
 
 @dataclass
@@ -87,6 +87,56 @@ NAMES = [
 
     N("gradedroster.com", "free", 0, 9, 4, 4, 9, 7, 10,
       "From the earlier `domains.py` sweep. Doubles down on both weaknesses"),
+
+
+    # ---- added after the operator asked for the tuesdaytalent shape and for .co
+    #      to be treated as standalone. 1,071 candidates swept on BOTH TLDs:
+    #      528 free on .com, 937 on .co, 419 of them .co-only.
+    N("tuesdaytalent.com", "free · **both**", 0, 6, 8, 10, 10, 9, 10,
+      "**The best free `.com` in the study.** Arbitrary-word-plus-category-noun is the register "
+      "that travels — Somewhere, Oceans, Genius — and Tuesday is the one weekday with no baggage "
+      "(Monday dreads, Friday clocks off). Docked on `CLEAN`: **\"Talent Tuesday\" is a common "
+      "hiring-event name** (Mercy, State of Indiana, Job Service ND) and a small *Tuesday Talent* "
+      "freelance-creative community exists"),
+
+    N("almanactalent.com", "free · **both**", 0, 9, 8, 10, 10, 7, 10,
+      "**No collision found anywhere.** An almanac is a book of tables and records, which is "
+      "quietly on-thesis without locking the brand to a method. Already surfaced in the earlier "
+      "`names.py` sweep. Costs a little on `SAY` — nine letters, and people hesitate on the spelling"),
+
+    N("signettalent.com", "free · **both**", 0, 9, 8, 9, 10, 7, 10,
+      "A signet is a **seal of authenticity** — the single most on-thesis evocative word found, "
+      "and no collision. Risk is mishearing as *cygnet* on a call"),
+
+    N("topdrawer.co", "free · `.co`", 0, 7, 9, 10, 9, 9, 8,
+      "*Top drawer* is a real idiom meaning first-class, and it is the strongest **register** score "
+      "of any available name. `.com` is occupied, so it carries a type-in leak"),
+
+    N("ballasttalent.com", "free · **both**", 0, 8, 8, 10, 10, 7, 10,
+      "Ballast is what keeps a ship steady — a good metaphor for a hire, and method-neutral. "
+      "From the earlier `NAME.md` list"),
+
+    N("laureltalent.com", "free · **both**", 0, 8, 7, 9, 10, 8, 10,
+      "Laurels are the award for excellence. Weakened by *resting on one's laurels*, and Laurel "
+      "is a common personal name"),
+
+    N("handiwork.co", "free · `.co`", 0, 7, 9, 9, 8, 8, 8,
+      "Handiwork means work done by hand, with skill. Echoes *all hands*. `.com` is occupied — "
+      "and [`CO.md`](CO.md) already flagged that occupant as a Cloudflare-protected page"),
+
+    N("surehands.co", "free · `.co`", 0, 6, 9, 10, 9, 9, 8,
+      "*Safe hands* / *sure hands* is exactly the feeling being sold, and it rhymes with the "
+      "brand already owned. Docked because **SureHands is a patient-lift manufacturer** — wrong "
+      "trade class, but it owns the `.com`"),
+
+    N("passmark.co", "free · `.co`", 0, 5, 8, 5, 9, 9, 8,
+      "**Literally the mechanic on the page** — the pass mark is 7.5/10. But **PassMark Software** "
+      "is a well-known benchmarking company on the `.com`, and the name locks the brand to a method"),
+
+    N("skillproof.co", "free · `.co`", 0, 1, 8, 6, 9, 9, 8,
+      "❌ **SkillProof is a live technical-recruitment platform** whose pitch is "
+      "*\"skills-verified through a 60-minute proctored assessment\"*. That is our positioning, "
+      "word for word, in our trade class. Dead on arrival"),
 
     # ---- killed by collision, not by availability. Recorded so they stay dead.
     N("skillforce.com", "**taken**", 0, 0, 5, 6, 9, 9, 10,

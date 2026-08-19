@@ -16,18 +16,28 @@ in the SkillForce-shape sweep. Verified August 2026.
 |---|---|---|---|---|---|---|---|---|---|---|
 | 1 | `allhandstalent.com` 🥇 | **owned** | 10 | 8 | 6 | 10 | 10 | 7 | 10 | **87** |
 | 2 | `whichskill.com` | **owned** | 10 | 9 | 7 | 8 | 4 | 9 | 10 | **82** |
-| 3 | `anchorroster.com` | free | 0 | 8 | 7 | 9 | 9 | 8 | 10 | **67** |
-| 4 | `meritroster.com` | free | 0 | 9 | 5 | 6 | 9 | 8 | 10 | **61** |
-| 5 | `selectroster.com` | free | 0 | 8 | 5 | 7 | 9 | 8 | 10 | **61** |
-| 6 | `handpicked.team` | free | 0 | 6 | 9 | 7 | 9 | 9 | 5 | **60** |
-| 7 | `gradedwork.com` | free | 0 | 9 | 6 | 4 | 7 | 9 | 10 | **59** |
-| 8 | `provenroster.com` | free | 0 | 8 | 5 | 5 | 9 | 8 | 10 | **58** |
-| 9 | `gradedbench.com` | free | 0 | 9 | 5 | 4 | 8 | 8 | 10 | **57** |
-| 10 | `gradedroster.com` | free | 0 | 9 | 4 | 4 | 9 | 7 | 10 | **56** |
-| 11 | `sterlingguild.com` ❌ | free | 0 | 2 | 8 | 8 | 9 | 7 | 10 | **54** |
-| 12 | `caliberroster.com` ❌ | free | 0 | 3 | 6 | 8 | 9 | 6 | 10 | **52** |
-| 13 | `hallmarktalent.com` ❌ | free | 0 | 1 | 7 | 8 | 9 | 8 | 10 | **51** |
-| 14 | `skillforce.com` ❌ | **taken** | 0 | 0 | 5 | 6 | 9 | 9 | 10 | **44** |
+| 3 | `almanactalent.com` | free · **both** | 0 | 9 | 8 | 10 | 10 | 7 | 10 | **72** |
+| 4 | `signettalent.com` | free · **both** | 0 | 9 | 8 | 9 | 10 | 7 | 10 | **70** |
+| 5 | `ballasttalent.com` | free · **both** | 0 | 8 | 8 | 10 | 10 | 7 | 10 | **70** |
+| 6 | `topdrawer.co` | free · `.co` | 0 | 7 | 9 | 10 | 9 | 9 | 8 | **69** |
+| 7 | `tuesdaytalent.com` | free · **both** | 0 | 6 | 8 | 10 | 10 | 9 | 10 | **68** |
+| 8 | `laureltalent.com` | free · **both** | 0 | 8 | 7 | 9 | 10 | 8 | 10 | **68** |
+| 9 | `anchorroster.com` | free | 0 | 8 | 7 | 9 | 9 | 8 | 10 | **67** |
+| 10 | `surehands.co` | free · `.co` | 0 | 6 | 9 | 10 | 9 | 9 | 8 | **67** |
+| 11 | `handiwork.co` | free · `.co` | 0 | 7 | 9 | 9 | 8 | 8 | 8 | **65** |
+| 12 | `meritroster.com` | free | 0 | 9 | 5 | 6 | 9 | 8 | 10 | **61** |
+| 13 | `selectroster.com` | free | 0 | 8 | 5 | 7 | 9 | 8 | 10 | **61** |
+| 14 | `handpicked.team` | free | 0 | 6 | 9 | 7 | 9 | 9 | 5 | **60** |
+| 15 | `gradedwork.com` | free | 0 | 9 | 6 | 4 | 7 | 9 | 10 | **59** |
+| 16 | `provenroster.com` | free | 0 | 8 | 5 | 5 | 9 | 8 | 10 | **58** |
+| 17 | `gradedbench.com` | free | 0 | 9 | 5 | 4 | 8 | 8 | 10 | **57** |
+| 18 | `passmark.co` | free · `.co` | 0 | 5 | 8 | 5 | 9 | 9 | 8 | **56** |
+| 19 | `gradedroster.com` | free | 0 | 9 | 4 | 4 | 9 | 7 | 10 | **56** |
+| 20 | `sterlingguild.com` ❌ | free | 0 | 2 | 8 | 8 | 9 | 7 | 10 | **54** |
+| 21 | `caliberroster.com` ❌ | free | 0 | 3 | 6 | 8 | 9 | 6 | 10 | **52** |
+| 22 | `hallmarktalent.com` ❌ | free | 0 | 1 | 7 | 8 | 9 | 8 | 10 | **51** |
+| 23 | `skillproof.co` ❌ | free · `.co` | 0 | 1 | 8 | 6 | 9 | 9 | 8 | **49** |
+| 24 | `skillforce.com` ❌ | **taken** | 0 | 0 | 5 | 6 | 9 | 9 | 10 | **44** |
 
 | Dimension | Weight | |
 |---|---|---|
@@ -37,7 +47,7 @@ in the SkillForce-shape sweep. Verified August 2026.
 | `NEUTRAL` | 14 | Survives the positioning changing — it has changed eight times |
 | `EXPAND` | 12 | Works across every ICP x role, and for supply as well as demand |
 | `SAY` | 10 | Spell it on a call, hear it in an ad, type it without a hyphen |
-| `TLD` | 8 | .com > .co > .team |
+| `TLD` | 8 | `.com` 10 · `.co` 8 (stands alone, but a type-in leak to the `.com` owner) · `.team` 5 |
 
 ---
 
@@ -51,51 +61,91 @@ Idiom-led, which puts it nearer the Somewhere/Oceans register than the staffing 
 
 **A different job.** *Skill* as a standalone noun is supply-side vocabulary — workers have skills, employers have seats. Excellent for the India candidate funnel, wrong for the buyer page. Keeping supply on a separate domain also removes the Employment Special Ad Category exposure, priced at 10–29% of CAC
 
-**3. `anchorroster.com`** — 67
+**3. `almanactalent.com`** — 72
+
+**No collision found anywhere.** An almanac is a book of tables and records, which is quietly on-thesis without locking the brand to a method. Already surfaced in the earlier `names.py` sweep. Costs a little on `SAY` — nine letters, and people hesitate on the spelling
+
+**4. `signettalent.com`** — 70
+
+A signet is a **seal of authenticity** — the single most on-thesis evocative word found, and no collision. Risk is mishearing as *cygnet* on a call
+
+**5. `ballasttalent.com`** — 70
+
+Ballast is what keeps a ship steady — a good metaphor for a hire, and method-neutral. From the earlier `NAME.md` list
+
+**6. `topdrawer.co`** — 69
+
+*Top drawer* is a real idiom meaning first-class, and it is the strongest **register** score of any available name. `.com` is occupied, so it carries a type-in leak
+
+**7. `tuesdaytalent.com`** — 68
+
+**The best free `.com` in the study.** Arbitrary-word-plus-category-noun is the register that travels — Somewhere, Oceans, Genius — and Tuesday is the one weekday with no baggage (Monday dreads, Friday clocks off). Docked on `CLEAN`: **"Talent Tuesday" is a common hiring-event name** (Mercy, State of Indiana, Job Service ND) and a small *Tuesday Talent* freelance-creative community exists
+
+**8. `laureltalent.com`** — 68
+
+Laurels are the award for excellence. Weakened by *resting on one's laurels*, and Laurel is a common personal name
+
+**9. `anchorroster.com`** — 67
 
 *Anchor* is evocative rather than descriptive, which is the register that travels. Method-neutral. The strongest of the free `.com` options
 
-**4. `meritroster.com`** — 61
+**10. `surehands.co`** — 67
+
+*Safe hands* / *sure hands* is exactly the feeling being sold, and it rhymes with the brand already owned. Docked because **SureHands is a patient-lift manufacturer** — wrong trade class, but it owns the `.com`
+
+**11. `handiwork.co`** — 65
+
+Handiwork means work done by hand, with skill. Echoes *all hands*. `.com` is occupied — and [`CO.md`](CO.md) already flagged that occupant as a Cloudflare-protected page
+
+**12. `meritroster.com`** — 61
 
 *Merit* is genuinely on-thesis — we rank by merit and keep a roster. Reads slightly bureaucratic
 
-**5. `selectroster.com`** — 61
+**13. `selectroster.com`** — 61
 
 Clean, employer-facing, and completely forgettable
 
-**6. `handpicked.team`** — 60
+**14. `handpicked.team`** — 60
 
 **The best name nobody owns.** A real English word that means exactly the positioning, and it was on the operator's own early shortlist. Held back by `.team` and by *handpicked* being widely used as a brand adjective elsewhere
 
-**7. `gradedwork.com`** — 59
+**15. `gradedwork.com`** — 59
 
 Real English phrase, exactly the mechanic, short. Same school-register problem, and it names the company after a method that has been revised repeatedly
 
-**8. `provenroster.com`** — 58
+**16. `provenroster.com`** — 58
 
 Fine. Nothing wrong with it and nothing to it
 
-**9. `gradedbench.com`** — 57
+**17. `gradedbench.com`** — 57
 
 **The most on-thesis name in the study** — the graded bench is literally the product. Also the most method-locked, and *graded* is school vocabulary
 
-**10. `gradedroster.com`** — 56
+**18. `passmark.co`** — 56
+
+**Literally the mechanic on the page** — the pass mark is 7.5/10. But **PassMark Software** is a well-known benchmarking company on the `.com`, and the name locks the brand to a method
+
+**19. `gradedroster.com`** — 56
 
 From the earlier `domains.py` sweep. Doubles down on both weaknesses
 
-**11. `sterlingguild.com`** — 54
+**20. `sterlingguild.com`** — 54
 
 ❌ **Sterling Talent Solutions** — 50,000 clients, background screening, now First Advantage. Collides on the *vetting* axis, which is our entire claim. Would have ranked top three on every other dimension
 
-**12. `caliberroster.com`** — 52
+**21. `caliberroster.com`** — 52
 
 ❌ At least four staffing firms use *Caliber*. Also splits on British spelling
 
-**13. `hallmarktalent.com`** — 51
+**22. `hallmarktalent.com`** — 51
 
 ❌ *Hallmark* is literally a mark of quality and would be perfect — and it is one of the most defended trademarks in the US
 
-**14. `skillforce.com`** — 44
+**23. `skillproof.co`** — 49
+
+❌ **SkillProof is a live technical-recruitment platform** whose pitch is *"skills-verified through a 60-minute proctored assessment"*. That is our positioning, word for word, in our trade class. Dead on arrival
+
+**24. `skillforce.com`** — 44
 
 ❌ **Three operating recruitment firms** — Skillforce Inc. (US construction staffing, since 2003), Skillforce Recruitment (Australia), SkillForce (Sweden). Suffix-padding it would be a knockoff of an incumbent in our own trade class
 
@@ -107,10 +157,10 @@ From the earlier `domains.py` sweep. Doubles down on both weaknesses
 |---|---|
 | **Keep `allhandstalent.com`** | It wins on OWNED and NEUTRAL — owned, and method-neutral. It is a B+ name, and no A name is available that is also clean |
 | **Keep `whichskill.com` for supply** | Not a demotion. It is the India candidate funnel, and separating the two domains removes an Employment-classification exposure worth 10–29% of CAC |
-| **The best free option is `anchorroster.com`** | at 67 against 87. **Not enough to justify a rebrand**, and that gap is entirely the cost of switching rather than any quality of the name |
+| **The best free option is `almanactalent.com`** | at 72 against 87. **Not enough to justify a rebrand**, and that gap is entirely the cost of switching rather than any quality of the name |
 | **Three good names are dead on collision** | Sterling, Caliber and Hallmark would all have ranked highly. Each is occupied by an operating firm in the hiring trade class. **This is the test that matters, and it is not the same as checking availability** |
 
-**4 of 14 candidates here are available and unusable.** That ratio is the whole lesson of the
+**5 of 24 candidates here are available and unusable.** That ratio is the whole lesson of the
 naming work: a free domain in a crowded trade class tells you almost nothing until you have looked for the incumbent.
 
 > **The blocker is not the name. It is four graded people** — two roles, two each, roughly
